@@ -1,0 +1,22 @@
+<ul{% if include.depth==2 %} class="subnavcontent"{% endif %}{% if include.depth==3 %} class="subsubnav"{% endif %}>
+{% if include.depth==1 %}<li role="presentation"></li>{% endif %}
+{% for item in include.data %}
+  {% if include.depth == 1 %}
+    {% assign the_url = item.name | slugify | prepend: "/sitemap/#" %}
+  {% else %}
+    {% assign the_url = item.url %}
+  {% endif %}
+  <li{% if item.pages %} class="has-submenu"{% endif %}>
+    <a{% if include.id %} id="{{item.name | slugify}}"{% endif %} href="{{ site.github.url }}{{the_url}}"><span>{{item.name}}{% comment %}{% if item.pages and include.depth > 1 %} {% include_cached icon.html name="chevron-right" %}{% endif %}{% endcomment %}</span></a>
+    {% if include.depth>1 %}
+      {% if item.pages %}{% assign newdepth = include.depth | plus: "1"%}{% include navlist.html data=item.pages depth=newdepth %}{% endif %}
+    {% endif %}
+  </li>
+  {% if include.depth==1 %}
+    <li role="presentation" class="subnav">
+      {% if item.pages %}{% assign newdepth = include.depth | plus: "1"%}{% include navlist.html data=item.pages depth=newdepth %}{% endif %}
+    </li>
+  {% endif %}
+{% endfor %}
+{% if include.depth==1 %}<li role="presentation"></li>{% endif %}
+</ul>

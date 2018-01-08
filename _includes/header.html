@@ -1,0 +1,59 @@
+<nav aria-label="Skip Link and Accessibility Options" id="controls" class="default-grid">
+  <ul>
+    <li><a href="#main">{% include_cached icon.html name="chevron-down" %} Skip to Content</a></li>
+    <li><a href="#">Change Text Size or Colors</a></li>
+  </ul>
+</nav>
+<header id="site-header" class="default-grid with-gap">
+  <a class="logos" href="{{ site.github.url }}/">
+    <img src="{{ "/assets/images/w3c.svg" | prepend: site.github.url }}" alt="W3C">
+    <span class="wai"><span class="wa">Web Accessibility</span> <span class="i">Initiative</span></span>
+  </a>
+
+  <div class="navigations">
+  <nav class="metanav" aria-label="Meta &amp; Search">
+    <ul>
+      <li><a href="{{ site.github.url }}/news/">News</a></li>
+      <li><a href="{{ site.github.url }}/wai/get-involved/">Get Involved</a></li>
+      <li><a href="{{ site.github.url }}/wai/about/">About W3C WAI</a></li>
+      <li>
+        <form action="https://duckduckgo.com/" role="search" onsubmit="document.querySelector('#header-search').value = document.querySelector('#header-search').value + ' site:w3c.github.io/wai-website/'">
+          <div>
+            <label for="header-search">
+              <span class="l">Search:</span>
+              <input id="header-search" type="search" name="q" placeholder="e.g. Tutorials">
+            </label>
+            <button class="button button-icon button-nobg button-noborder"><span>{% include_cached icon.html name="search" %}</span></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+<nav class="mainnav" aria-label="Main">
+  {% include navlist.html data=site.data.navigation depth=1 %}
+</nav>
+
+{% unless page.url == "/" %}
+<nav class="breadcrumb default-grid" aria-label="Breadcrumb">
+  <ul class="default-container">
+    <li><a href="{{ site.github.url }}/">Home</a></li>
+    {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
+    {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+    {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
+    {% for i in (1..forLoopMaxInt) %}
+        {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+        {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+        {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
+        {% for breadcrumb_page in site.documents %}
+            {% if current_breadcrumb_url == breadcrumb_page.url %}
+                <li>
+                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{ site.github.url }}{{current_breadcrumb_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{{breadcrumb_page.title}}{% endif %}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endunless %}

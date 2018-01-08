@@ -1,0 +1,10 @@
+{% if include.type == 'start' %}
+{% assign classes = include.class | split: " " %}
+<nav class="box box-simple{% for class in classes %} box-{{ class }}{% endfor %}" aria-labelledby="tocheading" id="toc">
+  <header id="tocheading" class="box-h box-h-simple{% for class in classes %} box-h-{{ class }}{% endfor %}{% if input.icon %} box-h-icon{% endif %}">{% if input.icon %} {% include_cached icon.html name=input.icon %}{% endif %} {{ include.title}}</header>
+  <div class="box-i">
+{% endif %}
+{% if  include.type == 'end' %}
+  </div>
+</nav>
+{% endif %}

@@ -1,0 +1,34 @@
+{% if page.order %}
+{% assign col = site.collections | where: "label", page.collection | first %}
+{% if page.group %}
+  {% assign docs = col.docs | where: "group", page.group %}
+{% else %}
+  {% assign docs = col.docs %}
+{% endif %}
+<nav class="pager" aria-label="Previous/Next Page">
+  <ul>
+    {% for p in docs %}{% assign tminus = page.order | minus: 1 %}{% if p.order == tminus %}
+    <li class="pager--item previous">
+      <a href="{{p.url | prepend: site.github.url }}">
+        {% include_cached icon.html name="arrow-left" class="pager--item-icon" %}
+        <span class="pager--item-text">
+          <span class="pager--item-text-direction">Previous:</span>
+          <span class="pager--item-text-target">{{p.title}}</span>
+        </span>
+      </a>
+    </li>
+    {% endif %}{% endfor %}
+    {% for p in docs %}{% assign tplus = page.order | plus: 1 %}{% if p.order == tplus %}
+    <li class="pager--item next">
+      <a href="{{p.url | prepend: site.github.url }}">
+        {% include_cached icon.html name="arrow-right" class="pager--item-icon" %}
+        <span class="pager--item-text">
+          <span class="pager--item-text-direction">Next:</span>
+          <span class="pager--item-text-target">{{p.title}}</span>
+        </span>
+      </a>
+    </li>
+  </ul>
+  {% endif %}{% endfor %}
+</nav>
+{% endif %}

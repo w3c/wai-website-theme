@@ -1,0 +1,17 @@
+{% assign url = "/img/" %}
+{% if page.collection %}{% assign url = url | prepend: page.collection | prepend: '/' %}{% endif %}
+{% assign url = url | prepend: site.github.url %}
+{% if include.srcset %}
+  {% assign srcseturl = "/img/" %}
+  {% if page.collection %}{% assign srcseturl = srcseturl | prepend: page.collection | prepend: '/' %}{% endif %}
+  {% assign out = "" %}
+  {% assign srcsetsrces = include.srcset | split: ", " %}
+  {% for src in srcsetsrces %}
+    {% unless forloop.last %}
+      {% assign out = out | append: srcseturl | append: src | append: ", " %}
+    {% else %}
+      {% assign out = out | append: srcseturl | append: src %}
+    {% endunless%}
+  {% endfor %}
+{% endif %}
+<img src="{{url}}{{include.src}}"{% if include.srcset %} srcset="{{out}}"{% endif %} alt="{{include.alt}}"{% if include.class %} class="{% assign classes = include.class | split: " " %}{% for class in classes %} {{ class }}{% endfor %}"{% endif %}{% if include.float %} style="float: {{include.float}};"{% endif %}>

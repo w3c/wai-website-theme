@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  {% include head.html %}
+  <body id="top" class="{% include body-class.html %}">
+    {% include header.html %}
+
+<main id="main" class="default-grid with-gap leftcol" tabindex="-1">
+
+  {% include sidenav.html %}
+
+  <article>
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+
+    {% if page.wcag_success_criteria or page.wcag_techniques %}
+      {% include resources.html %}
+    {% endif %}
+
+    {% include prevnext.html %}
+  </article>
+  <a class="button button-backtotop" href="#top"><span>{% include_cached icon.html name="arrow-up" %} Back to Top</span></a>
+</main>
+
+{% include footer.html %}
+
+  </body>
+</html>

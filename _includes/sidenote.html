@@ -1,0 +1,14 @@
+{% if include.type == 'start' %}
+<div class="grid-6">
+  <div class="from-col1 to-col4">
+{% endif %}
+{% if include.type == 'middle' %}
+  </div>
+  <aside class="from-col5 to-col6">
+    {% include_cached box.html type="start" class="simple" %}
+{% endif %}
+{% if include.type == 'end' %}
+    {% include_cached box.html type="end" %}
+  </aside>
+</div>
+{% endif %}
