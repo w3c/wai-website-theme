@@ -9,7 +9,7 @@
   {% include sidenav.html %}
 
   <article class="content">
-    <h1>{{ page.title }}</h1>
+    <h1>{% if page.title_icon %}<svg class="title-icon" aria-hidden="true"><use xlink:href="{{site.github.url}}{{page.title_icon}}"></use></svg> {{ page.title }}</h1>
     {{ content }}
     {% include prevnext.html %}
   </article>
