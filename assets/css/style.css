@@ -648,6 +648,36 @@ figure { margin: 0 0 1em; }
 
 figcaption { font-weight: bold; border-bottom: 1px solid #ddd; margin-bottom: .5em;}
 
+blockquote {
+  font-style: italic;
+  margin-bottom: 1em
+}
+
+blockquote cite {
+    display: block;
+    margin-top: .55em;
+    font-style: normal
+    /*color: var(--w3c-blue);*/
+}
+
+blockquote cite:before {
+    content: "— ";
+    font-weight: bold
+}
+
+blockquote p:first-of-type::before {
+    content: '“';
+    margin-left: -.75ch
+}
+
+blockquote p:last-of-type::after {
+    content: '”'
+}
+
+blockquote.special {
+    text-align: center
+}
+
 button, .button {
   border-radius: 5px;
   display: inline-block;
@@ -767,6 +797,19 @@ button:disabled, .button:disabled {
             flex: 1;
     text-align: center;
     margin: 8px
+}
+
+img {
+}
+
+img.left {
+    float: left;
+    margin-right: 1em
+}
+
+img.right {
+    float: right;
+    margin-left: 1em
 }
 
 table, caption {
@@ -899,6 +942,22 @@ th > :last-child, td > :last-child {
     font-size: 14px;
     font-size: .875rem;
     line-height: 1.57
+}
+
+@media (min-width: 35em) {
+  .box {
+  }
+  .box.box-left, .box.box-right {
+        width: 25%
+    }
+  .box.box-left {
+        float: left;
+        margin-right: 1em
+    }
+  .box.box-right {
+        float: right;
+        margin-left: 1em
+    }
 }
 
 .breadcrumb {
@@ -1356,7 +1415,7 @@ h2 {
   font-size: 1.375rem;
   color: #005A6A;
   line-height: 1.2;
-  font-weight: normal;
+  font-weight: bold;
   border-bottom: 1px solid #ddd;
 }
 
