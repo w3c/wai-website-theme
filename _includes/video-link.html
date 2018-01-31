@@ -1,4 +1,4 @@
-<a href="{{ include.href | relative_url }}" class="video-link{% if include.ratio == "4:3" %} ratio-43{%- endif -%}">
-  <img src="{{ include.src | relative_url }}" alt="">
+<a href="{{ include.href }}" class="video-link{% if include.ratio == "4:3" %} ratio-43{%- endif -%}">
+  <img src="{site.github.url}{{ include.src }}" alt="">
   <span>{{ include.title }}</span>
 </a>
