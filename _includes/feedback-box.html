@@ -33,7 +33,7 @@
 {%- assign url_title = page.title | url_param_escape -%}
 {{ site.help.desc | replace: "%s", url_title | markdownify }}
 <div class="button-group">
-    <a href="{{ "mailto:wai-eo-editors@w3.org?subject=%2" | replace: "%s", url_title }}" class="button"><span>Email</span></a>
+    <a href="{{ "mailto:wai-eo-editors@w3.org?subject=%s" | replace: "%s", url_title }}" class="button"><span>Email</span></a>
     <a href="https://github.com/{{repo}}/edit/{{branch}}/{{path}}"  class="button"><span>Fork &amp; Edit on GitHub</span></a>
     <a href="https://github.com/{{repo}}/issues" class="button"><span>List of GitHub Issues</span></a>
     <a href="https://github.com/{{repo}}/issues/new" class="button"><span>New GitHub Issue</span></a>
