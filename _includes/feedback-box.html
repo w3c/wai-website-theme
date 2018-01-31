@@ -31,7 +31,7 @@
 
 {%- include box.html type="start" title=site.help.title class="icon" icon="comments" -%}
 {%- assign url_title = page.title | url_param_escape -%}
-{{ site.help.title | replace: "%s", url_title | markdownify }}
+{{ site.help.desc | replace: "%s", url_title | markdownify }}
 <div class="button-group">
     <a href="{{ "mailto:wai-eo-editors@w3.org?subject=%2" | replace: "%s", url_title }}" class="button"><span>Email</span></a>
     <a href="https://github.com/{{repo}}/edit/{{branch}}/{{path}}"  class="button"><span>Fork &amp; Edit on GitHub</span></a>
