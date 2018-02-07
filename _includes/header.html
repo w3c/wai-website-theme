@@ -5,10 +5,16 @@
   </ul>
 </nav>
 <header id="site-header" class="default-grid with-gap">
-  <a class="logos" href="{{ site.github.url }}/">
-    <img src="{{ "/assets/images/w3c.svg" | prepend: site.github.url }}" alt="W3C">
-    <span class="wai"><span class="wa">Web Accessibility</span> <span class="i">Initiative</span></span>
-  </a>
+  <div class="logos">
+    <a class="home" href="{{ site.github.url }}/">
+      <img src="{{ "/assets/images/w3c.svg" | prepend: site.github.url }}" alt="W3C">
+      <span class="wai"><span class="wa">Web&nbsp;Accessibility</span> <span class="i">Initiative</span></span>
+    </a>
+    <div class="claim">
+      Strategies, standards, and resources to make the web accessible to people with disabilities.
+    </div>
+    <button id="openmenu">Menu</button>
+  </div>
 
   <div class="navigations">
   <nav class="metanav" aria-label="Meta &amp; Search">

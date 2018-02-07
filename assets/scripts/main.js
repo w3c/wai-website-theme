@@ -116,7 +116,7 @@
 
   }
 
-  document.querySelector('.mainnav > li').addEventListener("click", function(event){
+  document.querySelector('.mainnav').addEventListener("click", function(event){
     var cureel = event.target,
         isopen = false;
     while (cureel.nodeName.toLowerCase() != 'LI'.toLowerCase()) {
@@ -132,6 +132,26 @@
         addclass(cureel, 'active');
       }
     }
+  });
+
+  document.querySelector('.mainnav').addEventListener("mouseover", function(event){
+    var cureel = event.target,
+        isopen = false;
+    while (cureel.nodeName.toLowerCase() != 'LI'.toLowerCase()) {
+      cureel = cureel.parentNode;
+    }
+    if (hasclass(cureel, 'has-submenu')) {
+      Array.prototype.forEach.call(document.querySelectorAll('li.active'), function(el, i){
+        remclass(el, 'active');
+      });
+    }
+    addclass(cureel, 'active');
+  });
+
+  document.querySelector('.mainnav').addEventListener("mouseleave", function(event){
+      Array.prototype.forEach.call(document.querySelectorAll('li.active'), function(el, i){
+        remclass(el, 'active');
+      });
   });
 
   // $('.mainnav li').click(function (e){
@@ -203,6 +223,21 @@
 
     }
 
+  });
+
+  var metanav = document.querySelector('.metanav');
+  var mainnav = document.querySelector('.mainnav');
+
+  document.querySelector('#openmenu').addEventListener('click', function(e) {
+    if (hasclass(e.target, 'open')) {
+      remclass(e.target, 'open');
+      remclass(metanav, 'open');
+      remclass(mainnav, 'open');
+    } else {
+      addclass(e.target, 'open');
+      addclass(metanav, 'open');
+      addclass(mainnav, 'open');
+    }
   });
 
 }());

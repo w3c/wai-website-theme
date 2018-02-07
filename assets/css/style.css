@@ -1372,30 +1372,82 @@ details > div::after {
 .logos {
   padding: 16px 0;
   grid-column-start: 2;
-  grid-column-end: 5;
+  grid-column-end: 6;
   grid-row-start: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+.logos .claim {
+    font-size: 14px;
+    font-style: italic;
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid rgba(221, 221, 221, .32);
+    color: #ddd;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: none
+}
+
+@media (min-width: 35em) {
+
+    .logos .claim {
+        display: block
+    }
+}
+
+.home {
   margin-right: 32px;
   text-decoration: none;
-  transition: color .5s ease-in .1s
+  transition: color .5s ease-in .1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1
 }
 
 @supports (display: grid) {
 
-    .logos {
+    .home {
         margin-right: 0
     }
   }
 
-.logos img {
+.home img {
     vertical-align: middle;
     padding-right: 8px;
     margin-bottom: 8px;
     color: inherit;
-    fill: inherit
+    fill: inherit;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0
 }
 
-.logos:hover,
-.logos:focus {
+.home .wai {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 19px
+}
+
+.home:hover,
+.home:focus {
     text-decoration: underline;
     color: #eed009 !important
 }
@@ -1787,14 +1839,20 @@ dd+dt {
   position: relative;
   font-size: 14px;
   font-size: .875rem;
-  background-color: #003366
+  background-color: #003366;
+  display: none
+}
+
+.mainnav.open {
+    display: block
 }
 
 @media (min-width: 35em) {
 
     .mainnav {
         font-size: 16px;
-        font-size: 1rem
+        font-size: 1rem;
+        display: block
     }
   }
 
@@ -1820,7 +1878,7 @@ dd+dt {
         .mainnav > ul {
             display: grid;
             grid-template-rows: min-content min-content;
-            grid-template-columns: minmax(16px, 1fr) repeat(6, minmax(206px, max-content)) minmax(16px, 1fr);
+            grid-template-columns: minmax(16px, 1fr) repeat(6, minmax(16%, max-content)) minmax(16px, 1fr);
             -webkit-box-pack: justify;
                 -ms-flex-pack: justify;
                     justify-content: space-between
@@ -1858,9 +1916,16 @@ dd+dt {
     display: block;
     width: 100%;
     color: #ffffff;
-    text-align: center;
+    text-align: left;
     padding: 15px;
     box-sizing: border-box
+}
+
+@media (min-width: 35em) {
+
+    .mainnav > ul > li > a {
+        text-align: center
+    }
 }
 
 @supports (display: grid) {
@@ -1929,11 +1994,28 @@ dd+dt {
 }
 
 .subnavcontent {
-  -webkit-columns: 3;
-          columns: 3; /* Does not really work :-/ */
   margin: 0;
-  padding: 16px 0
+  padding: 15px
 }
+
+@media (min-width: 35em) {
+
+    .subnavcontent {
+        -webkit-columns: 2;
+                columns: 2;
+        /* Does not really work :-/ */
+        padding: 15px 0
+    }
+  }
+
+@media  (min-width: 60em) {
+
+    .subnavcontent {
+        -webkit-columns: 3;
+                columns: 3
+        /* Does not really work :-/ */
+    }
+  }
 
 .subnavcontent, .subnavcontent li {
     list-style: none
@@ -1972,40 +2054,49 @@ dd+dt {
     margin-bottom: 0
 }
 
+#openmenu {
+}
+
+@media (min-width: 35em) {
+
+    #openmenu {
+        display: none
+    }
+  }
+
 .metanav {
   text-transform: uppercase;
   font-size: 12px;
   font-size: .75rem;
-  font-weight: bold;
-  /*border-bottom: 1px solid rgba(255, 255, 255, 0.11);*/
   text-align: right;
-  width: 100%
+  width: 100%;
+  display: none
+}
+
+.metanav.open {
+    display: block
 }
 
 @media (min-width: 35em) {
 
     .metanav {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: end;
-            -ms-flex-pack: end;
-                justify-content: flex-end
+        display: block
     }
   }
 
 .metanav a {
     text-decoration: none;
-    padding: 8px 0
+    font-weight: bold
 }
 
 .metanav a:hover,
 .metanav a:focus,
 .metanav a[aria-current="page"] {
-    border-bottom: 2px solid #eed009
+    border-bottom: 1px solid #ffffff
+}
+
+.metanav a[aria-current="page"] {
+    border-bottom-color: #eed009
 }
 
 .metanav > ul {
@@ -2018,6 +2109,9 @@ dd+dt {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-box-pack: end;
             -ms-flex-pack: end;
                 justify-content: flex-end
@@ -2025,8 +2119,9 @@ dd+dt {
 }
 
 .metanav > ul li {
-    display: inline;
-    margin-bottom: 8px
+    display: inline-block;
+    border-left: 1px solid rgba(221, 221, 221, .32);
+    padding: 8px 16px
 }
 
 @media (min-width: 35em) {
@@ -2037,14 +2132,18 @@ dd+dt {
         display: flex;
         -webkit-box-align: center;
             -ms-flex-align: center;
-                align-items: center;
-        margin: 0 16px 0 0 !important
+                align-items: center
     }
 }
 
+.metanav > ul li:first-child {
+    border: 0
+}
+
 .metanav > ul li:last-child {
-    min-width: 300px;
-    margin-right: 0
+    margin-right: 0;
+    padding: 0;
+    border: 0
 }
 
 .metanav > ul li a {
@@ -2064,7 +2163,6 @@ dd+dt {
 }
 
 .metanav form[role=search] > div {
-    width: 300px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
@@ -2072,21 +2170,7 @@ dd+dt {
 
 .metanav form[role=search] label {
     text-transform: none;
-    font-weight: normal;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    width: 70%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 70%;
-            flex: 1 1 70%
-}
-
-.metanav form[role=search] label .l {
-    display: block;
-    padding: 8px 4px 8px 12px
+    font-weight: normal
 }
 
 .metanav form[role=search] input {
@@ -2095,11 +2179,19 @@ dd+dt {
     background-color: transparent;
     border: 0;
     border-radius: 0;
-    color: #ffffff;
+    color: #f2f2f2;
     height: 100%;
-    padding: 8px 0;
+    padding: 8px;
     margin: 0;
-    min-width: 100px
+    width: 10em;
+    font-size: 12.8px;
+    font-size: 0.8rem;
+    transition: width .5s linear
+}
+
+.metanav form[role=search] input:focus {
+    width: 15em;
+    color: #ffffff
 }
 
 .metanav form[role=search] input::-webkit-search-cancel-button,
@@ -2142,11 +2234,17 @@ dd+dt {
 
 .navigations {
   position: relative;
-  grid-column-start: 5;
+  grid-column-start: 6;
   grid-column-end: -2;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
-          flex-grow: 1
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center ;
+      -ms-flex-align: center ;
+          align-items: center 
 }
 
 @media (min-width: 35em) {
@@ -2171,7 +2269,6 @@ dd+dt {
 }
 
 .mainnav > ul > li, .metanav > ul > li {
-    display: inline-block;
     list-style: none;
     margin: 0
 }
