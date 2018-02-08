@@ -6,7 +6,7 @@
   {% else %}
     {% assign the_url = item.url %}
   {% endif %}
-  <li{% if include.depth < 2 %}{% if item.pages %} class="has-submenu"{% endif %}{% endif %}>
+  <li{% if item.pages %} class="{% if include.depth < 2 %}has-submenu {% else %}sub-{{ item.pages | size }}{% endif %}"{% endif %}>
     <a{% if include.id %} id="{{item.name | slugify}}"{% endif %} href="{{ site.github.url }}{{the_url}}"><span>{{item.name}}{% comment %}{% if item.pages and include.depth > 1 %} {% include_cached icon.html name="chevron-right" %}{% endif %}{% endcomment %}</span></a>
     {% if include.depth>1 %}
       {% if item.pages %}{% assign newdepth = include.depth | plus: "1"%}{% include navlist.html data=item.pages depth=newdepth %}{% endif %}
