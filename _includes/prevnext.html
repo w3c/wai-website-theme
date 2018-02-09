@@ -1,6 +1,6 @@
 {%- if page.order -%}
 {%- assign col = site.collections | where: "label", page.collection | first -%}
-{%- unless col.prefnext == false -%}
+{%- unless col.prevnext == false -%}
 {%- if page.group -%}
   {%- assign docs = col.docs | where: "group", page.group -%}
 {%- else -%}
