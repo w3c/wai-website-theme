@@ -3,7 +3,7 @@ The first section creates an array of page urls that are page urls of this colle
 {% endcomment %}
 {% assign col = site.collections | where: "label", page.collection | first %}
 <nav class="sidenav sn-contents" aria-label="Other Pages in this Resource">
-  <div class="sidenav--head"><div class="sidenav--head-icon">{% if col.icon %}{% include_cached icon.html name=col.icon class="sidenav--head-icon--inner" %}{% endif %}</div><div class="sidenav--head-title"><div class="sidenav--head-subsection">{% if col.shortname %}{{ col.shortname }}{% else %}{{ col.name }}{% endif %}</div>
+  <div class="sidenav--head">{% if col.icon %}<div class="sidenav--head-icon">{% include_cached icon.html name=col.icon class="sidenav--head-icon--inner" %}</div>{% endif %}<div class="sidenav--head-title"><div class="sidenav--head-subsection">{% if col.shortname %}{{ col.shortname }}{% else %}{{ col.name }}{% endif %}</div>
     </div>
   </div>
   <ul class="sidenav--list">
