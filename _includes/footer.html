@@ -3,8 +3,10 @@
 <footer class="page-footer default-grid">
   <div class="inner">
     <p>
+      <!--
       <strong>Updated:</strong> {{page.date | date: "%-d %B %Y"}}<br>
       <strong>{{page.people.editorslabel}}:</strong> {% for p in page.people.editors%}<a href="{{p.url}}">{{p.name}}</a>{% if forloop.last %}.{% else %}, {% endif %}{% endfor %} <strong>Developed by the <a href="https://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a></strong>{% if page.support %} with support from {% for s in page.support%}{% unless forloop.first %}{% if forloop.last %}and {% endif %}{% endunless %}the <a href="{{s.url}}">{{s.name}}</a>{% if forloop.last %}.{% else %}, {% endif %}{% endfor %}{% endif %} {% if col.acknowledgements %}{% assign ackurl = page.collection | append: "/acknowledgements/" | prepend: site.github.url %}<a href="/{{ackurl}}">Acknowledgements</a>.{% endif %}
+      -->
     </p>
   </div>
 </footer>
