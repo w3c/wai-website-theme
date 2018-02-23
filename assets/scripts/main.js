@@ -22,6 +22,10 @@
       return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
   };
 
+  var isVisible = function(el) {
+    return (el.offsetWidth > 0 && el.offsetHeight > 0);
+  };
+
   var spc = document.createTextNode(' ');
 
   var headings = document.querySelectorAll('article h2[id], article h3[id], article h4[id]');
@@ -306,6 +310,32 @@
     });
 
     setExColAllButtons();
+  }
+
+  var fragment = window.location.hash;
+
+  if (fragment.length) {
+    var target = document.querySelector(fragment);
+
+    // if the first element is a details element, open it. Set target to its parent node so we…
+    if (target.nodeName.toLowerCase() == 'details') {
+      target.setAttribute('open', 'true');
+      target = target.parentNode;
+    }
+
+    // can see if that parent node is visible. If it is _not_, but is a details element, we open that details element.
+    // Then we move on to its parent until we arrive at a visible element
+    while (!isVisible(target)) {
+      if (target.nodeName.toLowerCase() == 'details') {
+        target.setAttribute('open', 'true');
+      }
+      target = target.parentNode;
+    }
+
+    // That last visible element might be a details element, so we need to make sure to open it as well.
+    if (target.nodeName.toLowerCase() == 'details') {
+      target.setAttribute('open', 'true');
+    }
   }
 
 }());
