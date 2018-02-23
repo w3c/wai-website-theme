@@ -18,6 +18,6 @@
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | prepend: site.github.url }}">
   {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | prepend: site.github.url }}">{% endif %}
 
-  <title>{{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
+  <title>{%if page.archive %}[Archived]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
   {% seo title=false %}
 </head>

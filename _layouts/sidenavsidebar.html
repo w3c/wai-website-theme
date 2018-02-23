@@ -10,7 +10,11 @@
 
   <article class="content">
     <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{site.github.url}}{{page.title_icon}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
+
+    {%- include archive-msg.html -%}
+
     {{ content }}
+
     {% include prevnext.html %}
   </article>
   <a class="button button-backtotop" href="#top"><span>{% include_cached icon.html name="arrow-up" %} Back to Top</span></a>

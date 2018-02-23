@@ -10,6 +10,9 @@
 
   <article>
     <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{site.github.url}}{{page.title_icon}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
+
+    {%- include archive-msg.html -%}
+
     {{ content }}
 
     {% if page.wcag_success_criteria or page.wcag_techniques %}
