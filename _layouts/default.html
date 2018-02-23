@@ -7,7 +7,7 @@
 <main id="main" class="default-grid with-gap{% unless page.noleftcol %} leftcol{% endunless %}" tabindex="-1">
 
   <article>
-    <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{site.github.url}}{{page.title_icon}}"></use></svg> {% endif %}{{ page.title }}</h1>
+    <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{site.github.url}}{{page.title_icon}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
     {{ content }}
 
     {{page.wcag_success_criteria}}{{page.wcag_techniques}}
