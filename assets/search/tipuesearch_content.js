@@ -73,11 +73,12 @@ var tipuesearch = {"pages": [
   {%- assign tags = document.tags | uniq -%}
   {%- assign categories = document.categories | uniq -%}
   {%- assign taxonomies = tags | concat: categories | uniq -%}
+  {%- unless document.url == null -%}
   {
     "title": {{ document.title | smartify | strip_html | normalize_whitespace | jsonify }},
     "text": {{ document.content | strip_html | normalize_whitespace | jsonify }},
     "tags": {{ taxonomies | join: " " | normalize_whitespace | jsonify }},
     "url": {{ document.url | relative_url | jsonify }}
-  }{%- unless forloop.last -%},{%- endunless -%}
+  }{%- endunless -%}{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
 ]};
