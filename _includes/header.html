@@ -22,12 +22,12 @@
       <li><a href="{{ site.github.url }}/wai/get-involved/">Get Involved</a></li>
       <li><a href="{{ site.github.url }}/wai/about/">About W3C WAI</a></li>
       <li>
-        <form action="https://duckduckgo.com/" role="search" onsubmit="document.querySelector('#header-search').value = document.querySelector('#header-search').value + ' site:w3c.github.io/wai-website/'">
+        <form action="{{ "/search/" | relative_url }}" role="search">
           <div>
             <label for="header-search">
               <input id="header-search" type="search" name="q" placeholder="Search" aria-label="search">
             </label>
-            <button class="button button-icon button-nobg button-noborder"><span>{% include_cached icon.html name="search" %}</span></button>
+            <button class="button button-icon button-nobg button-noborder"><span>{% include_cached icon.html name="search" label="Submit Search" %}</span></button>
           </div>
         </form>
       </li>
