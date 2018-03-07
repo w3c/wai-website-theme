@@ -1,0 +1,10 @@
+{%- if page.doc-note-message -%}
+<section class="doc-note-info-box">
+  {{page.doc-note-message}}
+</section>
+{%- endif -%}
+{%- if page.doc-note-message-md -%}
+<section class="doc-note-info-box">
+  {{page.doc-note-message-md | markdownify }}
+</section>
+{%- endif -%}
