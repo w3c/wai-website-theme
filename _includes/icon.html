@@ -2,5 +2,5 @@
 {% if include.label %}
 <svg aria-label="{{ include.label }}" class="icon-{{ name }} {{include.class}}"><use xlink:href="{{ "/assets/images/icons.svg" | prepend: site.github.url }}#icon-{{ name }}"></use></svg>
 {% else %}
-<svg aria-hidden="true" class="icon-{{ name }} {{include.class}}"><use xlink:href="{{ "/assets/images/icons.svg" |  | prepend: site.github.url }}#icon-{{ name }}"></use></svg>
+<svg aria-hidden="true" class="icon-{{ name }} {{include.class}}"><use xlink:href="{{ "/assets/images/icons.svg" | prepend: site.github.url }}#icon-{{ name }}"></use></svg>
 {% endif %}
