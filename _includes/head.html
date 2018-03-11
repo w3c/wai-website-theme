@@ -7,7 +7,7 @@
 
     function downloadJSAtOnload() {
       var element = document.createElement("script");
-      element.src = "{{ "/assets/scripts/main.js" | prepend: site.github.url }}";
+      element.src = "{{ "/assets/scripts/main.js" | relative_url }}";
       document.body.appendChild(element);
       document.body.dataset.menuExpanded = 'false';
     }
@@ -15,7 +15,7 @@
     window.addEventListener("load", downloadJSAtOnload, false);
   </script>
 
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | prepend: site.github.url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/style.css"  | relative_url }}">
   {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | prepend: site.github.url }}">{% endif %}
 
   <title>{%if page.archive %}[Archived]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
