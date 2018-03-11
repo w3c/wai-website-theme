@@ -16,8 +16,9 @@
   </script>
 
   <link rel="stylesheet" href="{{ "/assets/css/style.css"  | relative_url }}">
-  {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | prepend: site.github.url }}">{% endif %}
+  {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | relative_url }}">{% endif %}
+  {%- if page.inline_css %}<style>{{ page.inline_css }}</style>{% endif -%}
 
-  <title>{%if page.archive %}[Archived]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
+  <title>{%if page.doc-note-type == "archived" %}[Archived]{% endif%}{%if page.doc-note-type == "draft" %}[Draft]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
   {% seo title=false %}
 </head>
