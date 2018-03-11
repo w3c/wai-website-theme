@@ -32,7 +32,7 @@
     {%- assign path = page.github.path -%}
 {%- endif- %}
 
-{%- include box.html type="start" title=helptitle class="icon space-above" icon="comments" -%}
+{%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" -%}
 {%- assign url_title = page.title | url_param_escape -%}
 {{ helpdesc | replace: "%s", url_title | markdownify }}
 <div class="button-group">
