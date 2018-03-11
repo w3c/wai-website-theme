@@ -7,7 +7,7 @@
 <header id="site-header" class="default-grid with-gap">
   <div class="logos">
     <a class="home" href="{{ site.github.url }}/">
-      <img src="{{ "/assets/images/w3c.svg" | prepend: site.github.url }}" alt="W3C">
+      <img src="{{ "/assets/images/w3c.svg" | relative_url }}" alt="W3C">
       <span class="wai"><span class="wa">Web&nbsp;Accessibility</span> <span class="i"><span class="initieative">Initiative</span> <span>WAI</span></span></span>
     </a>
     <div class="claim">
@@ -19,10 +19,10 @@
   <div class="navigations">
   <nav class="metanav" aria-label="Meta &amp; Search">
     <ul>
-      <li><a href="{{ site.github.url }}/get-involved/">Get Involved</a></li>
-      <li><a href="{{ site.github.url }}/about/">About W3C WAI</a></li>
+      <li><a href="{{ "/get-involved/" | relative_url }}">Get Involved</a></li>
+      <li><a href="{{ "/about/" | relative_url }}">About W3C WAI</a></li>
       <li>
-        <form action="{{ site.github.url }}/search/" role="search">
+        <form action="{{ "/search/" | relative_url }}" role="search">
           <div>
             <label for="header-search">
               <input id="header-search" type="search" name="q" placeholder="Search" aria-label="search">
@@ -42,7 +42,7 @@
 {% unless page.url == "/" %}
 <nav class="breadcrumb default-grid" aria-label="Breadcrumb">
   <ul class="default-container">
-    <li><a href="{{ site.github.url }}/">Home</a></li>
+    <li><a href="{{ "/" | relative_url }}">Home</a></li>
     {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
     {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
     {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
