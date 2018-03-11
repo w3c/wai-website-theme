@@ -134,9 +134,11 @@
         event.preventDefault();
         Array.prototype.forEach.call(document.querySelectorAll('li.active'), function(el, i){
           remclass(el, 'active');
+          el.querySelector('a').setAttribute('aria-expanded', 'false');
         });
         if (!isopen) {
           addclass(cureel, 'active');
+          cureel.querySelector('a').setAttribute('aria-expanded', 'true');
         }
       }
     });
@@ -153,15 +155,18 @@
       if (hasclass(cureel, 'has-submenu')) {
         Array.prototype.forEach.call(document.querySelectorAll('li.active'), function(el, i){
           remclass(el, 'active');
+          el.querySelector('a').setAttribute('aria-expanded', 'false');
         });
       }
       addclass(cureel, 'active');
+      cureel.querySelector('a').setAttribute('aria-expanded', 'true');
     });
 
     document.querySelector('.mainnav').addEventListener("mouseleave", function(event){
       timer = setTimeout(function(event){
         Array.prototype.forEach.call(document.querySelectorAll('li.active'), function(el, i){
           remclass(el, 'active');
+          el.querySelector('a').setAttribute('aria-expanded', 'false');
         });
       }, 350);
     });
