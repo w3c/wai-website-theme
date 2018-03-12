@@ -5,7 +5,9 @@
     {%- assign the_url = item.name | slugify | prepend: "/sitemap/#" -%}
     {%- assign the_aria = ' aria-haspopup="true" aria-expanded="false"' -%}
   {%- else -%}
-    {%- assign the_url = item.url -%}
+    {%- capture the_url -%}
+    {% include path.html path=item.url %}
+    {%- endcapture -%}
   {%- endif -%}
   <li{% if item.cols %} class="has-submenu"{% endif %}>
     <a{% if include.id %} id="{{item.name | slugify}}"{% endif %} href="{{ the_url | relative_url }}"{{the_aria}}><span>{{item.name}}{% comment %}{% if item.pages and include.depth > 1 %} {% include_cached icon.html name="chevron-right" %}{% endif %}{% endcomment %}</span></a>
