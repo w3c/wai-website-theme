@@ -10,7 +10,7 @@
     {%- endcapture -%}
   {%- endif -%}
   <li{% if item.cols %} class="has-submenu"{% endif %}>
-    <a{% if include.id %} id="{{item.name | slugify}}"{% endif %} href="{{ the_url | relative_url }}"{{the_aria}}><span>{{item.name}}{% comment %}{% if item.pages and include.depth > 1 %} {% include_cached icon.html name="chevron-right" %}{% endif %}{% endcomment %}</span></a>
+    <a{% if include.id %} id="{{item.name | slugify}}"{% endif %} href="{{ the_url }}"{{the_aria}}><span>{{item.name}}{% comment %}{% if item.pages and include.depth > 1 %} {% include_cached icon.html name="chevron-right" %}{% endif %}{% endcomment %}</span></a>
     {%- if include.depth>1 -%}
       {%- if item.pages %}{% assign newdepth = include.depth | plus: "1"%}{% include navlist.html data=item.pages depth=newdepth %}{% endif -%}
     {%- endif -%}
