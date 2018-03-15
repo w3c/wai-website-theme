@@ -11,13 +11,13 @@
     {% assign descriptions = include.descriptions-ad | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="../cc/{{d[0]}}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" default="" />{% endfor %}
   </video>
 </div>
-<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | prepend: site.github.url }}"></use></svg> <span>Enable Audio Description</span></button></p>
+<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | relative_url }}"></use></svg> <span>Enable Audio Description</span></button></p>
 {% endif %}
 
-<script src="{{ site.github.url }}/assets/ableplayer/thirdparty/modernizr.custom.js"></script>
-<script src="{{ site.github.url }}/assets/scripts/jquery.min.js"></script>
-<script src="{{ site.github.url }}/assets/ableplayer/thirdparty/js.cookie.js"></script>
-<script src="{{ site.github.url }}/assets/ableplayer/build/ableplayer.min.js"></script>
+<script src="{{ "/assets/ableplayer/thirdparty/modernizr.custom.js" | relative_url }}"></script>
+<script src="{{ "/assets/scripts/jquery.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/ableplayer/thirdparty/js.cookie.js" | relative_url }}"></script>
+<script src="{{ "/assets/ableplayer/build/ableplayer.min.js" | relative_url }}"></script>
 <script>
   var youTubeDataAPIKey = "{{site.ytapi}}";
   var googleApiReady = false;
