@@ -4,13 +4,15 @@
   <body id="top" class="{% include body-class.html %}">
     {% include header.html %}
 
-<main id="main" tabindex="-1">
+<main id="main">
   <div class="grid-five-three">
     <div class="col12">
       <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
     </div>
   </div>
+
     {{ content }}
+
     {% include prevnext.html %}
     <a class="button button-backtotop" href="#top"><span>{% include_cached icon.html name="arrow-up" %} Back to Top</span></a>
 </main>

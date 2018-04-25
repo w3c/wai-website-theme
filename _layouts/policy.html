@@ -4,11 +4,11 @@
   <body id="top" class="{% include body-class.html %}">
     {% include header.html %}
 
-<main id="main" class="default-grid with-gap leftcol" tabindex="-1">
+<div class="default-grid with-gap leftcol">
 
   {% include sidenav.html %}
 
-  <article>
+  <main id="main">
     <h1 class="post-title">{% include multilang-title.html title=page.country %}</h1>
 
     <div class="post-content">

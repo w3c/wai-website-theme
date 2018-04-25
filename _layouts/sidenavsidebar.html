@@ -4,11 +4,11 @@
   <body id="top" class="{% include body-class.html %}">
     {% include header.html %}
 
-<main id="main" class="default-grid with-gap leftcol" tabindex="-1">
+<div class="default-grid with-gap leftcol" tabindex="-1">
 
   {% include sidenav.html %}
 
-  <article class="content">
+  <main id="main" class="content">
     <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
 
     {%- include doc-note-msg.html -%}
@@ -18,9 +18,9 @@
     {% include feedback-box.html %}
 
     {% include prevnext.html %}
-  </article>
+  </main>
   <a class="button button-backtotop" href="#top"><span>{% include_cached icon.html name="arrow-up" %} Back to Top</span></a>
-</main>
+</div>
 
 {% include footer.html %}
 
