@@ -49,21 +49,57 @@
 <nav class="breadcrumb default-grid" aria-label="Breadcrumb">
   <ul class="default-container">
     <li><a href="{{ "/" | relative_url }}">Home</a></li>
-    {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
-    {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
-    {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
-    {% for i in (1..forLoopMaxInt) %}
-        {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
-        {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
-        {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
-        {% for breadcrumb_page in site.documents %}
-            {% if current_breadcrumb_url == breadcrumb_page.url %}
-                <li>
-                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{current_breadcrumb_url | relative_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{{breadcrumb_page.title}}{% endif %}</a>
-                </li>
+    {% assign search = true %}
+    {%- for n in site.data.navigation -%}
+      {% if search == true %}
+        {%- assign b_name = "" -%}
+        {%- assign b_url  = "" -%}
+        {%- assign c_name = "" -%}
+        {%- assign c_url  = "" -%}
+        {%- assign d_name = "" -%}
+        {%- assign d_url  = "" -%}
+        {%- assign a_name = n.name -%}
+        {%- assign a_url  = n.pages[0].url -%}
+        {% if a_url == page.url %}{% assign search = false %}{% endif %}
+        {% if search == true %}
+          {%- for n1 in n.pages -%}
+            {% if search == true %}
+              {%- assign c_name = "" -%}
+              {%- assign c_url  = "" -%}
+              {%- assign d_name = "" -%}
+              {%- assign d_url  = "" -%}
+              {%- assign b_name = n1.name -%}
+              {%- assign b_url  = n1.url -%}
+              {% if b_url == page.url %}{% assign search = false %}{% endif %}
+              {% if search == true %}
+                {%- for n2 in n1.pages -%}
+                  {% if search == true %}
+                    {%- assign d_name = "" -%}
+                    {%- assign d_url  = "" -%}
+                    {%- assign c_name = n2.name -%}
+                    {%- assign c_url  = n2.url -%}
+                    {% if c_url == page.url %}{% assign search = false %}{% endif %}
+                    {% if search == true %}
+                      {%- for n3 in n2.pages -%}
+                        {% if search == true %}
+                          {%- assign d_name = n3.name -%}
+                          {%- assign d_url  = n3.url -%}
+                          {% if d_url == page.url %}{% assign search = false %}{% endif %}
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
             {% endif %}
-        {% endfor %}
-    {% endfor %}
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    {%- endfor -%}
+    {% unless a_name == "" %}<li><a href="{{ a_url | relative_url }}"{% if a_url == page.url%} aria-current="page"{%endif%} >{{a_name}}</a></li>{% endunless %}
+    {% unless b_name == "" %}<li><a href="{{ b_url | relative_url }}"{% if b_url == page.url%} aria-current="page"{%endif%} >{{b_name}}</a></li>{% endunless %}
+    {% unless c_name == "" %}<li><a href="{{ c_url | relative_url }}"{% if c_url == page.url%} aria-current="page"{%endif%} >{{c_name}}</a></li>{% endunless %}
+    {% unless d_name == "" %}<li><a href="{{ d_url | relative_url }}"{% if d_url == page.url%} aria-current="page"{%endif%} >{{d_name}}</a></li>{% endunless %}
   </ul>
 </nav>
 {% endunless %}
