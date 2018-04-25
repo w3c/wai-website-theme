@@ -1,0 +1,35 @@
+{% for item in site.data.navigation %}
+  {% for i in item.pages %}
+    {% if i.url == page.url %}
+      {% assign currentsubnav = item %}
+    {% else %}
+      {% for j in i.pages %}
+        {% if j.url == page.url %}
+          {% assign currentsubnav = item %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<nav class="sidenav sn-contents" aria-label="Secondary">
+  <div class="sidenav--head"><div class="sidenav--head-title"><div class="sidenav--head-subsection">{{ currentsubnav.name }}</div>
+    </div>
+  </div>
+  {% for i in currentsubnav.pages %}
+    {% if forloop.first %}<ul class="sidenav--list">{% endif %}
+      {% assign insub = false %}
+      {% capture submenu %}
+        {% for j in i.pages %}
+          {% if forloop.first %}<ul>{% endif %}
+            {%- if j.url == page.url -%}{% assign insub = true %}{%- endif -%}
+            <li><a class="page-link" {% if j.url == page.url %} aria-current="page" {%- endif -%} href="{{ j.url | relative_url }}">{{j.name}}</a></li>
+          {% if forloop.last %}</ul>{% endif %}
+        {% endfor %}
+      {% endcapture %}
+      <li><a class="page-link" {% if insub == true %} aria-current="location" {%- endif -%}{% if i.url == page.url %} aria-current="page" {%- endif -%} href="{{ i.url | relative_url }}">{{i.name}}</a>
+        {{submenu}}
+      </li>
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+</nav>
