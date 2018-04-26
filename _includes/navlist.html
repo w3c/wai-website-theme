@@ -1,11 +1,8 @@
-<ul>
 {%- for item in include.data -%}
+  {%- if forloop.first %}<ul>{% endif -%}
   {%- assign the_url = item.pages.first.url -%}
   <li>
-    <a href="{{ the_url | relative_url }}"><span>{{item.name}}</span></a>
-    {%- if include.depth>1 -%}
-      {%- if item.pages %}{% assign newdepth = include.depth | plus: "1"%}{% include navlist.html data=item.pages depth=newdepth %}{% endif -%}
-    {%- endif -%}
+    <a href="{{ the_url | relative_url }}"{% if include.current == the_url %} aria-current="location"{% endif %}><span>{{item.name}}</span></a>
   </li>
+  {%- if forloop.last %}</ul>{% endif -%}
 {%- endfor -%}
-</ul>

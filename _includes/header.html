@@ -41,61 +41,63 @@
   </nav>
 </div>
 </header>
+
+{%- assign search = true -%}
+{%- for n in site.data.navigation -%}
+  {%- if search == true -%}
+    {%- assign b_name = "" -%}
+    {%- assign b_url  = "" -%}
+    {%- assign c_name = "" -%}
+    {%- assign c_url  = "" -%}
+    {%- assign d_name = "" -%}
+    {%- assign d_url  = "" -%}
+    {%- assign a_name = n.name -%}
+    {%- assign a_url  = n.pages[0].url -%}
+    {%- if a_url == page.url %}{% assign search = false %}{% endif -%}
+    {%- if search == true -%}
+      {%- for n1 in n.pages -%}
+        {%- if search == true -%}
+          {%- assign c_name = "" -%}
+          {%- assign c_url  = "" -%}
+          {%- assign d_name = "" -%}
+          {%- assign d_url  = "" -%}
+          {%- assign b_name = n1.name -%}
+          {%- assign b_url  = n1.url -%}
+          {%- if b_url == page.url %}{% assign search = false %}{% endif -%}
+          {%- if search == true -%}
+            {%- for n2 in n1.pages -%}
+              {%- if search == true -%}
+                {%- assign d_name = "" -%}
+                {%- assign d_url  = "" -%}
+                {%- assign c_name = n2.name -%}
+                {%- assign c_url  = n2.url -%}
+                {%- if c_url == page.url %}{% assign search = false %}{% endif -%}
+                {%- if search == true -%}
+                  {%- for n3 in n2.pages -%}
+                    {%- if search == true -%}
+                      {%- assign d_name = n3.name -%}
+                      {%- assign d_url  = n3.url -%}
+                      {%- if d_url == page.url %}{% assign search = false %}{% endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
 <nav class="mainnav" aria-label="Main">
-  {% include navlist.html data=site.data.navigation depth=1 %}
+  {% include navlist.html data=site.data.navigation current=a_url %}
 </nav>
 
 {% unless page.url == "/" %}
 <nav class="breadcrumb default-grid" aria-label="Breadcrumb">
   <ul class="default-container">
     <li><a href="{{ "/" | relative_url }}">Home</a></li>
-    {% assign search = true %}
-    {%- for n in site.data.navigation -%}
-      {% if search == true %}
-        {%- assign b_name = "" -%}
-        {%- assign b_url  = "" -%}
-        {%- assign c_name = "" -%}
-        {%- assign c_url  = "" -%}
-        {%- assign d_name = "" -%}
-        {%- assign d_url  = "" -%}
-        {%- assign a_name = n.name -%}
-        {%- assign a_url  = n.pages[0].url -%}
-        {% if a_url == page.url %}{% assign search = false %}{% endif %}
-        {% if search == true %}
-          {%- for n1 in n.pages -%}
-            {% if search == true %}
-              {%- assign c_name = "" -%}
-              {%- assign c_url  = "" -%}
-              {%- assign d_name = "" -%}
-              {%- assign d_url  = "" -%}
-              {%- assign b_name = n1.name -%}
-              {%- assign b_url  = n1.url -%}
-              {% if b_url == page.url %}{% assign search = false %}{% endif %}
-              {% if search == true %}
-                {%- for n2 in n1.pages -%}
-                  {% if search == true %}
-                    {%- assign d_name = "" -%}
-                    {%- assign d_url  = "" -%}
-                    {%- assign c_name = n2.name -%}
-                    {%- assign c_url  = n2.url -%}
-                    {% if c_url == page.url %}{% assign search = false %}{% endif %}
-                    {% if search == true %}
-                      {%- for n3 in n2.pages -%}
-                        {% if search == true %}
-                          {%- assign d_name = n3.name -%}
-                          {%- assign d_url  = n3.url -%}
-                          {% if d_url == page.url %}{% assign search = false %}{% endif %}
-                        {% endif %}
-                      {% endfor %}
-                    {% endif %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endif %}
-    {%- endfor -%}
     {% unless a_name == "" %}<li><a href="{{ a_url | relative_url }}"{% if a_url == page.url%} aria-current="page"{%endif%} >{{a_name}}</a></li>{% endunless %}
     {% unless b_name == "" %}<li><a href="{{ b_url | relative_url }}"{% if b_url == page.url%} aria-current="page"{%endif%} >{{b_name}}</a></li>{% endunless %}
     {% unless c_name == "" %}<li><a href="{{ c_url | relative_url }}"{% if c_url == page.url%} aria-current="page"{%endif%} >{{c_name}}</a></li>{% endunless %}
