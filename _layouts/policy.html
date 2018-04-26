@@ -4,7 +4,7 @@
   <body id="top" class="{% include body-class.html %}">
     {% include header.html %}
 
-<div class="default-grid with-gap leftcol">
+<div class="default-grid with-gap leftcol contentarea">
 
   {% include sidenav.html %}
 
@@ -61,10 +61,10 @@
       {% endfor %}
     </div>
     {% include prevnext.html %}
-  </article>
+  </main>
   <a class="button button-backtotop" href="#top"><span>{% include_cached icon.html name="arrow-up" %} Back to Top</span></a>
 
-</main>
+</div>
 
 {% include footer.html %}
 <style>@import url('{{"/policies/css/policies.css" | relative_url }}');</style>
