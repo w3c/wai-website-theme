@@ -23,12 +23,12 @@
       <li><a href="{{ "/sitemap/" | relative_url }}">Site Map</a></li>
       <li><a href="{{ "/news/" | relative_url }}">News</a></li>
       <li><a href="{{ "/archive/" | relative_url }}">Archive</a></li>
-      <li><a href="{{ "/audiences/" | relative_url }}">Resources for Roles</a></li>
+      <li><a href="{{ "/roles/" | relative_url }}">Resources for Roles</a></li>
     </ul>
   </div>
 </footer>
 {% unless site.published == true %}
-<section class="default-grid info" tabindex="0">
+<section class="default-grid info" aria-label="important information">
   <p class="inner">{% include_cached icon.html name="info" %} {% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview. Please refer to our published website at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
   </p>
 </section>
