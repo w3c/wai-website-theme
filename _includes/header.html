@@ -90,6 +90,7 @@
   {%- endif -%}
 {%- endfor -%}
 
+{% if page.url == "/" %}{% assign a_url = "" %}{% endif %}
 <nav class="mainnav" aria-label="Main">
   {% include navlist.html data=site.data.navigation current=a_url %}
 </nav>
