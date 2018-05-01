@@ -1,4 +1,6 @@
 <head>
+  {%- assign timestamp = site.time | date: '%s%N' -%}
+  {%- assign timestamp = '?' | append: timestamp -%}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +9,7 @@
 
     function downloadJSAtOnload() {
       var element = document.createElement("script");
-      element.src = "{{ "/assets/scripts/main.js" | relative_url }}";
+      element.src = "{{ '/assets/scripts/main.js' | append: timestamp | relative_url }}";
       document.body.appendChild(element);
       document.body.dataset.menuExpanded = 'false';
     }
@@ -15,8 +17,8 @@
     window.addEventListener("load", downloadJSAtOnload, false);
   </script>
 
-  <link rel="stylesheet" href="{{ "/assets/css/style.css"  | relative_url }}">
-  {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | relative_url }}">{% endif %}
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | append: timestamp | relative_url }}">
+  {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | relative_url | append: timestamp }}">{% endif %}
   {%- if page.inline_css %}<style>{{ page.inline_css }}</style>{% endif -%}
 
   <title>{%if page.doc-note-type == "archived" %}[Archived]{% endif%}{%if page.doc-note-type == "draft" %}[Draft]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
