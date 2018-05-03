@@ -14,7 +14,7 @@
         {% include_cached icon.html name="arrow-left" class="pager--item-icon" %}
         <span class="pager--item-text">
           <span class="pager--item-text-direction">Previous:</span>
-          <span class="pager--item-text-target">{{p.title}}</span>
+          <span class="pager--item-text-target">{% if p.nav_title %}{{p.nav_title}}{% else %}{{p.title}}{% endif %}</span>
         </span>
       </a>
     </li>
@@ -25,7 +25,7 @@
         {% include_cached icon.html name="arrow-right" class="pager--item-icon" %}
         <span class="pager--item-text">
           <span class="pager--item-text-direction">Next:</span>
-          <span class="pager--item-text-target">{{p.title}}</span>
+          <span class="pager--item-text-target">{% if p.nav_title %}{{p.nav_title}}{% else %}{{p.title}}{% endif %}</span>
         </span>
       </a>
     </li>
