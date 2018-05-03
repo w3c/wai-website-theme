@@ -30,8 +30,8 @@
 {%- endif- %}
 
 {%- assign path = "index.md" -%}
-{%- if page.github.path -%}
-    {%- assign path = page.github.path -%}
+{%- if page.collection -%}
+    {%- assign path = page.path -%}
 {%- endif- %}
 
 {%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" -%}
