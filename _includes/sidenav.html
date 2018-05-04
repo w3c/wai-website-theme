@@ -22,7 +22,7 @@ The first section creates an array of page urls that are page urls of this colle
   {%- assign my_pages = site.documents | sort: "order" -%}
   {%- for my_page in my_pages -%}
     {%- unless my_page.nosidenav -%}{%- if pgs contains my_page.url -%}
-    <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {%- endif -%} href="{{ my_page.url | relative_url }}">{% if my_page.url == page.url %}{% include_cached icon.html name="chevron-right" %} {%- endif -%}{% if my_page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{my_page.title_icon | relative_url}}"></use></svg> {% endif %}{% if my_page.nav_title %}{{ my_page.nav_title }}{%- else -%}{{ my_page.title }}{%- endif -%}</a></li>
+    <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {%- endif -%} href="{{ my_page.url | relative_url }}">{% if my_page.url == page.url %}{% include_cached icon.html name="chevron-right" %} {%- endif -%}{% comment %}{% if my_page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{my_page.title_icon | relative_url}}"></use></svg> {% endif %}{% endcomment %}{% if my_page.nav_title %}{{ my_page.nav_title }}{%- else -%}{{ my_page.title }}{%- endif -%}</a></li>
     {%- endif -%}{%- endunless -%}
   {%- endfor -%}
 {%- else -%}
