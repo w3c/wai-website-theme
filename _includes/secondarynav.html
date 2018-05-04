@@ -23,7 +23,7 @@
         {% for j in i.pages %}
           {% if forloop.first %}<ul>{% endif %}
             {%- if j.url == page.url -%}{% assign insub = true %}{%- endif -%}
-            <li><a class="page-link" {% if j.url == page.url %} aria-current="page" {%- endif -%} href="{{ j.url | relative_url }}">{{j.name}}</a></li>
+            <li><a class="page-link" {% if j.url == page.url %} aria-current="page" {%- endif -%} href="{{ j.url | relative_url }}">{% if j.url == page.url %}{% include_cached icon.html name="chevron-right" %} {%- endif -%}{{j.name}}</a></li>
           {% if forloop.last %}</ul>{% endif %}
         {% endfor %}
       {% endcapture %}
