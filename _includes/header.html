@@ -45,6 +45,16 @@ The first section creates an array of page urls that are page urls of this colle
   </nav>
 </div>
 </header>
+{%- if col.parent == '/' -%}
+{%- assign a_name = "" -%}
+{%- assign a_url  = "" -%}
+{%- assign b_name = "" -%}
+{%- assign b_url  = "" -%}
+{%- assign c_name = "" -%}
+{%- assign c_url  = "" -%}
+{%- assign d_name = "" -%}
+{%- assign d_url  = "" -%}
+{% else %}
 {%- if col.parent -%}{%- assign searchurl = col.parent -%}{%- else -%}{%- assign searchurl = page.url -%}{%- endif -%}
 {%- assign search = true -%}
 {%- for n in site.data.navigation -%}
@@ -93,6 +103,7 @@ The first section creates an array of page urls that are page urls of this colle
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
+{%- endif -%}
 
 <nav class="mainnav" aria-label="Main">
   {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
