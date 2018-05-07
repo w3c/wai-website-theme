@@ -45,8 +45,8 @@ The first section creates an array of page urls that are page urls of this colle
   </nav>
 </div>
 </header>
-{%- if page.parent == '/' -%}{%- assign parent_is_home == true -%}{% endif %}
-{%- if col.parent == '/' -%}{%- assign parent_is_home == true -%}{% endif %}
+{%- if page.parent == '/' -%}{%- assign parent_is_home = true -%}{% endif %}
+{%- if col.parent == '/' -%}{%- assign parent_is_home = true -%}{% endif %}
 {%- if parent_is_home -%}
 {%- assign a_name = "" -%}
 {%- assign a_url  = "" -%}
