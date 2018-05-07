@@ -45,7 +45,9 @@ The first section creates an array of page urls that are page urls of this colle
   </nav>
 </div>
 </header>
-{%- if col.parent == '/' -%}
+{%- if page.parent == '/' -%}{%- assign parent_is_home == true -%}{% endif %}
+{%- if col.parent == '/' -%}{%- assign parent_is_home == true -%}{% endif %}
+{%- if parent_is_home -%}
 {%- assign a_name = "" -%}
 {%- assign a_url  = "" -%}
 {%- assign b_name = "" -%}
@@ -118,6 +120,7 @@ The first section creates an array of page urls that are page urls of this colle
     {%- unless b_name == "" -%}<li><a href="{{ b_url | relative_url }}"{% if b_url == page.url%} aria-current="page"{%endif%}>{{b_name}}</a></li>{%- endunless -%}
     {%- unless c_name == "" -%}<li><a href="{{ c_url | relative_url }}"{% if c_url == page.url%} aria-current="page"{%endif%}>{{c_name}}</a></li>{%- endunless -%}
     {%- unless d_name == "" -%}<li><a href="{{ d_url | relative_url }}"{% if d_url == page.url%} aria-current="page"{%endif%}>{{d_name}}</a></li>{%- endunless -%}
+    {%- if page.parent == "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{{page.title}}</a></li>{%- endif -%}
     {%- if col.parent -%}
     {%- capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture -%}
     {%- assign splitted_url_parts = page_url_without_index_html | split: '/' -%}
