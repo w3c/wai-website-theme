@@ -1,5 +1,5 @@
 {%- assign helptitle = "Help improve this page" -%}
-{%- assign helpdesc = "Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [wai-eo-editors@w3.org](maito:wai-eo-editors@w3.org?subject=%s) or via GitHub." -%}
+{%- assign helpdesc = "Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [wai-eo-editors@w3.org](mailto:wai-eo-editors@w3.org?subject=%s) or via GitHub." -%}
 
 {%- unless page.github.hide -%}
 {%- if page.github.repository -%}{%- assign repo = page.github.repository -%}{%endif%}
@@ -35,7 +35,7 @@
 {%- endif- %}
 
 {%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" -%}
-{%- assign url_title = page.title | url_param_escape -%}
+{%- assign url_title = page.title | uri_escape -%}
 {{- helpdesc | replace: "%s", url_title | markdownify -}}
 <div class="button-group">
     <a href="{{ "mailto:wai-eo-editors@w3.org?subject=%s" | replace: "%s", url_title }}" class="button"><span>E-mail</span></a>
