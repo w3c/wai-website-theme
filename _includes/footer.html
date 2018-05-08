@@ -1,8 +1,12 @@
-{% assign col = site.collections | where: "label", page.collection | first %}
-{% if page.footer %}
+{%- assign col = site.collections | where: "label", page.collection | first -%}
+{% if page.footer || col.footer %}
 <footer class="page-footer default-grid">
   <div class="inner">
-    {{page.footer}}
+    {% if col.footer %}
+      {{col.footer}}
+    {% else %}
+      {{page.footer}}
+    {% endif %}
   </div>
 </footer>
 {% endif %}
