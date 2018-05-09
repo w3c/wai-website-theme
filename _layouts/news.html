@@ -11,10 +11,11 @@
     </div>
   </div>
 
-    {{ content }}
+  {{ content }}
 
-    {% include prevnext.html %}
-    <a class="button button-backtotop" href="#top"><span>{% include_cached icon.html name="arrow-up" %} Back to Top</span></a>
+  {% include prevnext.html %}
+
+  {% include_cached backtotop.html %}
 </main>
 
 {% include footer.html %}
