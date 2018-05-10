@@ -35,12 +35,12 @@
     </ul>
   </div>
 </footer>
-{% unless site.published == true %}
-<section class="default-grid info" aria-label="important information">
-  <p class="inner">{% include_cached icon.html name="info" %} {% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview. Please refer to our published website at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
+{%- unless site.published == true -%}
+<section class="default-grid info" tabindex="0">
+  <p class="inner">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview. Please refer to our published website at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
   </p>
 </section>
-{% endunless %}
+{%- endunless -%}
 <!-- Details4Everybody -->
 <script type="text/javascript" src="{{ '/assets/scripts/details4everybody.js' | append: timestamp | relative_url }}"></script>
 <!-- SVG4Everybody -->
