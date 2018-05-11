@@ -22,4 +22,5 @@
 
   <title>{%if page.doc-note-type == "archived" %}[Archived]{% endif%}{%if page.doc-note-type == "draft" %}[Draft]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
   {% seo title=false %}
+  <link rel="alternate" type="application/rss+xml" href="{{ "/feed.xml" | relative_url }}">
 </head>
