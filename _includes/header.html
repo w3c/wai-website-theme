@@ -35,6 +35,7 @@ The first section creates an array of page urls that are page urls of this colle
         <form action="{{ "/search/" | relative_url }}" role="search">
           <div>
             <label for="header-search">
+              <span class="visuallyhidden">Search:</span>
               <input id="header-search" type="search" name="q" placeholder="Search" aria-label="search">
             </label>
             <button class="button button-icon button-nobg button-noborder"><span>{% include_cached icon.html name="search" label="Submit Search" %}</span></button>
