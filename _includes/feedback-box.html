@@ -1,3 +1,4 @@
+{%- if page.collection -%}{%- assign col = site.collections | where: "label", page.collection | first -%}{%- endif- %}
 {%- assign helptitle = "Help improve this page" -%}
 {%- assign helpdesc = "Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [wai-eo-editors@w3.org](mailto:wai-eo-editors@w3.org?subject=%s) or via GitHub." -%}
 
@@ -8,7 +9,6 @@
     {%- assign repo = site.repository -%}
 {%- endif- %}
 {%- if page.collection -%}
-    {%- assign col = site.collections | where: "label", page.collection | first -%}
     {%- assign repo = col.repository -%}
 {%- endif- %}
 {%- if page.github.repository -%}
@@ -20,7 +20,6 @@
     {%- assign branch = site.branch -%}
 {%- endif- %}
 {%- if page.collection -%}
-    {%- assign col = site.collections | where: "label", page.collection | first -%}
     {%- if col.branch -%}
     {%- assign branch = col.branch -%}
     {%- endif -%}
