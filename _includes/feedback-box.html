@@ -32,6 +32,9 @@
 {%- if page.collection -%}
     {%- assign path = page.path -%}
 {%- endif- %}
+{%- if page.github.path -%}
+    {%- assign path = page.github.path -%}
+{%- endif- %}
 
 {%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" -%}
 {%- assign url_title = page.title | uri_escape -%}
