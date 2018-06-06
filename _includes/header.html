@@ -59,7 +59,15 @@ The first section creates an array of page urls that are page urls of this colle
 {%- assign d_name = "" -%}
 {%- assign d_url  = "" -%}
 {% else %}
-{%- if col.parent -%}{%- assign searchurl = col.parent -%}{%- else -%}{%- assign searchurl = page.url -%}{%- endif -%}
+{%- if col.parent -%}
+  {%- assign searchurl = col.parent -%}
+{%- else -%}
+  {%- if page.parent -%}
+    {%- assign searchurl = page.parent -%}
+  {%- else -%}
+    {%- assign searchurl = page.url -%}
+  {%- endif -%}
+{%- endif -%}
 {%- assign search = true -%}
 {%- for n in site.data.navigation -%}
   {%- if search == true -%}

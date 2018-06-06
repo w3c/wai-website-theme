@@ -1,10 +1,15 @@
+{%- if page.parent -%}
+  {% assign searchurl = page.parent %}
+{%- else -%}
+  {% assign searchurl = page.url %}
+{%- endif -%}
 {%- for item in site.data.navigation -%}
   {%- for i in item.pages -%}
-    {%- if i.url == page.url -%}
+    {%- if i.url == searchurl -%}
       {%- assign currentsubnav = item -%}
     {%- else -%}
       {%- for j in i.pages -%}
-        {%- if j.url == page.url -%}
+        {%- if j.url == searchurl -%}
           {%- assign currentsubnav = item -%}
         {%- endif -%}
       {%- endfor -%}
@@ -22,12 +27,12 @@
   {%- capture submenu -%}
     {%- for j in i.pages -%}
       {%- if forloop.first %}<ul>{% endif -%}
-        {%- if j.url == page.url -%}{% assign insub = true %}{%- endif -%}
-        <li><a class="page-link" {% if j.url == page.url %} aria-current="page" {%- endif -%} href="{{ j.url | relative_url }}"><span>{% comment %}{% if j.url == page.url %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{j.name}}{% if j.external == true %} {% include_cached icon.html name="external-link" label="Different Layout" %}{% endif %}</span></a></li>
+        {%- if j.url == searchurl -%}{% assign insub = true %}{%- endif -%}
+        <li><a class="page-link" {% if j.url == searchurl %} aria-current="page" {%- endif -%} href="{{ j.url | relative_url }}"><span>{% comment %}{% if j.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{j.name}}{% if j.external == true %} {% include_cached icon.html name="external-link" label="Different Layout" %}{% endif %}</span></a></li>
       {%- if forloop.last %}</ul>{% endif -%}
     {%- endfor -%}
   {%- endcapture -%}
-  <li><a class="page-link" {% if insub == true %} aria-current="location" {%- endif -%}{% if i.url == page.url %} aria-current="page" {%- endif -%} href="{{ i.url | relative_url }}"><span>{% comment %}{% if i.url == page.url %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{i.name}}{% if i.external == true %} {% include_cached icon.html name="external-link" label="Different Layout" %}{% endif %}</span></a>
+  <li><a class="page-link" {% if insub == true %} aria-current="location" {%- endif -%}{% if i.url == searchurl %} aria-current="page" {%- endif -%} href="{{ i.url | relative_url }}"><span>{% comment %}{% if i.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{i.name}}{% if i.external == true %} {% include_cached icon.html name="external-link" label="Different Layout" %}{% endif %}</span></a>
     {{submenu}}
   </li>
   {%- if forloop.last %}</ul></nav>{% endif -%}
