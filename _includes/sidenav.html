@@ -32,7 +32,7 @@ The first section creates an array of page urls that are page urls of this colle
 
     {%- unless my_page.nosidenav -%}
     {%- capture elurl %}/{{page.collection}}/{% unless group.name == "index" %}{{ group.name}}/{% endunless%}{% endcapture -%}
-    <li><a class="page-link" {% if elurl == page.url %} aria-current="page" {%- else -%}{% if group.name == page.group %} aria-current="location" {%- endif -%}{%- endif %} href="{{ elurl | relative_url }}">{{group.title}}</a>
+    <li><a class="page-link" {% if elurl == page.url %} aria-current="page" {% else %}{% if group.name == page.group %} aria-current="location" {% endif %}{%- endif %} href="{{ elurl | relative_url }}">{{group.title}}</a>
     {%- if group.name == page.group -%}
     <ul>
       {%- for p in documents -%}
@@ -46,7 +46,7 @@ The first section creates an array of page urls that are page urls of this colle
       {%- assign my_pages = site.documents | sort: "order" -%}
       {%- for my_page in my_pages -%}
         {% unless my_page.nosidenav %}{% if pgs contains my_page.url %}
-        <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {%- endif -%} href="{{ my_page.url | relative_url }}">{% comment %}{% if my_page.url == page.url %}{% include_cached icon.html name="chevron-right" %} {%- endif -%}{% endcomment %}{% if my_page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{my_page.title_icon | relative_url}}"></use></svg> {% endif %}{% if my_page.nav_title %}{{ my_page.nav_title }}{%- else -%}{{ my_page.title }}{%- endif -%}</a></li>
+        <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {% endif %} href="{{ my_page.url | relative_url }}">{% comment %}{% if my_page.url == page.url %}{% include_cached icon.html name="chevron-right" %} {%- endif -%}{% endcomment %}{% comment %}{% if my_page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{my_page.title_icon | relative_url}}"></use></svg> {% endif %}{% endcomment %}{% if my_page.nav_title %}{{ my_page.nav_title }}{%- else -%}{{ my_page.title }}{%- endif -%}</a></li>
         {%- endif -%}{%- endunless -%}
       {%- endfor -%}
     </ul>
