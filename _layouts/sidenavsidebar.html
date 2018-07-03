@@ -8,7 +8,7 @@
 
   {% include sidenav.html %}
 
-  <main id="main" class="content">
+  <main id="main" class="content"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
     <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
 
     {%- include doc-note-msg.html -%}
