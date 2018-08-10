@@ -26,6 +26,62 @@
     return (el.offsetWidth > 0 && el.offsetHeight > 0);
   };
 
+  /* Showhidebutton */
+
+  var showhidebuttons = document.querySelectorAll('.showhidebutton');
+
+  if (showhidebuttons !== null) {
+
+    Array.prototype.forEach.call(showhidebuttons, function(button, i){
+      var buttontarget = button.dataset.target;
+      var bid = button.dataset.showhidebuttonid;
+      if (sessionStorage.getItem(bid) == 'hidden') {
+        Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
+          el.setAttribute('hidden', true);
+        });
+        button.setAttribute('aria-expanded','false');
+        button.textContent = button.dataset.showtext;
+      }
+      if (sessionStorage.getItem(bid) == 'visible') {
+        Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
+            el.removeAttribute('hidden');
+          });
+          button.setAttribute('aria-expanded','true');
+          button.textContent = button.dataset.hidetext;
+      }
+    });
+
+    Array.prototype.forEach.call(showhidebuttons, function(button, i){
+      button.addEventListener('click', function(event){
+        var buttontarget = event.target.dataset.target;
+        var buttonstatus = event.target.getAttribute('aria-expanded');
+        if (buttonstatus == "true") { // buttonstatus=true => Expanded, so hide target
+          Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
+            el.setAttribute('hidden', true);
+          });
+          event.target.setAttribute('aria-expanded','false');
+          button.textContent = button.dataset.showtext;
+          sessionStorage.setItem(event.target.dataset.showhidebuttonid, 'hidden');
+        } else {
+          Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
+            el.removeAttribute('hidden');
+            if (i === 0) {
+              el.setAttribute('tabindex', '-1');
+              el.focus();
+            }
+          });
+          event.target.setAttribute('aria-expanded','true');
+          button.textContent = button.dataset.hidetext;
+          sessionStorage.setItem(event.target.dataset.showhidebuttonid, 'visible');
+        }
+      })
+    });
+
+  }
+
+
+  /* Tutorial style headings */
+
   var spc = document.createTextNode(' ');
 
   var headings = document.querySelectorAll('article h2[id], article h3[id], article h4[id]');
@@ -152,6 +208,8 @@
 
   });
 
+  /* Navigation button */
+
   var metanav  = document.querySelector('.metanav'   );
   var mainnav  = document.querySelector('.mainnav'   );
   var sidenav  = document.querySelector('.sidenav'   );
@@ -246,7 +304,7 @@
 
   function openHiddenNodes() {
     var fragment = window.location.hash;
-
+    fragment = fragment.replace(':', '\\:');
     if (fragment.length) {
       var target = document.querySelector(fragment);
       var initialTarget = target;
@@ -280,5 +338,37 @@
   window.addEventListener("hashchange", openHiddenNodes);
 
   openHiddenNodes();
+
+  // Enhance footnotes
+
+  var footnoteBox = document.querySelector('div.footnotes');
+
+  if (footnoteBox !== null) {
+    addclass(footnoteBox, 'box');
+    addclass(footnoteBox, 'box-simple');
+    footnoteBox.setAttribute('role', 'complementary');
+    footnoteBox.setAttribute('aria-label', 'References');
+
+    var header = document.createElement("header");
+    header.innerHTML = '<h2>References</h2>';
+    addclass(header, 'box-h');
+    footnoteBox.insertBefore(header, footnoteBox.querySelector('ol'));
+
+    var footnoteLinks = document.querySelectorAll('sup a.footnote');
+
+    Array.prototype.forEach.call(footnoteLinks, function(element, i){
+      element.setAttribute('aria-label', 'to footnote ' + element.textContent);
+      element.setAttribute('title', 'to footnote ' + element.textContent);
+    });
+
+    var footnoteBackLinks = footnoteBox.querySelectorAll('a.reversefootnote');
+
+    Array.prototype.forEach.call(footnoteBackLinks, function(element, i){
+      element.setAttribute('aria-label', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
+      element.setAttribute('title', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
+    });
+
+  }
+
 
 }());
