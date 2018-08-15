@@ -1,13 +1,13 @@
 {%- assign col = site.collections | where: "label", page.collection | first -%}
 {% if col.footer %}
-<footer class="page-footer default-grid">
+<footer class="page-footer default-grid" aria-label="Page">
   <div class="inner">
     {{col.footer}}
   </div>
 </footer>
 {% else %}
   {% if page.footer %}
-  <footer class="page-footer default-grid">
+  <footer class="page-footer default-grid" aria-label="Page">
     <div class="inner">
       {{page.footer}}
     </div>
@@ -15,7 +15,7 @@
   {% endif %}
 {% endif %}
 
-<footer class="site-footer grid-4q">
+<footer class="site-footer grid-4q" aria-label="Site">
   <div class="q1-start q3-end about">
     <div>
       <p><a class="largelink" href="https://w3.org/WAI/">W3C Web Accessibility Initiative (WAI)</a></p>
