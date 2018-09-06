@@ -1,16 +1,16 @@
 <div class="video-container" data-video-type="">
   <video preload="metadata" data-youtube-id="{{include.yt-id}}" width="450">
-    {% assign captions = include.captions | split: ',' %}{% for caption in captions %}{% assign c = caption | split: '|' %}<track src="{{c[0] | relative_url }}" label="{{c[2]}}" kind="captions" srclang="{{c[1]}}" default="" />{% endfor %}
-    {% assign subtitles = include.subtitles-ad | split: ',' %}{% for subtitle in subtitles %}{% assign s = subtitle | split: '|' %}<track src="{{s[0] | relative_url }}" label="{{s[2]}}" kind="subtitles" srclang="{{s[1]}}" default="" />{% endfor %}
-    {% assign descriptions = include.descriptions | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="{{ d[0] | relative_url }}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" default="" />{% endfor %}
+    {%- assign captions = include.captions | split: ',' %}{% for caption in captions %}{% assign c = caption | split: '|' %}<track src="{{c[0] | relative_url }}" label="{{c[2]}}" kind="captions" srclang="{{c[1]}}" default="" />{% endfor -%}
+    {%- assign subtitles = include.subtitles | split: ',' %}{% for subtitle in subtitles %}{% assign s = subtitle | split: '|' %}<track src="{{s[0] | relative_url }}" label="{{s[2]}}" kind="subtitles" srclang="{{s[1]}}" default="" />{% endfor -%}
+    {%- assign descriptions = include.descriptions | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="{{ d[0] | relative_url }}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" default="" />{% endfor -%}
   </video>
 </div>
 {% if include.yt-id-ad %}
 <div class="video-container" data-video-type="audio-described">
   <video preload="metadata" data-youtube-id="{{include.yt-id-ad}}" width="450">
-    {% assign captions = include.captions-ad | split: ',' %}{% for caption in captions %}{% assign c = caption | split: '|' %}<track src="{{c[0] | relative_url }}" label="{{c[2]}}" kind="captions" srclang="{{c[1]}}" default="" />{% endfor %}
-    {% assign subtitles = include.subtitles-ad | split: ',' %}{% for subtitle in subtitles %}{% assign s = subtitle | split: '|' %}<track src="{{s[0] | relative_url }}" label="{{s[2]}}" kind="subtitles" srclang="{{s[1]}}" default="" />{% endfor %}
-    {% assign descriptions = include.descriptions-ad | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="{{ d[0] | relative_url }}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" default="" />{% endfor %}
+    {%- assign captions = include.captions-ad | split: ',' %}{% for caption in captions %}{% assign c = caption | split: '|' %}<track src="{{c[0] | relative_url }}" label="{{c[2]}}" kind="captions" srclang="{{c[1]}}" default="" />{% endfor -%}
+    {%- assign subtitles = include.subtitles-ad | split: ',' %}{% for subtitle in subtitles %}{% assign s = subtitle | split: '|' %}<track src="{{s[0] | relative_url }}" label="{{s[2]}}" kind="subtitles" srclang="{{s[1]}}" default="" />{% endfor -%}
+    {%- assign descriptions = include.descriptions-ad | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="{{ d[0] | relative_url }}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" default="" />{% endfor -%}
   </video>
 </div>
 <p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | relative_url }}"></use></svg> <span>Enable Audio Description</span></button></p>
