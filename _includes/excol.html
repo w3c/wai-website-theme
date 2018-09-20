@@ -1,5 +1,5 @@
 {%- if include.type == 'start' -%}
-  <details{%if include.id%} id="{{include.id}}"{% endif %} {%if include.open%}open{% endif %}><summary markdown="block">
+  <details{%if include.id%} id="{{include.id}}"{% endif %} {%if include.open == "true" %}open{% endif %}><summary markdown="block">
 {%- endif -%}
 {%- if include.type == 'middle' -%}
   </summary>
