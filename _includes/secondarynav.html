@@ -1,8 +1,12 @@
 {%- if page.parent -%}
-  {% assign searchurl = page.parent %}
+  {%- assign searchurl = page.parent -%}
 {%- else -%}
-  {% assign searchurl = page.url %}
+  {%- assign searchurl = page.url -%}
 {%- endif -%}
+{%- assign col = site.collections | where: "label", page.collection | first -%}
+{%- if col.navigation -%}
+  {%- assign currentsubnav = col.navigation -%}
+{%- else -%}
 {%- for item in site.data.navigation -%}
   {%- for i in item.pages -%}
     {%- if i.url == searchurl -%}
@@ -16,7 +20,7 @@
     {%- endif -%}
   {%- endfor -%}
 {%- endfor -%}
-
+{%- endif -%}
 {%- for i in currentsubnav.pages -%}
   {%- if forloop.first -%}
     <nav class="sidenav sn-contents" aria-label="Secondary">
@@ -24,16 +28,6 @@
       <ul class="sidenav--list">
   {% endif %}
   {%- assign insub = false -%}
-  {%- capture submenu -%}
-    {%- for j in i.pages -%}
-      {%- if forloop.first %}<ul>{% endif -%}
-        {%- if j.url == searchurl -%}{% assign insub = true %}{%- endif -%}
-        <li><a class="page-link" {% if j.url == searchurl %} aria-current="page" {%- endif -%} href="{{ j.url | relative_url }}"><span>{% comment %}{% if j.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{j.name}}{% if j.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a></li>
-      {%- if forloop.last %}</ul>{% endif -%}
-    {%- endfor -%}
-  {%- endcapture -%}
-  <li><a class="page-link" {% if insub == true %} aria-current="location" {%- endif -%}{% if i.url == searchurl %} aria-current="page" {%- endif -%} href="{{ i.url | relative_url }}"><span>{% comment %}{% if i.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{i.name}}{% if i.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
-    {{submenu}}
-  </li>
+  {%- include menuitem.html item=i searchurl=searchurl -%}
   {%- if forloop.last %}</ul></nav>{% endif -%}
 {%- endfor -%}

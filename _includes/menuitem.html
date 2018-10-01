@@ -1,0 +1,13 @@
+{%- capture submenu -%}
+  {%- for j in include.item.pages -%}
+    {%- if forloop.first %}<ul>{% endif -%}
+      {%- if j.url == include.searchurl -%}{% assign insub = true %}{%- endif -%}
+      {%- include menuitem.html item=j searchurl=include.searchurl -%}
+    {%- if forloop.last %}</ul>{% endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if include.item.url == include.searchurl %}{% endif -%}
+<li><a class="page-link" {% if include.item.url == include.searchurl %}aria-current="page"{%- else -%}{% if insub == true %}aria-current="location"{%- endif -%}{%- endif -%} href="{{ include.item.url | relative_url }}"><span>{% comment %}{% if include.item.url == include.searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{include.item.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
+  <span style="color: #fff;">{{include.item.url}}<br>{{include.searchurl}}</span>
+  {{submenu}}
+</li>
