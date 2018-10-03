@@ -4,7 +4,8 @@
   {%- assign timestamp = '?' | append: timestamp -%}
   {% include_cached head.html type="start" timestamp=timestamp %}
   <title>{%if page.doc-note-type == "archived" %}[Archived]{% endif%}{%if page.doc-note-type == "draft" %}[Draft]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
-  {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | relative_url | append: include.timestamp }}">{% endif %}
+  {%- if page.external_css %}<link rel="stylesheet" href="{{ page.external_css | relative_url | append: include.timestamp }}">{% endif -%}
+  {%- if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | relative_url | append: include.timestamp }}">{% endif -%}
   {%- if page.inline_css %}<style>{{ page.inline_css }}</style>{% endif -%}
   {%- capture seo -%}
     {%- seo title=false -%}
