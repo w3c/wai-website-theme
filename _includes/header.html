@@ -145,7 +145,7 @@ The first section creates an array of page urls that are page urls of this colle
         {%- for breadcrumb_page in site.documents -%}
             {%- if current_breadcrumb_url == breadcrumb_page.url -%}
                 <li>
-                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{current_breadcrumb_url | relative_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{% if breadcrumb_page.nav_title && breadcumb_page.nav_title != "Overview" %}{{breadcrumb_page.nav_title}}{%-else-%}{{breadcrumb_page.title}}{% endif %}{% endif %}</a>
+                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{current_breadcrumb_url | relative_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{% if breadcrumb_page.nav_title %}{% if breadcumb_page.nav_title == "Overview"%}{{breadcrumb_page.title}}{% else%}{{breadcrumb_page.nav_title}}{% endif %}{%-else-%}{{breadcrumb_page.title}}{% endif %}{% endif %}</a>
                 </li>
             {%- endif -%}
         {%- endfor -%}
