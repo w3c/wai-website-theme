@@ -64,7 +64,7 @@ The first section creates an array of page urls that are page urls of this colle
 {%- if col.parent -%}
   {%- assign searchurl = col.parent -%}
 {%- else -%}
-  {%- if page.parent -%}
+  {%- if page.parent == "/" -%}
     {%- assign searchurl = page.parent -%}
   {%- else -%}
     {%- assign searchurl = page.url -%}
