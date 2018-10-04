@@ -1,8 +1,10 @@
 {%- for item in include.data -%}
   {%- if forloop.first %}<ul>{% endif -%}
   {%- assign the_url = item.pages.first.url -%}
+  {%- unless item.mainnav == false -%}
   <li>
     <a href="{{ the_url | relative_url }}"{% if include.current == the_url %} aria-current="location"{% endif %}><span>{{item.name}}</span></a>
   </li>
+  {%- endunless -%}
   {%- if forloop.last %}</ul>{% endif -%}
 {%- endfor -%}
