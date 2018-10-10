@@ -15,6 +15,12 @@
       {%- for j in i.pages -%}
         {%- if j.url == searchurl -%}
           {%- assign currentsubnav = item -%}
+        {%- else -%}
+          {%- for k in j.pages -%}
+            {%- if k.url == searchurl -%}
+              {%- assign currentsubnav = item -%}
+            {%- endif -%}
+          {%- endfor -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
@@ -29,14 +35,28 @@
       <ul class="sidenav--list">
   {% endif %}
   {%- assign insub = false -%}
+  {%- assign insubsub = false -%}
   {%- capture submenu -%}
     {%- for j in i.pages -%}
+      {%- capture subsubmenu -%}
+        {%- for k in j.pages -%}
+          {%- if forloop.first %}<ul>{% endif -%}
+            {%- if k.url == searchurl -%}
+              {% assign insub = true %}
+              {% assign insubsub = true %}
+              {% include menuitem.html name=k.name url=k.url different=k.different insub=false current=true %}
+            {%- else -%}
+              {% include menuitem.html name=k.name url=k.url different=k.different insub=false current=false %}
+            {%- endif -%}
+          {%- if forloop.last %}</ul>{% endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
       {%- if forloop.first %}<ul>{% endif -%}
         {%- if j.url == searchurl -%}
           {% assign insub = true %}
-          {% include menuitem.html name=j.name url=j.url different=j.different insub=false current=true %}
+          {% include menuitem.html name=j.name url=j.url different=j.different insub=insubsub current=true submenu=subsubmenu %}
         {%- else -%}
-          {% include menuitem.html name=j.name url=j.url different=j.different insub=false current=false %}
+          {% include menuitem.html name=j.name url=j.url different=j.different insub=insubsub current=false submenu=subsubmenu %}
         {%- endif -%}
       {%- if forloop.last %}</ul>{% endif -%}
     {%- endfor -%}
