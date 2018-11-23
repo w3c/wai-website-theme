@@ -1,10 +1,10 @@
-{% include box.html type="start" title="Related WCAG 2.0 resources" id="related" class="large icon" icon="default" %}
-<p>These tutorials provide best-practice guidance on implementing accessibility in different situations. This page combined the following WCAG 2.0 success criteria and techniques from different conformance levels:</p>
+{% include box.html type="start" title="Related WCAG resources" id="related" class="large icon" icon="default" %}
+<p>These tutorials provide best-practice guidance on implementing accessibility in different situations. This page combined the following WCAG success criteria and techniques from different conformance levels:</p>
 {% if page.wcag_success_criteria %}
   <p><strong>Success Criteria:</strong></p>
   <ul>
     {%- for sc in site.data.wcag -%}
-    {%- if page.wcag_success_criteria contains sc.key -%}<li><a href="https://www.w3.org/WAI/WCAG20/quickref/#qr-{{sc.slug}}"><strong>{{sc.key}}</strong> {{sc.title}}:</a> {{sc.desc}} (Level&nbsp;{{sc.level}})</li>{%- endif -%}
+    {%- if page.wcag_success_criteria contains sc.key -%}<li><a href="https://www.w3.org/WAI/WCAG21/quickref/#qr-{{sc.slug}}"><strong>{{sc.key}}</strong> {{sc.title}}:</a> {{sc.desc}} (Level&nbsp;{{sc.level}})</li>{%- endif -%}
     {%- endfor -%}
   </ul>
 {% endif %}
