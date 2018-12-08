@@ -5,9 +5,7 @@
 {%- else -%}
   {%- assign feedbackmail = "wai-eo-editors@w3.org" -%}
 {%- endif -%}
-{% capture helpdesc %}
-Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [{{feedbackmail}}](mailto:{{feedbackmail}}?subject=%s) or via GitHub."
-{%- endcapture -%}
+{%- capture helpdesc -%}Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [{{feedbackmail}}](mailto:{{feedbackmail}}?subject=%s) or via GitHub.{%- endcapture -%}
 
 {%- unless page.github.hide -%}
 {%- if page.github.repository -%}{%- assign repo = page.github.repository -%}{%endif%}
