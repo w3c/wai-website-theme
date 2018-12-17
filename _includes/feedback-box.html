@@ -43,9 +43,13 @@
 
 {%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" id="helpimprove" -%}
 {%- assign url_title = page.title | uri_escape -%}
+{% unless feedbackmail == "wai@w3.org" %}
+{%- capture mailbody -%}[put comment here...]{%- endcapture -%}
+{% else %}
 {%- capture mailbody -%}[put comment here...]
 
 I give permission to share this to a publicly-archived e-mail list.{%- endcapture -%}
+{% endunless %}
 {%- assign mailbody = mailbody | uri_escape -%}
 {{- helpdesc | replace: "%s", url_title | markdownify -}}
 <div class="button-group">
