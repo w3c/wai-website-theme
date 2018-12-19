@@ -37,13 +37,17 @@
       var bid = button.dataset.showhidebuttonid;
       if (sessionStorage.getItem(bid) == 'hidden') {
         Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
-          el.setAttribute('hidden', true);
+          el.setAttribute('hidden', "true");
         });
+        button.setAttribute('aria-expanded','false');
+        button.innerHTML = button.dataset.showtext;
       }
       if (sessionStorage.getItem(bid) == 'visible') {
         Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
             el.removeAttribute('hidden');
           });
+        button.setAttribute('aria-expanded','true');
+        button.innerHTML = button.dataset.hidetext;
       }
     });
 
