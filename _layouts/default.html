@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<html class="no-js" lang="{% if page.lang %}{{page.lang}}{% else %}en{% endif %}" prefix="og: http://ogp.me/ns#">
   {%- assign timestamp = site.time | date: '%s%N' -%}
   {%- assign timestamp = '?' | append: timestamp -%}
   {% include_cached head.html type="start" timestamp=timestamp %}
@@ -25,9 +25,11 @@
     <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
 
     {%- include doc-note-msg.html -%}
+    {%- include translation-note-msg.html -%}
 
     {{ content }}
 
+    {{page.wcag_success_criteria}}{{page.wcag_techniques}}
     {% if page.wcag_success_criteria or page.wcag_techniques %}
       {% include resources.html %}
     {% endif %}

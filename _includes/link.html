@@ -1,0 +1,15 @@
+{%- assign link_page=site.documents | where: "ref", include.to | where: "lang", page.lang | first -%}
+{%- if link_page -%}
+<a lang="{{page.lang}}" href="{{link_page.url | relative_url }}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{ include.text }}{% else %}{{link_page.title}}{% endif %}</a>
+{% else %}
+{%- assign link_page=site.documents | where: "permalink", include.to | first -%}
+{%- if link_page -%}
+<a lang="en" href="{{link_page.url | relative_url }}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{ include.text }}{% else %}{{link_page.title}}{% endif %}</a> ({% include t.html t="in English" %})
+{%- else -%}
+{%- unless site.hideTranslationHints -%}
+<a href="https://www.w3.org/WAI{{include.to}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{% include_cached inpl.html lang=page.lang a=include.text %}{% else %}<mark>Link (off this repository)</mark>{% endif %}</a></mark>
+{%- else -%}
+<mark><a href="https://www.w3.org/WAI{{include.to}}">Page not found</a></mark>
+{%- endunless -%}
+{%- endif -%}
+{%- endif -%}

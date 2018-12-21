@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<html class="no-js" lang="{% if page.lang %}{{page.lang}}{% else %}en{% endif %}" prefix="og: http://ogp.me/ns#">
   {%- assign timestamp = site.time | date: '%s%N' -%}
   {%- assign timestamp = '?' | append: timestamp -%}
   {% include_cached head.html type="start" timestamp=timestamp %}

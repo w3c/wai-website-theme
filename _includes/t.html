@@ -1,0 +1,15 @@
+{%- assign source=site.data.translations | where: "en", include.t | first -%}
+{%- if source[page.lang] -%}
+  {%- assign phrase=source[page.lang] -%}
+{%- else -%}
+  {%- unless site.hideTranslationHints %}<mark>Needs Translation</mark> {% endunless -%}
+  {%- assign phrase=include.t -%}
+{%- endif -%}
+{%- if include.replace -%}
+  {%- assign replacements = include.replace | split: "||" -%}
+  {%- for r in replacements -%}
+    {%- assign pair = r | split: "|" -%}
+    {%- assign phrase = phrase | replace: pair[0], pair[1] -%}
+  {%- endfor -%}
+{%- endif -%}
+{{- phrase -}}
