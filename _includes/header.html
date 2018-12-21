@@ -1,3 +1,12 @@
+{%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
+{%- unless enpage.length > 0 -%}
+{%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
+{%- endunless -%}
+{%- assign englishpageurl = enpage.url %}
+{% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
+{%- unless pages.length > 0 -%}
+{% assign pages=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
+{%- endunless -%}
 {%- comment -%}
 The first section creates an array of page urls that are page urls of this collection. They then are compared to all page urls in the list below. Use group in the frontmatter to group pages.
 {%- endcomment -%}
@@ -18,9 +27,6 @@ The first section creates an array of page urls that are page urls of this colle
         <span class="languagelist" hidden>
           <strong>{% include t.html t="This page in:" %}</strong>
           <ul class="languagelistul">
-          {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
-          {%- assign englishpageurl = enpage.url %}
-          {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
           {%- for p in pages %}
             {%-if forloop.first -%}
               <li>{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ englishpageurl | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }}</a>{% endif %}</li>
@@ -39,9 +45,6 @@ The first section creates an array of page urls that are page urls of this colle
         <span class="languagelist">
           <strong>{% include t.html t="This page in:" %}</strong>
           <ul class="languagelistul">
-          {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
-          {%- assign englishpageurl = enpage.url %}
-          {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
           {%- for p in pages %}
             {%-if forloop.first -%}
               <li>{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ englishpageurl | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }}</a>{% endif %}</li>

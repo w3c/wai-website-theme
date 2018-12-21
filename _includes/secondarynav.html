@@ -1,5 +1,8 @@
 {%- assign col = site.collections | where: "label", page.collection | first -%}
 {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
+{%- unless enpage.length > 0 -%}
+{%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
+{%- endunless -%}
 {%- assign englishpageurl = enpage.url %}
 {%- if page.parent == "/" -%}
   {%- assign searchurl = page.parent -%}

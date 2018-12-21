@@ -4,9 +4,15 @@
   {{include.submenu}}
 </li>
 {%- else -%}
-  {%- assign enpage=site.documents | where:"url", include.url | first -%}
+  {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
+  {%- unless enpage.length > 0 -%}
+  {%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
+  {%- endunless -%}
   {%- if enpage.ref -%}
-    {%- assign langpage=site.documents | where:"ref", enpage.ref | where: "lang", page.lang | first -%}
+    {% assign langpage=site.documents | where:"ref", page.ref | where: "lang", page.lang | first -%}
+    {%- unless langpage.length > 0 -%}
+    {% assign langpage=site.pages | where:"ref", page.ref | where: "lang", page.lang | first -%}
+    {%- endunless -%}
     {%- unless langpage -%}
       {%- assign langpage=enpage -%}
     {%- endunless-%}

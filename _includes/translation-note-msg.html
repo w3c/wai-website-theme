@@ -1,5 +1,8 @@
 {% unless page.lang=="en" %}
-{% assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first %}
+{%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
+{%- unless enpage.length > 0 -%}
+{%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
+{%- endunless -%}
 {% assign enupdatedate= enpage.last_updated | date: "%s" %}
 {% assign thisupdatedate= page.last_updated | date: "%s" %}
 <section id="translation-info" class="doc-note-box" style="font-size: .8125rem;">
