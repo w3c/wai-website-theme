@@ -66,7 +66,7 @@ The first section creates an array of page urls that are page urls of this colle
     {% endif %}
 </nav>
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans+KR');
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans+KR|Noto+Sans+SC');
   #controls>ul {
     display: inline;
   }
@@ -109,6 +109,9 @@ The first section creates an array of page urls that are page urls of this colle
   }
   *:lang(ko) {
     font-family: "Noto Sans", "Noto Sans KR", sans-serif;
+  }
+  *:lang(zh) {
+    font-family: "Noto Sans", 'Noto Sans SC', sans-serif;
   }
   .showhidebutton-noicon:after {
     display: none;
