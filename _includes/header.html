@@ -13,11 +13,11 @@ The first section creates an array of page urls that are page urls of this colle
 {%- assign col = site.collections | where: "label", page.collection | first -%}
 {%- unless site.published == true -%}
 <section class="default-grid info" tabindex="0" lang="en">
-  <p class="inner" style="margin: 0;padding: 1em 0;">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}{% include t.html t='This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.' %}{% endif %}
+  <p class="inner" style="margin: 0;padding: 1em 0;">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
   </p>
 </section>
 {%- endunless -%}
-<nav aria-label="{% include t.html t='Skip Link and Language Selector' %}" id="controls" class="default-grid">
+<nav aria-label="Skip Link and Language Selector" id="controls" class="default-grid">
   {% if page.ref %}
   {%- comment -%} Translations on this page {%- endcomment-%}
     <ul class="small-screen"{% comment %} style="background-color: #c0ffee;"{% endcomment %}>
@@ -253,13 +253,13 @@ The first section creates an array of page urls that are page urls of this colle
 {%- endfor -%}
 {%- endif -%}
 
-<nav class="mainnav" aria-label="{% include t.html t="Main" %}">
+<nav class="mainnav" aria-label="Main" lang="en">
   {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
   {%- include navlist.html data=site.data.navigation current=a_url -%}
 </nav>
 
 {%- unless page.url == "/" -%}
-<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="{% include t.html t="Breadcrumb" %}">
+<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="Breadcrumb" lang="en">
   <ul style="align-self: center;">
     <li><a href="{{ "/" | relative_url }}">{% include t.html t="Home" %}</a></li>
     {%- unless a_name == "" -%}<li>{% if a_url == enpage.url%}{% include link.html to=a_url aria-current="page" %}{% else %}{% include link.html text=a_name to=a_url %}{% endif %}</li>{%- endunless -%}

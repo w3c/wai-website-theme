@@ -1,15 +1,11 @@
 {%- if page.collection -%}{%- assign col = site.collections | where: "label", page.collection | first -%}{%- endif- %}
-{%- capture helptitle -%}
-{% include t.html t="Help improve this page" %}
-{%- endcapture -%}
+{%- assign helptitle = "Help improve this page" -%}
 {%- if page.feedbackmail -%}
   {%- assign feedbackmail = page.feedbackmail -%}
 {%- else -%}
   {%- assign feedbackmail = "wai-eo-editors@w3.org" -%}
 {%- endif -%}
-{% assign helpdescreplacepattern = "$1|" | append: feedbackmail %}
-{%- capture helpdesc -%}
-{% include t.html t="Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [$1](mailto:{$1?subject=%s) or via GitHub." replace=helpdescreplacepattern %}{%- endcapture -%}
+{%- capture helpdesc -%}Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [{{feedbackmail}}](mailto:{{feedbackmail}}?subject=%s) or via GitHub.{%- endcapture -%}
 
 {%- unless page.github.hide -%}
 {%- if page.github.repository -%}{%- assign repo = page.github.repository -%}{%endif%}
@@ -47,18 +43,20 @@
 
 {%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" id="helpimprove" -%}
 {%- assign url_title = page.title | uri_escape -%}
-{%- unless feedbackmail == "wai@w3.org" -%}
-{%- capture mailbody -%}{% include t.html t="[put comment here...]" %}{%- endcapture -%}
-{%- else -%}
-{%- capture mailbody -%}{% include t.html t="[put comment here...]\n\nI give permission to share this to a publicly-archived e-mail list." %}{%- endcapture -%}
-{%- endunless -%}
+{% unless feedbackmail == "wai@w3.org" %}
+{%- capture mailbody -%}[put comment here...]{%- endcapture -%}
+{% else %}
+{%- capture mailbody -%}[put comment here...]
+
+I give permission to share this to a publicly-archived e-mail list.{%- endcapture -%}
+{% endunless %}
 {%- assign mailbody = mailbody | uri_escape -%}
 {{- helpdesc | replace: "%s", url_title | markdownify -}}
 <div class="button-group">
-    <a href="{{ "mailto:" | append: feedbackmail | append: "?subject=%s" | replace: "%s", url_title | append: "&body=" | append: mailbody }}" class="button"><span>{% include t.html t="E-mail" %}</span></a>
-    <a href="https://github.com/{{repo}}/edit/{{branch}}/{{path}}"  class="button"><span>{% include t.html t="Fork &amp; Edit on GitHub" %}</span></a>
+    <a href="{{ "mailto:" | append: feedbackmail | append: "?subject=%s" | replace: "%s", url_title | append: "&body=" | append: mailbody }}" class="button"><span>E-mail</span></a>
+    <a href="https://github.com/{{repo}}/edit/{{branch}}/{{path}}"  class="button"><span>Fork &amp; Edit on GitHub</span></a>
     {%- comment -%}<a href="https://github.com/{{repo}}/issues" class="button"><span>List of GitHub Issues</span></a>{%- endcomment -%}
-    <a href="https://github.com/{{repo}}/issues/new" class="button"><span>{% include t.html t="New GitHub Issue" %}</span></a>
+    <a href="https://github.com/{{repo}}/issues/new" class="button"><span>New GitHub Issue</span></a>
 </div>
 {%- include box.html type="end" -%}
 {%- endunless -%}

@@ -13,7 +13,7 @@
     {%- assign descriptions = include.descriptions-ad | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="{{ d[0] | relative_url }}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" />{% endfor -%}
   </video>
 </div>
-<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | relative_url }}"></use></svg> <span>{% include t.html t="Enable Audio Description" %}</span></button></p>
+<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | relative_url }}"></use></svg> <span>Enable Audio Description</span></button></p>
 {% endif %}
 
 <script src="{{ "/assets/ableplayer/thirdparty/modernizr.custom.js" | relative_url }}"></script>
@@ -82,7 +82,7 @@
         el.setAttribute('hidden', true);
       });
       e.target.setAttribute('data-status', 'non-audio-described');
-      e.target.querySelector('span').innerHTML = '{% include t.html t="Enable Audio Description" %}';
+      e.target.querySelector('span').innerHTML = 'Enable Audio Description';
     } else {
       var videos = document.querySelectorAll('.video-container');
       Array.prototype.forEach.call(videos, function(el, i){
@@ -93,7 +93,7 @@
         el.removeAttribute("hidden");
       });
       e.target.setAttribute('data-status', 'audio-described');
-      e.target.querySelector('span').innerHTML = '{% include t.html t="Disable Audio Description" %}';
+      e.target.querySelector('span').innerHTML = 'Disable Audio Description';
     }
   });
 

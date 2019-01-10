@@ -43,7 +43,7 @@
 <div class="sidenav">
 {%- for i in currentsubnav.pages -%}
   {%- if forloop.first -%}
-    <nav class="sn-contents" aria-label="{% include t.html t="Secondary" %}">
+    <nav class="sn-contents" aria-label="Secondary">
       <div class="sidenav--head"><div class="sidenav--head-title"><div class="sidenav--head-subsection">{% include_cached inpl.html lang=page.lang a=currentsubnav.name %}</div></div></div>
       <ul class="sidenav--list">
   {% endif %}
@@ -89,7 +89,7 @@
   {%- for p in pages %}
     {%-if forloop.first -%}
       <nav aria-labelledby="languagehead" style="font-size: .8125rem; margin-top: 2em; border-radius: 4px; border: 2px solid #eed009; background-color: #fff">
-        <header id="languagehead" style="border-bottom: 2px solid #eed009; padding: 8px 27px; font-weight: bold;">{% include t.html t="Languages/Translations" %}</header>
+        <header id="languagehead" style="border-bottom: 2px solid #eed009; padding: 8px 27px; font-weight: bold;">Languages/Translations</header>
         <ul class="langlist" style="list-style-position: inside; padding-left: 27px; list-style-type: square; color: #005A9C;">
           <li style="margin-bottom: 2px;">{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }} (original)</strong>{% else %}<a href="{{ englishpageurl | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }} (original)</a>{% endif %}</li>
     {%- endif -%}

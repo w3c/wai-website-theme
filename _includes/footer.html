@@ -33,13 +33,13 @@
       <li><a href="{{ "/sitemap/#archive" | relative_url }}">Archive</a></li>
       <li><a href="{{ "/about/accessibility-statement/" | relative_url }}">Accessibility Statement</a></li>
       <li><a href="{{ "/roles/" | relative_url }}">Resources for Roles</a></li>
-      <li><a href="{{ "/translations/" | relative_url }}"><img src="{{"/assets/images/translations.png" | relative_url}}" alt="" style="vertical-align: middle"> {% include t.html t="Translations" %}</a></li>
+      <li><a href="{{ "/translations/" | relative_url }}"><img src="{{"/assets/images/translations.png" | relative_url}}" alt="" style="vertical-align: middle"> Translations</a></li>
     </ul>
   </div>
 </footer>
 {%- unless site.published == true -%}
 <section class="default-grid info" tabindex="0">
-  <p class="inner">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}{% include t.html t='This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.' %}{% endif %}
+  <p class="inner">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
   </p>
 </section>
 {%- endunless -%}

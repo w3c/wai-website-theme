@@ -6,7 +6,7 @@
 {%- else -%}
   {%- assign docs = col.docs -%}
 {%- endif -%}
-<nav class="pager" aria-label="{% include t.html t="Previous/Next Page" %}">
+<nav class="pager" aria-label="Previous/Next Page">
   <ul>
     {%- for p in docs %}{% assign tminus = page.order | minus: 1 -%}{%- if p.order == tminus -%}
     <li class="pager--item previous">

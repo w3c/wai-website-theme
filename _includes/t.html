@@ -2,7 +2,7 @@
 {%- if source[page.lang] -%}
   {%- assign phrase=source[page.lang] -%}
 {%- else -%}
-  {%- unless site.hideTranslationHints %}<mark>{% include t.html t="Needs Translation" %}</mark> {% endunless -%}
+  {%- unless site.hideTranslationHints %}<mark>Needs Translation</mark> {% endunless -%}
   {%- assign phrase=include.t -%}
 {%- endif -%}
 {%- if include.replace -%}
