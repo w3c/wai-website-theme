@@ -20,7 +20,7 @@
       {% unless lng == "en" %}
         (<span lang="{{lng}}">{{site.data.lang[lng].nativeName}}</span>)
       {% endunless %}
-      {% if include.external %}{% include_cached icon.html name="external-link" label="External Site" %}{% endif %} </a>
+      {% if include.external %}{% include external.html %}{% endif %} </a>
   </li>
 
 {% endif %}

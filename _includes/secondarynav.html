@@ -1,6 +1,6 @@
 {%- assign col = site.collections | where: "label", page.collection | first -%}
 {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
-{%- unless enpage.length > 0 -%}
+{%- unless enpage -%}
 {%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
 {%- endunless -%}
 {%- assign englishpageurl = enpage.url %}
@@ -83,7 +83,7 @@
 {%- endfor -%}
 {% if page.ref %}
   {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
-  {%- unless pages.length > 0 -%}
+  {%- unless pages -%}
   {% assign pages=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
   {%- endunless -%}
   {%- for p in pages %}
