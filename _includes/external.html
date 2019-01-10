@@ -1,1 +1,4 @@
-{% include_cached icon.html name="external-link" label="External Site" %}
+{%- capture label -%}
+{% include t.html t="External Site" %}
+{%- endcapture -%}
+{% include_cached icon.html name="external-link" label=label %}

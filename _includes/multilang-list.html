@@ -24,7 +24,7 @@
     (<span lang="{{lng}}">{{site.data.lang[lng].nativeName}}</span>)
   {% endunless %}
   {% if thislangurl %}
-    {% if include.external %}{% include_cached icon.html name="external-link" label="External Site" %}{% endif %}</a>
+    {% if include.external %}{% include external.html %}{% endif %}</a>
   {% endif %}
   {% unless forloop.first %}</li>{% endunless %}
   {% if forloop.first %}{% if include.wrap %}</{{include.wrap}}>{% endif %}{% endif %}
