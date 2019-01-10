@@ -7,7 +7,6 @@
 {%- unless pages -%}
 {% assign pages=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
 {%- endunless -%}
-<mark style="font-size: 100px; display: block; height: 200px;">{{enpage.ref}}</mark>
 {%- comment -%}
 The first section creates an array of page urls that are page urls of this collection. They then are compared to all page urls in the list below. Use group in the frontmatter to group pages.
 {%- endcomment -%}
