@@ -1,15 +1,26 @@
-{%- assign source=site.data.translations | where: "en", include.t | first -%}
-{%- if source[page.lang] -%}
-  {%- assign phrase=source[page.lang] -%}
+{%- if page.lang == "en" -%}
+  {%- assign phrase = include.t -%}
+  {%- if include.replace -%}
+    {%- assign replacements = include.replace | split: "||" -%}
+    {%- for r in replacements -%}
+      {%- assign pair = r | split: "|" -%}
+      {%- assign phrase = phrase | replace: pair[0], pair[1] -%}
+    {%- endfor -%}
+  {%- endif -%}
 {%- else -%}
-  {%- unless site.hideTranslationHints %}<mark>{% include t.html t="Needs Translation" %}</mark> {% endunless -%}
-  {%- assign phrase=include.t -%}
-{%- endif -%}
-{%- if include.replace -%}
-  {%- assign replacements = include.replace | split: "||" -%}
-  {%- for r in replacements -%}
-    {%- assign pair = r | split: "|" -%}
-    {%- assign phrase = phrase | replace: pair[0], pair[1] -%}
-  {%- endfor -%}
+  {%- assign source=site.data.translations | where: "en", include.t | first -%}
+  {%- if source[page.lang] -%}
+    {%- assign phrase=source[page.lang] -%}
+  {%- else -%}
+    {%- unless site.hideTranslationHints %}<mark lang="en">Needs Translation</mark> {% endunless -%}
+    {%- assign phrase=include.t -%}
+  {%- endif -%}
+  {%- if include.replace -%}
+    {%- assign replacements = include.replace | split: "||" -%}
+    {%- for r in replacements -%}
+      {%- assign pair = r | split: "|" -%}
+      {%- assign phrase = phrase | replace: pair[0], pair[1] -%}
+    {%- endfor -%}
+  {%- endif -%}
 {%- endif -%}
 {{- phrase -}}
