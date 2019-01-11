@@ -1,12 +1,18 @@
-{%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
-{%- unless enpage -%}
-{%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
-{%- endunless -%}
+{%- if !page.lang || page.lang == 'en' -%}
+  {%- assign enpage = page -%}
+{%- else -%}
+  {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
+  {%- unless enpage.ref -%}
+  {%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
+  {%- endunless -%}
+{%- endif -%}
 {%- assign englishpageurl = enpage.url %}
+
 {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
-{%- unless pages -%}
+{%- unless pages[0].ref -%}
 {% assign pages=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
 {%- endunless -%}
+
 {%- comment -%}
 The first section creates an array of page urls that are page urls of this collection. They then are compared to all page urls in the list below. Use group in the frontmatter to group pages.
 {%- endcomment -%}
