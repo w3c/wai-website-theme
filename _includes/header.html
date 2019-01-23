@@ -1,4 +1,4 @@
-{%- if !page.lang || page.lang == 'en' -%}
+{%- if page.lang == 'en' -%}
   {%- assign enpage = page -%}
 {%- else -%}
   {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
