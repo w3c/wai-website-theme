@@ -1,12 +1,10 @@
-{%- if !page.lang || page.lang == 'en' -%}
+{%- if page.lang == 'en' -%}
   {%- assign enpage = page -%}
 {%- else -%}
   {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
   {%- unless enpage.ref -%}
-  {%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
   {%- endunless -%}
 {%- endif -%}
-{%- assign englishpageurl = enpage.url %}
 
 {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
 {%- unless pages[0].ref -%}
@@ -96,7 +94,7 @@
       <nav aria-labelledby="languagehead" style="font-size: .8125rem; margin-top: 2em; border-radius: 4px; border: 2px solid #eed009; background-color: #fff">
         <header id="languagehead" style="border-bottom: 2px solid #eed009; padding: 8px 27px; font-weight: bold;">Languages/Translations</header>
         <ul class="langlist" style="list-style-position: inside; padding-left: 27px; list-style-type: square; color: #005A9C;">
-          <li style="margin-bottom: 2px;">{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }} (original)</strong>{% else %}<a href="{{ englishpageurl | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }} (original)</a>{% endif %}</li>
+          <li style="margin-bottom: 2px;">{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }} (original)</strong>{% else %}<a href="{{ enpage.url | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }} (original)</a>{% endif %}</li>
     {%- endif -%}
     <li style="margin-bottom: 2px;">{% if p.lang == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" lang="{{ p.lang }}">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
     {%- if forloop.last -%}
