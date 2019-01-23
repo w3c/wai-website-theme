@@ -1,13 +1,22 @@
-{%- assign col = site.collections | where: "label", page.collection | first -%}
-{%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
-{%- unless enpage -%}
-{%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
-{%- endunless -%}
+{%- if !page.lang || page.lang == 'en' -%}
+  {%- assign enpage = page -%}
+{%- else -%}
+  {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
+  {%- unless enpage.ref -%}
+  {%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
+  {%- endunless -%}
+{%- endif -%}
 {%- assign englishpageurl = enpage.url %}
+
+{% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
+{%- unless pages[0].ref -%}
+{% assign pages=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
+{%- endunless -%}
+
 {%- if page.parent == "/" -%}
   {%- assign searchurl = page.parent -%}
 {%- else -%}
-  {%- if (page.ref and page.lang) -%}
+  {%- if page.ref and page.lang -%}
     {%- if page.lang != "en" -%}
       {%- assign searchurl = enpage.url -%}
     {%- else -%}
@@ -57,9 +66,9 @@
             {%- if k.url == searchurl -%}
               {% assign insub = true %}
               {% assign insubsub = true %}
-              {% include menuitem.html name=k.name url=k.url different=k.different insub=false current=true %}
+              {% include menuitem.html name=k.name url=k.url different=k.different hide=k.hide insub=false current=true %}
             {%- else -%}
-              {% include menuitem.html name=k.name url=k.url different=k.different insub=false current=false %}
+              {% include menuitem.html name=k.name url=k.url different=k.different hide=k.hide insub=false current=false %}
             {%- endif -%}
           {%- if forloop.last %}</ul>{% endif -%}
         {%- endfor -%}
@@ -67,9 +76,9 @@
       {%- if forloop.first %}<ul>{% endif -%}
         {%- if j.url == searchurl -%}
           {% assign insub = true %}
-          {% include menuitem.html name=j.name url=j.url different=j.different insub=insubsub current=true submenu=subsubmenu %}
+          {% include menuitem.html name=j.name url=j.url different=j.different hide=j.hide insub=insubsub current=true submenu=subsubmenu %}
         {%- else -%}
-          {% include menuitem.html name=j.name url=j.url different=j.different insub=insubsub current=false submenu=subsubmenu %}
+          {% include menuitem.html name=j.name url=j.url different=j.different hide=j.hide insub=insubsub current=false submenu=subsubmenu %}
         {%- endif -%}
       {%- if forloop.last %}</ul>{% endif -%}
     {%- endfor -%}
@@ -77,15 +86,11 @@
   {%- if i.url == searchurl -%}
     {% include menuitem.html name=i.name url=i.url different=i.different insub=insub current=true submenu=submenu %}
   {%- else -%}
-    {% include menuitem.html name=i.name url=i.url different=i.different insub=insub current=false submenu=submenu %}
+    {% include menuitem.html name=i.name url=i.url different=i.different hide=i.hide insub=insub current=false submenu=submenu %}
   {%- endif -%}
   {%- if forloop.last %}</ul></nav>{% endif -%}
 {%- endfor -%}
 {% if page.ref %}
-  {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
-  {%- unless pages -%}
-  {% assign pages=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
-  {%- endunless -%}
   {%- for p in pages %}
     {%-if forloop.first -%}
       <nav aria-labelledby="languagehead" style="font-size: .8125rem; margin-top: 2em; border-radius: 4px; border: 2px solid #eed009; background-color: #fff">

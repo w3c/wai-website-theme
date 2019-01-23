@@ -1,6 +1,20 @@
+{%- unless include.hide -%}
+<li>
+  <a class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{% comment %}{% if include.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
+  {{include.submenu}}
+</li>
+{%- else -%}
+  {%- if include.current == true -%}
+  <li>
+    <a class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{% comment %}{% if include.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
+    {{include.submenu}}
+  </li>
+  {%- endif -%}
+{%- endunless -%}
+{%- comment-%}
 {%- if page.lang == "en" -%}
 <li>
-  <a lang="en" class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{% comment %}{% if include.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
+  <a lang="en" class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
   {{include.submenu}}
 </li>
 {%- else -%}
@@ -17,13 +31,14 @@
       {%- assign langpage=enpage -%}
     {%- endunless-%}
     <li>
-      <a lang="{{langpage.lang}}" class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ langpage.url | relative_url }}"><span>{% comment %}{% if include.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{langpage.title}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
+      <a lang="{{langpage.lang}}" class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ langpage.url | relative_url }}"><span>{{langpage.title}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
       {{include.submenu}}
     </li>
   {%- else -%}
     <li>
-      <a lang="en" class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{% comment %}{% if include.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
+      <a lang="en" class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
       {{include.submenu}}
     </li>
   {%- endif -%}
 {%- endif -%}
+{%- endcomment -%}
