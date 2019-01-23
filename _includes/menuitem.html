@@ -1,4 +1,13 @@
+{%- unless include.hide -%}
 <li>
   <a class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{% comment %}{% if include.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
   {{include.submenu}}
 </li>
+{%- else -%}
+  {%- if include.current == true -%}
+  <li>
+    <a class="page-link" {% if include.current %} aria-current="page" {% else %}{% if include.insub%} aria-current="location" {% endif %}{% endif %} href="{{ include.url | relative_url }}"><span>{% comment %}{% if include.url == searchurl %}{% include_cached icon.html name="chevron-right" %} {% endif %}{% endcomment %}{{include.name}}{% if include.different == true %} {% include_cached icon.html name="different-view" label="Different Layout" %}{% endif %}</span></a>
+    {{include.submenu}}
+  </li>
+  {%- endif -%}
+{%- endunless -%}
