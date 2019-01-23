@@ -1,10 +1,12 @@
 {%- if page.lang == 'en' -%}
   {%- assign enpage = page -%}
 {%- else -%}
-  {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
+  {%- assign enpage=site.documents | where: "lang", "en" | where:"ref", page.ref | first -%}
   {%- unless enpage.ref -%}
+    {%- assign enpage=site.pages | where: "lang", "en" | where:"ref", page.ref | first -%}
   {%- endunless -%}
 {%- endif -%}
+{%- assign englishpageurl = enpage.url -%}
 
 {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
 {%- unless pages[0].ref -%}
