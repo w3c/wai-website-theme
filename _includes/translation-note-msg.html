@@ -1,10 +1,6 @@
-{% unless page.lang=="en" %}
-{%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
-{%- unless enpage.length > 0 -%}
-{%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
-{%- endunless -%}
-{% assign enupdatedate= enpage.last_updated | date: "%s" %}
-{% assign thisupdatedate= page.last_updated | date: "%s" %}
+{%- unless page.lang == "en" -%}
+{%- assign enupdatedate = enpage.last_updated | date: "%s" -%}
+{%- assign thisupdatedate = page.last_updated | date: "%s" -%}
 <section id="translation-info" class="doc-note-box" style="font-size: .8125rem;">
   <h2 class="visuallyhidden">{% include t.html t="About this Translation" %}</h2>
   <p style="margin: 0 0 .5em 0;">{% assign replacepattern = enpage.url | relative_url | prepend: "$1|"  %}{% include t.html t='This volunteer translation might not accurately reflect the intentions of the <a href="$1">English original</a>.' replace=replacepattern %}</p>
@@ -26,6 +22,10 @@
   </p>
   {% endif %}
   {% endif %}
-  <p style="margin: .5em 0 0 0;"><strong>{% include t.html t='Translator:' %}</strong> {{page.translator}}. {% include t.html t='Contributor:' %} {{page.contributors}}.{% assign replacepattern = "/about/translating/" | relative_url | prepend: "$1|"  %} {% include t.html t='WAI thanks these translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern %}</p>
+  <p style="margin: .5em 0 0 0;">
+    {% if page.translator %}<strong>{% include t.html t='Translator:' %}</strong> {{page.translator}}.{% endif %}
+    {% if page.contributors %}{% include t.html t='Contributor:' %} {{page.contributors}}.{% endif %}
+    {%- assign replacepattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
+    {%- include t.html t='WAI thanks these translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern -%}</p>
 </section>
-{% endunless %}
+{%- endunless -%}
