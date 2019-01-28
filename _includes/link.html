@@ -32,7 +32,7 @@
 {%- endif -%}
 
 {%- if link_page.url -%}
-  <a lang="{{link_page.lang}}" href="{{link_page.url | relative_url }}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{ link_text }}{% else %}{{link_page.title}}{% endif %}{%- unless in_lang %} ({% include t.html t="in English"%}){% endunless -%}</a>
+  <a lang="{{link_page.lang}}" href="{{link_page.url | relative_url }}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{ link_text }}{% else %}{{link_page.title}}{% endif %}{%- unless in_lang %} ({% include t.html t="in English" %}){% endunless -%}</a>
 {%- else -%}
-  <a href="https://www.w3.org/WAI{{include.to}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{link_text}}{% else %}{%if include.fallback %}{{include.fallback}}{% endif%}{% endif%}{%- unless in_lang %} ({% include t.html t="in English"%}){% endunless -%}</a>
+  <a href="https://www.w3.org/WAI{{include.to}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{link_text}}{% else %}{% if include.fallback %}{{include.fallback}}{% endif %}{% endif %}{%- unless in_lang %} ({% include t.html t="in English" %}){% endunless -%}</a>
 {%- endif -%}
