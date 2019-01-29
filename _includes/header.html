@@ -43,7 +43,7 @@ The first section creates an array of page urls that are page urls of this colle
         <li class="opt">
           <a href="{{ "/translations/" |relative_url }}">{% include t.html t="All Translations" %} {% include_cached icon.html name="languages" %}</a>
       </li>
-      <li><button id="showoptions" class="showhidebutton button-inline" data-target="#controls .opt" aria-expanded="true" data-showtext='{% include_cached icon.html name="languages" %} Show Customization, Languages, Translations' data-hidetext='Hide Options'>{% include_cached icon.html name="languages" %} Show Customization, Languages, Translations</button></li>
+      <li><button id="showoptions" class="showhidebutton button-inline" data-target="#controls .opt" aria-expanded="true" data-showtext='{% include_cached icon.html name="languages" %} {% include t.html t="Show Customization, Languages, Translations" %}' data-hidetext='{% include t.html t="Hide Options" %}'>{% include_cached icon.html name="languages" %} {% include t.html t="Show Customization, Languages, Translations" %}</button></li>
     </ul>
     {% else %}
     {%- comment -%} No Translations on this page {%- endcomment-%}
