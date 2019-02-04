@@ -42,7 +42,11 @@
 {%- endif- %}
 
 {%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" id="helpimprove" -%}
-{%- assign url_title = page.title | uri_escape -%}
+{%- if page.lang -%}
+    {%- assign url_title = "[" | append: page.lang | append: "] " | append: page.title | uri_escape -%}
+{%- else -%}
+    {%- assign url_title = page.title | uri_escape -%}
+{%- endif -%}
 {% unless feedbackmail == "wai@w3.org" %}
 {%- capture mailbody -%}[put comment here...]{%- endcapture -%}
 {% else %}
@@ -56,7 +60,7 @@ I give permission to share this to a publicly-archived e-mail list.{%- endcaptur
     <a href="{{ "mailto:" | append: feedbackmail | append: "?subject=%s" | replace: "%s", url_title | append: "&body=" | append: mailbody }}" class="button"><span>E-mail</span></a>
     <a href="https://github.com/{{repo}}/edit/{{branch}}/{{path}}"  class="button"><span>Fork &amp; Edit on GitHub</span></a>
     {%- comment -%}<a href="https://github.com/{{repo}}/issues" class="button"><span>List of GitHub Issues</span></a>{%- endcomment -%}
-    <a href="https://github.com/{{repo}}/issues/new" class="button"><span>New GitHub Issue</span></a>
+    <a href="https://github.com/{{repo}}/issues/new{%- unless page.lang == 'en' -%}?title={{ "[" | append: page.lang | append: "] " | uri_escape }}{%- endunless -%}" class="button"><span>New GitHub Issue</span></a>
 </div>
 {%- include box.html type="end" -%}
 {%- endunless -%}
