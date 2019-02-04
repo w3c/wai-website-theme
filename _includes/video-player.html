@@ -1,5 +1,4 @@
 {%- assign langs = site.data.lang -%}
-{{langs['es'].nativeName}}
 <div class="video-container" data-video-type="">
   <video preload="metadata" data-youtube-id="{{include.yt-id}}" width="450">
     {%- assign captions = include.captions | split: ',' -%}
