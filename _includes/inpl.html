@@ -3,4 +3,4 @@ inpl.html IN Page Language
 
 takes a language array and outputs the value for the language of the current page
 {%- endcomment -%}
-{%- if page.lang -%}{{include.a[include.lang]}}{%- else -%}{{include.a.en}}{%- endif -%}
+{%- if include.a[include.lang] -%}{{include.a[include.lang]}}{%- else -%}{{include.a.en}}{%- endif -%}
