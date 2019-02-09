@@ -1,5 +1,7 @@
 {%- assign pagelang = 'en' -%}
-{%- assign pagelang = page.lang -%}
+{%- if page.lang -%}
+  {%- assign pagelang = page.lang -%}
+{%- endif -%}
 {%- unless pagelang == "en" -%}
 {%- assign enupdatedate = enpage.last_updated | date: "%s" -%}
 {%- assign thisupdatedate = page.last_updated | date: "%s" -%}
