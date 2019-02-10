@@ -1,18 +1,3 @@
-{%- if page.lang == 'en' -%}
-  {%- assign enpage = page -%}
-{%- else -%}
-  {%- assign enpage=site.documents | where:"ref", page.ref | where: "lang", "en" | first -%}
-  {%- unless enpage.ref -%}
-  {%- assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first -%}
-  {%- endunless -%}
-{%- endif -%}
-{%- assign englishpageurl = enpage.url %}
-
-{% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
-{%- unless pages[0].ref -%}
-{% assign pages=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
-{%- endunless -%}
-
 {%- comment -%}
 The first section creates an array of page urls that are page urls of this collection. They then are compared to all page urls in the list below. Use group in the frontmatter to group pages.
 {%- endcomment -%}
@@ -24,39 +9,39 @@ The first section creates an array of page urls that are page urls of this colle
 </section>
 {%- endunless -%}
 <nav aria-label="Skip Link, Customization, and Language Selector" id="controls" class="default-grid">
-  {% if pages[0].ref %}
+  {% if include.translations[0].ref %}
   {%- comment -%} Translations on this page {%- endcomment-%}
     <ul>
-      <li><a href="#main">{% include t.html t="Skip to Content" %}</a></li>
-      <li class="opt"><a href="{{ "/meta/customize/" | relative_url }}">{% include t.html t="Change Text Size or Colors" %}</a></li>
+      <li><a href="#main">{% include_cached t.html t="Skip to Content" lang=pagelang %}</a></li>
+      <li class="opt"><a href="{{ "/meta/customize/" | relative_url }}">{% include_cached t.html t="Change Text Size or Colors" lang=pagelang %}</a></li>
       <li class="opt languagelist">
-          <strong>{% include t.html t="This page in:" %}</strong>
+          <strong>{% include_cached t.html t="This page in:" lang=pagelang %}</strong>
           <ul class="languagelistul">
-          {%- for p in pages %}
-            {%-if forloop.first -%}
-              <li>{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ englishpageurl | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }}</a>{% endif %}</li>
+          {%- for p in include.translations %}
+            {%- if forloop.first -%}
+              <li>{% if 'en' == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ englishpageurl | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }}</a>{% endif %}</li>
             {%- endif -%}
-            <li>{% if p.lang == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" lang="{{ p.lang }}">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
+            <li>{% if p.lang == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" lang="{{ p.lang }}">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
           {% endfor -%}
           </ul>
         </li>
         <li class="opt">
-          <a href="{{ "/translations/" |relative_url }}">{% include t.html t="All Translations" %} {% include_cached icon.html name="languages" %}</a>
+          <a href="{{ "/translations/" | relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %} {% include_cached icon.html name="languages" %}</a>
         </li>
-        <li><button id="showoptions" class="showhidebutton button-inline" data-target="#controls .opt" aria-expanded="true" data-showtext='{% include_cached icon.html name="languages" %} {% include t.html t="Show Customization, Languages, Translations" %}' data-hidetext='{% include t.html t="Hide Options" %}'>{% include_cached icon.html name="languages" %} {% include t.html t="Show Customization, Languages, Translations" %}</button></li>
+        <li><button id="showoptions" class="showhidebutton button-inline" data-target="#controls .opt" aria-expanded="true" data-showtext='{% include_cached icon.html name="languages" %} {% include_cached t.html t="Show Customization, Languages, Translations" lang=pagelang %}' data-hidetext='{% include_cached t.html t="Hide Options" lang=pagelang %}'>{% include_cached icon.html name="languages" %} {% include_cached t.html t="Show Customization, Languages, Translations" lang=pagelang %}</button></li>
       </ul>
     {% else %}
-    {%- comment -%} No Translations on this page {%- endcomment-%}
-    <ul>
-      <li><a href="#main">{% include t.html t="Skip to Content" %}</a></li>
-      <li class="opt">
-        <a href="{{ "/meta/customize/" | relative_url }}">{% include t.html t="Change Text Size or Colors" %}</a>
-      </li>
-      <li class="opt">
-          <a href="{{ "/translations/" |relative_url }}">{% include t.html t="All Translations" %} {% include_cached icon.html name="languages" %}</a>
-      </li>
-    </ul>
-    {% endif %}
+      {%- comment -%} No Translations on this page {%- endcomment-%}
+      <ul>
+        <li><a href="#main">{% include_cached t.html t="Skip to Content" lang=pagelang %}</a></li>
+        <li class="opt">
+          <a href="{{ "/meta/customize/" | relative_url }}">{% include_cached t.html t="Change Text Size or Colors" lang=pagelang %}</a>
+        </li>
+        <li class="opt">
+            <a href="{{ "/translations/" |relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %} {% include_cached icon.html name="languages" %}</a>
+        </li>
+      </ul>
+    {%- endif -%}
 </nav>
 <style>
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans+KR|Noto+Sans+SC');
@@ -70,9 +55,9 @@ The first section creates an array of page urls that are page urls of this colle
       <span class="wai"><span class="wa">Web&nbsp;Accessibility</span> <span class="i"><span class="initieative">Initiative</span> <span>WAI</span></span></span>
     </a>
     <div class="claim">
-      <span>{% include t.html t="Strategies, standards, resources to make the Web accessible to people with disabilities" %}</span>
+      <span>{% include_cached t.html t="Strategies, standards, resources to make the Web accessible to people with disabilities" lang=pagelang %}</span>
     </div>
-    <button class="button button-menu" aria-haspopup="true" aria-expanded="false" id="openmenu"><span>{% include_cached icon.html name="menu" %} {% include t.html t="Menu" %}</span></button>
+    <button class="button button-menu" aria-haspopup="true" aria-expanded="false" id="openmenu"><span>{% include_cached icon.html name="menu" %} {% include_cached t.html t="Menu" lang=pagelang %}</span></button>
   </div>
 
   <div class="navigations">
@@ -84,10 +69,10 @@ The first section creates an array of page urls that are page urls of this colle
         <form action="{{ "/search/" | relative_url }}" role="search">
           <div>
             <label for="header-search">
-              <span class="visuallyhidden">{% include t.html t="Search" %}:</span>
-              <input id="header-search" type="search" name="q" placeholder="{% include t.html t="Search" %}" aria-label="{% include t.html t="Search" %}">
+              <span class="visuallyhidden">{% include_cached t.html t="Search" lang=pagelang %}:</span>
+              <input id="header-search" type="search" name="q" placeholder="{% include_cached t.html t="Search" lang=pagelang %}" aria-label="{% include_cached t.html t="Search" lang=pagelang %}">
             </label>
-            {%capture submitsearch%}{% include t.html t="Submit Search" %}{%endcapture%}
+            {%capture submitsearch%}{% include_cached t.html t="Submit Search" lang=pagelang %}{%endcapture%}
             <button class="button button-icon button-nobg button-noborder"><span>{% include_cached icon.html name="search" label=submitsearch %}</span></button>
           </div>
         </form>
@@ -96,18 +81,18 @@ The first section creates an array of page urls that are page urls of this colle
   </nav>
 </div>
 </header>
-{%- if page.parent == '/' -%}{%- assign parent_is_home = true -%}{% endif %}
-{%- if col.parent == '/' -%}{%- assign parent_is_home = true -%}{% endif %}
-{%- if col.parent == '/news/' -%}{%- assign parent_is_home = true -%}{% endif %}
+{%- if page.parent == '/' -%}{%- assign parent_is_home = true -%}{%- endif -%}
+{%- if col.parent == '/' -%}{%- assign parent_is_home = true -%}{%- endif -%}
+{%- if col.parent == '/news/' -%}{%- assign parent_is_home = true -%}{%- endif -%}
 {%- if parent_is_home -%}
-{%- assign a_name = "" -%}
-{%- assign a_url  = "" -%}
-{%- assign b_name = "" -%}
-{%- assign b_url  = "" -%}
-{%- assign c_name = "" -%}
-{%- assign c_url  = "" -%}
-{%- assign d_name = "" -%}
-{%- assign d_url  = "" -%}
+  {%- assign a_name = "" -%}
+  {%- assign a_url  = "" -%}
+  {%- assign b_name = "" -%}
+  {%- assign b_url  = "" -%}
+  {%- assign c_name = "" -%}
+  {%- assign c_url  = "" -%}
+  {%- assign d_name = "" -%}
+  {%- assign d_url  = "" -%}
 {% else %}
 {%- if col.parent -%}
   {%- assign searchurl = col.parent -%}
@@ -115,13 +100,8 @@ The first section creates an array of page urls that are page urls of this colle
   {%- if page.parent == "/" -%}
     {%- assign searchurl = page.parent -%}
   {%- else -%}
-    {%- if (page.ref and page.lang) -%}
-    {%- if page.lang != "en" -%}
-      {%- if col.docs -%}
-        {% assign enpage=col.docs | where:"ref", page.ref | where: "lang", "en" | first %}
-      {%- else -%}
-        {% assign enpage=site.pages | where:"ref", page.ref | where: "lang", "en" | first %}
-      {%- endif -%}
+    {%- if (page.ref and pagelang) -%}
+    {%- if pagelang != "en" -%}
       {%- assign searchurl = enpage.url -%}
     {%- else -%}
       {%- assign searchurl = page.url -%}
@@ -182,17 +162,17 @@ The first section creates an array of page urls that are page urls of this colle
 
 <nav class="mainnav" aria-label="Main" lang="en">
   {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
-  {%- include navlist.html data=site.data.navigation current=a_url -%}
+  {%- include_cached navlist.html data=site.data.navigation current=a_url -%}
 </nav>
 
 {%- unless page.url == "/" -%}
 <nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="Breadcrumb" lang="en">
   <ul style="align-self: center;">
-    <li><a href="{{ "/" | relative_url }}">{% include t.html t="Home" %}</a></li>
-    {%- unless a_name == "" -%}<li>{% if a_url == enpage.url%}{% include link.html to=a_url aria-current="page" %}{% else %}{% include link.html text=a_name to=a_url %}{% endif %}</li>{%- endunless -%}
-    {%- unless b_name == "" -%}<li>{% if b_url == enpage.url%}{% include link.html to=b_url aria-current="page" %}{% else %}{% include link.html text=b_name to=b_url %}{% endif %}</li>{%- endunless -%}
-    {%- unless c_name == "" -%}<li>{% if c_url == enpage.url%}{% include link.html to=c_url aria-current="page" %}{% else %}{% include link.html text=c_name to=c_url %}{% endif %}</li>{%- endunless -%}
-    {%- unless d_name == "" -%}<li>{% if d_url == enpage.url%}{% include link.html to=d_url aria-current="page" %}{% else %}{% include link.html text=d_name to=d_url %}{% endif %}</li>{%- endunless -%}
+    <li><a href="{{ "/" | relative_url }}">{% include_cached t.html t="Home" lang=pagelang %}</a></li>
+    {%- unless a_name == "" -%}<li>{% if a_url == enpage.url%}{% include link.html to=a_url text=a_name aria-current="page" %}{% else %}{% include link.html text=a_name to=a_url %}{% endif %}</li>{%- endunless -%}
+    {%- unless b_name == "" -%}<li>{% if b_url == enpage.url%}{% include link.html text=b_name to=b_url aria-current="page" %}{% else %}{% include link.html text=b_name to=b_url %}{% endif %}</li>{%- endunless -%}
+    {%- unless c_name == "" -%}<li>{% if c_url == enpage.url%}{% include link.html text=c_name to=c_url aria-current="page" %}{% else %}{% include link.html text=c_name to=c_url %}{% endif %}</li>{%- endunless -%}
+    {%- unless d_name == "" -%}<li>{% if d_url == enpage.url%}{% include link.html text=d_name to=d_url aria-current="page" %}{% else %}{% include link.html text=d_name to=d_url %}{% endif %}</li>{%- endunless -%}
     {%- if col.parent == '/news/' -%}<li><a href="{{ '/news/' | relative_url }}">News</a></li>{%- endif -%}
     {%- if page.parent == "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{{page.title}}</a></li>{%- endif -%}
     {%- if col.parent -%}

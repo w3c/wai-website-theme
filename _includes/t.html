@@ -2,6 +2,9 @@
 {%- if page.lang -%}
   {%- assign pagelang = page.lang -%}
 {%- endif -%}
+{%- if include.lang -%}
+  {%- assign pagelang = include.lang -%}
+{%- endif -%}
 {%- if pagelang == "en" -%}
   {%- assign phrase = include.t -%}
   {%- if include.replace -%}

@@ -10,29 +10,52 @@
   The page title of the linked page is used unless a link text is specified. Fallback is displayed if the page cannot be found in that language.
 {%- endcomment -%}
 
+{%- assign pagelang = 'en' -%}
+{%- if page.lang -%}
+  {%- assign pagelang = page.lang -%}
+{%- endif -%}
+{%- if include.lang -%}
+  {%- assign pagelang = include.lang -%}
+{%- endif -%}
 {%- assign in_lang = true -%}
-{%- assign link_page=site.documents | where:"ref", include.to | where: "lang", page.lang | first -%}
+{%- assign link_page=site.documents | where:"ref", include.to | where: "lang", pagelang | first -%}
 {%- unless link_page.url -%}
-  {%- assign link_page=site.pages | where:"ref", include.to | where: "lang", page.lang | first -%}
+  {%- assign link_page=site.pages | where:"ref", include.to | where: "lang", pagelang | first -%}
 {%- endunless -%}
 {%- unless link_page.url -%}
   {%- assign in_lang = false -%}
-  {%- assign link_page=site.documents | where:"permalink", include.to | first -%}
+  {%- assign link_page=site.documents | where:"url", include.to | first -%}
 {%- endunless -%}
 {%- unless link_page.url -%}
   {%- assign in_lang = false -%}
-  {%- assign link_page=site.pages | where:"permalink", include.to | first -%}
+  {%- assign link_page=site.pages | where:"url", include.to | first -%}
 {%- endunless -%}
-{%- if page.lang == 'en' %}{%- assign in_lang = true -%}{% endif -%}
+{%- if pagelang == 'en' %}{%- assign in_lang = true -%}{% endif -%}
 
-{%- if include.text.en -%}
-  {%- assign link_text = include.text[page.lang] -%}
-{%- else -%}
-  {%- assign link_text = include.text -%}
+{%- if include.text -%}
+  {%- if include.text.en -%}
+    {%- assign link_text = include.text[pagelang] -%}
+  {%- else -%}
+    {%- assign link_text = include.text -%}
+  {%- endif -%}
+{% else %}
+  {%- if include.usenavtitle -%}
+    {%- if link_page.nav_title -%}
+      {%- assign link_text = link_page.nav_title -%}
+    {%- else -%}
+      {%- assign link_text = link_page.title -%}
+    {% endif %}
+  {%- endif -%}
 {%- endif -%}
 
+{%- assign linklang = 'en' -%}
+{%- if link_page.lang -%}
+  {%- assign linklang = link_page.lang -%}
+{%- endif -%}
+
+{%- assign linkurl = 'https://www.w3.org/WAI' | append: include.to -%}
 {%- if link_page.url -%}
-  <a lang="{{link_page.lang}}" href="{{link_page.url | relative_url }}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{ link_text }}{% else %}{{link_page.title}}{% endif %}{%- unless in_lang %} ({% include t.html t="in English" %}){% endunless -%}</a>
-{%- else -%}
-  <a href="https://www.w3.org/WAI{{include.to}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}>{% if include.text %}{{link_text}}{% else %}{% if include.fallback %}{{include.fallback}}{% endif %}{% endif %}{%- unless in_lang %} ({% include t.html t="in English" %}){% endunless -%}</a>
+  {%- assign linkurl = link_page.url | relative_url -%}
 {%- endif -%}
+
+<a lang="{{linklang}}" href="{{linkurl}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}{% if include.class %} class="{{include.class}}"{% endif %}>{{ link_text }}{%- unless in_lang %} ({% include t.html t="in English" %}){% endunless -%}{% if include.different %} {% include_cached different.html %}{% endif %}{% if include.external %} {% include_cached external.html %}{% endif %}</a>
