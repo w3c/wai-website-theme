@@ -19,9 +19,9 @@ The first section creates an array of page urls that are page urls of this colle
           <ul class="languagelistul">
           {%- for p in include.translations %}
             {%- if forloop.first -%}
-              <li>{% if 'en' == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ englishpageurl | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }}</a>{% endif %}</li>
+              <li>{% if 'en' == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ englishpageurl | relative_url }}" lang="en"  dir="auto" translate="no">{{ site.data.lang['en'].nativeName }}</a>{% endif %}</li>
             {%- endif -%}
-            <li>{% if p.lang == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" lang="{{ p.lang }}">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
+            <li>{% if p.lang == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" lang="{{ p.lang }}"  dir="auto" translate="no">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
           {% endfor -%}
           </ul>
         </li>

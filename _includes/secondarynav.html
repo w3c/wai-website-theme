@@ -81,9 +81,9 @@
       <nav class="sidenav-languages" aria-labelledby="languagehead">
         <header id="languagehead">{% include t.html t="Languages/Translations" %}</header>
         <ul class="langlist">
-          <li style="margin-bottom: 2px;">{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }} (original)</strong>{% else %}<a href="{{ enpage.url | relative_url }}" lang="en">{{ site.data.lang['en'].nativeName }} (original)</a>{% endif %}</li>
+          <li style="margin-bottom: 2px;">{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }} (original)</strong>{% else %}<a href="{{ enpage.url | relative_url }}" lang="en" dir="auto" translate="no">{{ site.data.lang['en'].nativeName }} (original)</a>{% endif %}</li>
     {%- endif -%}
-    <li style="margin-bottom: 2px;">{% if p.lang == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" lang="{{ p.lang }}">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
+    <li style="margin-bottom: 2px;">{% if p.lang == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" dir="auto" translate="no" lang="{{ p.lang }}">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
     {%- if forloop.last -%}
         </ul>
         {%- unless page.lang == "en" -%}
