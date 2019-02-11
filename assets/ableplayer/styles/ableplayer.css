@@ -651,6 +651,7 @@ span.able-modkey {
   padding: 10px;
   border-style: solid;
   border-width: 0 0 1px 0;
+  overflow: scroll;
 }
 .able-draggable:hover {
   cursor: move;
@@ -850,6 +851,7 @@ div.able-chapters-div button::-moz-focus-inner {
   border-radius: 5px;
   display: block;
   cursor: default;
+  list-style: none;
 }
 ul.able-popup {
   list-style-type: none;

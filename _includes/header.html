@@ -26,7 +26,7 @@ The first section creates an array of page urls that are page urls of this colle
           </ul>
         </li>
         <li class="opt">
-          <a href="{{ "/translations/" | relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %} {% include_cached icon.html name="languages" %}</a>
+          <a href="{{ "/translations/" | relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %} {% include_cached icon.html name="translations" %}</a>
         </li>
         <li><button id="showoptions" class="showhidebutton button-inline" data-target="#controls .opt" aria-expanded="true" data-showtext='{% include_cached icon.html name="languages" %} {% include_cached t.html t="Show Customization, Languages, Translations" lang=pagelang %}' data-hidetext='{% include_cached t.html t="Hide Options" lang=pagelang %}'>{% include_cached icon.html name="languages" %} {% include_cached t.html t="Show Customization, Languages, Translations" lang=pagelang %}</button></li>
       </ul>
@@ -38,7 +38,7 @@ The first section creates an array of page urls that are page urls of this colle
           <a href="{{ "/meta/customize/" | relative_url }}">{% include_cached t.html t="Change Text Size or Colors" lang=pagelang %}</a>
         </li>
         <li class="opt">
-            <a href="{{ "/translations/" |relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %} {% include_cached icon.html name="languages" %}</a>
+            <a href="{{ "/translations/" |relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %} {% include_cached icon.html name="translations" %}</a>
         </li>
       </ul>
     {%- endif -%}
