@@ -1,13 +1,13 @@
 {%- if include.current %}{% assign aria="page" %}{% else %}{% if include.insub%}{% assign aria="location" %}{% endif %}{% endif -%}
 {%- unless include.hide -%}
 <li>
-  {% include_cached link.html to=include.url fallback=include.name aria-current=aria different=include.different external=include.external class="page-link" usenavtitle=true lang=page.lang %}
+  {% include_cached link.html to=include.url text=include.name aria-current=aria different=include.different external=include.external class="page-link" usenavtitle=true lang=page.lang %}
   {{include.submenu}}
 </li>
 {%- else -%}
   {%- if include.current == true -%}
   <li>
-    {% include_cached link.html to=include.url fallback=include.name aria-current=aria different=include.different external=include.external class="page-link" usenavtitle=true lang=page.lang %}
+    {% include_cached link.html to=include.url text=include.name aria-current=aria different=include.different external=include.external class="page-link" usenavtitle=true lang=page.lang %}
     {{include.submenu}}
   </li>
   {%- endif -%}

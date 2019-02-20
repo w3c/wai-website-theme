@@ -76,7 +76,7 @@
   {%- if forloop.last %}</ul></nav>{% endif -%}
 {%- endfor -%}
 {% if page.ref %}
-  {%- for p in pages %}
+  {%- for p in translations %}
     {%-if forloop.first -%}
       <nav class="sidenav-languages" aria-labelledby="languagehead">
         <header id="languagehead">{% include t.html t="Languages/Translations" %}</header>
