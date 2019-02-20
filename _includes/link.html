@@ -9,7 +9,6 @@
 
   The page title of the linked page is used unless a link text is specified. Fallback is displayed if the page cannot be found in that language.
 {%- endcomment -%}
-
 {%- assign pagelang = 'en' -%}
 {%- if page.lang -%}
   {%- assign pagelang = page.lang -%}
@@ -45,6 +44,8 @@
     {%- else -%}
       {%- assign link_text = link_page.title -%}
     {% endif %}
+  {%- else -%}
+      {%- assign link_text = link_page.title -%}
   {%- endif -%}
 {%- endif -%}
 
