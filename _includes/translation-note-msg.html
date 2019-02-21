@@ -40,6 +40,6 @@
     {% if page.translator %}<strong>{% include t.html t='Translator:' %}</strong> {{page.translator}}.{% endif %}
     {% if page.contributors %}{% include t.html t='Contributor:' %} {{page.contributors}}.{% endif %}
     {%- assign replacepattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
-    {%- include t.html t='WAI thanks these translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern -%}</p>
+    {% include t.html t='WAI thanks these translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern %}</p>
 </section>
 {%- endunless -%}
