@@ -5,6 +5,16 @@
 {%- unless pagelang == "en" -%}
 {%- assign enupdatedate = enpage.last_updated | date: "%s" -%}
 {%- assign thisupdatedate = page.last_updated | date: "%s" -%}
+{%- if page.changelog -%}
+  {%- assign chagelogpage=site.documents | where:"ref", page.changelog | first -%}
+  {%- unless changelogpage.ref -%}
+    {%- assign changelogpage=site.pages | where:"ref", page.changelog | first -%}
+  {%- endunless -%}
+  {%- assign changelogpageurl = changelogpage.url | relative_url -%}
+  {%- assign changelogpagereplace = "$1|" | append: changelogpageurl -%}
+{%- else -%}
+  {%- assign changelog = "" -%}
+{%- endif -%}
 <section id="translation-info" class="doc-note-box" style="font-size: .8125rem;">
   <h2 class="visuallyhidden">{% include t.html t="About this Translation" %}</h2>
   <p style="margin: 0 0 .5em 0;">{% assign replacepattern = enpage.url | relative_url | prepend: "$1|"  %}{% include t.html t='This volunteer translation might not accurately reflect the intentions of the <a href="$1">English original</a>.' replace=replacepattern %}</p>
@@ -12,7 +22,7 @@
   <p style="margin: .5em 0;">{% include_cached icon.html name="check-circle" %} {% include t.html t='Translation up-to-date with the English version.' %}
     <br>{% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}. {% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}.
    </p>
-  <p style="margin: .5em 0;">{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace="$1|/url/to/changelog/" %}
+  <p style="margin: .5em 0;">{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace=changelogpagereplace %}
     <br>{% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}. {% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}.
   </p>
   {% else %}
@@ -21,7 +31,7 @@
     <br>{% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}. {% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}.
    </p>
   {% else %}
-  <p style="margin: .5em 0;">{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace="$1|/url/to/changelog/" %}
+  <p style="margin: .5em 0;">{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace=changelogpagereplace %}
     <br>{% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}. {% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}.
   </p>
   {% endif %}
