@@ -1,15 +1,28 @@
 {%- assign col = site.collections | where: "label", page.collection | first -%}
+{%- if page.changelog -%}
+  {%- assign chagelogpage=site.documents | where:"ref", page.changelog | first -%}
+  {%- unless changelogpage.ref -%}
+    {%- assign changelogpage=site.pages | where:"ref", page.changelog | first -%}
+  {%- endunless -%}
+  {% assign changelogpageurl = changelogpage.url | relative_url %}
+  {%- capture changelogtext -%}
+  {%- include_cached t.html t="Changelog" lang=page.lang -%}
+  {%- endcapture -%}
+  {%- assign changelog = '<a href="' | append: changelogpageurl | append: '">' | append: changelogtext | append: '</a>' -%}
+{%- else -%}
+  {%- assign changelog = "" -%}
+{%- endif -%}
 {% if col.footer %}
 <footer class="page-footer default-grid" aria-label="Page">
   <div class="inner">
-    {{col.footer}}
+    {{col.footer | replace: "CHANGELOG", changelog }}
   </div>
 </footer>
 {% else %}
   {% if page.footer %}
   <footer class="page-footer default-grid" aria-label="Page">
     <div class="inner">
-      {{page.footer}}
+      {{page.footer | replace: "CHANGELOG", changelog}}
     </div>
   </footer>
   {% endif %}
