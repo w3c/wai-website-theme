@@ -90,7 +90,7 @@
         <p><a href="{{"/translations/#" | append: page.lang | relative_url}}">{% include t.html t="Other Resources in" %} {{ site.data.lang[page.lang].nativeName }}</a></p>
         {% endunless %}
         <p><a href="{{"/translations/" | relative_url}}">{% include t.html t="All Translations" %}</a></p>
-        <p><a href="#">{% include t.html t="Translating WAI Resources" %}</a></p>
+        <p><a href="{{"/about/translating/" | relative_url}}">{% include t.html t="Translating WAI Resources" %}</a></p>
       </nav>
     {%- endif -%}
   {% endfor -%}
