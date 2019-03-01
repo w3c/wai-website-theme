@@ -63,6 +63,8 @@
   {%- assign linkurl = link_page.url | relative_url -%}
 {%- endif -%}
 
-{%- assign linkurl = linkurl | append:'#' | append: include.id -%}
+{%- if include.id -%}
+  {%- assign linkurl = linkurl | append:'#' | append: include.id -%}
+{%- endif -%}
 
 <a lang="{{linklang}}" href="{{linkurl}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}{% if include.class %} class="{{include.class}}"{% endif %}><span>{{ link_text }}{%- unless in_lang %}{% unless include.hidelangnotice %} <span class="lang" lang="{{pagelang}}" dir="auto" translate="no">({% include_cached t.html t="in English" lang=pagelang %})</span>{% endunless -%}{% endunless -%}{% if include.different %} {% include_cached different.html %}{% endif %}{% if include.external %} {% include_cached external.html %}{% endif %}</span></a>
