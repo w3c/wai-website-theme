@@ -31,6 +31,7 @@
 {%- endunless -%}
 {%- if pagelang == 'en' %}{%- assign in_lang = true -%}{% endif -%}
 
+{%- assign link_text = "" -%}
 {%- if include.text -%}
   {%- if include.text.en -%}
     {%- if include.text[pagelang] -%}
@@ -52,6 +53,14 @@
       {%- assign link_text = link_page.title -%}
   {%- endif -%}
 {%- endif -%}
+
+{%- unless link_text -%}
+  {%- if include.fallback -%}
+    {%- assign link_text = include.fallback -%}
+  {%- else -%}
+    {%- assign link_text = '[page not found in this repository, no fallback text given]' -%}
+  {%- endif -%}
+{%- endunless -%}
 
 {%- assign linklang = 'en' -%}
 {%- if link_page.lang -%}
