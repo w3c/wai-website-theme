@@ -3,7 +3,7 @@
   {%- assign the_url = item.pages.first.url -%}
   {%- unless item.mainnav == false -%}
   <li>
-    <a href="{{ the_url | relative_url }}"{% if include.current == the_url %} aria-current="location"{% endif %}><span>{{item.name}}</span></a>
+    <a href="{{ the_url | relative_url }}"{% if include.current == the_url %} aria-current="location"{% endif %}><span>{% include_cached inpl.html lang=page.lang a=item.name %}</span></a>
   </li>
   {%- endunless -%}
   {%- if forloop.last %}</ul>{% endif -%}

@@ -1,9 +1,16 @@
 {%- if page.parent == "/" -%}
   {%- assign searchurl = page.parent -%}
 {%- else -%}
-  {%- assign searchurl = page.url -%}
+  {%- if page.ref and page.lang -%}
+    {%- if page.lang != "en" -%}
+      {%- assign searchurl = enpage.url -%}
+    {%- else -%}
+      {%- assign searchurl = page.url -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- assign searchurl = page.url -%}
+  {%- endif -%}
 {%- endif -%}
-{%- assign col = site.collections | where: "label", page.collection | first -%}
 {%- if col.navigation -%}
   {%- assign currentsubnav = col.navigation -%}
 {%- else -%}
@@ -27,11 +34,11 @@
   {%- endfor -%}
 {%- endfor -%}
 {%- endif -%}
-
+<div class="sidenav">
 {%- for i in currentsubnav.pages -%}
   {%- if forloop.first -%}
-    <nav class="sidenav sn-contents" aria-label="Secondary">
-      <div class="sidenav--head"><div class="sidenav--head-title"><div class="sidenav--head-subsection">{{ currentsubnav.name }}</div></div></div>
+    <nav class="sn-contents" aria-label="Secondary">
+      <div class="sidenav--head"><div class="sidenav--head-title"><div class="sidenav--head-subsection">{% include_cached inpl.html lang=page.lang a=currentsubnav.name %}</div></div></div>
       <ul class="sidenav--list">
   {% endif %}
   {%- assign insub = false -%}
@@ -68,3 +75,24 @@
   {%- endif -%}
   {%- if forloop.last %}</ul></nav>{% endif -%}
 {%- endfor -%}
+{% if page.ref %}
+  {%- for p in translations %}
+    {%-if forloop.first -%}
+      <nav class="sidenav-languages" aria-labelledby="languagehead">
+        <header id="languagehead">{% include t.html t="Languages/Translations" %}</header>
+        <ul class="langlist">
+          <li style="margin-bottom: 2px;">{% if 'en' == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }} (original)</strong>{% else %}<a href="{{ enpage.url | relative_url }}" lang="en" dir="auto" translate="no">{{ site.data.lang['en'].nativeName }} (original)</a>{% endif %}</li>
+    {%- endif -%}
+    <li style="margin-bottom: 2px;">{% if p.lang == page.lang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" dir="auto" translate="no" lang="{{ p.lang }}">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
+    {%- if forloop.last -%}
+        </ul>
+        {%- unless page.lang == "en" -%}
+        <p><a href="{{"/translations/#" | append: page.lang | relative_url}}">{% include t.html t="Other Resources in" %} {{ site.data.lang[page.lang].nativeName }}</a></p>
+        {% endunless %}
+        <p><a href="{{"/translations/" | relative_url}}">{% include t.html t="All&nbsp;Translations" %}</a></p>
+        <p><a href="{{"/about/translating/" | relative_url}}">{% include t.html t="Translating WAI Resources" %}</a></p>
+      </nav>
+    {%- endif -%}
+  {% endfor -%}
+{% endif %}
+</div>
