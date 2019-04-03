@@ -69,7 +69,7 @@
     {%- endfor -%}
   {%- endcapture -%}
   {%- if i.url == searchurl -%}
-    {% include menuitem.html name=i.name url=i.url different=i.different insub=insub current=true submenu=submenu %}
+    {% include menuitem.html name=i.name url=i.url different=i.different hide=i.hide insub=insub current=true submenu=submenu %}
   {%- else -%}
     {% include menuitem.html name=i.name url=i.url different=i.different hide=i.hide insub=insub current=false submenu=submenu %}
   {%- endif -%}

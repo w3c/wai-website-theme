@@ -103,38 +103,38 @@
 
   if (audiodescribed) {
 
-    Array.prototype.forEach.call(audiodescribed, function(el, i){
-      el.setAttribute('hidden', true);
-    });
+  Array.prototype.forEach.call(audiodescribed, function(el, i){
+    el.setAttribute('hidden', true);
+  });
 
-    var adbutton = document.querySelector('#audio_description_button');
-    adbutton.addEventListener('click', function(e){
-      player1.pauseMedia();
-      player2.pauseMedia();
-      if (e.target.getAttribute('data-status') == "audio-described") {
-        var videos = document.querySelectorAll('.video-container');
-        Array.prototype.forEach.call(videos, function(el, i){
-          el.removeAttribute("hidden");
-        });
-        var nonaudiodescribed = document.querySelectorAll('[data-video-type="audio-described"]');
-        Array.prototype.forEach.call(nonaudiodescribed, function(el, i){
-          el.setAttribute('hidden', true);
-        });
-        e.target.setAttribute('data-status', 'non-audio-described');
-        e.target.querySelector('span').innerHTML = 'Enable Audio Description';
-      } else {
-        var videos = document.querySelectorAll('.video-container');
-        Array.prototype.forEach.call(videos, function(el, i){
-          el.setAttribute('hidden', true);
-        });
-        var nonaudiodescribed = document.querySelectorAll('[data-video-type="audio-described"]');
-        Array.prototype.forEach.call(nonaudiodescribed, function(el, i){
-          el.removeAttribute("hidden");
-        });
-        e.target.setAttribute('data-status', 'audio-described');
-        e.target.querySelector('span').innerHTML = 'Disable Audio Description';
-      }
-    });
+  var adbutton = document.querySelector('#audio_description_button');
+  adbutton.addEventListener('click', function(e){
+    player1.pauseMedia();
+    player2.pauseMedia();
+    if (e.target.getAttribute('data-status') == "audio-described") {
+      var videos = document.querySelectorAll('.video-container');
+      Array.prototype.forEach.call(videos, function(el, i){
+        el.removeAttribute("hidden");
+      });
+      var nonaudiodescribed = document.querySelectorAll('[data-video-type="audio-described"]');
+      Array.prototype.forEach.call(nonaudiodescribed, function(el, i){
+        el.setAttribute('hidden', true);
+      });
+      e.target.setAttribute('data-status', 'non-audio-described');
+      e.target.querySelector('span').innerHTML = 'Enable Audio Description';
+    } else {
+      var videos = document.querySelectorAll('.video-container');
+      Array.prototype.forEach.call(videos, function(el, i){
+        el.setAttribute('hidden', true);
+      });
+      var nonaudiodescribed = document.querySelectorAll('[data-video-type="audio-described"]');
+      Array.prototype.forEach.call(nonaudiodescribed, function(el, i){
+        el.removeAttribute("hidden");
+      });
+      e.target.setAttribute('data-status', 'audio-described');
+      e.target.querySelector('span').innerHTML = 'Disable Audio Description';
+    }
+  });
 
   }
 
