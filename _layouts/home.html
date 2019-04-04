@@ -39,7 +39,10 @@
 
 {% include header.html translations=translations %}
 <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
+
 {{content}}
+
+{% include_cached backtotop.html lang=page.lang %}
 </main>
 
 {% include footer.html %}
