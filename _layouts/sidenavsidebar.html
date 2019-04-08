@@ -19,8 +19,12 @@
 <html class="no-js" lang="{% if page.lang %}{{page.lang}}{% else %}en{% endif %}" dir="{% if site.lang[page.lang].rtl == true %}rtl{% else %}ltr{% endif %}" prefix="og: http://ogp.me/ns#">
   {%- assign timestamp = site.time | date: '%s%N' -%}
   {%- assign timestamp = '?' | append: timestamp -%}
-  {% include_cached head.html type="start" timestamp=timestamp %}
-  <title>{%if page.doc-note-type == "archived" %}[Archived]{% endif%}{%if page.doc-note-type == "draft" %}[Draft]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
+  {%- include_cached head.html type="start" timestamp=timestamp -%}
+  {%- if site.data.lang[pagelang].rtl -%}
+  <title> W3C | {{ site.title | escape }} | {{ page.title | escape }} {%if page.doc-note-type == "archived" %}[{% include t.html t="Archived" %}]{% endif%}{%if page.doc-note-type == "draft" %}[{% include t.html t="Draft" %}]{% endif%}</title>
+  {%- else -%}
+  <title>{%if page.doc-note-type == "archived" %}[{% include t.html t="Archived" %}]{% endif%}{%if page.doc-note-type == "draft" %}[{% include t.html t="Draft" %}]{% endif%} {{ page.title | escape }} | {{ site.title | escape }} | W3C</title>
+  {%- endif -%}
   {% if page.ext_css %}<link rel="stylesheet" href="{{ page.ext_css | prepend: '/css/' | prepend: page.collection | prepend: '/' | relative_url | append: timestamp }}">{% endif %}
   {%- if page.inline_css %}<style>{{ page.inline_css }}</style>{% endif -%}
   {%- capture seo -%}
@@ -49,7 +53,7 @@
 
     {% include prevnext.html %}
 
-    {% include_cached backtotop.html %}
+    {% include_cached backtotop.html lang=page.lang %}
   </main>
 </div>
 
