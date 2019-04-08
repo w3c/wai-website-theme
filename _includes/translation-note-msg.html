@@ -20,19 +20,19 @@
   <p>{% assign replacepattern = enpage.url | relative_url | prepend: "$1|"  %}{% include t.html t='This volunteer translation might not accurately reflect the intentions of the <a href="$1">English original</a>.' replace=replacepattern %}</p>
   {% if pagelang == 'en' %}
   <p>{% include_cached icon.html name="check-circle" %} {% include t.html t='Translation up-to-date with the English version.' %}
-    <br>{% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}. {% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}.
+    <br>{% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%d %b %Y"}}</span>. {% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%d %b %Y"}}</span>.
    </p>
   <p>{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace=changelogpagereplace %}
-    <br>{% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}. {% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}.
+    <br>{% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%d %b %Y"}}</span>. {% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%d %b %Y"}}</span>.
   </p>
   {% else %}
   {% if enupdatedate <= thisupdatedate %}
   <p>{% include_cached icon.html name="check-circle" %} {% include t.html t='Translation up-to-date with the English version.' %}
-    <br>{% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}. {% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}.
+    <br>{% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%d %b %Y"}}</span>. {% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%d %b %Y"}}</span>.
    </p>
   {% else %}
   <p>{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace=changelogpagereplace %}
-    <br>{% include t.html t='English updated:' %} {{enpage.last_updated | date: "%d %b %Y"}}. {% include t.html t='Translation updated:' %} {{page.last_updated | date: "%d %b %Y"}}.
+    <br>{% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%d %b %Y"}}</span>. {% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%d %b %Y"}}</span>.
   </p>
   {% endif %}
   {% endif %}
@@ -40,6 +40,6 @@
     {%- assign replacepattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
     {% if page.translator %}<strong>{% include t.html t='Translator:' %}</strong> {{page.translator}}.{% endif %}
     {% if page.contributors %}{% include t.html t='Contributor:' %} {{page.contributors}}.{% endif %}
-    {% include t.html t='WAI thanks these translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern %}</p>
+    {% include t.html t='WAI thanks translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern %}</p>
 </section>
 {%- endunless -%}

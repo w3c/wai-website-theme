@@ -16,8 +16,8 @@
   {%- endif -%}
 {%- else -%}
   {%- assign source=site.data.translations | where: "en", include.t | first -%}
-  {%- if source[page.lang] -%}
-    {%- assign phrase=source[page.lang] -%}
+  {%- if source[pagelang] -%}
+    {%- assign phrase=source[pagelang] -%}
   {%- else -%}
     {%- unless site.hideTranslationHints %}<mark lang="en">Needs Translation</mark> {% endunless -%}
     {%- assign phrase=include.t -%}
