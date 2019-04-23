@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "wai-website-theme"
-  spec.version       = "1.2"
+  spec.version       = "1.3"
   spec.authors       = ["Eric Eggert"]
   spec.email         = ["mail@yatil.net"]
 
   spec.summary       = "This is the theme for the new W3C WAI website"
   spec.homepage      = "https://github.com/w3c/wai-website-theme"
-  spec.license       = "All Rights Reserved"
+  spec.license       = "Nonstandard"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_data|_sass|LICENSE|README)}i) }
 
@@ -16,4 +16,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency 'wai-website-plugin'
 end
