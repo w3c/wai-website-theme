@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "wai-website-theme"
-  spec.version       = "1.3"
+  spec.version       = "1.3.1"
   spec.authors       = ["Eric Eggert"]
   spec.email         = ["mail@yatil.net"]
 
@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/w3c/wai-website-theme"
   spec.license       = "Nonstandard"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_data|_sass|LICENSE|README)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_data|LICENSE|README)}i) }
 
   spec.add_runtime_dependency "jekyll", "~> 3.6"
 
