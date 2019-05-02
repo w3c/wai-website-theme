@@ -1,6 +1,6 @@
 {%- assign langs = site.data.lang -%}
 <div class="video-container" data-video-type="" dir="ltr">
-  <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" width="450"{% if page.lang == "nl" %} data-lang="nl"{% endif %}>
+  <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" width="450">
     {%- assign captions = include.captions | split: ',' -%}
     {%- for caption in captions -%}
       {%- assign c = caption | split: '|' -%}
