@@ -37,9 +37,11 @@
   {% endif %}
   {% endif %}
   <p>
+    {%- capture translatorslabel %}<strong>{% include t.html t='Translator:' %}</strong>{%- endcapture %}
+    {% include peoplelist.html label=translatorslabel people=page.translators %}
+    {%- capture contributorslabel %}{% include t.html t='Contributor:' %}{%- endcapture %}
+    {% include peoplelist.html label=contributorslabel people=page.contributors %}
     {%- assign replacepattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
-    {% if page.translator %}<strong>{% include t.html t='Translator:' %}</strong> {{page.translator}}.{% endif %}
-    {% if page.contributors %}{% include t.html t='Contributor:' %} {{page.contributors}}.{% endif %}
-    {% include t.html t='WAI thanks translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern %}</p>
+    <br>{% include t.html t='WAI thanks translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern %}</p>
 </section>
 {%- endunless -%}

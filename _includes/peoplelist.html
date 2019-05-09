@@ -1,0 +1,21 @@
+{%- for person in include.people -%}
+  {%- if forloop.first -%}
+    {% if include.label %}{{ include.label }} {% endif %}
+  {%- endif -%}
+  {%- capture orglink -%}
+  {%- if person.org -%}
+    {%- if person.orglink %}
+      (<a href="{{person.orglink}}" rel="nofollow noopener" target="_blank">{{person.org}} {% include_cached external.html label="new tab/window"%}</a>)
+    {%- else %}
+      ({{person.org}})
+    {%- endif -%}
+  {%- endif -%}
+  {%- endcapture -%}
+  {%- if person.link -%}
+    <a href="{{person.link}}" rel="nofollow noopener" target="_blank">{{person.name}} {% include_cached external.html label="new tab/window"%}</a>{{orglink}}
+  {%- else -%}
+    {{person.name}}{{orglink}}
+  {%- endif -%}
+  {%- unless forloop.last -%}, {% endunless -%}
+  {%- if     forloop.last -%}. {% endif     -%}
+{% endfor %}
