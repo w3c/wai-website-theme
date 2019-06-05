@@ -1,3 +1,12 @@
+{%- comment -%}
+
+This prev/next template is used when an author uses:
+
+order: <num>
+
+It is only useable in collections, hence prevnext-navigation exists :-)
+
+{%- endcomment -%}
 {%- if page.lang -%}{%- assign lang = page.lang -%}{%- else -%}{%- assign lang = "en" -%}{%- endif -%}
 {%- if page.order -%}
 {%- assign col = site.collections | where: "label", page.collection | first -%}

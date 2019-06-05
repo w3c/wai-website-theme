@@ -55,7 +55,13 @@
       {% include resources.html %}
     {% endif %}
 
-    {% include prevnext.html %}
+{%- if page.navigation -%}
+  {%- include prevnext-navigation.html -%}
+{%- else -%}
+  {%- if page.order -%}
+    {%- include prevnext-order.html -%}
+  {%- endif -%}
+{%- endif -%}
 
     {% include feedback-box.html %}
 
