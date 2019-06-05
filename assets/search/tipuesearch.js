@@ -374,7 +374,7 @@ http://www.tipue.com/search
                               {
                                    if (l_o >= start && l_o < set.show + start)
                                    {
-                                        out += '<li><h2 class="format-level-5"><a href="' + found[i].url + '"' + tipue_search_w + '>' +  found[i].title + '</a></h2>';
+                                        out += '<li><h3"><a href="' + found[i].url + '"' + tipue_search_w + '>' +  found[i].title + '</a></h2>';
 
                                         if (set.debug)
                                         {
@@ -408,7 +408,7 @@ http://www.tipue.com/search
 
                                                        if (t_1.length > set.contextLength)
                                                        {
-                                                            t = '... ' + t_1;
+                                                            t = '… ' + t_1;
                                                        }
                                                   }
                                              }
@@ -447,7 +447,7 @@ http://www.tipue.com/search
                                              t_d = $.trim(t_d);
                                              if (t_d.charAt(t_d.length - 1) != '.')
                                              {
-                                                  t_d += ' ...';
+                                                  t_d += ' …';
                                              }
 
                                              t_d = t_d.replace(/h0011/g, 'mark');
