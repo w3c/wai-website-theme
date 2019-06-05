@@ -94,7 +94,7 @@ The first section creates an array of page urls that are page urls of this colle
 {%- if col.parent -%}
   {%- assign searchurl = col.parent -%}
 {%- else -%}
-  {%- if page.parent == "/" -%}
+  {%- if page.parent != "/" -%}
     {%- assign searchurl = page.parent -%}
   {%- else -%}
     {%- if (page.ref and pagelang) -%}
@@ -189,6 +189,7 @@ The first section creates an array of page urls that are page urls of this colle
         {%- endfor -%}
     {%- endfor -%}
     {%- endif -%}
+    {%- if page.parent != "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{% if page.breadcrumb_title%}{{page.breadcrumb_title}}{% else %}{% if page.nav_title %}{% if breadcumb_page.nav_title == "Overview"%}{{page.title}}{% else%}{{page.nav_title}}{% endif %}{%-else-%}{{page.title}}{% endif %}{% endif %}</a></li>{%- endif -%}
   </ul>
 </nav>
 {%- endunless -%}
