@@ -13,14 +13,14 @@
   {%- assign changelog = "" -%}
 {%- endif -%}
 {% if col.footer %}
-<footer class="page-footer default-grid" aria-label="Page">
+<footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
   <div class="inner">
     {{col.footer | replace: "CHANGELOG", changelog }}
   </div>
 </footer>
 {% else %}
   {% if page.footer %}
-  <footer class="page-footer default-grid" aria-label="Page">
+  <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
     <div class="inner">
       {{page.footer | replace: "CHANGELOG", changelog}}
     </div>
