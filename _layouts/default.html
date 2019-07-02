@@ -50,18 +50,17 @@
 
     {{ content }}
 
-    {{page.wcag_success_criteria}}{{page.wcag_techniques}}
     {% if page.wcag_success_criteria or page.wcag_techniques %}
       {% include resources.html %}
     {% endif %}
 
-{%- if page.navigation -%}
-  {%- include prevnext-navigation.html -%}
-{%- else -%}
-  {%- if page.order -%}
-    {%- include prevnext-order.html -%}
-  {%- endif -%}
-{%- endif -%}
+    {%- if page.navigation -%}
+      {%- include prevnext-navigation.html -%}
+    {%- else -%}
+      {%- if page.order -%}
+        {%- include prevnext-order.html -%}
+      {%- endif -%}
+    {%- endif -%}
 
     {% include feedback-box.html %}
 
