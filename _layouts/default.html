@@ -46,7 +46,7 @@
     <header{%- if page.resource.ref %}{%- unless page.ref == page.resource.ref %} class="in-resource"{%- endunless -%}{%- endif -%}>
       <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
       {%- if page.resource.ref -%}{%- unless page.ref == page.resource.ref -%}
-        <p>{% include t.html t="in" %}: {% include link.html to=page.resource.ref %}</p>
+        <p>{% include t.html t="in" %} {% include link.html to=page.resource.ref %}</p>
       {%- endunless -%}{%- endif -%}
     </header>
 
