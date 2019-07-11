@@ -40,7 +40,25 @@
     {% include header.html translations=translations %}
     <div class="default-grid with-gap{% unless page.noleftcol %} leftcol{% endunless %}">
 
-  {% include secondarynav.html parent=page.parent  %}
+  {% if page.sidebaricon %}
+    {% comment %}
+    This should be properly implemented in the styleguide, but it might be a one-off.
+    {% endcomment %}
+    <style>
+      .sidebaricon {
+        width: 100%;
+        display: block;
+        height: 292px;
+        fill: var(--w3c-blue);
+        margin-top: 65px;
+      }
+    </style>
+    <div class="sidenav">
+      {% include_cached icon.html name=page.sidebaricon class="sidebaricon" %}
+    </div>
+  {% else %}
+    {% include secondarynav.html parent=page.parent  %}
+  {% endif %}
 
   <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
     <header{%- if page.resource.ref %}{%- unless page.ref == page.resource.ref %} class="in-resource"{%- endunless -%}{%- endif -%}>
