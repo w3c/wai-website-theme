@@ -1,6 +1,6 @@
 {%- assign col = site.collections | where: "label", page.collection | first -%}
 {%- if page.changelog -%}
-  {%- assign chagelogpage=site.documents | where:"ref", page.changelog | first -%}
+  {%- assign changelogpage=site.documents | where:"ref", page.changelog | first -%}
   {%- unless changelogpage.ref -%}
     {%- assign changelogpage=site.pages | where:"ref", page.changelog | first -%}
   {%- endunless -%}
