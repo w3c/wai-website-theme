@@ -1,0 +1,116 @@
+.page-footer, .site-footer {
+  font-size: .875rem;
+  @media print {
+   font-size: 8pt;
+  }
+  padding-top: 16px;
+  padding-bottom: 16px;
+  & p:first-of-type {
+    margin-block-start: 0;
+  }
+  & p:last-of-type {
+    margin-block-end: 0;
+  }
+}
+
+.page-footer {
+  margin-block-start: 32px;
+  background-color: var(--footer-grey);
+  & .inner {
+    grid-area: content;
+  }
+}
+
+.site-footer {
+  margin-block-start: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--dk-grey);
+  color: var(--pure-white);
+  @media print {
+    background-color: var(--footer-grey);
+    color: var(--dk-grey);
+    border-block-start: 1px solid var(--dk-grey);
+  }
+  & a {
+    color: var(--pure-white);
+  }
+  & a.largelink {
+    color: var(--gold);
+    font-size: 1.25rem;
+    text-decoration: none;
+    @media print {
+      color: var(--dk-grey);
+      font-size: 12pt;
+    }
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+  & .footer-list-header {
+    font-weight: bold;
+    border-block-end: 1px solid var(--trans-line-grey);
+    padding: 4px 0;
+  }
+  & .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media print {
+      grid-column-end: q4-end;
+      flex-direction: row;
+      align-items: flex-end;
+      & p {
+        margin: 0;
+      }
+    }
+  }
+  &>:not(.about) {
+    @media print {
+      display: none;
+    }
+  }
+}
+.page-footer + .site-footer {
+  margin-block-start: 0;
+}
+
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer ul li {
+  list-style:none;
+}
+
+.site-footer .social {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.site-footer .social svg {
+  vertical-align: middle;
+  font-size: 2em;
+}
+
+.site-footer .social a {
+  color: var(--pure-white);
+  text-decoration: none;
+  &:--hovcus svg {
+    color: var(--gold);
+  }
+}
+
+.site-footer .social .button {
+  border: 1px solid var(--pure-white);
+}
+
+.site-footer .social ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  & li {
+    margin-inline-end: 1em;
+  }
+}

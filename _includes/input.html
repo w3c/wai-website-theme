@@ -1,0 +1,2 @@
+<label for="{{ include.label | slugify }}">{{ include.label }}:</label>
+<input type="{{ include.type }}" name="{{ include.name }}"{% if include.disabled %} disabled{% endif%} id="{{ include.label | slugify }}">

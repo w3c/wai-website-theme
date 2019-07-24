@@ -1,0 +1,3 @@
+<header class="box-h{% for mod in mods %} box-h-{{ mod }}{% endfor %}">
+  {%- if type == "icon" -%}{%render '@icons', name=icon, class="" %} {%- endif -%}{{label}}
+</header>

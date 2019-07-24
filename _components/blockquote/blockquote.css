@@ -1,0 +1,77 @@
+blockquote {
+  font-style: italic;
+  margin-block-end: 1em;
+  & cite {
+    display: block;
+    font-style: normal;
+    /*color: var(--w3c-blue);*/
+    padding-left: 2rem;
+    &:before {
+      content: "— ";
+      font-weight: bold;
+      margin-inline-start: -2rem;
+      width: 2rem;
+      display: inline-block;
+    }
+  }
+  & p:first-of-type::before {
+    content: '“';
+    margin-inline-start: -.75ch;
+  }
+
+  & p:last-of-type {
+    margin-block-end: 0;
+  }
+
+  & p:last-of-type::after {
+    content: '”';
+  }
+
+
+  &.special {
+    text-align: center;
+  }
+}
+
+blockquote.pull {
+  position: relative;
+  font-size: 1.25rem;
+  padding-left: 1ch;
+  margin-inline-start: 4rem;
+  border: 1px solid transparent;
+  color: var(--w3c-blue);
+  font-weight: bold;
+  border-inline-start: 2px solid var(--line-grey);
+  &.right, &.left {
+    max-width: 16rem;
+  }
+  &.right {
+    float: inline-end;
+  }
+  &.left {
+    float: inline-start;
+    margin-inline-end: 2rem;
+  }
+  & p:first-of-type::before {
+    font-size: 5rem;
+    position: absolute;
+    left: 0;
+    margin-inline-start: -1.25ch;
+    top:-.25ch;
+  }
+  & cite {
+    margin-block-start: .5rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--off-black);
+  }
+  &.alt-1 {
+    color: var(--w3c-classic);
+  }
+  &.alt-2 {
+    color: var(--wai-green);
+  }
+  &.alt-3 {
+    color: var(--off-black);
+  }
+}

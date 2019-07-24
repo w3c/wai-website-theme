@@ -1,0 +1,12 @@
+title: "Video Links"
+collated: false
+variants:
+- name: default
+  context:
+    class:
+- name: small
+  context:
+    class: ['small']
+- name: inline
+  context:
+    class: ['inline']

@@ -1,0 +1,19 @@
+- name:
+    en: 'Home'
+  pages:
+  - name: Overview
+    url: "/home/"
+- name:
+    en: 'Writing Documents'
+  pages:
+  - name: Overview
+    url: "/writing/"
+  - name: Markdown
+    url: "/writing/markdown/"
+  - name: Custom Markdown Extensions
+    url: "/writing/wai-markdown/"
+- name:
+    en: 'Design Components'
+  pages:
+  - name: Overview
+    url: "/components/"

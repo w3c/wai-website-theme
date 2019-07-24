@@ -1,0 +1,67 @@
+table, caption {
+  text-align: start;
+}
+table {
+  border: 1px solid var(--line-grey);
+  border-collapse: collapse;
+  margin-block-end: 2em;
+}
+caption {
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: var(--wai-green);
+  line-height: 1.4;
+  margin-block-end: 8px;
+}
+th, td {
+  padding-block: 12px;
+  padding-inline: 18px;
+  border: 1px solid var(--line-grey);
+  vertical-align: top;
+}
+.dense td, .dense th {
+  padding-block: 2px;
+  padding-inline: 4px;
+}
+th {
+  font-weight: bold;
+  color: var(--pure-white);
+  background-color: var(--wai-green);
+  & a {
+    color: inherit;
+    &:--hovcus {
+      color: var(--gold);
+    }
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+th, td {
+  & > :first-child {
+    margin-block-start: 0;
+  }
+  & > :last-child {
+    margin-block-start: 0;
+  }
+}
+
+.quiet {
+  & th {
+    background-color: var(--off-white);
+    color: var(--w3c-blue);
+    & a {
+      color: inherit;
+      &:--hovcus {
+        color: var(--wai-green);
+      }
+      &:visited {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.hyphenated {
+  hyphens: auto;
+}

@@ -1,0 +1,130 @@
+.box {
+  border: solid 1px var(--line-grey);
+  margin-block-start: 16px;
+  background-color: var(--pure-white);
+}
+
+.box + .box#toc {
+  margin-block-start: 0;
+  border-block-start: 0;
+}
+
+.box.box-space-above {
+  margin-block-start: 90px;
+}
+
+.box-h {
+  padding: 8px 16px;
+  color: var(--wai-green);
+  @media print {
+    color: #000;
+  }
+  font-weight: bold;
+  background-color: var(--off-white);
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    display: inline-block;
+    @supports (all: unset) {
+      all: unset;
+    }
+  }
+}
+
+.box-h-large {
+  font-size: 1.25rem;
+  color: var(--w3c-blue);
+  padding-bottom: 7px;
+  font-weight: normal;
+  border-block-end: solid 1px var(--line-grey);
+}
+
+.box-h-icon {
+  & svg {
+    margin-inline-end: 4px;
+  }
+}
+
+.box-i {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+      clear: both;
+  }
+  padding: 8px 16px;
+  font-size: 14/16 * 1rem;
+  & > :first-child {
+    margin-block-start: 0;
+  }
+  & > :last-child {
+    margin-block-end: 0;
+  }
+}
+
+.box.box-list {
+  & .box-i {
+    & ul, & ol {
+      margin:0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
+
+.box.box-linklist {
+  & .box-i {
+    padding: 0;
+  }
+}
+
+.box.box-simple {
+  & .box-i {
+    padding: 2px 8px 8px;
+  }
+  & .box-h-simple {
+    padding: 8px 8px 2px;
+    background-color: transparent;
+    font-size: .875rem;
+    line-height: 1.57;
+  }
+}
+
+.box.box-simple.box-aside .box-i {
+  font-size: .875rem;
+}
+
+.box.box-highlighted {
+  background-color: var(--cloudy-subtle);
+  & .box-h-highlighted {
+    color: var(--dk-blue);
+    border-bottom: solid 1px var(--line-grey);
+    background-color: var(--pure-white);
+  }
+}
+
+@media (--medium) {
+  .box {
+    &.box-left, &.box-right {
+      width: 33%;
+      margin-block-start: -9px;
+      &.box-simple { margin-block-start:-3px; }
+    }
+    &.box-left {
+      clear: inline-start;
+      float: inline-start;
+      margin-inline-end: 1em;
+    }
+    &.box-right {
+      clear: inline-end;
+      float: inline-end;
+      margin-inline-start: 1em;
+    }
+  }
+}

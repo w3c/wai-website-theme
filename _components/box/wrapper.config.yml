@@ -1,0 +1,71 @@
+title: Boxes
+status: wip
+default: default
+variants:
+- name: default
+  context:
+    headerlabel: Standard header
+    headertype: default
+    content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laudantium, molestias perspiciatis corporis aspernatur earum quibusdam, sequi, error pariatur delectus accusantium, cum! Maxime ad, eos ea. Ab labore aliquam quam!</p>"
+- name: simple
+  context:
+    headerlabel: "Status: Draft"
+    headertype: simple
+    headermods: ['simple']
+    content: "<p>This is an in-progress, unapproved draft.</p>"
+    mods: ['simple']
+- name: large
+  context:
+    headerlabel: Standard header
+    headertype: large
+    headermods: ['large']
+    content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laudantium, molestias perspiciatis corporis aspernatur earum quibusdam, sequi, error pariatur delectus accusantium, cum! Maxime ad, eos ea. Ab labore aliquam quam!</p>"
+- name: large-icon
+  context:
+    headerlabel: Large header w/ Icon
+    headertype: icon
+    headericon: warning
+    headermods: ['large', 'icon']
+    content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laudantium, molestias perspiciatis corporis aspernatur earum quibusdam, sequi, error pariatur delectus accusantium, cum! Maxime ad, eos ea. Ab labore aliquam quam!</p>"
+- name: large-icon-link-list
+  context:
+    headerlabel: Large header w/ Icon
+    headertype: icon
+    headermods: ['large', 'icon']
+    mods: ['linklist']
+    content: linklist
+- name: large-icon-unordered-with-link
+  context:
+    headerlabel: Large header w/ Icon
+    headertype: icon
+    headermods: ['large', 'icon']
+    mods: ['list']
+    content: listwithlinks
+- name: help-improve-page
+  context:
+    headerlabel: "Help improve this page"
+    headertype: icon
+    headermods: ['icon']
+    headericon: comments
+    mods: []
+    content: help-box-content
+- name: float-right
+  context:
+    headerlabel: "More info"
+    headertype: simple
+    headermods: ['simple']
+    mods: ['simple', 'right']
+    content: '<p>When you want to learn more about how different disabilities affect Web use, and read about scenarios of people with disabilities using the Web, see <a href="#">How People with Disabilities Use the Web</a>.</p>'
+- name: float-right-small
+  context:
+    headerlabel: "More info"
+    headertype: simple
+    headermods: ['simple']
+    mods: ['simple', 'right', 'aside']
+    content: '<p>When you want to learn more about how different disabilities affect Web use, and read about scenarios of people with disabilities using the Web, see <a href="#">How People with Disabilities Use the Web</a>.</p>'
+- name: highlighted
+  context:
+    headerlabel: "Highlighted"
+    headermods: ['highlighted']
+    mods: ['highlighted']
+    content: '<p>When you want to learn more about how different disabilities affect Web use, and read about scenarios of people with disabilities using the Web, see <a href="#">How People with Disabilities Use the Web</a>.</p>'
