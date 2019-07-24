@@ -1,6 +1,6 @@
 ---
 title: "WAI Website Manual"
-permalink: /home/
+permalink: /overview/
 lang: en
 # translators: # Uncomment (remove #) for translations, one - name line per translator.
 # - name: Translator 1

@@ -6,3 +6,7 @@ ID = "wai-website-theme"
 
 command = "bundle exec jekyll build --config '_config.yml,_config_staging.yml'"
 publish = "_site"
+
+[[redirects]]
+  from = "/"
+  to = "/overview/"
