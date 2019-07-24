@@ -2,7 +2,7 @@
     en: 'Home'
   pages:
   - name: Overview
-    url: "/home/"
+    url: "/overview/"
 - name:
     en: 'Writing Documents'
   pages:
