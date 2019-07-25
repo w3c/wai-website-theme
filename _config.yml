@@ -52,11 +52,6 @@ defaults:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
-      path: "_components"
-    values:
-      layout: "sidenav"
 
 plugins:
   - jekyll-seo-tag
