@@ -1,9 +1,0 @@
-collated: false
-variants:
-- name: default
-- name: left
-  context:
-    class: left
-- name: right
-  context:
-    class: right
