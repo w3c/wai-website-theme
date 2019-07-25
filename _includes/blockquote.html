@@ -1,0 +1,6 @@
+<blockquote{% if include.class %} class="{{ include.class }}"{% endif %}>
+{{ include.content }}
+{%- if include.source %}
+<cite>{%if include.href %}<a href="{{ include.href }}">{%endif%}{{ include.source }}{%if include.href %}</a>{%endif%}</cite>
+{% endif -%}
+</blockquote>

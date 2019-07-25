@@ -35,3 +35,5 @@
           url: "/components/atoms/mark/"
         - name: "Paragraphs"
           url: "/components/atoms/p/"
+      - name: Block Quotes
+        url: "/components/blockquotes/"
