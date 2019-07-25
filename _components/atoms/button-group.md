@@ -10,10 +10,8 @@ lang: en
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
 order: 1
+group: atoms
 inline_css: |
-  .box-example .button-backtotop {
-    position: static !important;
-  }
 ---
 
 {::nomarkdown}
