@@ -3,7 +3,8 @@
   {%- assign the_url = item.pages.first.url -%}
   {%- unless item.mainnav == false -%}
   <li>
-    <a href="{{ the_url | relative_url }}"{% if include.current == the_url %} aria-current="location"{% endif %}><span>{% include_cached inpl.html lang=page.lang a=item.name %}</span></a>
+    {% capture navtitle %}{% include_cached inpl.html lang=include.lang a=item.name %}{% endcapture %}
+    {% include_cached link.html to=the_url text=navtitle hidelangnotice=true %}
   </li>
   {%- endunless -%}
   {%- if forloop.last %}</ul>{% endif -%}

@@ -157,9 +157,9 @@ The first section creates an array of page urls that are page urls of this colle
 {%- endfor -%}
 {%- endif -%}
 
-<nav class="mainnav" aria-label="Main" lang="en">
+<nav class="mainnav" aria-label="{% include t.html t="Main" lang=page.lang %}" lang="{{ page.lang }}">
   {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
-  {%- include_cached navlist.html data=site.data.navigation current=a_url -%}
+  {%- include_cached navlist.html data=site.data.navigation current=a_url lang=page.lang -%}
 </nav>
 
 {%- unless page.url == "/" -%}
