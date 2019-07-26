@@ -8,7 +8,7 @@ The first section creates an array of page urls that are page urls of this colle
   </p>
 </section>
 {%- endunless -%}
-<nav aria-label="Skip Link, Customization, and Language Selector" id="controls" class="default-grid">
+<nav aria-label="{% include t.html t="Skip Link and Language Selector" %}" id="controls" class="default-grid">
   {% if include.translations[0].ref %}
   {%- comment -%} Translations on this page {%- endcomment-%}
     <ul>
@@ -58,7 +58,7 @@ The first section creates an array of page urls that are page urls of this colle
   </div>
 
   <div class="navigations">
-  <nav class="metanav" aria-label="Meta &amp; Search">
+  <nav class="metanav" aria-label="Meta &amp; Search" lang="en">
     <ul>
       <li><a href="{{ "/about/participating/" | relative_url }}">Get Involved</a></li>
       <li><a href="{{ "/about/" | relative_url }}">About W3C WAI</a></li>
@@ -163,7 +163,7 @@ The first section creates an array of page urls that are page urls of this colle
 </nav>
 
 {%- unless page.url == "/" -%}
-<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="Breadcrumb" lang="en">
+<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="{% include t.html t="Breadcrumb" lang=page.lang %}" lang="en">
   <ul style="align-self: center;">
     <li><a href="{{ "/" | relative_url }}" lang="en">Home{%comment%}{% include_cached t.html t="Home" lang=pagelang %}{%endcomment%}</a></li>
     {%- unless a_name == "" -%}<li>{% if a_url == enpage.url%}{% include_cached link.html to=a_url text=a_name aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=a_name to=a_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
