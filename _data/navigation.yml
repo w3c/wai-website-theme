@@ -56,3 +56,7 @@
       url: "/components/excol/single/"
     - name: "Multiple"
       url: "/components/excol/multiple/"
+  - name: "Figure"
+    url: "/components/figure/"
+  - name: "Footer (Page & Site)"
+    url: "/components/footer/"

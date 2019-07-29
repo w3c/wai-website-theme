@@ -1,3 +1,28 @@
+---
+title: "Footers (Page and Site)"
+lang: en
+# translators: # Uncomment (remove #) for translations, one - name line per translator.
+# - name: Translator 1
+# - name: Translator 2
+# contributors:
+# - name: Contributor 1
+# - name: Contributor 2
+footer: > # Text in footer in HTML
+  <p> This is the text in the footer </p>
+inline_css: |
+---
+
+## Page Footer
+
+<footer class="page-footer default-grid">
+  <div class="inner">
+    <p>Status: XXX updated Month 20XX</p>
+    <p>Editors: Xxxxxx Yxxxxx; previously Xxxxxx Yxxxxx and Xxxxxx Yxxxxx. Developed by the Education and Outreach Working Group. Contributors: Xxxxxx Yxxxxx, Xxxxxx Yxxxxx , and Xxxxxx Yxxxxx. First developed with support from ONE Project, then updated with support of the TWO Project and later the THREE Project.</p>
+  </div>
+</footer>
+
+## Site Footer
+
 <footer class="site-footer grid-4q" aria-label="Site">
   <div class="q1-start q3-end about">
     <div>
@@ -6,9 +31,9 @@
     </div>
     <div class="social" lang="en" dir="auto" translate="no">
       <ul>
-        <li><a href="https://twitter.com/w3c_wai"><svg aria-hidden="true" class="icon-twitter "><use xlink:href="/assets/images/icons.svg#icon-twitter"></use></svg> Twitter</a></li>
-        <li><a href="https://www.w3.org/WAI/feed.xml"><svg aria-hidden="true" class="icon-rss "><use xlink:href="/assets/images/icons.svg#icon-rss"></use></svg> Feed</a></li>
-        <li><a href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlistsv"><svg aria-hidden="true" class="icon-youtube"><use xlink:href="/assets/images/icons.svg#icon-youtube"></use></svg> YouTube</a></li>
+        <li><a href="https://twitter.com/w3c_wai">{% include_cached icon.html name="twitter" %} Twitter</a></li>
+        <li><a href="https://www.w3.org/WAI/feed.xml">{% include_cached icon.html name="rss" %} Feed</a></li>
+        <li><a href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlistsv">{% include_cached icon.html name="youtube" %} YouTube</a></li>
         <li><a href="https://www.w3.org/WAI/news/subscribe/" class="button">Get News in Email</a></li>
       </ul>
     </div>
