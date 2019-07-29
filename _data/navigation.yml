@@ -17,23 +17,26 @@
   pages:
   - name: Overview
     url: "/components/"
+  - name: Colors
+    url: "/components/colors/"
+  - name: Atoms
+    url: "/components/atoms/"
     pages:
-      - name: Atoms
-        url: "/components/atoms/"
-        pages:
-        - name: Buttons
-          url: "/components/atoms/buttons/"
-        - name: Button Group
-          url: "/components/atoms/button-group/"
-        - name: "Show/Hide Buttons"
-          url: "/components/atoms/show-hide-buttons/"
-        - name: Images
-          url: "/components/atoms/images/"
-        - name: Input Elements
-          url: "/components/atoms/input/"
-        - name: "Mark Element"
-          url: "/components/atoms/mark/"
-        - name: "Paragraphs"
-          url: "/components/atoms/p/"
-      - name: Block Quotes
-        url: "/components/blockquotes/"
+    - name: Buttons
+      url: "/components/atoms/buttons/"
+    - name: Button Group
+      url: "/components/atoms/button-group/"
+    - name: "Show/Hide Buttons"
+      url: "/components/atoms/show-hide-buttons/"
+    - name: Images
+      url: "/components/atoms/images/"
+    - name: Input Elements
+      url: "/components/atoms/input/"
+    - name: "Mark Element"
+      url: "/components/atoms/mark/"
+    - name: "Paragraphs"
+      url: "/components/atoms/p/"
+  - name: Block Quotes
+    url: "/components/blockquotes/"
+  - name: Boxes
+    url: "/components/boxes/"
