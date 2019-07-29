@@ -49,3 +49,10 @@
       url: "/components/document-notes/archived/"
     - name: "Draft"
       url: "/components/document-notes/draft/"
+  - name: "Expand/<wbr>Collapse"
+    url: "/components/excol/single/"
+    pages:
+    - name: "Single"
+      url: "/components/excol/single/"
+    - name: "Multiple"
+      url: "/components/excol/multiple/"
