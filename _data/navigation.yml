@@ -42,3 +42,10 @@
     url: "/components/boxes/"
   - name: Decision Tree
     url: "/components/decision-tree/"
+  - name: "Document Notes"
+    url: "/components/document-notes/archived/"
+    pages:
+    - name: "Archived"
+      url: "/components/document-notes/archived/"
+    - name: "Draft"
+      url: "/components/document-notes/draft/"
