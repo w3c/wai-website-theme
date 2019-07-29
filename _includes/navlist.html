@@ -3,8 +3,8 @@
   {%- assign the_url = item.pages.first.url -%}
   {%- unless item.mainnav == false -%}
   <li>
-    {% capture navtitle %}{% include_cached inpl.html lang=include.lang a=item.name %}{% endcapture %}
-    {% include_cached link.html to=the_url text=navtitle hidelangnotice=true %}
+    {%- capture navtitle %}{% include_cached inpl.html lang=include.lang a=item.name %}{% endcapture -%}
+    {%- include_cached link.html to=the_url text=navtitle hidelangnotice=true -%}
   </li>
   {%- endunless -%}
   {%- if forloop.last %}</ul>{% endif -%}
