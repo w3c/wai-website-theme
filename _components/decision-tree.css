@@ -3,19 +3,20 @@
   margin: 1em 0;
   padding:0;
   & > li {
-    /*border: 2px solid #999;
-    border-block-start:none;*/
+    border: 2px solid var(--cloudy);
+    border-block-start:none;
+    margin-bottom: 0;
     & > strong {
       display: block;
       padding: 1em .5em;
     }
     &:first-child {
-      /*border-block-start:2px solid #999;*/
+      border-block-start:2px solid var(--cloudy);
     }
     & > ul {
       padding:0;
       list-style: none;
-      /*border-block-start: 1px dotted #aaa;*/
+      border-block-start: 1px dotted var(--cloudy);
       @supports (display: flex) {
         display:flex;
         flex-direction: row-reverse;
@@ -26,11 +27,11 @@
         text-indent: 0;
         box-sizing: border-box;
         font-weight: normal;
+        margin-bottom: 0;
         @supports (display: flex) {
           flex-basis: 25%;
         }
         padding: .5em;
-        // border: 1px solid #aaa;
         &:nth-child(odd) {
           @supports (display: flex) {
             flex-basis: 75%;
@@ -73,7 +74,7 @@
     }
   }
   & .yes {
-    background-color: color(var(--w3c-blue) lightness(95%));
+    background-color: var(--cloudy-subtle);
     border-block-end: none;
     & li {
       list-style: disc;
@@ -84,11 +85,11 @@
     }
   }
   & .no {
-    /*border-inline-end:1px dotted #aaa;*/
-    background-color: color(var(--faded-red) lightness(85%));
+    border-inline-end:1px dotted var(--cloudy);
+    background-color: var(--red-subtle);
     border-block-end: none;
     position: relative;
-    &:after { top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(119, 119, 119, 0); border-top-color: color(var(--faded-red) lightness(85%)); border-width: 1rem; margin-inline-start: -.5rem; z-index: 500; }
+    &:after { top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(119, 119, 119, 0); border-top-color: var(--red-subtle); border-width: 1rem; margin-inline-start: -.5rem; z-index: 500; }
     /*&:before { top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(119, 119, 119, 0); border-top-color: #999; border-width: 1.1rem; margin-inline-start: -.6rem; z-index: 400; }*/
   }
 }

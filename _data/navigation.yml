@@ -40,3 +40,5 @@
     url: "/components/blockquotes/"
   - name: Boxes
     url: "/components/boxes/"
+  - name: Decision Tree
+    url: "/components/decision-tree/"
