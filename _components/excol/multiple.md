@@ -12,10 +12,10 @@ footer: > # Text in footer in HTML
 ---
 
 {::nomarkdown}
-{% include box.html type="start" title="Code" class="" %}
+{% include box.html type="start" title="Overview" class="" %}
 {:/}
 
-Expand/collapses can also be nested and used multiple times on the page. `{%raw%}{% include excol.html type="all" %}` creates buttons to expand/collapse all of the sections.
+Expand/collapses can also be nested and used multiple times on the page. `{% include excol.html type="all" %}` creates buttons to expand/collapse all of the sections.
 
 {::nomarkdown}
 {% include box.html type="end" %}
