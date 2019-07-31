@@ -2,7 +2,7 @@ table, caption {
   text-align: start;
 }
 table {
-  border: 1px solid var(--line-grey);
+  border: 1px solid var(--cloudy);
   border-collapse: collapse;
   margin-block-end: 2em;
 }
@@ -16,7 +16,7 @@ caption {
 th, td {
   padding-block: 12px;
   padding-inline: 18px;
-  border: 1px solid var(--line-grey);
+  border: 1px solid var(--cloudy);
   vertical-align: top;
 }
 .dense td, .dense th {
