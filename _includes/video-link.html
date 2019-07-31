@@ -1,5 +1,5 @@
 {%- assign classes = include.class | split: " " -%}
-<a href="{{ include.href | relative_url }}" class="video-link{% for class in classes %} video-link-{{ class }}{% endfor %}{% if include.ratio == "4:3" %} ratio-43{%- endif -%}">
+<a href="{{ include.href | relative_url }}" class="video-link{% for class in classes %} video-link-{{ class }}{% endfor %}">
   <img src="{{ include.src | relative_url }}" alt="">
   <span>{{ include.title }}</span>
 </a>

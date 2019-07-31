@@ -2,23 +2,20 @@
   display: inline-block;
   text-decoration: none;
   margin: 10px 0;
-  & img {
-    mask: url("../images/video-mask-16-9.svg");
-    mask-size: contain;
-    width: 240px;
-  }
-  &.ratio-43 img {
-    mask: url("../images/video-mask-4-3.svg");
-  }
   & span {
     display: block;
     text-align: center;
     text-decoration: underline;
   }
+  & img {
+    width: 240px;
+    border-radius: 1rem;
+  }
 }
 
 .video-link-small img {
   width: 120px;
+  border-radius: .5rem;
 }
 
 .video-link-inline {
@@ -28,6 +25,7 @@
     width: auto;
     height: 2em;
     margin-inline-end: 1em;
+    border-radius: .25rem;
   }
   span {
     text-align: start;

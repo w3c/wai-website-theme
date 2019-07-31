@@ -13,7 +13,7 @@ inline_css: |
 ---
 
 ```liquid
-{%raw%}{% include video-link.html title="…" href="…" src="…" [class="|small|inline"] [ratio="16:9"] %}{%endraw%}
+{%raw%}{% include video-link.html title="…" href="…" src="…" [class="|small|inline"] %}{%endraw%}
 ```
 
 * `title`: Text underneath the image.
@@ -23,25 +23,15 @@ inline_css: |
   * `none`: default size
   * `small`: small size
   * `inline`: inline link
-* (optional) `ratio`: Specify `16:9` for 16:9 format (default), or `4:3` for 4:3 format.
 
 ## Default
 
-<a href="…" class="video-link{% for c in class %} video-link-{{ c }}{% endfor %}">
-  <img src="{{ '/content-images/wai-website-theme/video-still-accessibility-intro-16-9.jpg' | relative_url }}" alt="">
-  <span>Video Title</span>
-</a>
+{% include video-link.html title="Video Title" href="https://w3.org/WAI/" src="/content-images/wai-website-theme/video-still-accessibility-intro-16-9.jpg" %}
 
 ## Small
 
-<a href="…" class="video-link video-link-small">
-  <img src="{{ '/content-images/wai-website-theme/video-still-accessibility-intro-16-9.jpg' | relative_url }}" alt="">
-  <span>Video Title</span>
-</a>
+{% include video-link.html title="Video Title" href="https://w3.org/WAI/" src="/content-images/wai-website-theme/video-still-accessibility-intro-16-9.jpg" class="small" %}
 
 ## Inline
 
-<a href="…" class="video-link video-link-inline">
-  <img src="{{ '/content-images/wai-website-theme/video-still-accessibility-intro-16-9.jpg' | relative_url }}" alt="">
-  <span>Video Title</span>
-</a>
+{% include video-link.html title="Video Title" href="https://w3.org/WAI/" src="/content-images/wai-website-theme/video-still-accessibility-intro-16-9.jpg" class="inline" %}
