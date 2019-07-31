@@ -22,7 +22,7 @@ pre {
 }
 
 .highlight {
-  font-size: 14px;
+  font-size: 1rem;
   color: var(--w3c-blue);
   tab-size: 2;
   font-variant-ligatures: no-common-ligatures;
