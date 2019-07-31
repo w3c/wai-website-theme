@@ -60,3 +60,10 @@
     url: "/components/figure/"
   - name: "Footer (Page & Site)"
     url: "/components/footer/"
+  - name: "Form"
+    url: "/components/form/elements/"
+    pages:
+    - name: "Elements"
+      url: "/components/form/elements/"
+    - name: "Search"
+      url: "/components/form/search/"
