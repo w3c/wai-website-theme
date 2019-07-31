@@ -97,6 +97,9 @@ button, .button {
     position:static;
     float: inline-end;
   }
+  @media print {
+    display: none;
+  }
 }
 
 .button-menu {
