@@ -67,5 +67,7 @@
       url: "/components/form/elements/"
     - name: "Search"
       url: "/components/form/search/"
+  - name: "Tables"
+    url: "/components/tables/"
   - name: "Video Links"
     url: "/components/video-links/"
