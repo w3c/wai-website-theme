@@ -79,3 +79,5 @@
     url: "/components/tables/"
   - name: "Video Links"
     url: "/components/video-links/"
+  - name: "Video Player"
+    url: "/components/video-player/"
