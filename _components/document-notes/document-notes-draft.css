@@ -1,5 +1,0 @@
-.doc-draft {
-  & h1::before {
-    content: "Draft";
-  }
-}

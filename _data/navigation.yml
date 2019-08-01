@@ -49,6 +49,8 @@
       url: "/components/document-notes/archived/"
     - name: "Draft"
       url: "/components/document-notes/draft/"
+    - name: "Translation"
+      url: "/components/document-notes/translation/"
   - name: "Expand/<wbr>Collapse"
     url: "/components/excol/single/"
     pages:
