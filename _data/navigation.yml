@@ -73,6 +73,8 @@
     url: "/components/headings/"
   - name: "Lists"
     url: "/components/lists/"
+  - name: "Publication Warning"
+    url: "/components/publication-warning/"
   - name: "Tables"
     url: "/components/tables/"
   - name: "Video Links"
