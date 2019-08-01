@@ -120,6 +120,7 @@
 html {
   background-color: var(--off-white);
   @media print {
+    font-size: 10pt;
     background-color: #fff;
   }
 }
@@ -142,7 +143,6 @@ body {
   @media print {
     color: #000;
     background-color: #fff;
-    font-size: 10pt;
     text-decoration-skip-ink: none;
   }
 }
