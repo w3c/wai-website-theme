@@ -13,6 +13,8 @@
 {% include toc.html type="start" title="Page Contents" %}
 {:/}
 
+{% if include.levels %}{::options toc_levels="{{include.levels}}" /}{% endif %}
+
 - This will be replaced by an automatically generated TOC when using Markdown formatting.
 {:toc}
 

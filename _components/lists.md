@@ -12,7 +12,7 @@ footer: > # Text in footer in HTML
 inline_css: |
 ---
 
-{% include toc.html %}
+{% include toc.html levels="2,3" %}
 
 ## Ordered List
 
