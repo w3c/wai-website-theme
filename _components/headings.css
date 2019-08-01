@@ -57,6 +57,7 @@ h4 {
 h5 {
   font-weight: bold;
   line-height: 1.6;
+  font-size: 1rem;
   & + h6 {
     margin-block-start: 0;
   }
@@ -106,3 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
+.in-resource h1 {margin-bottom: 0;}
+.in-resource p  {margin-top:    0; font-style: italic;}
+.in-resource a:visited  {color: var(--w3c-dark);}
