@@ -71,6 +71,8 @@
       url: "/components/form/search/"
   - name: "Headings"
     url: "/components/headings/"
+  - name: "Lists"
+    url: "/components/lists/"
   - name: "Tables"
     url: "/components/tables/"
   - name: "Video Links"
