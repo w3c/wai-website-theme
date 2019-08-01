@@ -1,4 +1,6 @@
-h1, h2, h3, h4, h5, h6 {
+@custom-selector :--all-headings h1, h2, h3, h4, h5, h6;
+
+:--all-headings {
   padding: 0;
 }
 
@@ -68,15 +70,13 @@ h6 {
   line-height: 1.8;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  &.ex:before, &.ap:before, & b {
+:--all-headings {
+  &.ex:before, &.ap:before {
     color: var(--w3c-blue) !important;
     font-weight: bold;
   }
-}
 
-.no-js {
-  & .ex {
+  &.ex {
     counter-increment: examples;
     counter-reset: approaches;
     &:before {
@@ -87,25 +87,28 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  & .newap {
+  &.newap {
     counter-reset: approaches;
   }
 
-  & .newex {
+  &.newex {
     counter-reset: examples;
   }
 
-
-  & h2.first, & h3.first, & .newexap {
+  &.first, &.newexap {
     counter-reset: examples approaches;
   }
 
-  & .ap {
+  &.ap {
     counter-increment: approaches;
     &:before {
       content: 'Approach ' counter(approaches) ': ';
     }
   }
+}
+
+:--all-headings code {
+  color: inherit !important;
 }
 
 .in-resource h1 {margin-bottom: 0;}

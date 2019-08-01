@@ -44,3 +44,35 @@ With optional link to resource home page:
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
+
+{% assign boxhead ='## `<h2>`–`<h6>`, with example classes (`class="ex"`)' | markdownify %}
+
+{::nomarkdown}
+{% include box.html type="start" title=boxhead class="example" %}
+{:/}
+
+<h2 class="ex"> Heading <code>&lt;h2&gt;</code></h2>
+<h3 class="ex"> Heading <code>&lt;h3&gt;</code></h3>
+<h4 class="ex"> Heading <code>&lt;h4&gt;</code></h4>
+<h5 class="ex"> Heading <code>&lt;h5&gt;</code></h5>
+<h6 class="ex"> Heading <code>&lt;h6&gt;</code></h6>
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+{% assign boxhead ='## `<h2>`–`<h6>`, with approach classes (`class="ap"`)' | markdownify %}
+
+{::nomarkdown}
+{% include box.html type="start" title=boxhead class="example" %}
+{:/}
+
+<h2 class="ap"> Heading <code>&lt;h2&gt;</code></h2>
+<h3 class="ap"> Heading <code>&lt;h3&gt;</code></h3>
+<h4 class="ap"> Heading <code>&lt;h4&gt;</code></h4>
+<h5 class="ap"> Heading <code>&lt;h5&gt;</code></h5>
+<h6 class="ap"> Heading <code>&lt;h6&gt;</code></h6>
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
