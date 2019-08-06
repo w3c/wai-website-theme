@@ -18,29 +18,48 @@ inline_css: |
 
 ### Code
 
+{% capture example %}
+1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+
+   1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+
+   2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+      
+      1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+
+      2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+
+2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+{% endcapture %}
+
 ```md
-1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+{{example}}
 ```
 
 ### Example
 
-1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+{{example}}
 
 ## Unordered List
 
 ### Code
 
+{% capture example %}
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+  * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+  * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+    * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+    * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+{% endcapture %}
+
 ```md
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+{{example}}
 ```
 
 ### Example
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+{{example}}
 
 ## Description List
 
@@ -123,15 +142,15 @@ narrow down the list to the types of tools you are interested in.
 #### Code
 
 ```md
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.two.columns}
 ```
 
 #### Example
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.two.columns}
 
 ### Four Columns
@@ -139,19 +158,19 @@ narrow down the list to the types of tools you are interested in.
 #### Code
 
 ```md
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.four.columns}
 ```
 
 #### Example
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.four.columns}
 
 ### Checkbox List
@@ -159,15 +178,15 @@ narrow down the list to the types of tools you are interested in.
 #### Code
 
 ```md
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.checkbox}
 ```
 
 #### Example
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.checkbox}
 
 ### List that does not look like a list
@@ -175,13 +194,13 @@ narrow down the list to the types of tools you are interested in.
 #### Code
 
 ```md
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.nolist}
 ```
 
 #### Example
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero facere, velit officiis, nostrum sapiente laboriosam fugiat dolorem dolorum quisquam, mollitia!
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.nolist}
