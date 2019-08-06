@@ -1,3 +1,7 @@
+ul {
+  list-style-type: disc;
+}
+
 ul li, ol li {
   margin-block-end: 8px;
 }
