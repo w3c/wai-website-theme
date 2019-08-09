@@ -1,0 +1,16 @@
+<nav class="metanav" label="Meta &amp; Search">
+  <ul>
+    <li><a href="#">Get Involved</a></li>
+    <li><a href="#">About W3C WAI</a></li>
+    <li>
+      <form action="#" role="search">
+        <div>
+          <label for="header-search">
+            <input id="header-search" type="search" placeholder="Search" aria-label="Search">
+          </label>
+          {%render '@button', name="icon", mods=["icon","nobg", "noborder"], type="icon", icon="search", label="Search" %}
+        </div>
+      </form>
+    </li>
+  </ul>
+</nav>

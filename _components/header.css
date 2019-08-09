@@ -1,0 +1,122 @@
+#site-header {
+  background-color: var(--w3c-classic);
+  color: var(--pure-white);
+  @media print {
+    background-color: var(--off-white);
+    color: #000;
+  }
+  padding-top: 3px;
+  @supports (display: grid) {
+    padding-inline-start: 8px;
+    padding-inline-end: 8px;
+  }
+  & a {
+    color: var(--pure-white);
+    @media print {
+      color: var(--w3c-classic);
+    }
+    @media print {
+      &:after {
+        content: '';
+      }
+    }
+  }
+}
+
+.wai {
+  line-height: 1.2;
+  @media (--medium) {
+    vertical-align: middle;
+    /*display: block;*/
+    font-size: 1.5625rem;
+  }
+}
+
+.logos {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  padding-block: 16px;
+  padding-inline: 0;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  @supports (display: grid) {
+    width: auto;
+  }
+  & .claim {
+    font-size: .875rem;
+    font-style: italic;
+    &:lang(ar) {
+      font-style: normal;
+    }
+    margin-inline-start: 16px;
+    padding-inline-start: 16px;
+    border-inline-start: 1px solid var(--gold);
+    color: var(--pure-white);
+    @media print {
+      color: var(--w3c-classic);
+    }
+    flex:1 0 0;
+    display: none;
+    @media (--medium) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.home {
+  @media (--small) {
+    margin-inline-end: 32px;
+  }
+  text-decoration: none;
+  transition: color .25s ease-in .1s;
+  display: flex;
+  align-items: center;
+  @supports (display: grid) {
+    flex:0;
+  }
+  @media (--large) {
+    margin-inline-end: 8px;
+  }
+  & svg, & img {
+    vertical-align:middle;
+    color: inherit;
+    fill: currentColor;
+    height: 30px;
+    @media (--medium) {
+      height: 46px;
+    }
+  }
+  img {
+    padding-inline-end: 8px;
+  }
+  &.w3c {
+    border-block-end: 2px solid transparent;
+    &:hover {
+      border-bottom-color: currentColor;
+    }
+  }
+  & .wai {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (--medium) {
+      font-size: 1.25rem;
+    }
+    & .wa {
+      padding-block-end: 2px;
+    }
+    & .i {
+    border-block-start: 1px solid var(--gold);
+    padding-top: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+  }
+  &:--hovcus {
+    text-decoration: underline;
+    color: var(--gold) !important;
+  }
+}

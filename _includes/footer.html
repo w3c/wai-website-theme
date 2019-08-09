@@ -1,40 +1,90 @@
-{% assign col = site.collections | where: "label", page.collection | first %}
-{% unless page.nopagefooter %}
-<footer class="page-footer default-grid">
+{%- assign col = site.collections | where: "label", page.collection | first -%}
+{%- if page.changelog -%}
+  {%- assign changelogpage=site.documents | where:"ref", page.changelog | first -%}
+  {%- unless changelogpage.ref -%}
+    {%- assign changelogpage=site.pages | where:"ref", page.changelog | first -%}
+  {%- endunless -%}
+  {% assign changelogpageurl = changelogpage.url | relative_url %}
+  {%- capture changelogtext -%}
+  {%- include_cached t.html t="Changelog" lang=page.lang -%}
+  {%- endcapture -%}
+  {%- assign changelog = '<a href="' | append: changelogpageurl | append: '">' | append: changelogtext | append: '</a>' -%}
+{%- else -%}
+  {%- assign changelog = "" -%}
+{%- endif -%}
+{% if col.footer %}
+<footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
   <div class="inner">
-    <p>
-      <strong>Updated:</strong> {{page.date | date: "%-d %B %Y"}}<br>
-      <strong>{{page.people.editorslabel}}:</strong> {% for p in page.people.editors%}<a href="{{p.url}}">{{p.name}}</a>{% if forloop.last %}.{% else %}, {% endif %}{% endfor %} <strong>Developed by the <a href="https://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a></strong>{% if page.support %} with support from {% for s in page.support%}{% unless forloop.first %}{% if forloop.last %}and {% endif %}{% endunless %}the <a href="{{s.url}}">{{s.name}}</a>{% if forloop.last %}.{% else %}, {% endif %}{% endfor %}{% endif %} {% if col.acknowledgements %}{% assign ackurl = page.collection | append: "/acknowledgements/" | prepend: site.github.url %}<a href="/{{ackurl}}">Acknowledgements</a>.{% endif %}
-    </p>
+    {{col.footer | replace: "CHANGELOG", changelog }}
   </div>
 </footer>
-{% endunless %}
-
-<footer class="site-footer grid-4q">
-  <div class="q1-start q2-end">
-    <p><a class="largelink" href="https://w3.org/WAI/">Web Accessibility Initiative</a></p>
-    <p>Strategies, guidelines, resources to make the web accessible to people with disabilities</p>
-    <p>Copyright © 2017 W3C® (MIT, ERCIM, Keio, Beihang). Usage policies apply.</p>
-  </div>
-  <div class="q3-start q3-end">
-    <div class="footer-list-header">
-      Give Us Feedback
+{% else %}
+  {% if page.footer %}
+  <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
+    <div class="inner">
+      {{page.footer | replace: "CHANGELOG", changelog}}
     </div>
-    <ul>
-      <li><a href="#">Publicly Archived List</a></li>
-      <li><a href="#">WAI Staff-only List</a></li>
-    </ul>
+  </footer>
+  {% endif %}
+{% endif %}
+
+<footer class="site-footer grid-4q" aria-label="Site">
+  <div class="q1-start q3-end about">
+    <div>
+      <p><a class="largelink" href="https://www.w3.org/WAI/" lang="en" dir="auto" translate="no">W3C Web Accessibility Initiative (WAI)</a></p>
+      <p>{% include t.html t="Strategies, standards, and supporting resources to make the Web accessible to people with disabilities." %}</p>
+    </div>
+    <div class="social" lang="en" dir="auto" translate="no">
+      <ul>
+        <li><a href="https://twitter.com/w3c_wai">{%include_cached icon.html name="twitter" %} Twitter</a></li>
+        <li><a href="https://www.w3.org/WAI/feed.xml">{%include_cached icon.html name="rss" %} Feed</a></li>
+        <li><a href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlistsv">{%include_cached icon.html name="youtube" %} YouTube</a></li>
+        <li><a href="https://www.w3.org/WAI/news/subscribe/" class="button">Get News in Email</a></li>
+      </ul>
+    </div>
+    <div lang="en" dir="auto" {% if site.data.lang[pagelang].rtl %}style="text-align: right;"{% endif %} translate="no">
+      <p>Copyright &#xA9; {{ 'now' | date: "%Y" }} W3C <sup>&#xAE;</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn">Beihang</a>) <a href="{{ "/about/using-wai-material/" | relative_url }}">Permission to Use WAI Material</a>.</p>
+    </div>
   </div>
-  <div class="q4-start q4-end">
-    <ul>
-      <li><a href="{{ site.github.url }}/wai/contact/">Contact WAI</a></li>
-      <li><a href="{{ site.github.url }}/sitemap/">Site Index</a></li>
-      <li><a href="{{ site.github.url }}/wai/get-involved/">Help with the WAI Website</a></li>
-      <li><a href="{{ site.github.url }}/privacy/">Privacy Statements</a></li>
+  <div lang="en" dir="auto" {% if site.data.lang[pagelang].rtl %}style="text-align: right;"{% endif %} translate="no" class="q4-start q4-end">
+    <ul style="margin-bottom:0">
+      <li><a href="{{ "/about/contacting/" | relative_url }}">Contact WAI</a></li>
+      <li><a href="{{ "/sitemap/" | relative_url }}">Site Map</a></li>
+      <li><a href="{{ "/news/" | relative_url }}">News</a></li>
+      <li><a href="{{ "/sitemap/#archive" | relative_url }}">Archive</a></li>
+      <li><a href="{{ "/about/accessibility-statement/" | relative_url }}">Accessibility Statement</a></li>
+      <li><a href="{{ "/translations/" | relative_url }}"> Translations</a></li>
+      <li><a href="{{ "/roles/" | relative_url }}">Resources for Roles</a></li>
     </ul>
   </div>
 </footer>
+{%- unless site.published == true -%}
 <section class="default-grid info" tabindex="0">
-  <p class="inner">{% include_cached icon.html name="info" %} This is an unpublished draft preview. Please refer to our published website at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.
+  <p class="inner">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
   </p>
 </section>
+{%- endunless -%}
+<!-- Details4Everybody -->
+<script src="{{ '/assets/scripts/details4everybody.js' | append: timestamp | relative_url }}"></script>
+<!-- SVG4Everybody -->
+<script src="{{ '/assets/scripts/svg4everybody.js' | append: timestamp | relative_url }}"></script>
+<script>
+  svg4everybody();
+</script>
+<!-- Matomo -->
+<script>
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.w3.org/analytics/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '328']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//www.w3.org/analytics/piwik/piwik.php?idsite=328&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->

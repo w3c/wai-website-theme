@@ -1,0 +1,33 @@
+.video-link {
+  display: inline-block;
+  text-decoration: none;
+  margin: 10px 0;
+  & span {
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+  }
+  & img {
+    width: 240px;
+    border-radius: 1rem;
+  }
+}
+
+.video-link-small img {
+  width: 120px;
+  border-radius: .5rem;
+}
+
+.video-link-inline {
+  display: inline-flex;
+  align-items: center;
+  & img {
+    width: auto;
+    height: 2em;
+    margin-inline-end: 1em;
+    border-radius: .25rem;
+  }
+  span {
+    text-align: start;
+  }
+}

@@ -1,25 +1,64 @@
-<div class="video-container" data-video-type="">
-  <video preload="metadata" data-youtube-id="{{include.yt-id}}" width="450">
-    {% assign captions = include.captions | split: ',' %}{% for caption in captions %}{% assign c = caption | split: '|' %}<track src="../cc/{{c[0]}}" label="{{c[2]}}" kind="captions" srclang="{{c[1]}}" default="" />{% endfor %}
-    {% assign descriptions = include.descriptions | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="../cc/{{d[0]}}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" default="" />{% endfor %}
+{%- assign langs = site.data.lang -%}
+<div class="video-container" data-video-type="" dir="ltr">
+  <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" width="450">
+    {%- assign captions = include.captions | split: ',' -%}
+    {%- for caption in captions -%}
+      {%- assign c = caption | split: '|' -%}
+      {%- assign clangcode = c[1] -%}
+      {%- assign l = langs[clangcode].nativeName -%}
+      <track src="{{ include.path | append: c[0] | relative_url }}" label="{{l}}" kind="captions" srclang="{{c[1]}}" {% if c[2] == "default" %}default{% endif %}>
+    {%- endfor -%}
+    {%- assign subtitles = include.subtitles | split: ',' -%}
+      {%- for subtitle in subtitles -%}
+        {%- assign s = subtitle | split: '|' -%}
+        {%- assign slangcode = s[1] -%}
+        {%- assign l = langs[slangcode].nativeName -%}
+        <track src="{{ include.path | append: s[0] | relative_url }}" label="{{l}}" kind="subtitles" srclang="{{s[1]}}" {% if s[2] == "default" %}default{% endif %}>
+      {%- endfor -%}
+    {%- assign descriptions = include.descriptions | split: ',' -%}
+      {%- for desc in descriptions -%}
+        {%- assign d = desc | split: '|' -%}
+        {%- assign dlangcode = d[1] -%}
+        {%- assign l = langs[dlangcode].nativeName -%}
+        <track src="{{ include.path | append: d[0] | relative_url }}" label="{{l}}" kind="descriptions" srclang="{{d[1]}}" {% if d[2] == "default" %}default{% endif %}>
+      {%- endfor -%}
   </video>
 </div>
 {% if include.yt-id-ad %}
 <div class="video-container" data-video-type="audio-described">
-  <video preload="metadata" data-youtube-id="{{include.yt-id-ad}}" width="450">
-    {% assign captions = include.captions-ad | split: ',' %}{% for caption in captions %}{% assign c = caption | split: '|' %}<track src="../cc/{{c[0]}}" label="{{c[2]}}" kind="captions" srclang="{{c[1]}}" default="" />{% endfor %}
-    {% assign descriptions = include.descriptions-ad | split: ',' %}{% for desc in descriptions %}{% assign d = desc | split: '|' %}<track src="../cc/{{d[0]}}" label="{{d[2]}}" kind="descriptions" srclang="{{d[1]}}" default="" />{% endfor %}
+  <video preload="metadata" data-youtube-id="{{include.yt-id-ad}}" data-youtube-nocookie="true" width="450">
+    {%- assign captions = include.captions-ad | split: ',' -%}
+    {%- for caption in captions -%}
+      {%- assign c = caption | split: '|' -%}
+      {%- assign clangcode = c[1] -%}
+      {%- assign l = langs[clangcode].nativeName -%}
+      <track src="{{ include.path | append: c[0] | relative_url }}" label="{{l}}" kind="captions" srclang="{{c[1]}}" {% if c[2] == "default" %}default{% endif %}>
+    {%- endfor -%}
+    {%- assign subtitles = include.subtitles-ad | split: ',' -%}
+      {%- for subtitle in subtitles -%}
+        {%- assign s = subtitle | split: '|' -%}
+        {%- assign slangcode = s[1] -%}
+        {%- assign l = langs[slangcode].nativeName -%}
+        <track src="{{ include.path | append: s[0] | relative_url }}" label="{{l}}" kind="subtitles" srclang="{{s[1]}}"  {% if s[2] == "default" %}default{% endif %}>
+      {%- endfor -%}
+    {%- assign descriptions = include.descriptions-ad | split: ',' -%}
+      {%- for desc in descriptions -%}
+        {%- assign d = desc | split: '|' -%}
+        {%- assign dlangcode = d[1] -%}
+        {%- assign l = langs[dlangcode].nativeName -%}
+        <track src="{{ include.path | append: d[0] | relative_url }}" label="{{l}}" kind="descriptions" srclang="{{d[1]}}"  {% if d[2] == "default" %}default{% endif %}>
+      {%- endfor -%}
   </video>
 </div>
-<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | prepend: site.github.url }}"></use></svg> <span>Enable Audio Description</span></button></p>
+<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | relative_url }}"></use></svg> <span>Enable Audio Description</span></button></p>
 {% endif %}
 
-<script src="{{ site.github.url }}/assets/ableplayer/thirdparty/modernizr.custom.js"></script>
-<script src="{{ site.github.url }}/assets/scripts/jquery.min.js"></script>
-<script src="{{ site.github.url }}/assets/ableplayer/thirdparty/js.cookie.js"></script>
-<script src="{{ site.github.url }}/assets/ableplayer/build/ableplayer.min.js"></script>
+<script src="{{ "/assets/ableplayer/thirdparty/modernizr.custom.js" | relative_url }}"></script>
+<script src="{{ "/assets/scripts/jquery.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/ableplayer/thirdparty/js.cookie.js" | relative_url }}"></script>
+<script src="{{ "/assets/ableplayer/build/ableplayer.min.js" | relative_url }}"></script>
 <script>
-  var youTubeDataAPIKey = "{{site.ytapi}}";
+  var youTubeDataAPIKey = "{{site.ytkey}}";
   var googleApiReady = false;
   function initGoogleClientApi() {
     googleApiReady = true;
@@ -62,6 +101,8 @@
 
   var audiodescribed = document.querySelectorAll('[data-video-type="audio-described"]');
 
+  if (audiodescribed) {
+
   Array.prototype.forEach.call(audiodescribed, function(el, i){
     el.setAttribute('hidden', true);
   });
@@ -94,6 +135,8 @@
       e.target.querySelector('span').innerHTML = 'Disable Audio Description';
     }
   });
+
+  }
 
 }());
 </script>

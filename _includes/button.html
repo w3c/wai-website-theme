@@ -1,0 +1,9 @@
+{%- if include.type == "fake" -%}
+<span class="button{% for class in include.class %} button-{{ class }}{% endfor %}">{{include.label}}</span>
+{%- else -%}
+{%- if include.type == "link" -%}
+<a class="button{% for class in include.class %} button-{{ class }}{% endfor %}" href="{{ include.href }}"><span>{% if icon %}{% include_cached icon.html name=include.icon %} {% endif %}{{ include.label }}</span></a>
+{%- else -%}
+<button class="button{% for class in include.class %} button-{{ class }}{% endfor %}"{% if include.submit %} type="submit"{% else %} type="submit"{% endif %}{% if include.disabled %} disabled{% endif%}><span>{% if include.icon %}{% include_cached icon.html name=include.icon %} {% endif %}{{ include.label }}</span></button>
+{%- endif -%}
+{%- endif -%}

@@ -1,0 +1,83 @@
+- name:
+    en: 'Home'
+  pages:
+  - name: Overview
+    url: "/overview/"
+- name:
+    en: 'Writing Documents'
+  pages:
+  - name: Overview
+    url: "/writing/"
+  - name: Markdown
+    url: "/writing/markdown/"
+  - name: Custom Markdown Extensions
+    url: "/writing/wai-markdown/"
+- name:
+    en: 'Design Components'
+  pages:
+  - name: Overview
+    url: "/components/"
+  - name: Colors
+    url: "/components/colors/"
+  - name: Atoms
+    url: "/components/atoms/"
+    pages:
+    - name: Buttons
+      url: "/components/atoms/buttons/"
+    - name: Button Group
+      url: "/components/atoms/button-group/"
+    - name: "Show/Hide Buttons"
+      url: "/components/atoms/show-hide-buttons/"
+    - name: Images
+      url: "/components/atoms/images/"
+    - name: Input Elements
+      url: "/components/atoms/input/"
+    - name: "Mark Element"
+      url: "/components/atoms/mark/"
+    - name: "Paragraphs"
+      url: "/components/atoms/p/"
+  - name: Block Quotes
+    url: "/components/blockquotes/"
+  - name: Boxes
+    url: "/components/boxes/"
+  - name: Decision Tree
+    url: "/components/decision-tree/"
+  - name: "Document Notes"
+    url: "/components/document-notes/archived/"
+    pages:
+    - name: "Archived"
+      url: "/components/document-notes/archived/"
+    - name: "Draft"
+      url: "/components/document-notes/draft/"
+    - name: "Translation"
+      url: "/components/document-notes/translation/"
+  - name: "Expand/<wbr>Collapse"
+    url: "/components/excol/single/"
+    pages:
+    - name: "Single"
+      url: "/components/excol/single/"
+    - name: "Multiple"
+      url: "/components/excol/multiple/"
+  - name: "Figure"
+    url: "/components/figure/"
+  - name: "Footer (Page & Site)"
+    url: "/components/footer/"
+  - name: "Form"
+    url: "/components/form/elements/"
+    pages:
+    - name: "Elements"
+      url: "/components/form/elements/"
+    - name: "Search"
+      url: "/components/form/search/"
+  - name: "Headings"
+    url: "/components/headings/"
+  - name: "Lists"
+    url: "/components/lists/"
+  - name: "Publication Warning"
+    url: "/components/publication-warning/"
+  - name: "Tables"
+    url: "/components/tables/"
+  - name: "Video Links"
+    url: "/components/video-links/"
+  - name: "Video Player"
+    url: "/components/video-player/"

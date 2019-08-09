@@ -1,29 +1,76 @@
-<nav aria-label="Skip Link and Accessibility Options" id="controls" class="default-grid">
-  <ul>
-    <li><a href="#main">{% include_cached icon.html name="chevron-down" %} Skip to Content</a></li>
-    <li><a href="#">Change Text Size or Colors</a></li>
-  </ul>
+{%- comment -%}
+The first section creates an array of page urls that are page urls of this collection. They then are compared to all page urls in the list below. Use group in the frontmatter to group pages.
+{%- endcomment -%}
+{%- assign col = site.collections | where: "label", page.collection | first -%}
+{%- unless site.published == true -%}
+<section class="default-grid info" tabindex="0" lang="en">
+  <p class="inner" style="margin: 0;padding: 1em 0;">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
+  </p>
+</section>
+{%- endunless -%}
+<nav aria-label="{% include t.html t="Skip Link and Language Selector" %}" id="controls" class="default-grid">
+  {% if include.translations[0].ref %}
+  {%- comment -%} Translations on this page {%- endcomment-%}
+    <ul>
+      <li><a href="#main">{% include_cached t.html t="Skip to Content" lang=pagelang %}</a></li>
+      <li class="opt"><a href="{{ "/meta/customize/" | relative_url }}">{% include_cached t.html t="Change Text Size or Colors" lang=pagelang %}</a></li>
+      <li class="opt languagelist">
+          <strong>{% include_cached t.html t="This&nbsp;page&nbsp;in:" lang=pagelang %}</strong>
+          <ul class="languagelistul">
+          {%- for p in include.translations %}
+            {%- if forloop.first -%}
+              <li>{% if 'en' == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang['en'].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ englishpageurl | relative_url }}" lang="en"  dir="auto" translate="no">{{ site.data.lang['en'].nativeName }}</a>{% endif %}</li>
+            {%- endif -%}
+            <li>{% if p.lang == pagelang %}<strong style="text-transform: capitalize;">{{ site.data.lang[p.lang].nativeName }}</strong>{% else %}<a style="text-transform: capitalize;" href="{{ p.url | relative_url }}" lang="{{ p.lang }}"  dir="auto" translate="no">{{ site.data.lang[p.lang].nativeName }}</a>{% endif %}</li>
+          {% endfor -%}
+          </ul>
+        </li>
+        <li class="opt">
+          <a href="{{ "/translations/" | relative_url }}">{% include_cached t.html t="All&nbsp;Translations" lang=pagelang %} {% include_cached icon.html name="translations" %}</a>
+        </li>
+        <li><button id="showoptions" data-showhidebuttonid="header-showoptions" class="showhidebutton button-inline" data-target="#controls .opt" aria-expanded="false" data-large-aria-expanded="true" data-showtext='{% include_cached icon.html name="languages" %} {% include_cached t.html t="Show Customization, Languages, Translations" lang=pagelang %}' data-hidetext='{% include_cached t.html t="Hide Options" lang=pagelang %}'>{% include_cached icon.html name="languages" %} {% include_cached t.html t="Show Customization, Languages, Translations" lang=pagelang %}</button></li>
+      </ul>
+    {% else %}
+      {%- comment -%} No Translations on this page {%- endcomment-%}
+      <ul>
+        <li><a href="#main">{% include_cached t.html t="Skip to Content" lang=pagelang %}</a></li>
+        <li class="opt">
+          <a href="{{ "/meta/customize/" | relative_url }}">{% include_cached t.html t="Change Text Size or Colors" lang=pagelang %}</a>
+        </li>
+        <li class="opt">
+            <a href="{{ "/translations/" |relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %} {% include_cached icon.html name="translations" %}</a>
+        </li>
+      </ul>
+    {%- endif -%}
 </nav>
 <header id="site-header" class="default-grid with-gap">
-  <a class="logos" href="{{ site.github.url }}/">
-    <img src="{{ "/assets/images/w3c.svg" | prepend: site.github.url }}" alt="W3C">
-    <span class="wai"><span class="wa">Web Accessibility</span> <span class="i">Initiative</span></span>
-  </a>
+  <div class="logos">
+    <a lang="en" class="home w3c" href="{{ "https://www.w3.org/" | relative_url }}">
+      <svg role="img" aria-label="W3C" viewBox="0 0 68 34" xmlns="http://www.w3.org/2000/svg"><g><path d="m16.117 1.006 5.759 19.58 5.759-19.58h4.17 11.444v1.946l-5.879 10.128c2.065.663 3.627 1.868 4.686 3.615 1.059 1.748 1.589 3.799 1.589 6.155 0 2.914-.775 5.363-2.324 7.348s-3.555 2.978-6.017 2.978c-1.854 0-3.469-.589-4.845-1.767-1.377-1.178-2.396-2.773-3.058-4.786l3.256-1.35c.477 1.218 1.106 2.178 1.887 2.879.781.702 1.701 1.052 2.76 1.052 1.112 0 2.052-.622 2.82-1.866.768-1.245 1.152-2.74 1.152-4.489 0-1.933-.411-3.429-1.231-4.488-.954-1.244-2.45-1.867-4.489-1.867h-1.588v-1.906l5.56-9.612h-6.712l-.382.65-8.163 27.548h-.397l-5.958-19.937-5.957 19.937h-.397l-9.53-32.168h4.17l5.759 19.58 3.892-13.185-1.906-6.395z"/><path d="m64.92 1.006c-.819 0-1.554.295-2.111.861-.591.6-.92 1.376-.92 2.178s.313 1.545.887 2.128c.583.591 1.334.912 2.145.912.793 0 1.562-.321 2.161-.903.574-.557.887-1.3.887-2.136 0-.811-.321-1.57-.878-2.136-.584-.592-1.344-.904-2.171-.904zm2.643 3.065c0 .701-.271 1.351-.768 1.832-.524.507-1.174.777-1.892.777-.675 0-1.342-.278-1.84-.785s-.777-1.157-.777-1.849.287-1.368.802-1.891c.481-.49 1.131-.751 1.84-.751.726 0 1.376.271 1.883.785.49.489.752 1.147.752 1.882zm-2.559-1.807h-1.3v3.445h.65v-1.469h.642l.701 1.469h.726l-.769-1.57c.498-.102.785-.439.785-.929 0-.625-.472-.946-1.435-.946zm-.118.422c.608 0 .886.169.886.591 0 .405-.278.549-.87.549h-.549v-1.14z"/><path d="m59.807.825.676 4.107-2.391 4.575s-.918-1.941-2.443-3.015c-1.285-.905-2.122-1.102-3.431-.832-1.681.347-3.587 2.357-4.419 4.835-.995 2.965-1.005 4.4-1.04 5.718-.056 2.113.277 3.362.277 3.362s-1.452-2.686-1.438-6.62c.009-2.808.451-5.354 1.75-7.867 1.143-2.209 2.842-3.535 4.35-3.691 1.559-.161 2.791.59 3.743 1.403 1 .854 2.01 2.721 2.01 2.721z"/><path d="m60.102 24.063s-1.057 1.889-1.715 2.617c-.659.728-1.837 2.01-3.292 2.651s-2.218.762-3.656.624c-1.437-.138-2.772-.97-3.24-1.317s-1.664-1.369-2.34-2.322-1.733-2.859-1.733-2.859.589 1.91.958 2.721c.212.467.864 1.894 1.789 3.136.863 1.159 2.539 3.154 5.086 3.604 2.547.451 4.297-.693 4.73-.97s1.346-1.042 1.924-1.66c.603-.645 1.174-1.468 1.49-1.962.231-.36.607-1.092.607-1.092z"/></g></svg>
+    </a>
+    <a lang="en" class="home" href="{{ "/" | relative_url }}">
+      <span class="wai"><span class="wa">Web&nbsp;Accessibility</span> <span class="i"><span class="initieative">Initiative</span> <span>WAI</span></span></span>
+    </a>
+    <div class="claim">
+      <span>{% include_cached t.html t="Strategies, standards, resources to make the Web accessible to people with disabilities" lang=pagelang %}</span>
+    </div>
+    <button class="button button-menu" aria-haspopup="true" aria-expanded="false" id="openmenu"><span>{% include_cached icon.html name="menu" %} {% include_cached t.html t="Menu" lang=pagelang %}</span></button>
+  </div>
 
   <div class="navigations">
-  <nav class="metanav" aria-label="Meta &amp; Search">
+  <nav class="metanav" aria-label="Meta &amp; Search" lang="en">
     <ul>
-      <li><a href="{{ site.github.url }}/news/">News</a></li>
-      <li><a href="{{ site.github.url }}/wai/get-involved/">Get Involved</a></li>
-      <li><a href="{{ site.github.url }}/wai/about/">About W3C WAI</a></li>
+      <li><a href="{{ "/about/participating/" | relative_url }}">Get Involved</a></li>
+      <li><a href="{{ "/about/" | relative_url }}">About W3C WAI</a></li>
       <li>
-        <form action="https://duckduckgo.com/" role="search" onsubmit="document.querySelector('#header-search').value = document.querySelector('#header-search').value + ' site:w3c.github.io/wai-website/'">
+        <form action="{{ "/search/" | relative_url }}" role="search">
           <div>
             <label for="header-search">
-              <span class="l">Search:</span>
-              <input id="header-search" type="search" name="q" placeholder="e.g. Tutorials">
+              <span class="visuallyhidden">{% include_cached t.html t="Search" lang=pagelang %}:</span>
+              <input id="header-search" type="search" name="q" placeholder="{% include_cached t.html t="Search" lang=pagelang %}" aria-label="{% include_cached t.html t="Search" lang=pagelang %}">
             </label>
-            <button class="button button-icon button-nobg button-noborder"><span>{% include_cached icon.html name="search" %}</span></button>
+            {%capture submitsearch%}{% include_cached t.html t="Submit Search" lang=pagelang %}{%endcapture%}
+            <button class="button button-icon button-nobg button-noborder"><span>{% include_cached icon.html name="search" label=submitsearch %}</span></button>
           </div>
         </form>
       </li>
@@ -31,29 +78,118 @@
   </nav>
 </div>
 </header>
-<nav class="mainnav" aria-label="Main">
-  {% include navlist.html data=site.data.navigation depth=1 %}
+{%- if page.parent == '/' -%}{%- assign parent_is_home = true -%}{%- endif -%}
+{%- if col.parent == '/' -%}{%- assign parent_is_home = true -%}{%- endif -%}
+{%- if col.parent == '/news/' -%}{%- assign parent_is_home = true -%}{%- endif -%}
+{%- if parent_is_home -%}
+  {%- assign a_name = "" -%}
+  {%- assign a_url  = "" -%}
+  {%- assign b_name = "" -%}
+  {%- assign b_url  = "" -%}
+  {%- assign c_name = "" -%}
+  {%- assign c_url  = "" -%}
+  {%- assign d_name = "" -%}
+  {%- assign d_url  = "" -%}
+{% else %}
+{%- if col.parent -%}
+  {%- assign searchurl = col.parent -%}
+{%- else -%}
+  {%- if page.parent and page.parent != "/" -%}
+    {%- assign searchurl = page.parent -%}
+  {%- else -%}
+    {%- if (page.ref and pagelang) -%}
+    {%- if pagelang != "en" -%}
+      {%- assign searchurl = enpage.url -%}
+    {%- else -%}
+      {%- assign searchurl = page.url -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- assign searchurl = page.url -%}
+  {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign search = true -%}
+{%- for n in site.data.navigation -%}
+  {%- if search == true -%}
+    {%- assign b_name = "" -%}
+    {%- assign b_url  = "" -%}
+    {%- assign c_name = "" -%}
+    {%- assign c_url  = "" -%}
+    {%- assign d_name = "" -%}
+    {%- assign d_url  = "" -%}
+    {%- assign a_name = n.name -%}
+    {%- assign a_url  = n.pages[0].url -%}
+    {%- if a_url == searchurl %}{% assign search = false %}{% endif -%}
+    {%- if search == true -%}
+      {%- for n1 in n.pages -%}
+        {%- if search == true -%}
+          {%- assign c_name = "" -%}
+          {%- assign c_url  = "" -%}
+          {%- assign d_name = "" -%}
+          {%- assign d_url  = "" -%}
+          {%- assign b_name = n1.name -%}
+          {%- assign b_url  = n1.url -%}
+          {%- if b_url == searchurl %}{% assign search = false %}{% endif -%}
+          {%- if search == true -%}
+            {%- for n2 in n1.pages -%}
+              {%- if search == true -%}
+                {%- assign d_name = "" -%}
+                {%- assign d_url  = "" -%}
+                {%- assign c_name = n2.name -%}
+                {%- assign c_url  = n2.url -%}
+                {%- if c_url == searchurl %}{% assign search = false %}{% endif -%}
+                {%- if search == true -%}
+                  {%- for n3 in n2.pages -%}
+                    {%- if search == true -%}
+                      {%- assign d_name = n3.name -%}
+                      {%- assign d_url  = n3.url -%}
+                      {%- if d_url == searchurl %}{% assign search = false %}{% endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+<nav class="mainnav" aria-label="{% include t.html t="Main" lang=page.lang %}" lang="{{ page.lang }}">
+  {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
+  {%- include_cached navlist.html data=site.data.navigation current=a_url lang=page.lang -%}
 </nav>
 
-{% unless page.url == "/" %}
-<nav class="breadcrumb default-grid" aria-label="Breadcrumb">
-  <ul class="default-container">
-    <li><a href="{{ site.github.url }}/">Home</a></li>
-    {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
-    {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
-    {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
-    {% for i in (1..forLoopMaxInt) %}
-        {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
-        {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
-        {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
-        {% for breadcrumb_page in site.documents %}
-            {% if current_breadcrumb_url == breadcrumb_page.url %}
+{%- unless page.url == "/" -%}
+<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="{% include t.html t="Breadcrumb" lang=page.lang %}" lang="en">
+  <ul style="align-self: center;">
+    <li><a href="{{ "/" | relative_url }}" lang="en">Home{%comment%}{% include_cached t.html t="Home" lang=pagelang %}{%endcomment%}</a></li>
+    {%- unless a_name == "" -%}<li>{% if a_url == enpage.url%}{% include_cached link.html to=a_url text=a_name aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=a_name to=a_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
+    {%- unless b_name == "" -%}<li>{% if b_url == enpage.url%}{% include_cached link.html text=b_name to=b_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=b_name to=b_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
+    {%- unless c_name == "" -%}<li>{% if c_url == enpage.url%}{% include_cached link.html text=c_name to=c_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=c_name to=c_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
+    {%- unless d_name == "" -%}<li>{% if d_url == enpage.url%}{% include_cached link.html text=d_name to=d_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=d_name to=d_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
+    {%- if col.parent == '/news/' -%}<li><a href="{{ '/news/' | relative_url }}">News</a></li>{%- endif -%}
+    {%- if page.parent == "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{{page.title}}</a></li>{%- endif -%}
+    {%- if col.parent -%}
+    {%- capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture -%}
+    {%- assign splitted_url_parts = page_url_without_index_html | split: '/' -%}
+    {%- capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture -%}
+    {%- for i in (1..forLoopMaxInt) -%}
+        {%- capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture -%}
+        {%- capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture -%}
+        {%- capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture -%}
+        {%- for breadcrumb_page in site.documents -%}
+            {%- if current_breadcrumb_url == breadcrumb_page.url -%}
                 <li>
-                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{ site.github.url }}{{current_breadcrumb_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{{breadcrumb_page.title}}{% endif %}</a>
+                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{current_breadcrumb_url | relative_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{% if breadcrumb_page.nav_title %}{% if breadcumb_page.nav_title == "Overview"%}{{breadcrumb_page.title}}{% else%}{{breadcrumb_page.nav_title}}{% endif %}{%-else-%}{{breadcrumb_page.title}}{% endif %}{% endif %}</a>
                 </li>
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endfor -%}
+    {%- endif -%}
+    {%- if page.parent and page.parent != "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{% if page.breadcrumb_title%}{{page.breadcrumb_title}}{% else %}{% if page.nav_title %}{% if breadcumb_page.nav_title == "Overview"%}{{page.title}}{% else%}{{page.nav_title}}{% endif %}{%-else-%}{{page.title}}{% endif %}{% endif %}</a></li>{%- endif -%}
   </ul>
 </nav>
-{% endunless %}
+{%- endunless -%}

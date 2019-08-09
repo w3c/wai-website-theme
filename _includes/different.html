@@ -1,0 +1,2 @@
+{%- capture thelabel %}{{include.label | default: "Different View"}}{% endcapture -%}
+{% include_cached icon.html name="different-view" label=thelabel %}

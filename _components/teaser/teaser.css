@@ -1,0 +1,142 @@
+.teaser {
+  padding-block-start: 32px;
+  padding-block-end: 32px;
+}
+
+.teaser.featured {
+  background-size: cover;
+  background-position: center;
+  & .teaser-c {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-block-start: 5px solid var(--faded-red);
+    padding-block: 16px;
+    padding-inline: 32px;
+    display:block;
+  }
+}
+
+.teaser-h {
+  & h2, & h3, & h4, & h5, & h6 {
+    margin: 0;
+    margin-block-end: 16px;
+    padding: 0;
+    border:none;
+    color: var(--wai-green);
+    font-size: 1rem;
+    line-height: 1.2;
+    &.title {
+      font-size: 1.5rem;
+      margin: 0;
+      margin-block-start: 10px;
+      margin-block-end: 20px;
+      @media (--medium) {
+        font-size: 2rem;
+      }
+      @media (--large) {
+       font-size: 2.375rem;
+      }
+    }
+  }
+  & .subtitle {
+    font-weight: bold;
+    margin: 0;
+    font-size: .875rem;
+    color: var(--off-black);
+  }
+}
+
+.teaser-h-icon {
+  height:1em;
+  width: 1em;
+  vertical-align: middle;
+  margin-inline-end: 10px;
+  &.full {
+    display: block;
+    height: 1.8em;
+    width: 1.8em;
+  }
+}
+
+.teaser-tip {
+  text-align: center;
+  & .teaser-h h2 {
+    font-size: 1.75rem
+  }
+  & .teaser-h svg {
+    display: block;
+    margin: 0 auto;
+    height: 1.75em;
+    width: 1.75em;
+  }
+  & .fakelink {
+    margin: 0 auto;
+  }
+}
+
+.fakelink {
+  text-decoration: underline;
+  position: relative;
+  & svg {
+    margin-inline-start: 5px;
+    width: .75em;
+    height: .75em;
+  }
+}
+
+.teaser-about {
+  & p {
+    @media (--medium) {
+      font-size: 1.25rem;
+    }
+    @media (--large) {
+      font-size: 1.5rem;
+    }
+    color: var(--grey);
+  }
+  & .teaser-h h2 {
+    font-weight: bold;
+  }
+}
+
+.teaser-media {
+  align-items: center;
+  background-color: var(--pure-white);
+}
+
+.teaser-sponsors {
+  border-block-start: 1px solid var(--line-grey);
+}
+
+.area-teaser {
+  display: block;
+  background-color: var(--pure-white);
+  border: 1px solid var(--line-grey);
+  margin: -1px;
+  padding-block: 20px;
+  padding-inline: 32px;
+  @media (--medium) {
+    padding-block: 40px;
+    padding-inline: 40px;
+  }
+  @media (--large) {
+    padding-block: 60px;
+    padding-inline: 40px;
+  }
+  & .teaser-h {
+    display: flex;
+    align-items: flex-end;
+    & h2, & h3, & h4, & h5, & h6 {margin: 0; font-weight: normal;}
+  }
+  & .teaser-h-icon {
+    margin-block-end: 10px;
+  }
+  &:hover, &:focus {
+    & .teaser-h > :not(svg) {
+      text-decoration: underline;
+    }
+  }
+}
+
+.teaser.audiences-inline {
+
+}

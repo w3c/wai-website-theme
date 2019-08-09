@@ -1,0 +1,108 @@
+ul {
+  list-style-type: disc;
+}
+
+ul li, ol li {
+  margin-block-end: 8px;
+}
+
+.linklist {
+  &, & li {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+  }
+  & a {
+    display: block;
+    padding: 4px 16px;
+    border-block-end: 1px solid var(--line-grey);
+    text-decoration: none;
+    & svg {
+      height: .65em;
+    }
+    &:hover, &:focus {
+      & svg {
+        color: var(--faded-red);
+      }
+      & .visual-a {
+        text-decoration: underline;
+      }
+    }
+  }
+  & li:last-child a {
+    border-block-end: none;
+  }
+}
+
+.nolist {
+  margin: 0;
+  padding: 0;
+  & li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+p+ul, p+ol {
+  margin-block-start: -8px;
+}
+
+.checkbox {
+  list-style-image: url('../images/checkbox.svg');
+}
+
+.columns {
+  padding: 0;
+  & > * {
+    margin-inline-start: 32px;
+  }
+}
+
+.two.columns, .four.columns {
+  column-gap: 32px;
+  @media (--medium) {
+    columns: 2;
+  }
+}
+
+.four.columns {
+  padding: 0 8px;
+  @media (--large) {
+    columns: 4;
+  }
+}
+
+.two.small.columns {
+  column-gap: 32px;
+  @media (--medium) {
+    columns: 1;
+  }
+  @media (--large) {
+    columns: 2;
+  }
+}
+
+dl {
+  margin: 16px 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+.notbold dt {
+  font-weight: normal;
+}
+
+dd {
+  margin-inline-start: 32px;
+}
+
+dd+dt {
+  margin-block-start: 8px;
+}
+
+dl.paragraph-like dd+dt {
+  margin-block-start: 1em;
+}

@@ -1,0 +1,92 @@
+{%- comment -%}
+
+  NEVER use inclue_cached with this.
+
+  Always use
+    {%include link.html to="/path/to/page/" text="Link Text" %}
+  Or
+    {%include link.html to="/path/to/page/" fallback="English Link Text" %}
+
+  The page title of the linked page is used unless a link text is specified. Fallback is displayed if the page cannot be found in that language.
+{%- endcomment -%}
+{%- assign pagelang = 'en' -%}
+{%- if page.lang -%}
+  {%- assign pagelang = page.lang -%}
+{%- endif -%}
+{%- if include.lang -%}
+  {%- assign pagelang = include.lang -%}
+{%- endif -%}
+{%- assign in_lang = true -%}
+{%- assign link_page=site.documents | where:"ref", include.to | where: "lang", pagelang | first -%}
+{%- unless link_page.url -%}
+  {%- assign link_page=site.pages | where:"ref", include.to | where: "lang", pagelang | first -%}
+{%- endunless -%}
+{%- unless link_page.url -%}
+  {%- assign in_lang = false -%}
+  {%- assign link_page=site.documents | where:"url", include.to | first -%}
+{%- endunless -%}
+{%- unless link_page.url -%}
+  {%- assign in_lang = false -%}
+  {%- assign link_page=site.pages | where:"url", include.to | first -%}
+{%- endunless -%}
+{%- if pagelang == 'en' %}{%- assign in_lang = true -%}{% endif -%}
+
+{%- assign link_text = "" -%}
+{%- if include.text -%}
+  {%- if include.text.en -%}
+    {%- if include.text[pagelang] -%}
+      {%- assign link_text = include.text[pagelang] -%}
+    {%- else -%}
+      {%- assign link_text = include.text.en -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- assign link_text = include.text -%}
+  {%- endif -%}
+{% else %}
+  {%- if include.usenavtitle -%}
+    {%- if link_page.nav_title -%}
+      {%- assign link_text = link_page.nav_title -%}
+    {%- else -%}
+      {%- assign link_text = link_page.title -%}
+    {% endif %}
+  {%- else -%}
+      {%- assign link_text = link_page.title -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- unless link_text -%}
+  {%- if include.fallback -%}
+    {%- assign link_text = include.fallback -%}
+  {%- else -%}
+    {%- assign link_text = '[page not found in this repository, no fallback text given]' -%}
+  {%- endif -%}
+{%- endunless -%}
+
+{%- assign linklang = 'en' -%}
+{%- if link_page.lang -%}
+  {%- assign linklang = link_page.lang -%}
+{%- endif -%}
+
+{%- assign protocol = include.to | split: "://" -%}
+{%- if protocol[0] == "" -%}
+  {%- assign linkurl = 'https://www.w3.org/WAI' | append: include.to -%}
+{%- else -%}
+  {%- assign linkurl = include.to -%}
+{%- endif -%}
+
+{%- if link_page.url -%}
+  {%- assign linkurl = link_page.url | relative_url -%}
+{%- endif -%}
+
+{%- if include.id -%}
+  {%- assign linkurl = linkurl | append:'#' | append: include.id -%}
+{%- endif -%}
+
+{%- if include.fallback -%}
+  {%- unless in_lang -%}
+    {%- assign linklang = pagelang -%}
+    {%- assign link_text = include.fallback -%}
+  {%- endunless -%}
+{%- endif -%}
+
+<a lang="{{linklang}}" href="{{linkurl}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}{% if include.class %} class="{{include.class}}"{% endif %}><span>{{ link_text }}{%- unless in_lang %}{% unless include.hidelangnotice %} <span class="lang" lang="{{pagelang}}" dir="auto" translate="no">({% include_cached t.html t="in English" lang=pagelang %})</span>{% endunless -%}{% endunless -%}{% if include.different %} {% include_cached different.html %}{% endif %}{% if include.external %} {% include_cached external.html %}{% endif %}</span></a>

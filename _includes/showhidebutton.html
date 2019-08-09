@@ -1,0 +1,1 @@
+<button class="showhidebutton button-icon button-small" data-target="{{ include.target }}" aria-expanded="{% if include.default=="show" %}true{% else %}false{% endif %}" data-showtext="{{ include.showtext | xml_escape }}" data-hidetext="{{ include.hidetext | xml_escape }}">{% if include.default=="show" %}{{ include.hidetext }}{% else %}{{ include.showtext }}{% endif %}</button>

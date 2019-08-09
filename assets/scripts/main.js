@@ -22,6 +22,116 @@
       return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
   };
 
+  var isVisible = function(el) {
+    return (el && el.offsetWidth > 0 && el.offsetHeight > 0);
+  };
+
+  /* Showhidebutton */
+
+  const showhidebuttons = document.querySelectorAll('.showhidebutton');
+  const mq = window.matchMedia( "(min-width: 47.5em)" );
+  if (showhidebuttons !== null) {
+    Array.prototype.forEach.call(showhidebuttons, function(button, i){
+      var buttontarget = button.dataset.target;
+      var bid = button.dataset.showhidebuttonid;
+      if (button.getAttribute('data-large-aria-expanded') && mq.matches) {
+        if (button.getAttribute('data-large-aria-expanded') == "true") {
+          button.setAttribute('aria-expanded', 'true');
+        }
+        if (button.getAttribute('data-large-aria-expanded') == "false") {
+          button.setAttribute('aria-expanded', 'false');
+        }
+      }
+      Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
+        if(button.getAttribute('aria-expanded') == "true") {
+          el.removeAttribute('hidden');
+          button.innerHTML = button.dataset.hidetext;
+        } else {
+          el.setAttribute('hidden', "true");
+          button.innerHTML = button.dataset.showtext;
+        }
+      });
+      if (sessionStorage.getItem(bid) == 'hidden') {
+        Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
+          el.setAttribute('hidden', "true");
+        });
+        button.setAttribute('aria-expanded','false');
+        button.innerHTML = button.dataset.showtext;
+      }
+      if (sessionStorage.getItem(bid) == 'visible') {
+        Array.prototype.forEach.call(document.querySelectorAll(buttontarget), function(el, i){
+            el.removeAttribute('hidden');
+          });
+        button.setAttribute('aria-expanded','true');
+        button.innerHTML = button.dataset.hidetext;
+      }
+    });
+
+    Array.prototype.forEach.call(showhidebuttons, function(button, i){
+      button.addEventListener('click', function(event){
+        var buttontarget = event.target.dataset.target;
+        var buttonstatus = event.target.getAttribute('aria-expanded');
+        var targetelms   = document.querySelectorAll(buttontarget);
+        if (buttonstatus == "true") { // buttonstatus=true => Expanded, so hide target
+          Array.prototype.forEach.call(targetelms, function(el, i){
+            el.setAttribute('hidden', true);
+          });
+          if(targetelms.length >= 1) {
+            button.setAttribute('aria-expanded','false');
+            button.innerHTML = button.dataset.showtext;
+          }
+          if (event.target.dataset.showhidebuttonid) {
+            sessionStorage.setItem(event.target.dataset.showhidebuttonid, 'hidden');
+          }
+        } else {
+          Array.prototype.forEach.call(targetelms, function(el, i){
+            el.removeAttribute('hidden');
+            if ((i === 0) && (targetelms.length === 1)) {
+              el.setAttribute('tabindex', '-1');
+              el.focus();
+            }
+          });
+          if(targetelms.length >= 1) {
+            button.setAttribute('aria-expanded','true');
+            button.innerHTML = button.dataset.hidetext;
+          }
+          if (event.target.dataset.showhidebuttonid) {
+            sessionStorage.setItem(event.target.dataset.showhidebuttonid, 'visible');
+          }
+        }
+      })
+    });
+
+  }
+
+
+// Create an observer
+var observer = new MutationObserver(function (mutationsList, observer) {
+    var mutationsList = mutationsList.filter(function(mutation) {
+      return ((mutation.type === 'attributes') && (mutation.attributeName === 'hidden'));
+    });
+
+    for (var i = mutationsList.length - 1; i >= 0; i--) {
+      var mutation = mutationsList[i];
+      var button = document.querySelector('button[data-target="#' + mutation.target.id +'"]');
+
+      if (button && mutation.target.getAttribute('hidden')) {
+        button.setAttribute('aria-expanded','false');
+        button.innerHTML = button.dataset.showtext;
+      } else if (button) {
+        button.setAttribute('aria-expanded','true');
+        button.innerHTML = button.dataset.hidetext;
+      }
+    }
+});
+
+// Observe the target infobox
+if (document.querySelector('main')) {
+  observer.observe(document.querySelector('main'), { attributes: true, subtree: true });
+}
+
+  /* Tutorial style headings */
+
   var spc = document.createTextNode(' ');
 
   var headings = document.querySelectorAll('article h2[id], article h3[id], article h4[id]');
@@ -116,69 +226,6 @@
 
   }
 
-  document.querySelector('.mainnav > li').addEventListener("click", function(event){
-    var cureel = event.target,
-        isopen = false;
-    while (cureel.nodeName.toLowerCase() != 'LI'.toLowerCase()) {
-      cureel = cureel.parentNode;
-    }
-    if (hasclass(cureel, 'has-submenu')) {
-      if (hasclass(cureel, 'active')) { isopen = true; }
-      event.preventDefault();
-      Array.prototype.forEach.call(document.querySelectorAll('li.active'), function(el, i){
-        remclass(el, 'active');
-      });
-      if (!isopen) {
-        addclass(cureel, 'active');
-      }
-    }
-  });
-
-  // $('.mainnav li').click(function (e){
-  //   if ($(e.target).parent().parent().hasClass('active')) {
-  //     $('.active').removeClass('active');
-  //   } else {
-  //     $('.active').removeClass('active');
-  //     $(e.target).parent().parent().addClass('active');
-  //   }
-  //   e.preventDefault();
-  // });
-
-  // var menuItems = document.querySelectorAll('li.has-submenu');
-  // var timer;
-  // Array.prototype.forEach.call(menuItems, function(el, i){
-  //   el.addEventListener("mouseover", function(event){
-  //     if (document.querySelector(".has-submenu.open")) {
-  //       document.querySelector(".has-submenu.open").className = "has-submenu";
-  //     }
-  //     this.className = "has-submenu open";
-  //     clearTimeout(timer);
-  //   });
-  //   el.addEventListener("mouseout", function(event){
-  //     timer = setTimeout(function(event){
-  //       document.querySelector(".has-submenu.open").className = "has-submenu";
-  //     }, 1000);
-  //   });
-  // });
-
-  // Array.prototype.forEach.call(menuItems, function(el, i){
-  //   el.querySelector('a').addEventListener("keyup",  function(event){
-  //     if (event.keyCode == 13) {
-  //       if (this.parentNode.className == "has-submenu") {
-  //         this.parentNode.className = "has-submenu open";
-  //         this.setAttribute('aria-expanded', "true");
-  //       } else {
-  //         this.parentNode.className = "has-submenu";
-  //         this.setAttribute('aria-expanded', "false");
-  //       }
-  //       event.preventDefault();
-  //       return false;
-  //     }
-  //   });
-  // });
-
-
-
   var last_known_scroll_position = 0;
   var ticking = false;
 
@@ -189,8 +236,14 @@
     if (!ticking) {
 
       window.requestAnimationFrame(function() {
-        if (last_known_scroll_position > (window.innerHeight * 0.66)) {
+        if (last_known_scroll_position > (window.innerHeight * 0.75)) {
           addclass(document.querySelector('.button-backtotop'), 'active');
+          if ((window.innerHeight/document.querySelector('.button-backtotop').clientHeight) < 6) {
+            // If the back to top button is higher than 20% of the available viewport size, add a inline class
+            addclass(document.querySelector('.button-backtotop'), 'inline');
+          } else {
+            remclass(document.querySelector('.button-backtotop'), 'inline');
+          }
         } else {
           if (last_known_scroll_position < 1) {
             remclass(document.querySelector('.button-backtotop'), 'active');
@@ -204,5 +257,181 @@
     }
 
   });
+
+  /* Navigation button */
+
+  var metanav  = document.querySelector('.metanav'   );
+  var mainnav  = document.querySelector('.mainnav'   );
+  var sidenav  = document.querySelector('.sidenav'   );
+  var breadnav = document.querySelector('.breadcrumb');
+  var navbtn   = document.querySelector('#openmenu'  );
+
+  if (navbtn !== null) {
+    navbtn.addEventListener('click', function(event) {
+      if (hasclass(navbtn, 'open')) {
+        remclass(navbtn, 'open');
+        remclass(metanav, 'open');
+        remclass(mainnav, 'open');
+        if (sidenav) {
+          remclass(sidenav, 'open');
+        }
+        if (breadnav) {
+          breadnav.style.display='block';
+        }
+        navbtn.setAttribute('aria-expanded', 'false');
+      } else {
+        addclass(navbtn, 'open');
+        addclass(metanav, 'open');
+        addclass(mainnav, 'open');
+        if (sidenav) {
+          addclass(sidenav, 'open');
+        }
+        if (breadnav) {
+          breadnav.style.display='none';
+        }
+        navbtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  }
+
+  var excolAll = document.querySelectorAll('.excol-all');
+  var excols =  document.querySelectorAll('details');
+
+  if ((excolAll !== null) && (excols !== null) && (excols.length > 1)) {
+    function enableButtons(els) {
+      Array.prototype.forEach.call(els, function(el, i){
+        el.disabled = false;
+      });
+    }
+    function disableButtons(els) {
+      Array.prototype.forEach.call(els, function(el, i){
+        el.disabled = true;
+      });
+    }
+    function setExColAllButtons() {
+      setTimeout(function(){
+        var open  = document.querySelectorAll('details[open]').length;
+        var close = document.querySelectorAll('details:not([open])').length;
+        if((open > 0) && (close === 0)) {
+          enableButtons(document.querySelectorAll('.excol-all .collapse'));
+          disableButtons(document.querySelectorAll('.excol-all .expand'));
+        } else if ((open === 0) && (close > 0)) {
+          disableButtons(document.querySelectorAll('.excol-all .collapse'));
+          enableButtons(document.querySelectorAll('.excol-all .expand'));
+        } else {
+          enableButtons(document.querySelectorAll('.excol-all .collapse'));
+          enableButtons(document.querySelectorAll('.excol-all .expand'));
+        }
+      }, 100);
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('details summary'), function(el, i){
+      el.addEventListener("click", function() {setExColAllButtons()});
+    });
+
+    Array.prototype.forEach.call(excolAll, function(el, i){
+      el.innerHTML = '<button class="expand button button-secondary button-small">+ Expand All Sections</button> <button class="collapse button button-secondary button-small">&minus; Collapse All Sections</button>';
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll('.excol-all'), function(el, i){
+      el.addEventListener("click", function(element) {
+        if (hasclass(element.target, 'expand')) {
+          Array.prototype.forEach.call(document.querySelectorAll('details'), function(el, i){
+            el.setAttribute('open', 'true');
+          });
+        }
+        if (hasclass(element.target, 'collapse')) {
+          Array.prototype.forEach.call(document.querySelectorAll('details'), function(el, i){
+            el.removeAttribute('open');
+          });
+        }
+        setExColAllButtons();
+      });
+    });
+
+    setExColAllButtons();
+  }
+
+  function openHiddenNodes() {
+    var fragment = window.location.hash;
+    fragment = fragment.replace(':', '\\:');
+    if (fragment.length) {
+      var target = document.querySelector(fragment);
+      var initialTarget = target;
+
+      // Exit target is undefined / null
+      if (!target) {
+        return;
+      } else {
+        console.log(target);
+      }
+
+      // if the first element is a details element, open it. Set target to its parent node so we…
+      if (target && target.nodeName.toLowerCase() == 'details') {
+        target.setAttribute('open', 'true');
+        target = target.parentNode;
+      }
+
+      // if the target is in a summary, it is a heading with an id. In that case we want to open the details that is the parent.
+
+      if (target && target.parentNode.nodeName.toLowerCase() == 'summary') {
+        target.parentNode.parentNode.setAttribute('open', 'true');
+        target = target.parentNode.parentNode;
+      }
+
+      // can see if that parent node is visible. If it is _not_, but is a details element, we open that details element.
+      // Then we move on to its parent until we arrive at a visible element
+      while (!isVisible(target)) {
+        if (target.nodeName.toLowerCase() == 'details') {
+          target.setAttribute('open', 'true');
+        }
+        target = target.parentNode;
+      }
+
+      // That last visible element might be a details element, so we need to make sure to open it as well.
+      if (target.nodeName.toLowerCase() == 'details') {
+        target.setAttribute('open', 'true');
+      }
+
+      initialTarget.setAttribute('tabindex', '-1');
+      initialTarget.scrollIntoView(true);
+      initialTarget.focus();
+    }
+  }
+
+  window.addEventListener("hashchange", openHiddenNodes);
+
+  openHiddenNodes();
+
+  // Enhance footnotes
+
+  var footnoteBox = document.querySelector('div.footnotes');
+
+  if (footnoteBox !== null) {
+    addclass(footnoteBox, 'box');
+    addclass(footnoteBox, 'box-simple');
+    footnoteBox.setAttribute('role', 'complementary');
+    footnoteBox.setAttribute('aria-label', 'References');
+
+    var header = document.createElement("header");
+    header.innerHTML = '<h2>References</h2>';
+    addclass(header, 'box-h');
+    footnoteBox.insertBefore(header, footnoteBox.querySelector('ol'));
+
+    var footnoteLinks = document.querySelectorAll('sup a.footnote');
+
+    Array.prototype.forEach.call(footnoteLinks, function(element, i){
+      element.setAttribute('aria-label', 'to footnote ' + element.textContent);
+      element.setAttribute('title', 'to footnote ' + element.textContent);
+    });
+
+    var footnoteBackLinks = footnoteBox.querySelectorAll('a.reversefootnote');
+
+    Array.prototype.forEach.call(footnoteBackLinks, function(element, i){
+      element.setAttribute('aria-label', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
+      element.setAttribute('title', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
+    });
+
+  }
 
 }());

@@ -1,6 +1,6 @@
 {% assign url = "/img/" %}
 {% if page.collection %}{% assign url = url | prepend: page.collection | prepend: '/' %}{% endif %}
-{% assign url = url | prepend: site.github.url %}
+{% assign url = url | relative_url %}
 {% if include.srcset %}
   {% assign srcseturl = "/img/" %}
   {% if page.collection %}{% assign srcseturl = srcseturl | prepend: page.collection | prepend: '/' %}{% endif %}

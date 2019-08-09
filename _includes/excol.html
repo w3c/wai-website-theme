@@ -1,13 +1,14 @@
-{% if include.type == 'start' %}
-<details{%if include.id%} id="{{include.id}}"{% endif %} {%if include.open%}open{% endif %}><summary markdown="block">
-{% else %}
-{% if include.type == 'middle' %}
-</summary>
-<div markdown="block">
-{% else %}
-{% if  include.type == 'end' %}
-</div>
+{%- if include.type == 'start' -%}
+  <details{%if include.id%} id="{{include.id}}"{% endif %} {%if include.open == "true" %}open{% endif %}><summary markdown="block">
+{%- endif -%}
+{%- if include.type == 'middle' -%}
+  </summary>
+  <div markdown="block"{%-if include.dir %} dir="{{include.dir}}"{%- endif -%}{%-if include.lang %} lang="{{include.lang}}"{%- endif -%}>
+{%- endif -%}
+{%- if include.type == 'end' -%}
+  </div>
 </details>
-{% endif %}
-{% endif %}
-{% endif %}
+{%- endif -%}
+{%- if include.type == 'all' -%}
+<div class="excol-all"></div>
+{%- endif -%}

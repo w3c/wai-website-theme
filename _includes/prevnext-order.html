@@ -1,0 +1,46 @@
+{%- comment -%}
+
+This prev/next template is used when an author uses:
+
+order: <num>
+
+It is only useable in collections, hence prevnext-navigation exists :-)
+
+{%- endcomment -%}
+{%- if page.lang -%}{%- assign lang = page.lang -%}{%- else -%}{%- assign lang = "en" -%}{%- endif -%}
+{%- if page.order -%}
+{%- assign col = site.collections | where: "label", page.collection | first -%}
+{%- unless col.prevnext == false -%}
+{%- if page.group -%}
+  {%- assign docs = col.docs | where: "group", page.group | where: "lang", lang -%}
+{%- else -%}
+  {%- assign docs = col.docs | where: "lang", lang -%}
+{%- endif -%}
+<nav class="pager" aria-label="Previous/Next Page">
+  <ul>
+    {%- for p in docs %}{% assign tminus = page.order | minus: 1 -%}{%- if p.order == tminus -%}
+    <li class="pager--item previous">
+      <a href="{{p.url | relative_url }}">
+        {% include_cached icon.html name="arrow-left" class="pager--item-icon" %}
+        <span class="pager--item-text">
+          <span class="pager--item-text-direction">{% include t.html t="Previous" %}:</span>
+          <span class="pager--item-text-target">{% if p.nav_title %}{{p.nav_title}}{% else %}{{p.title}}{% endif %}</span>
+        </span>
+      </a>
+    </li>
+    {%- endif -%}{%- endfor -%}
+    {%- for p in docs %}{% assign tplus = page.order | plus: 1 -%}{%- if p.order == tplus -%}
+    <li class="pager--item next">
+      <a href="{{p.url | relative_url }}">
+        {% include_cached icon.html name="arrow-right" class="pager--item-icon" %}
+        <span class="pager--item-text">
+          <span class="pager--item-text-direction">{% include t.html t="Next" %}:</span>
+          <span class="pager--item-text-target">{% if p.nav_title %}{{p.nav_title}}{% else %}{{p.title}}{% endif %}</span>
+        </span>
+      </a>
+    </li>
+  </ul>
+  {%- endif -%}{%- endfor -%}
+</nav>
+{%- endunless -%}
+{%- endif -%}

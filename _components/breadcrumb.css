@@ -1,0 +1,35 @@
+.breadcrumb {
+  font-size: .8125rem;
+  background-color: var(--pure-white);
+  border-block-end: 1px solid var(--line-grey);
+  padding-block-start: 16px;
+  padding-block-end: 16px;
+  margin-block-end: 32px;
+  & ul {
+    margin: 0;
+    padding: 0;
+    grid-column: 2/10;
+    & li {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      &:after {
+        content: " / ";
+        color: var(--wai-green);
+        white-space: pre-wrap;
+      }
+      &:last-child:after {
+        content: "";
+        display:none;
+      }
+    }
+  }
+  & a {
+    color: var(--w3c-blue);
+    @media print { &:after { content: ''; } }
+  }
+  & [aria-current=page] {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

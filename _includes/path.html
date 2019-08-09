@@ -1,0 +1,6 @@
+{%- assign protocol = include.path | slice: 0, 4 -%}
+{%- if protocol == "http" -%}
+{{ include.path }}
+{%- else -%}
+{{ include.path | relative_url }}
+{%- endif -%}

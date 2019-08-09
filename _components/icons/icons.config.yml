@@ -1,0 +1,119 @@
+collated: false
+variants:
+- name: default
+  context:
+    name: default
+- name: book
+  context:
+    name: book
+- name: checkmark
+  context:
+    name: checkmark
+- name: loupe
+  context:
+    name: loupe
+- name: design
+  context:
+    name: design
+- name: development
+  context:
+    name: development
+- name: laws
+  context:
+    name: laws
+- name: search
+  context:
+    name: search
+- name: ex-circle
+  context:
+    name: ex-circle
+- name: check-circle
+  context:
+    name: check-circle
+- name: cancel-rect
+  context:
+    name: cancel-rect
+- name: chevron-up
+  context:
+    name: chevron-up
+- name: chevron-down
+  context:
+    name: chevron-down
+- name: chevron-left
+  context:
+    name: chevron-left
+- name: chevron-right
+  context:
+    name: chevron-right
+- name: arrow-up
+  context:
+    name: arrow-up
+- name: arrow-down
+  context:
+    name: arrow-down
+- name: arrow-left
+  context:
+    name: arrow-left
+- name: arrow-right
+  context:
+    name: arrow-right
+- name: comments
+  context:
+    name: comments
+- name: audio-description
+  context:
+    name: audio-description
+- name: external-link
+  context:
+    name: external-link
+- name: different-view
+  context:
+    name: different-view
+- name: warning
+  context:
+    name: warning
+- name: readmore
+  context:
+    name: readmore
+- name: desktop
+  context:
+    name: desktop
+- name: laptop
+  context:
+    name: laptop
+- name: tablet
+  context:
+    name: tablet
+- name: mobile
+  context:
+    name: mobile
+- name: code
+  context:
+    name: code
+- name: code-file
+  context:
+    name: code-file
+- name: fork
+  context:
+    name: fork
+- name: cart-plus
+  context:
+    name: cart-plus
+- name: menu
+  context:
+    name: menu
+- name: languages
+  context:
+    name: languages
+- name: translations
+  context:
+    name: translations
+- name: rss
+  context:
+    name: rss
+- name: youtube
+  context:
+    name: youtube
+- name: twitter
+  context:
+    name: twitter

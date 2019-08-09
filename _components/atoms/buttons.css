@@ -1,0 +1,127 @@
+button, .button {
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 2px solid var(--wai-green);
+  font-size: .8125rem;
+  line-height: 1.4;
+  color: var(--pure-white);
+  background-color: var(--wai-green);
+  text-decoration: none;
+  font-weight: bold;
+  &:visited {
+    color: var(--pure-white);
+  }
+  &.button-nobg {
+    background: transparent;
+    &:--hovcus {
+      background-color: transparent;
+      border-color: var(--pure-white)
+    }
+  }
+  &.button-noborder {
+    border-color: transparent;
+    &:--hovcus {
+      border-color: var(--pure-white)
+    }
+  }
+  &.button-small {
+    padding: 2px 4px;
+  }
+  &.button-inline {
+    padding: 0;
+  }
+}
+
+.stealthy-link:--hovcus {
+  & span.button {
+    background-color: var(--w3c-blue);
+    color: var(--pure-white);
+  }
+}
+
+button, .button {
+  &:--hovcus {
+    border-color: var(--w3c-blue);
+    background-color: var(--w3c-blue);
+    color: var(--pure-white);
+  }
+  &:focus {
+    outline-color: var(--w3c-blue);
+  }
+  &:disabled {
+    opacity: .75;
+    text-decoration: line-through;
+  }
+}
+
+.button-secondary {
+  background-color: var(--pure-white);
+  color: var(--wai-green);
+  &:visited {
+    color: var(--w3c-blue);
+    &:--hovcus {
+      color: var(--pure-white);
+    }
+  }
+}
+
+.button-backtotop {
+  position: fixed;
+  cursor: pointer;
+  bottom: 16px;
+  right: 16px;
+  left: auto;
+  &:dir(rtl) {
+    right: auto;
+    left: 16px;
+  }
+  opacity: 0.85;
+  border-radius: 100px;
+  background-color: var(--w3c-blue);
+  border-color: var(--w3c-blue);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity .5s linear;
+  &:focus,&.active {
+    opacity: 1;
+  }
+  & svg {
+    vertical-align: -1px;
+  }
+  &.inline {
+    position:static;
+    float: inline-end;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+.button-menu {
+  text-transform: uppercase;
+  background-color: var(--pure-white);
+  color: var(--w3c-blue);
+  border-color: var(--gold);
+  &:--hovcus {
+    border-color: var(--pure-white);
+    background-color: var(--gold);
+    color: var(--off-black);
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+  & button, & .button {
+    min-width: 7em;
+    flex: 1;
+    text-align: center;
+    margin: 8px;
+  }
+}
