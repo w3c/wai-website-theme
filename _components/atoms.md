@@ -8,7 +8,7 @@ lang: en
 # - name: Contributor 1
 # - name: Contributor 2
 github:
-  repository: wai-website-theme
+  repository: w3c/wai-website-theme
   path: _components/atoms.md
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
