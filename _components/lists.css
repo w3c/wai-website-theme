@@ -41,6 +41,35 @@ ul li, ol li {
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow: auto;
+  }
+}
+
+.withicons li.left {
+  & img {
+    float: inline-start;
+    width: 100px;
+  }
+  @media (--medium) {
+    padding-inline-start: 170px;
+    & img {
+      width: 150px;
+      margin-inline-start: -170px;
+    }
+  }
+}
+
+.withicons li.right {
+  & img {
+    float: inline-end;
+    width: 100px;
+  }
+  @media (--medium) {
+    padding-inline-end: 170px;
+    & img {
+      width: 150px;
+      margin-inline-end: -170px;
+    }
   }
 }
 

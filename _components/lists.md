@@ -186,21 +186,50 @@ narrow down the list to the types of tools you are interested in.
 #### Example
 
 * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+
 * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.checkbox}
 
-### List that does not look like a list
+### List that does not look like a list {#nolist}
+
+{% capture example %}
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+{:.nolist}
+{% endcapture %}
 
 #### Code
 
 ```md
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-{:.nolist}
+{{example}}
 ```
 
 #### Example
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-{:.nolist}
+{{example}}
+
+### No list with Images/Icons {#nolistimg}
+
+**Note:**
+
+* On mobile: 100px wide with text floating around.
+* On desktop: 150px wide with text floating next to it (space underneath the image).
+
+{% capture example %}
+* {:.left} ![Demo alt text]({{ "/assets/images/social-sharing-default.jpg" | relative_url }}) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+
+
+* {:.right} ![Demo alt text]({{ "/assets/images/social-sharing-default.jpg" | relative_url }}) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+{:.nolist.withicons}
+{% endcapture %}
+
+#### Code
+
+```md
+{{example}}
+```
+
+#### Example
+
+{{example}}
