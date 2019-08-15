@@ -61,6 +61,30 @@ inline_css: |
 
 {{example}}
 
+### Alternative style (Circle) {#circle}
+
+Use the class `alt` to have open circle list-icons.
+
+#### Code
+
+{% capture example %}
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+  * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+  * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+    * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+    * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+{:.alt}
+{% endcapture %}
+
+```md
+{{example}}
+```
+
+#### Example
+
+{{example}}
+
 ## Description List
 
 ### Code

@@ -1,5 +1,8 @@
 ul {
   list-style-type: disc;
+  &.alt, &.alt ul {
+    list-style-type: circle;
+  }
 }
 
 ul li, ol li {
