@@ -9,6 +9,9 @@ lang: en
 # - name: Contributor 2
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
+github:
+  repository: w3c/wai-website-theme
+  path: _components/lists.md
 inline_css: |
 ---
 
@@ -235,23 +238,28 @@ narrow down the list to the types of tools you are interested in.
 
 ### No list with Images/Icons {#nolistimg}
 
-**Note:**
+You can specify the width of the image with an extra class (instead of `{:.nolist.withicons}` write `{:.nolist.withicons.sizeclass}`). Possible values for sizes are:
+* `tiny`:  60px
+* `mini`:  75px
+* `small`: 120px
+* `normal`: 240px (default)
 
-* On mobile: 100px wide with text floating around.
-* On desktop: 150px wide with text floating next to it (space underneath the image).
+On mobile, images float left and are half the size, with a minimum width of 60px.
 
 {% capture example %}
-* {:.left} ![Demo alt text]({{ "/assets/images/social-sharing-default.jpg" | relative_url }}) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+* {:.left} {% include image.html src="picture.jpg" alt="Demo alt text" %} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
 
-
-* {:.right} ![Demo alt text]({{ "/assets/images/social-sharing-default.jpg" | relative_url }}) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+* {:.right} {% include image.html src="picture.jpg" alt="Demo alt text" %} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
 {:.nolist.withicons}
 {% endcapture %}
 
 #### Code
 
 ```md
-{{example}}
+* {:.left} {%raw%}{% include image.html src="picture.jpg" alt="Demo alt text" %}{%endraw%} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+
+* {:.right} {%raw%}{% include image.html src="picture.jpg" alt="Demo alt text" %}{%endraw%} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+{:.nolist.withicons}
 ```
 
 #### Example
