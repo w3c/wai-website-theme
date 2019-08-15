@@ -1,0 +1,14 @@
+{%- assign repo = page.github.repository | replace: "w3c/", "" -%}
+{%- assign path = "/" | prepend: repo | prepend: "/content-images/" | relative_url -%}
+{%- if include.srcset %}
+  {%- assign srcset = "" -%}
+  {%- assign srcsetsrces = include.srcset | split: ", " -%}
+  {%- for src in srcsetsrces -%}
+    {%- unless forloop.last -%}
+      {%- assign srcset = srcset | append: path | append: src | append: ", " -%}
+    {%- else -%}
+      {%- assign srcset = srcset | append: path | append: src -%}
+    {%- endunless-%}
+  {%- endfor -%}
+{%- endif -%}
+<img src="{{path}}{{include.src}}"{% if include.srcset %} srcset="{{srcset}}"{% endif %} {% if include.sizes %} sizes="{{sizes}}"{% endif %} alt="{{include.alt}}"{% if include.class %} class="{% assign classes = include.class | split: " " %}{% for class in classes %} {{ class }}{% endfor %}"{% endif %}{% if include.style %} style="{{style}}"{% endif %}>
