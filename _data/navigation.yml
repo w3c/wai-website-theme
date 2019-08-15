@@ -53,6 +53,8 @@
       url: "/components/document-notes/draft/"
     - name: "Translation"
       url: "/components/document-notes/translation/"
+    - name: "Deprecated"
+      url: "/components/document-notes/deprecated/"
   - name: "Expand/<wbr>Collapse"
     url: "/components/excol/single/"
     pages:
