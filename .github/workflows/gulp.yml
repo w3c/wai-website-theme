@@ -23,3 +23,10 @@ jobs:
         npm install gulp-cli -g
         npm install gulp -D
         gulp css
+    - name: Auto Commit changed files
+      uses: stefanzweifel/git-auto-commit-action@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COMMIT_MESSAGE = "Update CSS"
+        COMMIT_AUTHOR_EMAIL  = "ee+gh@w3.org"
+        COMMIT_AUTHOR_NAME = "Eric Eggert (auto)"
