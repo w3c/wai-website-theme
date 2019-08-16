@@ -240,7 +240,7 @@ narrow down the list to the types of tools you are interested in.
 
 You can specify the width of the image with an extra class (instead of `{:.nolist.withicons}` write `{:.nolist.withicons.sizeclass}`). Possible values for sizes are:
 * `tiny`:  60px
-* `mini`:  75px
+* `mini`:  90px
 * `small`: 120px
 * `normal`: 240px (default)
 

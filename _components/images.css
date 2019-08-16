@@ -1,6 +1,6 @@
 img {
   &.tiny   {--img-width:  60px;}
-  &.mini   {--img-width:  75px;}
+  &.mini   {--img-width:  90px;}
   &.small  {--img-width: 120px;}
   &.normal {--img-width: 240px;}
   &.large  {--img-width: 480px;}
