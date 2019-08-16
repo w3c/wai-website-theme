@@ -51,9 +51,9 @@
             {%- if k.url == searchurl -%}
               {% assign insub = true %}
               {% assign insubsub = true %}
-              {% include menuitem.html name=k.name url=k.url different=k.different hide=k.hide insub=false current=true %}
+              {% include menuitem.html name=k.name url=k.url hide=k.hide insub=false current=true %}
             {%- else -%}
-              {% include menuitem.html name=k.name url=k.url different=k.different hide=k.hide insub=false current=false %}
+              {% include menuitem.html name=k.name url=k.url hide=k.hide insub=false current=false %}
             {%- endif -%}
           {%- if forloop.last %}</ul>{% endif -%}
         {%- endfor -%}
@@ -61,17 +61,17 @@
       {%- if forloop.first %}<ul>{% endif -%}
         {%- if j.url == searchurl -%}
           {% assign insub = true %}
-          {% include menuitem.html name=j.name url=j.url different=j.different hide=j.hide insub=insubsub current=true submenu=subsubmenu %}
+          {% include menuitem.html name=j.name url=j.url hide=j.hide insub=insubsub current=true submenu=subsubmenu %}
         {%- else -%}
-          {% include menuitem.html name=j.name url=j.url different=j.different hide=j.hide insub=insubsub current=false submenu=subsubmenu %}
+          {% include menuitem.html name=j.name url=j.url hide=j.hide insub=insubsub current=false submenu=subsubmenu %}
         {%- endif -%}
       {%- if forloop.last %}</ul>{% endif -%}
     {%- endfor -%}
   {%- endcapture -%}
   {%- if i.url == searchurl -%}
-    {% include menuitem.html name=i.name url=i.url different=i.different hide=i.hide insub=insub current=true submenu=submenu %}
+    {% include menuitem.html name=i.name url=i.url hide=i.hide insub=insub current=true submenu=submenu %}
   {%- else -%}
-    {% include menuitem.html name=i.name url=i.url different=i.different hide=i.hide insub=insub current=false submenu=submenu %}
+    {% include menuitem.html name=i.name url=i.url hide=i.hide insub=insub current=false submenu=submenu %}
   {%- endif -%}
   {%- if forloop.last %}</ul></nav>{% endif -%}
 {%- endfor -%}

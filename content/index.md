@@ -9,7 +9,7 @@ lang: en
 # - name: Contributor 1
 # - name: Contributor 2
 github:
-  repository: wai-website-theme
+  repository: w3c/wai-website-theme
   path: content/index.md
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
@@ -19,7 +19,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod architecto excepturi incidunt, odit modi quidem deserunt doloremque molestias saepe. Iste dolor non repellendus laudantium! Nihil velit mollitia voluptatem ullam libero.
+This resource shows how to edit content for the WAI website.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -36,9 +36,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod architecto except
 {% include toc.html type="end" %}
 {:/}
 
-## Heading Level 2
+## Style Guide and other important information
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. **Assumenda aut, praesentium (bold)** commodi _nesciunt natus (italic)_ ipsum fugiat [voluptates nisi ipsam voluptas (Link)](https://example.com) recusandae, a. [Sunt eos veritatis numquam (Internal link)]({{ "/permalink/to/page/" | relative_url }})!
+* An [editorial style guide {% include_cached external.html %}](https://www.w3.org/WAI/EO/wiki/Style) is available in the EOWG wiki.
+
+
 
 ### Heading Level 3
 

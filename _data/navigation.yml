@@ -3,6 +3,8 @@
   pages:
   - name: Overview
     url: "/overview/"
+  - name: Versioning
+    url: "/versioning/"
 - name:
     en: 'Writing Documents'
   pages:
@@ -28,8 +30,6 @@
       url: "/components/atoms/button-group/"
     - name: "Show/Hide Buttons"
       url: "/components/atoms/show-hide-buttons/"
-    - name: Images
-      url: "/components/atoms/images/"
     - name: Input Elements
       url: "/components/atoms/input/"
     - name: "Mark Element"
@@ -51,6 +51,8 @@
       url: "/components/document-notes/draft/"
     - name: "Translation"
       url: "/components/document-notes/translation/"
+    - name: "Deprecated"
+      url: "/components/document-notes/deprecated/"
   - name: "Expand/<wbr>Collapse"
     url: "/components/excol/single/"
     pages:
@@ -71,6 +73,8 @@
       url: "/components/form/search/"
   - name: "Headings"
     url: "/components/headings/"
+  - name: Images
+    url: "/components/images/"
   - name: "Lists"
     url: "/components/lists/"
   - name: "Publication Warning"

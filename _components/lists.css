@@ -1,5 +1,8 @@
 ul {
   list-style-type: disc;
+  &.alt, &.alt ul {
+    list-style-type: circle;
+  }
 }
 
 ul li, ol li {
@@ -41,6 +44,47 @@ ul li, ol li {
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow: auto;
+  }
+}
+
+.withicons {
+  --img-width: 240px;
+  &.tiny   {--img-width:  60px;}
+  &.mini   {--img-width:  75px;}
+  &.small  {--img-width: 120px;}
+  &.normal {--img-width: 240px;}
+}
+
+.withicons li.left {
+  & img {
+    float: inline-start;
+    min-width: 60px;
+    width: calc(var(--img-width) / 2);
+  }
+  @media (--medium) {
+    padding-inline-start: calc(var(--img-width) + 20px);
+    & img {
+      min-width: auto;
+      width: var(--img-width);
+      margin-inline-start: calc((var(--img-width) + 20px) * -1);
+    }
+  }
+}
+
+.withicons li.right {
+  & img {
+    float: inline-end;
+    min-width: 60px;
+    width: calc(var(--img-width) / 2);
+  }
+  @media (--medium) {
+    padding-inline-end: calc(var(--img-width) + 20px);
+    & img {
+      min-width: auto;
+      width: var(--img-width);
+      margin-inline-end: calc((var(--img-width) + 20px) * -1);
+    }
   }
 }
 

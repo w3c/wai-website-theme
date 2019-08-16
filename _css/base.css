@@ -556,7 +556,5 @@ img.symbol {
   margin-block-end: 1em;
 }
 
-main img { max-width: 100%; }
-
 figure { margin: 0 0 1em; }
 figcaption { font-weight: bold; border-block-end: 1px solid var(--line-grey); margin-block-end: .5em;}
