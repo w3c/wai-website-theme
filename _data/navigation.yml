@@ -3,8 +3,6 @@
   pages:
   - name: Overview
     url: "/overview/"
-  - name: Versioning
-    url: "/versioning/"
 - name:
     en: 'Writing Documents'
   pages:
