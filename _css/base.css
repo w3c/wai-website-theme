@@ -120,7 +120,7 @@
 html {
   background-color: var(--off-white);
   @media print {
-    font-size: 10pt;
+    font-size: 12pt;
     background-color: #fff;
   }
 }

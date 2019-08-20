@@ -22,6 +22,9 @@ h1 {
   @media (--large) {
     font-size: 2.375rem;
   }
+  @media print {
+    font-size: 24pt;
+  }
   line-height: 1.2;
   font-weight: normal;
   margin-block-start: 0;
@@ -32,6 +35,9 @@ h1 {
 
 h2 {
   font-size: 1.375rem;
+  @media print {
+    font-size: 21pt;
+  }
   line-height: 1.2;
   font-weight: bold;
   border-block-end: 1px solid var(--line-grey);
@@ -42,6 +48,9 @@ h2 {
 
 h3, h4 {
   font-size: 1.125rem;
+  @media print {
+    font-size: 16pt;
+  }
   line-height: 1.4;
 }
 
@@ -51,6 +60,9 @@ h3 + h4 {
 
 h4 {
   font-weight: normal;
+  @media print {
+    font-size: 14pt;
+  }
   & + h5 {
     margin-block-start: 0;
   }
@@ -60,6 +72,9 @@ h5 {
   font-weight: bold;
   line-height: 1.6;
   font-size: 1rem;
+  @media print {
+    font-size: 12pt;
+  }
   & + h6 {
     margin-block-start: 0;
   }
@@ -67,6 +82,9 @@ h5 {
 
 h6 {
   font-size:.875rem;
+  @media print {
+    font-size: 12pt;
+  }
   line-height: 1.8;
 }
 

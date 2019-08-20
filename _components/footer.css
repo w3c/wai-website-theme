@@ -34,6 +34,14 @@
   }
   & a {
     color: var(--pure-white);
+    @media print {
+      color: #000;
+    }
+    &::after {
+      @media print {
+        display: none;
+      }
+    }
   }
   & a.largelink {
     color: var(--gold);
@@ -87,6 +95,9 @@
 .site-footer .social {
   margin-block-start: 1em;
   margin-block-end: 1em;
+  @media print {
+    display: none;
+  }
 }
 
 .site-footer .social svg {
