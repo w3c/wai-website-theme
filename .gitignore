@@ -7,3 +7,5 @@ Gemfile.lock
 node_modules
 .jekyll-metadata
 .nosync
+.jekyll-cache
+pnpm-lock.yaml
