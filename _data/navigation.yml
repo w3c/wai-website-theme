@@ -3,8 +3,12 @@
   pages:
   - name: Overview
     url: "/overview/"
+  - name: Technical Information
+    url: "/technical/"
+  - name: Files in Repositories
+    url: "/technical/files/"
 - name:
-    en: 'Writing Documents'
+    en: 'Create and Edit Documents'
   pages:
   - name: Overview
     url: "/writing/"
