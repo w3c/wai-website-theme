@@ -83,6 +83,11 @@
     url: "/components/publication-warning/"
   - name: "Tables"
     url: "/components/tables/"
+  - name: "Teasers"
+    url: "/components/teasers/"
+    pages:
+    - name: "Making the Web Accessible"
+      url: "/components/teasers/mwa/"
   - name: "Video Links"
     url: "/components/video-links/"
   - name: "Video Player"
