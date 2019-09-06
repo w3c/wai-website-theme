@@ -11,13 +11,13 @@ lang: en
 layout: home
 ---
 
-<h1 class="visuallyhidden">Web Accessibility Initiative Home</h1>
+<h1 class="visuallyhidden">W3C Web Accessibility Initiative Home</h1>
 <section class="default-grid teaser making-web-accessible" aria-labelledby="mwa-title">
   <header class="inner teaser-h">
     <h2 id="mwa-title">
       <span class="title">Making the Web Accessible</span>
     </h2>
-    <p class="subtitle">Strategies, guidelines, and resources to make the web accessible to people with disabilities.</p>
+    <p class="subtitle">Strategies, standards, and supporting resources to help you make the Web more accessible to people with disabilities.</p>
   </header>
   <div class="inner grid-3">
     <div class="col1 making-web-accessible-box">
