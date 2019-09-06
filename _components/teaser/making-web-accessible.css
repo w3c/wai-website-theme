@@ -11,16 +11,19 @@
   }
   & .making-web-accessible-box {
     text-align: start;
-    padding-block-start: 32px;
-    padding-inline-end: 20px;
-    padding-block-end: 0;
-    padding-inline-start: 105px;
   }
   & .mwa-icon {
     width:  65px;
     height: 65px;
-    float:left;
-    margin-inline-start: -85px;
+    margin-inline-end: 1rem;
+    &.mwa-icon-book {
+      height: 49px;
+      padding-block-start: 16px;
+    }
+    &.mwa-icon-computer {
+      height: 57px;
+      padding-block-start: 8px;
+    }
   }
   & .title {
     display: block;
@@ -35,6 +38,7 @@
     margin-block-end:0;
   }
   & p {
+    margin-block-start:.5rem;
     margin-block-end:0;
   }
   & .showhidebutton {
