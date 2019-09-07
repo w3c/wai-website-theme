@@ -344,7 +344,7 @@ navigation:
 
 Most of the SEO/SM metadata is provided by the [Jekyll SEO Tag plugin](https://github.com/jekyll/jekyll-seo-tag). We provide sensible metadata by default, however two lines should be added to the Frontmatter to customize Social Media preview:
 
-## `description`
+### `description` 🌐
 
 Provide a short description of what the page is all about.
 
@@ -360,7 +360,7 @@ description: The rationale for organizations to address accessibility. It includ
 {% include box.html type="end" %}
 {:/}
 
-## `image`
+### `image` 🌐
 
 Provide a short social media sharing image. This image might also be re-used when linking to a page from other sections of the website, for example as a home page teaser[^1].
 
