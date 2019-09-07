@@ -12,10 +12,14 @@
   pages:
   - name: Overview
     url: "/writing/"
+  - name: Frontmatter
+    url: "/writing/frontmatter/"
   - name: Markdown
     url: "/writing/markdown/"
   - name: Custom Markdown Extensions
     url: "/writing/wai-markdown/"
+  - name: Using HTML
+    url: "/writing/html/"
 - name:
     en: 'Design Components'
   pages:
