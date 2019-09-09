@@ -17,4 +17,5 @@ img {
   &.video { border-radius: calc(var(--img-width) / 20); }
 }
 
-main img { max-width: 100%; width: var(--img-width); }
+main img { max-width: 100%; }
+main img:not([width]) { width: var(--img-width); }
