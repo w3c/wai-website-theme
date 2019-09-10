@@ -99,6 +99,38 @@ nav_title: Keyboard
 {% include box.html type="end" %}
 {:/}
 
+### `title_image` 🌐
+
+To right-float an image on the title, specify it in the title_image line. If the image contains text, it needs to be adjusted to the language of the document.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example simple" %}
+{:/}
+
+```yaml
+title_image: /content-images/wai-media-guide/planning.svg
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+### `title_icon` 🌐
+
+An icon that is displayed left of the `<h1>`.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example simple" %}
+{:/}
+
+```yaml
+title_icon: /tips/img/icons.svg#developing
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
 ## `lang` ❗🌐
 
 Specify the language of the current document. Use the two-letter code, and if needed add specifiers by appending them using dashes (`-`). An [up to date list of language codes](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) can be found here on iana.org. Search for the language and then look for subtag.
