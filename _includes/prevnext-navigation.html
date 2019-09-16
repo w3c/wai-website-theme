@@ -19,13 +19,6 @@ navigation:
   {%- assign next=site.pages | where:"ref", page.navigation.next | where: "lang", lang | first -%}
 {% endunless %}
 
-{%- assign col = site.collections | where: "label", page.collection | first -%}
-{%- unless col.prevnext == false -%}
-{%- if page.group -%}
-  {%- assign docs = col.docs | where: "group", page.group | where: "lang", lang -%}
-{%- else -%}
-  {%- assign docs = col.docs | where: "lang", lang -%}
-{%- endif -%}
 <nav class="pager" aria-label="Previous/Next Page" style="clear: both;">
   <ul>
     {%- if page.navigation.previous -%}
@@ -52,5 +45,4 @@ navigation:
   </ul>
   {%- endif -%}
 </nav>
-{%- endunless -%}
 {%- endif -%}
