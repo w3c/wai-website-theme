@@ -372,6 +372,25 @@ navigation:
 {% include box.html type="end" %}
 {:/}
 
+## `class`
+
+Sometimes it is useful to specify a class on the body element. (Note that the page automatically creates a class with the name of the current page on the body element.)
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example simple" %}
+{:/}
+
+```yaml
+class: tight-page
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+* `tight-page`: Uses less space above `h2` headings, mainly used on for overview-ish pages.
+
+
 ## SEO & Social Media Metadata {#seo-sm}
 
 Most of the SEO/SM metadata is provided by the [Jekyll SEO Tag plugin](https://github.com/jekyll/jekyll-seo-tag). We provide sensible metadata by default, however two lines should be added to the Frontmatter to customize Social Media preview:
