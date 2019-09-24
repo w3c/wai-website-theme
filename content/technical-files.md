@@ -26,9 +26,7 @@ Find out the file structure in a repository:
 {% include box.html type="end" %}
 {:/}
 
-{::nomarkdown}
 {% include toc.html %}
-{:/}
 
 
 ## File Structure

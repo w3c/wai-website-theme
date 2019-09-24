@@ -25,9 +25,7 @@ This page outlines the fundamental technical processes and the general approach 
 {% include box.html type="end" %}
 {:/}
 
-{::nomarkdown}
 {% include toc.html %}
-{:/}
 
 ## The Style Guide
 

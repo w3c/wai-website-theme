@@ -7,6 +7,8 @@
     url: "/technical/"
   - name: Files in Repositories
     url: "/technical/files/"
+  - name: Publication of the WAI Site
+    url: "/technical/publication/"
 - name:
     en: 'Create and Edit Documents'
   pages:

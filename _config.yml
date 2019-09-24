@@ -21,7 +21,7 @@ exclude:
   - "Gemfile.lock"
   - "README.md"
   - "w3c.json"
-  - "node_modules/"
+  - "node_modules"
 
 # Build settings
 markdown: kramdown
