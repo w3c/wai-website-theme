@@ -32,6 +32,9 @@
   & .teaser-h h2 {
     margin:0;
   }
+  & .teaser-h p {
+    margin-block-end:.5rem;
+  }
   & h3 {
     margin-block-start: 10px;
     font-size: 1.5rem;
