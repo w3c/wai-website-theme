@@ -34,6 +34,9 @@ Creating a new resource is relatively straight forward.
 3. Set the name of the repository to a name starting with `wai-` – usually we use just lowercase letters but sometimes we use camel case
 4. Set the visibility setting to public
 5. Click on create repository
+6. In the new repository, configure as below:
+
+**All content is edited inside the `content` folder.**
 
 ## Configuring the repository
 
@@ -56,12 +59,10 @@ Usually the following commands should do it:
 cd _data
 rm *.*
 cd ..
-rmdir _data
-mkdir _data
 git submodule add https://github.com/w3c/wai-website-data.git _external/data
 cd _data
 ln -s ../_external/data/lang.json
-ln -s ../_external/data/navigation.yml
+cp ../_external/data/navigation.yml navigation.yml
 ln -s ../_external/data/techniques.yml
 ln -s ../_external/data/translations.yml
 ln -s ../_external/data/wcag.yml
