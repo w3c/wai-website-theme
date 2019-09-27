@@ -9,6 +9,8 @@
     url: "/technical/files/"
   - name: Publication of the WAI Site
     url: "/technical/publication/"
+  - name: Creating a New Resource
+    url: "/technical/new-resource/"
 - name:
     en: 'Create and Edit Documents'
   pages:
