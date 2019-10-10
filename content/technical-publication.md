@@ -29,7 +29,7 @@ Publishing the WAI Website is a series of mostly manual steps that ensure no dat
 
 ## 1. Generate Site Files
 
-There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 shows how to render it on your local machine. The former is the preferred method to deploy the site. Pick either one and then jump to [Copy Generated site to CVS Directory](#copy-to-cvs).
+There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 shows how to render it on your local machine. 1.1 is the preferred method to deploy the site. Pick either one and then jump to [2. Copy Generated site to CVS Directory](#copy-to-cvs).
 
 {% include excol.html type="start" id="simple" open="true" %}
 
