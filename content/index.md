@@ -8,6 +8,7 @@ lang: en
 # contributors:
 # - name: Contributor 1
 # - name: Contributor 2
+class: tight-page
 github:
   repository: w3c/wai-website-theme
   path: content/index.md
@@ -25,48 +26,21 @@ This resource shows how to edit content for the WAI website.
 {% include box.html type="end" %}
 {:/}
 
-{::nomarkdown}
-{% include toc.html type="start" title="Page Contents" %}
-{:/}
+## Technical Info
 
-- This will be replaced by an automatically generated TOC when using Markdown formatting.
-{:toc}
+  * [A technical overview](/technical/)
+  * [Files in Repositories](/technical/files/)
+  * [Publication of the WAI Website](/technical/publication/)
+  * [Creating a New Resource](/technical/new-resource/)
 
-{::nomarkdown}
-{% include toc.html type="end" %}
-{:/}
+## Editing Documents
 
-## Style Guide and other important information
+  * [Create and Edit Documents](/writing/)
+  * [The Frontmatter](/writing/frontmatter/)
+  * Markdown (TBD)
+  * Custom Markdown Extensions (TBD)
+  * Using HTML (TBD)
 
-* An [editorial style guide {% include_cached external.html %}](https://www.w3.org/WAI/EO/wiki/Style) is available in the EOWG wiki.
+## Design Components
 
-
-
-### Heading Level 3
-
-1. This is 
-2. a nice
-3. ordered
-4. list.
-
-#### Heading Level 4
-
-
-* And this is a
-* bullet list
-
-- You can use asterisks
-- or dashes. Whatever floats
-- your boat :-)
-
-##### Heading Level 5
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. Assumenda aut, praesentium commodi nesciunt natus ipsum fugiat voluptates nisi ipsam voluptas recusandae, a. Sunt eos veritatis numquam!
-
-## Heading Level 2
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. Assumenda aut, praesentium commodi nesciunt natus ipsum fugiat voluptates nisi ipsam voluptas recusandae, a. Sunt eos veritatis numquam!
-
-### Heading Level 3
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. Assumenda aut, praesentium commodi nesciunt natus ipsum fugiat voluptates nisi ipsam voluptas recusandae, a. Sunt eos veritatis numquam!
+Find all design components and how to invoke them from the [Design Components](/components/) page.
