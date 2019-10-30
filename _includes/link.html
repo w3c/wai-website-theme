@@ -71,7 +71,7 @@
 {%- if protocol[0] == "" -%}
   {%- assign linkurl = 'https://www.w3.org/WAI' | append: include.to -%}
 {%- else -%}
-  {%- assign linkurl = include.to -%}
+  {%- assign linkurl = include.to | relative_url -%}
 {%- endif -%}
 
 {%- if link_page.url -%}
