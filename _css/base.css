@@ -194,13 +194,13 @@ a {
   }
 }
 
-a, button, input, select, submit, textarea, [tabindex]:not([tabindex="-1"]) {
+a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]) {
   outline: 2px solid transparent;
   outline-offset: 5px;
   transition: outline-offset .2s linear;
 }
 
-a:focus, button:focus, input:focus, select:focus, submit:focus, textarea:focus, [tabindex]:not([tabindex="-1"]):focus {
+a:focus, button:focus, input:focus, select:focus:focus, textarea:focus, [tabindex]:not([tabindex="-1"]):focus {
   outline-color: currentColor;
   outline-offset: 2px;
 }
