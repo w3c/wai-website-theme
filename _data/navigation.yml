@@ -83,6 +83,8 @@
       url: "/components/form/search/"
   - name: "Headings"
     url: "/components/headings/"
+  - name: Icons
+    url: "/components/icons/"
   - name: Images
     url: "/components/images/"
   - name: "Lists"
