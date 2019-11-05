@@ -57,7 +57,7 @@ inline_css: |
 {% include box.html type="start" title="Overview" class="" %}
 {:/}
 
-Icons can be used in various ways with the icon.html helper.
+Icons can be used in various ways with the `icon.html` helper. <a href="https://github.com/w3c/wai-website-theme/blob/master/assets/images/icons.svg">The icons are in SVG format in a single sprite file.</a>
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -148,7 +148,9 @@ Icons can be used in various ways with the icon.html helper.
 {% endfor %}
 </ul>
 
-{% for v in page.variants %}
+{%- assign variants = page.variants | sort: "name" -%}
+
+{% for v in variants %}
 
 ### {% include_cached icon.html name=v.name label=v.name %} {{v.name}} {%raw%}{#{%endraw%}{{v.name}}{%raw%}}{%endraw%}
 
