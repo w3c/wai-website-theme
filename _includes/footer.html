@@ -71,7 +71,11 @@
 <script>
   svg4everybody();
 </script>
-{%- if page.lang == "en" or page.lang == "" or page.lang == "en_US" -%}
+{%- assign defaultlang = false -%}
+{%- if page.lang == "en"-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if page.lang == ""-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if page.lang == "en_US"-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if defaultlang == true -%}
 <script>
   var translationStrings = {};
 </script>
