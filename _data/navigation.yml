@@ -74,6 +74,8 @@
     url: "/components/figure/"
   - name: "Footer (Page & Site)"
     url: "/components/footer/"
+  - name: "Footnotes"
+    url: "/components/footnotes/"
   - name: "Form"
     url: "/components/form/elements/"
     pages:

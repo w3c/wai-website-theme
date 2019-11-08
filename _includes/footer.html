@@ -71,6 +71,13 @@
 <script>
   svg4everybody();
 </script>
+{%- unless page.lang == "en" -%}
+<script src="{{ '/assets/scripts/lang/' | append: page.lang | append: '.js' | append: timestamp | relative_url }}"></script>
+{% else %}
+<script>
+  var translationStrings = {};
+</script>
+{%- endunless -%}
 <!-- Matomo -->
 <script>
   var _paq = _paq || [];

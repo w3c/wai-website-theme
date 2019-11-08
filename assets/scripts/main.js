@@ -1,6 +1,14 @@
 (function () {
   'use strict';
 
+  var t = function(enstring) {
+    if (translationStrings[enstring]) {
+      return translationStrings[enstring];
+    } else {
+      return enstring;
+    }
+  }
+
   var addclass = function(el, className) {
     if (el.classList)
       el.classList.add(className);
@@ -330,7 +338,7 @@ if (document.querySelector('main')) {
     });
 
     Array.prototype.forEach.call(excolAll, function(el, i){
-      el.innerHTML = '<button class="expand button button-secondary button-small">+ Expand All Sections</button> <button class="collapse button button-secondary button-small">&minus; Collapse All Sections</button>';
+      el.innerHTML = '<button class="expand button button-secondary button-small">+ ' + t('Expand All Sections') + '</button> <button class="collapse button button-secondary button-small">&minus; ' + t('Collapse All Sections') + '</button>';
     });
 
     Array.prototype.forEach.call(document.querySelectorAll('.excol-all'), function(el, i){
@@ -408,28 +416,33 @@ if (document.querySelector('main')) {
   var footnoteBox = document.querySelector('div.footnotes');
 
   if (footnoteBox !== null) {
+    var footnotesTitle = document.querySelector('body').getAttribute('data-footnotestitle');
+    if (!footnotesTitle) {
+      footnotesTitle = 'Footnotes';
+    }
+
     addclass(footnoteBox, 'box');
     addclass(footnoteBox, 'box-simple');
     footnoteBox.setAttribute('role', 'complementary');
-    footnoteBox.setAttribute('aria-label', 'References');
+    footnoteBox.setAttribute('aria-label', footnotesTitle);
 
     var header = document.createElement("header");
-    header.innerHTML = '<h2>References</h2>';
+    header.innerHTML = '<h2>' + footnotesTitle + '</h2>';
     addclass(header, 'box-h');
     footnoteBox.insertBefore(header, footnoteBox.querySelector('ol'));
 
     var footnoteLinks = document.querySelectorAll('sup a.footnote');
 
     Array.prototype.forEach.call(footnoteLinks, function(element, i){
-      element.setAttribute('aria-label', 'to footnote ' + element.textContent);
-      element.setAttribute('title', 'to footnote ' + element.textContent);
+      element.setAttribute('aria-label', t('to footnote') + ' ' + element.textContent);
+      element.setAttribute('title',      t('to footnote') + ' ' + element.textContent);
     });
 
     var footnoteBackLinks = footnoteBox.querySelectorAll('a.reversefootnote');
 
     Array.prototype.forEach.call(footnoteBackLinks, function(element, i){
-      element.setAttribute('aria-label', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
-      element.setAttribute('title', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
+      element.setAttribute('aria-label', t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('in text'));
+      element.setAttribute('title',      t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('in text'));
     });
 
   }

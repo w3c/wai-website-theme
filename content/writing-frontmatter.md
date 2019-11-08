@@ -390,6 +390,9 @@ class: tight-page
 
 * `tight-page`: Uses less space above `h2` headings, mainly used on for overview-ish pages.
 
+## `footnotestitle`
+
+The title used as a heading of the Footnotes list box. Falls back to ”Footnotes”.
 
 ## SEO & Social Media Metadata {#seo-sm}
 

@@ -1,0 +1,4 @@
+---
+layout: languagefile
+lang: ar
+---
