@@ -34,6 +34,9 @@
   }
   & a {
     color: var(--pure-white);
+    &:--hovcus {
+      color: var(--gold);
+    }
     @media print {
       color: #000;
     }
@@ -51,7 +54,13 @@
       color: var(--dk-grey);
       font-size: 12pt;
     }
-    &:hover, &:focus {
+    &:--hovcus {
+      text-decoration: underline;
+    }
+  }
+  & ul a {
+    text-decoration: none;
+    &:--hovcus {
       text-decoration: underline;
     }
   }
