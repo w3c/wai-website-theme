@@ -71,13 +71,13 @@
 <script>
   svg4everybody();
 </script>
-{%- unless page.lang == "en" -%}
-<script src="{{ '/assets/scripts/lang/' | append: page.lang | append: '.js' | append: timestamp | relative_url }}"></script>
-{% else %}
+{%- if page.lang == "en" or page.lang == "" or page.lang == "en_US" -%}
 <script>
   var translationStrings = {};
 </script>
-{%- endunless -%}
+{% else %}
+<script src="{{ '/assets/scripts/lang/' | append: page.lang | append: '.js' | append: timestamp | relative_url }}"></script>
+{%- endif -%}
 <!-- Matomo -->
 <script>
   var _paq = _paq || [];
