@@ -63,18 +63,6 @@ As you can see, the footnotes can be anywhere in the text. Here I show how to us
 {% include box.html type="end" %}
 {:/}
 
-{::nomarkdown}
-{% include box.html type="start" title="HTML output (DO NOT USE)" class="example simple" %}
-{:/}
-
-```html
-{% include_cached icon.html name=default %}
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
 ## Change Footnotes Heading
 
 In some resources we might use different headings for the footnotes. For example in the [The Business Case for Digital Accessibility](https://www.w3.org/WAI/business-case/), we use “References”. The title can be specified in the frontmatter:
