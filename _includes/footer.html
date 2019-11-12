@@ -72,9 +72,9 @@
   svg4everybody();
 </script>
 {%- assign defaultlang = false -%}
-{%- if page.lang == "en"-%}{%- assign defaultlang = true -%}{%- endif -%}
-{%- if page.lang == ""-%}{%- assign defaultlang = true -%}{%- endif -%}
-{%- if page.lang == "en_US"-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if include.lang == "en"-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if include.lang == ""-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if include.lang == "en_US"-%}{%- assign defaultlang = true -%}{%- endif -%}
 {%- if defaultlang == true -%}
 <script>
   var translationStrings = {};

@@ -11,7 +11,7 @@
   {%- endunless -%}
 {%- endif -%}
 {%- assign englishpageurl = enpage.url %}
-{% assign translations=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
+{%- assign translations=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' -%}
 {%- unless translations[0].ref -%}
   {% assign translations=site.pages | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
 {%- endunless -%}
@@ -92,7 +92,7 @@
   </main>
 </div>
 
-{% include footer.html %}
+{% include footer.html lang=pagelang %}
 
   </body>
 </html>
