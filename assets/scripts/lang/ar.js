@@ -1,4 +1,4 @@
 ---
 layout: languagefile
-lang: ar
+language: ar
 ---

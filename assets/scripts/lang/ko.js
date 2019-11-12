@@ -1,4 +1,4 @@
 ---
 layout: languagefile
-lang: ko
+language: ko
 ---

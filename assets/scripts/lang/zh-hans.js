@@ -1,4 +1,4 @@
 ---
 layout: languagefile
-lang: zh-hans
+language: zh-hans
 ---

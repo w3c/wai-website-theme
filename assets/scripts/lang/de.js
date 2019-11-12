@@ -1,4 +1,4 @@
 ---
 layout: languagefile
-lang: de
+language: de
 ---

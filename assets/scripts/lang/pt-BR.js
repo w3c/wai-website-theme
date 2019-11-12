@@ -1,4 +1,4 @@
 ---
 layout: languagefile
-lang: pt-BR
+language: pt-BR
 ---

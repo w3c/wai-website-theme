@@ -1,4 +1,4 @@
 ---
 layout: languagefile
-lang: el
+language: el
 ---
