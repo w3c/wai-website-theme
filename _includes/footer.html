@@ -12,17 +12,30 @@
 {%- else -%}
   {%- assign changelog = "" -%}
 {%- endif -%}
+{%- if page.acknowledgements -%}
+  {%- assign acknowledgementspage=site.documents | where:"ref", page.acknowledgements | first -%}
+  {%- unless acknowledgementspage.ref -%}
+    {%- assign acknowledgementspage=site.pages | where:"ref", page.acknowledgements | first -%}
+  {%- endunless -%}
+  {% assign acknowledgementspageurl = acknowledgementspage.url | relative_url %}
+  {%- capture acknowledgementstext -%}
+  {%- include_cached t.html t="Acknowledgements" lang=page.lang -%}
+  {%- endcapture -%}
+  {%- assign acknowledgements = '<a href="' | append: acknowledgementspageurl | append: '">' | append: acknowledgementstext | append: '</a>' -%}
+{%- else -%}
+  {%- assign acknowledgements = "" -%}
+{%- endif -%}
 {% if col.footer %}
 <footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
   <div class="inner">
-    {{col.footer | replace: "CHANGELOG", changelog }}
+    {{ col.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
   </div>
 </footer>
 {% else %}
   {% if page.footer %}
   <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
     <div class="inner">
-      {{page.footer | replace: "CHANGELOG", changelog}}
+      {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
     </div>
   </footer>
   {% endif %}
