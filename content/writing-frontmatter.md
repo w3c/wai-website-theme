@@ -354,6 +354,62 @@ footer: >
 {% include box.html type="end" %}
 {:/}
 
+### `changelog`
+
+The changelog attribute uses a reference to another document and replaces the token CHANGELOG in the footer text with a link to the changelog.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example simple" %}
+{:/}
+
+The code:
+
+```yaml
+changelog: /media/av/changelog/
+footer: >
+  <p>Footer Content as HTML. CHANGELOG.</p>
+```
+
+produces:
+
+```html
+<p>Footer Content as HTML. <a href="/media/av/changelog/">Changelog</a>.</p>
+```
+
+The URL gets properly adapted to the deployment environment.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+### `achnowledgements`
+
+The achnowledgements attribute uses a reference to another document and replaces the token ACKNOWLEDGEMENTS in the footer text with a link to the achnowledgements.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example simple" %}
+{:/}
+
+The code:
+
+```yaml
+achnowledgements: /media/av/achnowledgements/
+footer: >
+  <p>Footer Content as HTML. ACKNOWLEDGEMENTS.</p>
+```
+
+produces:
+
+```html
+<p>Footer Content as HTML. <a href="/media/av/acknowledgements/">Acknowledgements</a>.</p>
+```
+
+The URL gets properly adapted to the deployment environment.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
 ## `navigation`
 
 Navigation specifies next and previous pages (by their `ref` <em>ref</em>erence), so that previous/next arrows can be shown:
