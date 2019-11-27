@@ -1,0 +1,32 @@
+{%- unless site.published -%}
+{%- capture text -%}
+{%- if include.issue -%}
+  <a href="https://github.com/{% if include.repo %}{{include.repo}}{% else %}{{page.github.repository}}{% endif %}/issues/{{include.issue}}">Issue #{{include.issue}}</a> — {{ include.note }}
+{%- else -%}
+  {%- if include.pr -%}
+    <a href="https://github.com/{% if include.repo %}{{include.repo}}{% else %}{{page.github.repository}}{% endif %}/pull/{{include.pr}}">Pull Request #{{include.pr}}</a> — {{ include.note }}
+  {%- else -%}
+    {{ include.note }}
+  {%- endif -%}
+{%- endif -%}
+{%- endcapture -%}
+{%- assign statustext = "Editor’s Note" -%}
+{%- assign statuscolor = "--grey" -%}
+{%- assign textcolor = "--off-black" -%}
+{%- if include.status == "open" -%}
+  {%- assign statustext = "Open Issue" -%}
+  {%- assign statuscolor = "--faded-red" -%}
+  {%- assign textcolor = "--pure-white" -%}
+{%- endif -%}
+{%- if include.status == "proposed" -%}
+  {%- assign statustext = "Proposed Change" -%}
+  {%- assign statuscolor = "--gold" -%}
+  {%- assign textcolor = "--off-black" -%}
+{%- endif -%}
+{%- if include.status == "accepted" -%}
+  {%- assign statustext = "Accepted Change" -%}
+  {%- assign statuscolor = "--ocean" -%}
+  {%- assign textcolor = "--off-black" -%}
+{%- endif -%}
+<span style="border: 5px solid var({{ statuscolor }});"><strong style="background-color: var({{ statuscolor }});border-right: 5px solid var({{ statuscolor }}); color: var({{ textcolor }});">{{ statustext }}</strong> {{ text }}</span><br>
+{%- endunless -%}
