@@ -429,6 +429,8 @@ The URL gets properly adapted to the deployment environment.
 
 Define a license for the content. If no license is set, the [W3C Document License](https://https://w3.org/WAI/about/using-wai-material/#official-w3c-document-license) is assumed. Specify `creative-commons` to output a paragraph in the footer area that links to the Creative Commons license and sets the metadata of the page appropriately.
 
+*  Creative Commons (`creative-commons`) — include for resources we specifically want people to adapt for their environment, such as sample presentations, curricula, business case. For now, do not include on other things.
+
 {::nomarkdown}
 {% include box.html type="start" title="Examples" class="example simple" %}
 {:/}
