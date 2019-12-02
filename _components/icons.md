@@ -49,6 +49,7 @@ variants:
 - name: rss
 - name: youtube
 - name: twitter
+- name: creative-commons
 order: 1
 inline_css: |
 ---
@@ -139,18 +140,21 @@ Icons can be used in various ways with the `icon.html` helper. <a href="https://
 {% include box.html type="end" %}
 {:/}
 
+{::nomarkdown}
+{%- assign variants = page.variants | sort: "name" -%}
+{:/}
 
 ## All Icons
 
 <ul style="font-size: 2.5rem; display:grid; grid-template-columns: repeat(auto-fit, minmax(2.5rem, 7rem)); margin: 0;padding: 0;">
-{% for v in page.variants %}
+{%- for v in variants -%}
   <li style="list-style: none;"><a href="#{{v.name}}" style="display:block; width: 100%; text-align: center;">{% include_cached icon.html name=v.name label=v.name %}</a></li>
-{% endfor %}
+{%- endfor -%}
 </ul>
 
-{%- assign variants = page.variants | sort: "name" -%}
-
-{% for v in variants %}
+{::nomarkdown}
+{%- for v in variants -%}
+{:/}
 
 ### {% include_cached icon.html name=v.name label=v.name %} {{v.name}} {%raw%}{#{%endraw%}{{v.name}}{%raw%}}{%endraw%}
 
@@ -190,11 +194,3 @@ Icons can be used in various ways with the `icon.html` helper. <a href="https://
 {:/}
 
 {% endfor %}
-{% comment %}
-{%- if name -%}{%- else -%}{%- assign name="default" -%}{%- endif -%}
-{%- if label -%}
-<svg aria-label="{{ label }}" class="icon-{{ name }} {{class}}"><use xlink:href="{{ "/assets/images/icons.svg" | path }}#icon-{{ name }}"></use></svg> {{ name }}
-{%- else -%}
-<svg aria-hidden="true" class="icon-{{ name }} {{class}}"><use xlink:href="{{ "/assets/images/icons.svg" | path }}#icon-{{ name }}"></use></svg> {{ name }}
-{%- endif -%}
-{%endcomment%}

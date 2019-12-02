@@ -12,6 +12,8 @@ footer: > # Text in footer in HTML
 inline_css: |
 ---
 
+***Note:** This is only a visual design reference. [The content is defined in the frontmatter](/writing/frontmatter/#footer-).*
+
 ## Page Footer
 
 <footer class="page-footer default-grid">

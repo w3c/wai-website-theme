@@ -347,8 +347,23 @@ needs to be translated.
 
 ```yaml
 footer: >
-  <p>Footer Content as HTML.</p>
+  <p><strong>Date:</strong> Reviewed 00 Month 202X. Updated 00 Month 202X. First published 00 Month 202X. CHANGELOG.<br>
+  History: ...</p>
+  <p><strong>Editors:</strong> Name and Name. Contributors: Name, Name, and <a href="https://www.w3.org/WAI/EO/participants">EOWG Participants</a>. ACKNOWLEDGEMENTS lists contributors. Previous editors: Name; previous contributors: Name.</p>
+  <p>Developed [by|with input from]  the Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>), with the <a href="@@">Acme Task Force</a>. Previously developed  as part of the <a href="@@">Acme Project</a> funded by the Money Org. Updated as part of the <a href="@@">Acme Project</a> funded by the Money Org.</p>
 ```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+{::nomarkdown}
+{% include box.html type="start" title="Notes" class="simple notes" %}
+{:/}
+
+*  Developer, Project Lead — sometimes in addition to "Editors" we'll have "Developers" or such, like [Laws and Policies](https://www.w3.org/WAI/policies/#wai-page-footer) and [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/#/).
+*  History — rarely is this needed. Occasionally it's useful, like for [Easy Checks](https://www.w3.org/WAI/test-evaluate/preliminary/#wai-page-footer).
+*  Name — generally we link W3C staff to their people page. And do not link others.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -402,6 +417,35 @@ produces:
 
 ```html
 <p>Footer Content as HTML. <a href="/media/av/acknowledgements/">Acknowledgements</a>.</p>
+```
+
+The URL gets properly adapted to the deployment environment.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+### `license`
+
+Define a license for the content. If no license is set, the [W3C Document License](https://https://w3.org/WAI/about/using-wai-material/#official-w3c-document-license) is assumed. Specify `creative-commons` to output a paragraph in the footer area that links to the Creative Commons license and sets the metadata of the page appropriately.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example simple" %}
+{:/}
+
+The code:
+
+```yaml
+license: creative-commons
+footer: >
+  <p>Footer Content as HTML.</p>
+```
+
+produces:
+
+```html
+<p>Footer Content as HTML.</p>
+<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 ```
 
 The URL gets properly adapted to the deployment environment.
