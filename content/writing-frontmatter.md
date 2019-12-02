@@ -29,7 +29,7 @@ In the following list, Frontmatter lines are highlighted with emoji:
 
 ## Title
 
-### `title` ❗🌐
+### `title` ❗🌐 {#title}
 
 A title that describes the page. Will be used as an `h1` and in the HTML `title`.
 
@@ -53,7 +53,7 @@ title: "Web Accessibility Perspectives: Keyboard Navigation"
 
 Note: When using colons (`:`) in the values of the Frontmatter, using straight (`"`) or single (`'`) quotes is required.
 
-### `title_html` 🌐🚸
+### `title_html` 🌐🚸 {#title_html}
 
 If you _need_ to use HTML in the title (for example to highlight a word, use code markup or force a line break), you can use this line to provide that HTML variant. The `title` will still be used in the HTML title, for example, or when referring to the page using [WAI Markdown links](/writing/wai-markdown/#links).
 
@@ -77,7 +77,7 @@ title_html: "Web Accessibility Perspectives:<br>Keyboard Navigation"
 {% include box.html type="end" %}
 {:/}
 
-## `nav_title` ❗🌐
+## `nav_title` ❗🌐 {#nav_title}
 
 A short title that we’ll use as the navigation text (in the left navigation) in the future. It should be short and succinct.
 
@@ -99,7 +99,7 @@ nav_title: Keyboard
 {% include box.html type="end" %}
 {:/}
 
-### `title_image` 🌐
+### `title_image` 🌐 {#title_image}
 
 To right-float an image on the title, specify it in the title_image line. If the image contains text, it needs to be adjusted to the language of the document.
 
@@ -115,7 +115,7 @@ title_image: /content-images/wai-media-guide/planning.svg
 {% include box.html type="end" %}
 {:/}
 
-### `title_icon` 🌐
+### `title_icon` 🌐 {#title_icon}
 
 An icon that is displayed left of the `<h1>`.
 
@@ -131,7 +131,7 @@ title_icon: /tips/img/icons.svg#developing
 {% include box.html type="end" %}
 {:/}
 
-## `lang` ❗🌐
+## `lang` ❗🌐 {#lang}
 
 Specify the language of the current document. Use the two-letter code, and if needed add specifiers by appending them using dashes (`-`). An [up to date list of language codes](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) can be found here on iana.org. Search for the language and then look for subtag.
 
@@ -163,7 +163,7 @@ lang: pt-BR
 Note: `pt-BR` above means “Portuguese as spoken in Brazil”. We usually only use region identifier when the language is significantly differently interpreted in different regions or when there is a reasonable expectation to get diverging translations.
 
 
-## `permalink` ❗🌐
+## `permalink` ❗🌐 {#permalink}
 
 This determines where a page will be put when the site is generated.
 
@@ -193,7 +193,7 @@ permalink: /path/to/page/es
 
 Note: By convention, translations do not get a closing forward slash `/`. 
 
-## `ref` ❗🌐
+## `ref` ❗🌐 {#ref}
 
 The unique identifier (“<em>ref</em>erence”) of a page. It uses the permalink of the English version of the page and is used (among other things) to identify the set of translations of a page.
 
@@ -219,7 +219,7 @@ ref: /path/to/page/
 {% include box.html type="end" %}
 {:/}
 
-## `last_updated` 🌐
+## `last_updated` 🌐 {#last_updated}
 
 A ISO date that specifies when the document was last edited in the
 format of YYYY-MM-DD (e.g. 2019-03-07 or 2020-11-24).
@@ -238,7 +238,7 @@ last_updated: 2019-03-07
 
 Note: We do not version our pages and we also do not keep old versions. Occasionally we use change logs to highlight changes between versions but there is no way translators can tell by looking at the date(s) if there were major or minor changes.
 
-## `translators` 🌐
+## `translators` 🌐 {#translators}
 
 Every translator is specified by their name in a separate line, like:
 
@@ -274,7 +274,7 @@ translators:
 {% include box.html type="end" %}
 {:/}
 
-## `contributors` 🌐
+## `contributors` 🌐 {#contributors}
 
 Every (translation!) contributor is specified by their name in a separate line, like:
 
@@ -310,7 +310,7 @@ contributors:
 {% include box.html type="end" %}
 {:/}
 
-## `github` ❗🌐
+## `github` ❗🌐 {#github}
 
 The `github` key defines the repository, branch and path of the document
 to provide the fork and edit this document on GitHub links.
@@ -336,7 +336,7 @@ and the extension. Examples:
 -   `index.md` ➡️ `index.de.md`
 -   `this-is-a-longer-name.md` ➡️ `this-is-a-longer-name.el.md`
 
-## `footer` ❗🌐
+## `footer` ❗🌐 {#footer}
 
 The footer has information about the document. The content of the footer
 needs to be translated.
@@ -500,7 +500,7 @@ The title used as a heading of the Footnotes list box. Falls back to ”Footnote
 
 Most of the SEO/SM metadata is provided by the [Jekyll SEO Tag plugin](https://github.com/jekyll/jekyll-seo-tag). We provide sensible metadata by default, however two lines should be added to the Frontmatter to customize Social Media preview:
 
-### `description` 🌐
+### `description` 🌐 {#description}
 
 Provide a short description of what the page is all about.
 
@@ -516,7 +516,7 @@ description: The rationale for organizations to address accessibility. It includ
 {% include box.html type="end" %}
 {:/}
 
-### `image` 🌐
+### `image` 🌐 {#image}
 
 Provide a short social media sharing image. This image might also be re-used when linking to a page from other sections of the website, for example as a home page teaser[^1].
 
