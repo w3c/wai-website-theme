@@ -1,0 +1,35 @@
+{% if include.url == searchurl %}
+  {% assign seen_current = true %}
+  {% assign is_in_here = true %}
+  {% capture subpages %}
+  {% for page in include.pages %}
+    {% if forloop.first %}<ul>{% endif %}
+      {% include subpages.html name=page.name url=page.url pages=page.pages hide=page.hide subpageofcurrent=true %}
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+  {% endcapture %}
+  {% unless include.name == false%}<li>{% include_cached link.html to=include.url text=include.name class="page-link" usenavtitle=true lang=page.lang hidelangnotice=true aria-current="page" %} {% endunless %}{{subpages}}{% unless include.name == false%}</li>{% endunless %}
+{% else %}
+  {% unless include.hide %}
+    {% capture subpages %}
+    {% for page in include.pages %}
+      {% if forloop.first %}<ul{% if include.name == false%} class="sidenav--list"{% endif %}>{% endif %}
+        {% include subpages.html name=page.name url=page.url pages=page.pages hide=page.hide %}
+      {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
+    {% endcapture %}
+    {% if include.name == false %}
+      {{subpages}}
+    {% else %}
+      {% if is_in_here == true %}
+        {% if include.subpageofcurrent == true %}
+          <li>{% include_cached link.html to=include.url text=include.name class="page-link" usenavtitle=true lang=page.lang hidelangnotice=true subpageofcurrent=include.subpageofcurrent %} {{subpages}}</li>
+        {% else %}
+           <li>{% include_cached link.html to=include.url text=include.name class="page-link" usenavtitle=true lang=page.lang hidelangnotice=true aria-current="location" subpageofcurrent=include.subpageofcurrent %} {{subpages}}</li>
+        {% endif %}
+      {% else %}
+        <li>{% include_cached link.html to=include.url text=include.name class="page-link" usenavtitle=true lang=page.lang hidelangnotice=true subpageofcurrent=include.subpageofcurrent %}{{subpages}}</li>
+      {% endif %}
+    {% endif %}
+  {% endunless %}
+{% endif %}
