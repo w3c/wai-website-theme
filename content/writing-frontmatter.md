@@ -77,7 +77,7 @@ title_html: "Web Accessibility Perspectives:<br>Keyboard Navigation"
 {% include box.html type="end" %}
 {:/}
 
-## `nav_title` ❗🌐 {#nav_title}
+### `nav_title` ❗🌐 {#nav_title}
 
 A short title that we’ll use as the navigation text (in the left navigation) in the future. It should be short and succinct.
 
