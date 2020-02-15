@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "wai-website-theme"
-  spec.version       = "1.8"
+  spec.version       = "1.9.pre"
   spec.authors       = ["Eric Eggert"]
   spec.email         = ["mail@yatil.net"]
 
