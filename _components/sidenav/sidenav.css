@@ -14,40 +14,11 @@
   }
 }
 
-.sidenav--head {
-  background-color: var(--w3c-blue);
-  border: 2px solid var(--w3c-blue);
-  border-width: 0 5px;
-  padding: 16px 24px;
-  display:flex;
-  align-items: flex-end;
-  border-block-end: none;
-  font-weight: bold;
-}
-
-.sidenav--head-icon {
-  padding-block-end: .3em;
-  margin-inline-start: -16px;
-}
-
-.sidenav--head-icon--inner {
-  width: 47px;
-  height: 48px;
-  float: inline-start;
-  margin-inline-end: 8px;
-}
-
-.sidenav--head-section {
-  color: var(--pure-white);
-  text-transform: uppercase;
-  letter-spacing: .7px;
-  font-size: .6875rem;
-  font-weight: bold;
-}
-
-.sidenav--head-subsection {
+.sidenav--list>:first-child>a {
   color: var(--pure-white);
   font-size: 1.375rem;
+  font-weight: bold;
+  border-block-start: none;
 }
 
 .sidenav--list {

@@ -1,7 +1,7 @@
 - name:
-    en: 'Home'
+    en: 'WAI Website Manual'
   pages:
-  - name: Overview
+  - name: WAI Website Manual
     url: "/overview/"
   - name: Technical Information
     url: "/technical/"
@@ -14,7 +14,7 @@
 - name:
     en: 'Create and Edit Documents'
   pages:
-  - name: Overview
+  - name: Create and Edit Documents
     url: "/writing/"
   - name: Frontmatter
     url: "/writing/frontmatter/"
@@ -29,7 +29,7 @@
 - name:
     en: 'Design Components'
   pages:
-  - name: Overview
+  - name: Design Components
     url: "/components/"
   - name: Colors
     url: "/components/colors/"
