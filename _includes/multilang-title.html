@@ -9,21 +9,21 @@
   {%- endfor -%}
   {%- if thislangurl -%}
     {%- assign lng = t[0] -%}
-    <a href="{{thislangurl}}" hreflang="{{t[0]}}">
+<a href="{{thislangurl}}" hreflang="{{t[0]}}">
       {%- unless lng == "en" -%}
-        [{{site.data.lang[lng].name}}/<span lang="{{lng}}">{{site.data.lang[lng].nativeName}}</span>]
+[{{site.data.lang[lng].name}}/<span lang="{{lng}}">{{site.data.lang[lng].nativeName}}</span>]
       {%- endunless -%}
-      <span lang="{{lng}}">
+<span lang="{{lng}}">
   {%- else -%}
-    <span lang="{{t[0]}}">
+<span lang="{{t[0]}}">
   {%- endif -%}
   {{- t[1] | xml_escape -}}
-  </span>
+</span>
   {%- if thislangurl -%}
     {%- if include.external -%}
       {%- include_cached icon.html name="external-link" label="External Site" -%}
     {%- endif -%}
-    </a>
+</a>
   {%- endif -%}
   {%- unless forloop.first -%}
     {%- unless forloop.last %}, {% endunless -%}

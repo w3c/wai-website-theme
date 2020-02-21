@@ -88,5 +88,4 @@
     {%- assign link_text = include.fallback -%}
   {%- endunless -%}
 {%- endif -%}
-
-<a lang="{{linklang}}" href="{{linkurl}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}{% if include.class %} class="{{include.class}}"{% endif %}><span>{{ link_text | xml_escape }}{%- unless in_lang %}{% unless include.hidelangnotice %} <span class="lang" lang="{{pagelang}}" dir="auto" translate="no">({% include_cached t.html t="in English" lang=pagelang %})</span>{% endunless -%}{% endunless -%}{% if include.external %} {% include_cached external.html %}{% endif %}</span></a>
+<a lang="{{linklang}}" href="{{linkurl}}"{% if include.aria-current %} aria-current="{{include.aria-current}}"{% endif %}{% if include.class %} class="{{include.class}}"{% endif %}><span>{% unless link_text contains "<" %}{{ link_text | xml_escape }}{% else %}{{ link_text }}{% endunless %}{%- unless in_lang %}{% unless include.hidelangnotice %} <span class="lang" lang="{{pagelang}}" dir="auto" translate="no">({% include_cached t.html t="in English" lang=pagelang %})</span>{% endunless -%}{% endunless -%}{% if include.external %} {% include_cached external.html %}{% endif %}</span></a>
