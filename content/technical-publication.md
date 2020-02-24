@@ -33,11 +33,11 @@ There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 s
 
 {% include excol.html type="start" id="simple" open="true" %}
 
-### 1.1 Generate using GitHub Action (simple)
+### 1.1 Generate Using GitHub Action (Simple)
 
 {% include excol.html type="middle" %}
 
-#### 1.1.1 Create a release on GitHub
+#### 1.1.1 Create a Release on GitHub
 
 Visit the [Draft Release page](https://github.com/w3c/wai-website/releases/new) to create a release. Enter today’s date into the “Tag Version” input field, in the format: `YYYY/MM/DD`. – This creates a nice organization of the files.
 
@@ -66,14 +66,14 @@ You can follow the generation of the files in the [Actions tab](https://github.c
 
 {% include excol.html type="start" id="complicated" %}
 
-### 1.2 Generate site on your machine (more complicated to setup)
+### 1.2 Generate Site on Your Machine (More Complicated to Setup)
 
 {% include excol.html type="middle" %}
 
 
 **Note:** The following steps were tested on a Unix machine. If you want to generate the website on Windows, using the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) is probably the way to go, albeit untested.
 
-#### 1.2.1 Locally clone & set up the repository
+#### 1.2.1 Locally Clone & Set Up the Repository
 
 The steps in this step 0
 
@@ -110,8 +110,7 @@ git submodules init
 git submodule update --remote
 ```
 
-
-#### 1.2.1 Update submodules
+#### 1.2.1 Update Submodules
 
 Submodules are links to the individual resources. `wai-website` is our main repository and individual resources like `wai-people-use-web` are then linked to as submodules.
 
@@ -131,7 +130,7 @@ git submodule update --remote && git add _external && git commit -m "Update Exte
 
 This code does four things: It updates the submodules, adds them to a commit, locks that commit in and pushes it back to the server.
 
-#### 1.2.2 Build site
+#### 1.2.2 Build Site
 
 Occasionally the bundler code is outdated or stops working, in that case run a `bundle update` in the repository folder.
 
@@ -169,7 +168,7 @@ In the event of having a page deleted, the publisher needs to go into CVS **by h
 
 {% include image.html src="technical-publication-merge.png" alt="" %}
 
-### Signs of when the merge would break the site:
+### Signs of When the Merge Would Break the Site
 
 * Unless the template has changed, if all files are shown as new/to be replaced, you probably did not compile with the `_config_prod.yml` file added to the configuration.
 
