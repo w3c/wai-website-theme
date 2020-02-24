@@ -11,7 +11,7 @@ lang: en
 # - name: Contributor 2
 github:
   repository: w3c/wai-website-theme
-  path: content/technical.md
+  path: content/technical-files.md
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
 ---

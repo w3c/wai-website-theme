@@ -11,6 +11,10 @@
     url: "/technical/publication/"
   - name: Creating a New Resource
     url: "/technical/new-resource/"
+  - name: Integrating a New Resource into the Main WAI Sie Repository
+    url: "/technical/integrate/"
+  - name: Navigation
+    url: "/technical/navigation/"
 - name:
     en: 'Create and Edit Documents'
   pages:
@@ -20,7 +24,7 @@
     url: "/writing/frontmatter/"
   - name: Markdown
     url: "/writing/markdown/"
-  - name: Custom Markdown Extensions
+  - name: WAI Markdown Extensions
     url: "/writing/wai-markdown/"
   - name: Using HTML
     url: "/writing/html/"
