@@ -171,7 +171,7 @@ The first section creates an array of page urls that are page urls of this colle
     {%- unless c_name == "" -%}<li>{% if c_url == enpage.url%}{% include_cached link.html text=c_name to=c_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=c_name to=c_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
     {%- unless d_name == "" -%}<li>{% if d_url == enpage.url%}{% include_cached link.html text=d_name to=d_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=d_name to=d_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
     {%- if col.parent == '/news/' -%}<li><a href="{{ '/news/' | relative_url }}">News</a></li>{%- endif -%}
-    {%- if page.parent == "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{{page.title}}</a></li>{%- endif -%}
+    {%- if page.parent == "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{{page.title | xml_escape}}</a></li>{%- endif -%}
     {%- if col.parent -%}
     {%- capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture -%}
     {%- assign splitted_url_parts = page_url_without_index_html | split: '/' -%}
