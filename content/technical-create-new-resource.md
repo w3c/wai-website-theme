@@ -73,7 +73,7 @@ cd ..
 git submodule update --remote
 ```
 
-3. Update bundler; Run `netlify init` to set up Netlify; Commit all data to the repository
+##### 3. Update bundler; Run `netlify init` to set up Netlify; Commit all data to the repository
 
 ```bash
 bundle update
