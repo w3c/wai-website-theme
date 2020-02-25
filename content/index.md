@@ -32,14 +32,17 @@ This resource shows how to edit content for the WAI website.
   * [Files in Repositories](/technical/files/)
   * [Publication of the WAI Website](/technical/publication/)
   * [Creating a New Resource](/technical/new-resource/)
+  * [Integrating a New Resource into the Main WAI Sie Repository](/technical/integrate/)
+  * [Navigation](/technical/navigation/)
 
 ## Editing Documents
 
   * [Create and Edit Documents](/writing/)
   * [The Frontmatter](/writing/frontmatter/)
-  * Markdown (TBD)
-  * Custom Markdown Extensions (TBD)
-  * Using HTML (TBD)
+  * [Markdown](/writing/markdown/)
+  * [Custom Markdown Extensions](/writing/wai-markdown/)
+  * [Using HTML](/writing/html/)
+  * [Images](/writing/images/)
 
 ## Design Components
 
