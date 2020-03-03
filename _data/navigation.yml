@@ -11,6 +11,8 @@
     url: "/technical/publication/"
   - name: Creating a New Resource
     url: "/technical/new-resource/"
+  - name: "Checkout an Existing Resource"
+    url: "/technical/existing-resource/"
   - name: Integrating a New Resource into the Main WAI Sie Repository
     url: "/technical/integrate/"
   - name: Navigation
