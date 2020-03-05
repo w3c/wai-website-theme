@@ -27,7 +27,7 @@ inline_css: |
    1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
 
    2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
-      
+
       1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
 
       2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
@@ -265,3 +265,25 @@ On mobile, images float left and are half the size, with a minimum width of 60px
 #### Example
 
 {{example}}
+
+## Sentence list
+
+Specify class `.sentence` if you want to display a list as a sentence:
+
+{% capture example %}
+* One
+* Two
+* Three
+{:.sentence}
+{% endcapture %}
+
+### Example
+
+{{ example }}
+
+### Code
+
+```md
+{{ example }}
+```
+

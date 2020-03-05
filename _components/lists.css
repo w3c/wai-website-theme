@@ -150,3 +150,43 @@ dd+dt {
 dl.paragraph-like dd+dt {
   margin-block-start: 1em;
 }
+
+ul.sentence, ul.sentence li {
+    font-size: 0; /* Make white space disappear */
+    display:inline;
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.sentence li {
+    font-size: 1rem;
+}
+
+.footer ul.sentence li {
+    font-size: .875rem;
+}
+
+ul.sentence li:before {
+    content: ", "
+}
+
+ul.sentence li:first-child:before {
+    content: ''
+}
+
+ul.sentence li:last-child:before {
+    content: ', and '
+}
+
+ul.sentence li:last-child:after {
+    content: '.'
+}
+
+ul.sentence li:last-child:nth-child(2):before {
+    content: " and "
+}
+
+ul.sentence li:last-child:first-child:before {
+    content: ''
+}
