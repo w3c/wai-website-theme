@@ -77,5 +77,47 @@ This approach brings many problems, mostly for _Microsoft Windows_ users due to 
 
 ## Netlify
 
-@@@
+Previews of individual resources are set up in Netlify via Github. The credentials for Netlify are available on the [WAI Website page (Team Only)](https://www.w3.org/WAI/Plan/website#accounts).
 
+The preview should be viewable under `<github-repo>.netlify.app`. The configuration is set in the `netlify.toml` configuration file that includes the following information:
+
+```toml
+[Settings]
+
+ID = "<github-repo>"
+
+[build]
+
+command = "bundle exec jekyll build --config '_config.yml,_config_staging.yml'"
+publish = "_site"
+
+[[redirects]]
+  from = "/"
+  to = "/permalink/of/main/resource/page/"
+```
+
+Change the permalink and the ID and commit the file to the repository.
+
+### Creating a New Netlify Site
+
+In the [Netlify web app](https://app.netlify.com/teams/w3c-wai/sites), click the “New site from Git” button, click on GitHub. Select W3C from the account picker on the top left and search for the repository. Click on the repository in the result list.
+
+On the next page, the configuration from the `netlify.toml` file is already available and the configuration needs only to be saves by clicking the “Deploy site” button.
+
+Netlify creates a random name for the site, which is usually not what one wants. Click site settings on the page that has opened and then select “Change site name”. In the popup, change the name to the github repository name (without `w3c/`).
+
+### Pull Request Build Notifications
+
+By default, Netlify does not inform users that a Pull Request preview deploys. In the settings for the site, click on “Build & deploy” and make sure the “Deploy contexts” are set like this:
+
+* Production branch: master[^1]
+* Deploy previews: Automatically build deploy previews for all pull requests
+* Branch deploys: Deploy only the production branch
+
+[^1]: This should usually be `master` but generally be the “default branch” as set in GitHub.
+
+Under “deploy notifications”, use the “add notification” dropdown to add three “GitHub pull request comment” notifications:
+
+* Deploy Preview started
+* Deploy Preview succeeded
+* Deploy Preview failed
