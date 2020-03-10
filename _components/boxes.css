@@ -128,3 +128,9 @@
     }
   }
 }
+
+#helpimprove {
+  @media print {
+    display: none;
+  }
+}

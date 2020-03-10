@@ -65,8 +65,8 @@
 
 @font-face {
   font-family: 'Noto Sans Mono';
-  src: url('../fonts/notosansmono/notosansmono-semicondensed.woff2') format('woff2'),
-       url('../fonts/notosansmono/notosansmono-semicondensed.woff') format('woff');
+  src: url('../fonts/notosansmono/notosansmono-regular.woff2') format('woff2'),
+       url('../fonts/notosansmono/notosansmono-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display:fallback;
@@ -74,8 +74,8 @@
 
 @font-face {
   font-family: 'Noto Sans Mono';
-  src: url('../fonts/notosansmono/notosansmono-semicondensedbold.woff2') format('woff2'),
-       url('../fonts/notosansmono/notosansmono-semicondensedbold.woff') format('woff');
+  src: url('../fonts/notosansmono/notosansmono-bold.woff2') format('woff2'),
+       url('../fonts/notosansmono/notosansmono-bold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display:fallback;
@@ -120,7 +120,7 @@
 html {
   background-color: var(--off-white);
   @media print {
-    font-size: 10pt;
+    font-size: 12pt;
     background-color: #fff;
   }
 }
@@ -194,13 +194,13 @@ a {
   }
 }
 
-a, button, input, select, submit, textarea, [tabindex]:not([tabindex="-1"]) {
+a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]) {
   outline: 2px solid transparent;
   outline-offset: 5px;
   transition: outline-offset .2s linear;
 }
 
-a:focus, button:focus, input:focus, select:focus, submit:focus, textarea:focus, [tabindex]:not([tabindex="-1"]):focus {
+a:focus, button:focus, input:focus, select:focus:focus, textarea:focus, [tabindex]:not([tabindex="-1"]):focus {
   outline-color: currentColor;
   outline-offset: 2px;
 }
@@ -555,8 +555,6 @@ img.symbol {
   margin-inline-start: 1em;
   margin-block-end: 1em;
 }
-
-main img { max-width: 100%; }
 
 figure { margin: 0 0 1em; }
 figcaption { font-weight: bold; border-block-end: 1px solid var(--line-grey); margin-block-end: .5em;}

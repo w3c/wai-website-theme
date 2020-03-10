@@ -6,3 +6,6 @@ Gemfile.lock
 .DS_Store
 node_modules
 .jekyll-metadata
+.nosync
+.jekyll-cache
+pnpm-lock.yaml

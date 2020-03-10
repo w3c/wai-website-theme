@@ -42,6 +42,17 @@
   }
 }
 
+.doc-deprecated {
+  & h1::before {
+    content: "Deprecated";
+      background-color: var(--faded-red);
+      color: var(--pure-white);
+  }
+  & .doc-note-box {
+    border-color: var(--faded-red);
+  }
+}
+
 .doc-note-translation {
   font-size: .8125rem;
   & p {

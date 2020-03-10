@@ -1,1 +1,1 @@
-{% if include.collection %}resource-{{include.collection | slugify}}{% endif %}{%if include.doc-note-type %} doc-note doc-{{include.doc-note-type}}{% endif %}
+{% if include.collection %}resource-{{include.collection | slugify}}{% endif %}{%if include.doc-note-type %} doc-note doc-{{include.doc-note-type}}{% endif %}{%if include.pageclass %} {{include.pageclass}}{% endif %}

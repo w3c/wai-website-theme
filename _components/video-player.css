@@ -1237,6 +1237,7 @@ button svg {
         url('../ableplayer/button-icons/fonts/able.svg?dqripi#able') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display:swap;
 }
 
 [class^="icon-"], [class*=" icon-"] {

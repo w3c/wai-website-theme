@@ -8,8 +8,9 @@ lang: en
 # contributors:
 # - name: Contributor 1
 # - name: Contributor 2
+class: tight-page
 github:
-  repository: wai-website-theme
+  repository: w3c/wai-website-theme
   path: content/index.md
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
@@ -19,52 +20,30 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod architecto excepturi incidunt, odit modi quidem deserunt doloremque molestias saepe. Iste dolor non repellendus laudantium! Nihil velit mollitia voluptatem ullam libero.
+This resource shows how to edit content for the WAI website.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-{::nomarkdown}
-{% include toc.html type="start" title="Page Contents" %}
-{:/}
+## Technical Info
 
-- This will be replaced by an automatically generated TOC when using Markdown formatting.
-{:toc}
+  * [A technical overview](/technical/)
+  * [Files in Repositories](/technical/files/)
+  * [Publication of the WAI Website](/technical/publication/)
+  * [Creating a New Resource](/technical/new-resource/)
+  * [Integrating a New Resource into the Main WAI Sie Repository](/technical/integrate/)
+  * [Navigation](/technical/navigation/)
 
-{::nomarkdown}
-{% include toc.html type="end" %}
-{:/}
+## Editing Documents
 
-## Heading Level 2
+  * [Create and Edit Documents](/writing/)
+  * [The Frontmatter](/writing/frontmatter/)
+  * [Markdown](/writing/markdown/)
+  * [Custom Markdown Extensions](/writing/wai-markdown/)
+  * [Using HTML](/writing/html/)
+  * [Images](/writing/images/)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. **Assumenda aut, praesentium (bold)** commodi _nesciunt natus (italic)_ ipsum fugiat [voluptates nisi ipsam voluptas (Link)](https://example.com) recusandae, a. [Sunt eos veritatis numquam (Internal link)]({{ "/permalink/to/page/" | relative_url }})!
+## Design Components
 
-### Heading Level 3
-
-1. This is 
-2. a nice
-3. ordered
-4. list.
-
-#### Heading Level 4
-
-
-* And this is a
-* bullet list
-
-- You can use asterisks
-- or dashes. Whatever floats
-- your boat :-)
-
-##### Heading Level 5
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. Assumenda aut, praesentium commodi nesciunt natus ipsum fugiat voluptates nisi ipsam voluptas recusandae, a. Sunt eos veritatis numquam!
-
-## Heading Level 2
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. Assumenda aut, praesentium commodi nesciunt natus ipsum fugiat voluptates nisi ipsam voluptas recusandae, a. Sunt eos veritatis numquam!
-
-### Heading Level 3
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat ab laboriosam. Assumenda aut, praesentium commodi nesciunt natus ipsum fugiat voluptates nisi ipsam voluptas recusandae, a. Sunt eos veritatis numquam!
+Find all design components and how to invoke them from the [Design Components](/components/) page.

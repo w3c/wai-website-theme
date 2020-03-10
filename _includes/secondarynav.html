@@ -38,7 +38,6 @@
 {%- for i in currentsubnav.pages -%}
   {%- if forloop.first -%}
     <nav class="sn-contents" aria-label="Secondary">
-      <div class="sidenav--head"><div class="sidenav--head-title"><div class="sidenav--head-subsection">{% include_cached inpl.html lang=page.lang a=currentsubnav.name %}</div></div></div>
       <ul class="sidenav--list">
   {% endif %}
   {%- assign insub = false -%}

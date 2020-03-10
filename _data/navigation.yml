@@ -1,21 +1,41 @@
 - name:
-    en: 'Home'
+    en: 'WAI Website Manual'
   pages:
-  - name: Overview
+  - name: WAI Website Manual
     url: "/overview/"
+  - name: Technical Information
+    url: "/technical/"
+  - name: Files in Repositories
+    url: "/technical/files/"
+  - name: Publication of the WAI Site
+    url: "/technical/publication/"
+  - name: Creating a New Resource
+    url: "/technical/new-resource/"
+  - name: "Checkout an Existing Resource"
+    url: "/technical/existing-resource/"
+  - name: Integrating a New Resource into the Main WAI Site Repository
+    url: "/technical/integrate/"
+  - name: Navigation
+    url: "/technical/navigation/"
 - name:
-    en: 'Writing Documents'
+    en: 'Create and Edit Documents'
   pages:
-  - name: Overview
+  - name: Create and Edit Documents
     url: "/writing/"
+  - name: Frontmatter
+    url: "/writing/frontmatter/"
   - name: Markdown
     url: "/writing/markdown/"
-  - name: Custom Markdown Extensions
+  - name: WAI Markdown Extensions
     url: "/writing/wai-markdown/"
+  - name: Using HTML
+    url: "/writing/html/"
+  - name: Images
+    url: "/writing/images/"
 - name:
     en: 'Design Components'
   pages:
-  - name: Overview
+  - name: Design Components
     url: "/components/"
   - name: Colors
     url: "/components/colors/"
@@ -28,8 +48,6 @@
       url: "/components/atoms/button-group/"
     - name: "Show/Hide Buttons"
       url: "/components/atoms/show-hide-buttons/"
-    - name: Images
-      url: "/components/atoms/images/"
     - name: Input Elements
       url: "/components/atoms/input/"
     - name: "Mark Element"
@@ -51,6 +69,8 @@
       url: "/components/document-notes/draft/"
     - name: "Translation"
       url: "/components/document-notes/translation/"
+    - name: "Deprecated"
+      url: "/components/document-notes/deprecated/"
   - name: "Expand/<wbr>Collapse"
     url: "/components/excol/single/"
     pages:
@@ -62,6 +82,8 @@
     url: "/components/figure/"
   - name: "Footer (Page & Site)"
     url: "/components/footer/"
+  - name: "Footnotes"
+    url: "/components/footnotes/"
   - name: "Form"
     url: "/components/form/elements/"
     pages:
@@ -71,12 +93,21 @@
       url: "/components/form/search/"
   - name: "Headings"
     url: "/components/headings/"
+  - name: Icons
+    url: "/components/icons/"
+  - name: Images
+    url: "/components/images/"
   - name: "Lists"
     url: "/components/lists/"
   - name: "Publication Warning"
     url: "/components/publication-warning/"
   - name: "Tables"
     url: "/components/tables/"
+  - name: "Teasers"
+    url: "/components/teasers/"
+    pages:
+  - name: "Making the Web Accessible"
+    url: "/components/teasers/mwa/"
   - name: "Video Card"
     url: "/components/video-card/"
   - name: "Video Links"

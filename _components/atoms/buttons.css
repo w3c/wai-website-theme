@@ -1,5 +1,4 @@
 button, .button {
-  cursor: pointer;
   border-radius: 5px;
   display: inline-block;
   display: inline-flex;
@@ -107,6 +106,7 @@ button, .button {
   background-color: var(--pure-white);
   color: var(--w3c-blue);
   border-color: var(--gold);
+  margin-inline-start: auto;
   &:--hovcus {
     border-color: var(--pure-white);
     background-color: var(--gold);

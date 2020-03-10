@@ -3,9 +3,6 @@ The first section creates an array of page urls that are page urls of this colle
 {% endcomment %}
 {%- assign col = site.collections | where: "label", page.collection | first -%}
 <nav class="sidenav sn-contents" aria-label="Other Pages in this Resource">
-  <div class="sidenav--head">{% if col.icon %}<div class="sidenav--head-icon">{% include_cached icon.html name=col.icon class="sidenav--head-icon--inner" %}</div>{%- endif -%}<div class="sidenav--head-title"><div class="sidenav--head-subsection">{% if col.shortname %}{{ col.shortname }}{%- else -%}{{ col.name }}{%- endif -%}</div>
-    </div>
-  </div>
   <ul class="sidenav--list">
 
 {%- unless col.groups -%}
@@ -22,7 +19,7 @@ The first section creates an array of page urls that are page urls of this colle
   {%- assign my_pages = site.documents | sort: "order" -%}
   {%- for my_page in my_pages -%}
     {%- unless my_page.nosidenav -%}{%- if pgs contains my_page.url -%}
-    <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {%- endif -%} href="{{ my_page.url | relative_url }}">{% comment %}{% if my_page.url == page.url %}{% include_cached icon.html name="chevron-right" %} {%- endif -%}{% endcomment%}{% comment %}{% if my_page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{my_page.title_icon | relative_url}}"></use></svg> {% endif %}{% endcomment %}{% if my_page.nav_title %}{{ my_page.nav_title }}{%- else -%}{{ my_page.title }}{%- endif -%}</a></li>
+    <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {%- endif -%} href="{{ my_page.url | relative_url }}">{% if my_page.nav_title %}{{ my_page.nav_title | xml_escape }}{%- else -%}{{ my_page.title | xml_escape }}{%- endif -%}</a></li>
     {%- endif -%}{%- endunless -%}
   {%- endfor -%}
 {%- else -%}
@@ -46,7 +43,7 @@ The first section creates an array of page urls that are page urls of this colle
       {%- assign my_pages = site.documents | sort: "order" -%}
       {%- for my_page in my_pages -%}
         {% unless my_page.nosidenav %}{% if pgs contains my_page.url %}
-        <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {% endif %} href="{{ my_page.url | relative_url }}">{% comment %}{% if my_page.url == page.url %}{% include_cached icon.html name="chevron-right" %} {%- endif -%}{% endcomment %}{% comment %}{% if my_page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{my_page.title_icon | relative_url}}"></use></svg> {% endif %}{% endcomment %}{% if my_page.nav_title %}{{ my_page.nav_title }}{%- else -%}{{ my_page.title }}{%- endif -%}</a></li>
+        <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {% endif %} href="{{ my_page.url | relative_url }}">{% if my_page.nav_title %}{{ my_page.nav_title | xml_escape }}{%- else -%}{{ my_page.title | xml_escape }}{%- endif -%}</a></li>
         {%- endif -%}{%- endunless -%}
       {%- endfor -%}
     </ul>

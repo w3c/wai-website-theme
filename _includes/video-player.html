@@ -1,6 +1,6 @@
 {%- assign langs = site.data.lang -%}
 <div class="video-container" data-video-type="" dir="ltr">
-  <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" width="450">
+  <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" data-description-audible="false" width="450">
     {%- assign captions = include.captions | split: ',' -%}
     {%- for caption in captions -%}
       {%- assign c = caption | split: '|' -%}
@@ -26,7 +26,7 @@
 </div>
 {% if include.yt-id-ad %}
 <div class="video-container" data-video-type="audio-described">
-  <video preload="metadata" data-youtube-id="{{include.yt-id-ad}}" data-youtube-nocookie="true" width="450">
+  <video preload="metadata" data-youtube-id="{{include.yt-id-ad}}" data-youtube-nocookie="true" data-description-audible="false" width="450">
     {%- assign captions = include.captions-ad | split: ',' -%}
     {%- for caption in captions -%}
       {%- assign c = caption | split: '|' -%}
