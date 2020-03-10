@@ -4,7 +4,7 @@
 
   @media (--medlarge) {
     float: inline-end;
-    max-width: 40%;
+    max-width: 42%;
     margin-inline-start: 2em;
   }
 }
@@ -20,4 +20,6 @@
   .video-card ~ aside {
     clear: inline-end;
   }
-  
+  .video-card .able {
+    margin-top: 0;
+  }
