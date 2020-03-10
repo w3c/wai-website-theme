@@ -106,8 +106,10 @@
   - name: "Teasers"
     url: "/components/teasers/"
     pages:
-    - name: "Making the Web Accessible"
-      url: "/components/teasers/mwa/"
+  - name: "Making the Web Accessible"
+    url: "/components/teasers/mwa/"
+  - name: "Video Card"
+    url: "/components/video-card/"
   - name: "Video Links"
     url: "/components/video-links/"
   - name: "Video Player"

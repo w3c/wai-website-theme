@@ -1,0 +1,22 @@
+<div class="video-card">
+  <video controls>
+    <source src="{{ include.video-url }}" type="video/mp4">
+    {%- assign captions = include.captions | split: ',' -%}
+    {%- for caption in captions -%}
+      {%- assign c = caption | split: '|' -%}
+      {%- assign clangcode = c[1] -%}
+      {%- assign l = langs[clangcode].nativeName -%}
+      <track src="{{ include.path | append: c[0] | relative_url }}" label="{{l}}" kind="captions" srclang="{{c[1]}}" {% if c[2] == "default" %}default{% endif %}>
+    {%- endfor -%}
+    {%- assign subtitles = include.subtitles | split: ',' -%}
+      {%- for subtitle in subtitles -%}
+        {%- assign s = subtitle | split: '|' -%}
+        {%- assign slangcode = s[1] -%}
+        {%- assign l = langs[slangcode].nativeName -%}
+        <track src="{{ include.path | append: s[0] | relative_url }}" label="{{l}}" kind="subtitles" srclang="{{s[1]}}" {% if s[2] == "default" %}default{% endif %}>
+      {%- endfor -%}
+  </video>
+  {% if include.accessible-version %}
+   <p>This video is available in other formats with more accessibility features: <a href="{{ include.accessible-version }}">{{ include.accessible-version-label }}</a>.</p>
+  {% endif %}
+</div>
