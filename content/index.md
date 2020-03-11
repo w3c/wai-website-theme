@@ -32,7 +32,7 @@ This resource shows how to edit content for the WAI website.
   * [Files in Repositories](/technical/files/)
   * [Publication of the WAI Website](/technical/publication/)
   * [Creating a New Resource](/technical/new-resource/)
-  * [Integrating a New Resource into the Main WAI Sie Repository](/technical/integrate/)
+  * [Integrating a New Resource into the Main WAI Site Repository](/technical/integrate/)
   * [Navigation](/technical/navigation/)
 
 ## Editing Documents
