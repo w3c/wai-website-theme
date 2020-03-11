@@ -41,11 +41,23 @@ The git URL is available by clicking the green ”Clone or download” button on
 
 ## Initialize Submodules
 
-From your graphical git client, you should be able to “Update all Submodules”. On the command line, this line of code does it:
+From your graphical git client, you should be able to “Update all Submodules”. 
+
+This is how it works on the command line when you cloned the project for the first time:
+
+```bash
+$ git submodule update --init --recursive
+```
+
+This inits submodules in your local projects (creates the directories) and recursively fetches the data.
+
+When you already have an existing clone (i.e. the second time on this machine) and want to get the latest version of all submodules, run: 
 
 ```bash
 $ git submodule update --remote
 ```
+
+See also: [Git - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 ## Initialize Jekyll
 
