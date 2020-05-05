@@ -1,5 +1,9 @@
 <div class="video-card">
+  {% if include.poster %}
+  <video controls poster="{{ include.poster }}">
+  {% else %}
   <video controls>
+  {% endif}
     <source src="{{ include.video-url }}" type="video/mp4">
     {%- assign captions = include.captions | split: ',' -%}
     {%- for caption in captions -%}
