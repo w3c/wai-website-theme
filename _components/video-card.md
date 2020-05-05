@@ -37,7 +37,10 @@ Embedding the video card:
 : (optional) If added, a description in the video underneath will link to a page that contains a more accessible version of this video (e.g. using an AblePlayer embed)
 
 `accessible-version-label="Video: Conformance Evaluation"`
-: (optional) If added, the name of the link to a page that contains a more accessible version of this video 
+: (optional) If added, the name of the link to a page that contains a more accessible version of this video
+
+`poster="preview.png"`
+: (optional) Set an image to be used as the video player's [`poster`](https://html.spec.whatwg.org/dev/media.html#attr-video-poster).
 
 #### Caption/Subtitle/Description listings
 
