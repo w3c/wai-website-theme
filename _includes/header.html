@@ -171,7 +171,7 @@ The first section creates an array of page urls that are page urls of this colle
     {%- unless c_name == "" -%}<li>{% if c_url == enpage.url%}{% include_cached link.html text=c_name to=c_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=c_name to=c_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
     {%- unless d_name == "" -%}<li>{% if d_url == enpage.url%}{% include_cached link.html text=d_name to=d_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=d_name to=d_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
     {%- if col.parent == '/news/' -%}<li><a href="{{ '/news/' | relative_url }}">News</a></li>{%- endif -%}
-    {%- if page.parent == "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{{page.title}}</a></li>{%- endif -%}
+    {%- if page.parent == "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{{page.title | xml_escape}}</a></li>{%- endif -%}
     {%- if col.parent -%}
     {%- capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture -%}
     {%- assign splitted_url_parts = page_url_without_index_html | split: '/' -%}
@@ -183,7 +183,7 @@ The first section creates an array of page urls that are page urls of this colle
         {%- for breadcrumb_page in site.documents -%}
             {%- if current_breadcrumb_url == breadcrumb_page.url -%}
                 <li>
-                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{current_breadcrumb_url | relative_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{% if breadcrumb_page.nav_title %}{% if breadcumb_page.nav_title == "Overview"%}{{breadcrumb_page.title}}{% else%}{{breadcrumb_page.nav_title}}{% endif %}{%-else-%}{{breadcrumb_page.title}}{% endif %}{% endif %}</a>
+                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{current_breadcrumb_url | relative_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title | xml_escape}}{% else %}{% if breadcrumb_page.nav_title %}{% if breadcumb_page.nav_title == "Overview"%}{{breadcrumb_page.title | xml_escape}}{% else%}{{breadcrumb_page.nav_title | xml_escape}}{% endif %}{%-else-%}{{breadcrumb_page.title | xml_escape}}{% endif %}{% endif %}</a>
                 </li>
             {%- endif -%}
         {%- endfor -%}

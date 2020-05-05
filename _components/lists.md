@@ -9,6 +9,9 @@ lang: en
 # - name: Contributor 2
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
+github:
+  repository: w3c/wai-website-theme
+  path: _components/lists.md
 inline_css: |
 ---
 
@@ -24,7 +27,7 @@ inline_css: |
    1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
 
    2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
-      
+
       1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
 
       2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
@@ -58,6 +61,30 @@ inline_css: |
 ```
 
 ### Example
+
+{{example}}
+
+### Alternative style (Circle) {#circle}
+
+Use the class `alt` to have open circle list-icons.
+
+#### Code
+
+{% capture example %}
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+  * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+  * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+    * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+    * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicabo quasi vero.
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+{:.alt}
+{% endcapture %}
+
+```md
+{{example}}
+```
+
+#### Example
 
 {{example}}
 
@@ -186,21 +213,77 @@ narrow down the list to the types of tools you are interested in.
 #### Example
 
 * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+
 * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
 {:.checkbox}
 
-### List that does not look like a list
+### List that does not look like a list {#nolist}
+
+{% capture example %}
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+
+* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
+{:.nolist}
+{% endcapture %}
 
 #### Code
 
 ```md
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-{:.nolist}
+{{example}}
 ```
 
 #### Example
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explicab.
-{:.nolist}
+{{example}}
+
+### No list with Images/Icons {#nolistimg}
+
+You can specify the width of the image with an extra class (instead of `{:.nolist.withicons}` write `{:.nolist.withicons.sizeclass}`). Possible values for sizes are:
+* `tiny`:  60px
+* `mini`:  90px
+* `small`: 120px
+* `normal`: 240px (default)
+
+On mobile, images float left and are half the size, with a minimum width of 60px.
+
+{% capture example %}
+* {:.left} {% include image.html src="picture.jpg" alt="Demo alt text" %} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+
+* {:.right} {% include image.html src="picture.jpg" alt="Demo alt text" %} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+{:.nolist.withicons}
+{% endcapture %}
+
+#### Code
+
+```md
+* {:.left} {%raw%}{% include image.html src="picture.jpg" alt="Demo alt text" %}{%endraw%} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+
+* {:.right} {%raw%}{% include image.html src="picture.jpg" alt="Demo alt text" %}{%endraw%} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta minus harum sit eos ipsam aliquid eveniet explica.
+{:.nolist.withicons}
+```
+
+#### Example
+
+{{example}}
+
+## Sentence list
+
+Specify class `.sentence` if you want to display a list as a sentence:
+
+{% capture example %}
+* One
+* Two
+* Three
+{:.sentence}
+{% endcapture %}
+
+### Example
+
+{{ example }}
+
+### Code
+
+```md
+{{ example }}
+```
+

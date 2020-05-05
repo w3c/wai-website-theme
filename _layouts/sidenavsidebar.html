@@ -35,7 +35,7 @@
   <meta name="twitter:image" property="og:image" content="{{ twimage | relative_url | prepend: site.url }}">
   {%- endunless -%}
   {% include_cached head.html type="end" %}
-  <body id="top" class="page-{{page.title | slugify}} {% include_cached body-class.html collection=page.collection doc-note-type=page.doc-note-type %}">
+  <body id="top" class="page-{{page.title | slugify}} {% include_cached body-class.html collection=page.collection doc-note-type=page.doc-note-type %}"{%if page.footnotestitle %} data-footnotestitle="{{page.footnotestitle}}"{% endif %}>
     {% include header.html translations=translations %}
 
 <div class="default-grid with-gap leftcol" tabindex="-1">
@@ -43,7 +43,7 @@
   {% include sidenav.html %}
 
   <main id="main" class="content"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
-    <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
+    <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title | xml_escape }}{% endif %}</h1>
 
     {%- include doc-note-msg.html -%}
 
@@ -64,7 +64,7 @@
   </main>
 </div>
 
-{% include footer.html %}
+{% include footer.html lang=pagelang %}
 
   </body>
 </html>

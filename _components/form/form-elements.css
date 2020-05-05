@@ -55,6 +55,9 @@ legend {
 .field {
   padding: 4px;
   margin: 0 0 2rem;
+  outline: 2px solid transparent;
+  outline-offset: 5px;
+  transition: outline-offset .2s linear;
   & label {
     display: block;
   }
@@ -64,7 +67,6 @@ legend {
     width: 100%;
     padding: 8px;
     &:focus {
-      outline: none;
       border-color: var(--w3c-classic);
       background-color: #EDF4FA;
       & ::-webkit-input-placeholder {
@@ -86,9 +88,12 @@ legend {
   }
   &:focus-within {
     background-color: #EDF4FA;
+    outline-color: currentColor;
+    outline-offset: 2px;
   }
 
   &:focus-within input:focus {
+    outline: none;
     background-color: var(--pure-white) !important;
   }
 }
