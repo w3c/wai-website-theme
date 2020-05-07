@@ -1,6 +1,6 @@
 <div class="video-card">
   {% if include.poster %}
-  <video controls poster="{{ include.poster || relative_url }}">
+  <video controls poster="{{ include.poster | relative_url }}">
   {% else %}
   <video controls>
   {% endif %}
