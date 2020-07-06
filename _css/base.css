@@ -171,6 +171,7 @@ a {
   }
   &.stealthy-link {
     text-decoration: none;
+    color: inherit;
     &:--hovcus {
       color: inherit;
     }
