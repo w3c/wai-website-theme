@@ -19,7 +19,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Publishing the WAI Website is a series of mostly manual steps that ensure no data is overwritten unintentionally.
+NOTE: Only the first step is still in use. Gerald will document what happens now...
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -29,7 +29,7 @@ Publishing the WAI Website is a series of mostly manual steps that ensure no dat
 
 ## 1. Generate Site Files
 
-There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 shows how to render it on your local machine. 1.1 is the preferred method to deploy the site. Pick either one and then jump to [2. Copy Generated site to CVS Directory](#copy-to-cvs).
+<s>There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 shows how to render it on your local machine. 1.1 is the preferred method to deploy the site. Pick either one and then jump to [2. Copy Generated site to CVS Directory](#copy-to-cvs).</s>
 
 {% include excol.html type="start" id="simple" open="true" %}
 
@@ -66,10 +66,12 @@ You can follow the generation of the files in the [Actions tab](https://github.c
 
 {% include excol.html type="start" id="complicated" %}
 
+<span style="background:yellow">**Note: below is old.**</span>
+<div style="text-decoration:line-through">
+
 ### 1.2 Generate Site on Your Machine (More Complicated to Setup)
 
 {% include excol.html type="middle" %}
-
 
 **Note:** The following steps were tested on a Unix machine. If you want to generate the website on Windows, using the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) is probably the way to go, albeit untested.
 
@@ -185,3 +187,5 @@ It is set to show only modified and new files from all sub directories to make c
 You can add a commit message.
 
 {% include image.html src="technical-publication-cvs2.png" alt="" %}
+
+</div>
