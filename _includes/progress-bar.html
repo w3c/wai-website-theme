@@ -1,0 +1,9 @@
+<div class="progress-bar {% for class in include.class %} progress-bar--{{ class }}{% endfor %}">
+  <span 
+    class="progress-bar__progress"
+    style="width: {{ include.percentage }}%">
+    <span class="visuallyhidden">
+      {{ include.percentage }} %
+    </span>
+  </span>
+</div>

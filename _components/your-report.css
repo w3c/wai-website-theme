@@ -1,0 +1,89 @@
+.your-report {
+    grid-column: 8 / span 2;
+    grid-row-start: 2;
+    align-self: start;
+    justify-self: end;
+    padding: 1em 0;
+    border: 1px solid transparent;
+    outline: none;
+}
+.your-report--expanded {
+  background: var(--footer-grey);
+  box-shadow: 0px 2px 8px -7px #000;
+  border-color: var(--line-grey);
+  margin-bottom: 2em;
+  padding: 1em;
+}
+  .your-report__heading {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  .your-report__heading-pre {
+    display: block;
+    font-weight: normal;
+    color: var(--dk-blue);
+  }
+  .your-report__import:focus + .your-report__import-label {
+    outline-offset: 2px;
+    outline: 2px solid transparent;
+    transition: outline-offset 0.2s linear;
+    border-color: var(--w3c-blue);
+    outline-color: var(--w3c-blue);
+  }
+  .your-report__progress-by-principle {
+    columns: 2;
+    column-gap: 1.5em;
+    margin: 2.25em 0 1.75em 0;
+    padding: 0;
+  }
+  .your-report__description {
+    margin-bottom: 0.5em;
+  }
+  .button-showhide {
+    border-width: 1px;
+    border-color: var(--line-grey);
+    font-weight: normal;
+    background-color: transparent;
+    color: var(--off-black);
+    padding: 0 6px;
+    display: flex;
+    margin-left: auto;
+    margin-bottom: 2px;
+    margin-top: 2px;
+  }
+  .button-showhide:hover {
+    border-color: currentColor;
+  }
+  .button-showhide svg {
+    fill: transparent;
+  }
+  .button-showhide svg:first-child {
+    margin: 0 0.25em 0 -0.25em;
+  }
+  .button-showhide svg:last-child {
+    margin: 0 -0.25em 0 0.25em;
+  }
+  .progress {
+    margin-bottom: 1em;
+    list-style: none;
+  }
+  .principle__name {
+    color: var(--off-black);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .principle__name:hover span {
+    text-decoration: underline;
+  }
+  .progress__principle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.125em;
+  }
+  .progress__part {
+    font-size: 0.65em;
+    margin-left: auto;
+  }
