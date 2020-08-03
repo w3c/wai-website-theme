@@ -108,6 +108,8 @@
     pages:
   - name: "Tool Header"
     url: "/components/tool-header/"
+  - name: "Tool Navigation"
+    url: "/components/tool-navigation/"
   - name: "Making the Web Accessible"
     url: "/components/teasers/mwa/"
   - name: "Video Card"
