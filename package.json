@@ -3,8 +3,8 @@
   "version": "1.9.2",
   "dependencies": {
     "gulp-pixrem": "^1.0.0",
-    "netlify-cli": "^2.21.0",
-    "postcss": "^7.0.23",
+    "netlify-cli": "^2.59.0",
+    "postcss": "^7.0.32",
     "postcss-easy-import": "^3.0.0",
     "postcss-import": "^12.0.1"
   },

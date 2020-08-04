@@ -1,0 +1,39 @@
+.results-by-category ul {
+  margin: 0;
+  padding: 0;
+}
+.results-by-category {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  background-color: var(--off-white);
+  border-radius: 0.5em;
+}
+
+@media (min-width: 60em) {
+  .results-by-category__missing {
+    column-count: 2;
+  }
+}
+
+.results-by-category__item {
+  list-style: none;
+  display: inline-block;
+  margin: 1em;
+  text-align: center;
+}
+.results-by-category__number {
+  font-size: 1.5em;
+  display: block;
+  margin-bottom: 0.125em;
+  line-height: 1;
+  color: var(--ocean);
+}
+@media (min-width: 60em) {
+  .results-by-category__number {
+    font-size: 3em;
+  }
+}
+.results-by-category__label {
+  font-size: 1.125em;
+}

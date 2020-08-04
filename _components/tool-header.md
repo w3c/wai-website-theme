@@ -6,6 +6,13 @@ lang: en
 
 This is a minimal header that is used for WAI tools that exist outside the main WAI website. Such tools commonly don't require full WAI navigation or functionality like search.
 
+## Used by
+
+This component is used by: 
+
+* [ATAG Report Tool](https://w3.org/WAI/atag/report-tool)
+
+
 ## Examples
 
 ### Example 1: ATAG Report Tool

@@ -1,0 +1,29 @@
+.resource-link {
+  font-weight: normal;
+  color: var(--dk-grey);
+  border: 1px solid var(--line-grey);
+  vertical-align: middle;
+  margin: 2px 0;
+  padding: 2px 4px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8125rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.resource-link:hover {
+  border-color: var(--line-grey);
+}
+.resource-link:visited {
+  color: var(--dk-grey);
+}
+.resource-link:hover,
+.resource-link:focus {
+  color: var(--off-black);
+  background-color: var(--off-white);
+}
+.resource-link svg {
+  margin-right: 0.25em;
+}
