@@ -10,6 +10,9 @@
     padding-inline-start: 8px;
     padding-inline-end: 8px;
   }
+  &.minimal {
+    margin-bottom: 32px;
+  }
   & a {
     color: var(--pure-white);
     @media print {
