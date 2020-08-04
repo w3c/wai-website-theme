@@ -42,7 +42,7 @@
   .your-report__description {
     margin-bottom: 0.5em;
   }
-  .button-showhide {
+  .your-report__showhide {
     border-width: 1px;
     border-color: var(--line-grey);
     font-weight: normal;
@@ -54,36 +54,36 @@
     margin-bottom: 2px;
     margin-top: 2px;
   }
-  .button-showhide:hover {
+  .your-report__showhide:hover {
     border-color: currentColor;
   }
-  .button-showhide svg {
+  .your-report__showhide svg {
     fill: transparent;
   }
-  .button-showhide svg:first-child {
+  .your-report__showhide svg:first-child {
     margin: 0 0.25em 0 -0.25em;
   }
-  .button-showhide svg:last-child {
+  .your-report__showhide svg:last-child {
     margin: 0 -0.25em 0 0.25em;
   }
-  .progress {
+  .your-report .progress {
     margin-bottom: 1em;
     list-style: none;
   }
-  .principle__name {
+  .your-report  .principle__name {
     color: var(--off-black);
     font-weight: bold;
     text-decoration: none;
   }
-  .principle__name:hover span {
+  .your-report .principle__name:hover span {
     text-decoration: underline;
   }
-  .progress__principle {
+  .your-report  .progress__principle {
     display: flex;
     align-items: center;
     margin-bottom: 0.125em;
   }
-  .progress__part {
+  .your-report  .progress__part {
     font-size: 0.65em;
     margin-left: auto;
   }
