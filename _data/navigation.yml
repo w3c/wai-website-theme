@@ -71,6 +71,8 @@
       url: "/components/document-notes/translation/"
     - name: "Deprecated"
       url: "/components/document-notes/deprecated/"
+  - name: "Evaluation Form"
+    url: "/components/evaluation-form/"
   - name: "Expand/<wbr>Collapse"
     url: "/components/excol/single/"
     pages:
