@@ -39,7 +39,7 @@
   <body id="top" class="page-{{page.title | slugify}} {% include_cached body-class.html collection=page.collection doc-note-type=page.doc-note-type %}">
     {% include header-minimal.html translations=translations %}
     <div class="default-grid with-gap leftcol">
-  <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
+  <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} style="grid-column-start: 2;">
     <header{%- if page.resource.ref %}{%- unless page.ref == page.resource.ref %} class="in-resource"{%- endunless -%}{%- endif -%}>
     <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
       {%- if page.resource.ref -%}{%- unless page.ref == page.resource.ref -%}
