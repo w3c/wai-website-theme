@@ -10,7 +10,7 @@
     padding-inline-start: 8px;
     padding-inline-end: 8px;
   }
-  &.minimal {
+  &.header-minimal {
     margin-bottom: 32px;
   }
   & a {
