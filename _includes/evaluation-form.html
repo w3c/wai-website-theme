@@ -1,0 +1,46 @@
+<div id="{{ include.id }}" class="criterion">
+  <div class="criterion-header">
+    <h3>{{ include.criterion }}</h3> 
+    {%- if include.level -%}
+    <em class="criterion-header__level">{{ include.level }}</em> 
+    {%- endif -%}
+    {%- if include.link_to_resource -%}
+    {% include resource-link.html href=include.link_to_resource label=include.link_to_resource_label %}
+    {%- endif -%}
+  </div>
+  {%- if include.text -%}
+  <p>{{ include.text }}</p>
+  {%- endif -%}
+  <div class="criterion__answers">
+    <div>
+      <label for="result-{{ include.id }}">Result
+        <span class="visuallyhidden">for {{ include.criterion_short }}</span>
+      </label> 
+      <select id="result-{{ include.id }}"
+        name="result-select-{{ include.id }}">
+        <option name="option-{{ include.id }}-not-checked" value="Not checked">Not checked</option>
+        <option name="option-{{ include.id }}-passed" value="Passed">Passed</option>
+        <option name="option-{{ include.id }}-failed" value="Failed">Failed</option>
+        <option name="option-{{ include.id }}-cannot-tell" value="Cannot tell">Cannot tell</option>
+        <option name="option-{{ include.id }}-not-applicable" value="Not applicable">Not applicable</option>
+      </select> 
+    </div>
+    <div class="observation">
+      <textarea name="comment-{{ include.id }}" id="comment-{{ include.id }}" cols="20"
+        rows="5"></textarea>
+      <div class="observation__header">
+        <label for="comment-{{ include..id }}">Observations
+          <span class="visuallyhidden">for {{ include.criterion_short }}</span>
+        </label> 
+        <span class="observation__meta">
+          {%- if include.link-to-report -%}
+          <a
+            href="{{ include.link_to_report }}">View in Report
+            <span class="visuallyhidden">for {{ include.id }}</span>
+          </a>
+          {%- endif -%}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
