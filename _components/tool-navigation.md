@@ -6,6 +6,12 @@ lang: en
 
 This is a navigation (landmark) that can display which pages exist in a tool and whether one if current. 
 
+## Used by
+
+This component is used by: 
+
+* [ATAG Report Tool](https://w3.org/WAI/atag/report-tool)
+
 ## Example
 
 {% include tool-navigation.html name="Navigation" %}
