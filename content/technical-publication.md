@@ -65,17 +65,27 @@ You can follow the generation of the files in the [Actions tab](https://github.c
 
 If each step of the GitHub Action has been successful, the newly-generated site should have been published to GitHub Pages and the URL mapping on `www.w3.org` updated to proxy requests for the URLs listed in `manifest.txt` to GitHub Pages instead of being served from W3C's legacy document tree.
 
-#### 1.1.2 If Something Goes Wrong
+Implementation details: [one](https://lists.w3.org/Archives/Team/w3t-sys/2020MayJun/0055.html), [two](https://lists.w3.org/Archives/Team/w3t-sys/2020MayJun/0056.html) (W3C staff-restricted)
 
-**TBD**
+#### 1.1.2 Debugging If Something Goes Wrong
+
+Visit the [GitHub Actions page](https://github.com/w3c/wai-website/actions) and click on the most recent run, then click `build` in the left side nav bar. That will show a log of the actions; each one is expandable and will show more details including any errors that came up.
+
+If your expected resource is not available on `www.w3.org`, check that there is an entry for it in [the manifest.txt file](https://github.com/w3c/wai-website/blob/gh-pages/manifest.txt).
+
+If there is no entry for the expected resource in the `manifest.txt` file, there may be an issue with the build process.
+
+If there is an entry in `manifest.txt` but it is not available via www.w3.org, you can check [the map file update tool](https://www.w3.org/services/update-wai-map) to view info about the last update and the number of entries, and click the `Update map file` button to cause it to force a refresh of the map file on W3C's site. This may be necessary if there was a timing issue between the GitHub Pages site being updated and the map file being updated on W3C's site, for example if it took longer than usual for GitHub Pages to be updated.
 
 {% include excol.html type="end" %}
 
 {% include excol.html type="start" id="complicated" %}
 
-### 1.2 Generate Site on Your Machine (More Complicated to Setup)
+### 1.2 Generate Site Locally for Testing
 
 {% include excol.html type="middle" %}
+
+This method should normally not be necessary, but may be useful for those wanting to generate a local copy of the site for testing or experiments.
 
 **Note:** The following steps were tested on a Unix machine. If you want to generate the website on Windows, using the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) is probably the way to go, albeit untested.
 
