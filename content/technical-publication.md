@@ -21,6 +21,10 @@ footer: > # Text in footer in HTML
 
 Publishing the WAI Website is done using a GitHub Action than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`.
 
+Quicklinks:
+* [Release page](https://github.com/w3c/wai-website/releases/new)
+* [Actions monitor](https://github.com/w3c/wai-website/actions)
+
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
