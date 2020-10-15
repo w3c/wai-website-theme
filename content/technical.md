@@ -27,11 +27,11 @@ This page outlines the fundamental technical processes and the general approach 
 
 {% include toc.html %}
 
-## The Style Guide
+## Design Components, Design Style
 
-[{% include_cached icon.html name="arrow-right" %} Direct link to the Style Guide.](/components/)
+[{% include_cached icon.html name="arrow-right" %} Direct link to the Design Components, Design Style.](/components/)
 
-Just as with virtually every other style guide, this style guide shows the application of the design for individual components of the website. If there are changes to a component (HTML/CSS), we can update it in the style guide and the team. It updates consistently through the WAI website. **Currently** the style guide only has the HTML rendering of the different components, however, there are often easier ways to get the HTML with includes that are provided by the theme. The advantage is that they automatically update when HTML/CSS changes are necessary.
+Just as with virtually every other design style guide, this design style guide shows the application of the design for individual components of the website. If there are changes to a component (HTML/CSS), we can update it in the design style guide and the team. It updates consistently through the WAI website. **Currently** the design style guide only has the HTML rendering of the different components, however, there are often easier ways to get the HTML with includes that are provided by the theme. The advantage is that they automatically update when HTML/CSS changes are necessary.
 
 ## Jekyll
 

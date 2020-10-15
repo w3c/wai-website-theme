@@ -1,5 +1,9 @@
 <div class="video-card">
+  {% if include.poster %}
+  <video controls poster="{{ include.poster | relative_url }}">
+  {% else %}
   <video controls>
+  {% endif %}
     <source src="{{ include.video-url }}" type="video/mp4">
     {%- assign captions = include.captions | split: ',' -%}
     {%- for caption in captions -%}
@@ -17,6 +21,6 @@
       {%- endfor -%}
   </video>
   {% if include.accessible-version %}
-   <p>This video is available in other formats with more accessibility features: <a href="{{ include.accessible-version }}">{{ include.accessible-version-label }}</a>.</p>
+   <p>This video is available with more accessibility features: <a href="{{ include.accessible-version }}">{{ include.accessible-version-label }}</a>.</p>
   {% endif %}
 </div>

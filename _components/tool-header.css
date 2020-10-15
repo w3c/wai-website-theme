@@ -1,0 +1,32 @@
+.tool-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.tool-header a {
+  text-decoration: none;
+}
+.tool-header-name {
+  font-size: 1.125em;
+  white-space: nowrap;
+}
+@media (min-width: 60em) {
+  .tool-header-name {
+    font-size: 1.5em;
+  }
+}
+.tool-header-logo {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.tool-header-logo img {
+  display: block;
+  margin: 0.75em 0 0.75em 0.5em;
+  height: 1.5em;
+}
+@media (min-width: 60em) {
+  .tool-header-logo img {
+    height: 2em;
+  }
+}

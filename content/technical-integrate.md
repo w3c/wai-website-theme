@@ -1,5 +1,5 @@
 ---
-title: "Integrating a New Resource into the Main WAI Sie Repository"
+title: "Integrating a New Resource into the Main WAI Site Repository"
 permalink: /technical/integrate/
 ref: /technical/integrate/
 lang: en
