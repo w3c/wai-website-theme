@@ -33,7 +33,9 @@ Quicklinks:
 
 ## 1. Generate Site Files
 
-There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 shows how to render it on your local machine for testing. 1.1 is the method used to deploy the site, while 1.2 may be useful for experiments or debugging.
+There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 shows how to render it on your local machine for testing.
+
+**1.1 is the method used to deploy the site**, and 1.2 may be useful for experiments or debugging.
 
 {% include excol.html type="start" id="simple" open="true" %}
 
@@ -42,12 +44,11 @@ There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 s
 {% include excol.html type="middle" %}
 
 #### 1.1.1 Create a Release on GitHub
+Go to the [Draft Release page](https://github.com/w3c/wai-website/releases/new). Enter today’s date into the “Tag Version” input field, in the format: `YYYY-MMmmm-DD` e.g, 2020-12Dec-25.
 
-Visit the [Draft Release page](https://github.com/w3c/wai-website/releases/new) to create a release. Enter today’s date into the “Tag Version” input field, in the format: `YYYY/MM/DD`. – This creates a nice organization of the files.
+For multiple releases on one day, add a letter to the end: `YYYY-MMmmm-DD-x` with `x` replaced by a letter, starting with a.
 
-In the event of having multiple releases on one day, the format should be `YYYY/MM/DD-#` with # replaced by a number, counting up from 1.
-
-No need to click anything else apart from the “Publish Release” button.
+Click the “Publish Release” button.
 
 This process starts a [GitHub Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) which – at the time of writing – automatically performs the following steps:
 
