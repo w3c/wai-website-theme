@@ -93,6 +93,8 @@
       url: "/components/form/elements/"
     - name: "Search"
       url: "/components/form/search/"
+  - name: "Grid"
+    url: "/components/grid/"
   - name: "Headings"
     url: "/components/headings/"
   - name: Icons
