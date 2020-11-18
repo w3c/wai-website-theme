@@ -127,7 +127,7 @@ bundle install
 Then, you also need to initialize the submodules:
 
 ```
-git submodules init
+git submodule init
 git submodule update --remote
 ```
 
