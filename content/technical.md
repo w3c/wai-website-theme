@@ -82,10 +82,6 @@ Previews of individual resources are set up in Netlify via Github. The credentia
 The preview should be viewable under `<github-repo>.netlify.app`. The configuration is set in the `netlify.toml` configuration file that includes the following information:
 
 ```toml
-[Settings]
-
-ID = "<github-repo>"
-
 [build]
 
 command = "bundle exec jekyll build --config '_config.yml,_config_staging.yml'"
@@ -96,7 +92,7 @@ publish = "_site"
   to = "/permalink/of/main/resource/page/"
 ```
 
-Change the permalink and the ID and commit the file to the repository.
+Change the permalink and commit the file to the repository.
 
 ### Creating a New Netlify Site
 
