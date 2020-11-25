@@ -92,7 +92,7 @@ If there is an entry in `manifest.txt` but it is not available via www.w3.org, y
 
 This method should normally not be necessary, but may be useful for those wanting to generate a local copy of the site for testing or experiments.
 
-**Note:** The following steps were tested on a Unix machine. If you want to generate the website on Windows, using the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) is probably the way to go, albeit untested.
+**Note:** The following steps were tested on a Unix, Max OS and Ubuntu on Windows Subsystem for Linux (WSL) 2. Problems with Ruby and the use of symlinks exclude using Windows native shells. In all cases you will need `git` and `Ruby` installed, on WSL `dev-essentials` was required to build modules.
 
 #### 1.2.1 Locally Clone & Set Up the Repository
 
