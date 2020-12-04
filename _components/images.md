@@ -48,6 +48,7 @@ Put images always into the `/content-images/wai-repo-name/` directory (with wai-
     + `mini`  :  90px
     + `small` : 120px
     + `normal`: 240px
+    + `medium`: 360px
     + `large` : 480px
   - Helper classes:
     + `video`: rounded corners
