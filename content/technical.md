@@ -27,7 +27,7 @@ This page outlines the fundamental technical processes and the general approach 
 
 {% include toc.html %}
 
-## Architecture ##
+## Architecture and Builds ##
 
 The WAI site is composed of many subsites and a main site which brings them all together. The subsites appear in various routes under the main URL (eg repo accessibility-principles/ at https://www.w3.org/WAI/fundamentals/accessibility-principles/)
 
@@ -37,7 +37,7 @@ Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...
 
 Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment. 
 
-Previews use Netlify integration with GitHub so they happen automatically on checkin or PR to the default branch. They exists for the subsites and the main site. SL: Currently some use GitHub and others are broken.
+Previews use Netlify integration with GitHub so they happen automatically on checkin or PR to the default branch. They exists for both the subsites and the main site. SL: Currently some use GitHub and others are broken.
 
 The build process consistes of several steps for both the main site and subsites: 
 
@@ -47,6 +47,8 @@ The build process consistes of several steps for both the main site and subsites
 * deploy / publish to URL.
 
 The GitHub `deploy`action builds and then generates a `manifest.txt`, copies the built static files to github pages rather than let GitHubPages run Jeckyl again and finally invokes `https://www.w3.org/services/update-wai-map'` to update the w3c URL mapping
+
+The GitHub Action runs on ubuntu-latest (currently Focal 20.04) and Netlify uses Xenial (16.04) SL:Currently some are on Trusty (14.04). I doubt the variation matters
 
 Each repo contains configuration For Jeckly and netlify. Some config is provided via the git data submodule.
 
