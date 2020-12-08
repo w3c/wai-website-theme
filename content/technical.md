@@ -27,6 +27,27 @@ This page outlines the fundamental technical processes and the general approach 
 
 {% include toc.html %}
 
+## Architecture ##
+
+The WAI site is composed of many subsites and a main site which brings them all together. The subsites appear in various routes under the main URL (eg https://www.w3.org/WAI/fundamentals/accessibility-principles/)
+
+Each subsite has it's own git repo on GitHub (eg wai-accessibility-principles) and the main site (wai-website) includes them using git submodules and linux symblinks in the `_external` folder. In addition, shared data such as themes and main nav is available to all sites using the 'data' git submodule.
+
+Deployment consist of publication to the main site (https://www.w3.org/WAI/...) via github pages and also previews on Netlify.
+
+Publication is triggured with a new GitHub release form (https://github.com/w3c/wai-website/releases/new) which triggers a GitHub Action to perform the build and deployment.
+
+Previews use Netlify integration with GitHub so they happen automatically on checkin or PR to the default branch. They exists for the subsites and the main site. SL: Currently some use GitHub and others are broken.
+
+The build process consistes of several steps for both the main site and subsites: 
+
+* checkout git repo including submodule
+* install all dependencies (ie Ruby Gems)
+* use the Ruby `bundle` command to invoke Jekyll for the build
+* deploy / publish to URL.
+
+Each repo contains configuration For Jeckly and netlify. Some cifnig is vlia git submodules
+
 ## Design Components, Design Style
 
 [{% include_cached icon.html name="arrow-right" %} Direct link to the Design Components, Design Style.](/components/)
