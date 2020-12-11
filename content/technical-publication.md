@@ -2,12 +2,6 @@
 title: "Publication of the WAI Website"
 permalink: /technical/publication/
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
 github:
   repository: w3c/wai-website-theme
   path: content/technical-publication.md
@@ -30,6 +24,25 @@ Quicklinks:
 {:/}
 
 {% include toc.html %}
+
+@@
+_**{Publication info moved from "Technical Information" page. For Steve or others to edit (or delete if redundant with info later in the page -- or, leave as a summary :-}:**_
+
+Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages.
+
+Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment. 
+
+The build process consistes of several steps for all repos: 
+* checkout git repo including submodule
+* install all dependencies (ie Ruby Gems)
+* use the Ruby `bundle` command to invoke Jekyll for the build
+* deploy / publish to URL.
+
+The GitHub `deploy`action builds and then generates a `manifest.txt`, copies the built static files to github pages rather than let GitHubPages run Jeckyl again and finally invokes `https://www.w3.org/services/update-wai-map'` to update the w3c URL mapping
+
+The GitHub Action runs on ubuntu-latest (currently Focal 20.04) and Netlify uses Xenial (16.04) _{SL:Currently some are on Trusty (14.04). I doubt the variation matters}_
+
+@@
 
 ## 1. Generate Site Files
 
