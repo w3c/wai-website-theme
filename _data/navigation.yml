@@ -7,8 +7,6 @@
     url: "/technical/"
   - name: Files in Repositories
     url: "/technical/files/"
-  - name: Publication of the WAI Site
-    url: "/technical/publication/"
   - name: Creating a New Resource
     url: "/technical/new-resource/"
   - name: "Checkout an Existing Resource"
