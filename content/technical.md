@@ -1,13 +1,6 @@
 ---
 title: "Technical Information"
 permalink: /technical/
-lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
 github:
   repository: w3c/wai-website-theme
   path: content/technical.md
@@ -27,30 +20,15 @@ This page outlines the fundamental technical processes and the general approach 
 
 {% include toc.html %}
 
-## Architecture and Builds ##
+## Architecture and Previews ##
 
-The WAI site is composed of many subsites and a main site which brings them all together. The subsites appear in various routes under the main URL (eg repo accessibility-principles/ at https://www.w3.org/WAI/fundamentals/accessibility-principles/)
+The WAI site is composed of many GitHub repositories ("repo") and a main repo that brings them all together. The content in repos appears under the main URL (e.g., repo accessibility-principles/ at https://www.w3.org/WAI/fundamentals/accessibility-principles/)
 
-Each subsite has it's own git repo on GitHub (eg wai-accessibility-principles) and the main site (wai-website) includes them using git submodules and linux symblinks in the `_external` folder. In addition, shared data such as themes and main nav is available to all sites using the 'data' git submodule.
+The main site (wai-website) includes the content repors using git submodules and linux symblinks in the `_external` folder. In addition, shared data such as themes and main nav is available to all repos using the 'data' git submodule.
 
-Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages and also previews on Netlify.
+Previews for each repo uses Netlify integration with GitHub. They are automatically triggered on checkin or Pull Request (PR) to the default branch. _{SL: Currently some use GitHub and others are broken. some still need their setup updated, and some are not yet set up}_
 
-Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment. 
-
-Previews use Netlify integration with GitHub so they happen automatically on checkin or PR to the default branch. They exists for both the subsites and the main site. SL: Currently some use GitHub and others are broken.
-
-The build process consistes of several steps for both the main site and subsites: 
-
-* checkout git repo including submodule
-* install all dependencies (ie Ruby Gems)
-* use the Ruby `bundle` command to invoke Jekyll for the build
-* deploy / publish to URL.
-
-The GitHub `deploy`action builds and then generates a `manifest.txt`, copies the built static files to github pages rather than let GitHubPages run Jeckyl again and finally invokes `https://www.w3.org/services/update-wai-map'` to update the w3c URL mapping
-
-The GitHub Action runs on ubuntu-latest (currently Focal 20.04) and Netlify uses Xenial (16.04) SL:Currently some are on Trusty (14.04). I doubt the variation matters
-
-Each repo contains configuration For Jeckly and netlify. Some config is provided via the git data submodule.
+Each repo contains configuration for Jeckly and Netlify. Some config is provided via the git data submodule.
 
 ## Design Components, Design Style
 
