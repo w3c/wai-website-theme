@@ -22,13 +22,34 @@ This page outlines the fundamental technical processes and the general approach 
 
 ## Architecture and Previews ##
 
-The WAI site is composed of many GitHub repositories ("repo") and a main repo that brings them all together. The content in repos appears under the main URL (e.g., repo accessibility-principles/ at https://www.w3.org/WAI/fundamentals/accessibility-principles/)
+- A static website site (AKA jamstack)
+ - Pages are pre generated before being deployed
+ - The Jekyll static site generator (SSG) is used (a Ruby application)
+ - Source file formats are Markdown, HTML, CSS and Javascript using the Liquid template language
+ - Liquid template files include front-matter that influences generation (building) 
+- The site source files are divided into modules for sections of the site
+ - Each module is held in a separate git repo
+ - One module, `wai-website` acts as the main which includes all the others
+ - Sub-module inclusion is implemented using git submodules with the latest commit of each being specified in the including supermodule
+ - Another module, `wai-website-data`, provides common theme files and dependencies used by all other  - - - The submodules are all included at `/_external/data` and `/_external/resources/*`
+modules
+ - symlinks are used to access the submodules from the source including from a a `data` folder
+- Each module (except data) can be individually previewed as if part of the full site
+  - References to other modules will obviously be missing except for the `wai-website` preview
+  - Previews can be built in a local linux development environment (using WSL on Windows) and previewed using the Netlify CLI
+  - Previews are also built using Netlify Continuous Integration (CI) on GitHub Pull Requests and commits
+  - A GitHub Workflow builds and publishes the complete site to GitHub Pages which is included in the W3C website at www.w3.org/WAI/
+  - This workflow also updates all the submodule commit references in the wai-website supermodule and commits
+- Configurations files include:
+ - git: .gitignore .gitmodules
+ - jekyll dependencies: Gemfile Gemfile.lock
+ - build configuration: _config*.yml
+ - Netlify: netlify.toml
+ - w3c metadata: w3c.json
 
-The main site (wai-website) includes the content repors using git submodules and linux symblinks in the `_external` folder. In addition, shared data such as themes and main nav is available to all repos using the 'data' git submodule.
+This separation into modules allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify site meaning changes to all modules become very time consuming. 
 
-Previews for each repo uses Netlify integration with GitHub. They are automatically triggered on checkin or Pull Request (PR) to the default branch. _{SL: Currently some use GitHub and others are broken. some still need their setup updated, and some are not yet set up}_
-
-Each repo contains configuration for Jeckly and Netlify. Some config is provided via the git data submodule.
+Using submodules offers the possibility of using older versions of parts of the site, but the current configuration always uses the latest  
 
 ## Design Components, Design Style
 
