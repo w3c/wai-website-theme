@@ -41,11 +41,11 @@ modules
   - A GitHub Workflow builds and publishes the complete site to GitHub Pages which is included in the W3C website at www.w3.org/WAI/
   - This workflow also updates all the submodule commit references in the wai-website supermodule and commits
 - Configurations files include:
- - git: .gitignore .gitmodules
- - jekyll dependencies: Gemfile Gemfile.lock
- - build configuration: _config*.yml
- - Netlify: netlify.toml
- - w3c metadata: w3c.json
+  - git: .gitignore .gitmodules
+  - jekyll dependencies: Gemfile Gemfile.lock
+  - build configuration: _config*.yml
+  - Netlify: netlify.toml
+  - w3c metadata: w3c.json
 
 This separation into modules allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify site meaning changes to all modules become very time consuming. 
 
