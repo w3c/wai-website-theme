@@ -23,17 +23,17 @@ This page outlines the fundamental technical processes and the general approach 
 ## Architecture and Previews ##
 
 - A static website site (AKA jamstack)
- - Pages are pre generated before being deployed
- - The Jekyll static site generator (SSG) is used (a Ruby application)
- - Source file formats are Markdown, HTML, CSS and Javascript using the Liquid template language
- - Liquid template files include front-matter that influences generation (building) 
+  - Pages are pre generated before being deployed
+  - The Jekyll static site generator (SSG) is used (a Ruby application)
+  - Source file formats are Markdown, HTML, CSS and Javascript using the Liquid template language
+  - Liquid template files include front-matter that influences generation (building) 
 - The site source files are divided into modules for sections of the site
- - Each module is held in a separate git repo
- - One module, `wai-website` acts as the main which includes all the others
- - Sub-module inclusion is implemented using git submodules with the latest commit of each being specified in the including supermodule
- - Another module, `wai-website-data`, provides common theme files and dependencies used by all other  - - - The submodules are all included at `/_external/data` and `/_external/resources/*`
+  - Each module is held in a separate git repo
+  - One module, `wai-website` acts as the main which includes all the others
+  - Sub-module inclusion is implemented using git submodules with the latest commit of each being specified in the including supermodule
+  - Another module, `wai-website-data`, provides common theme files and dependencies used by all other  - - - The submodules are all included at `/_external/data` and `/_external/resources/*`
 modules
- - symlinks are used to access the submodules from the source including from a a `data` folder
+  - symlinks are used to access the submodules from the source including from a a `data` folder
 - Each module (except data) can be individually previewed as if part of the full site
   - References to other modules will obviously be missing except for the `wai-website` preview
   - Previews can be built in a local linux development environment (using WSL on Windows) and previewed using the Netlify CLI
