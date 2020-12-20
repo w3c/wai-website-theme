@@ -23,23 +23,22 @@ This page outlines the fundamental technical processes and the general approach 
 ## Architecture and Previews ##
 
 - A static website site (AKA jamstack)
-  - Pages are pre generated before being deployed
-  - The Jekyll static site generator (SSG) is used (a Ruby application)
-  - Source file formats are Markdown, HTML, CSS and Javascript using the Liquid template language
-  - Liquid template files include front-matter that influences generation (building) 
+  - All pages are pre generated before being deployed
+  - The [Jekyll](https://jekyllrb.com/) static site generator (SSG) is used (a Ruby application)
+  - Source file formats include [Markdown](https://daringfireball.net/projects/markdown/), HTML, CSS and Javascript using the [Liquid](https://shopify.github.io/liquid/) template language
+  - Liquid template files include front-matter, objects, tags and filters that provide abstractions 
 - The site source files are divided into modules for sections of the site
   - Each module is held in a separate git repo
   - One module, `wai-website` acts as the main which includes all the others
-  - Sub-module inclusion is implemented using git submodules with the latest commit of each being specified in the including supermodule
-  - Another module, `wai-website-data`, provides common theme files and dependencies used by all other  - - - The submodules are all included at `/_external/data` and `/_external/resources/*`
+  - Sub-module inclusion is implemented using git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) 
+  - Another module, `wai-website-data`, provides common theme files and dependencies (Gems) used by all other  - - - The submodules are all included at `/_external/data` and `/_external/resources/*`
 modules
-  - symlinks are used to access the submodules from the source including from a a `data` folder
+  - Linux [symlinks](https://man7.org/linux/man-pages/man7/symlink.7.html) are used to access the submodules from the source including from a `data` folder
 - Each module (except data) can be individually previewed as if part of the full site
   - References to other modules will obviously be missing except for the `wai-website` preview
-  - Previews can be built in a local linux development environment (using WSL on Windows) and previewed using the Netlify CLI
-  - Previews are also built using Netlify Continuous Integration (CI) on GitHub Pull Requests and commits
-  - A GitHub Workflow builds and publishes the complete site to GitHub Pages which is included in the W3C website at www.w3.org/WAI/
-  - This workflow also updates all the submodule commit references in the wai-website supermodule and commits
+  - Previews can be built in a local linux development environment (using WSL on Windows) and previewed using the [Netlify CLI](https://cli.netlify.com/)
+  - Previews are also built using [Netlify](https://www.netlify.com/products/) Continuous Integration (CI) on GitHub Pull Requests and commits
+  - A [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions) Workflow builds and publishes the complete site to GitHub Pages which is included in the W3C website at www.w3.org/WAI/
 - Configurations files include:
   - git: .gitignore .gitmodules
   - jekyll dependencies: Gemfile Gemfile.lock
@@ -49,7 +48,13 @@ modules
 
 This separation into modules allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify site meaning changes to all modules become very time consuming. 
 
-Using submodules offers the possibility of using older versions of parts of the site, but the current configuration always uses the latest  
+=== Submodule Use ===
+
+In a nutshell, submodules are a way to include a git repo into another (supermodule). The supermodule references a specific commit of each submodule until it is manually updated (using `git submodule update`. Use of submodules thus offers the possibility of referencing any versions of submodules, requiring a commit to persist the submodule state held in the supermodule.
+
+The WAI site uses submodules for subparts of the site and also shared theme files. These are included when building both the section preview and the main site. The HEAD commit (head of default branch) of is always used and this requires all supermodules to be updated to reference the latest submodule as part of the build (local, Netlify or deploy).
+
+Currently the main site supermodule state of submodules is committed during deploy. However, previews are not currently commited at all so get out of date. This will be addressed soon. Probably by creating a new Github Actions workflow to update and commit all the supermodules.
 
 ## Design Components, Design Style
 
