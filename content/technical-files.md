@@ -37,12 +37,12 @@ Files marked with a _T_ are for technical support only
 
 -   (File, _T_) `w3c.json` – Data for the W3C API.
 -   (File, _T_) `Gemfile` – A list of ruby gems that are required for the website to work.
+-   (File, _T_) `Gemfile.lock` – defines which version of dependencies including gems.
 -   (File, _T_) `_config.yml` – Configures the Jekyll installation, usually not touched after the initial setup.
 -   (File, _T_) `_config_staging.yml` – Configures the Jekyll installation for Netlify.
 -   (Folder, _T_) `_data` – Data files that are used by the theme to render the
-    navigations, links to techniques and WCAG and as data for the
-    language selector/translations. (Unfortunately, there is currently
-    no way to bundle those files with the theme.)
+    navigations, See 'shared files' below
+    -   (File, _T_) `lang.json` – The World's Languages
     -   (File, _T_) `lang.json` – The World's Languages
     -   (File, _T_) `translations.yml` – Translations of the User Interface
     -   (File, _T_) `techniques.yml` – WCAG Techniques data (not widely used)
@@ -57,8 +57,16 @@ Files marked with a _T_ are for technical support only
   - (File) `index.md` – In most repositories content goes into the index.md file or …
   - (File) `other.md` – … other Markdown files in the main directory.
 
+#### Shared Files
+
+A number of files are shared between all the resources and the published site. For example theme,  translation resources and gem dependencies. Unfortunately, there is currently no way to bundle those files with the theme.
+
+So, for now, these files are held in the [wai-website-data](https://github.com/w3c/wai-website-data) repo which is included as git submodule in all the other repositories that want to use them. The files appear in the `_external` folder. Unfortunately git submodules require several commands to ensure the latest version of these files appear in the using repository, which can cause some extra hoops to jump through.
+
+In addition, these files are not directly used, rather the `_data` folder contains symblinks to these shared files. Again this requires extra work for setup but does alow more flexibility, such as using a local file while developing.
+
+To summarise, the code in the resource files make references to files in `_data` folder. These are actually symblinks to files in the submodule `_external`. These files are copies of files held in the `wai-website-data` repository, at a specific version. Keeping this all up-to-date and working requires commands that need to be run as required, usually as part of a website build step, using GitHub Actions
 
 ### Notes
 
-- Never check in `Gemfile.lock`.
 - In many repositories what should be in the `content` folder is still in the root folder. This should be addressed when updated. Such a change is breaking when merging to the wai-website repository.
