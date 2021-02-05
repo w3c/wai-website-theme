@@ -42,40 +42,42 @@ Creating a new resource is relatively straight forward.
 
 After creation, the repository needs to be prepared to make it integrate with Netlify and the rest of the website properly. Those are a couple of manual steps, some must be done in preparation by the repository creator on GitHub, some have to be done on the command line for now (we try to do configure GitHub actions in the future to work around this).
 
-### Prepare Some Variables
+### Configure Placeholder Settings for the New Repository
 
-Search and replace every instance of `wai-resource-template` with the name of your repository. The easiest way is to check the repository out locally, change all the references and commit & push it to the server again. (There’s hope that this is automatable at some point in the future.)
+Search and replace every instance of `wai-resource-template` with the name of your repository. EXCEPT [config.yml L36](https://github.com/w3c/wai-about-wai/blob/master/_config.yml#L36).
 
-### Finish Repository Set-Up on the Command Line
+In the following places replace `wai-resource-template` with the name of the new repository, eg 'wai-about-wai':
 
-#### 1. Delete the Symlinks That Have Been Copied but That Don’t Work With the Github Template Process.
+- [_config.yaml L32](https:/_config.yaml L13]/github.com/w3c/wai-resource-template/blob/master/_config.yml#L32)
+- [README.md L1](https://github.com/w3c/wai-resource-template/edit/master/README.md) '...app.netlify.com/sites/wai-resource-template/deploys'
 
-```bash
-cd _data
-rm *.*
-cd ..
-```
 
-#### 2. Re-Add the Submodules and Recreate the Symlinks; Copy the navigation.yml File to the _Data Directory So That the Repository Has a Separate Navigation.
+In the following places replace `the text inside the "'s with the URI path of the resource in the final website, eg '/about/:
 
-```bash
-git submodule add https://github.com/w3c/wai-website-data.git _external/data
-cd _data
-ln -s ../_external/data/lang.json
-ln -s ../_external/data/techniques.yml
-ln -s ../_external/data/translations.yml
-ln -s ../_external/data/wcag.yml
-cp ../_external/data/navigation.yml navigation.yml
-cd ..
-git submodule update --remote
-```
+- [_config.yaml L13](https://github.com/w3c/wai-resource-template/blob/master/_config.yml#L13) 'baseurl: "/wai-resource-template"'
+- [netlify.toml L10](https://github.com/w3c/wai-resource-template/blob/master/netlify.toml#L10) 'to = "/link/to/page/"' used in previews
 
-#### 3. Update Bundler; Run `Netlify Init` to Set Up Netlify; Commit All Data to the Repository
+Also update the README.md text to remove the template specific text.
 
-```bash
-bundle update
-netlify init
-git add *
-git commit -m "Theme/Tech update"
-git push
-```
+The easiest way for developers is to check the repository out locally, change all the references and commit & push it to the server again. (There’s hope that this is automatable at some point in the future.)
+
+
+### Create and link a Netlify site
+
+For now these are just text instructions. Hopefully this can be automated but so far it needs cmd line access.
+
+- Login into [Netlify site page](https://app.netlify.com/teams/w3c/sites) with access to the 'W3C team' team
+- Click 'New site from git' button
+- Click 'GitHub' button
+- Authenticate to GitHub, select 'w3c' organisation and type your repo name into the search box, hit enter
+- Click on the repo name
+- Click on 'Deploy Site' Button
+- In General Settings - Site details (you should be taken there) click 'Change site name' button and enter your repo name
+- In Build & Deploy Settings - Post processing - Form detection  click 'Edit settings' button and uncheck 'Run form detection'
+
+To view
+
+- Click on deploys in top nav'
+- You should see 'Production: master@HEAD published
+- Click on 'Production' to see the preview
+

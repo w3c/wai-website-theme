@@ -26,15 +26,14 @@ This page outlines the fundamental technical processes and the general approach 
   - All pages are pre generated before being deployed
   - The [Jekyll](https://jekyllrb.com/) static site generator (SSG) is used (a Ruby application)
   - Source file formats include [Markdown](https://daringfireball.net/projects/markdown/), HTML, CSS and Javascript using the [Liquid](https://shopify.github.io/liquid/) template language
-  - Liquid template files include front-matter, objects, tags and filters that provide abstractions 
-- The site source files are divided into modules for sections of the site
-  - Each module is held in a separate git repo
+  - Liquid template files include front-matter, objects, tags and filters that provide abstractions
+- The site source files are divided into modules for sections of the site A.K.A. 'resources'
+  - Each resource is held in a separate git repo
   - One module, `wai-website` acts as the main which includes all the others
-  - Sub-module inclusion is implemented using git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) 
-  - Another module, `wai-website-data`, provides common theme files and dependencies (Gems) used by all other  - - - The submodules are all included at `/_external/data` and `/_external/resources/*`
-modules
+  - Sub-module inclusion for resources and shared data is implemented using git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+  - Another module, `wai-website-data`, provides shared common theme files and dependencies (Gems) used by all others. The submodules are all included at `/_external/data` and `/_external/resources/*`
   - Linux [symlinks](https://man7.org/linux/man-pages/man7/symlink.7.html) are used to access the submodules from the source including from a `data` folder
-- Each module (except data) can be individually previewed as if part of the full site
+- Each resource (except data) can be individually previewed as if part of the full site
   - References to other modules will obviously be missing except for the `wai-website` preview
   - Previews can be built in a local linux development environment (using WSL on Windows) and previewed using the [Netlify CLI](https://cli.netlify.com/)
   - Previews are also built using [Netlify](https://www.netlify.com/products/) Continuous Integration (CI) on GitHub Pull Requests and commits
@@ -45,8 +44,9 @@ modules
   - build configuration: _config*.yml
   - Netlify: netlify.toml
   - w3c metadata: w3c.json
+- One module [wai-resource-template](https://github.com/w3c/wai-resource-template) acts as a GitHub template for creating new resource repos
 
-This separation into modules allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify site meaning changes to all modules become very time consuming. 
+This separation into modules and resources allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify site meaning changes to all modules become very time consuming. With the current configuration, changes to shared files may propagate to other resources or the main site earlier than required, for example adding items to the shared navigation will appear in the next site publication.
 
 ### Submodule Use
 
@@ -80,7 +80,7 @@ The theme also has this information stored and displayed, which makes it easy to
 
 [{% include_cached icon.html name="arrow-right" %} WAI Website Plugin](https://github.com/w3c/wai-website-plugin)
 
-In addition to the theme, we use a plugin, mainly for handling translation links. This plugin does not work on GitHub pages, which means non-working links and left-over square brackets (`[`,`]`).
+In addition to the theme, we use a plugin, mainly for handling translation links.
 
 ## GitHub
 
