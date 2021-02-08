@@ -40,25 +40,23 @@ Creating a new resource involves creating a new GitHub repository (from a templa
 
 ## Configuring the Repository
 
-After creation, the repository needs to be prepared to make it integrate with Netlify. Those are a couple of manual steps, some must be done in preparation by the repository creator on GitHub (we will try to do configure GitHub actions in the future to work around this).
-
-### Configure Placeholder Settings for the New Repository
+### Update Placeholder Text for the New Resource Name
 
 In the following places replace `wai-resource-template` with the name of the new repository, eg 'wai-about-wai' NB the links below go to the template on GitHub which should NOT be update:
 
-- [_config.yaml L32](https:/_config.yaml L13]/github.com/w3c/wai-resource-template/blob/master/_config.yml#L32)
+- [_config.yaml L13](https://github.com/w3c/wai-resource-template/blob/master/_config.yml#L13) 'baseurl: "/wai-resource-template"'
+- [_config.yaml L32](https:/github.com/w3c/wai-resource-template/blob/master/_config.yml#L32) 'repository: wai-resource-template'
 - [README.md L1](https://github.com/w3c/wai-resource-template/edit/master/README.md) '...app.netlify.com/sites/wai-resource-template/deploys'
 
-In the following places replace `the text inside the "'s with the URI path of the resource in the final website, eg '/about/:
+In the following places replace the `/link/to/page/` text with the URI path of the resource in the final website, eg '/about/:
 
-- [_config.yaml L13](https://github.com/w3c/wai-resource-template/blob/master/_config.yml#L13) 'baseurl: "/wai-resource-template"'
 - [netlify.toml L10](https://github.com/w3c/wai-resource-template/blob/master/netlify.toml#L10) 'to = "/link/to/page/"' used in previews
 
 Also update the README.md text to remove the template specific text.
 
 For developers, the easiest way is to check the repository out locally, change all the references EXCEPT [config.yml L36](https://github.com/w3c/wai-about-wai/blob/master/_config.yml#L36) and commit & push it to the server again. (There’s hope that this is automatable at some point in the future.)
 
-### Create and link a Netlify site
+## Create and link a Netlify site
 
 For now these are just text instructions. Hopefully this can be automated.
 
