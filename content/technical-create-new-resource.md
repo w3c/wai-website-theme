@@ -77,10 +77,10 @@ To view the resource preview
 - You should see 'Production: master@HEAD published, if not wait for the deploy to complete
 - Click on 'Production' to see the preview
 
-# Link into the main site
+## Link into the main site
 
 See these [instructions](./technical-integrate/)
 
-# Update navigation
+## Update navigation
 
 See these [instructions](./technical-navogation/)
