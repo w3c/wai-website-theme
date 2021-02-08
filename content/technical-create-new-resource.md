@@ -19,7 +19,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Creating a new resource is relatively straight forward.
+Creating a new resource involves creating a new GitHub repository (from a template), updating the files and then linking into the full site, including navigation.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -36,21 +36,18 @@ Creating a new resource is relatively straight forward.
 5. Click on create repository
 6. In the new repository, configure as below:
 
-**All content is edited inside the `content` folder.**
+**All content for this resource should be placed inside the `content` folder.**
 
 ## Configuring the Repository
 
-After creation, the repository needs to be prepared to make it integrate with Netlify and the rest of the website properly. Those are a couple of manual steps, some must be done in preparation by the repository creator on GitHub, some have to be done on the command line for now (we try to do configure GitHub actions in the future to work around this).
+After creation, the repository needs to be prepared to make it integrate with Netlify. Those are a couple of manual steps, some must be done in preparation by the repository creator on GitHub (we will try to do configure GitHub actions in the future to work around this).
 
 ### Configure Placeholder Settings for the New Repository
 
-Search and replace every instance of `wai-resource-template` with the name of your repository. EXCEPT [config.yml L36](https://github.com/w3c/wai-about-wai/blob/master/_config.yml#L36).
-
-In the following places replace `wai-resource-template` with the name of the new repository, eg 'wai-about-wai':
+In the following places replace `wai-resource-template` with the name of the new repository, eg 'wai-about-wai' NB the links below go to the template on GitHub which should NOT be update:
 
 - [_config.yaml L32](https:/_config.yaml L13]/github.com/w3c/wai-resource-template/blob/master/_config.yml#L32)
 - [README.md L1](https://github.com/w3c/wai-resource-template/edit/master/README.md) '...app.netlify.com/sites/wai-resource-template/deploys'
-
 
 In the following places replace `the text inside the "'s with the URI path of the resource in the final website, eg '/about/:
 
@@ -59,12 +56,11 @@ In the following places replace `the text inside the "'s with the URI path of th
 
 Also update the README.md text to remove the template specific text.
 
-The easiest way for developers is to check the repository out locally, change all the references and commit & push it to the server again. (There’s hope that this is automatable at some point in the future.)
-
+For developers, the easiest way is to check the repository out locally, change all the references EXCEPT [config.yml L36](https://github.com/w3c/wai-about-wai/blob/master/_config.yml#L36) and commit & push it to the server again. (There’s hope that this is automatable at some point in the future.)
 
 ### Create and link a Netlify site
 
-For now these are just text instructions. Hopefully this can be automated but so far it needs cmd line access.
+For now these are just text instructions. Hopefully this can be automated.
 
 - Login into [Netlify site page](https://app.netlify.com/teams/w3c/sites) with access to the 'W3C team' team
 - Click 'New site from git' button
@@ -75,9 +71,16 @@ For now these are just text instructions. Hopefully this can be automated but so
 - In General Settings - Site details (you should be taken there) click 'Change site name' button and enter your repo name
 - In Build & Deploy Settings - Post processing - Form detection  click 'Edit settings' button and uncheck 'Run form detection'
 
-To view
+To view the resource preview
 
 - Click on deploys in top nav'
-- You should see 'Production: master@HEAD published
+- You should see 'Production: master@HEAD published, if not wait for the deploy to complete
 - Click on 'Production' to see the preview
 
+# Link into the main site
+
+See these [instructions](./technical-integrate/)
+
+# Update navigation
+
+See these [instructions](./technical-navogation/)
