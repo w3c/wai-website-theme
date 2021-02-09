@@ -19,7 +19,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Creating a new resource involves creating a new GitHub repository (from a template), updating the files and then linking into the full site, including navigation.
+Creating a new resource involves creating a new GitHub repository (from a template), updating the files and then linking into the full site, including navigation. These steps can all be performed online in a web browser.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -28,6 +28,8 @@ Creating a new resource involves creating a new GitHub repository (from a templa
 {% include toc.html %}
 
 ## Creating the Repository
+
+Use the GitHub tool to create a new repository from the WAI resource template. Note the repository name is the same as the resource name.
 
 1. Visit the [github.com/new](https://github.com/new)
 2. Select w3c/wai-resource-template as the template of the repository.
@@ -40,23 +42,42 @@ Creating a new resource involves creating a new GitHub repository (from a templa
 
 ## Configuring the Repository
 
+All development work is performed on a git branch. A Netlify preview of the branch is available for testing. When the code is ready it is merged to the main branch. The assumption is that the main branch is always ready to be deployed.
+
+Note that while the new resource will have an initial index.html in the master branch this will not actually be available until the follow changes are made and merged into master.
+
+### Create a new branch for your work
+
+In the GitHub page for your new repository:
+
+- Select `code`
+- Click the branch button (A branch symbols, the text 'main' or 'master' and a down triangle)
+- Type a new branch name in the box and hit enter
+
 ### Update Placeholder Text for the New Resource Name
 
-In the following places replace `wai-resource-template` with the name of the new repository, eg 'wai-about-wai' NB the links below go to the template on GitHub which should NOT be update:
+Several pieces of placeholder text in the new files needs to be replaced for the new resource to be available in the previews and published site.
+
+In the following places replace `wai-resource-template` with the new resource name, eg 'wai-about-wai' NB the links below go to the template on GitHub which should NOT be update:
 
 - [_config.yaml L13](https://github.com/w3c/wai-resource-template/blob/master/_config.yml#L13) 'baseurl: "/wai-resource-template"'
-- [_config.yaml L32](https:/github.com/w3c/wai-resource-template/blob/master/_config.yml#L32) 'repository: wai-resource-template'
+- [_config.yaml L32](https://github.com/w3c/wai-resource-template/blob/master/_config.yml#L32) 'repository: wai-resource-template'
 - [README.md L1](https://github.com/w3c/wai-resource-template/edit/master/README.md) '...app.netlify.com/sites/wai-resource-template/deploys'
+- [content/index.md L22](https://github.com/w3c/wai-resource-template/edit/master/content/index.md) '  repository: w3c/wai-resource-template' (more changes to this file below)
 
-In the following places replace the `/link/to/page/` text with the URI path of the resource in the final website, eg '/about/:
+To rename the image folder name browse to ` wai-resource-template/content-images/wai-resource-template/.gitignore` and click on the pencil to edit. In the filename edit box and replace the `.gitignore` with  `../` and enter the resource name. Save the file
+
+In the following places replace the `/link/to/page/` text with the URI path the resource will have in the website, eg '/about/.
 
 - [netlify.toml L10](https://github.com/w3c/wai-resource-template/blob/master/netlify.toml#L10) 'to = "/link/to/page/"' used in previews
+- [content/index.md L24](https://github.com/w3c/wai-resource-template/edit/master/content/index.md) '  permalink: /link/to/page/ '
+- [content/index.md L32(https://github.com/w3c/wai-resource-template/edit/master/content/index.md) '  ref: /link/to/page/'
 
-Also update the README.md text to remove the template specific text.
+Also, update the README.md text to remove the template specific lines below the netlify badge.
 
 For developers, the easiest way is to check the repository out locally, change all the references EXCEPT [config.yml L36](https://github.com/w3c/wai-about-wai/blob/master/_config.yml#L36) and commit & push it to the server again. (There’s hope that this is automatable at some point in the future.)
 
-## Create and link a Netlify site
+## Create and link a Netlify site for preview
 
 For now these are just text instructions. Hopefully this can be automated.
 
@@ -77,8 +98,10 @@ To view the resource preview
 
 ## Link into the main site
 
-See these [instructions](./technical-integrate/)
+Goto the GitHub [Add Resource Workflow](https://github.com/w3c/wai-website/actions?query=workflow%3A%22Add+Resource%22) for the wai-website and click the "Run workflow" Button. Enter the resource name - eg 'wai-about-wai) and click "Run workflow" again. Wait for the Workflow to complete
 
-## Update navigation
+## Add the Resource to the Navigation
 
-See these [instructions](./technical-navogation/)
+NB that the navigation.yml file is shared by all previews and the published site so must only be changed one the new resource is ready ot be published.
+
+See these [instructions](./technical-navigation/)
