@@ -25,7 +25,6 @@ This resource shows how to edit content for the WAI website.
   * [A technical overview](/technical/)
   * [Files in Repositories](/technical/files/)
   * [Creating a New Resource](/technical/new-resource/)
-  * [Integrating a New Resource into the Main WAI Site Repository](/technical/integrate/)
   * [Navigation](/technical/navigation/)
 
 ## Editing Documents
