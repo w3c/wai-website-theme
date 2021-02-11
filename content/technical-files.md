@@ -62,7 +62,7 @@ A number of files are shared between all the resources and the published site. F
 
 So, for now, these files are held in the [wai-website-data](https://github.com/w3c/wai-website-data) repo which is included as git submodule in all the other repositories that want to use them. The files appear in the `_external` folder. Unfortunately git submodules require several steps to ensure the latest version of these files appear in the using repository, which can cause some extra hoops to jump through.
 
-These files in _external are not directly used, rather the `_data` folder contains symblinks to these shared files which are then used by the code. Again this requires extra manual work for setup but does alow more flexibility, such as using a local file while developing.
+These files in _external are not directly used, rather the `_data` folder contains symblinks to these shared files which are then used by the code. Again this requires extra manual work for setup but does allow more flexibility, such as using a local file while developing.
 
 To summarise, code in the resource files make references to shared files in `_data` folder. These are actually symblinks to files in the submodule mounted at`_external`. These files are actually copies of files held in the `wai-website-data` repository, at a specific version. Keeping this all up-to-date and working requires commands that need to be run as required, usually as part of a website build step, using GitHub Actions
 
