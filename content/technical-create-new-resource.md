@@ -19,7 +19,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Creating a new resource involves creating a new GitHub repository (from a template), updating the files and then linking into the full site, including navigation. These steps can all be performed online in a web browser.
+Creating a new resource involves creating a new GitHub repository from a template, configuring the repository, and configuring Netlify to work with the repository. These steps can all be performed from your web browser.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -27,81 +27,94 @@ Creating a new resource involves creating a new GitHub repository (from a templa
 
 {% include toc.html %}
 
-## Creating the Repository
+## Step 1: Create a new repository
 
-Use the GitHub tool to create a new repository from the WAI resource template. Note the repository name is the same as the resource name.
+Use GitHub to create a new repository using the WAI resource template.
 
-1. Visit the [github.com/new](https://github.com/new)
-2. Select w3c/wai-resource-template as the template of the repository.
-3. Set the name of the repository to a name starting with `wai-` – usually we use just lowercase letters but sometimes we use camel case
-4. Set the visibility setting to public
-5. Click on create repository
-6. In the new repository, configure as below:
+1. Go to this GitHub page: [github.com/new](https://github.com/new)
+2. Select `w3c/wai-resource-template` in the 'Repository template' section
+3. Type a name of the repository starting with `wai-` (usually we use just lowercase letters but sometimes we use camel case)
+4. Set the visibility setting to 'Public'
+5. Click 'Create repository' button
 
-**All content for this resource should be placed inside the `content` folder.**
+A new GitHub repository should be created with the name you selected.
 
-## Configuring the Repository
+## Step 2: Configure your new repository
 
-All development work is performed on a git branch. A Netlify preview of the branch is available for testing. When the code is ready it is merged to the main branch. The assumption is that the main branch is always ready to be deployed.
+### Step 2.1 Create a new branch for your work
 
-Note that while the new resource will have an initial index.html in the master branch this will not actually be available until the follow changes are made and merged into master.
+Make the configurations in a branch first, and merge that branch with the new configurations into the main branch only once you have tested them in later the steps.
 
-### Create a new branch for your work
+To create a branch in your newly created GitHub repository:
 
-In the GitHub page for your new repository:
+1. Select `Code` tab (below the repository name)
+2. Click the branch button (has a branch symbol, the text 'main' or 'master', and a down triangle)
+3. Type a new branch name in the search box and hit enter
 
-- Select `code`
-- Click the branch button (A branch symbols, the text 'main' or 'master' and a down triangle)
-- Type a new branch name in the box and hit enter
+The branch button should now have the name of the branch you created.
 
-### Update Placeholder Text for the New Resource Name
+### Step 2.2 Update placeholder references
 
-Several pieces of placeholder text in the new files needs to be replaced for the new resource to be available in the previews and published site.
+Several placeholder references in the newly created repository need to be updated, to reflect your repository name. Make these changes in your newly created branch rather than in the main branch.
 
-In the following places replace `wai-resource-template` with the new resource name, eg 'wai-about-wai' NB the links below go to the template on GitHub which should NOT be update:
+Replace the text `wai-resource-template` with the name of your new repository in the following files:
 
-- [_config.yaml L13](https://github.com/w3c/wai-resource-template/blob/master/_config.yml#L13) 'baseurl: "/wai-resource-template"'
-- [_config.yaml L32](https://github.com/w3c/wai-resource-template/blob/master/_config.yml#L32) 'repository: wai-resource-template'
-- [README.md L1](https://github.com/w3c/wai-resource-template/edit/master/README.md) '...app.netlify.com/sites/wai-resource-template/deploys'
-- [content/index.md L22](https://github.com/w3c/wai-resource-template/edit/master/content/index.md) '  repository: w3c/wai-resource-template' (more changes to this file below)
+- config.yaml (line 13) `baseurl: "/wai-resource-template"`
+- config.yaml (line 32) `repository: wai-resource-template`
+- README.md (line 1) `...app.netlify.com/sites/wai-resource-template/deploys`
+- content/index.md (line 22) `repository: w3c/wai-resource-template`
 
-To rename the image folder name browse to ` wai-resource-template/content-images/wai-resource-template/.gitignore` and click on the pencil to edit. In the filename edit box and replace the `.gitignore` with  `../` and enter the resource name. Save the file
+### Step 2.3 Update the images location
 
-In the following places replace the `/link/to/page/` text with the URI path the resource will have in the website, eg '/about/.
+Your newly created repository has a folder called `/content-images/wai-resource-template/`, which also needs to change to your repository name. Also make this change in your newly created branch first.
 
-- [netlify.toml L10](https://github.com/w3c/wai-resource-template/blob/master/netlify.toml#L10) 'to = "/link/to/page/"' used in previews
-- [content/index.md L24](https://github.com/w3c/wai-resource-template/edit/master/content/index.md) '  permalink: /link/to/page/ '
-- [content/index.md L32(https://github.com/w3c/wai-resource-template/edit/master/content/index.md) '  ref: /link/to/page/'
+To change the folder name:
 
-Also, update the README.md text to remove the template specific lines below the netlify badge.
+1. Go to the file called `.gitignore` in the folder called `/content-images/wai-resource-template/`
+2. Click the edit button (a pencil symbol)
+3. Go to the text field with the text `.gitignore` (above the 'Edit file' pane)
+4. Replace the text `.gitignore` with `../your-repository-name/.gitignore` (using your actual repository name in place of `your-repository-name`)
+5. Click 'Commit changes' button (towards the bottom of the page)
 
-For developers, the easiest way is to check the repository out locally, change all the references EXCEPT [config.yml L36](https://github.com/w3c/wai-about-wai/blob/master/_config.yml#L36) and commit & push it to the server again. (There’s hope that this is automatable at some point in the future.)
+You should now have a folder called `/content-images/your-repository-name/` in your repository (where `your-repository-name` is your actual repository name).
 
-## Create and link a Netlify site for preview
+## Step 3: Create and link a Netlify site for preview
 
-For now these are just text instructions. Hopefully this can be automated.
+Netlify allows you to preview the content, including draft content in branches, as it would look when it is deployed on the WAI website. To configure such Netlify previews for your repository:
 
-- Login into [Netlify site page](https://app.netlify.com/teams/w3c/sites) with access to the 'W3C team' team
-- Click 'New site from git' button
-- Click 'GitHub' button
-- Authenticate to GitHub, select 'w3c' organisation and type your repo name into the search box, hit enter
-- Click on the repo name
-- Click on 'Deploy Site' Button
-- In General Settings - Site details (you should be taken there) click 'Change site name' button and enter your repo name
-- In Build & Deploy Settings - Post processing - Form detection  click 'Edit settings' button and uncheck 'Run form detection'
+1. Login into [Netlify site page](https://app.netlify.com/teams/w3c/sites) with access to the 'W3C team' team
+2. Click 'New site from Git' button
+3. Click 'GitHub' button
+4. Authenticate to GitHub, select 'w3c' organization
+5. Type your repository name into the search box and hit enter
+6. Click on your repository name in the search results
+7. Click 'Deploy Site' button
+8. Click 'Site settings' button
+   - In 'General - Site details' (you should be taken there), click 'Change site name' button and enter your repo name
+   - In 'Build & deploy', scroll down to 'Post processing - Form detection', click 'Edit settings' button, uncheck 'Run form detection', and click 'Save' button
 
 To view the resource preview
 
-- Click on deploys in top nav'
-- You should see 'Production: master@HEAD published, if not wait for the deploy to complete
-- Click on 'Production' to see the preview
+- Click on 'Deploys' in top navigation bar
+- You should get the message 'Production: master@HEAD Published' - wait for the deploy to complete if the message is other than 'Published'
+- Click on 'Production' to get to the preview
 
-## Link into the main site
+## Step 4: Create your content
 
-Goto the GitHub [Add Resource Workflow](https://github.com/w3c/wai-website/actions?query=workflow%3A%22Add+Resource%22) for the wai-website and click the "Run workflow" Button. Enter the resource name - eg 'wai-about-wai) and click "Run workflow" again. Wait for the Workflow to complete
+Content in the main branch is assumed ready to be deployed on the WAI website. To avoid draft content from being deployed to the WAI website, you need to create a branch for putting your draft content. Once the content is approved, you can merge that branch into the main branch. Follow Step 2.1 to create a new branch.
 
-## Add the Resource to the Navigation
+Put your content in the folder called `content`. Your new repository has an initial file called `content/index.md`, which you can use as a template. This file has many configuration parameters that you need to set for every new file that you create. It also has different styles and functionality that you can reuse.
 
-NB that the navigation.yml file is shared by all previews and the published site so must only be changed one the new resource is ready ot be published.
+In particular, replace the text `/link/to/page/` (on lines 24 and 32) in every file with the path of where your page will appear on the WAI website (you may not know this at the beginning of the project and you can do it later too). Also update the mappings in the file `netlify.toml` (on line 10) when you are ready.
 
-See these [instructions](./technical-navigation/)
+Also, update the README.md text to remove the template specific lines below the netlify badge, and to provide documentation.
+
+## Step 5: Link into the main site
+
+Go to the GitHub [Add Resource Workflow](https://github.com/w3c/wai-website/actions?query=workflow%3A%22Add+Resource%22) for the wai-website and click the 'Run workflow' Button. Enter the repository name - eg. `wai-about-wai` and click 'Run workflow'' again. Wait for the Workflow to complete
+
+## Step 6: Add the resource to the navigation
+
+Note that the `navigation.yml` file is shared by all previews and the published site so must only be changed once the new resource is ready to be published.
+
+See these [instructions](./technical-navigation/).
