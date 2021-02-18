@@ -103,7 +103,7 @@ To view the resource preview
 
 Content in the main branch is assumed ready to be deployed on the WAI website. To avoid draft content from being deployed to the WAI website, you need to create a branch for putting your draft content. Once the content is approved, you can merge that branch into the main branch. Follow Step 2.1 to create a new branch.
 
-Put your content in the folder called `content`. Your new repository has an initial file called `content/index.md`, which you can use as a template. This file has many configuration parameters that you need to set for every new file that you create. It also has different styles and functionality that you can reuse.
+Put your content in the folder called `content`, images in the folder `content-images/your-repository-name/`. Your new repository has an initial file called `content/index.md`, which you can use as a template. This file has many configuration parameters that you need to set for every new file that you create. It also has different styles and functionality that you can reuse.
 
 In particular, replace the text `/link/to/page/` (on lines 24 and 32) in every file with the path of where your page will appear on the WAI website (you may not know this at the beginning of the project and you can do it later too). Also update the mappings in the file `netlify.toml` (on line 10) when you are ready.
 
