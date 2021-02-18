@@ -130,7 +130,8 @@ h6 {
 }
 
 .in-resource h1 {margin-bottom: 0;}
-.in-resource p  {margin-top:    0; font-style: italic;}
+.in-resource p  {margin-top: 0; font-style: italic;}
+.in-resource-sub { display: block; font-size: 1rem; font-style: italic; }
 .in-resource a:visited  {color: var(--w3c-dark);}
 
 .tight-page h2, #toc + h2 { margin-top: 45px; }
