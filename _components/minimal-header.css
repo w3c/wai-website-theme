@@ -2,7 +2,6 @@
 .minimal-header {
   display: flex;
   align-items: center;
-  width: 100%;
 }
 .tool-header a,
 .minimal-header a {
