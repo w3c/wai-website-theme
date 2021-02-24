@@ -36,3 +36,6 @@
     height: 2em;
   }
 }
+.minimal-header-container {
+  background-color: var(--w3c-classic);
+}
