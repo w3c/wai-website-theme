@@ -32,3 +32,7 @@
   .nav__item a:focus {
     outline-offset: -0.5em;
   }
+.nav-container {
+  background-color: var(--cloudy-subtle);
+  margin-bottom: 2em;
+}
