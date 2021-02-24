@@ -61,12 +61,86 @@
   {% endif %}
 
   <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
-    <header{%- if page.resource.ref %}{%- unless page.ref == page.resource.ref %} class="in-resource"{%- endunless -%}{%- endif -%}>
-      <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_image %}<img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;"> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title | xml_escape }}{% endif %}</h1>
+
+    {% comment %} 
+      
+       Header will be displayed in three ways, depending on which frontmatter was provided:
+
+       - with 'in [Resource]' under the h1  (if page.resource.ref is provided)
+       - with 'in [Resource X], [Resource Y]' inside the h1 (if page.parent_in_h1 is provided)
+       - just the title (if neither are provided)
+    
+     {% endcomment %}  
+
+    {% if page.resource.ref %}
+    <header class="in-resource">
+      <h1>
+        {% if page.title_icon %}
+        <svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> 
+        {% endif %}
+        {% if page.title_image %}
+        <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;"> 
+        {% endif %}
+        {% if page.title_html %}{
+          { page.title_html }}
+        {% else %}
+          {{ page.title | xml_escape }}
+        {% endif %}</h1>
       {%- if page.resource.ref -%}{%- unless page.ref == page.resource.ref -%}
         <p>{% include t.html t="in" %} {% include link.html to=page.resource.ref %}</p>
       {%- endunless -%}{%- endif -%}
     </header>
+    {% elsif page.parent_in_h1 %}
+    <header class="in-resource">
+      <h1>{% if page.title_icon %}
+        <svg class="icon-in-title" aria-hidden="true">
+          <use xlink:href="{{page.title_icon | relative_url}}"></use>
+        </svg> {% endif %}
+        {% if page.title_image %}
+          <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;"> 
+        {% endif %}
+        {% if page.title_html %}
+          {{ page.title_html }}
+        {% else %}
+        {{ page.title | xml_escape }}
+        {% endif %}
+        <span class="in-resource-sub">
+        {% for link in page.parent_in_h1 %}
+          {%- if link.ref -%}{%- unless page.ref == link.ref -%}
+            {% if link.name == "title" %}
+            <p>{% include t.html t="in" %} {% include link.html to=link.ref %}</p>
+            {% elsif link.name == "nav_title" %}
+            <p>{% include t.html t="in" %} {% include link.html to=link.ref usenavtitle="true" %}</p>
+            {% elsif link.name == "title_html" %}
+            <p>{% include t.html t="in" %} {% include link.html to=link.ref usetitlehtml="true" %}</p>
+            {% else %}
+            <p>{% include t.html t="in" %} {% include link.html to=link.ref text=link.name %}</p>
+            {% endif %}
+          {%- endunless -%}{%- endif -%}
+        {% endfor %}    
+        </span>
+      </h1>
+    </header>
+    {% else %}
+    <header>
+      <h1>
+      {% if page.title_icon %}
+        <svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> 
+      {% endif %}
+      {% if page.title_image %}
+        <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;"> 
+      {% endif %}
+      {% if page.title_html %}
+        {{ page.title_html }}
+      {% else %}
+        {{ page.title | xml_escape }}
+      {% endif %}
+      </h1>
+      {%- if page.resource.ref -%}{%- unless page.ref == page.resource.ref -%}
+        <p>{% include t.html t="in" %} {% include link.html to=page.resource.ref %}</p>
+      {%- endunless -%}{%- endif -%}
+    </header>
+    {% endif %}
 
     {%- include doc-note-msg.html -%}
     {%- include translation-note-msg.html -%}
