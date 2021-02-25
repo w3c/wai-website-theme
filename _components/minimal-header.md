@@ -61,3 +61,6 @@ Embedding a header as HTML:
 
 `title="ATAG Report Tool"`
 : Name of the tool
+
+`class="with-subtitle" subtitle="powered by WAI"`
+: Add a subtitle underneath the title

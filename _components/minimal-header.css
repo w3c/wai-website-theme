@@ -12,11 +12,22 @@
   font-size: 1.125em;
   white-space: nowrap;
 }
+.minimal-header.with-subtitle {
+  line-height: 1.1;
+}
 @media (min-width: 60em) {
   .tool-header-name,
   .minimal-header-name {
     font-size: 1.5em;
   }
+  .minimal-header.with-subtitle {
+    font-size: 1.2em;
+    line-height: 1.1;
+  }
+}
+.minimal-header-subtitle {
+  display: block;
+  font-size: 70%;
 }
 .tool-header-logo,
 .minimal-header-logo {

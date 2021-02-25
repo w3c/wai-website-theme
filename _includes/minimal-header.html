@@ -1,5 +1,10 @@
-<div id="site-header" class="minimal-header">
-  <span class="minimal-header-name">{{ include.title }}</span>
+<div id="site-header" class="minimal-header{% if include.class %} {{ include.class }}{% endif %}">
+  <span class="minimal-header-name">
+    {{ include.title }}
+    {% if include.subtitle %}
+      <span class="minimal-header-subtitle">{{ include.subtitle }}</span>
+    {% endif %}
+  </span>
   <div class="minimal-header-logo">
     <a href="http://w3.org/">
       <img alt="W3C" src="{{ "/content-images/wai-website-theme/" | relative_url }}w3c.svg" width="92" height="44" />
