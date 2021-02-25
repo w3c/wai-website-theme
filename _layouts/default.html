@@ -105,19 +105,21 @@
         {{ page.title | xml_escape }}
         {% endif %}
         <span class="in-resource-sub">
-        {% for link in page.parent_in_h1 %}
-          {%- if link.ref -%}{%- unless page.ref == link.ref -%}
-            {% if link.name == "title" %}
-            <p>{% include t.html t="in" %} {% include link.html to=link.ref %}</p>
-            {% elsif link.name == "nav_title" %}
-            <p>{% include t.html t="in" %} {% include link.html to=link.ref usenavtitle="true" %}</p>
-            {% elsif link.name == "title_html" %}
-            <p>{% include t.html t="in" %} {% include link.html to=link.ref usetitlehtml="true" %}</p>
-            {% else %}
-            <p>{% include t.html t="in" %} {% include link.html to=link.ref text=link.name %}</p>
-            {% endif %}
-          {%- endunless -%}{%- endif -%}
-        {% endfor %}    
+          in
+          {%- for link in page.parent_in_h1 -%}
+            {% unless forloop.first == true %}, {% endunless %}
+            {%- if link.ref -%}{%- unless page.ref == link.ref -%}
+              {% if link.name == "title" %}
+                {% include t.html t="in" %} {% include link.html to=link.ref %}<
+              {% elsif link.name == "nav_title" %}
+                {% include t.html t="in" %} {% include link.html to=link.ref usenavtitle="true" %}
+              {% elsif link.name == "title_html" %}
+                {% include t.html t="in" %} {% include link.html to=link.ref usetitlehtml="true" %}
+              {% else %}
+                {% include t.html t="in" %} {% include link.html to=link.ref text=link.name %}
+              {% endif %}
+            {%- endunless -%}{%- endif -%}
+          {%- endfor -%}    
         </span>
       </h1>
     </header>
