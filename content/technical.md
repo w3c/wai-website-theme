@@ -6,6 +6,11 @@ github:
   path: content/technical.md
 footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
+parent_in_h1: 
+  - ref: /writing/frontmatter/
+    name: nav_title
+  - ref: /writing/wai-markdown/
+    name: "Test"
 ---
 
 {::nomarkdown}
