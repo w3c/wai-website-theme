@@ -115,3 +115,9 @@ This will look like this:
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
+
+<hr>
+
+## Space Before Headings
+
+To have less space above headings, put <code>class: tight-page</code> in the [Frontmatter](https://wai-website-theme.netlify.app/writing/frontmatter/#class).
