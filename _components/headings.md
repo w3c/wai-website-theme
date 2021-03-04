@@ -116,8 +116,7 @@ This will look like this:
 {% include box.html type="end" %}
 {:/}
 
-<hr>
-
 ## Space Before Headings
 
-To have less space above headings, put <code>class: tight-page</code> in the [Frontmatter](https://wai-website-theme.netlify.app/writing/frontmatter/#class).
+To have less space above headings, put in the [Frontmatter](https://wai-website-theme.netlify.app/writing/frontmatter/#class):
+<br><strong><code>class: tight-page</code></strong>
