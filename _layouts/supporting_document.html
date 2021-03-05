@@ -45,14 +45,19 @@
     </style>
 
     <div class="minimal-header-container default-grid">
-      {% include minimal-header.html translations=translations title="WCAG ACT Rules" %}
+      {% if site.supporting_doc_name_sub %}
+      {% include minimal-header.html translations=translations class="with-subtitle" subtitle=site.supporting_doc_name_sub title=site.supporting_doc_name %}
+      {% else %}
+      {% include minimal-header.html translations=translations title=site.supporting_doc_name %}
+      {% endif %}
     </div>
 
     <div class="default-grid nav-container">
       <nav class="nav" aria-label="Context for this document">
         <ul>
-            <li class="nav__item"><a href="{{ '/standards-guidelines/act/rules' | relative_url }}"{% if page.permalink == "/standards-guidelines/act/rules/" %} class="active" aria-current="page"{% endif %}>All Rules</a></li>
-            <li class="nav__item"{% if page.permalink == "/standards-guidelines/act/rules/about" %} class="active"{% endif %}><a href="{{ '/standards-guidelines/act/rules/about' | relative_url }}"{% if page.permalink == "/standards-guidelines/act/rules/about" %} class="active" aria-current="page"{% endif %}>About WCAG ACT Rules</a></li>
+            {% for link in supporting_doc_nav_links %}
+            <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
+            {% endfor %}
             <li class="nav__item"><a href="https://w3c.github.io/wai-wcag-supporting-documents-redesign/alt-index.html">All WCAG 2 Guidance</a></li>
         </ul>
       </nav>
