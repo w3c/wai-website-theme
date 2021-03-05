@@ -37,12 +37,6 @@
   {%- endunless -%}
   {% include_cached head.html type="end" %}
   <body id="top" class="page-{{page.title | slugify}} {% include_cached body-class.html collection=page.collection doc-note-type=page.doc-note-type %}">
-    <!-- @@@ REMOVE ME, ensure these styles are in wai-website-theme -->
-    <style>
-      .minimal-header { width: auto; grid-column: 2 / span 8; }
-      .nav-container { background-color: var(--cloudy-subtle); margin-bottom: 2em; }
-      .minimal-header-container { background-color: var(--w3c-classic); }
-    </style>
 
     <div class="minimal-header-container default-grid">
       {% if site.supporting_doc_name_sub %}
