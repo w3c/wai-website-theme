@@ -50,3 +50,6 @@
 .minimal-header-container {
   background-color: var(--w3c-classic);
 }
+  .minimal-header-container > .minimal-header {
+    grid-column: navigation-start / content-end;
+  }
