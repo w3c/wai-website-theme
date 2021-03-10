@@ -1,0 +1,21 @@
+.list-of-sources {
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+	gap: 1em;
+}
+	.list-of-sources li {
+		list-style: none;
+		margin-bottom: 0;
+	}
+	.list-of-sources li a {
+		display: block;
+		text-decoration: none;
+		padding: 1em;
+		background: var(--pure-white);
+		border: 1px solid var(--line-grey);
+		color: var(--off-black);
+	}
+	.list-of-sources li a:hover {
+		background-color: var(--lt-off-white);
+	}
