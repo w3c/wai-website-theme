@@ -48,7 +48,7 @@
 
     <div class="default-grid nav-container">
       <nav class="nav" aria-label="Context for this document">
-        <ul class="list-of-sources">
+        <ul>
             {% for link in site.supporting_doc_nav_links %}
             <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
             {% endfor %}
