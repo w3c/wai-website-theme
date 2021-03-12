@@ -92,9 +92,9 @@ In addition to the theme, we use a plugin, mainly for handling translation links
 [{% include_cached icon.html name="arrow-right" %} Jekyll Front Matter](https://jekyllrb.com/docs/front-matter/)<br>
 [{% include_cached icon.html name="arrow-right" %} YAML](https://yaml.org/)
 
-We use front matter to provide metadata that is used for generating the <title>, the footer, SEO and social media info, and a lot for translations.
+We use front matter to provide metadata that is used for generating the ```<title>```, the footer, SEO and social media info, and a lot for translations.
 
-Our source files with this YAML front matter block are processed by Jekyll as a special file.
+Our source files with the YAML front matter block are processed by Jekyll as a special file.
 
 ## GitHub
 
