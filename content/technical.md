@@ -12,13 +12,17 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-This page outlines the fundamental technical processes and the general approach for the website. The goal for the documentation is to ensure that the site and every page has a _consistent layout and design_ and allows us to _edit individual resources in their own GitHub repositories_. The process also allows the rendering of previews on Netlify.
+This page outlines the fundamental technical processes and the general approach for the website.
+
+The site uses Jekyll, a Ruby-based site generating software. “WAI Website Theme” is a Jekyll theme with HTML templates, CSS, and (very few) scripts. Source files for the web pages can include Markdown, HTML, CSS, and Javascript using the Liquid template language. We use YAML front matter for several things, including translations.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
 {% include toc.html %}
+
+The goal for the documentation is to ensure that the site and every page has a _consistent layout and design_ and allows us to _edit individual resources in their own GitHub repositories_. The process also allows the rendering of previews on Netlify.
 
 ## Architecture and Previews ##
 
@@ -81,6 +85,16 @@ The theme also has this information stored and displayed, which makes it easy to
 [{% include_cached icon.html name="arrow-right" %} WAI Website Plugin](https://github.com/w3c/wai-website-plugin)
 
 In addition to the theme, we use a plugin, mainly for handling translation links.
+
+### YAML Front Matter
+
+[{% include_cached icon.html name="arrow-right" %} WAI Website Front Matter](https://wai-website-theme.netlify.app/writing/frontmatter/)<br>
+[{% include_cached icon.html name="arrow-right" %} Jekyll Front Matter](https://jekyllrb.com/docs/front-matter/)<br>
+[{% include_cached icon.html name="arrow-right" %} YAML](https://yaml.org/)
+
+We use front matter to provide metadata that is used for generating the <title>, the footer, SEO and social media info, and a lot for translations.
+
+Our source files with this YAML front matter block are processed by Jekyll as a special file.
 
 ## GitHub
 
