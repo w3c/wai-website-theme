@@ -28,6 +28,8 @@
     url: "/writing/html/"
   - name: Images
     url: "/writing/images/"
+  - name: Supporting documents
+    url: "/writing/supporting-documents/"
 - name:
     en: 'Design Components'
   pages:
