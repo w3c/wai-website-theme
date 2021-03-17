@@ -117,4 +117,4 @@ Go to the GitHub [Add Resource Workflow](https://github.com/w3c/wai-website/acti
 
 Note that the `navigation.yml` file is shared by all previews and the published site so must only be changed once the new resource is ready to be published.
 
-See these [instructions](./technical-navigation/).
+See these [instructions](../navigation).
