@@ -13,7 +13,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Publishing the WAI Website is done using a GitHub Action than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`.
+Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`. In addition, Netlfy preview deploys are made automatically when code is pushed to GitHub.
 
 Quicklinks:
 * [Release page](https://github.com/w3c/wai-website/releases/new)
@@ -28,23 +28,55 @@ Quicklinks:
 @@
 _**{Publication info moved from "Technical Information" page. For Steve or others to edit (or delete if redundant with info later in the page -- or, leave as a summary :-}:**_
 
-Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages.
+## Deployment
 
-Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment. 
+Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages. The W3C website uses a reverse proxy so the WAI site pages appear within it mounted at `www.w3.org/WAI/`
 
-The build process consistes of several steps for all repos: 
-* checkout git repo including submodule
-* install all dependencies (ie Ruby Gems)
-* use the Ruby `bundle` command to invoke Jekyll for the build
-* deploy / publish to URL.
+Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment.
 
-The GitHub `deploy`action builds and then generates a `manifest.txt`, copies the built static files to github pages rather than let GitHubPages run Jeckyl again and finally invokes `https://www.w3.org/services/update-wai-map'` to update the w3c URL mapping
+The build process consists of several steps for all repos:
+1. checkout git repo including submodules
+1. install all dependencies (ie Ruby Gems)
+1. use the Ruby `bundle` command to invoke Jekyll for the build
+1. deploy to github pages
+1. update urls for inclusion in `www.w3.org/WAI/`.
 
-The GitHub Action runs on ubuntu-latest (currently Focal 20.04) and Netlify uses Xenial (16.04) _{SL:Currently some are on Trusty (14.04). I doubt the variation matters}_
+When a release is made in GitHub the GitHub `deploy`action builds and then generates a `manifest.txt`, copies the built static files to github pages rather than let GitHubPages run Jeckyl again and finally invokes `https://www.w3.org/services/update-wai-map'` to update the w3c URL mapping. Netlify build use the same first 3 steps.
 
+The GitHub Action runs on ubuntu-latest (currently Focal 20.04) and Netlify uses Xenial (16.04).
+
+GitHub pages are configured so the latest commit on the branch `gh-pages` is served via GitHub http access.
+
+To deploy, in GitHub:
+
+1. in the wai-website repo select `Releases` on the right
+1. select `draft a new release`
+1. fill in the details and click `publish release`
+1. navigate to `Actions` and select `Deploy`
+1. click on the top line to view the log and watch progress
+
+## Rollback
+
+I case of a deploy breaking the site it is possible to rollback to an earlier version. This works by deleting the latest checkins from the `gh-pages` branch. It does not touch the source or re-build.
+
+In GitHub:
+
+1. in the wai-website repo `code` section select the `gh-pages` branch
+1. select the `commits` history view
+1. identify the commit you want to rollback to - usually the second from the top.
+1. click the 'clipboard' icon on the right of the row. this will copy the commit id to clipboard
+1. got to `Actions` in the top Navigation
+1. select `Rollback Website`
+1. click `Run workflow` button on the right
+1. in the first edit box paste the id you previously copied
+1. in the second edit box type `yes` and click `Run Workflow`
+
+Refresh your browser to check the WAI website has rolled back. You may have a wait a minute or two for caching.
 @@
 
-## 1. Generate Site Files
+## 1. Generate Site Files --
+
+TODO add Netlify previews
 
 There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 shows how to render it on your local machine for testing.
 
