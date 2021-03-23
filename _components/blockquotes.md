@@ -64,7 +64,8 @@ inline_css: |
 {% include box.html type="start" title="Overview" class="" %}
 {:/}
 
-For quoting someone.
+The styles below are for quoting a person.<br>
+We might develop other styles for quoting a document, e.g., WCAG excerpt.
 
 {::nomarkdown}
 {% include box.html type="end" %}
