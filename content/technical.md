@@ -37,13 +37,13 @@ The WAI Website is created using a "build" process that converts the source file
 While the mechanics of this build are complex, involving jekyll, git submodules and filesystem symlinks, an overview can be useful to keep in mind:
 
 - source files in the `content/` folder of a resource are processed so they are:
- - converted to the final html using the liquid templating engine
- - merged with the theme and other surrounding page content such menus and footers
+  - converted to the final html using the liquid templating engine
+  - merged with the theme and other surrounding page content such menus and footers
 - static content files in the `content-images/` folder are made available unprocessed to other website files
 - source files contain yaml formatted frontmatter (surrounded by ---) which provides:
- - configuration for the build
- - data values used in template tags in the file content
- - the actual path to the file in the website
+  - configuration for the build
+  - data values used in template tags in the file content
+  - the actual path to the file in the website
 
 ## Architecture and Previews ##
 
