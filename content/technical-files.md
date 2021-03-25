@@ -29,32 +29,58 @@ Find out the file structure in a repository:
 {% include toc.html %}
 
 
-## File Structure
+## Source File Structure
 
 All repositories have a common base structure with the following files
-and folders. Only the bold files are expected to be edited by editors.
-Files marked with a _T_ are for technical support only
+and folders.
 
--   (File, _T_) `w3c.json` – Data for the W3C API.
--   (File, _T_) `Gemfile` – A list of ruby gems that are required for the website to work.
--   (File, _T_) `Gemfile.lock` – defines which version of each dependency including gems.
--   (File, _T_) `_config.yml` – Configures the Jekyll installation, usually not touched after the initial setup.
--   (File, _T_) `_config_staging.yml` – Configures the Jekyll installation for Netlify previews.
--   (Folder, _T_) `_data` – Data files that are used by the theme to render the
-    navigations, See 'Shared Files' below
-    -   (File, _T_) `lang.json` – The World's Languages
-    -   (File, _T_) `translations.yml` – Translations of the User Interface
-    -   (File, _T_) `techniques.yml` – WCAG Techniques data (not widely used)
-    -   (File, _T_) `wcag.yml` – WCAG data (not widely used)
-    -   (File) `navigation.yaml` – The sites main navigation. Add your page to the navigation to get left-side navigation and a breadcrumb.
--   (File) `README.md` – Readme of the repository. Is never rendered as an HTML file and should contain information about the repository: What is it about, where can I find background information. Includes the link to the repository preview. It also includes a Netlify badge you can use to click through to netlify logs etc
--   (Folder) `content-images` – Every repository has a content-images directory that can hold assets in a sub-directory that has the name of the repository. This helps us to keep the assets of different repositories separated.
-    -  (Folder) `<repo-name>`
-       +  (File) `social.png` – Default social sharing image.
-       +  (… Other files used by the repository …)
-- (Folder) `content` – The (text) content of the repository.
+When Jeckyl runs as part of the build process it creates a new `_site` folder containing the website files.
+
+### Content
+
+These are files containing the site specific content
+
+-   (File) `README.md` – Information about the repository, including a clickable Netlify badge for access to the Netlify preview, logs etc.
+- (Folder) `content` – html nd markdown content files that are processed by Jeckyll during site build to create web pages.
   - (File) `index.md` – In most repositories content goes into the index.md file or …
   - (File) `other.md` – … other Markdown files in the main directory.
+-   (Folder) `content-images/<repo-name>` – static files including images, CSS and JS that appear unprocessed in the website
+  +  (File) `social.png` – Default social sharing image.
+  +  (… Other files used by the repository …)
+
+Note:  In many repositories content files are still in the root folder rather than the `content` folder. These will be changed over time.
+
+### Shared Content
+
+These are shared between all resource repos and the main website. They are "copied" from the `wai-website-data` repository using git submodules and symblinks. Any changes are made in the other repository and need **careful** coordination if the published site is not to be broken. See below for more details.
+
+-   (Folder) `_data`
+    -   (File) `translations.yml` – Translations of the User Interface
+    -   (File) `techniques.yml` – WCAG Techniques data (not widely used)
+    -   (File) `wcag.yml` – WCAG data (not widely used)
+    -   (File) `navigation.yaml` – The sites main navigation. Add your page to the navigation to get left-side navigation and a breadcrumb.
+
+## Technical Infrastructure
+
+Scaffolding. These will not usually be altered by content authors.
+
+-   (File) `w3c.json` – Data for the W3C API.
+-   (File) `Gemfile` – A list of ruby gems that are required for the website to work.
+-   (File) `Gemfile.lock` – defines which version of each dependency including gems.
+-   (File) `_config.yml` – Configures the Jekyll installation, usually not touched after the initial setup.
+-   (File) `_config_staging.yml` – Configures the Jekyll installation for Netlify previews.
+-   (File) `netlify.yml` - configuration for Netlify previews and local development builds
+-   (File) `gitmodules` - configuration for the git submodule(s) tha tappera
+-   (Folder) `_external/data` - mount point for the included git submodule `wai-wesbite-data`
+-   (Folder) `_data/*` - links to shared files imported as a git submodule via `_external/data`
+-   (Folder) `_site` - the generated website files
+
+## wai-website pages
+
+-   (Folder) `pages` - files processed by Jekyll to make wai-website - links to the git submodules
+-   (Folder) `_external`
+    - (Folder) `data`- mount point for the included git submodule `wai-wesbite-data`. Same as in each resource repo.
+    - (Folder) `resources`- mount point for the all the included git submodule resources `wai-*`
 
 ### Shared Files
 
@@ -65,7 +91,3 @@ So, for now, these files are held in the [wai-website-data](https://github.com/w
 These files in _external are not directly used, rather the `_data` folder contains symblinks to these shared files which are then used by the code. Again this requires extra manual work for setup but does alow more flexibility, such as using a local file while developing.
 
 To summarise, code in the resource files make references to shared files in `_data` folder. These are actually symblinks to files in the submodule mounted at`_external`. These files are actually copies of files held in the `wai-website-data` repository, at a specific version. Keeping this all up-to-date and working requires commands that need to be run as required, usually as part of a website build step, using GitHub Actions
-
-### Notes
-
-- In many repositories what should be in the `content` folder is still in the root folder. This should be addressed when updated. Such a change is breaking when merging to the wai-website repository.
