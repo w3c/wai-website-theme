@@ -24,6 +24,31 @@ The site uses Jekyll, a Ruby-based site generating software. “WAI Website Them
 
 The goal for the documentation is to ensure that the site and every page has a _consistent layout and design_ and allows us to _edit individual resources in their own GitHub repositories_. The process also allows the rendering of previews on Netlify.
 
+## A Summary for Content Authors ##
+
+As a content author you will usually be working on content for one part of the WAI website. This can be accomplished by editing HTML or Markdown files in one of the many git repositories that hold the source files. In fact, the WAI site is broken up into *many* modules, called `resources`, each with it's own repository in the W3C's github organization. You can work in isolation on content files in a repository using either GitHub online features or a local development environment. Sometimes you might also work on static files like images or even CSS or javascript.
+
+In this case you can follow a typical github style workflow, working on a branch which is eventually merged into a main branch and pushed to GitHub once ready for deployment. This last step should be performed in coordination with the WAI website editor. To support content development, Netlify provides previews which can be used to see how your resource changes look.
+
+Sometimes however, you will need to work on files that are shared between all resources, such as the file which defines the site navigation. Plus, if you are creating a new resource it needs to be added to the "master" resource which pulls all the components together to make the complete wai website.
+
+Working on these shared files requires extra care and coordination with the Editor as integration of these multiple parts needs coordination to avoid a broken site.
+
+### Site build ###
+
+The WAI Website is created using a "build" process that converts the source file content in the resources into the wai website content. It combines all the resources and mixes in the shared files including navigation and a theme (visual styling). The build is used to both generate the resource previews and when the site is deployed.
+
+While the mechanics of this build are complex, involving jekyll, git submodules and filesystem symlinks, an overview can be useful to keep in mind:
+
+- source files in the `content/` folder of a resource are processed so they are:
+  - converted to the final html using the liquid templating engine
+  - merged with the theme and other surrounding page content such menus and footers
+- static content files in the `content-images/` folder are made available unprocessed to other website files
+- source files contain yaml formatted frontmatter (surrounded by ---) which provides:
+  - configuration for the build
+  - data values used in template tags in the file content
+  - the actual path to the file in the website
+
 ## Architecture and Previews ##
 
 - A static website site (AKA jamstack)

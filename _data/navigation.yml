@@ -9,7 +9,7 @@
     url: "/technical/files/"
   - name: Creating a New Resource
     url: "/technical/new-resource/"
-  - name: "Checkout an Existing Resource"
+  - name: "Working on an Existing Resource"
     url: "/technical/existing-resource/"
   - name: Navigation
     url: "/technical/navigation/"
