@@ -2,7 +2,6 @@
 .minimal-header {
   display: flex;
   align-items: center;
-  width: 100%;
 }
 .tool-header a,
 .minimal-header a {
@@ -13,11 +12,22 @@
   font-size: 1.125em;
   white-space: nowrap;
 }
+.minimal-header.with-subtitle .minimal-header-name {
+  line-height: 1.1;
+  font-size: 1.2em;
+}
 @media (min-width: 60em) {
   .tool-header-name,
   .minimal-header-name {
     font-size: 1.5em;
   }
+  .minimal-header.with-subtitle .minimal-header-name {
+    font-size: 1.2em;
+  }
+}
+.minimal-header-subtitle {
+  display: block;
+  font-size: 70%;
 }
 .tool-header-logo,
 .minimal-header-logo {
@@ -37,3 +47,9 @@
     height: 2em;
   }
 }
+.minimal-header-container {
+  background-color: var(--w3c-classic);
+}
+  .minimal-header-container > .minimal-header {
+    grid-column: navigation-start / content-end;
+  }

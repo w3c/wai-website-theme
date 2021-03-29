@@ -49,6 +49,13 @@
     {%- else -%}
       {%- assign link_text = link_page.title -%}
     {% endif %}
+  {%- endif -%}
+  {%- if include.usetitlehtml -%}
+    {%- if link_page.title_html -%}
+      {%- assign link_text = link_page.title_html -%}
+    {%- else -%}
+      {%- assign link_text = link_page.title -%}
+    {%- endif -%}
   {%- else -%}
       {%- assign link_text = link_page.title -%}
   {%- endif -%}
