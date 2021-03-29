@@ -31,7 +31,6 @@ _**{Publication info moved from "Technical Information" page. For Steve or other
 ## Deployment
 
 Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages. The W3C website uses a reverse proxy so the WAI site pages appear within it mounted at `www.w3.org/WAI/`
-
 Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment.
 
 The build process consists of several steps for all repos:
