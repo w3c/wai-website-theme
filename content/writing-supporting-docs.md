@@ -12,7 +12,9 @@ github:
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-At WAI, we sometimes have (sets of) documents that are not naturally part of the WAI website, but we want them to look like WAI documents. These are commonly “supporting documents” for our accessibility standards, like the Techniques and Understanding documents for the Web Content Accessibility Guidelines (WCAG).
+**Note: We are changing a few things on this page. Please don't use this yet.**
+
+<s>At WAI, we sometimes have (sets of) documents that are not naturally part of the WAI website, but we want them to look like WAI documents.</s> These are commonly “supporting documents” for our accessibility standards, like the Techniques and Understanding documents for the Web Content Accessibility Guidelines (WCAG).
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -20,6 +22,8 @@ At WAI, we sometimes have (sets of) documents that are not naturally part of the
 
 
 {% include toc.html %}
+
+**Note: We are changing a few things on this page. Please don't use this yet.**
 
 ## How to use the “supporting documents” layout
 
