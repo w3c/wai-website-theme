@@ -37,41 +37,155 @@
   {%- endunless -%}
   {% include_cached head.html type="end" %}
   <body id="top" class="page-{{page.title | slugify}} {% include_cached body-class.html collection=page.collection doc-note-type=page.doc-note-type %}">
-    {% include header-minimal.html translations=translations %}
+
+    <div class="minimal-header-container default-grid">
+      {% if site.supporting_doc_name_sub %}
+      {% include minimal-header.html translations=translations class="with-subtitle" subtitle=site.supporting_doc_name_sub title=site.supporting_doc_name %}
+      {% elsif site.supporting_doc_name %}
+      {% include minimal-header.html translations=translations title=site.supporting_doc_name %}
+      {% elsif page.supporting_doc_name_sub %}
+      {% include minimal-header.html translations=translations class="with-subtitle" subtitle=page.supporting_doc_name_sub title=page.supporting_doc_name %}
+      {% else %}
+      {% include minimal-header.html translations=translations title=page.supporting_doc_name %}
+      {% endif %}
+    </div>
+
+    <div class="default-grid nav-container">
+      {% if site.supporting_doc_nav_links or page.supporting_doc_nav_links %}
+      <nav class="nav" aria-label="Context for this document">
+        <ul>
+            {% for link in site.supporting_doc_nav_links %}
+            <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
+            {% endfor %}
+            {% for link in page.supporting_doc_nav_links %}
+            <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
+            {% endfor %}
+            <li class="nav__item"><a href="https://w3c.github.io/wai-wcag-supporting-documents-redesign/alt-index.html">All WCAG 2 Guidance</a></li>
+        </ul>
+      </nav>
+      {% endif %}
+    </div>
+
     <div class="default-grid with-gap leftcol">
-  <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} style="grid-column-start: 2;">
-    <header{%- if page.resource.ref %}{%- unless page.ref == page.resource.ref %} class="in-resource"{%- endunless -%}{%- endif -%}>
-    <h1>{% if page.title_icon %}<svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> {% endif %}{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
-      {%- if page.resource.ref -%}{%- unless page.ref == page.resource.ref -%}
-        <p>{% include t.html t="in" %} {% include link.html to=page.resource.ref %}</p>
-      {%- endunless -%}{%- endif -%}
-    </header>
+      <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} style="grid-column: 2 / 8; grid-row-start: 1;">
+        <header>
+          <h1>
+            {% if page.type_of_guidance %}
+            <span style="display: block; font-size: .5em; margin-bottom: 0.25em;">{{ page.type_of_guidance }}:</span>
+            {% endif %}
+            {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
+          </h1>
 
-    {%- include doc-note-msg.html -%}
-    {%- include translation-note-msg.html -%}
+          {% if page.type_of_guidance == "Test Rule" %}
+          <aside class="box"> 
+            <header class="box-h  box-h-icon"> 
+             <svg focusable="false" aria-hidden="true" class="icon-default "> 
+              <use xlink:href="icons.svg#icon-default"></use> 
+             </svg> Conformance Rule 
+            </header> 
+            <div class="box-i"> 
+             <p>This is an <strong>{{ page.rule_meta.type }} rule</strong> 
+              {% if page.rule_meta.related_sc %}
+              to test <strong>{{ page.rule_meta.related_sc }}</strong>
+              {% endif %}
+            </p> 
+            </div>
+           </aside>
+          {% endif %}
+        </header>
 
-    {{ content }}
+        {{ content }}
+      </main>
+    
+        {% if page.type_of_guidance == "Pattern" %}
+        <aside class="your-report your-report--expanded sidebar" style="grid-column: 8 / 10; grid-row-start: 1;">
+          <h2 style="margin-top: 0">About this page</h2>
+          <p><em>COGA Design Patterns</em> are supplemental guidance beyond the requirements of WCAG. They are grouped under “Objectives”. </p>
+          <dl>
+            <dt>Related Objective</d>
+            {% assign currentObjective = page.objective %}
+            {% for objective in site.objectives %}
+            {% if objective.ref == currentObjective %}
+            <dd><a href="{{ objective.url | relative_url }}">{{ objective.title }}</a></dd>
+            {% endif %}
+            {% endfor %}
+            <dt>Related Patterns</dt>
+            {% for pattern in site.patterns %}
+            {% if pattern.objective == page.objective %}{% unless pattern.title == page.title %}
+            <dd><a href="{{ pattern.url | relative_url }}">{{ pattern.title }}</a></dd>
+            {% endunless %}{% endif %}
+            {% endfor %}
+          </dl>
+            <style>
+              dd {
+                  margin-left: 0!important;
+              }
+          </style>
+        </aside>
+        {% endif %}
 
-    {% if page.wcag_success_criteria or page.wcag_techniques %}
-      {% include resources.html %}
-    {% endif %}
+        {% if page.type_of_guidance == "Objective" %}
+        <aside class="your-report your-report--expanded sidebar" style="grid-column: 8 / 10; grid-row-start: 1;">
+          <h2 style="margin-top: 0">About this Objective</h2>
+          <p><em>COGA Design Patterns</em> are supplemental guidance beyond the requirements of WCAG. They are grouped under “Objectives”. </p>
+          <dl>
+            <dt>Patterns for this Objective</d>
+              {% for pattern in site.patterns %}
+              {% if pattern.objective == page.ref %}
+              <dd><a href="{{ pattern.url | relative_url }}">{{ pattern.title }}</a></dd>
+              {% endif %}
+              {% endfor %}
+          </dl>
+          <style>
+              dd {
+                  margin-left: 0!important;
+              }
+          </style>
+        </aside>
+        {% endif %}
 
-    {%- if page.navigation -%}
-      {%- include prevnext-navigation.html -%}
-    {%- else -%}
-      {%- if page.order -%}
-        {%- include prevnext-order.html -%}
+        {% if page.type_of_guidance == "Test Rule" %}
+        <aside class="your-report your-report--expanded sidebar" style="grid-column: 8 / 10; grid-row-start: 1;">
+          <h2 style="margin-top: 0">About this page</h2>
+          <p><em>Accessibility Conformance Testing (ACT) Rules </em> describe ways to test conformance to WCAG success criteria.</p>
+          <dl>
+              {% if page.rule_meta.type %}
+              <dt>Rule type</d>
+              <dd>{{ page.rule_meta.type }}</dd>
+              {% endif %}
+              {% if page.rule_meta.id %}
+              <dt>Rule ID</d>
+              <dd>{{ page.rule_meta.id }}</dd>
+              {% endif %}
+              {% if page.rule_meta.last_modified %}
+              <dt>Last modified</d>
+              <dd>{{ page.rule_meta.last_modified }}</dd>
+              {% endif %}
+          </dl>
+          <style>
+              dd {
+                  margin-left: 0!important;
+              }
+          </style>
+        </aside>
+        {% endif %}      
+    </div>
+
+    <div class="default-grid with-gap leftcol">
+      <div style="grid-column: 2 / 8">
+      {%- if page.navigation -%}
+        {%- include prevnext-navigation.html -%}
+      {%- else -%}
+        {%- if page.order -%}
+          {%- include prevnext-order.html -%}
+        {%- endif -%}
       {%- endif -%}
-    {%- endif -%}
 
-    {% include feedback-box.html %}
-
-
+      {% include feedback-box.html %}
+      </div>
+    </div>
     {% include_cached backtotop.html lang=page.lang %}
-  </main>
-</div>
-
-{% include footer.html %}
-
+  </div>
+  {% include footer.html %}
   </body>
 </html>

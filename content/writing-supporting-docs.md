@@ -12,9 +12,9 @@ github:
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-**Note: We are changing a few things on this page. Please don't use this yet.**
+At WAI, we sometimes have (sets of) documents that do not require the full WAI website wrapper, but we want them to look like WAI documents. 
 
-<s>At WAI, we sometimes have (sets of) documents that are not naturally part of the WAI website, but we want them to look like WAI documents.</s> These are commonly “supporting documents” for our accessibility standards, like the Techniques and Understanding documents for the Web Content Accessibility Guidelines (WCAG).
+These are commonly “supporting documents” for our accessibility standards, like the Techniques and Understanding documents for the Web Content Accessibility Guidelines (WCAG).
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -23,14 +23,12 @@ github:
 
 {% include toc.html %}
 
-**Note: We are changing a few things on this page. Please don't use this yet.**
-
 ## How to use the “supporting documents” layout
 
 In the document's front matter, add:
 
 ```yaml
-layout: supporting_document
+layout: minimal
 ```
 
 ## Other front matter
@@ -84,8 +82,8 @@ The supporting document template displays different sidebars based on the `type_
 
 Currently, specific sidebars are supported for: 
 
-- Pattern (for COGA Design Guide)
-- “Test Rule” (for ACT Rules)
+- `Pattern` - for COGA Design Guide
+- `Test Rule` - for ACT Rules
 
 ## Examples
 
