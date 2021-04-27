@@ -3,7 +3,7 @@ title: "HTML page has lang attribute"
 permalink: /writing/supporting-documents/demo-act
 ref: /writing/supporting-documents/demo-act/
 lang: en
-layout: supporting_document
+layout: minimal
 supporting_doc_nav_links:
   - name: All Rules
     ref: /standards-guidelines/act/rules/
