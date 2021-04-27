@@ -37,8 +37,6 @@ Instead of adding to each individual document, you can also add it globally in t
 
 Supporting documents also have a couple of specific front matter settings.
 
-Note: these settings can also be set in the `_config.yml` file for the whole project. For instance, in the repository that contains all ACT rules, the front matter that is shared between documents can be set in the `_config.yml` file .
-
 ### Navigation
 
 To add links to the top navigation, add the `name` and `ref` attributes for each link in a `supporting_doc_nav_links`
