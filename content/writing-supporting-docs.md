@@ -28,8 +28,10 @@ These are commonly “supporting documents” for our accessibility standards, l
 In the document's front matter, add:
 
 ```yaml
-layout: minimal
+layout: standalone_resource
 ```
+
+Instead of adding to each individual document, you can also add it globally in the repository's `_config.yml` under `defaults` ([example](https://github.com/w3c/wai-coga-design-guide/blob/master/_config.yml#L55); see also [Jekyll - Front Matter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/)). 
 
 ## Other front matter
 
