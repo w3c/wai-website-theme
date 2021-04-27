@@ -2,7 +2,7 @@
 title: Use a Consistent Visual Design
 permalink: /writing/supporting-documents/demo-coga
 ref: /writing/supporting-documents/demo-coga/
-layout: minimal
+layout: standalone_resource
 type_of_guidance: Pattern        
 supporting_doc_nav_links:
   - name: All Objectives
