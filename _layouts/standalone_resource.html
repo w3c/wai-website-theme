@@ -51,6 +51,7 @@
     </div>
 
     <div class="default-grid nav-container">
+      {% if site.supporting_doc_nav_links %}
       <nav class="nav" aria-label="Context for this document">
         <ul>
             {% for link in site.supporting_doc_nav_links %}
@@ -62,13 +63,16 @@
             <li class="nav__item"><a href="https://w3c.github.io/wai-wcag-supporting-documents-redesign/alt-index.html">All WCAG 2 Guidance</a></li>
         </ul>
       </nav>
+      {% endif %}
     </div>
 
     <div class="default-grid with-gap leftcol">
       <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} style="grid-column: 2 / 8; grid-row-start: 1;">
         <header>
           <h1>
+            {% if page.type_of_guidance %}
             <span style="display: block; font-size: .5em; margin-bottom: 0.25em;">{{ page.type_of_guidance }}:</span>
+            {% endif %}
             {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
           </h1>
 
@@ -183,5 +187,68 @@
     {% include_cached backtotop.html lang=page.lang %}
   </div>
   {% include footer.html %}
+  <script>
+  /*!
+  * Get all following siblings of each element up to but not including the element matched by the selector
+  * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+  * @param  {Node}   elem     The element
+  * @param  {String} selector The selector to stop at
+  * @param  {String} filter   The selector to match siblings against [optional]
+  * @return {Array}           The siblings
+  */
+  var nextUntil = function (elem, selector, filter) {
+
+  // Setup siblings array
+  var siblings = [];
+
+  // Get the next sibling element
+  elem = elem.nextElementSibling;
+
+  // As long as a sibling exists
+  while (elem) {
+
+    // If we've reached our match, bail
+    if (elem.matches(selector)) break;
+
+    // If filtering by a selector, check if the sibling matches
+    if (filter && !elem.matches(filter)) {
+      elem = elem.nextElementSibling;
+      continue;
+    }
+
+    // Otherwise, push it to the siblings array
+    siblings.push(elem);
+
+    // Get the next sibling element
+    elem = elem.nextElementSibling;
+
+  }
+
+  return siblings;
+
+  };
+
+  const testcases = document.querySelector("#test-cases");
+  const testcaseEls = nextUntil(testcases, 'h2');
+console.log(testcaseEls);
+  for (let i = 0; i < testcaseEls.length; i++) {
+    let testcaseEl = testcaseEls[i];
+    if (testcaseEl.nodeName === "H3") {
+      var testcaseTypeEls = nextUntil(testcaseEl, 'h3'); 
+      var container = document.createElement('details');
+      var summary = document.createElement('summary');
+
+      testcaseTypeEls[0] = summary.append(testcaseTypeEls[0]);
+      container.append(summary); 
+
+      for (let i = 0; i < testcaseTypeEls.length; i++) {
+        container.append(testcaseTypeEls[i]);
+      }
+
+      console.log('container', container)
+      testcases.append(container);
+    }
+}
+</script>
   </body>
 </html>
