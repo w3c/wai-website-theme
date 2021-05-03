@@ -40,11 +40,11 @@ To create a new page in an existing repository:
 
 There are two main purposes for changelogs:
 1. To help update a translated resource.
-2. To inform people know of substantive changes to a resource.
+2. To inform people of substantive changes to a resource.
 
 What to include in the changelog depends on translation status:
 * If no one has started a translation, then the changelog only needs to include substantive changes.
-* If a translation is published or in-progress, then the changelog also needs to include guidance for updating the translation, including things that are not substantive.
+* If a translation is published or in-progress, then the changelog also needs to include guidance for updating the translation, including things that are not substantive yet should be updated.
 
 _{<mark>@@To Do:</mark> Figure out how we want to indicate substantive changes so people who only want #2 can easily pick those out. (e.g., maybe put “substantive change” in the heading and include a TOC) Example of lots of both not well indicated: [media resource changelog](https://www.w3.org/WAI/media/av/changelog/)._
 
