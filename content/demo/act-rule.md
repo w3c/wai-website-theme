@@ -4,12 +4,12 @@ permalink: /writing/supporting-documents/demo-act
 ref: /writing/supporting-documents/demo-act/
 lang: en
 layout: standalone_resource
-supporting_doc_nav_links:
+standalone_resource_nav_links:
   - name: All Rules
     ref: /standards-guidelines/act/rules/
   - name: About Rules
     ref: /standards-guidelines/act/rules/about/
-supporting_doc_name: "WCAG 2.1: ACT Rules"
+standalone_resource_doc_name: "WCAG 2.1: ACT Rules"
 type_of_guidance: "Test Rule"
 github:
   repository: w3c/wcag-act-rules

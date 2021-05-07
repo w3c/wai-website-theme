@@ -4,15 +4,15 @@ permalink: /writing/supporting-documents/demo-coga
 ref: /writing/supporting-documents/demo-coga/
 layout: standalone_resource
 type_of_guidance: Pattern        
-supporting_doc_nav_links:
+standalone_resource_nav_links:
   - name: All Objectives
     ref: /objectives
   - name: All Patterns
     ref: /patterns
   - name: About this Design Guide
     ref: /about
-supporting_doc_name: Design Guide
-supporting_doc_name_sub: "for People with Cognitive Disabilities and Learning Difficulties"
+standalone_resource_doc_name: Design Guide
+standalone_resource_doc_name_sub: "for People with Cognitive Disabilities and Learning Difficulties"
 ---
 
 <h2>User Need</h2>

@@ -39,25 +39,25 @@
   <body id="top" class="page-{{page.title | slugify}} {% include_cached body-class.html collection=page.collection doc-note-type=page.doc-note-type %}">
 
     <div class="minimal-header-container default-grid">
-      {% if site.supporting_doc_name_sub %}
-      {% include minimal-header.html translations=translations class="with-subtitle" subtitle=site.supporting_doc_name_sub title=site.supporting_doc_name %}
-      {% elsif site.supporting_doc_name %}
-      {% include minimal-header.html translations=translations title=site.supporting_doc_name %}
-      {% elsif page.supporting_doc_name_sub %}
-      {% include minimal-header.html translations=translations class="with-subtitle" subtitle=page.supporting_doc_name_sub title=page.supporting_doc_name %}
+      {% if site.standalone_resource_doc_name_sub %}
+      {% include minimal-header.html translations=translations class="with-subtitle" subtitle=site.standalone_resource_doc_name_sub title=site.standalone_resource_doc_name %}
+      {% elsif site.standalone_resource_doc_name %}
+      {% include minimal-header.html translations=translations title=site.standalone_resource_doc_name %}
+      {% elsif page.standalone_resource_doc_name_sub %}
+      {% include minimal-header.html translations=translations class="with-subtitle" subtitle=page.standalone_resource_doc_name_sub title=page.standalone_resource_doc_name %}
       {% else %}
-      {% include minimal-header.html translations=translations title=page.supporting_doc_name %}
+      {% include minimal-header.html translations=translations title=page.standalone_resource_doc_name %}
       {% endif %}
     </div>
 
     <div class="default-grid nav-container">
-      {% if site.supporting_doc_nav_links %}
+      {% if site.standalone_resource_nav_links %}
       <nav class="nav" aria-label="Context for this document">
         <ul>
-            {% for link in site.supporting_doc_nav_links %}
+            {% for link in site.standalone_resource_nav_links %}
             <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
             {% endfor %}
-            {% for link in page.supporting_doc_nav_links %}
+            {% for link in page.standalone_resource_nav_links %}
             <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
             {% endfor %}
             <li class="nav__item"><a href="https://w3c.github.io/wai-wcag-supporting-documents-redesign/alt-index.html">All WCAG 2 Guidance</a></li>

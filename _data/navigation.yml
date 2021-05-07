@@ -28,7 +28,7 @@
     url: "/writing/html/"
   - name: Images
     url: "/writing/images/"
-  - name: Supporting documents
+  - name: Stand-alone resources
     url: "/writing/supporting-documents/"
 - name:
     en: 'Design Components'

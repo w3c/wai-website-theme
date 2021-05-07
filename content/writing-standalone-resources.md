@@ -1,11 +1,11 @@
 ---
-title: "Supporting Documents"
+title: "Stand-alone Resources"
 permalink: /writing/supporting-documents/
 ref: /writing/supporting-documents/
 lang: en
 github:
   repository: w3c/wai-website-theme
-  path: content/writing-supporting-docs.md
+  path: content/writing-standalone-resources.md
 ---
 
 {::nomarkdown}
@@ -23,7 +23,7 @@ These are commonly “supporting documents” for our accessibility standards, l
 
 {% include toc.html %}
 
-## How to use the “supporting documents” layout
+## How to use the “stand-alone resources” layout
 
 In the document's front matter, add:
 
@@ -35,14 +35,14 @@ Instead of adding to each individual document, you can also add it globally in t
 
 ## Other front matter
 
-Supporting documents also have a couple of specific front matter settings.
+Stand-alone resources also have a couple of specific front matter settings.
 
 ### Navigation
 
-To add links to the top navigation, add the `name` and `ref` attributes for each link in a `supporting_doc_nav_links`
+To add links to the top navigation, add the `name` and `ref` attributes for each link in a `standalone_resource_nav_links`
 
 ```yaml
-supporting_doc_nav_links:
+standalone_resource_nav_links:
   - name: All Objectives
     ref: /objectives
   - name: All Patterns
@@ -53,17 +53,17 @@ supporting_doc_nav_links:
 
 ### Name for the set of documents
 
-The name of the set of documents can be set in `supporting_doc_name`. For instance, for WCAG 2.1 Techniques, use: 
+The name of the set of documents can be set in `standalone_resource_doc_name`. For instance, for WCAG 2.1 Techniques, use: 
 
 ```yaml
-supporting_doc_name: WCAG 2.1 Techniques
+standalone_resource_doc_name: WCAG 2.1 Techniques
 ```
 
-Some documents may have a long name which needs to be separated into two parts. Use `supporting_doc_name_sub`, to specify text that can be displayed smaller underneath.
+Some documents may have a long name which needs to be separated into two parts. Use `standalone_resource_doc_name_sub`, to specify text that can be displayed smaller underneath.
 
 ```yaml
-supporting_doc_name: "Design Guide"
-supporting_doc_name_sub: "for People with Cognitive Disabilities and Learning Difficulties"
+standalone_resource_doc_name: "Design Guide"
+standalone_resource_doc_name_sub: "for People with Cognitive Disabilities and Learning Difficulties"
 ```
 
 ### Name of the type of document
