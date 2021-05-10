@@ -1,7 +1,7 @@
 ---
 title: "Stand-alone Resources"
-permalink: /writing/supporting-documents/
-ref: /writing/supporting-documents/
+permalink: /writing/standalone-resources/
+ref: /writing/standalone-resources/
 lang: en
 github:
   repository: w3c/wai-website-theme

@@ -29,7 +29,7 @@
   - name: Images
     url: "/writing/images/"
   - name: Stand-alone Resources
-    url: "/writing/supporting-documents/"
+    url: "/writing/standalone-resources/"
 - name:
     en: 'Design Components'
   pages:

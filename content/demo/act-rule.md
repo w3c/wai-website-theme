@@ -1,7 +1,7 @@
 ---
 title: "HTML page has lang attribute"
-permalink: /writing/supporting-documents/demo-act
-ref: /writing/supporting-documents/demo-act/
+permalink: /writing/standalone-resources/demo-act
+ref: /writing/standalone-resources/demo-act/
 lang: en
 layout: standalone_resource
 standalone_resource_nav_links:

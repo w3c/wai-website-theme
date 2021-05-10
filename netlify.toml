@@ -9,6 +9,10 @@ RUBY_VERSION = "2.6.2"
   from = "/"
   to = "/overview/"
 
+[[redirects]]
+  from = "/writing/supporting-documents/"
+  to = "/writing/standalone-resources/"
+
 [dev]
 publish = "_site"
 framework = "#static"

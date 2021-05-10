@@ -1,7 +1,7 @@
 ---
 title: Use a Consistent Visual Design
-permalink: /writing/supporting-documents/demo-coga
-ref: /writing/supporting-documents/demo-coga/
+permalink: /writing/standalone-resources/demo-coga
+ref: /writing/standalone-resources/demo-coga/
 layout: standalone_resource
 type_of_guidance: Pattern        
 standalone_resource_nav_links:
