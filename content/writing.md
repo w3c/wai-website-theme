@@ -46,7 +46,7 @@ What to include in the changelog depends on translation status:
 * If no one has started a translation, then the changelog only needs to include substantive changes.
 * If a translation is published or in-progress, then the changelog also needs to include guidance for updating the translation, including things that are not substantive yet should be updated.
 
-_{<mark>@@To Do:</mark> Figure out how we want to indicate substantive changes so people who only want #2 can easily pick those out. (e.g., maybe put “substantive change” in the heading and include a TOC) Example of lots of both not well indicated: [media resource changelog](https://www.w3.org/WAI/media/av/changelog/)._
+Write the changelog primarily to support updating translations. To help others find substantive changes, include "significant" in the heading and list the changes in bold. For example, [changelog for Standards page](https://www.w3.org/WAI/standards-guidelines/changelog/).
 
 ## Example and some explanation
 
