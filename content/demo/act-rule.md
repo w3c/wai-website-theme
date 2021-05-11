@@ -24,6 +24,70 @@ rule_meta:
 ---
 
 
+<details class="chooser">
+  <summary class="button chooser__button button-secondary">Version
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </summary>
+  <div class="chooser__popout">
+    <ul class="chooser__list">
+        <li><a href="#">May 26, 2021</a> (Draft)</li>
+        <li>March 5, 2020 (current)</li>
+        <li><a href="#">February 21, 2019</a></li>
+        <li><a href="#">February 21, 2019</a></li>
+    </ul>
+  </div>
+</details>
+
+<style>
+.chooser {
+  position: relative;
+  float: right;
+  margin-top: 1em;
+}
+.chooser__button svg {
+  margin-left: .5em;
+}
+.chooser__popout {
+  position: absolute;
+  width: 12em;
+  right: -0.75em;
+  top: 2.9em;
+  padding: 1em;
+  background: white;
+  border: 1px solid var(--line-grey);
+  box-shadow: 0px 0px 6px -4px var(--off-black);
+}
+.chooser__popout::before,
+.chooser__popout::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: .5em solid transparent;
+  border-right: .5em solid transparent;
+  border-bottom: .5em solid transparent;
+  position: absolute;
+  right: 1em;
+}
+.chooser__popout::before {
+  border-bottom-color: var(--line-grey);
+  top: -.5em;
+}
+.chooser__popout::after {
+  border-bottom-color: white;
+  top: -.4em;
+}
+.chooser__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  .chooser__list li {
+    margin: 0.5em 0;
+    padding: 0.5em 0;
+  }
+</style>
+
 ## Description
 
 This rule checks that an HTML page has a non-empty `lang` attribute.
