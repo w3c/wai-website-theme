@@ -492,6 +492,23 @@ class: tight-page
 
 * `tight-page`: Uses less space above `h2` headings, mainly used on for overview-ish pages.
 
+## `feedbackmail`
+
+In the "Help improve this page" box, the default e-mail address (in text and buttons) is wai-eo-editors@w3.org<br>
+To change that, use `feedbackmail`.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example simple" %}
+{:/}
+
+```yaml
+feedbackmail: wai@w3.org
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
 ## `footnotestitle`
 
 The title used as a heading of the Footnotes list box. Falls back to ”Footnotes”.
