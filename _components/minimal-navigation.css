@@ -29,8 +29,9 @@
     background-color: var(--pure-white); /* body-bg */
     border-bottom: 1px solid var(--pure-white);
   }
-  .nav__item a:not(.active):hover {
-    background: #aec4d8;
+  .nav__item a:not(.active):hover,
+  .nav__item a:not(.active):focus {
+    background: #e5f1fc;
     text-decoration: underline;
     text-decoration-color: var(--gold);
     text-underline-offset: 6px;
