@@ -30,7 +30,9 @@
     border-bottom: 1px solid var(--pure-white);
   }
   .nav__item a:not(.active):hover,
-  .nav__item a:not(.active):focus {
+  .nav__item a:not(.active):focus,
+  .nav__item a:not([aria-current="page"]):hover,
+  .nav__item a:not([aria-current="page"]):focus {
     background: #e5f1fc;
     text-decoration: underline;
     text-decoration-color: var(--gold);
