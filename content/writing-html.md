@@ -12,7 +12,7 @@ github:
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-In General HTML can be used for content, but it has disadvantages compared to HTML.
+In General HTML can be used for content, but it has disadvantages compared to Markdown.
 
 {::nomarkdown}
 {% include box.html type="end" %}
