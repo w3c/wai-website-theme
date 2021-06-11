@@ -99,7 +99,7 @@
 
         {% if page.type_of_guidance == "Test Rule" %}
         <h2>Description</h2>
-        {{ page.rule_meta.description }}
+        {{ page.rule_meta.description | markdownify }}
         {% endif %}
 
         {{ content }}
