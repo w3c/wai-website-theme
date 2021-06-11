@@ -51,7 +51,7 @@
     </div>
 
     <div class="default-grid nav-container">
-      {% if site.standalone_resource_nav_links %}
+      {% if site.standalone_resource_nav_links or page.standalone_resource_nav_links %}
       <nav class="nav" aria-label="Context for this document">
         <ul>
             {% for link in site.standalone_resource_nav_links %}
@@ -67,11 +67,11 @@
     </div>
 
     <div class="default-grid with-gap leftcol">
-      <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} style="grid-column: 2 / 8; grid-row-start: 1;">
+      <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} class="standalone-resource__main">
         <header>
           <h1>
             {% if page.type_of_guidance %}
-            <span style="display: block; font-size: .5em; margin-bottom: 0.25em;">{{ page.type_of_guidance }}:</span>
+            <span class="standalone-resource__type-of-guidance">{{ page.type_of_guidance }}:</span>
             {% endif %}
             {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
           </h1>
@@ -84,9 +84,12 @@
              </svg> Conformance Rule 
             </header> 
             <div class="box-i"> 
-             <p>This is an <strong>{{ page.rule_meta.type }} rule</strong> 
-              {% if page.rule_meta.related_sc %}
-              to test <strong>{{ page.rule_meta.related_sc }}</strong>
+             <p>This is an <strong>{{ page.rule_meta.rule_type }} rule</strong> 
+              {% if page.rule_meta.scs_tested %}
+              to test 
+              {% for sc in page.rule_meta.scs_tested %}
+              <strong>{{ sc.num }}: {{ sc.handle }} (Level {{ sc.level }})</strong>{% if forloop.last == false %}, {% endif %}
+              {% endfor %}
               {% endif %}
             </p> 
             </div>
@@ -94,15 +97,20 @@
           {% endif %}
         </header>
 
+        {% if page.type_of_guidance == "Test Rule" %}
+        <h2>Description</h2>
+        {{ page.rule_meta.description }}
+        {% endif %}
+
         {{ content }}
       </main>
     
         {% if page.type_of_guidance == "Pattern" %}
-        <aside class="your-report your-report--expanded sidebar" style="grid-column: 8 / 10; grid-row-start: 1;">
+        <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
           <h2 style="margin-top: 0">About this page</h2>
           <p><em>COGA Design Patterns</em> are supplemental guidance beyond the requirements of WCAG. They are grouped under “Objectives”. </p>
           <dl>
-            <dt>Related Objective</d>
+            <dt>Related Objective</dt>
             {% assign currentObjective = page.objective %}
             {% for objective in site.objectives %}
             {% if objective.ref == currentObjective %}
@@ -116,63 +124,54 @@
             {% endunless %}{% endif %}
             {% endfor %}
           </dl>
-            <style>
-              dd {
-                  margin-left: 0!important;
-              }
-          </style>
         </aside>
         {% endif %}
 
         {% if page.type_of_guidance == "Objective" %}
-        <aside class="your-report your-report--expanded sidebar" style="grid-column: 8 / 10; grid-row-start: 1;">
-          <h2 style="margin-top: 0">About this Objective</h2>
+        <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
+          <h2>About this Objective</h2>
           <p><em>COGA Design Patterns</em> are supplemental guidance beyond the requirements of WCAG. They are grouped under “Objectives”. </p>
           <dl>
-            <dt>Patterns for this Objective</d>
+            <dt>Patterns for this Objective</dt>
               {% for pattern in site.patterns %}
               {% if pattern.objective == page.ref %}
               <dd><a href="{{ pattern.url | relative_url }}">{{ pattern.title }}</a></dd>
               {% endif %}
               {% endfor %}
           </dl>
-          <style>
-              dd {
-                  margin-left: 0!important;
-              }
-          </style>
-        </aside>
+       </aside>
         {% endif %}
 
         {% if page.type_of_guidance == "Test Rule" %}
-        <aside class="your-report your-report--expanded sidebar" style="grid-column: 8 / 10; grid-row-start: 1;">
+        <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
           <h2 style="margin-top: 0">About this page</h2>
           <p><em>Accessibility Conformance Testing (ACT) Rules </em> describe ways to test conformance to WCAG success criteria.</p>
           <dl>
-              {% if page.rule_meta.type %}
-              <dt>Rule type</d>
-              <dd>{{ page.rule_meta.type }}</dd>
+              {% if page.rule_meta.rule_type %}
+              <dt>Rule type</dt>
+              <dd>{{ page.rule_meta.rule_type }}</dd>
               {% endif %}
               {% if page.rule_meta.id %}
-              <dt>Rule ID</d>
+              <dt>Rule ID</dt>
               <dd>{{ page.rule_meta.id }}</dd>
               {% endif %}
+              {% if page.rule_meta.input_aspects %}
+              <dt>Input Aspects</dt>
+              {% for aspect in page.rule_meta.input_aspects %}
+              <dd><a href="{{ aspect.url }}">{{ aspect.handle }}</a></dd>
+              {% endfor%}
+              {% endif %}
               {% if page.rule_meta.last_modified %}
-              <dt>Last modified</d>
+              <dt>Last modified</dt>
               <dd>{{ page.rule_meta.last_modified }}</dd>
               {% endif %}
           </dl>
-          <style>
-              dd {
-                  margin-left: 0!important;
-              }
-          </style>
         </aside>
         {% endif %}      
     </div>
 
     <div class="default-grid with-gap leftcol">
-      <div style="grid-column: 2 / 8">
+      <div class="standalone-resource__prevnext">
       {%- if page.navigation -%}
         {%- include prevnext-navigation.html -%}
       {%- else -%}
@@ -187,68 +186,5 @@
     {% include_cached backtotop.html lang=page.lang %}
   </div>
   {% include footer.html %}
-  <script>
-  /*!
-  * Get all following siblings of each element up to but not including the element matched by the selector
-  * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
-  * @param  {Node}   elem     The element
-  * @param  {String} selector The selector to stop at
-  * @param  {String} filter   The selector to match siblings against [optional]
-  * @return {Array}           The siblings
-  */
-  var nextUntil = function (elem, selector, filter) {
-
-  // Setup siblings array
-  var siblings = [];
-
-  // Get the next sibling element
-  elem = elem.nextElementSibling;
-
-  // As long as a sibling exists
-  while (elem) {
-
-    // If we've reached our match, bail
-    if (elem.matches(selector)) break;
-
-    // If filtering by a selector, check if the sibling matches
-    if (filter && !elem.matches(filter)) {
-      elem = elem.nextElementSibling;
-      continue;
-    }
-
-    // Otherwise, push it to the siblings array
-    siblings.push(elem);
-
-    // Get the next sibling element
-    elem = elem.nextElementSibling;
-
-  }
-
-  return siblings;
-
-  };
-
-  const testcases = document.querySelector("#test-cases");
-  const testcaseEls = nextUntil(testcases, 'h2');
-console.log(testcaseEls);
-  for (let i = 0; i < testcaseEls.length; i++) {
-    let testcaseEl = testcaseEls[i];
-    if (testcaseEl.nodeName === "H3") {
-      var testcaseTypeEls = nextUntil(testcaseEl, 'h3'); 
-      var container = document.createElement('details');
-      var summary = document.createElement('summary');
-
-      testcaseTypeEls[0] = summary.append(testcaseTypeEls[0]);
-      container.append(summary); 
-
-      for (let i = 0; i < testcaseTypeEls.length; i++) {
-        container.append(testcaseTypeEls[i]);
-      }
-
-      console.log('container', container)
-      testcases.append(container);
-    }
-}
-</script>
   </body>
 </html>

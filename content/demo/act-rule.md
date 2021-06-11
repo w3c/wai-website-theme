@@ -1,30 +1,50 @@
 ---
-title: "HTML page has lang attribute"
+title: HTML page has lang attribute
+rule_meta:
+  ## values below exist in currently generated file
+  id: 97a4e1
+  name: HTML page has lang attribute
+  rule_type: atomic
+  description: |
+    This rule checks that each `button` element has a non-empty accessible name.
+  accessibility_requirements:
+    wcag20:4.1.2: # Name, Role, Value (A)
+      forConformance: true
+      failed: not satisfied
+      passed: further testing needed
+      inapplicable: further testing needed
+  ## values below would have slightly different format
+  input_aspects:
+    - handle: Accessibility Tree
+      url: https://www.w3.org/TR/act-rules-aspects/
+    - handle: DOM Tree
+      url: https://www.w3.org/TR/act-rules-aspects/
+    - handle: CSS Styling
+      url: https://www.w3.org/TR/act-rules-aspects/
+  ## values below would be new 
+  last_modified: March 5, 2020 
+  scs_tested:
+    - handle: Name, Role, Value
+      num: 4.1.2
+      level: A
+# values below can be set once in the `wcag-act-rules` 
+# repo's config.yml; they exist here solely to make the demo work
+layout: standalone_resource
 permalink: /writing/standalone-resources/demo-act
 ref: /writing/standalone-resources/demo-act/
-lang: en
-layout: standalone_resource
 standalone_resource_nav_links:
   - name: All Rules
     ref: /standards-guidelines/act/rules/
   - name: About Rules
     ref: /standards-guidelines/act/rules/about/
-standalone_resource_doc_name: "WCAG 2.1: ACT Rules"
+standalone_resource_doc_name: "WCAG 2: ACT Rules"
 type_of_guidance: "Test Rule"
 github:
   repository: w3c/wcag-act-rules
   path: content/html-page-lang-b5c3f8.md
-rule_meta:
-  type: atomic 
-  id: b5c3f8
-  last_modified: March 5, 2020
-  related_sc: 3.1.1 Language of Page (Level A)
-# footer: > # Text in footer in HTML
-#   <p> This is the text in the footer </p>
 ---
 
-
-<details class="chooser">
+<!--<details class="chooser">
   <summary class="button chooser__button button-secondary">Version
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
   </summary>
@@ -86,11 +106,7 @@ rule_meta:
     margin: 0.5em 0;
     padding: 0.5em 0;
   }
-</style>
-
-## Description
-
-This rule checks that an HTML page has a non-empty `lang` attribute.
+</style>-->
 
 ## Accessibility Requirements Mapping
 
