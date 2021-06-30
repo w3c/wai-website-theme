@@ -2,12 +2,6 @@
 title: "Creating a New Resource"
 permalink: /technical/new-resource/
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
 github:
   repository: w3c/wai-website-theme
   path: content/technical-create-new-resource.md
@@ -19,7 +13,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Creating a new resource involves creating a new GitHub repository from a template, configuring the repository, and configuring Netlify to work with the repository. These steps can all be performed from your web browser.
+To start a new resource: create a new GitHub repository from the template, configure the repository, and configure Netlify to work with the repository. You can do all this from your web browser.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -101,20 +95,19 @@ To view the resource preview
 
 ## Step 4: Create your content
 
-Content in the main branch is assumed ready to be deployed on the WAI website. To avoid draft content from being deployed to the WAI website, you need to create a branch for putting your draft content. Once the content is approved, you can merge that branch into the main branch. Follow Step 2.1 to create a new branch.
+Content in the main branch is assumed ready to be deployed on the WAI website. Therefore, create a new branch for your draft content &mdash; for example: "Version 1". You can follow Step 2.1 to create a new branch. When you create the pull request (to see the preview), create it as a "Draft pull request".
 
-Put your content in the folder called `content`, images in the folder `content-images/your-repository-name/`. Your new repository has an initial file called `content/index.md`, which you can use as a template. This file has many configuration parameters that you need to set for every new file that you create. It also has different styles and functionality that you can reuse.
+Put your content in the folder called `content`, and images in the folder `content-images/your-repository-name/`. Your new repository has an initial file called `content/index.md`, which you can use as a template. This file has frontmatter many configuration parameters that you need to set for every new file that you create. It also has different styles and functionality that you can reuse.
 
 In particular, replace the text `/link/to/page/` (on lines 24 and 32) in every file with the path of where your page will appear on the WAI website (you may not know this at the beginning of the project and you can do it later too). Also update the mappings in the file `netlify.toml` (on line 10) when you are ready.
 
 Also, update the README.md text to remove the template specific lines below the netlify badge, and to provide documentation.
 
-## Step 5: Link into the main site
+## Publishing approved content
 
-Go to the GitHub [Add Resource Workflow](https://github.com/w3c/wai-website/actions?query=workflow%3A%22Add+Resource%22) for the wai-website and click the 'Run workflow' Button. Enter the repository name - eg. `wai-about-wai` and click 'Run workflow'' again. Wait for the Workflow to complete
+When the content is approved for publication, change the pull request from "draft" to "ready to review" and inform Shawn or or other WAI site maintainer (usually best to assign in GitHub and send e-mail).
 
-## Step 6: Add the resource to the navigation
-
-Note that the `navigation.yml` file is shared by all previews and the published site so must only be changed once the new resource is ready to be published.
-
-See these [instructions](../navigation).
+Shawn or other WAI site maintainer will:
+* Merge into the main branch.
+* Go to the GitHub [Add Resource Workflow](https://github.com/w3c/wai-website/actions?query=workflow%3A%22Add+Resource%22) for the wai-website and click the 'Run workflow' Button. Enter the repository name - eg. `wai-about-wai` and click 'Run workflow'' again. Wait for the Workflow to complete.
+* Add the resource to`navigation.yml` per the [instructions](../navigation).
