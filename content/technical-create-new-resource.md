@@ -93,7 +93,18 @@ To view the resource preview
 - You should get the message 'Production: master@HEAD Published' - wait for the deploy to complete if the message is other than 'Published'
 - Click on 'Production' to get to the preview
 
-## Step 4: Create your content
+## Step 4: Set permissions (Settings, Manage access)
+
+- From the action list (starting with Code, Issues,...), select "Settings" (at the end).
+- From the secondary list (after Options), select "Manage access".
+- Select the button "Invite teams or people".
+- Set the appropriate permissions. Err on the side of lower-level access for starters; we can change it easily. Example permissions:
+   - w3c/wai-eo : Read
+   - non-Team editors : Triage (or Write if highly trusted)
+
+## Step 5: Create your content
+
+**NOTE: Keep content in a separate branch marked as "Draft". When it is ready to publish on the WAI website, coordinate that with Shawn or other website maintainer to publish, per below.**
 
 Content in the main branch is assumed ready to be deployed on the WAI website. Therefore, create a new branch for your draft content &mdash; for example: "Version 1". You can follow Step 2.1 to create a new branch. When you create the pull request (to see the preview), create it as a "Draft pull request".
 
