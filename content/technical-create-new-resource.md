@@ -91,13 +91,14 @@ You should now have a folder called `/content-images/your-repository-name/` in y
 Netlify allows you to preview the content, including draft content in branches, as it would look when it is deployed on the WAI website. To configure such Netlify previews for your repository:
 
 1. Login into [Netlify site page](https://app.netlify.com/teams/w3c/sites) with access to the 'W3C team' team
-2. Click 'New site from Git' button
-3. Click 'GitHub' button
-4. Authenticate to GitHub, select 'w3c' organization
-5. Type your repository name into the search box and hit enter
-6. Click on your repository name in the search results
-7. Click 'Deploy Site' button
-8. Click 'Site settings' button
+2. Make sure `W3C Team` is selected top left, rather than your own personal team.
+3. Click 'New site from Git' button
+4. Click 'GitHub' button
+5. Authenticate to GitHub, select 'w3c' organization
+6. Type your repository name into the search box and hit enter
+7. Click on your repository name in the search results
+8. Click 'Deploy Site' button
+9. Click 'Site settings' button
    - In 'General - Site details' (you should be taken there), click 'Change site name' button and enter your repo name
    - In 'Build & deploy', scroll down to 'Post processing - Form detection', click 'Edit settings' button, uncheck 'Run form detection', and click 'Save' button
 
