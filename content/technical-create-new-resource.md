@@ -52,11 +52,16 @@ The branch button should now have the name of the branch you created.
 Several placeholder references in the newly created repository need to be updated, to reflect your repository name. Make these changes in your newly created branch rather than in the main branch.
 
 Replace the text `wai-resource-template` with the name of your new repository in the following files:
-
 - config.yaml (line 13) `baseurl: "/wai-resource-template"`
 - config.yaml (line 32) `repository: wai-resource-template`
 - README.md (line 1) `...app.netlify.com/sites/wai-resource-template/deploys`
 - content/index.md (line 22) `repository: w3c/wai-resource-template`
+
+In content/index.md update:
+- /link/to/page/
+- /path/to/...
+- @@s
+- lines with "# NEW" comments
 
 ### Step 2.3 Update the images location
 
@@ -71,6 +76,15 @@ To change the folder name:
 5. Click 'Commit changes' button (towards the bottom of the page)
 
 You should now have a folder called `/content-images/your-repository-name/` in your repository (where `your-repository-name` is your actual repository name).
+
+### Step 2.4: Set permissions (Settings, Manage access)
+
+- From the action list (starting with Code, Issues,...), select "Settings" (at the end).
+- From the secondary list (after Options), select "Manage access".
+- Select the button "Invite teams or people".
+- Set the appropriate permissions. Err on the side of lower-level access for starters; we can change it easily. Example permissions:
+   - w3c/wai-eo : Read
+   - non-Team editors : Triage (or Write if highly trusted)
 
 ## Step 3: Create and link a Netlify site for preview
 
@@ -93,16 +107,7 @@ To view the resource preview
 - You should get the message 'Production: master@HEAD Published' - wait for the deploy to complete if the message is other than 'Published'
 - Click on 'Production' to get to the preview
 
-## Step 4: Set permissions (Settings, Manage access)
-
-- From the action list (starting with Code, Issues,...), select "Settings" (at the end).
-- From the secondary list (after Options), select "Manage access".
-- Select the button "Invite teams or people".
-- Set the appropriate permissions. Err on the side of lower-level access for starters; we can change it easily. Example permissions:
-   - w3c/wai-eo : Read
-   - non-Team editors : Triage (or Write if highly trusted)
-
-## Step 5: Create your content
+## Step 4: Create your content
 
 **NOTE: Keep content in a separate branch marked as "Draft". When it is ready to publish on the WAI website, coordinate that with Shawn or other website maintainer to publish, per below.**
 
