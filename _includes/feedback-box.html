@@ -51,7 +51,7 @@
 {% unless feedbackmail == "wai@w3.org" %}
 {%- capture mailbody -%}{% include t.html t="[put comment here...]" %}{%- endcapture -%}
 {% else %}
-{%- capture mailbody -%}{% include t.html t="[put comment here...]\n\nI give permission to share this to a publicly-archived e-mail list." %}"}{%- endcapture -%}
+{%- capture mailbody -%}{% include t.html t="[put comment here...]\n\nI give permission to share this to a publicly-archived e-mail list." %}{%- endcapture -%}
 {% endunless %}
 {%- assign mailbody = mailbody | uri_escape -%}
 {{- helpdesc | replace: "%s", url_title | markdownify -}}
