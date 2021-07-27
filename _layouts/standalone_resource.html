@@ -105,41 +105,21 @@
         {{ content }}
       </main>
     
-        {% if page.type_of_guidance == "Pattern" %}
+        {% if page.sidebar != "" and page.type_of_guidance == "Pattern" or page.type_of_guidance == "Objective" %}
         <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
-          <h2 style="margin-top: 0">About this page</h2>
-          <p><em>COGA Design Patterns</em> are supplemental guidance beyond the requirements of WCAG. They are grouped under “Objectives”. </p>
+          <h2 style="margin-top: 0">{{ page.sidebar.title}}</h2>
+          <p>{{ page.sidebar.text }}</p>
           <dl>
-            <dt>Related Objective</dt>
-            {% assign currentObjective = page.objective %}
-            {% for objective in site.objectives %}
-            {% if objective.ref == currentObjective %}
-            <dd><a href="{{ objective.url | relative_url }}">{{ objective.title }}</a></dd>
-            {% endif %}
-            {% endfor %}
-            <dt>Related Patterns</dt>
-            {% for pattern in site.patterns %}
-            {% if pattern.objective == page.objective %}{% unless pattern.title == page.title %}
-            <dd><a href="{{ pattern.url | relative_url }}">{{ pattern.title }}</a></dd>
-            {% endunless %}{% endif %}
-            {% endfor %}
-          </dl>
+          {% for section in page.sidebar.sections %}
+          <dt>{{ section.name }}</dt>
+          <dd><ul>
+          {% for item in section.items %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+          </ul></dd>
+          {% endfor %}
+          </dl>              
         </aside>
-        {% endif %}
-
-        {% if page.type_of_guidance == "Objective" %}
-        <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
-          <h2>About this Objective</h2>
-          <p><em>COGA Design Patterns</em> are supplemental guidance beyond the requirements of WCAG. They are grouped under “Objectives”. </p>
-          <dl>
-            <dt>Patterns for this Objective</dt>
-              {% for pattern in site.patterns %}
-              {% if pattern.objective == page.ref %}
-              <dd><a href="{{ pattern.url | relative_url }}">{{ pattern.title }}</a></dd>
-              {% endif %}
-              {% endfor %}
-          </dl>
-       </aside>
         {% endif %}
 
         {% if page.type_of_guidance == "Test Rule" %}
