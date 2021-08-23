@@ -27,7 +27,7 @@
 {%- endif -%}
 {% if col.footer %}
 <footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
-  <div class="inner">
+  <div class="inner" style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;">
     {{ col.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
     {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
   </div>
@@ -35,7 +35,7 @@
 {% else %}
   {% if page.footer %}
   <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
-    <div class="inner">
+    <div class="inner" style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;">
       {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
       {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
     </div>
