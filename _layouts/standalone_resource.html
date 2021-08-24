@@ -54,13 +54,16 @@
       {% if site.standalone_resource_nav_links or page.standalone_resource_nav_links %}
       <nav class="nav" aria-label="Context for this document">
         <ul>
-            {% for link in site.standalone_resource_nav_links %}
+          {% for link in site.standalone_resource_nav_links %}
             <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
-            {% endfor %}
-            {% for link in page.standalone_resource_nav_links %}
+          {% endfor %}
+          {% for link in page.standalone_resource_nav_links %}
             <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
-            {% endfor %}
-            <li class="nav__item"><a href="https://w3c.github.io/wai-wcag-supporting-documents-redesign/alt-index.html">All WCAG 2 Guidance</a></li>
+          {% endfor %}
+          <li class="nav__item"><a href="https://w3c.github.io/wai-wcag-supporting-documents-redesign/alt-index.html">
+            All WCAG 2 Guidance
+            {% include_cached icon.html name="different-view" %}
+          </a></li>
         </ul>
       </nav>
       {% endif %}
@@ -71,7 +74,12 @@
         <header>
           <h1>
             {% if page.type_of_guidance %}
-            <span class="standalone-resource__type-of-guidance">{{ page.type_of_guidance }}:</span>
+            <span class="standalone-resource__type-of-guidance">
+              {% if page.type_of_guidance == "Test Rule" and page.proposed %}
+                Proposed
+              {% endif %}
+              {{ page.type_of_guidance }}:
+            </span>
             {% endif %}
             {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
             {% if page.type_of_guidance and page.type_of_guidance == "Design Pattern" %}
@@ -85,10 +93,10 @@
           {% if page.type_of_guidance == "Test Rule" %}
           <aside class="box"> 
             <header class="box-h  box-h-icon"> 
-             <svg focusable="false" aria-hidden="true" class="icon-default "> 
-              <use xlink:href="icons.svg#icon-default"></use> 
-             </svg> Conformance Rule 
-            </header> 
+             <svg focusable="false" aria-hidden="true" class="icon-default">
+              <use xlink:href="/assets/images/icons.svg#icon-default"></use> 
+             </svg> Rule Mapping 
+            </header>
             <div class="box-i"> 
              <p>This is an <strong>{{ page.rule_meta.rule_type }} rule</strong> 
               {% if page.rule_meta.scs_tested %}
@@ -115,8 +123,8 @@
         {% endif %}
         
       </main>
-
-        {% if page.sidebar != nill and page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
+    
+      {% if page.sidebar != "" and page.type_of_guidance == "Pattern" or page.type_of_guidance == "Objective" %}
         <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
           <h2 style="margin-top: 0">{{ page.sidebar.title}}</h2>
           <p>{{ page.sidebar.text }}</p>
@@ -165,14 +173,14 @@
           
             </dd>
           {% endfor %}
-          </dl>              
+          </dl>
         </aside>
-        {% endif %}
+      {% endif %}
 
-        {% if page.type_of_guidance == "Test Rule" %}
+      {% if page.type_of_guidance == "Test Rule" %}
         <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
           <h2 style="margin-top: 0">About this page</h2>
-          <p><em>Accessibility Conformance Testing (ACT) Rules </em> describe ways to test conformance to WCAG success criteria.</p>
+          <p><em>WCAG 2 Test Rules </em> describe ways to test conformance to WCAG success criteria.</p>
           <dl>
               {% if page.rule_meta.rule_type %}
               <dt>Rule type</dt>
@@ -194,7 +202,7 @@
               {% endif %}
           </dl>
         </aside>
-        {% endif %}      
+      {% endif %}
     </div>
 
     <div class="default-grid with-gap leftcol">
