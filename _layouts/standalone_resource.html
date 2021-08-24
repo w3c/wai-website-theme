@@ -74,6 +74,12 @@
             <span class="standalone-resource__type-of-guidance">{{ page.type_of_guidance }}:</span>
             {% endif %}
             {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
+            {% if page.type_of_guidance and page.type_of_guidance == "Design Pattern" %}
+            {% assign ref_parts = page.ref | split: "p" %}
+            {% assign objective_ref = ref_parts | first %}
+            {%- assign objective = site.objectives | find_exp: "obj", "obj.ref == objective_ref" -%}
+            <span class="standalone-resource__subtitle">In Objective: {{ objective.title }}</span>
+            {% endif %}
           </h1>
 
           {% if page.type_of_guidance == "Test Rule" %}
@@ -103,20 +109,61 @@
         {% endif %}
 
         {{ content }}
+
+        {% if page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
+        {% include pager.html %}
+        {% endif %}
+        
       </main>
-    
-        {% if page.sidebar != "" and page.type_of_guidance == "Pattern" or page.type_of_guidance == "Objective" %}
+
+        {% if page.sidebar != nill and page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
         <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
           <h2 style="margin-top: 0">{{ page.sidebar.title}}</h2>
           <p>{{ page.sidebar.text }}</p>
+          {% for link in page.sidebar.toplinks %}
+          <a 
+          href="{{ link.url }}"
+          class="resource-link"
+          target="_blank"
+          rel="noopener roreferrer">     
+          {{link.title}}</a>{% include_cached icon.html name="external-link" %}
+          {% endfor %}
           <dl>
           {% for section in page.sidebar.sections %}
-          <dt>{{ section.name }}</dt>
-          <dd><ul>
-          {% for item in section.items %}
-            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
-          {% endfor %}
-          </ul></dd>
+            <dt>{{ section.name }}</dt>
+            <dd>
+            {% if section.name == "Personas" or section.name == "User Story" or section.name == "User Stories" %}
+              {% assign items = section.items | split: ", "%} 
+              {% if section.name == "Personas" %}
+                {% assign url-base = site.data.design-guide-links.persona-url-base %}
+                {% assign mappings = site.data.design-guide-links.persona-url-mappings %}
+              {% else %}
+                {% assign url-base = site.data.design-guide-links.userstory-url-base %}
+                {% assign mappings = site.data.design-guide-links.userstory-url-mappings %}
+              {% endif %}  
+                {% for item in items %}
+                {% assign match = mappings | find_exp:"mapping", "mapping.name == item" %}
+                {% if match != nill %}
+                
+                <a 
+                href="{{ url-base | append: match.url | relative_url }}"
+                class="resource-link"
+                target="_blank"
+                rel="noopener roreferrer">
+                {{item}}</a>{% include_cached icon.html name="external-link" %}
+                {% endif %}
+              {% endfor %}  
+            {% else %}
+              {% for item in section.items %}
+                {% if item.url != nil %}
+                <a href="{{ section.base | append: item.url | relative_url }}">{{ item.title }}</a>
+                {% else %}
+                {{ item.title }}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          
+            </dd>
           {% endfor %}
           </dl>              
         </aside>
