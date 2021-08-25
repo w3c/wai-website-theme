@@ -120,7 +120,7 @@
           <p>{{ page.sidebar.text }}</p>
           {% for link in page.sidebar.toplinks %}
           <a href="{{ link.url }}"
-            class="resource-link"
+            class="resource-link resource-link--no-icon"
             rel="noopener roreferrer">
             {{link.title}}</a>
           {% endfor %}
@@ -141,7 +141,7 @@
                 {% assign match = mappings | find_exp:"mapping", "mapping.name == item" %}
                 {% if match != nill %}        
                 <a href="{{ url-base | append: match.url | relative_url }}"
-                  class="resource-link"
+                  class="resource-link resource-link--no-icon"
                   rel="noopener roreferrer">
                 {{item}}</a>
                 {% endif %}
@@ -150,6 +150,7 @@
               {% for item in section.items %}
                 {% if item.url != nil %}
                 <a href="{{ section.base | append: item.url | relative_url }}"
+                   class="resource-link resource-link--no-icon"
                    rel="noopener roreferrer">{{ item.title }}</a>
                 {% else %}
                 {{ item.title }}
