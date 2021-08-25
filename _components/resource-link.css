@@ -27,3 +27,7 @@
 .resource-link svg {
   margin-right: 0.25em;
 }
+.resource-link--no-icon {
+  background-color: var(--pure-white);
+  padding-inline: 0.75em;
+}

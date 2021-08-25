@@ -48,3 +48,9 @@ Embedding your report:
    label="Implementing A.3.1.1"
    href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/#sc_a311"
 %}
+
+{% include resource-link.html
+   label="Ada Lovelace"
+   href="#"
+   noicon="true"
+%}
