@@ -82,12 +82,6 @@
             </span>
             {% endif %}
             {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
-            {% if page.type_of_guidance and page.type_of_guidance == "Design Pattern" %}
-            {% assign ref_parts = page.ref | split: "p" %}
-            {% assign objective_ref = ref_parts | first %}
-            {%- assign objective = site.objectives | find_exp: "obj", "obj.ref == objective_ref" -%}
-            <span class="standalone-resource__subtitle">In Objective: {{ objective.title }}</span>
-            {% endif %}
           </h1>
 
           {% if page.type_of_guidance == "Test Rule" %}
@@ -118,10 +112,6 @@
 
         {{ content }}
 
-        {% if page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
-        {% include pager.html %}
-        {% endif %}
-        
       </main>
     
       {% if page.sidebar != "" and page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
