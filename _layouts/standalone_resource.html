@@ -129,12 +129,10 @@
           <h2 style="margin-top: 0">{{ page.sidebar.title}}</h2>
           <p>{{ page.sidebar.text }}</p>
           {% for link in page.sidebar.toplinks %}
-          <a 
-          href="{{ link.url }}"
-          class="resource-link"
-          target="_blank"
-          rel="noopener roreferrer">     
-          {{link.title}}</a>{% include_cached icon.html name="external-link" %}
+          <a href="{{ link.url }}"
+            class="resource-link"
+            rel="noopener roreferrer">
+            {{link.title}}</a>
           {% endfor %}
           <dl>
           {% for section in page.sidebar.sections %}
@@ -151,20 +149,18 @@
               {% endif %}  
                 {% for item in items %}
                 {% assign match = mappings | find_exp:"mapping", "mapping.name == item" %}
-                {% if match != nill %}
-                
-                <a 
-                href="{{ url-base | append: match.url | relative_url }}"
-                class="resource-link"
-                target="_blank"
-                rel="noopener roreferrer">
-                {{item}}</a>{% include_cached icon.html name="external-link" %}
+                {% if match != nill %}        
+                <a href="{{ url-base | append: match.url | relative_url }}"
+                  class="resource-link"
+                  rel="noopener roreferrer">
+                {{item}}</a>
                 {% endif %}
               {% endfor %}  
             {% else %}
               {% for item in section.items %}
                 {% if item.url != nil %}
-                <a href="{{ section.base | append: item.url | relative_url }}">{{ item.title }}</a>
+                <a href="{{ section.base | append: item.url | relative_url }}"
+                   rel="noopener roreferrer">{{ item.title }}</a>
                 {% else %}
                 {{ item.title }}
                 {% endif %}
