@@ -37,6 +37,9 @@ Embedding your report:
 `label`
 : Link text
 
+`no-icon-class="true"`
+: Tweak this so that it works with no icon (adds white background and padding])
+
 ## Examples
 
 {% include resource-link.html
