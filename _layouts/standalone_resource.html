@@ -60,7 +60,7 @@
           {% for link in page.standalone_resource_nav_links %}
             <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
           {% endfor %}
-          <li class="nav__item"><a href="https://w3c.github.io/wai-wcag-supporting-documents-redesign/alt-index.html">
+          <li class="nav__item"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/docs/">
             All WCAG 2 Guidance
             {% include_cached icon.html name="different-view" %}
           </a></li>
