@@ -37,7 +37,7 @@ standalone_resource_nav_links:
     ref: /standards-guidelines/act/rules/
   - name: About Rules
     ref: /standards-guidelines/act/rules/about/
-standalone_resource_doc_name: "WCAG 2: ACT Rules"
+standalone_resource_doc_name: "WCAG 2 Test Rules"
 type_of_guidance: "Test Rule"
 github:
   repository: w3c/wcag-act-rules
