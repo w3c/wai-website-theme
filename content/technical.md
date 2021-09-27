@@ -97,6 +97,23 @@ Just as with virtually every other design style guide, this design style guide s
 
 Jekyll is a static site generator. That basically means that it takes content files (in Markdown or HTML) and adds consistent templates to it and generates navigation and then outputs the whole site as static HTML pages.
 
+### Configuration
+
+Jekyll is quite limited when it comes to static site generation configuration. The use of git submodules requires the use of symblinks in the main  `wai-website` to ensure Jekyll build sees the resource files in the correct location. This is imposes restrictions on what Jekyll config options are used in the resources. In particular, be careful to:
+
+- avoid having resource specific `includes` using the `_include` folder
+ - includes to be shared between resources should go in the theme resource
+ - any includes only to be used by the resource should use `include_relative` (but fails in layouts and can't use `../`)
+ - any files in a _resource's `_includes` will also need to be in the website's `_includes`, using symblinks
+- avoid using resource specific `_layouts` using the `_layouts` folder
+ - layouts to be shared between resources should go in the theme resource
+ - any files in a _resource's `_layouts` folder will also need to be in the website's `_layouts` folder, using symblinks
+- collections and defaults defined in `_config.yml` will neeed to be duplicated in the website's `_config.yml`
+- collections need to be symblinked from the website `collections` folder (news seems to be a bit odd)
+- all pages in resources need to be symblinked from the website `pages` folder
+- resource images (and potenitally other static files) are symblinked from the website `content-images` folder (watch naming) and appear in the deployed site `website content-images`
+- shared static files can go in the theme `assets` folder and will appear in the deployed website `assets` folder
+
 ### WAI Website Theme
 
 [{% include_cached icon.html name="arrow-right" %} WAI Website Theme](https://github.com/w3c/wai-website-theme)
