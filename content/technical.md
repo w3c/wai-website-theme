@@ -111,7 +111,7 @@ Jekyll is quite limited when it comes to static site generation configuration. T
 - collections and defaults defined in `_config.yml` will neeed to be duplicated in the website's `_config.yml`
 - collections need to be symblinked from the website `collections` folder (news seems to be a bit odd)
 - all pages in resources need to be symblinked from the website `pages` folder
-- resource images (and potenitally other static files) are symblinked from the website `content-images` folder (watch naming) and appear in the deployed site `website content-images`
+- resource images (and potentially other static files) are symblinked from the website `content-images` folder (watch naming) and appear in the deployed site website `content-images`
 - shared static files can go in the theme `assets` folder and will appear in the deployed website `assets` folder
 
 ### WAI Website Theme
