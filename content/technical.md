@@ -99,7 +99,7 @@ Jekyll is a static site generator. That basically means that it takes content fi
 
 ### Configuration
 
-Jekyll is quite limited when it comes to static site generation configuration. The use of git submodules requires the use of symblinks in the main  `wai-website` to ensure Jekyll build sees the resource files in the correct location. This is imposes restrictions on what Jekyll config options are used in the resources. In particular, be careful to:
+Jekyll is quite limited when it comes to static site generation configuration. The use of git submodules requires the use of symblinks in the main  `wai-website` to ensure Jekyll build sees the resource files in the correct location. This imposes restrictions on what Jekyll config options are used in the resources. In particular, be careful to:
 
 - avoid having resource specific `includes` using the `_include` folder
   - includes to be shared between resources should go in the theme resource
