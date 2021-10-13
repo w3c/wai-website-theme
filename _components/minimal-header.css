@@ -10,6 +10,7 @@
 .tool-header-name,
 .minimal-header-name {
   font-size: 1.125em;
+  line-height: 1;
 }
 .minimal-header.with-subtitle .minimal-header-name {
   line-height: 1.1;
