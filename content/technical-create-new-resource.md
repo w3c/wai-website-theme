@@ -110,7 +110,9 @@ To view the resource preview
 
 ## Step 4: Create your content
 
-**NOTE: Keep content in a separate branch marked as "Draft". When it is ready to publish on the WAI website, coordinate that with Shawn or other website maintainer to publish, per below.**
+You will almost certaily want to develop and preview locally though it is possible to use the GitHub file editor. You can use use a Linux/Mac shell, or WSL on Windows.
+
+**NOTE: In order to facilitate sharing and review with others use a GitHub PR for your work. Mark it is  "Draft". When it is ready to publish on the WAI website, coordinate with Shawn or other website maintainer, as described below.**
 
 Content in the main branch is assumed ready to be deployed on the WAI website. Therefore, create a new branch for your draft content &mdash; for example: "Version 1". You can follow Step 2.1 to create a new branch. When you create the pull request (to see the preview), create it as a "Draft pull request".
 
@@ -119,6 +121,19 @@ Put your content in the folder called `content`, and images in the folder `conte
 In particular, replace the text `/link/to/page/` (on lines 24 and 32) in every file with the path of where your page will appear on the WAI website (you may not know this at the beginning of the project and you can do it later too). Also update the mappings in the file `netlify.toml` (on line 10) when you are ready.
 
 Also, update the README.md text to remove the template specific lines below the netlify badge, and to provide documentation.
+
+### Local preview of your content
+
+The easiest way to build and preview locally is to use the [Netlify CLI](https://cli.netlify.com/) tool. The resources are configured so you can 
+
+- `Netlify build` - generate the website file in the `_site` directory
+- `Netlify dev` - run a dev server and preview `_site` 
+
+### Editing shared config files
+
+The theme and other shared config files in `wai-website-theme` are accessed via git submodules located in `_external`. While it is certainly possible to use git submodule operation to locally edit these while developing, this is complex and to be honest, a dangerous 'footgun'.
+
+For some files it is possible to create a temporary local `_includes`, `_layouts` or `_collections` folder to overide theme files or add new ones. When the resource is ready to be published these files should be merged into the shared files in `wai-website-theme`.
 
 ## Publishing approved content
 
