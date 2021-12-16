@@ -338,7 +338,9 @@ if (document.querySelector('main')) {
     });
 
     Array.prototype.forEach.call(excolAll, function(el, i){
-      el.innerHTML = '<button class="expand button button-secondary button-small">+ ' + t('Expand All Sections') + '</button> <button class="collapse button button-secondary button-small">&minus; ' + t('Collapse All Sections') + '</button>';
+      const expandText = el.dataset.expandText || 'Expand All Sections';
+      const collapseText = el.dataset.collapseText || 'Collapse All Sections';
+      el.innerHTML = '<button class="expand button button-secondary button-small">+ ' + t(expandText) + '</button> <button class="collapse button button-secondary button-small">&minus; ' + t(collapseText) + '</button>';
     });
 
     Array.prototype.forEach.call(document.querySelectorAll('.excol-all'), function(el, i){
