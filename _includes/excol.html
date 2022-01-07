@@ -13,7 +13,7 @@
 {% if include.expand-text %}
   {% capture expand-attr %} data-expand-text="{{include.expand-text}}" {% endcapture %}
 {%- endif -%}
-{% if include.expand-text %}
+{% if include.collapse-text %}
   {% capture collapse-attr %} data-collapse-text="{{include.collapse-text}}" {% endcapture %}
 {%- endif -%}
 <div class="excol-all" {{ expand-attr }} {{ collapse-attr }}></div>
