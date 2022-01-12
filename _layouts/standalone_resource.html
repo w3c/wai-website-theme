@@ -38,6 +38,8 @@
   {% include_cached head.html type="end" %}
   <body id="top" class="page-{{page.title | slugify}} {% include_cached body-class.html collection=page.collection doc-note-type=page.doc-note-type %}">
 
+    <a href="#main" class="button button--skip-link">Skip to content</a>
+
     <div class="minimal-header-container default-grid">
       {% if site.standalone_resource_doc_name_sub %}
       {% include minimal-header.html translations=translations class="with-subtitle" subtitle=site.standalone_resource_doc_name_sub title=site.standalone_resource_doc_name %}
@@ -70,7 +72,96 @@
     </div>
 
     <div class="default-grid with-gap leftcol">
-      <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} class="standalone-resource__main">
+
+<style>
+.nav-hack {
+  font-size: .85rem;
+}
+.nav-hack ul {
+    list-style: none;
+    border-bottom: 1px solid #BCBCBC;
+    padding-left: 1rem
+}
+.nav-hack li {
+    padding-bottom: 0;
+    margin-bottom: 0.3em;
+    border-top: 1px solid #BCBCBC;
+}
+.nav-hack a {
+    text-decoration: none;
+}
+.nav-hack h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* skip link */
+.button--skip-link {
+  background-color: var(--gold) !important;
+  border-color: var(--gold) !important;
+  outline-color: currentColor !important;
+  color: var(--off-black) !important;
+  font-weight: 600;
+  font-size: larger;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  top: 0.5em;
+  width: 10em;
+  opacity: 1;
+  transition: transform 0.1875s ease-out, opacity 0.1875s ease-out;
+}
+
+.button--skip-link:not(:focus):not(:hover) {
+  transform: translateY(-4em);
+  opacity: 0;
+}
+</style>
+    {% if page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
+      {% if page.related.sections != null %} 
+        {% capture content %}{{ content }}{% include related-info.html sections=page.related.sections %}{% endcapture %}   
+      {% endif%}
+    {% endif%} 
+
+    {% if layout.sidebar != nil or page.type_of_guidance == "Test Rule" %}
+      <nav class="nav-hack your-report your-report--expanded sidebar standalone-resource__sidebar">
+          {% assign sidebar = page.sidebar %} {% if sidebar == nil %} {% assign sidebar = layout.sidebar %} {% endif %}
+          {% if sidebar.autoNav %}
+            <h3>Navigation</h3>
+            {% include dg-nav.liquid %}
+            {% if context %}
+              <p><a href="{{ context[1] }}">{{ context[0] }}: {{context[2]}}</a></p>
+            {% endif %}
+            <ul>
+            {% if prev and section.titles == false %}
+              <li><a href="{{ prev[1] }}">{{ prev[0] }}</a></li>
+            {% elsif prev %}
+              <li><a href="{{ prev[1] }}">{{ prev[0] }}: {{ prev[2] }}</a></li>
+            {% endif %}
+            {% if next and section.titles == false %}
+              <li><a href="{{ next[1] }}">{{ next[0] }}</a></li>
+            {% elsif next %}
+              <li><a href="{{ next[1] }}">{{ next[0] }}: {{ next[2] }}</a></li>
+            {% endif %}
+            </ul>
+          {% endif%}
+          {% capture content %}{{ content | add_h2_ids }} {% endcapture %}
+          <h3>This Page Contents</h3>
+            <ul>
+            {% assign h2links = content | get_h2_links %}
+            {% for link in h2links %}
+              <li><a href="#{{ link[1] }}">{{ link[0] }}</a></li>
+            {% endfor %}
+            </ul>
+          {% if sidebar.footer %}
+                <p><em>{{ sidebar.footer.content }}</em></p>
+          {% endif %}
+      </nav>
+      {% endif %}
+
+    <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %} class="standalone-resource__main">
         <header>
           <h1>
             {% if page.type_of_guidance %}
@@ -112,83 +203,7 @@
 
       </main>
     
-      {% if page.sidebar != "" and page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
-        <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
-          <h2 style="margin-top: 0">{{ page.sidebar.title}}</h2>
-          <p>{{ page.sidebar.text }}</p>
-          {% for link in page.sidebar.toplinks %}
-          <a href="{{ link.url }}"
-            class="resource-link resource-link--no-icon"
-            rel="noopener roreferrer">
-            {{link.title}}</a>
-          {% endfor %}
-          <dl>
-          {% for section in page.sidebar.sections %}
-            <dt>{{ section.name }}</dt>
-            <dd>
-            {% if section.name == "Personas" or section.name == "User Story" or section.name == "User Stories" %}
-              {% assign items = section.items | split: ", "%} 
-              {% if section.name == "Personas" %}
-                {% assign url-base = site.data.design-guide-links.persona-url-base %}
-                {% assign mappings = site.data.design-guide-links.persona-url-mappings %}
-              {% else %}
-                {% assign url-base = site.data.design-guide-links.userstory-url-base %}
-                {% assign mappings = site.data.design-guide-links.userstory-url-mappings %}
-              {% endif %}  
-                {% for item in items %}
-                {% assign match = mappings | find_exp:"mapping", "mapping.name == item" %}
-                {% if match != nill %}        
-                <a href="{{ url-base | append: match.url | relative_url }}"
-                  class="resource-link resource-link--no-icon"
-                  rel="noopener roreferrer">
-                {{item}}</a>
-                {% endif %}
-              {% endfor %}  
-            {% else %}
-              {% for item in section.items %}
-                {% if item.url != nil %}
-                <a href="{{ section.base | append: item.url | relative_url }}"
-                   class="resource-link resource-link--no-icon"
-                   rel="noopener roreferrer">{{ item.title }}</a>
-                {% else %}
-                {{ item.title }}
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-          
-            </dd>
-          {% endfor %}
-          </dl>
-        </aside>
-      {% endif %}
-
-      {% if page.type_of_guidance == "Test Rule" %}
-        <aside class="your-report your-report--expanded sidebar standalone-resource__sidebar">
-          <h2 style="margin-top: 0">About this page</h2>
-          <p><em>WCAG 2 Test Rules </em> describe ways to test conformance to WCAG success criteria.</p>
-          <dl>
-              {% if page.rule_meta.rule_type %}
-              <dt>Rule type</dt>
-              <dd>{{ page.rule_meta.rule_type }}</dd>
-              {% endif %}
-              {% if page.rule_meta.id %}
-              <dt>Rule ID</dt>
-              <dd>{{ page.rule_meta.id }}</dd>
-              {% endif %}
-              {% if page.rule_meta.input_aspects %}
-              <dt>Input Aspects</dt>
-              {% for aspect in page.rule_meta.input_aspects %}
-              <dd><a href="{{ aspect.url }}">{{ aspect.handle }}</a></dd>
-              {% endfor%}
-              {% endif %}
-              {% if page.rule_meta.last_modified %}
-              <dt>Last modified</dt>
-              <dd>{{ page.rule_meta.last_modified }}</dd>
-              {% endif %}
-          </dl>
-        </aside>
-      {% endif %}
-    </div>
+  </div>
 
     <div class="default-grid with-gap leftcol">
       <div class="standalone-resource__prevnext">
