@@ -135,12 +135,12 @@
               <p><a href="{{ context[1] }}">{{ context[0] }}: {{context[2]}}</a></p>
             {% endif %}
             <ul>
-            {% if prev and section.titles == false %}
+            {% if prev and sidebar.autoNav.titles == false %}
               <li><a href="{{ prev[1] }}">{{ prev[0] }}</a></li>
             {% elsif prev %}
               <li><a href="{{ prev[1] }}">{{ prev[0] }}: {{ prev[2] }}</a></li>
             {% endif %}
-            {% if next and section.titles == false %}
+            {% if next and sidebar.autoNav.titles == false %}
               <li><a href="{{ next[1] }}">{{ next[0] }}</a></li>
             {% elsif next %}
               <li><a href="{{ next[1] }}">{{ next[0] }}: {{ next[2] }}</a></li>
