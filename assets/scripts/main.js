@@ -302,10 +302,12 @@ if (document.querySelector('main')) {
     });
   }
 
+  /* Expand collapse support*/
   var excolAll = document.querySelectorAll('.excol-all');
-  var excols =  document.querySelectorAll('details');
+  var excols = document.querySelectorAll('details');
+  var excols2 = document.querySelectorAll('div[data-details]');
 
-  if ((excolAll !== null) && (excols !== null) && (excols.length > 1)) {
+  if ((excolAll !== null) && (excols !== null) && (excolAll.length > 0) && ((excols.length > 1) || (excols2.length > 1))) {
     function enableButtons(els) {
       Array.prototype.forEach.call(els, function(el, i){
         el.disabled = false;
@@ -318,8 +320,8 @@ if (document.querySelector('main')) {
     }
     function setExColAllButtons() {
       setTimeout(function(){
-        var open  = document.querySelectorAll('details[open]').length;
-        var close = document.querySelectorAll('details:not([open])').length;
+        var open  = document.querySelectorAll('details[open]').length + document.querySelectorAll('div[data-details][aria-expanded=true]').length;
+        var close = document.querySelectorAll('details:not([open])').length + document.querySelectorAll('div[data-details][aria-expanded=false]').length;
         if((open > 0) && (close === 0)) {
           enableButtons(document.querySelectorAll('.excol-all .collapse'));
           disableButtons(document.querySelectorAll('.excol-all .expand'));
@@ -341,20 +343,22 @@ if (document.querySelector('main')) {
       const expandText = el.dataset.expandText || 'Expand All Sections';
       const collapseText = el.dataset.collapseText || 'Collapse All Sections';
       el.innerHTML = '<button class="expand button button-secondary button-small">+ ' + t(expandText) + '</button> <button class="collapse button button-secondary button-small">&minus; ' + t(collapseText) + '</button>';
-    });
 
-    Array.prototype.forEach.call(document.querySelectorAll('.excol-all'), function(el, i){
       el.addEventListener("click", function(element) {
         if (hasclass(element.target, 'expand')) {
-          Array.prototype.forEach.call(document.querySelectorAll('details'), function(el, i){
+          Array.prototype.forEach.call(excols, function(el, i){
             el.setAttribute('open', 'true');
           });
         }
         if (hasclass(element.target, 'collapse')) {
-          Array.prototype.forEach.call(document.querySelectorAll('details'), function(el, i){
+          Array.prototype.forEach.call(excols, function(el, i){
             el.removeAttribute('open');
           });
         }
+        var exp = (hasclass(element.target, 'expand')) ? "true" : "false";
+        Array.prototype.forEach.call(excols2, function(el, i){
+          el.setAttribute('aria-expanded', exp);
+        });
         setExColAllButtons();
       });
     });
