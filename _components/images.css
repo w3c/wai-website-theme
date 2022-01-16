@@ -1,6 +1,6 @@
 img {
   &.tiny   {--img-width:  60px;}
-  &.mini   {--img-width:  75px;}
+  &.mini   {--img-width:  90px;}
   &.small  {--img-width: 120px;}
   &.normal {--img-width: 240px;}
   &.large  {--img-width: 480px;}
@@ -17,4 +17,5 @@ img {
   &.video { border-radius: calc(var(--img-width) / 20); }
 }
 
-main img { max-width: 100%; width: var(--img-width); }
+main img { max-width: 100%; }
+main img:not([width]) { width: var(--img-width); }

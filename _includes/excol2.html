@@ -1,0 +1,22 @@
+{%- if include.type == 'start' -%}
+  <div data-details {%- if include.id %} id="{{include.id}}" {%- endif -%} 
+                    {%- if include.open == "true" %} aria-expanded="true" {%- else %} aria-expanded="false" {%- endif -%}>
+  <div data-summary markdown="block">
+{%- endif -%}
+{%- if include.type == 'middle' -%}
+  </div>
+  <div markdown="block"{%-if include.dir %} dir="{{include.dir}}"{%- endif -%}{%-if include.lang %} lang="{{include.lang}}"{%- endif -%}>
+{%- endif -%}
+{%- if include.type == 'end' -%}
+  </div>
+</div>
+{%- endif -%}
+{%- if include.type == 'all' -%}
+{%- if include.expand-text -%}
+  {% capture expand-attr %} data-expand-text="{{include.expand-text}}" {% endcapture %}
+{%- endif -%}
+{%- if include.collapse-text -%}
+  {%- capture collapse-attr -%} data-collapse-text="{{include.collapse-text}}" {%- endcapture -%}
+{%- endif -%}
+<div class="excol-all" {{ expand-attr }} {{ collapse-attr }}></div>
+{%- endif -%}

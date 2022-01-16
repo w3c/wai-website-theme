@@ -1,0 +1,56 @@
+.tool-header,
+.minimal-header {
+  display: flex;
+  align-items: center;
+}
+.tool-header a,
+.minimal-header a {
+  text-decoration: none;
+}
+.tool-header-name,
+.minimal-header-name {
+  font-size: 1.125em;
+  line-height: 1;
+}
+.minimal-header.with-subtitle .minimal-header-name {
+  line-height: 1.1;
+  font-size: 1em;
+}
+@media (min-width: 60em) {
+  .tool-header-name,
+  .minimal-header-name {
+    font-size: 1.5em;
+  }
+  .minimal-header.with-subtitle .minimal-header-name {
+    font-size: 1.2em;
+  }
+}
+.minimal-header-subtitle {
+  display: block;
+  font-size: 70%;
+}
+.tool-header-logo,
+.minimal-header-logo {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  align-self: start;
+}
+.tool-header-logo img,
+.minimal-header-logo img {
+  display: block;
+  margin: 0.75em 0 0.75em 0.5em;
+  height: 1.5em;
+}
+@media (min-width: 60em) {
+  .tool-header-logo img,
+  .minimal-header-logo img {
+    height: 2em;
+  }
+}
+.minimal-header-container {
+  background-color: var(--w3c-classic);
+}
+  .minimal-header-container > .minimal-header {
+    grid-column: navigation-start / content-end;
+  }

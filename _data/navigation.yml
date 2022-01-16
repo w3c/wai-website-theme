@@ -1,23 +1,39 @@
 - name:
-    en: 'Home'
+    en: 'WAI Website Manual'
   pages:
-  - name: Overview
+  - name: WAI Website Manual
     url: "/overview/"
-  - name: Versioning
-    url: "/versioning/"
+  - name: Technical Information
+    url: "/technical/"
+  - name: Files in Repositories
+    url: "/technical/files/"
+  - name: Creating a New Resource
+    url: "/technical/new-resource/"
+  - name: "Working on an Existing Resource"
+    url: "/technical/existing-resource/"
+  - name: Navigation
+    url: "/technical/navigation/"
 - name:
-    en: 'Writing Documents'
+    en: 'Create and Edit Documents'
   pages:
-  - name: Overview
+  - name: Create and Edit Documents
     url: "/writing/"
+  - name: Frontmatter
+    url: "/writing/frontmatter/"
   - name: Markdown
     url: "/writing/markdown/"
-  - name: Custom Markdown Extensions
+  - name: WAI Markdown Extensions
     url: "/writing/wai-markdown/"
+  - name: Using HTML
+    url: "/writing/html/"
+  - name: Images
+    url: "/writing/images/"
+  - name: Stand-alone Resources
+    url: "/writing/standalone-resources/"
 - name:
     en: 'Design Components'
   pages:
-  - name: Overview
+  - name: Design Components
     url: "/components/"
   - name: Colors
     url: "/components/colors/"
@@ -53,6 +69,8 @@
       url: "/components/document-notes/translation/"
     - name: "Deprecated"
       url: "/components/document-notes/deprecated/"
+  - name: "Evaluation Form"
+    url: "/components/evaluation-form/"
   - name: "Expand/<wbr>Collapse"
     url: "/components/excol/single/"
     pages:
@@ -64,6 +82,8 @@
     url: "/components/figure/"
   - name: "Footer (Page & Site)"
     url: "/components/footer/"
+  - name: "Footnotes"
+    url: "/components/footnotes/"
   - name: "Form"
     url: "/components/form/elements/"
     pages:
@@ -71,17 +91,40 @@
       url: "/components/form/elements/"
     - name: "Search"
       url: "/components/form/search/"
+  - name: "Grid"
+    url: "/components/grid/"
   - name: "Headings"
     url: "/components/headings/"
+  - name: Icons
+    url: "/components/icons/"
   - name: Images
     url: "/components/images/"
   - name: "Lists"
     url: "/components/lists/"
+  - name: "Minimal Header"
+    url: "/components/minimal-header/"
+  - name: "Minimal Navigation"
+    url: "/components/minimal-navigation/"
   - name: "Publication Warning"
     url: "/components/publication-warning/"
+  - name: "Progress Bar"
+    url: "/components/progress-bar/"
+  - name: "Resource Link"
+    url: "/components/resource-link/"
+  - name: "Results by Category"
+    url: "/components/results-by-category/"
   - name: "Tables"
     url: "/components/tables/"
+  - name: "Teasers"
+    url: "/components/teasers/"
+    pages:
+  - name: "Making the Web Accessible"
+    url: "/components/teasers/mwa/"
+  - name: "Video Card"
+    url: "/components/video-card/"
   - name: "Video Links"
     url: "/components/video-links/"
   - name: "Video Player"
     url: "/components/video-player/"
+  - name: "Your Report"
+    url: "/components/your-report/"

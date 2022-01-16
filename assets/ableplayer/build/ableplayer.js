@@ -34,11 +34,15 @@
 /*global $, jQuery */
 "use strict";
 
+// maintain an array of Able Player instances for use globally (e.g., for keeping prefs in sync)
+var AblePlayerInstances = [];
+
 (function ($) {
 	$(document).ready(function () {
+
 		$('video, audio').each(function (index, element) {
 			if ($(element).data('able-player') !== undefined) {
-				new AblePlayer($(this),$(element));
+				AblePlayerInstances.push(new AblePlayer($(this),$(element)));
 			}
 		});
 	});
@@ -61,10 +65,8 @@
 	// Parameters are:
 	// media - jQuery selector or element identifying the media.
 	window.AblePlayer = function(media) {
-
 		// Keep track of the last player created for use with global events.
 		AblePlayer.lastCreated = this;
-
 		this.media = media;
 		if ($(media).length === 0) {
 			this.provideFallback();
@@ -845,7 +847,6 @@
 		// Bootstrap from this.media possibly being an ID or other selector.
 		this.$media = $(this.media).first();
 		this.media = this.$media[0];
-
 		// Set media type to 'audio' or 'video'; this determines some of the behavior of player creation.
 		if (this.$media.is('audio')) {
 			this.mediaType = 'audio';
@@ -1395,7 +1396,7 @@
 	AblePlayer.prototype.updateCookie = function( setting ) {
 
 		// called when a particular setting had been updated
-		// useful for settings updated indpedently of Preferences dialog
+		// useful for settings updated indepedently of Preferences dialog
 		// e.g., prefAutoScrollTranscript, which is updated in control.js > handleTranscriptLockToggle()
 		// setting is any supported preference name (e.g., "prefCaptions")
 		// OR 'transcript' or 'sign' (not user-defined preferences, used to save position of draggable windows)
@@ -1608,8 +1609,10 @@
 		return prefs;
 	};
 
-	// Loads current/default preferences from cookie into the AblePlayer object.
 	AblePlayer.prototype.loadCurrentPreferences = function () {
+
+  	// Load current/default preferences from cookie into the AblePlayer object.
+
 		var available = this.getAvailablePreferences();
 		var cookie = this.getCookie();
 
@@ -1991,7 +1994,7 @@
 		cancelButton = $('<button class="modal-button">' + this.tt.cancel + '</button>');
 		saveButton.click(function () {
 			dialog.hide();
-			thisObj.savePrefsFromForm();
+		  thisObj.savePrefsFromForm();
 		});
 		cancelButton.click(function () {
 			dialog.hide();
@@ -2028,19 +2031,22 @@
 		});
 	};
 
-	 // Reset preferences form with default values from cookie
-	 // Called when user clicks cancel or close button in Prefs Dialog
-	 // also called when user presses Escape
-
 	 AblePlayer.prototype.resetPrefsForm = function () {
 
-		 var thisObj, cookie, available, i, prefName, thisDiv, thisId;
+  	 // Reset preferences form with default values from cookie
+     // Called when:
+     // User clicks cancel or close button in Prefs Dialog
+     // User presses Escape to close Prefs dialog
+     // User clicks Save in Prefs dialog, & there's more than one player on page
+
+		 var thisObj, cookie, available, i, prefName, prefId, thisDiv, thisId;
 
 		 thisObj = this;
 		 cookie = this.getCookie();
 		 available = this.getAvailablePreferences();
 		 for (i=0; i<available.length; i++) {
 			 prefName = available[i]['name'];
+			 prefId = this.mediaId + '_' + prefName;
 			 if ((prefName.indexOf('Captions') !== -1) && (prefName !== 'prefCaptions')) {
 				 // this is a caption-related select box
 				 $('select[name="' + prefName + '"]').val(cookie.preferences[prefName]);
@@ -2058,21 +2064,24 @@
 			this.stylizeCaptions(this.$sampleCapsDiv);
 	 };
 
-	// Return a prefs object constructed from the form.
 	AblePlayer.prototype.savePrefsFromForm = function () {
+
+  	// Return a prefs object constructed from the form.
 		// called when user saves the Preferences form
 		// update cookie with new value
-		var numChanges, numCapChanges, capSizeChanged, capSizeValue, newValue;
+		var cookie, available, prefName, prefId, numChanges,
+		  numCapChanges, capSizeChanged, capSizeValue, newValue;
 
 		numChanges = 0;
 		numCapChanges = 0; // changes to caption-style-related preferences
 		capSizeChanged = false;
-		var cookie = this.getCookie();
-		var available = this.getAvailablePreferences();
+		cookie = this.getCookie();
+		available = this.getAvailablePreferences();
 		for (var i=0; i < available.length; i++) {
 			// only prefs with labels are used in the Prefs form
 			if (available[i]['label']) {
-				var prefName = available[i]['name'];
+				prefName = available[i]['name'];
+				prefId = this.mediaId + '_' + prefName;
 				if (prefName == 'prefDescFormat') {
   				// As of v4.0.10, prefDescFormat is no longer a choice
 					// this.prefDescFormat = $('input[name="' + prefName + '"]:checked').val();
@@ -2084,7 +2093,7 @@
 				}
 				else if ((prefName.indexOf('Captions') !== -1) && (prefName !== 'prefCaptions')) {
 					// this is one of the caption-related select fields
-					newValue = $('select[name="' + prefName + '"]').val();
+					newValue = $('select[id="' + prefId + '"]').val();
 					if (cookie.preferences[prefName] !== newValue) { // user changed setting
 						cookie.preferences[prefName] = newValue;
 						// also update global var for this pref (for caption fields, not done elsewhere)
@@ -2098,7 +2107,7 @@
 					}
 				}
 				else { // all other fields are checkboxes
-					if ($('input[name="' + prefName + '"]').is(':checked')) {
+					if ($('input[id="' + prefId + '"]').is(':checked')) {
 						cookie.preferences[prefName] = 1;
 						if (this[prefName] === 1) {
 							// nothing has changed
@@ -2136,35 +2145,38 @@
 				// update font size of YouTube captions
 				this.youTubePlayer.setOption(this.ytCaptionModule,'fontSize',this.translatePrefs('size',capSizeValue,'youtube'));
 		}
-		this.updatePrefs();
-		if (numCapChanges > 0) {
-			this.stylizeCaptions(this.$captionsDiv);
-			// also apply same changes to descriptions, if present
-			if (typeof this.$descDiv !== 'undefined') {
-				this.stylizeCaptions(this.$descDiv);
-			}
-		}
+    if (AblePlayerInstances.length > 1) {
+      // there are multiple players on this page.
+      // update prefs for ALL of them
+      for (var i=0; i<AblePlayerInstances.length; i++) {
+        AblePlayerInstances[i].updatePrefs();
+        AblePlayerInstances[i].loadCurrentPreferences();
+        AblePlayerInstances[i].resetPrefsForm();
+        if (numCapChanges > 0) {
+          AblePlayerInstances[i].stylizeCaptions(AblePlayerInstances[i].$captionsDiv);
+          // also apply same changes to descriptions, if present
+          if (typeof AblePlayerInstances[i].$descDiv !== 'undefined') {
+            AblePlayerInstances[i].stylizeCaptions(AblePlayerInstances[i].$descDiv);
+			    }
+        }
+      }
+    }
+    else {
+      // there is only one player
+      this.updatePrefs();
+      if (numCapChanges > 0) {
+        this.stylizeCaptions(this.$captionsDiv);
+        // also apply same changes to descriptions, if present
+        if (typeof this.$descDiv !== 'undefined') {
+          this.stylizeCaptions(this.$descDiv);
+			  }
+      }
+    }
 	}
 
-	// Updates player based on current prefs.	 Safe to call multiple times.
 	AblePlayer.prototype.updatePrefs = function () {
 
-		var modHelp;
-
-		// modifier keys (update help text)
-		if (this.prefAltKey === 1) {
-			modHelp = 'Alt + ';
-		}
-		else {
-			modHelp = '';
-		}
-		if (this.prefCtrlKey === 1) {
-			modHelp += 'Control + ';
-		}
-		if (this.prefShiftKey === 1) {
-			modHelp += 'Shift + ';
-		}
-		$('.able-help-modifiers').text(modHelp);
+  	// Update player based on current prefs. Safe to call multiple times.
 
 		// tabbable transcript
 		if (this.prefTabbable === 1) {
@@ -2187,6 +2199,7 @@
 	};
 
 	AblePlayer.prototype.usingModifierKeys = function(e) {
+
 		// return true if user is holding down required modifier keys
 		if ((this.prefAltKey === 1) && !e.altKey) {
 			return false;
@@ -3374,44 +3387,51 @@
 
 		// Populate menu with menu items
 		if (which === 'prefs') {
-			prefCats = this.getPreferencesGroups();
-			for (i = 0; i < prefCats.length; i++) {
-				$menuItem = $('<li></li>',{
-					'role': 'menuitem',
-					'tabindex': '-1'
-				});
-				prefCat = prefCats[i];
-				if (prefCat === 'captions') {
-					$menuItem.text(this.tt.prefMenuCaptions);
-				}
-				else if (prefCat === 'descriptions') {
-					$menuItem.text(this.tt.prefMenuDescriptions);
-				}
-				else if (prefCat === 'keyboard') {
-					$menuItem.text(this.tt.prefMenuKeyboard);
-				}
-				else if (prefCat === 'transcript') {
-					$menuItem.text(this.tt.prefMenuTranscript);
-				}
-				$menuItem.on('click',function() {
-					whichPref = $(this).text();
-					thisObj.setFullscreen(false);
-					if (whichPref === thisObj.tt.prefMenuCaptions) {
-						thisObj.captionPrefsDialog.show();
-					}
-					else if (whichPref === thisObj.tt.prefMenuDescriptions) {
-						thisObj.descPrefsDialog.show();
-					}
-					else if (whichPref === thisObj.tt.prefMenuKeyboard) {
-						thisObj.keyboardPrefsDialog.show();
-					}
-					else if (whichPref === thisObj.tt.prefMenuTranscript) {
-						thisObj.transcriptPrefsDialog.show();
-					}
-					thisObj.closePopups();
-				});
-				$menu.append($menuItem);
-			}
+      if (this.prefCats.length > 1) {
+  			for (i = 0; i < this.prefCats.length; i++) {
+	  			$menuItem = $('<li></li>',{
+		  			'role': 'menuitem',
+            'tabindex': '-1'
+				  });
+          prefCat = this.prefCats[i];
+          if (prefCat === 'captions') {
+					  $menuItem.text(this.tt.prefMenuCaptions);
+				  }
+          else if (prefCat === 'descriptions') {
+					  $menuItem.text(this.tt.prefMenuDescriptions);
+				  }
+          else if (prefCat === 'keyboard') {
+					  $menuItem.text(this.tt.prefMenuKeyboard);
+				  }
+          else if (prefCat === 'transcript') {
+					  $menuItem.text(this.tt.prefMenuTranscript);
+				  }
+          $menuItem.on('click',function() {
+					  whichPref = $(this).text();
+            thisObj.setFullscreen(false);
+            if (whichPref === thisObj.tt.prefMenuCaptions) {
+						  thisObj.captionPrefsDialog.show();
+					  }
+            else if (whichPref === thisObj.tt.prefMenuDescriptions) {
+						  thisObj.descPrefsDialog.show();
+					  }
+            else if (whichPref === thisObj.tt.prefMenuKeyboard) {
+						  thisObj.keyboardPrefsDialog.show();
+					  }
+            else if (whichPref === thisObj.tt.prefMenuTranscript) {
+						  thisObj.transcriptPrefsDialog.show();
+					  }
+            thisObj.closePopups();
+				  });
+          $menu.append($menuItem);
+			  }
+			  this.$prefsButton.attr('data-prefs-popup','menu');
+      }
+      else if (this.prefCats.length == 1) {
+        // only 1 category, so don't create a popup menu.
+        // Instead, open dialog directly when user clicks Prefs button
+        this.$prefsButton.attr('data-prefs-popup',this.prefCats[0]);
+      }
 		}
 		else if (which === 'captions' || which === 'chapters') {
 			hasDefault = false;
@@ -3562,34 +3582,34 @@
 
 		if (this.chaptersPopup && this.chaptersPopup.is(':visible')) {
 			this.chaptersPopup.hide();
-			this.$chaptersButton.attr('aria-expanded','false').focus();
+			this.$chaptersButton.removeAttr('aria-expanded').focus();
 		}
 		if (this.captionsPopup && this.captionsPopup.is(':visible')) {
 			this.captionsPopup.hide();
-			this.$ccButton.attr('aria-expanded','false').focus();
+			this.$ccButton.removeAttr('aria-expanded').focus();
 		}
 		if (this.prefsPopup && this.prefsPopup.is(':visible')) {
 			this.prefsPopup.hide();
 			// restore menu items to their original state
 			this.prefsPopup.find('li').removeClass('able-focus').attr('tabindex','-1');
-			this.$prefsButton.attr('aria-expanded','false').focus();
+			this.$prefsButton.removeAttr('aria-expanded').focus();
 		}
 		if (this.$volumeSlider && this.$volumeSlider.is(':visible')) {
 			this.$volumeSlider.hide().attr('aria-hidden','true');
 			this.$volumeAlert.text(this.tt.volumeSliderClosed);
-			this.$volumeButton.attr('aria-expanded','false').focus();
+			this.$volumeButton.removeAttr('aria-expanded').focus();
 		}
 		if (this.$transcriptPopup && this.$transcriptPopup.is(':visible')) {
 			this.$transcriptPopup.hide();
 			// restore menu items to their original state
 			this.$transcriptPopup.find('li').removeClass('able-focus').attr('tabindex','-1');
-			this.$transcriptPopupButton.attr('aria-expanded','false').focus();
+			this.$transcriptPopupButton.removeAttr('aria-expanded').focus();
 		}
 		if (this.$signPopup && this.$signPopup.is(':visible')) {
 			this.$signPopup.hide();
 			// restore menu items to their original state
 			this.$signPopup.find('li').removeClass('able-focus').attr('tabindex','-1');
-			this.$signPopupButton.attr('aria-expanded','false').focus();
+			this.$signPopupButton.removeAttr('aria-expanded').focus();
 		}
 	};
 
@@ -3973,15 +3993,31 @@
 					});
 					if (control === 'volume' || control === 'preferences') {
 						if (control == 'preferences') {
-							popupMenuId = this.mediaId + '-prefs-menu';
+  						this.prefCats = this.getPreferencesGroups();
+              if (this.prefCats.length > 1) {
+  						  // Prefs button will trigger a menu
+                popupMenuId = this.mediaId + '-prefs-menu';
+                $newButton.attr({
+							    'aria-controls': popupMenuId,
+                  'aria-haspopup': 'menu'
+                });
+						  }
+              else if (this.prefCats.length === 1) {
+  						  // Prefs button will trigger a dialog
+                $newButton.attr({
+    						  'aria-haspopup': 'dialog'
+                });
+						  }
 						}
 						else if (control === 'volume') {
 							popupMenuId = this.mediaId + '-volume-slider';
+							// volume slider popup is not a menu or a dialog
+							// therefore, using aria-expanded rather than aria-haspopup to communicate properties/state
+              $newButton.attr({
+                'aria-controls': popupMenuId,
+    						'aria-expanded': 'false'
+              });
 						}
-						$newButton.attr({
-							'aria-controls': popupMenuId,
-							'aria-expanded': 'false'
-						});
 					}
 					if (this.iconType === 'font') {
 						if (control === 'volume') {
@@ -5955,6 +5991,121 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			this.setDuration(max);
 		}
 
+    // handle seekHead events
+		this.seekHead.on('mouseenter mouseleave mousemove mousedown mouseup focus blur touchstart touchmove touchend', function (e) {
+
+		  if (e.type === 'mouseenter' || e.type === 'focus') {
+  			thisObj.overHead = true;
+      }
+      else if (e.type === 'mouseleave' || e.type === 'blur') {
+  			thisObj.overHead = false;
+        if (!thisObj.overBody && thisObj.tracking && thisObj.trackDevice === 'mouse') {
+				  thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
+			  }
+      }
+      else if (e.type === 'mousemove' || e.type === 'touchmove') {
+  			if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+	  			thisObj.trackHeadAtPageX(e.pageX);
+        }
+      }
+      else if (e.type === 'mousedown' || e.type === 'touchstart') {
+  			thisObj.startTracking('mouse', thisObj.pageXToPosition(thisObj.seekHead.offset() + (thisObj.seekHead.width() / 2)));
+        if (!thisObj.bodyDiv.is(':focus')) {
+				  thisObj.bodyDiv.focus();
+			  }
+        e.preventDefault();
+      }
+      else if (e.type === 'mouseup' || e.type === 'touchend') {
+  			if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+	  			thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
+        }
+      }
+      if (e.type !== 'mousemove' && e.type !== 'mousedown' && e.type !== 'mouseup' && e.type !== 'touchstart' && e.type !== 'touchend') {
+  			thisObj.refreshTooltip();
+  		}
+		});
+
+    // handle bodyDiv events
+		this.bodyDiv.on(
+		  'mouseenter mouseleave mousemove mousedown mouseup keydown keyup touchstart touchmove touchend', function (e) {
+
+  		if (e.type === 'mouseenter') {
+  			thisObj.overBody = true;
+		  }
+		  else if (e.type === 'mouseleave') {
+  			thisObj.overBody = false;
+        thisObj.overBodyMousePos = null;
+  			if (!thisObj.overHead && thisObj.tracking && thisObj.trackDevice === 'mouse') {
+	  			thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
+			  }
+      }
+      else if (e.type === 'mousemove' || e.type === 'touchmove') {
+  			thisObj.overBodyMousePos = {
+	  			x: e.pageX,
+          y: e.pageY
+			  };
+        if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+				  thisObj.trackHeadAtPageX(e.pageX);
+			  }
+      }
+      else if (e.type === 'mousedown' || e.type === 'touchstart') {
+  			thisObj.startTracking('mouse', thisObj.pageXToPosition(e.pageX));
+        thisObj.trackHeadAtPageX(e.pageX);
+        if (!thisObj.seekHead.is(':focus')) {
+				  thisObj.seekHead.focus();
+			  }
+        e.preventDefault();
+      }
+      else if (e.type === 'mouseup' || e.type === 'touchend') {
+        if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+				  thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
+			  }
+      }
+      else if (e.type === 'keydown') {
+	  		// Home
+  			if (e.which === 36) {
+		  		thisObj.trackImmediatelyTo(0);
+			  }
+        // End
+        else if (e.which === 35) {
+				  thisObj.trackImmediatelyTo(thisObj.duration);
+			  }
+        // Left arrow or down arrow
+        else if (e.which === 37 || e.which === 40) {
+				  thisObj.arrowKeyDown(-1);
+			  }
+        // Right arrow or up arrow
+        else if (e.which === 39 || e.which === 38) {
+				  thisObj.arrowKeyDown(1);
+			  }
+        // Page up
+        else if (e.which === 33 && bigInterval > 0) {
+				  thisObj.arrowKeyDown(bigInterval);
+			  }
+        // Page down
+        else if (e.which === 34 && bigInterval > 0) {
+				  thisObj.arrowKeyDown(-bigInterval);
+			  }
+        else {
+				  return;
+			  }
+        e.preventDefault();
+      }
+      else if (e.type === 'keyup') {
+  			if (e.which >= 33 && e.which <= 40) {
+	  			if (thisObj.tracking && thisObj.trackDevice === 'keyboard') {
+		  			thisObj.stopTracking(thisObj.keyTrackPosition);
+          }
+          e.preventDefault();
+			  }
+      }
+      if (e.type !== 'mouseup' && e.type !== 'keydown' && e.type !== 'keydown') {
+  			thisObj.refreshTooltip();
+  		}
+		});
+
+/* Old event listeners on seekHead and bodyDiv...
+
 		this.seekHead.hover(function (e) {
 			thisObj.overHead = true;
 			thisObj.refreshTooltip();
@@ -6076,6 +6227,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 				e.preventDefault();
 			}
 		});
+*/
 	}
 
 	AccessibleSlider.prototype.arrowKeyDown = function (multiplier) {
@@ -6818,7 +6970,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			e.stopPropagation();
 		});
 
-		$('body > *').not('.able-modal-overlay').not('.able-modal-dialog').attr('aria-hidden', 'false');
+		$('body > *').not('.able-modal-overlay').not('.able-modal-dialog').removeAttr('aria-hidden');
 	};
 
 	AccessibleDialog.prototype.show = function () {
@@ -6865,7 +7017,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		}
 		this.modal.css('display', 'none');
 		this.modal.attr('aria-hidden', 'true');
-		$('body > *').not('.able-modal-overlay').not('.able-modal-dialog').attr('aria-hidden', 'false');
+		$('body > *').not('.able-modal-overlay').not('.able-modal-dialog').removeAttr('aria-hidden');
 
 		this.focusedElementBeforeModal.focus();
 	};
@@ -7638,7 +7790,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		deferred = new $.Deferred();
 		promise = deferred.promise();
 		thisObj = this;
-
 		if (typeof duration !== 'undefined' && typeof elapsed !== 'undefined') {
 			mediaTimes['duration'] = duration;
 			mediaTimes['elapsed'] = elapsed;
@@ -7771,7 +7922,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			return;
 		}
 		*/
-
 		var deferred, promise, thisObj, duration, elapsed;
 		deferred = new $.Deferred();
 		promise = deferred.promise();
@@ -7782,7 +7932,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 				deferred.resolve('ended');
 			}
 			else if (this.media.paused) {
-				deferred.resolve('paused');
+  		  deferred.resolve('paused');
 			}
 			else if (this.media.readyState !== 4) {
 				deferred.resolve('buffering');
@@ -8227,8 +8377,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 					this.$ccButton.attr({
 						'aria-label': this.tt.captions,
 						'aria-haspopup': 'true',
-						'aria-controls': this.mediaId + '-captions-menu',
-						'aria-expanded': 'false'
+						'aria-controls': this.mediaId + '-captions-menu'
 					});
 					this.$ccButton.find('span.able-clipped').text(this.tt.captions);
 				}
@@ -8270,7 +8419,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 				}
 			}
 		}
-
 		if (context === 'playpause' || context == 'init'){
 			if (typeof this.$bigPlayButton !== 'undefined' && typeof this.seekBar !== 'undefined') {
 				// Choose show/hide for big play button and adjust position.
@@ -8316,7 +8464,11 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 						// Set a flag to ignore the coming scroll event.
 						// there's no other way I know of to differentiate programmatic and user-initiated scroll events.
 						this.scrollingTranscript = true;
-						$('.able-transcript').scrollTop(newTop);
+						// only scroll once after moving a highlight
+						if (this.movingHighlight) {
+  						$('.able-transcript').scrollTop(newTop);
+              this.movingHighlight = false;
+            }
 					}
 				}
 			}
@@ -8328,8 +8480,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 				this.$chaptersButton.attr({
 					'aria-label': this.tt.chapters,
 					'aria-haspopup': 'true',
-					'aria-controls': this.mediaId + '-chapters-menu',
-					'aria-expanded': 'false'
+					'aria-controls': this.mediaId + '-chapters-menu'
 				});
 			}
 		}
@@ -8373,28 +8524,45 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 					// also don't update while tracking, since this may Pause/Play the player but we don't want to send a Pause/Play update.
 					this.getPlayerState().then(function(currentState) {
 						if (thisObj.$status.text() !== textByState[currentState] && !thisObj.seekBar.tracking) {
-							// Debounce updates; only update after status has stayed steadily different for 250ms.
-							timestamp = (new Date()).getTime();
+							// Debounce updates; only update after status has stayed steadily different for a while
+							// "A while" is defined differently depending on context
+							if (thisObj.swappingSrc) {
+                // this is where most of the chatter occurs (e.g., playing, paused, buffering, playing),
+                // so set a longer wait time before writing a status message
+                if (!thisObj.debouncingStatus) {
+                  thisObj.statusMessageThreshold = 2000; // in ms (2 seconds)
+                }
+              }
+              else {
+                // for all other contexts (e.g., users clicks Play/Pause)
+                // user should receive more rapid feedback
+                if (!thisObj.debouncingStatus) {
+                  thisObj.statusMessageThreshold = 250; // in ms
+                }
+              }
+  						timestamp = (new Date()).getTime();
 							if (!thisObj.statusDebounceStart) {
 								thisObj.statusDebounceStart = timestamp;
-								// Make sure refreshControls gets called again at the appropriate time to check.
+								// Call refreshControls() again after allotted time has passed
+								thisObj.debouncingStatus = true;
 								thisObj.statusTimeout = setTimeout(function () {
+                  thisObj.debouncingStatus = false;
 									thisObj.refreshControls(context);
-								}, 300);
+								}, thisObj.statusMessageThreshold);
 							}
-							else if ((timestamp - thisObj.statusDebounceStart) > 250) {
-								thisObj.$status.text(textByState[currentState]);
-								thisObj.statusDebounceStart = null;
-								clearTimeout(thisObj.statusTimeout);
-								thisObj.statusTimeout = null;
-							}
+							else if ((timestamp - thisObj.statusDebounceStart) > thisObj.statusMessageThreshold) {
+    						thisObj.$status.text(textByState[currentState]);
+                thisObj.statusDebounceStart = null;
+                clearTimeout(thisObj.statusTimeout);
+                thisObj.statusTimeout = null;
+						  }
 						}
 						else {
 							thisObj.statusDebounceStart = null;
+							thisObj.debouncingStatus = false;
 							clearTimeout(thisObj.statusTimeout);
 							thisObj.statusTimeout = null;
 						}
-
 						// Don't change play/pause button display while using the seek bar (or if YouTube stopped)
 						if (!thisObj.seekBar.tracking && !thisObj.stoppingYouTube) {
 							if (currentState === 'paused' || currentState === 'stopped' || currentState === 'ended') {
@@ -8699,7 +8867,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			if (this.captionsPopup && this.captionsPopup.is(':visible')) {
 				this.captionsPopup.hide();
 				this.hidingPopup = false;
-				this.$ccButton.attr('aria-expanded','false').focus();
+				this.$ccButton.removeAttr('aria-expanded').focus();
 			}
 			else {
 				this.closePopups();
@@ -8726,7 +8894,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		if (this.chaptersPopup.is(':visible')) {
 			this.chaptersPopup.hide();
 			this.hidingPopup = false;
-			this.$chaptersButton.attr('aria-expanded','false').focus();
+			this.$chaptersButton.removeAttr('aria-expanded').focus();
 		}
 		else {
 			this.closePopups();
@@ -8760,6 +8928,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	};
 
 	AblePlayer.prototype.handlePrefsClick = function(pref) {
+
 		// NOTE: the prefs menu is positioned near the right edge of the player
 		// This assumes the Prefs button is also positioned in that vicinity
 		// (last or second-last button the right)
@@ -8775,7 +8944,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		if (this.prefsPopup.is(':visible')) {
 			this.prefsPopup.hide();
 			this.hidingPopup = false;
-			this.$prefsButton.attr('aria-expanded','false').focus();
+			this.$prefsButton.removeAttr('aria-expanded').focus();
 			// restore each menu item to original hidden state
 			this.prefsPopup.find('li').removeClass('able-focus').attr('tabindex','-1');
 		}
@@ -9759,6 +9928,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	}
 
 	AblePlayer.prototype.stylizeCaptions = function($element, pref) {
+
 		// $element is the jQuery element containing the captions
 		// this function handles stylizing of the sample caption text in the Prefs dialog
 		// plus the actual production captions
@@ -10573,10 +10743,15 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			}
 
 			if (currentTime >= start && currentTime <= end && !isChapterHeading) {
-				// move all previous highlights before adding one to current span
-				thisObj.$transcriptArea.find('.able-highlight').removeClass('able-highlight');
-				$(this).addClass('able-highlight');
-				return false;
+
+  		  // If this item isn't already highlighted, it should be
+  		  if (!($(this).hasClass('able-highlight'))) {
+  				// remove all previous highlights before adding one to current span
+          thisObj.$transcriptArea.find('.able-highlight').removeClass('able-highlight');
+          $(this).addClass('able-highlight');
+          thisObj.movingHighlight = true;
+        }
+        return false;
 			}
 		});
 		thisObj.currentHighlight = $('.able-highlight');
@@ -11128,11 +11303,11 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 (function ($) {
 	// Media events
 	AblePlayer.prototype.onMediaUpdateTime = function (duration, elapsed) {
+
 		// duration and elapsed are passed from callback functions of Vimeo API events
 		// duration is expressed as sss.xxx
 		// elapsed is expressed as sss.xxx
 		var thisObj = this;
-
 		this.getMediaTimes(duration,elapsed).then(function(mediaTimes) {
 		  thisObj.duration = mediaTimes['duration'];
       thisObj.elapsed = mediaTimes['elapsed'];
@@ -11313,7 +11488,9 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	AblePlayer.prototype.onClickPlayerButton = function (el) {
 
 		// TODO: This is super-fragile since we need to know the length of the class name to split off; update this to other way of dispatching?
-		var whichButton = $(el).attr('class').split(' ')[0].substr(20);
+
+		var whichButton, prefsPopup;
+		whichButton = $(el).attr('class').split(' ')[0].substr(20);
 		if (whichButton === 'play') {
   		this.clickedPlay = true;
 			this.handlePlay();
@@ -11363,7 +11540,25 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			this.handleSignToggle();
 		}
 		else if (whichButton === 'preferences') {
-			this.handlePrefsClick();
+      if ($(el).attr('data-prefs-popup') === 'menu') {
+  			this.handlePrefsClick();
+  		}
+  		else {
+        this.closePopups();
+    		prefsPopup = $(el).attr('data-prefs-popup');
+        if (prefsPopup === 'keyboard') {
+				  this.keyboardPrefsDialog.show();
+				}
+        else if (prefsPopup === 'captions') {
+				  this.captionPrefsDialog.show();
+				}
+        else if (prefsPopup === 'descriptions') {
+				  this.descPrefsDialog.show();
+				}
+        else if (prefsPopup === 'transcript') {
+				  this.transcriptPrefsDialog.show();
+				}
+  		}
 		}
 		else if (whichButton === 'help') {
 			this.handleHelpClick();
@@ -11414,7 +11609,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		if (which >= 65 && which <= 90) {
 			which += 32;
 		}
-
 		// Only use keypress to control player if focus is NOT on a form field or contenteditable element
 		if (!(
 			$(':focus').is('[contenteditable]') ||
@@ -11538,7 +11732,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 					if (!thisObj.startedPlaying) {
 							// start playing; no further user action is required
 						thisObj.playMedia();
-				 		}
+				 	}
 					thisObj.userClickedPlaylist = false; // reset
 				}
 				if (thisObj.seekTrigger == 'restart' || thisObj.seekTrigger == 'chapter' || thisObj.seekTrigger == 'transcript') {
@@ -11582,11 +11776,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 					// already started playing
 					// we're here because a new media source has been loaded and is ready to resume playback
 					thisObj.getPlayerState().then(function(currentState) {
-						if (thisObj.swappingSrc && currentState === 'stopped') {
-							// Safari is the only browser that returns value of 'stopped' (observed in 12.0.1 on MacOS)
-							// This prevents 'timeupdate' events from triggering, which prevents the new media src
-							// from resuming playback at swapTime
-							// This is a hack to jump start Safari
+						if (thisObj.swappingSrc && (currentState === 'stopped' || currentState === 'paused')) {
 							thisObj.startedPlaying = false;
 							if (thisObj.swapTime > 0) {
 								thisObj.seekTo(thisObj.swapTime);
@@ -11630,8 +11820,8 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			.on('pause',function() {
 				if (!thisObj.clickedPlay) {
 					// 'pause' was triggered automatically, not initiated by user
-					// this happens in some browsers (not Chrome, as of 70.x)
-					// when swapping source (e.g., between tracks in a playlist, or swapping description)
+					// this happens in some browsers when swapping source
+					// (e.g., between tracks in a playlist or swapping description)
 					if (thisObj.hasPlaylist || thisObj.swappingSrc) {
 						// do NOT set playing to false.
 						// doing so prevents continual playback after new track is loaded
@@ -12067,44 +12257,42 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 
 		// add event listener to toolbar to start and end drag
 		// other event listeners will be added when drag starts
-		$toolbar.on('mousedown', function(e) {
+		$toolbar.on('mousedown mouseup touchstart touchend', function(e) {
 			e.stopPropagation();
-			if (!thisObj.windowMenuClickRegistered) {
-				thisObj.windowMenuClickRegistered = true;
-				thisObj.startMouseX = e.pageX;
-				thisObj.startMouseY = e.pageY;
-				thisObj.dragDevice = 'mouse';
-				thisObj.startDrag(which, $window);
-			}
-			return false;
-		});
-		$toolbar.on('mouseup', function(e) {
-			e.stopPropagation();
-			if (thisObj.dragging && thisObj.dragDevice === 'mouse') {
-				thisObj.endDrag(which);
-			}
-			return false;
+			if (e.type === 'mousedown' || e.type === 'touchstart') {
+  			if (!thisObj.windowMenuClickRegistered) {
+	  			thisObj.windowMenuClickRegistered = true;
+          thisObj.startMouseX = e.pageX;
+          thisObj.startMouseY = e.pageY;
+          thisObj.dragDevice = 'mouse'; // ok to use this even if device is a touchpad
+          thisObj.startDrag(which, $window);
+			  }
+      }
+      else if (e.type === 'mouseup' || e.type === 'touchend') {
+        if (thisObj.dragging && thisObj.dragDevice === 'mouse') {
+				  thisObj.endDrag(which);
+			  }
+      }
+      return false;
 		});
 
 		// add event listeners for resizing
-		$resizeHandle.on('mousedown', function(e) {
-
+		$resizeHandle.on('mousedown mouseup touchstart touchend', function(e) {
 			e.stopPropagation();
-			if (!thisObj.windowMenuClickRegistered) {
-				thisObj.windowMenuClickRegistered = true;
-				thisObj.startMouseX = e.pageX;
-				thisObj.startMouseY = e.pageY;
-				thisObj.startResize(which, $window);
-				return false;
-			}
-		});
-
-		$resizeHandle.on('mouseup', function(e) {
-			e.stopPropagation();
-			if (thisObj.resizing) {
-				thisObj.endResize(which);
-			}
-			return false;
+			if (e.type === 'mousedown' || e.type === 'touchstart') {
+  			if (!thisObj.windowMenuClickRegistered) {
+	  			thisObj.windowMenuClickRegistered = true;
+          thisObj.startMouseX = e.pageX;
+          thisObj.startMouseY = e.pageY;
+          thisObj.startResize(which, $window);
+			  }
+      }
+      else if (e.type === 'mouseup' || e.type === 'touchend') {
+  			if (thisObj.resizing) {
+	  			thisObj.endResize(which);
+        }
+      }
+      return false;
 		});
 
 		// whenever a window is clicked, bring it to the foreground
@@ -12549,8 +12737,8 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		}).focus();
 
 		// add device-specific event listeners
-		if (this.dragDevice === 'mouse') {
-			$(document).on('mousemove',function(e) {
+		if (this.dragDevice === 'mouse') { // might also be a touchpad
+			$(document).on('mousemove touchmove',function(e) {
 				if (thisObj.dragging) {
 					// calculate new top left based on current mouse position - offset
 					newX = e.pageX - thisObj.dragOffsetX;
@@ -12654,7 +12842,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			$windowButton = this.$signPopupButton;
 		}
 
-		$(document).off('mousemove mouseup');
+		$(document).off('mousemove mouseup touchmove touchup');
 		this.$activeWindow.off('keydown').removeClass('able-drag');
 
 		if (this.dragDevice === 'keyboard') {
@@ -12731,7 +12919,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		this.dragStartHeight = this.$activeWindow.height();
 
 		// add event listeners
-		$(document).on('mousemove',function(e) {
+		$(document).on('mousemove touchmove',function(e) {
 			if (thisObj.resizing) {
 				// calculate new width and height based on changes to mouse position
 				newWidth = thisObj.dragStartWidth + (e.pageX - thisObj.startMouseX);
@@ -12755,7 +12943,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			$windowButton = this.$signPopupButton;
 		}
 
-		$(document).off('mousemove mouseup');
+		$(document).off('mousemove mouseup touchmove touchup');
 		this.$activeWindow.off('keydown');
 
 		$windowButton.show().focus();
@@ -12790,11 +12978,21 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			// If sign language is provided, it must be provided for all sources
 			this.signFile = this.$sources.first().attr('data-sign-src');
 			if (this.signFile) {
-				if (this.debug) {
-					console.log('This video has an accompanying sign language video: ' + this.signFile);
-				}
-				this.hasSignLanguage = true;
-				this.injectSignPlayerCode();
+  		  if (this.isIOS()) {
+    		  // IOS does not allow multiple videos to play simultaneously
+    		  // Therefore, sign language as rendered by Able Player unfortunately won't work
+          this.hasSignLanguage = false;
+          if (this.debug) {
+            console.log('Sign language has been disabled due to IOS restrictions');
+          }
+        }
+        else {
+  				if (this.debug) {
+	  				console.log('This video has an accompanying sign language video: ' + this.signFile);
+          }
+          this.hasSignLanguage = true;
+          this.injectSignPlayerCode();
+        }
 			}
 			else {
 				this.hasSignLanguage = false;
@@ -12808,17 +13006,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	AblePlayer.prototype.injectSignPlayerCode = function() {
 
 		// create and inject surrounding HTML structure
-		// If IOS:
-		//	If video:
-		//	 IOS does not support any of the player's functionality
-		//	 - everything plays in its own player
-		//	 Therefore, AblePlayer is not loaded & all functionality is disabled
-		//	 (this all determined. If this is IOS && video, this function is never called)
-		//	If audio:
-		//	 HTML cannot be injected as a *parent* of the <audio> element
-		//	 It is therefore injected *after* the <audio> element
-		//	 This is only a problem in IOS 6 and earlier,
-		//	 & is a known bug, fixed in IOS 7
 
 		var thisObj, signVideoId, signVideoWidth, i, signSrc, srcType, $signSource;
 
@@ -13882,10 +14069,10 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		thisObj = this;
 		// get language of the web page, if specified
 		if ($('body').attr('lang')) {
-			lang = $('body').attr('lang');
+			lang = $('body').attr('lang').toLowerCase();
 		}
 		else if ($('html').attr('lang')) {
-			lang = $('html').attr('lang');
+			lang = $('html').attr('lang').toLowerCase();
 		}
 		else {
 			lang = null;
@@ -15389,7 +15576,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 
 	AblePlayer.prototype.getVimeoDimensions = function (vimeoContainerId) {
 
-		// get dimensions of YouTube video, return array with width & height
+		// get dimensions of Vimeo video, return array with width & height
 		// Sources, in order of priority:
 		// 1. The width and height attributes on <video>
 		// 2. YouTube (not yet supported; can't seem to get this data via YouTube Data API without OAuth!)
@@ -15422,6 +15609,9 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	};
 
 	AblePlayer.prototype.resizeVimeoPlayer = function(youTubeId, youTubeContainerId) {
+
+    // NOTE: This function is modeled after same function in youtube.js
+    // in case useful for Vimeo, but is not currently used
 
 		// called after player is ready, if youTube dimensions were previously unknown
 		// Now need to get them from the iframe element that YouTube injected
@@ -15479,6 +15669,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 
 	AblePlayer.prototype.setupVimeoCaptions = function () {
 
+console.log('setupVimeoCaptions');
 		// called from setupAltCaptions if player is YouTube and there are no <track> captions
 
 		// use YouTube Data API to get caption data from YouTube
@@ -15591,6 +15782,11 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	};
 
 	AblePlayer.prototype.initVimeoCaptionModule = function () {
+
+    // NOTE: This function is modeled after same function in youtube.js
+    // in case useful for Vimeo, but is not currently used
+
+
 		// This function is called when YouTube onApiChange event fires
 		// to indicate that the player has loaded (or unloaded) a module with exposed API methods
 		// it isn't fired until the video starts playing
@@ -15657,6 +15853,9 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	};
 
 	AblePlayer.prototype.getVimeoPosterUrl = function (youTubeId, width) {
+
+    // NOTE: This function is modeled after same function in youtube.js
+    // in case useful for Vimeo, but is not currently used
 
 			 // return a URL for retrieving a YouTube poster image
 			 // supported values of width: 120, 320, 480, 640

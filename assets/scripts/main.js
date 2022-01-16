@@ -1,6 +1,14 @@
 (function () {
   'use strict';
 
+  var t = function(enstring) {
+    if (translationStrings[enstring]) {
+      return translationStrings[enstring];
+    } else {
+      return enstring;
+    }
+  }
+
   var addclass = function(el, className) {
     if (el.classList)
       el.classList.add(className);
@@ -294,10 +302,12 @@ if (document.querySelector('main')) {
     });
   }
 
+  /* Expand collapse support*/
   var excolAll = document.querySelectorAll('.excol-all');
-  var excols =  document.querySelectorAll('details');
+  var excols = document.querySelectorAll('details');
+  var excols2 = document.querySelectorAll('div[data-details]');
 
-  if ((excolAll !== null) && (excols !== null) && (excols.length > 1)) {
+  if ((excolAll !== null) && (excols !== null) && (excolAll.length > 0) && ((excols.length > 1) || (excols2.length > 1))) {
     function enableButtons(els) {
       Array.prototype.forEach.call(els, function(el, i){
         el.disabled = false;
@@ -310,8 +320,8 @@ if (document.querySelector('main')) {
     }
     function setExColAllButtons() {
       setTimeout(function(){
-        var open  = document.querySelectorAll('details[open]').length;
-        var close = document.querySelectorAll('details:not([open])').length;
+        var open  = document.querySelectorAll('details[open]').length + document.querySelectorAll('div[data-details][aria-expanded=true]').length;
+        var close = document.querySelectorAll('details:not([open])').length + document.querySelectorAll('div[data-details][aria-expanded=false]').length;
         if((open > 0) && (close === 0)) {
           enableButtons(document.querySelectorAll('.excol-all .collapse'));
           disableButtons(document.querySelectorAll('.excol-all .expand'));
@@ -330,21 +340,25 @@ if (document.querySelector('main')) {
     });
 
     Array.prototype.forEach.call(excolAll, function(el, i){
-      el.innerHTML = '<button class="expand button button-secondary button-small">+ Expand All Sections</button> <button class="collapse button button-secondary button-small">&minus; Collapse All Sections</button>';
-    });
+      const expandText = el.dataset.expandText || 'Expand All Sections';
+      const collapseText = el.dataset.collapseText || 'Collapse All Sections';
+      el.innerHTML = '<button class="expand button button-secondary button-small">+ ' + t(expandText) + '</button> <button class="collapse button button-secondary button-small">&minus; ' + t(collapseText) + '</button>';
 
-    Array.prototype.forEach.call(document.querySelectorAll('.excol-all'), function(el, i){
       el.addEventListener("click", function(element) {
         if (hasclass(element.target, 'expand')) {
-          Array.prototype.forEach.call(document.querySelectorAll('details'), function(el, i){
+          Array.prototype.forEach.call(excols, function(el, i){
             el.setAttribute('open', 'true');
           });
         }
         if (hasclass(element.target, 'collapse')) {
-          Array.prototype.forEach.call(document.querySelectorAll('details'), function(el, i){
+          Array.prototype.forEach.call(excols, function(el, i){
             el.removeAttribute('open');
           });
         }
+        var exp = (hasclass(element.target, 'expand')) ? "true" : "false";
+        Array.prototype.forEach.call(excols2, function(el, i){
+          el.setAttribute('aria-expanded', exp);
+        });
         setExColAllButtons();
       });
     });
@@ -408,28 +422,33 @@ if (document.querySelector('main')) {
   var footnoteBox = document.querySelector('div.footnotes');
 
   if (footnoteBox !== null) {
+    var footnotesTitle = document.querySelector('body').getAttribute('data-footnotestitle');
+    if (!footnotesTitle) {
+      footnotesTitle = 'Footnotes';
+    }
+
     addclass(footnoteBox, 'box');
     addclass(footnoteBox, 'box-simple');
     footnoteBox.setAttribute('role', 'complementary');
-    footnoteBox.setAttribute('aria-label', 'References');
+    footnoteBox.setAttribute('aria-label', footnotesTitle);
 
     var header = document.createElement("header");
-    header.innerHTML = '<h2>References</h2>';
+    header.innerHTML = '<h2>' + footnotesTitle + '</h2>';
     addclass(header, 'box-h');
     footnoteBox.insertBefore(header, footnoteBox.querySelector('ol'));
 
     var footnoteLinks = document.querySelectorAll('sup a.footnote');
 
     Array.prototype.forEach.call(footnoteLinks, function(element, i){
-      element.setAttribute('aria-label', 'to footnote ' + element.textContent);
-      element.setAttribute('title', 'to footnote ' + element.textContent);
+      element.setAttribute('aria-label', t('to footnote') + ' ' + element.textContent);
+      element.setAttribute('title',      t('to footnote') + ' ' + element.textContent);
     });
 
     var footnoteBackLinks = footnoteBox.querySelectorAll('a.reversefootnote');
 
     Array.prototype.forEach.call(footnoteBackLinks, function(element, i){
-      element.setAttribute('aria-label', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
-      element.setAttribute('title', 'back to footnote ' + element.getAttribute('href').replace('#fnref:','') + ' in text');
+      element.setAttribute('aria-label', t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('in text'));
+      element.setAttribute('title',      t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('in text'));
     });
 
   }

@@ -1,0 +1,119 @@
+<aside class="your-report {%- if include.expanded != 'true' -%}your-report--expanded{%- endif -%}">
+    {%- if include.expanded == 'true' -%}
+    <h2 class="your-report__heading">
+        <div>
+            {% if include.heading_before %}
+            <small class="your-report__heading-pre">
+                {{ include.heading_before }}
+            </small>{% endif %} 
+            {{ include.heading }}
+        </div> 
+        <button
+            type="button" 
+            class="button-secondary button-small your-report__showhide">
+            <span>Hide</span> 
+            <svg
+                aria-hidden="true" 
+                focusable="false" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16"
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round"
+                stroke-linejoin="round" 
+            >
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </h2>
+    <p class="your-report__description">{{ include.description }}</p>
+        {% include progress-bar.html percentage="15" %}
+
+    <ul class="your-report__progress-by-principle svelte-60ir8u">
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/1"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">A.1</span></a> <span
+                    class="progress__part svelte-1thiyrp">2 of 3</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 66.66666666666667%"><span class="visuallyhidden">66.66666666666667 %</span></span>
+            </div>
+        </li>
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/2"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">A.2</span></a> <span
+                    class="progress__part svelte-1thiyrp">0 of 4</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 0%"><span class="visuallyhidden">0 %</span></span></div>
+        </li>
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/3"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">A.3</span></a> <span
+                    class="progress__part svelte-1thiyrp">2 of 13</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 15.384615384615385%"><span class="visuallyhidden">15.384615384615385 %</span></span>
+            </div>
+        </li>
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/4"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">A.4</span></a> <span
+                    class="progress__part svelte-1thiyrp">4 of 4</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 100%"><span class="visuallyhidden">100 %</span></span></div>
+        </li>
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/5"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">B.1</span></a> <span
+                    class="progress__part svelte-1thiyrp">0 of 6</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 0%"><span class="visuallyhidden">0 %</span></span></div>
+        </li>
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/6"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">B.2</span></a> <span
+                    class="progress__part svelte-1thiyrp">0 of 10</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 0%"><span class="visuallyhidden">0 %</span></span></div>
+        </li>
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/7"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">B.3</span></a> <span
+                    class="progress__part svelte-1thiyrp">0 of 6</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 0%"><span class="visuallyhidden">0 %</span></span></div>
+        </li>
+        <li class="progress svelte-1thiyrp">
+            <div class="progress__principle svelte-1thiyrp"><a href="/WAI/atag/report-tool/principle/8"
+                    class="principle__name svelte-1thiyrp"><span class="svelte-1thiyrp">B.4</span></a> <span
+                    class="progress__part svelte-1thiyrp">0 of 6</span></div>
+            <div class="progress-bar svelte-13xr7x8"><span class="progress-bar__progress svelte-13xr7x8"
+                    style="width: 0%"><span class="visuallyhidden">0 %</span></span></div>
+        </li>
+    </ul> 
+    
+    {% include button.html label="View Report" %}
+    {% include button.html label="New Report" class="secondary" %}
+    {%- else -%}
+    <button
+    type="button" 
+    class="button-secondary button-small your-report__showhide">
+      <svg
+          aria-hidden="true"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+      </svg>    
+      <span>Show</span> 
+    </button>
+    {%- endif -%}
+</aside>

@@ -1,0 +1,37 @@
+<ul class="results-by-category">
+  <li class="results-by-category__item">
+    <span class="results-by-category__number">3</span> 
+    <span class="results-by-category__label">Passed</span>
+  </li>
+  <li class="results-by-category__item">
+    <span class="results-by-category__number">3</span> 
+    <span class="results-by-category__label">Failed</span>
+  </li>
+  <li class="results-by-category__item">
+    <span class="results-by-category__number">1</span> 
+    <span class="results-by-category__label">Cannot tell</span>
+  </li>
+  <li class="results-by-category__item">
+    <span class="results-by-category__number">1</span> 
+    <span class="results-by-category__label">Not applicable</span>
+  </li>
+  <li class="results-by-category__item">
+    <span class="results-by-category__number">44</span> 
+    <span class="results-by-category__label">Not checked</span>
+  </li>
+</ul>
+
+{%- if include.show_missing -%}
+<details>
+  <summary>
+    <h3>Not checked (44)</h3>
+  </summary> 
+  <ul class="results-by-category__missing">
+    <li><a href="/WAI/atag/repot-tool/principle/1#a121">A.1.2.1: Accessibility Guidelines</a></li>
+    <li><a href="/WAI/atag/report-tool/principle/2#a211">A.2.1.1: Text Alternatives for Rendered Non-Text Content</a></li>
+    <li><a href="/WAI/atag/report-tool/principle/2#a212">A.2.1.2: Alternatives for Rendered Time-Based Media</a></li>
+    <li><a href="/WAI/atag/report-tool/principle/2#a221">A.2.2.1: Editing-View Status Indicators</a></li>
+    <li><a href="/WAI/atag/report-tool/principle/2#a222">A.2.2.2: Access to Rendered Text Properties</a></li>
+  </ul>
+</details>
+{%- endif -%}

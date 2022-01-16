@@ -21,9 +21,9 @@ Expand/collapses, or disclosures, are used to show and or hide content condition
 {% include box.html type="end" %}
 {:/}
 
-{::nomarkdown}
-{% include box.html type="start" title="Code" class="example" %}
-{:/}
+## Code 
+
+Standard expand collapse:
 
 ```liquid
 {%raw%}{% include excol.html type="start" id="optional-id" %}
@@ -38,14 +38,20 @@ Content of the expand/collapse.
 {%endraw%}
 ```
 
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
+### Parameters
 
+`type="start"`
+`type="middle"`
+`type="end"`
+: For one expand/collapse, you will specify where it starts and ends, and where the cutoff point is (middle).
 
-{::nomarkdown}
-{% include box.html type="start" title="Rendered output" class="example" %}
-{:/}
+`open="true"` (optional)
+: To set the expand/collapse to be expanded by default, specify `open=true`
+
+`id="optional-id"` (optional)
+: Set an ID to the expand/collapse if you require one.
+
+## Rendered output
 
 {% include excol.html type="start" id="optional-id" %}
 
@@ -56,10 +62,6 @@ Content of the expand/collapse.
 Content of the expand/collapse.
 
 {% include excol.html type="end" %}
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
 
 {::nomarkdown}
 {% include box.html type="start" title="HTML output (DO NOT USE)" class="example simple" %}

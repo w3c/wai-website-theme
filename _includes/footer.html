@@ -12,17 +12,38 @@
 {%- else -%}
   {%- assign changelog = "" -%}
 {%- endif -%}
+{%- if page.acknowledgements -%}
+  {%- assign acknowledgementspage=site.documents | where:"ref", page.acknowledgements | first -%}
+  {%- unless acknowledgementspage.ref -%}
+    {%- assign acknowledgementspage=site.pages | where:"ref", page.acknowledgements | first -%}
+  {%- endunless -%}
+  {% assign acknowledgementspageurl = acknowledgementspage.url | relative_url %}
+  {%- capture acknowledgementstext -%}
+  {%- include_cached t.html t="Acknowledgements" lang=page.lang -%}
+  {%- endcapture -%}
+  {%- assign acknowledgements = '<a href="' | append: acknowledgementspageurl | append: '">' | append: acknowledgementstext | append: '</a>' -%}
+{%- else -%}
+  {%- assign acknowledgements = "" -%}
+{%- endif -%}
 {% if col.footer %}
 <footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
-  <div class="inner">
-    {{col.footer | replace: "CHANGELOG", changelog }}
+  <div class="inner" 
+    {% if page.layout == "standalone_resource" %}
+      style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
+    {% endif %}>
+    {{ col.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
+    {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
   </div>
 </footer>
 {% else %}
   {% if page.footer %}
   <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
-    <div class="inner">
-      {{page.footer | replace: "CHANGELOG", changelog}}
+    <div class="inner" 
+      {% if page.layout == "standalone_resource" %}
+        style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
+      {% endif %}>
+      {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
+      {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
     </div>
   </footer>
   {% endif %}
@@ -71,6 +92,17 @@
 <script>
   svg4everybody();
 </script>
+{%- assign defaultlang = false -%}
+{%- if include.lang == "en"-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if include.lang == ""-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if include.lang == "en_US"-%}{%- assign defaultlang = true -%}{%- endif -%}
+{%- if defaultlang == true -%}
+<script>
+  var translationStrings = {};
+</script>
+{% else %}
+<script src="{{ '/assets/scripts/lang/' | append: page.lang | append: '.js' | append: timestamp | relative_url }}"></script>
+{%- endif -%}
 <!-- Matomo -->
 <script>
   var _paq = _paq || [];

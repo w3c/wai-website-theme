@@ -1,0 +1,26 @@
+.video-card {
+  max-width: 100%;
+  width: 100%;
+
+  @media (--medlarge) {
+    float: inline-end;
+    max-width: 45%;
+    margin-inline-start: 2em;
+  }
+}
+  .video-card p {
+    font-size: small;
+  }
+  .video-card video {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  .video-card ~ h2,
+  .video-card ~ aside,
+  .video-card ~ hr {
+    clear: inline-end;
+  }
+  .video-card .able {
+    margin-top: 0;
+  }
