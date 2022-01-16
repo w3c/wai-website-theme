@@ -12,7 +12,7 @@ jobs:
         node-version: [8.x]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -24,9 +24,9 @@ jobs:
         npm install gulp -D
         gulp css
     - name: Auto Commit changed files
-      uses: stefanzweifel/git-auto-commit-action@v1.0.0
+      uses: stefanzweifel/git-auto-commit-action@v4
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        COMMIT_MESSAGE: "Update CSS"
-        COMMIT_AUTHOR_EMAIL: "ee+gh@w3.org"
+        GITHUB_TOKEN: ${{ secrets.PAT }}
+        COMMIT_MESSAGE: "Update"
+        COMMIT_AUTHOR_EMAIL: "mail@yatil.net"
         COMMIT_AUTHOR_NAME: "Eric Eggert (auto)"
