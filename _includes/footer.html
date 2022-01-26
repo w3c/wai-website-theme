@@ -28,7 +28,7 @@
 {% if col.footer %}
 <footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
   <div class="inner" 
-    {% if page.layout == "standalone_resource" %}
+    {% if page.layout == "standalone_resource" or layout.layout == "standalone_resource" %}
       style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
     {% endif %}>
     {{ col.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
@@ -39,7 +39,7 @@
   {% if page.footer %}
   <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
     <div class="inner" 
-      {% if page.layout == "standalone_resource" %}
+      {% if page.layout == "standalone_resource" or layout.layout == "standalone_resource" %}
         style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
       {% endif %}>
       {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
