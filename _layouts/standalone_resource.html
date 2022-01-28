@@ -197,7 +197,7 @@
               Rule Mapping 
             </header>
             <div class="box-i"> 
-             <p>This is an <strong>{{ page.rule_meta.rule_type }} rule</strong> 
+             <p>{{ page.rule_meta.rule_type | capitalize }} rule</strong> 
               {% if page.rule_meta.scs_tested %}
               to test 
               {% for sc in page.rule_meta.scs_tested %}
