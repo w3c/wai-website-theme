@@ -188,6 +188,9 @@
               {{ page.type_of_guidance }}:
             </span>
             {% endif %}
+            {% if page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
+            Cognitive Accessibility 
+            {% endif %}
             {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
           </h1>
 
