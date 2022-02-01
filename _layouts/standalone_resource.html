@@ -200,7 +200,8 @@
               Rule Mapping 
             </header>
             <div class="box-i"> 
-             <p><strong>{{ page.rule_meta.rule_type | capitalize }} rule</strong> 
+             <p>This is {% if page.rule_meta.rule_type == "atomic" %}an {% else %}a {% endif %}
+              <strong>{{ page.rule_meta.rule_type | capitalize }} rule</strong> 
               {% if page.rule_meta.scs_tested %}
               to test 
               {% for sc in page.rule_meta.scs_tested %}
