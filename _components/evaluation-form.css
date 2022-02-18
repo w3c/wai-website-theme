@@ -7,7 +7,7 @@
 }
 .criterion__answers {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: stretch;
   flex-direction: column;
 }
