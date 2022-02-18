@@ -69,6 +69,8 @@
       url: "/components/document-notes/translation/"
     - name: "Deprecated"
       url: "/components/document-notes/deprecated/"
+  - name: "Editor Notes"
+    url: "/components/editor-notes"
   - name: "Evaluation Form"
     url: "/components/evaluation-form/"
   - name: "Expand/<wbr>Collapse"

@@ -82,9 +82,9 @@
     border-bottom: 1px solid #BCBCBC;
     padding-left: 1rem
 }
-.nav-hack li {
-    padding-bottom: 0;
-    margin-bottom: 0.3em;
+.nav-hack li:not(:first-child){
+    padding-top: 0.4em;
+    line-height: 1.2;
     border-top: 1px solid #BCBCBC;
 }
 .nav-hack li a {
@@ -93,6 +93,17 @@
 .nav-hack h3 {
   margin: 0;
   font-size: 1rem;
+}
+
+.nav-hack p {
+  margin: 0;
+}
+
+.nav-hack .nav-indent {
+  margin-left: 1rem;
+}
+.nav-hack .nav-indent2 {
+  margin-left: 2rem;
 }
 
 /* skip link */
@@ -125,25 +136,30 @@
       {% endif%}
     {% endif%} 
 
-    {% assign sidebar = layout.sidebar %}
-    {% if sidebar != nil or page.type_of_guidance == "Test Rule" %}
+    {% assign sidebar = page.sidebar %}
+    {% if sidebar == nil %} {% assign sidebar = layout.sidebar %} {% endif %}
+    {% if sidebar != nil %}
       <nav class="nav-hack your-report your-report--expanded sidebar standalone-resource__sidebar">
           {% if sidebar.autoNav %}
-            <h3>Navigation</h3>
-            {% include dg-nav.liquid %}
-            {% if context %}
-              <p><a href="{{ context[1] }}">{{ context[0] }}: {{context[2]}}</a></p>
-            {% endif %}
+          {% include dg-nav.liquid %}
+          {% capture nav_indent_class %} {% if context %}class="nav-indent2"{%else%}class="nav-indent"{%endif%} {% endcapture %}
+          <h3>Navigation</h3>
             <ul>
+            {% if sidebar.autoNav.header %}
+              <li>{{ sidebar.autoNav.header }}</li>
+            {% endif %}
+            {% if context %}
+              <li><p class="nav-indent" ><a href="{{ context[1] }}">{{ context[0] }}: {{context[2]}}</a></p></li>
+            {% endif %}
             {% if prev and sidebar.autoNav.titles == false %}
-              <li><a href="{{ prev[1] }}">{{ prev[0] }}</a></li>
+              <li><p {{ nav_indent_class }} ><a href="{{ prev[1] }}">{{ prev[0] }}</a></p></li>
             {% elsif prev %}
-              <li><a href="{{ prev[1] }}">{{ prev[0] }}: {{ prev[2] }}</a></li>
+              <li><p {{ nav_indent_class }} ><a href="{{ prev[1] }}">{{ prev[0] }}: {{ prev[2] }}</a></p></li>
             {% endif %}
             {% if next and sidebar.autoNav.titles == false %}
-              <li><a href="{{ next[1] }}">{{ next[0] }}</a></li>
+              <li><p {{ nav_indent_class }} ><a href="{{ next[1] }}">{{ next[0] }}</a></p></li>
             {% elsif next %}
-              <li><a href="{{ next[1] }}">{{ next[0] }}: {{ next[2] }}</a></li>
+              <li><p {{ nav_indent_class }} ><a href="{{ next[1] }}">{{ next[0] }}: {{ next[2] }}</a></p></li>
             {% endif %}
             </ul>
           {% endif%}
@@ -169,6 +185,9 @@
               {% if page.type_of_guidance == "Test Rule" and page.proposed %}
                 Proposed
               {% endif %}
+              {% if page.type_of_guidance == "Design Pattern" or page.type_of_guidance == "Objective" %}
+              Cognitive Accessibility 
+              {% endif %}
               {{ page.type_of_guidance }}:
             </span>
             {% endif %}
@@ -181,7 +200,8 @@
               Rule Mapping 
             </header>
             <div class="box-i"> 
-             <p>This is an <strong>{{ page.rule_meta.rule_type }} rule</strong> 
+             <p>This is {% if page.rule_meta.rule_type == "atomic" %}an {% else %}a {% endif %}
+              <strong>{{ page.rule_meta.rule_type | capitalize }} rule</strong> 
               {% if page.rule_meta.scs_tested %}
               to test 
               {% for sc in page.rule_meta.scs_tested %}
