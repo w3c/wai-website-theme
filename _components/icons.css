@@ -97,6 +97,18 @@ Single-colored icons can be modified like so:
   width: 0.9285714285714285em;
 }
 
+.icon-arrow-left-thin {
+  width: 0.8928571428571428em;
+}
+
+.icon-arrow-right-thin {
+  width: 0.8214285714285714em;
+}
+
+.icon-arrow-up-thin {
+  width: 0.9285714285714285em;
+}
+
 .icon-languages {
   height: 1em;
   width: 2.75em;
