@@ -1,19 +1,19 @@
-<div id="site-header" class="minimal-header{% if include.class %} {{ include.class }}{% endif %}">
-  <span class="minimal-header-name">
-    {{ include.title }}
+<div class="minimal-header" id="site-header">
+    <div class="minimal-header-name">
+        {{ include.title }}
+    </div>
     {% if include.subtitle %}
-      <span class="minimal-header-subtitle">{{ include.subtitle }}</span>
+        <div class="minimal-header-subtitle">{{ include.subtitle }}</div>
     {% endif %}
-  </span>
-  <div class="minimal-header-logo">
-    <a href="http://w3.org/">
-      <img alt="W3C" src="{{ "/assets/images/w3c2.svg" | relative_url }}" width="92" height="44" />
-    </a>
-    <a href="{{ "/" | relative_url }}">
-      <img alt="Web Accessibility Initiative" src="{{ "/assets/images/wai.svg" | relative_url }}" />
-    </a>
-  </div>
+    {% if include.link %}
+        <a class="minimal-header-link" href="{{ include.link.ref | relative_url }}">{{ include.link.title }}</a>
+    {% endif %}
+    <div class="minimal-header-logo">
+        <a href="http://w3.org/">
+            <img alt="W3C" src="{{ "/assets/images/w3c2.svg" | relative_url }}" width="92" height="44"/>
+        </a>
+        <a href="{{ "/" | relative_url }}">
+            <img alt="Web Accessibility Initiative" src="{{ "/assets/images/wai.svg" | relative_url }}"/>
+        </a>
+    </div>
 </div>
-
-
-
