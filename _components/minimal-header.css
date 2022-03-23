@@ -1,19 +1,30 @@
 .tool-header {
   display: flex;
-  margin: 1.2em 0;
-  align-items: stretch;
+  align-items: center;
 }
 .tool-header a{
   text-decoration: none;
 }
 .tool-header-name {
-  flex: width 0 0;
+  font-size: 1.125em;
+  line-height: 1;
+}
+.tool-header-logo {
+margin-left: auto;
+display: flex;
+align-items: center;
+align-self: start;
+}
+.tool-header-logo img {
+  display: block;
+  margin: 0.75em 0 0.75em 0.5em;
+  height: 1.5em;
 }
 
 .minimal-header {
   display: flex;
   margin: 1.2em 0;
-  align-items: center;
+  align-items: stretch;
 }
 
 .minimal-header .minimal-header-name,
@@ -75,7 +86,6 @@
   align-items: center;
   align-self: start;
 }
-.tool-header-logo img,
 .minimal-header-logo img {
   margin: 1px 0 1px 0;
   height: 1.5em;
