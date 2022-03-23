@@ -54,13 +54,13 @@
             <ul>
                 <li class="nav__item">
                 {%- if page.standalone_resource_pager.icon -%}
-                    {%- capture icon-element -%}<img src="{{page.standalone_resource_pager.icon}}" alt="" class="category-icon">{%- endcapture -%}
+                    {%- capture icon-element -%}<img src="{{page.standalone_resource_pager.icon | relative_url }}" alt="" class="category-icon">{%- endcapture -%}
                 {%- endif -%}
                 {% assign ref = pager.ref | split: "#" | first %}
                 {%- if page.permalink == ref %}
                     <a class="pagename active" aria-current="page">{{icon-element}}{{pager.name}}</a>
                 {%else%}
-                    <a href="{{pager.ref}}">{{icon-element}}{{pager.name}}</a>
+                    <a href="{{pager.ref | relative_url}}">{{icon-element}}{{pager.name}}</a>
                 {%endif%}
                 </li>
 
