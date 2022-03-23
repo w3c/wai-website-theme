@@ -1,8 +1,21 @@
-.minimal-header {
+.tool-header {
   display: flex;
   margin: 1.2em 0;
   align-items: stretch;
 }
+.tool-header a{
+  text-decoration: none;
+}
+.tool-header-name {
+  flex: width 0 0;
+}
+
+.minimal-header {
+  display: flex;
+  margin: 1.2em 0;
+  align-items: center;
+}
+
 .minimal-header .minimal-header-name,
 .minimal-header .minimal-header-subtitle,
 .minimal-header .minimal-header-link
@@ -32,7 +45,7 @@
     padding-left: 8px;
     margin-left: 18px;
     display: block;
-    font-size: 80%;
+    font-size: 1em;
 }
 
 .minimal-header-subtitle {
@@ -45,13 +58,16 @@
 }
 
 @media (min-width: 60em) {
+  .tool-header-name,
   .minimal-header-name {
     font-size: 1.5em;
   }
-  .minimal-header .minimal-header-name {
+  .minimal-header-subtitle {
     font-size: 1.2em;
   }
 }
+
+.tool-header-logo img,
 .minimal-header-logo {
   margin-left: auto;
   display: flex;
