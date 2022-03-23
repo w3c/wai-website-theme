@@ -45,7 +45,7 @@
     padding-left: 8px;
     margin-left: 18px;
     display: block;
-    font-size: 1em;
+    font-size: 80%;
 }
 
 .minimal-header-subtitle {
@@ -62,7 +62,8 @@
   .minimal-header-name {
     font-size: 1.5em;
   }
-  .minimal-header-subtitle {
+  .minimal-header-subtitle,
+  .minimal-header-link {
     font-size: 1.2em;
   }
 }
