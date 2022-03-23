@@ -85,9 +85,6 @@ Currently, specific sidebars are supported for:
 - `Pattern` - for COGA Design Guide
 - `Test Rule` - for ACT Rules
 
-## Examples
+## Example
 
-For demo purposes, find below examples of supporting documents:
-
-* [Test Rule](demo-act) (from ACT Conformance Rules)
-* [COGA Design Pattern](demo-coga) (from COGA Design Guide)
+For example: [Cognitive Accessibility Design Pattern in Supplemental Guidance to WCAG 2](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o1p02-familiar-design/
