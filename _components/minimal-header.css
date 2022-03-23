@@ -72,11 +72,12 @@
 .minimal-header-logo {
   margin-left: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   align-self: start;
 }
 .minimal-header-logo img {
-  display: block;
+  flex-direction: row;
   margin: 1px 0 1px 0;
   height: 1.5em;
 }
@@ -89,6 +90,6 @@
 .minimal-header-container {
   background-color: var(--w3c-classic);
 }
-  .minimal-header-container > .minimal-header {
-    grid-column: navigation-start / content-end;
-  }
+.minimal-header-container > .minimal-header {
+  grid-column: navigation-start / content-end;
+}
