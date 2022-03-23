@@ -68,7 +68,6 @@
   }
 }
 
-.tool-header-logo img,
 .minimal-header-logo {
   margin-left: auto;
   display: flex;
@@ -76,12 +75,15 @@
   align-items: center;
   align-self: start;
 }
+.tool-header-logo img,
 .minimal-header-logo img {
-  flex-direction: row;
   margin: 1px 0 1px 0;
   height: 1.5em;
 }
 @media (min-width: 60em) {
+  .minimal-header-logo {
+    flex-direction: row;
+  }
   .tool-header-logo img,
   .minimal-header-logo img {
     height: 2em;
