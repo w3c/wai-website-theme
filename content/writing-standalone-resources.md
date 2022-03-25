@@ -1,5 +1,5 @@
 ---
-title: "Stand-alone Resources"
+title: "Stand-alone Resources and the Minimal header"
 permalink: /writing/standalone-resources/
 ref: /writing/standalone-resources/
 lang: en
@@ -12,9 +12,13 @@ github:
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-At WAI, we sometimes have (sets of) documents that do not require the full WAI website wrapper, but we want them to look like WAI documents. 
+At WAI, we sometimes have both sets of documents and interactive app-like tools that do not require the full WAI website wrapper.
+In particular, the full header header and side navigation are not required.
 
-These are commonly “supporting documents” for our accessibility standards, like the Techniques and Understanding documents for the Web Content Accessibility Guidelines (WCAG).
+Document sets are referred to as "Standalone Resources" and are commonly “supporting documents” for our accessibility standards, like the Techniques and Understanding documents for the Web Content Accessibility Guidelines (WCAG). These contain a significant number of pages and tend not to not need full navigation. They do however, have an Index Home page and an About page.
+In addition, a pager-style navigation for "next" and "previous" page is often required, plus an in-page header navigation menu.
+
+In comparison, tools use a much simpler header and navigation menu, the rest of the page being the iteractive app.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -23,71 +27,120 @@ These are commonly “supporting documents” for our accessibility standards, l
 
 {% include toc.html %}
 
-## How to use the “stand-alone resources” layout
+## Tools minimal header
 
-In the document's front matter, add:
+There is flexibility in how tools are implemented. Several do not use the WAI Website Theme at all. Rather, they are implemented in other technologies and linked into the WAI website via W3C redirects given them the correct URL. They do however, reproduce the Tool version of the [Minimal Header](https://github.com/w3c/wai-website-theme/blob/master/_includes/minimal-header.html) and use the Theme styles, including those for the [Minimal Header](https://github.com/w3c/wai-website-theme/blob/master/_components/minimal-header.css) for visual consistency with the WAI website.
+
+## Using the stand-alone resource layout
+
+This is for documentations sets and tools that are fully integrated into the WAI website and use the WAI Theme.
+The stand-alone resource layoute provides several features common to document sets.
+In particular, you can declaratively specify an About page, an Index page, enable an automatic in-page side menu for H2 navigation
+and also provide data for the pager controls (next, previous and up).
+
+These are all configured using page variable in the usual Jekyll way. As usual thy can be specified perpage in the frontmatter, on accros pages in the `_config.yml` file. See  [Jekyll - Front Matter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/)). The later is usually most effective.
+
+## Specifying the “stand-alone resources” layout
 
 ```yaml
 layout: standalone_resource
 ```
 
-Instead of adding to each individual document, you can also add it globally in the repository's `_config.yml` under `defaults` ([example](https://github.com/w3c/wai-coga-design-guide/blob/master/_config.yml#L55); see also [Jekyll - Front Matter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/)). 
+Hint: you can use nested layouts to save repetition.
 
-## Other front matter
+## Header
 
-Stand-alone resources also have a couple of specific front matter settings.
+### Page Title
 
+The name of the set of documents must be provided. A longer subtitle (or tagline) can optionally be given.
+
+```yaml
+standalone_resource_header:
+  title: Supplemental Guidance to WCAG 2
+  subtitle: Additional ways to improve accessibility, not required to meet WCAG```yaml
+```
 ### Navigation
 
-To add links to the top navigation, add the `name` and `ref` attributes for each link in a `standalone_resource_nav_links`
+There are two styles of Navigation. For Tools a set of Tab-like links are ceated thus:
 
 ```yaml
 standalone_resource_nav_links:
-  - name: All Objectives
-    ref: /objectives
-  - name: All Patterns
-    ref: /patterns
-  - name: About this Design Guide
-    ref: /about
+  - name: Tab1
+    ref: /path/to/page1
+  - name: Tab2
+    ref: /path/to/page2
+```
+For document sets use the follow style which provides and about link in the header and and icon and index link in the pager row
+(even if there is no pager).
+
+```yml
+standalone_resource_header:
+  link:
+    ref: /WCAG2/supplemental/about/
+    title: About Supplemental Guidance and WCAG
+standalone_resource_pager:
+  icon: /content-images/wai-wcag-supplemental/brain.svg
+  name: All Cognitive
+  ref: /WCAG2/supplemental/#cognitiveaccessibilityguidance```
 ```
 
-### Name for the set of documents
+## Type of document
 
-The name of the set of documents can be set in `standalone_resource_doc_name`. For instance, for WCAG 2.1 Techniques, use: 
-
-```yaml
-standalone_resource_doc_name: WCAG 2.1 Techniques
-```
-
-Some documents may have a long name which needs to be separated into two parts. Use `standalone_resource_doc_name_sub`, to specify text that can be displayed smaller underneath.
-
-```yaml
-standalone_resource_doc_name: "Design Guide"
-standalone_resource_doc_name_sub: "for People with Cognitive Disabilities and Learning Difficulties"
-```
-
-### Name of the type of document
-
-To specify the type of guidance, for instance “Technique”, “ACT Rule” or “Design Pattern”, use: 
+For document sets using `standalone-resource` that contain different categories, this is displayed above the title of the document on the page.
+It can also be used for other logic purposes in the resource pages
 
 ```yaml
 type_of_guidance: Technique
 ```
 
-This is displayed above the title of the document, and used to decide which sidebar to use.
+In addition, if defined, "proposed" is use as a prefix.
 
-## Different sidebars 
+```yaml
+proposed: true
+```
 
-The supporting document template displays different sidebars based on the `type_of_guidance`. 
+## Pager
 
-Currently, specific sidebars are supported for: 
+The is optional and provides 'up', 'next' and 'previous' links for navigation within the set of files.
+It is data driven, using a set of Jekyll arrays to provide the names and URLs. To use, it specify an include file that provides the arrays.
 
-- `Pattern` - for COGA Design Guide
-- `Test Rule` - for ACT Rules
+```yaml
+standalone_resource_pager:
+  include: dg-pager.liquid
+```
 
-## Examples
+Here's the code from at the end of the Supplemental Guidance pager file [dg-pager.liquid](https://github.com/w3c/wai-wcag-supplemental/blob/main/_includes/dg-pager.liquid):
 
-For demo purposes, find below examples of supporting documents:
+```liquid
+{% comment %}
+Set up tuples for pager
+{% endcomment %}
+{% if is_pattern %}
+    {% assign item_type = "Pattern" %}
+    {% assign context_type = "Objective" %}
+{% else %}
+    {% assign item_type = "Objective" %}
+{% endif %}
+{% if prev_item %}
+    {% assign prev = "Previous " | append: item_type | append: "??" | append: prev_item.url | append: "??" | append: prev_item.title | split: "??" %}
+{% endif %}
+{% if next_item %}
+    {% assign next = "Next " | append: item_type | append: "??" | append: next_item.url | append: "??" | append: next_item.title | split: "??" %}
+{% endif %}
+{% if context_item %}
+    {% assign context = context_type | append: "??" | append: context_item.url | append: "??" | append: context_item.title | split: "??" %}
+{% endif %}
+{% endif %}
+```
 
-* [Test Rule](demo-act) (from ACT Conformance Rules)
-* [COGA Design Pattern](demo-coga) (from COGA Design Guide)
+TODO: explain this
+
+## Automatic H2 Heading navigation
+
+A right-hand sidebar can be enabled that provides navigation to each H2 heading.
+In additio not the sidebar menu it adds the fragment id's for the URLs to the headings.
+
+```yaml
+sidebar: true
+```
+
