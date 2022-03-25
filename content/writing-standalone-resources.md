@@ -111,6 +111,7 @@ standalone_resource_pager:
 
 Here's the code from at the end of the Supplemental Guidance pager file [dg-pager.liquid](https://github.com/w3c/wai-wcag-supplemental/blob/main/_includes/dg-pager.liquid):
 
+{% raw %}
 ```liquid
 {% comment %}
 Set up tuples for pager
@@ -132,6 +133,7 @@ Set up tuples for pager
 {% endif %}
 {% endif %}
 ```
+{% endraw %}
 
 TODO: explain this
 
