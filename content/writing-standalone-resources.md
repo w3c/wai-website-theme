@@ -1,5 +1,5 @@
 ---
-title: "[Draft] Minimal Header and 'stand-alone resource' Template"
+title: "[Draft] Minimal Header and 'standalone_resource' Template"
 permalink: /writing/standalone-resources/
 ref: /writing/standalone-resources/
 lang: en
@@ -11,20 +11,28 @@ github:
 **_Note: We are updating this documentation. Your patience is appreciated.<br>Please send any questions to Steve and Shawn.<br>Feel free to submit a Pull Request for improvements to this documentation. Thanks!_**
 
 {::nomarkdown}
-{% include box.html type="start" title="Summary and Background" class="" %}
+{% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-The main WAI website header and navigation takes up a fair bit of screen real estate and adds some visual complexity to pages. We don't want that for some WAI resources; for example, the [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/) and [Supplemental Guidance to WCAG 2](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o1p02-familiar-design/). For these we have the 'minimal header' component and the 'stand-alone resource' template.
+The minimal header component and the 'standalone_resource' template are for tools and sets of documents that do not use the main WAI website header and navigation.
 
 Tools that are not integrated in the WAI website theme use the [minimal header component](https://wai-website-theme.netlify.app/components/minimal-header/).
 
-Resources that are integrated use that component and more in the 'stand-alone resource' template. The template provides specific information in the header, specific types of navigation including a 'pager', document type in h1, and page contents.
+Resources that are integrated use that component and more in the 'standalone_resource' template. The template provides layout and specific information in the header, specific types of navigation including a 'pager', document type in h1, and page contents.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
 {% include toc.html %}
+
+## Background and what's what
+
+The main WAI website header and navigation takes up a fair bit of screen real estate and adds some visual complexity to pages. We don't want that for some WAI resources; for example, the [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/) and [Supplemental Guidance to WCAG 2](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o1p02-familiar-design/). 
+
+A few things evolved in ways that make the current naming not aligned with reality. We decided not to further change the names of existing components and templates. There are two related things:
+1. minimal header component
+2. standalone_resource template &mdash; which is actually for things that **are** integrated into the WAI website theme
 
 ## Resources that are integrated
 
