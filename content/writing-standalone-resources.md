@@ -135,7 +135,7 @@ Set up tuples for pager
 
 TODO: explain this
 
-## Automatic H2 Heading navigation
+## Automatic H2 heading navigation
 
 A right-hand sidebar can be enabled that provides navigation to each H2 heading.
 In additio not the sidebar menu it adds the fragment id's for the URLs to the headings.
@@ -144,3 +144,8 @@ In additio not the sidebar menu it adds the fragment id's for the URLs to the he
 sidebar: true
 ```
 
+
+## Examples
+
+- Using the tools hminal header: [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/)
+- Using standalone-resource: [Cognitive Accessibility Design Pattern in Supplemental Guidance to WCAG 2](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o1p02-familiar-design/)
