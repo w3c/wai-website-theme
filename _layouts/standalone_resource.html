@@ -40,8 +40,13 @@
     <a href="#main" class="button button--skip-link">Skip to content</a>
 
    <div class="minimal-header-container default-grid">
+      {% if page.standalone_resource_header %}
+        {% assign title = page.standalone_resource_header.title %}
+      {% else %}
+        {% assign title = standalone_resource_doc_name %}
+      {% endif %}
       {% include minimal-header.html translations = translations 
-                                     title = page.standalone_resource_header.title
+                                     title = title
                                      subtitle = page.standalone_resource_header.subtitle 
                                      link = page.standalone_resource_header.link %}
     </div>
