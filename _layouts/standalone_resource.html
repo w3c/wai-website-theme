@@ -41,12 +41,12 @@
 
    <div class="minimal-header-container default-grid">
       {% if page.standalone_resource_header %}
-        {% assign title = page.standalone_resource_header.title %}
+        {% assign mhtitle = page.standalone_resource_header.title %}
       {% else %}
-        {% assign title = standalone_resource_doc_name %}
+        {% assign mhtitle = page.standalone_resource_doc_name %}
       {% endif %}
       {% include minimal-header.html translations = translations 
-                                     title = title
+                                     title = mhtitle
                                      subtitle = page.standalone_resource_header.subtitle 
                                      link = page.standalone_resource_header.link %}
     </div>
