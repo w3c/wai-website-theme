@@ -21,15 +21,15 @@ align-self: start;
   height: 1.5em;
 }
 
-.minimal-header-container  {
-  display: flex;
-  flex-direction: column  ;
-}
-
 .minimal-header {
   display: flex;
   margin: 1.2em 0;
   align-items: stretch;
+}
+
+.minimal-header-container  {
+  display: flex;
+  flex-direction: column  ;
 }
 
 .minimal-header .minimal-header-name,
