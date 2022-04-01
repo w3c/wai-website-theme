@@ -14,5 +14,9 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "postcss-preset-env": "^7.4.2"
+  },
+  "scripts": {
+    "build-css": "gulp css"
+
   }
 }
