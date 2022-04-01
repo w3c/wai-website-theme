@@ -45,9 +45,9 @@
       {% else %}
         {% assign mhtitle = page.standalone_resource_doc_name %}
       {% endif %}
-      {% include minimal-header.html translations = translations 
+      {% include minimal-header.html translations = translations
                                      title = mhtitle
-                                     subtitle = page.standalone_resource_header.subtitle 
+                                     subtitle = page.standalone_resource_header.subtitle
                                      link = page.standalone_resource_header.link %}
     </div>
 
@@ -72,13 +72,13 @@
                 {% if page.standalone_resource_pager.include %}
                     {% include {{ page.standalone_resource_pager.include }} %}
                     {% if context %}
-                        <li class="nav__item"><a href="{{ context[1] }}">{% include_cached icon.html class="pager-icon" name="arrow-up-thin" %} {{ context[0] }}: {{context[2]}}</a></li>
+                        <li class="nav__item"><a href="{{ context[1] | relative_url }}">{% include_cached icon.html class="pager-icon" name="arrow-up-thin" %} {{ context[0] }}: {{context[2]}}</a></li>
                     {% endif %}
                     {% if prev  %}
-                        <li class="nav__item"><a href="{{ prev[1] }}">{% include_cached icon.html class="pager-icon" name="arrow-left-thin" %} {{ prev[0] }}</a></li>
+                        <li class="nav__item"><a href="{{ prev[1] | relative_url }}">{% include_cached icon.html class="pager-icon" name="arrow-left-thin" %} {{ prev[0] }}</a></li>
                     {% endif %}
                     {% if next %}
-                        <li class="nav__item"><a href="{{ next[1] }}">{{ next[0] }} {% include_cached icon.html class="pager-icon" name="arrow-right-thin" %}</a></li>
+                        <li class="nav__item"><a href="{{ next[1] | relative_url }}">{{ next[0] }} {% include_cached icon.html class="pager-icon" name="arrow-right-thin" %}</a></li>
                     {% endif %}
                 {% endif %}
             </ul>
@@ -250,7 +250,7 @@ nav.standalone-resource-about {
 .standalone-resource-about a,
 .standalone-resource-pager a,
 .standalone-resource-about span,
-.standalone-resource-pager span 
+.standalone-resource-pager span
 {
     margin-left:.8em;
     margin-right:.8em;
@@ -290,12 +290,12 @@ nav.standalone-resource-about {
               {% endif %}
               {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
             </h1>
-        </header>    
+        </header>
 
         {{ expanded_content }}
 
       </main>
-    
+
   </div>
 
     <div class="default-grid with-gap leftcol">
@@ -317,7 +317,7 @@ nav.standalone-resource-about {
 
   {% include footer.html lang=pagelang inner-style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;" %}
 
-    
+
   </body>
 
 </html>
