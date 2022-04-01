@@ -21,6 +21,11 @@ align-self: start;
   height: 1.5em;
 }
 
+.minimal-header-container  {
+  display: flex;
+  flex-direction: column  ;
+}
+
 .minimal-header {
   display: flex;
   margin: 1.2em 0;
@@ -50,7 +55,11 @@ align-self: start;
   line-height: 1;
 }
 
-.minimal-header-subtitle,
+.minimal-header-subtitle {
+  margin-top: 8px;
+  display: block;
+  font-size: .8em;
+}
 .minimal-header-link {
     border-left: 1px solid var(--gold);
     padding-left: 8px;
@@ -76,6 +85,16 @@ align-self: start;
   .minimal-header-subtitle,
   .minimal-header-link {
     font-size: 80%;
+  }
+
+  .minimal-header-container  {
+    flex-direction: row;
+  }
+  .minimal-header-subtitle {
+    margin-top: 0;
+    border-left: 1px solid var(--gold);
+    padding-left: 8px;
+    margin-left: 18px;
   }
 }
 
