@@ -14,7 +14,7 @@ footer: > # Text in footer in HTML
 
 This page outlines the fundamental technical processes and the general approach for the website.
 
-The site uses Jekyll, a Ruby-based site generating software. “WAI Website Theme” is a Jekyll theme with HTML templates, CSS, and (very few) scripts. Source files for the web pages can include Markdown, HTML, CSS, and Javascript using the Liquid template language. We use YAML front matter for several things, including translations.
+The site uses Jekyll, a Ruby-based site generating software. “WAI Website Theme” is a Jekyll theme with HTML templates, CSS, and (very few) scripts. Source files for the web pages can include Markdown, HTML, CSS, and Javascript using the Liquid template language. We use YAML front matter for configuring several things, including translations.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -26,17 +26,34 @@ The goal for the documentation is to ensure that the site and every page has a _
 
 ## A Summary for Content Authors ##
 
-As a content author you will usually be working on content for one part of the WAI website. This can be accomplished by editing HTML or Markdown files in one of the many git repositories that hold the source files. In fact, the WAI site is broken up into *many* modules, called `resources`, each with it's own repository in the W3C's github organization. You can work in isolation on content files in a repository using either GitHub online features or a local development environment. Sometimes you might also work on static files like images or even CSS or javascript.
+As a content author you will usually be working on content for one part of the WAI website. This can be accomplished by editing HTML or Markdown files in one of the many git repositories that hold the source files. In fact, the WAI site is broken up into *many* modules, called `resources`, each with it's own repository in the W3C's GitHub organization. A master resource called _wai-website_ composes these together to create the published site. You can work in isolation on content files in a repository using either GitHub online features or a local development environment. Sometimes you might also work on static files like images, CSS, javascript or even Jekyll configuration files. To support content development, Netlify provides previews which can be used to see how your resource changes look.
 
-In this case you can follow a typical github style workflow, working on a branch which is eventually merged into a main branch and pushed to GitHub once ready for deployment. This last step should be performed in coordination with the WAI website editor. To support content development, Netlify provides previews which can be used to see how your resource changes look.
+You will normally follow a typical GitHub style workflow while updating a resource, working on a so called "feature branch" and using a GitHub Pull Request which is eventually merged so it is picked up by the main website build process and pushed to GitHub Pages soi it appears in the W3C website.
 
-Sometimes however, you will need to work on files that are shared between all resources, such as the file which defines the site navigation. Plus, if you are creating a new resource it needs to be added to the "master" resource which pulls all the components together to make the complete wai website.
+Sometimes you will need to work on files that are shared between all resources, such as the file which defines the site navigation. Working on these shared files requires extra care and coordination with the Editor as integration of these multiple parts needs coordination to avoid a broken site. In general you can copy these files to your resource to update them, and then arrange for them to be moved to the shared files once your work is complete. Keeping the local copies will cause maintenance problems.
 
-Working on these shared files requires extra care and coordination with the Editor as integration of these multiple parts needs coordination to avoid a broken site.
+### Working with Branches and Pull Requests
 
-### Site build ###
+The basic idea is that anything on the "main" branch in a resource repository will be published next time the main website is published (by making a GitHub release). Thus is needs to be ready for publication. _Note that at present most resources use the older "master" branch rather than "main". A couple also use different branches. This is defined in the [.gitmodules config file](https://github.com/w3c/wai-website/blob/master/.gitmodules)._
 
-The WAI Website is created using a "build" process that converts the source file content in the resources into the wai website content. It combines all the resources and mixes in the shared files including navigation and a theme (visual styling). The build is used to both generate the resource previews and when the site is deployed.
+In GitHub the main branch is protected so that commits cannot be made directly to it. Rather, at least for large updates, a new working branch and Pull Request are created for all work. The PR request automatically generates a Netlify Preview for the code pushed to the branch in the GitHub repo. Local Development can also be carried out with previews using the Netlify CLI. The PR is created at the start of work and should be marked as a "draft" as subsequent commits will be made. When work is complete, the PR is marked ready for review and reviews are required before it is merged to the main branch and so published. This last step should be performed in coordination with the WAI website editor.
+
+In some cases, a direct commit to the main branch might be required or merging a PR without reviews. Admin users can perform these tasks when required.
+
+@@@ How does this fit with ACT Rules trusted publication ???
+@@@ I did think of using a specific "publish" branch I suspect that is not that useful in reality
+
+In summary the [GitHub branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) is configured as follows.
+
+- the publication branch (eg main)
+  - Require a pull request before merging
+    - Require approvals = 1
+
+For example the [wai-wcga-supplemental settings](https://github.com/w3c/wai-wcag-supplemental/settings/branches).
+
+### Resource and site builds ###
+
+The resource previews and full WAI Website are created using a "build" process that converts the source file content in the resources into the wai website content. It combines all the resources and mixes in the shared files including navigation and a theme (visual styling). The build is used to both generate the resource previews and when the site is deployed.
 
 While the mechanics of this build are complex, involving jekyll, git submodules and filesystem symlinks, an overview can be useful to keep in mind:
 

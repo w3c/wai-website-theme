@@ -80,11 +80,11 @@ You should now have a folder called `/content-images/your-repository-name/` in y
 ### Step 2.4: Set permissions (Settings, Manage access)
 
 - From the action list (starting with Code, Issues,...), select "Settings" (at the end).
-- From the secondary list (after Options), select "Manage access".
+- From the left menu select "Callaborators and teams".
 - Select the button "Invite teams or people".
-- Set the appropriate permissions. Err on the side of lower-level access for starters; we can change it easily. Example permissions:
-   - w3c/wai-eo : Read
-   - non-Team editors : Triage (or Write if highly trusted)
+- Select "Add User" or "Add Team" and set the appropriate permissions. Err on the side of lower-level access for starters; we can change it easily. Example permissions:
+  - w3c/wai-eo : Read
+  - non-Team editors : Triage (or Write if highly trusted)
 
 ## Step 3: Create and link a Netlify site for preview
 
@@ -124,10 +124,10 @@ Also, update the README.md text to remove the template specific lines below the 
 
 ### Local preview of your content
 
-The easiest way to build and preview locally is to use the [Netlify CLI](https://cli.netlify.com/) tool. The resources are configured so you can 
+The easiest way to build and preview locally is to use the [Netlify CLI](https://cli.netlify.com/) tool. The resources are configured so you can
 
 - `Netlify build` - generate the website file in the `_site` directory
-- `Netlify dev` - run a dev server and preview `_site` 
+- `Netlify dev` - run a dev server and preview `_site`
 
 ### Editing shared config files
 
