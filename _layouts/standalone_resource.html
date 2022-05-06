@@ -285,7 +285,7 @@ nav.standalone-resource-about {
                 {% if page.proposed %}
                   Proposed
                 {% endif %}
-                {{ page.type_of_guidance }}:
+                {% if page.type_of_guidance_in_content %}{{ page.type_of_guidance }}:{% endif %}
               </span>
               {% endif %}
               {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
