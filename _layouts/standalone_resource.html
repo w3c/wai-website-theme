@@ -55,7 +55,7 @@
         <div class="nav" >
           {% if page.standalone_resource_pager %}
           {% assign pager = page.standalone_resource_pager %}
-          <nav class="nav standalone-resource-pager" aria-label="Item navigation">
+          <nav class="nav standalone-resource-pager" aria-label="{{page.type_of_guidance}}">
             <ul>
                 <li class="nav__item">
                 {%- if page.standalone_resource_pager.icon -%}
@@ -84,7 +84,7 @@
             </ul>
           </nav>
         {% elsif page.standalone_resource_nav_links %}
-           <nav class="nav" aria-label="Context for this document">
+           <nav class="nav" aria-label="{{page.type_of_guidance}}">
             <ul>
             {% for link in page.standalone_resource_nav_links %}
                 <li class="nav__item"><a href="{{ link.ref | relative_url }}"{% if page.permalink == link.ref %} class="active" aria-current="page"{% endif %}>{{ link.name }}</a></li>
