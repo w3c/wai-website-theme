@@ -261,8 +261,8 @@ nav.standalone-resource-about {
     {% assign sidebar = page.sidebar %}
     {% if sidebar == nil %} {% assign sidebar = layout.sidebar %} {% endif %}
     {% if sidebar %}
-        <aside class="box nav-hack sidebar standalone-resource__sidebar ">
-            <header class="box-h ">Page Contents</header>
+        <nav class="box nav-hack sidebar standalone-resource__sidebar " aria-labelledby="nav-h2">
+            <h2 id="nav-h2" class="box-h" >Page Contents</h2>
             {% capture expanded_content %}{{ content | add_h2_ids }} {% endcapture %}
             <div class="box-i">
                 <ul>
