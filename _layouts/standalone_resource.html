@@ -264,7 +264,7 @@ h2#sidebar-header {
     {% assign sidebar = page.sidebar %}
     {% if sidebar == nil %} {% assign sidebar = layout.sidebar %} {% endif %}
     {% if sidebar %}
-        <aside class="box nav-hack sidebar standalone-resource__sidebar " arial-label-by="sidebar-header">
+        <nav class="box nav-hack sidebar standalone-resource__sidebar " arial-label-by="sidebar-header">
           <h2 id="sidebar-header" class="box-h ">Page Contents</h2>
           {% capture expanded_content %}{{ content | add_h2_ids }} {% endcapture %}
             {% capture expanded_content %}{{ content | add_h2_ids }} {% endcapture %}
@@ -293,7 +293,7 @@ h2#sidebar-header {
               </span>
               {% endif %}
               {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
-            </h1>
+            </h1>git publicly-archived
         </header>
 
         {{ expanded_content }}
