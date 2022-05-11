@@ -276,7 +276,7 @@ h2#sidebar-header {
                 {% endfor %}
                 </ul>
             </div>
-        </aside>
+          </nav>
     {%else%}
         {% assign expanded_content = content %}
     {% endif %}
@@ -293,7 +293,7 @@ h2#sidebar-header {
               </span>
               {% endif %}
               {% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}
-            </h1>git publicly-archived
+            </h1>
         </header>
 
         {{ expanded_content }}
