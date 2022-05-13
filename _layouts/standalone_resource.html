@@ -266,7 +266,6 @@ h2#sidebar-header {
     {% if sidebar %}
         <nav class="box nav-hack sidebar standalone-resource__sidebar " aria-labelledby="sidebar-header">
           <h2 id="sidebar-header" class="box-h ">Page Contents</h2>
-          {% capture expanded_content %}{{ content | add_h2_ids }} {% endcapture %}
             {% capture expanded_content %}{{ content | add_h2_ids }} {% endcapture %}
             <div class="box-i">
                 <ul>
