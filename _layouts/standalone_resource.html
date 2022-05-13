@@ -48,7 +48,8 @@
       {% include minimal-header.html translations = translations
                                      title = mhtitle
                                      subtitle = page.standalone_resource_header.subtitle
-                                     link = page.standalone_resource_header.link %}
+                                     link = page.standalone_resource_header.link
+                                     title-ref=page.standalone_resource_header.title-ref %}
     </div>
 
     <div class="default-grid nav-container">
@@ -259,13 +260,21 @@ h2#sidebar-header {
     margin-right:.8em;
 }
 
+.minimal-header-name a {
+  text-decoration: none;
+}
+.minimal-header-name a:hover,
+.minimal-header-name a:focus {
+  text-decoration: underline;
+}
+
 </style>
 
     {% assign sidebar = page.sidebar %}
     {% if sidebar == nil %} {% assign sidebar = layout.sidebar %} {% endif %}
     {% if sidebar %}
         <nav class="box nav-hack sidebar standalone-resource__sidebar " aria-labelledby="sidebar-header">
-          <h2 id="sidebar-header" class="box-h ">Page Contents</h2>
+           <h2 id="sidebar-header" class="box-h ">Page Contents</h2>
             {% capture expanded_content %}{{ content | add_h2_ids }} {% endcapture %}
             <div class="box-i">
                 <ul>

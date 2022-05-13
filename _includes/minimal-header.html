@@ -1,7 +1,9 @@
 <div class="minimal-header" id="site-header">
   <div class="minimal-header-container">
     <div class="minimal-header-name">
-        {{ include.title }}
+      {% if include.title-ref %}<a href="{{ include.title-ref | relative_url }}">{% endif %}
+          {{ include.title }}
+        {% if include.title-ref %}</a>{% endif %}
     </div>
     {% if include.subtitle %}
       <div class="minimal-header-subtitle">
