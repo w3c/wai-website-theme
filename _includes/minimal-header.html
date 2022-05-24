@@ -1,4 +1,4 @@
-<div class="minimal-header" id="site-header">
+<banner class="minimal-header" id="site-header">
   <div class="minimal-header-container">
     <div class="minimal-header-name">
       {% if include.title-ref %}<a href="{{ include.title-ref | relative_url }}">{% endif %}
@@ -6,9 +6,9 @@
         {% if include.title-ref %}</a>{% endif %}
     </div>
     {% if include.subtitle %}
-      <div class="minimal-header-subtitle">
+      <p class="minimal-header-subtitle">
           {{ include.subtitle }}
-      </div>
+      </p>
     {% endif %}
   </div>
   {% if include.link %}
@@ -21,5 +21,5 @@
         <a href="{{ "/" | relative_url }}">
             <img alt="Web Accessibility Initiative" src="{{ "/assets/images/wai.svg" | relative_url }}"/>
         </a>
-    </div>
-</div>
+  </div>
+</banner>
