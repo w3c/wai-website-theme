@@ -28,7 +28,7 @@ Standard expand collapse:
 ```liquid
 {%raw%}{% include excol.html type="start" id="optional-id" %}
 
-### Heading
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
@@ -55,7 +55,7 @@ Content of the expand/collapse.
 
 {% include excol.html type="start" id="optional-id" %}
 
-### Heading
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
@@ -70,7 +70,7 @@ Content of the expand/collapse.
 ```html
 {% include excol.html type="start" id="optional-id" %}
 
-### Heading
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
