@@ -30,7 +30,7 @@ Expand/collapses can also be nested and used multiple times on the page. `{% inc
 
 {% include excol.html type="start" id="one" %}
 
-### Heading 3
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
@@ -38,7 +38,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus incidunt v
 
 {% include excol.html type="start" id="two" %}
 
-#### Heading 4
+Expand/collapse button label second level
 
 {% include excol.html type="middle" %}
 
@@ -50,7 +50,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et pariatur quam qui d
 
 {% include excol.html type="start" id="three" %}
 
-### Heading 3
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
@@ -58,7 +58,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat fugiat dicta a
 
 {% include excol.html type="start" id="four" %}
 
-#### Heading 4
+Expand/collapse button label second level
 
 {% include excol.html type="middle" %}
 
@@ -83,7 +83,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam aspe
 
 {% include excol.html type="start" id="one" %}
 
-### Heading 3
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
@@ -91,7 +91,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus incidunt v
 
 {% include excol.html type="start" id="two" %}
 
-#### Heading 4
+Expand/collapse button label second level
 
 {% include excol.html type="middle" %}
 
@@ -103,7 +103,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et pariatur quam qui d
 
 {% include excol.html type="start" id="three" %}
 
-### Heading 3
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
@@ -111,7 +111,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat fugiat dicta a
 
 {% include excol.html type="start" id="four" %}
 
-#### Heading 4
+Expand/collapse button label second level
 
 {% include excol.html type="middle" %}
 
@@ -130,11 +130,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam aspe
 {:/}
 
 ```html
-{% include excol.html type="all" %}
+{{% include excol.html type="all" %}
 
 {% include excol.html type="start" id="one" %}
 
-### Heading 3
+Expand/collapse button label 1
 
 {% include excol.html type="middle" %}
 
@@ -142,7 +142,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus incidunt v
 
 {% include excol.html type="start" id="two" %}
 
-#### Heading 4
+Expand/collapse button label second level
 
 {% include excol.html type="middle" %}
 
@@ -154,7 +154,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et pariatur quam qui d
 
 {% include excol.html type="start" id="three" %}
 
-### Heading 3
+Expand/collapse button label
 
 {% include excol.html type="middle" %}
 
@@ -162,7 +162,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat fugiat dicta a
 
 {% include excol.html type="start" id="four" %}
 
-#### Heading 4
+Expand/collapse button label second level
 
 {% include excol.html type="middle" %}
 
