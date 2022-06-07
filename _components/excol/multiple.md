@@ -130,7 +130,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam aspe
 {:/}
 
 ```html
-{{% include excol.html type="all" %}
+{% include excol.html type="all" %}
 
 {% include excol.html type="start" id="one" %}
 
