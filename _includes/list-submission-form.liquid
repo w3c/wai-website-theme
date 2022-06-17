@@ -23,7 +23,7 @@
 
 {%- if include.type == 'start' -%}
 
-  {%- if include.DEBUG_USE_LOCAL_FUNCTION != nil -%}
+  {%- if include.DEBUG_USE_LOCAL_FUNCTION -%}
     {% assign action = "/.netlify/functions/list-submission" %}
   {%- elsif include.action == nil -%}
     {% assign action = "https://wai-website.netlify.app/.netlify/functions/list-submission" %}
