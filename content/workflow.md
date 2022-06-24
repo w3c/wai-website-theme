@@ -52,14 +52,15 @@ Resource editors provide updates in a single Pull Request to the publication bra
 
 WAI website updates are usually published/deployed on Tuesdays about 13:00UTC. Deploys on other days can be arranged ahead of time. Note that the site manager or maintainers will also likely deploy the site at other times, without prior notice.
 
-<br><hr><hr>
-@@ longer draft below  -- maybe not needed? @@
 
-## Overview
+
+## longer draft below  -- maybe not needed?
+
+### Overview
 
 These workflows are designed to alow parts of the WAI website to be developed independently and yet control when updates make it into the published WAI website, after a suitable integration review.
 
-## GitHub Flow
+### GitHub Flow
 
 The WAI website content is managed using git version control with GitHub and so we use the light-weight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) to manage collaboration, review, and publication.
 
@@ -71,7 +72,7 @@ Each resource supports two distinct workflows using GitHub pull requests and two
 - Editorial workflow using a "ready for publication" branch
 - Publication workflow using a specified "publish" branch (currently mostly master or main)
 
-## Editoral Workflow
+### Editoral Workflow
 
 While developing new content or changing existing content within a resource the content will be reviewed by some of:
 
@@ -92,7 +93,7 @@ The resource's editorial workflow is as follows:
 - the Publication Review workflow is started with a pull request to the "publish" branch
 - WAI team are added as pull request reviewers so they are notified via GitHub
 
-## Publication Workflow
+### Publication Workflow
 
 The WAI website has a lot of existing content spread across the many resources as well as shared assets like the theme.
 As the builds process pulls in all these content sources a best practice is to change one thing at a time.
@@ -125,7 +126,7 @@ The process is:
 - the site is published using a GitHub release which triggers a GitHub Action
 - the changes are tested on the live site
 
-## Branch protection
+### Branch protection
 
 GitHub [branch protection settings](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) avoid errors caused by workflow shortcuts being taken. A set of restrictions are applied to specific branches.
 
@@ -135,6 +136,6 @@ The "publish" branch is protected to require a pull request and direct commits a
 
 WAI Team members can always override the protections if required.
 
-## Cleanup
+### Cleanup
 
 After a pull request has been merged it is deleted in GitHub and the associated branch also deleted. This keeps the repository clean; too many branches make development hard. Note though, that GitHub allows deleted PRs and branches to be restored if ever required.
