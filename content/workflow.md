@@ -20,7 +20,7 @@ The process used to propose, review and publish updates to the WAI website.
 
 {% include toc.html %}
 
-## Overview
+## GitHub flow
 
 While developing new content or changing existing content some for of review process will be followed. The content itself will usually be reviewed in details by:
 
@@ -30,6 +30,17 @@ While developing new content or changing existing content some for of review pro
 - external groups
 
 To support this, an editorial workflow is used to alow collaboration and providing automatically generated previews using Netlify.
+
+The website content is managed using git version control with GitHub and so we use the light-weight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) to manage collaboration, review and publication.
+In addition the website content is broken up into modules called resources. Each resource has its own GitHub repository from which code is pulled into the full wWAI website.  In outline:
+
+- all work is carried on a "topic" branch
+- a GitHub Pull Request is provided for collaboration on the branch contents
+  - the Pull request is for a merge to the "Publish" branch described below
+  - this can be marked as a draft until ready for publication
+- Netlify Integration provides a preview of any updates committed and pushed to the branch
+
+## Publication reviews
 
 In addition, the WAI website has a lot of existing content, an extensive information architecture and complex technical requirements.
 Any proposed changes need to be compatible across several areas:
@@ -49,18 +60,7 @@ Publication reviews may involves:
 - website editor
 - website technical lead
 
-## GitHub flow
-
-The website content is managed using git version control with GitHub and so we use the light-weight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) to manage collaboration, review and publication.
-In addition the website content is broken up into modules called resources. Each resource has its own GitHub repository from which code is pulled into the full wWAI website.  In outline:
-
-- all work is carried on a "topic" branch
-- a GitHub Pull Request is provided for collaboration on the branch contents
-  - the Pull request is for a merge to the "Publish" branch described below
-  - this can be marked as a draft until ready for publication
-- Netlify Integration provides a preview of any updates committed and pushed to the branch
-
-## Publication reviews
+Accordingly the flow:
 
 - a nominated "publish" branch contains content that goes live when a website release is made
   - this is usually "master" or "main"
@@ -73,8 +73,10 @@ Depending on where the content updates come from, the publication review process
 
 ## Branch protection
 
-For the "publish" branch GitHub branch protection settings are used to provide a measure of control of updates and follow W3C practices.
-The [protection settings](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) require a pull request for all changes to the branch and also block merging if a pull request does not have an approving review. The exact details of the review vary according to the resources and WAI Team members can override it if required.
+For the "publish" branch GitHub branch protection settings are used to provide a measure of control of updates and to follow W3C practices.
+The [protection settings](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) require a pull request for all changes to the branch and also block merging if a pull request does not have an approving review.
+
+The WAI Team members can override the protections if required.
 
 ## Cleanup
 
