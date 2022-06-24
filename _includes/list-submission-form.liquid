@@ -23,7 +23,7 @@
 
 {%- if include.type == 'start' -%}
 
-  {%- if include.DEBUG_USE_LOCAL_FUNCTION -%}
+  {%- if include.DEBUG_USE_LOCAL_SUBMISSION_FUNCTION -%}
     {% assign action = "/.netlify/functions/list-submission" %}
   {%- elsif include.action == nil -%}
     {% assign action = "https://wai-website.netlify.app/.netlify/functions/list-submission" %}
@@ -43,7 +43,7 @@
   {%endif%}
 
   {% capture args %}
-    {% if include.DEBUG_FUNCTION %}DEBUG:true, {% endif %}
+    {% if include.DEBUG_SUBMISSION_FUNCTION %}DEBUG:true, {% endif %}
     {% if include.version %}form_version:{{include.version}}, {% endif %}
     {% if include.ref %}submission_ref:{{include.ref}}, {% endif %}
     success:{{WAI_REFERRER_HACK}}{{include.success}},
