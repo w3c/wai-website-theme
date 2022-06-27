@@ -28,6 +28,42 @@ Quicklinks:
 @@
 _**{Publication info moved from "Technical Information" page. For Steve or others to edit (or delete if redundant with info later in the page -- or, leave as a summary :-}:**_
 
+### Publication Workflow
+
+When resource editors are ready for content to be published they will ensure a Pull Request is created to the publication branch for the website team to consider and merge. This is explained in the [editorial workflow notes](/workflow/). Many considerations need to be made before merging:
+
+- fit with existing content
+- editorial style
+- user experience
+- accessibility
+- internationalization
+- theme and coding
+- information architecture
+- technical integration
+
+The publication process is:
+
+- one or more resources have their pull requests to the "publication" branch reviewed
+- required matching changes to shared resources like the theme are made - possibly on branches
+- changes to the wai-website _config are made
+- for new resources a git submodule and symblinks are added to wai-website
+- the "publish" branch is merged
+- the Netlify wai-website preview is built and tested
+- the site is published using a GitHub release which triggers a GitHub Action
+- the changes are tested on the live site
+
+### Branch protection
+
+GitHub [branch protection settings](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) is used to control updates to the branches that are included in the WAI website. These are called "publication" branches.
+
+The "publication" branch of a repository is usually main or master and is listed in `.gitmodules` file. Publication branches are protected to require a pull request and direct commits are not possible. Only WAI team can merge to it so they can control when changes are pulled into the wai website. This requires only WAI website staff have privileges above "wright"
+
+WAI Team members can always override the protections if required.
+
+### Cleanup
+
+Ensure the Pull Request and branch in the resource repo are deleted.
+
 ## Deployment
 
 Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages. The W3C website uses a reverse proxy so the WAI site pages appear within it mounted at `www.w3.org/WAI/`
