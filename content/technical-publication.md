@@ -56,9 +56,17 @@ The publication process is:
 
 GitHub [branch protection settings](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) is used to control updates to the branches that are included in the WAI website. These are called "publication" branches.
 
-The "publication" branch of a repository is usually main or master and is listed in `.gitmodules` file. Publication branches are protected to require a pull request and direct commits are not possible. Only WAI team can merge to it so they can control when changes are pulled into the wai website. This requires only WAI website staff have privileges above "wright"
+The "publication" branch of a repository is usually main or master and is listed in `.gitmodules` file. Publication branches are protected to require a pull request and direct commits are not possible. Only WAI team can merge to it so they can control when changes are pulled into the wai website. This requires only WAI website staff have privileges above "wright".
 
 WAI Team members can always override the protections if required.
+
+The minimum GitHub repository settings required for this
+are:
+
+- no one has access higher than "write" (WAI Team members inherit full access from the organization)
+- the publication branch has protections:
+  - Require a pull request before merging
+  - Restrict who can push to matching branches
 
 ### Cleanup
 
