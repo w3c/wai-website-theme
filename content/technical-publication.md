@@ -25,12 +25,9 @@ Quicklinks:
 
 {% include toc.html %}
 
-@@
-_**{Publication info moved from "Technical Information" page. For Steve or others to edit (or delete if redundant with info later in the page -- or, leave as a summary :-}:**_
-
 ### Publication Workflow
 
-When resource editors are ready for content to be published they will ensure a Pull Request is created to the publication branch for the website team to consider and merge. This is explained in the [editorial workflow notes](/workflow/). Many considerations need to be made before merging:
+When resource editors are ready for content to be published they submit a Pull Request to the publication branch for the website team to consider, merge, and publish. This is explained in the [editorial workflow notes](/workflow/) &mdash; which includes that editors are responsible for coordinating considerations for:
 
 - fit with existing content
 - editorial style
