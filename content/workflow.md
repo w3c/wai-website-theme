@@ -65,8 +65,6 @@ Only highly-trusted individuals should have write access to the default branch. 
 
 WAI website updates are usually published/deployed on Thursdays about 13:00UTC. Deploys on other days can be arranged ahead of time. Note that the site manager or maintainers will also likely deploy the site at other times, without prior notice.
 
-After a pull request has been merged it is deleted in GitHub and the associated branch should also be deleted. GitHub keeps deleted pull requests and branches, and they can be restored.
-
 Editors work with the WAI site manager and technical lead to coordinate on considerations for:
 * fit with existing content
 * editorial style
