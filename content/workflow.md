@@ -24,20 +24,18 @@ This page describes the process for editors to submit updates to the WAI website
 
 This process enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables all publication on the WAI website to be coordinated by the website manager.
 
-* One branch in each repository is designated as the publication branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn and Steve.
+* One branch in each repository is designated as the "**publication**" branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn and Steve.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.
 * Scheduled updates are usually published/deployed on Thursdays.
 
 ## Workflow
 
 * Each Working Group and editorial team defines their own workflow for drafting, reviewing, approving, and submitting updates.
-  * <s>[no need to include this?] All update work is carried out on feature branches. Several may be in progress at any time.</s>
   * Pull request used during development  are made to the default branch or other branches, NOT the publication branch.
   * Netlify previews are available for all pull requests.
   * Editors and/or project managers ensure [early coordination on user interface, shared component, and content updates](#coop), per below.
-* <s>[not needed?] When updates are ready for publication, the editor merges it into the designated publication branch. (If there is a single simple update, they can just create a single pull request to the publication branch as in the next step)</s>
 * When the editor wants updates published, they:
-  * Create a single pull request to the publication branch.
+  * Create a single pull request to the "**publication**" branch.
     * Include a brief summary of the changes. Explain everything that the website manager and/or technical lead needs to particularly be aware of.
     * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
     * Assign it to @shawna_slh.
