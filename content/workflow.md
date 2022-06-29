@@ -3,6 +3,7 @@ title: "[in-progress] Updating WAI Website Resources"
 permalink: /workflow/
 ref: /workflow/
 lang: en
+feedbackmail: wai@w3.org
 github:
   repository: w3c/wai-website-theme
   path: content/workflow.md
