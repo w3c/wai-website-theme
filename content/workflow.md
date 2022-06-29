@@ -59,7 +59,9 @@ This process enables parts of the WAI website to be developed independently thro
 
 Publication branches are protected, and editable only by W3C staff. All updates to appear in the WAI website are on this branch and will be merged by the site manager, technical lead, or maintainers &mdash; currently Shawn and Steve. As backup, any W3C staff (as W3C organization administrators) can edit or merge into the publication branch. To enable this, resource editors and other non-W3C-team have maximum repository access privileges "write".
 
-Resource editors provide updates in a single pull request to the publication branch. If there are multiple updates, they can be provided in the default branch (usually main or master), with a single pull request for that branch to be merged into the publication branch. Only highly-trusted individuals should have write access to the default branch. Before updates are made in the default branch, content updates have been approved by the Working Group, user interface updates approved by the website manager, and shared component updates approved by the technical lead.
+Resource editors provide updates in a single pull request to the publication branch. If there are multiple updates, they can be provided in the default branch (usually main or master), with a single pull request for that branch to be merged into the publication branch.
+
+Only highly-trusted individuals should have write access to the default branch. Before updates are made in the default branch, content updates have been approved by the Working Group, user interface updates approved by the website manager, and shared component updates approved by the technical lead.
 
 WAI website updates are usually published/deployed on Thursdays about 13:00UTC. Deploys on other days can be arranged ahead of time. Note that the site manager or maintainers will also likely deploy the site at other times, without prior notice.
 
