@@ -78,10 +78,10 @@ Editors work with the WAI site manager and technical lead to coordinate on consi
 ## [draft in-progress] Site-Wide Components {#components}
 
 WAI website components:
-* https://github.com/w3c/wai-website-theme/ - Jekyll theme
-* https://wai-website-theme.netlify.app/components/ - descriptions of design components
-* https://github.com/w3c/wai-minimal-header-design/ - used for report tools, supplemental guidance, ACT Rules, ARIA APG
+* [https://github.com/w3c/wai-website-theme/](https://github.com/w3c/wai-website-theme/) - Jekyll theme
+* [https://wai-website-theme.netlify.app/components/](https://wai-website-theme.netlify.app/components/) - descriptions of design components
+* [https://github.com/w3c/wai-minimal-header-design/](https://github.com/w3c/wai-minimal-header-design/) - used for report tools, supplemental guidance, ACT Rules, ARIA APG
 
-Currently issues related to these components are in different places. We are in the process of moving all issues to: https://github.com/w3c/wai-website/issues/ so they are in one place. We will use labels to group them.
+Currently issues related to these components are in different places. We are in the process of moving all issues to: [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) so they are in one place. We will use labels to group them.
 
-Please put any new issues in https://github.com/w3c/wai-website/issues/
+Please put any new issues in [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) &mdash; and feel free to move existing issues there, too.
