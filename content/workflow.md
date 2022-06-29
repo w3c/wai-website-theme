@@ -67,7 +67,7 @@ WAI website updates are usually published/deployed on Thursdays about 13:00UTC. 
 
 After a pull request has been merged it is deleted in GitHub and the associated branch should also be deleted. GitHub keeps deleted pull requests and branches, and they can be restored.
 
-Editors work with the WAI site manager and technical lead to coordinating considerations for:
+Editors work with the WAI site manager and technical lead to coordinate on considerations for:
 * fit with existing content
 * editorial style
 * user experience
