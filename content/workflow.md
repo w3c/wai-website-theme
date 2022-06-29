@@ -40,7 +40,7 @@ This process enables parts of the WAI website to be developed independently thro
   * Create a single pull request to the publication branch.
     * Include a brief summary of the changes. Explain everything that the website manager and/or technical lead needs to particularly be aware of.
     * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
-    * Assigned it to @shawna_slh.
+    * Assign it to @shawna_slh.
     * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee.
   * Add a link to the pull request in the Publication Schedule _{@@ maybe a wiki page in a new GitHub repo that anyone can edit? or a page in https://www.w3.org/wiki/ except only Members can edit that...}_
     * Indicate if the technical lead needs to be involved in this publication or not.
