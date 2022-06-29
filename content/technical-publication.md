@@ -27,16 +27,7 @@ Quicklinks:
 
 ### Publication Workflow
 
-When resource editors are ready for content to be published they submit a Pull Request to the publication branch for the website team to consider, merge, and publish. This is explained in the [editorial workflow notes](/workflow/) &mdash; which includes that editors are responsible for coordinating considerations for:
-
-- fit with existing content
-- editorial style
-- user experience
-- accessibility
-- internationalization
-- theme and coding
-- information architecture
-- technical integration
+When resource editors are ready for content to be published, they will create a Pull Request to the publication branch of their repo for the website team to merge and publish/deploy. This is explained in the [Updating WAI Website Resources](/workflow/).
 
 The publication process is:
 
