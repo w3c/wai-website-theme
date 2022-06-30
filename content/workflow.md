@@ -37,7 +37,7 @@ This process enables parts of the WAI website to be developed independently thro
   * Editors and/or project managers ensure [early coordination on user interface, shared component, and content updates](#coop), per below.
 * When the editor wants updates published, they:
   * Create a single pull request to the "**publication**" branch.
-    * Include a brief summary of the changes. Explain everything that the website manager and/or technical lead needs to particularly be aware of.
+    * Include a brief summary of the changes. Often a list of the PRs to the main branch since the last publication provides a good summary. **Explain everything that the website manager and/or technical lead needs to particularly be aware of.**
     * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
     * Assign it to @shawna_slh.
     * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee.
