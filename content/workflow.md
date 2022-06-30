@@ -36,8 +36,8 @@ This process enables parts of the WAI website to be developed independently thro
   * Netlify previews are available for all pull requests.
   * Editors and/or project managers ensure [early coordination on user interface, shared component, and content updates](#coop), per below.
 * When the editor wants updates published, they:
-  * Create a single pull request to the "**publication**" branch.
-    * Include a brief summary of the changes. Often a list of the PRs to the main branch since the last publication provides a good summary. **Explain everything that the website manager and/or technical lead needs to particularly be aware of.**
+  * Create a single pull request to the "**publication**" branch. How to and details in [Creating a pull request to the publication branch](#pr) below.
+    * Include a brief summary of the changes. **Explain everything that the website manager and/or technical lead needs to particularly be aware of.**
     * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
     * Assign it to @shawna_slh.
     * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee.
@@ -87,3 +87,22 @@ WAI website components:
 Currently issues related to these components are in different places. We are in the process of moving all issues to: [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) so they are in one place. We will use labels to group them.
 
 Please put any new issues in [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) &mdash; and feel free to move existing issues there, too.
+
+## Creating a pull request to the publication branch {#pr}
+
+From the Pull Request section, click the "New" button:<br>
+![image](new-pr-1.png)
+
+Change "base" to branch to "publication". Click "Create pull request".<br>
+![image](new-pr-2.png)
+
+For the title, put something like "For publication/deply on Thursday 7 July 2022".
+
+In the comments,
+* Include a brief summary of the changes. Often a list of the PRs to the main branch since the last publication provides a good summary, and also helps us followup if we need more info.
+* Explain everything that the website manager and/or technical lead needs to particularly be aware of.
+
+The purpose of this information is:
+* to confirm that anything that needed review from Steve or me got that review
+* for the publisher (me or Steve) to use for spot checking that the deploy worked
+* for troubleshooting if anything goes wrong
