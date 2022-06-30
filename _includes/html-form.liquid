@@ -28,7 +28,7 @@
     {% assign onsubmit = include.onsubmit %}
   {% endif -%}
 
-  <form name="{{ include.name }}" method="{{ method }}" action="{{ include.action }}">
+  <form name="{{ include.name }}" method="{{ method }}" action="{{ include.action }}" data-wai-form="checkbox-required-group">
     <input type="hidden" name="form_name" value="{{ include.name }}">
     {%- if include.args -%}
     {% assign args = include.args | split: "," %}
@@ -44,7 +44,7 @@
     {%- if firstForm %}
       // Adds check for one or more checkboxes in a required group
       // TODO handle more than one form
-      const form = document.querySelector('form')
+      const form = document.querySelector('form[data-wai-form="checkbox-required-group"]')
       const submitButton = form.querySelector('button[type="submit"]')
       submitButton.addEventListener('click', (event) => {
         const requiredCheckboxes = form.querySelectorAll('input[type="checkbox"][required][group]')
