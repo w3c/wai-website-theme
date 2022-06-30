@@ -91,12 +91,12 @@ Please put any new issues in [https://github.com/w3c/wai-website/issues/](https:
 ## Creating a pull request to the publication branch {#pr}
 
 From the Pull Request section, click the "New" button:<br>
-![image](https://github.com/w3c/wai-website-theme/blob/master/content-images/wai-website-theme/new-pr-1.png)
+{% include image.html src="new-pr-1.png" alt="" %}
 
-Change "base" to branch to "publication". Click "Create pull request".<br>
-![image](https://github.com/w3c/wai-website-theme/blob/master/content-images/wai-website-theme/new-pr-2.png)
+Change the base branch to "publication". Click the "Create pull request" button.<br>
+{% include image.html src="new-pr-2.png" alt="" %}
 
-For the title, put something like "For publication/deply on Thursday 7 July 2022".
+For the title, put something like "For publication/deply on Thursday 7 July 2022". (Please do no use a number for the month.)
 
 In the comments,
 * Include a brief summary of the changes. Often a list of the PRs to the main branch since the last publication provides a good summary, and also helps us followup if we need more info.
