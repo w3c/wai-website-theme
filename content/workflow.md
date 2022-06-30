@@ -41,7 +41,7 @@ This process enables parts of the WAI website to be developed independently thro
     * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
     * Assign it to @shawna_slh.
     * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee.
-  * Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_
+  * _**By Wednesday midnight US Eastern time:**_ Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_
     * Indicate if the technical lead (Steve) needs to be involved in this publication or not.
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 
