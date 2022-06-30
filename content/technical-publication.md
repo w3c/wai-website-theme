@@ -16,6 +16,7 @@ footer: > # Text in footer in HTML
 Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`. In addition, Netlfy preview deploys are made automatically when code is pushed to GitHub.
 
 Quicklinks:
+
 * [Release page](https://github.com/w3c/wai-website/releases/new) - "Tag Version" field: YYYY-MMmmm-DD _e.g, 2021-02Feb-14_, then "Publish release" button
 * [Actions monitor](https://github.com/w3c/wai-website/actions)
 
@@ -62,10 +63,11 @@ Ensure the Pull Request and branch in the resource repo are deleted.
 
 ## Deployment
 
-Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages. The W3C website uses a reverse proxy so the WAI site pages appear within it mounted at `www.w3.org/WAI/`
+Deployment consist of publication to the [main site](https://www.w3.org/WAI/...) via github pages. The W3C website uses a reverse proxy so the WAI site pages appear within it mounted at `www.w3.org/WAI/`
 Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment.
 
 The build process consists of several steps for all repos:
+
 1. checkout git repo including submodules
 1. install all dependencies (ie Ruby Gems)
 1. use the Ruby `bundle` command to invoke Jekyll for the build
@@ -120,6 +122,7 @@ There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 s
 {% include excol.html type="middle" %}
 
 #### 1.1.1 Create a Release on GitHub
+
 Go to the [Draft Release page](https://github.com/w3c/wai-website/releases/new). Enter today’s date into the “Tag Version” input field, in the format: `YYYY-MMmmm-DD` e.g, 2020-12Dec-25.
 
 For multiple releases on one day, add a letter to the end: `YYYY-MMmmm-DD-x` with `x` replaced by a letter, starting with a.
@@ -250,4 +253,3 @@ WARNING: skipped symlink /private/var/folders/br/73fx4d5s7dbb0j18tqdt6hfh0000gn/
 The generated site is then output in the `_site` sub directory, for example in `~/wai-website/_site/`
 
 {% include excol.html type="end" %}
-
