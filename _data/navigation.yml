@@ -9,8 +9,10 @@
     url: "/technical/files/"
   - name: Creating a New Resource
     url: "/technical/new-resource/"
-  - name: "Working on an Existing Resource"
+  - name: Working on an Existing Resource
     url: "/technical/existing-resource/"
+  - name: Updating WAI Website Resources
+    url: "/workflow/"
   - name: Navigation
     url: "/technical/navigation/"
 - name:
