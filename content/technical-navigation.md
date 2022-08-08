@@ -91,3 +91,12 @@ For entries that should only show up when you are on that page, add `hide: true`
 
 Here, the changelog page is only shown in the navigation when naivgating to the `/fundamentals/accessibility-principles/changelog/` page. It allows user to easily see to which page the changelog in this case belongs to, and it also helps with building the breadcrumb navigation.
 
+## Hide Side Navigation Menu From a Page
+
+The side / secondary menu appears on the left of pages that are in the navigation filer unless the `pag.no-sidenav` variable is defined. eg in a page's front matter:
+
+```yaml
+no-sidenav: true
+---
+```
+
