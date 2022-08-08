@@ -17,8 +17,11 @@ Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates
 
 Quicklinks:
 
-* [Release page](https://github.com/w3c/wai-website/releases/new) - "Tag Version" field: YYYY-MMmmm-DD _e.g, 2021-02Feb-14_, then "Publish release" button
+* [New Release](https://github.com/w3c/wai-website/releases/new) - "Tag Version" field: YYYY-MMmmm-DD _e.g, 2021-02Feb-14_, then "Publish release" button
 * [Actions monitor](https://github.com/w3c/wai-website/actions)
+
+Others:
+* WCAG-EM Report Tool: [New Release](https://github.com/w3c/wai-wcag-em-report-tool/releases/new), [Actions monitor](https://github.com/w3c/wai-wcag-em-report-tool/actions)
 
 {::nomarkdown}
 {% include box.html type="end" %}
