@@ -184,7 +184,8 @@ ul.sentence li:last-child:after {
 }
 
 ul.sentence li:last-child:nth-child(2):before {
-    content: " and "
+    content: " and ";
+    display: inline-block;
 }
 
 ul.sentence li:last-child:first-child:before {

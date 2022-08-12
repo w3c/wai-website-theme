@@ -1,48 +1,119 @@
-.tool-header,
-.minimal-header {
+.tool-header {
   display: flex;
   align-items: center;
 }
-.tool-header a,
-.minimal-header a {
+.tool-header a{
   text-decoration: none;
 }
-.tool-header-name,
+.tool-header-name {
+  font-size: 1.125em;
+  line-height: 1;
+}
+.tool-header-logo {
+margin-left: auto;
+display: flex;
+align-items: center;
+align-self: start;
+}
+.tool-header-logo img {
+  display: block;
+  margin: 0.75em 0 0.75em 0.5em;
+  height: 1.5em;
+}
+
+.minimal-header {
+  display: flex;
+  margin: 1.2em 0;
+  align-items: stretch;
+}
+
+.minimal-header-container  {
+  display: flex;
+  flex-direction: column  ;
+}
+
+.minimal-header .minimal-header-name,
+.minimal-header .minimal-header-subtitle,
+.minimal-header .minimal-header-link
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.minimal-header-name {
+    flex: width 0 0;
+}
+
+.minimal-header-subtitle,
+.minimal-header-link {
+    flex: 1 0 0;
+}
+
 .minimal-header-name {
   font-size: 1.125em;
   line-height: 1;
 }
-.minimal-header.with-subtitle .minimal-header-name {
-  line-height: 1.1;
-  font-size: 1em;
+
+.minimal-header-subtitle {
+  margin-top: 8px;
+  display: block;
+  font-size: .8em;
 }
+.minimal-header-link {
+    border-left: 1px solid var(--gold);
+    padding-left: 8px;
+    margin-left: 18px;
+    display: block;
+    font-size: .8em;
+}
+
+.minimal-header-subtitle {
+    font-style: italic;
+  }
+
+.minimal-header-link {
+    font-weight: normal;
+    margin-right: 16px;
+}
+
 @media (min-width: 60em) {
   .tool-header-name,
   .minimal-header-name {
     font-size: 1.5em;
   }
-  .minimal-header.with-subtitle .minimal-header-name {
-    font-size: 1.2em;
+  .minimal-header-subtitle,
+  .minimal-header-link {
+    font-size: 80%;
+  }
+
+  .minimal-header-container  {
+    flex-direction: row;
+  }
+  .minimal-header-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left: 1px solid var(--gold);
+    padding-left: 8px;
+    margin-left: 18px;
   }
 }
-.minimal-header-subtitle {
-  display: block;
-  font-size: 70%;
-}
-.tool-header-logo,
+
 .minimal-header-logo {
   margin-left: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   align-self: start;
 }
-.tool-header-logo img,
 .minimal-header-logo img {
-  display: block;
-  margin: 0.75em 0 0.75em 0.5em;
+  margin: 1px 0 1px 0;
   height: 1.5em;
 }
 @media (min-width: 60em) {
+  .minimal-header-logo {
+    flex-direction: row;
+  }
   .tool-header-logo img,
   .minimal-header-logo img {
     height: 2em;
@@ -51,6 +122,6 @@
 .minimal-header-container {
   background-color: var(--w3c-classic);
 }
-  .minimal-header-container > .minimal-header {
-    grid-column: navigation-start / content-end;
-  }
+.minimal-header-container > .minimal-header {
+  grid-column: navigation-start / content-end;
+}

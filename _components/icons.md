@@ -50,6 +50,9 @@ variants:
 - name: youtube
 - name: twitter
 - name: creative-commons
+- name: arrow-up-thin
+- name: arrow-left-thin
+- name: arrow-right-thin
 order: 1
 inline_css: |
 ---

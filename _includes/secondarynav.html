@@ -34,6 +34,7 @@
   {%- endfor -%}
 {%- endfor -%}
 {%- endif -%}
+{%- unless page.no-sidenav -%}
 <div class="sidenav">
 {%- for i in currentsubnav.pages -%}
   {%- if forloop.first -%}
@@ -65,6 +66,7 @@
           {% include menuitem.html name=j.name url=j.url hide=j.hide insub=insubsub current=false submenu=subsubmenu %}
         {%- endif -%}
       {%- if forloop.last %}</ul>{% endif -%}
+      {% assign insubsub = false %}
     {%- endfor -%}
   {%- endcapture -%}
   {%- if i.url == searchurl -%}
@@ -95,3 +97,4 @@
   {% endfor -%}
 {% endif %}
 </div>
+{% endunless %}
