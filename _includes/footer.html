@@ -27,9 +27,9 @@
 {%- endif -%}
 {% if col.footer %}
 <footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
-  <div class="inner" 
-    {% if page.layout == "standalone_resource" %}
-      style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
+  <div class="inner"
+    {% if include.inner-style %}
+      style="{{ include.inner-style }}"
     {% endif %}>
     {{ col.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
     {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
@@ -38,15 +38,84 @@
 {% else %}
   {% if page.footer %}
   <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
-    <div class="inner" 
-      {% if page.layout == "standalone_resource" %}
-        style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
+    <div class="inner"
+      {% if include.inner-style %}
+        style="{{ include.inner-style }}"
       {% endif %}>
       {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
       {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
     </div>
   </footer>
   {% endif %}
+{% endif %}
+
+{% comment %}
+
+  META FOOTER
+
+  For the tutorials, we used data to form the footer. This way of constructing the footer is now called “metafooter” and needs to be enabled by setting `metafooter: true` in the frontmatter. Do NOT use with raw html `footer: ` frontmatter.
+
+{% endcomment %}
+{% if page.metafooter %}
+  <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
+    <div class="inner">
+      <div><strong>Status:</strong>
+        {% if page.status == "approved-draft" %}
+          Draft, approved by <a href="https://www.w3.org/WAI/EO/">EOWG</a>, updated
+        {% elsif page.status == "draft" %}
+          [DRAFT] updated
+        {% elsif page.status == "editors-draft" %}
+          [EDITOR’S DRAFT] updated
+        {% else %}
+          Updated
+        {% endif %}
+        {{ page.last_updated | date: '%d %B %Y' }}
+        {% if page.first_published %}
+        (first published {{ page.first_published }})
+        {% endif %}
+      </div>
+      <div>
+          Editors:
+          {% for editor in page.editors %}
+          {% if forloop.first %}<ul class="sentence">{% endif %}
+            {% assign editorsize = editor | size %}
+            {% if editorsize == 1 %}
+              {% assign editor1 = editor | replace: '"}', '' %}
+              {% assign editor2 = editor1 | replace: '{"', '' %}
+              {% assign editor3 = editor2 | split: '"=>"' %}
+            <li><a href="{{ editor3[1] }}">{{ editor3[0] }}</a></li>
+            {% else %}
+            <li>{{ editor }}</li>
+            {% endif%}
+          {% if forloop.last %}</ul>{% endif %}
+          {% endfor %}
+      </div>
+      <div>
+          Contributors:
+          {% for contributor in page.contributors %}
+          {% if forloop.first %}<ul class="sentence">{% endif %}
+            {% assign contributorsize = contributor | size %}
+            {% if contributorsize == 1 %}
+              {% assign contributor1 = contributor | replace: '"}', '' %}
+              {% assign contributor2 = contributor1 | replace: '{"', '' %}
+              {% assign contributor3 = contributor2 | split: '"=>"' %}
+            <li><a href="{{ contributor3[1] }}">{{ contributor3[0] }}</a></li>
+            {% else %}
+            <li>{{ contributor }}</li>
+            {% endif%}
+          {% if forloop.last %}</ul>{% endif %}
+          {% endfor %}
+      </div>
+      {% if page.support %}
+        <p>{{  page.support  }}</p>
+      {% endif %}
+      {% if page.changelog or page.acknowledegments  %}
+        <p>{{ changelog }}, {{ acknowledgements }}</p>
+      {% endif %}
+      {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
+      {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
+    </div>
+  </footer>
 {% endif %}
 
 <footer class="site-footer grid-4q" aria-label="Site">

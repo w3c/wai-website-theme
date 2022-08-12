@@ -42,7 +42,7 @@
     {%- assign path = page.github.path -%}
 {%- endif- %}
 
-{%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" id="helpimprove" -%}
+{%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" id="helpimprove" aria_label="feedback" -%}
 {%- if page.lang -%}
     {%- assign url_title = "[" | append: page.lang | append: "] " | append: page.title | uri_escape -%}
 {%- else -%}

@@ -122,6 +122,9 @@ The theme ensures that we consistently use the same professional HTML and CSS. I
 
 The theme also has this information stored and displayed, which makes it easy to update
 
+NB Changes to CSS source files require a step to build the CSS file provided in the theme. Install and run gulp with
+`npm install && npx gulp css` in the project root.
+
 ### WAI Website Plugin
 
 [{% include_cached icon.html name="arrow-right" %} WAI Website Plugin](https://github.com/w3c/wai-website-plugin)

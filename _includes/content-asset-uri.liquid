@@ -1,0 +1,12 @@
+{% comment %}
+# Generate a domain relative path from a file name
+# eg <a href="{% include content-asset-uri.liquid file="test.html" %}">foo</a>
+# expands to <a href="/content-assets/wcag-act-rules/test.hml">foo</a>
+#
+# file: filename and optional path
+#
+#  assumes page.github.repository is set
+{% endcomment %}
+{%- assign _repo = page.github.repository | replace: "w3c/", "" -%}
+{%- assign _path = "/" | prepend: _repo | prepend: "/content-assets/" | relative_url -%}
+{{ include.file | prepend: _path }}

@@ -16,8 +16,12 @@ footer: > # Text in footer in HTML
 Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`. In addition, Netlfy preview deploys are made automatically when code is pushed to GitHub.
 
 Quicklinks:
-* [Release page](https://github.com/w3c/wai-website/releases/new) - "Tag Version" field: YYYY-MMmmm-DD _e.g, 2021-02Feb-14_, then "Publish release" button
+
+* [New Release](https://github.com/w3c/wai-website/releases/new) - "Tag Version" field: YYYY-MMmmm-DD _e.g, 2021-02Feb-14_, then "Publish release" button
 * [Actions monitor](https://github.com/w3c/wai-website/actions)
+
+Others:
+* WCAG-EM Report Tool: [New Release](https://github.com/w3c/wai-wcag-em-report-tool/releases/new), [Actions monitor](https://github.com/w3c/wai-wcag-em-report-tool/actions)
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -25,15 +29,48 @@ Quicklinks:
 
 {% include toc.html %}
 
-@@
-_**{Publication info moved from "Technical Information" page. For Steve or others to edit (or delete if redundant with info later in the page -- or, leave as a summary :-}:**_
+### Publication Workflow
+
+When resource editors are ready for content to be published, they will create a Pull Request to the publication branch of their repo for the website team to merge and publish/deploy. This is explained in the [Updating WAI Website Resources](/workflow/).
+
+The publication process is:
+
+- one or more resources have their pull requests to the "publication" branch reviewed
+- required matching changes to shared resources like the theme are made - possibly on branches
+- changes to the wai-website _config are made
+- for new resources a git submodule and symblinks are added to wai-website
+- the "publish" branch is merged
+- the Netlify wai-website preview is built and tested
+- the site is published using a GitHub release which triggers a GitHub Action
+- the changes are tested on the live site
+
+### Branch protection
+
+GitHub [branch protection settings](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) is used to control updates to the branches that are included in the WAI website. These are called "publication" branches.
+
+The "publication" branch of a repository is usually main or master and is listed in `.gitmodules` file. Publication branches are protected to require a pull request and direct commits are not possible. Only WAI team can merge to it so they can control when changes are pulled into the wai website. This requires only WAI website staff have privileges above "wright".
+
+WAI Team members can always override the protections if required.
+
+The minimum GitHub repository settings required for this
+are:
+
+- no one has access higher than "write" (WAI Team members inherit full access from the organization)
+- the publication branch has protections:
+  - Require a pull request before merging
+  - Restrict who can push to matching branches
+
+### Cleanup
+
+Ensure the Pull Request and branch in the resource repo are deleted.
 
 ## Deployment
 
-Deployment consist of publication to the [main site ](https://www.w3.org/WAI/...) via github pages. The W3C website uses a reverse proxy so the WAI site pages appear within it mounted at `www.w3.org/WAI/`
+Deployment consist of publication to the [main site](https://www.w3.org/WAI/...) via github pages. The W3C website uses a reverse proxy so the WAI site pages appear within it mounted at `www.w3.org/WAI/`
 Publication is started by filling in the GitHub new [release form](https://github.com/w3c/wai-website/releases/new) which triggers the GitHub [deploy Action](https://github.com/w3c/wai-website/blob/master/.github/workflows/deploy.yml) to perform the build and deployment.
 
 The build process consists of several steps for all repos:
+
 1. checkout git repo including submodules
 1. install all dependencies (ie Ruby Gems)
 1. use the Ruby `bundle` command to invoke Jekyll for the build
@@ -88,6 +125,7 @@ There are two ways to generate the site. 1.1 shows how to do it on GitHub, 1.2 s
 {% include excol.html type="middle" %}
 
 #### 1.1.1 Create a Release on GitHub
+
 Go to the [Draft Release page](https://github.com/w3c/wai-website/releases/new). Enter today’s date into the “Tag Version” input field, in the format: `YYYY-MMmmm-DD` e.g, 2020-12Dec-25.
 
 For multiple releases on one day, add a letter to the end: `YYYY-MMmmm-DD-x` with `x` replaced by a letter, starting with a.
@@ -218,4 +256,3 @@ WARNING: skipped symlink /private/var/folders/br/73fx4d5s7dbb0j18tqdt6hfh0000gn/
 The generated site is then output in the `_site` sub directory, for example in `~/wai-website/_site/`
 
 {% include excol.html type="end" %}
-

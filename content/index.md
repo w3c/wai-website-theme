@@ -22,19 +22,23 @@ This resource shows how to edit content for the WAI website.
 
 ## Technical Info
 
-  * [A technical overview](/technical/)
-  * [Files in Repositories](/technical/files/)
-  * [Creating a New Resource](/technical/new-resource/)
-  * [Navigation](/technical/navigation/)
+* [A technical overview](/technical/)
+* [Files in Repositories](/technical/files/)
+* [Creating a New Resource](/technical/new-resource/)
+* [Navigation](/technical/navigation/)
+
+## Workflow
+
+* [Making changes](/workflow/)
 
 ## Editing Documents
 
-  * [Create and Edit Documents](/writing/)
-  * [The Frontmatter](/writing/frontmatter/)
-  * [Markdown](/writing/markdown/)
-  * [Custom Markdown Extensions](/writing/wai-markdown/)
-  * [Using HTML](/writing/html/)
-  * [Images](/writing/images/)
+* [Create and Edit Documents](/writing/)
+* [The Frontmatter](/writing/frontmatter/)
+* [Markdown](/writing/markdown/)
+* [Custom Markdown Extensions](/writing/wai-markdown/)
+* [Using HTML](/writing/html/)
+* [Images](/writing/images/)
 
 ## Design Components
 
