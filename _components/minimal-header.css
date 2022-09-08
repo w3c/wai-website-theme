@@ -119,6 +119,11 @@ align-self: start;
     height: 2em;
   }
 }
+
+.minimal-header-logo a :nth-child(2) {
+  margin-left: -13px;
+}
+
 .minimal-header-container {
   background-color: var(--w3c-classic);
 }
