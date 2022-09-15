@@ -195,9 +195,9 @@ input,
 select,
 textarea,
 [tabindex]:not([tabindex="-1"]) {
-    outline: 2px solid transparent;
+/*    outline: 2px solid transparent;
     outline-offset: 5px;
-    transition: outline-offset .2s linear;
+    transition: outline-offset .2s linear;*/
 }
 
 a:focus,
