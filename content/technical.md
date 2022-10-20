@@ -22,7 +22,40 @@ The primary tool is Jekyll, a Ruby-based static site generating tool. “WAI Web
 
 {% include toc.html %}
 
-## Summary of Services
+## A Summary for Content Authors
+
+The website theme and development processes help ensure that the site and every page has a _consistent layout and design_. The architecture and workflow allows us to _edit individual resources in their own GitHub repositories_ with previews on Netlify and integrated into the Pull requests.
+
+As a content author you will usually be working on content for one part of the WAI website. This can be accomplished by editing HTML or Markdown files in one of the many git repositories that hold the source files. In fact, the WAI site is broken up into *many* modules, called `resources`, each with it's own repository in the W3C's github organization. You can work in isolation on content files in a repository using either GitHub online features or a local development environment. Sometimes you might also work on static files like images or even CSS or javascript.
+
+In this case you can follow a typical GitHub Flow style workflow, working on your own branch. To support content development, Netlify generates previews which can be used to see how your resource changes look in isolation. There is a link to the preview in the repositories README file and in any Pull Requests you make to track your work.
+
+Sometimes, you will need to work on files that are shared between all resources, such as the file which defines the site navigation. Plus, if you are creating a new resource it needs to be added to the "master" resource which pulls all the components together to make the complete wai website.
+
+Working on these shared files requires extra care and coordination with the WAI Website Editor as integration of these multiple parts needs coordination to avoid a broken site.
+
+Usually, when changes become available for publication the the WAI website editor will provide a quick review before carrying out integration or update of the live site. A Netlify preview of the entire site is used to check for problems before the new site is published.
+
+### Site build process
+
+The WAI Website is created using a "build" process that converts the source file content in the resources into the wai website content. It combines all the resources and mixes in the shared files including navigation and a theme (visual styling). A build is used to both generate the Netlify previews and also when the site is published.
+
+While the mechanics of the build are complex, involving Jekyll, git submodules and filesystem symlinks, an overview can be useful to keep in mind:
+
+- source files, mainly in the `content/` folder of a resource, are processed by Jekyll so they are:
+  - converted to the final html using layouts and the Liquid templating language
+  - merged with the theme and other surrounding page content such menus and footers
+- static content files in the `content-images/` folder are made available unprocessed to other website files
+- yaml formatted frontmatter (surrounded by ---) in files provides:
+  - configuration for the build
+  - data values used in template tags in the file content
+  - the actual path to the file in the website
+
+## Info for DevOps
+
+Please see the summary info above.
+
+### Summary of Services
 
 A number of services are used to support managing of the the site source building previews of changes and releasing updates to the live site.
 
@@ -46,39 +79,8 @@ A number of services are used to support managing of the the site source buildin
 
 As a static site the web content to be deployed is generated with a build step.
 
-## A Summary for Content Authors
 
-The website theme and development processes help ensure that the site and every page has a _consistent layout and design_. The architecture and workflow allows us to _edit individual resources in their own GitHub repositories_ with previews on Netlify and integrated into the Pull requests.
-
-As a content author you will usually be working on content for one part of the WAI website. This can be accomplished by editing HTML or Markdown files in one of the many git repositories that hold the source files. In fact, the WAI site is broken up into *many* modules, called `resources`, each with it's own repository in the W3C's github organization. You can work in isolation on content files in a repository using either GitHub online features or a local development environment. Sometimes you might also work on static files like images or even CSS or javascript.
-
-In this case you can follow a typical GitHub Flow style workflow, working on your own branch. To support content development, Netlify provides previews which can be used to see how your resource changes look in isolation.
-
-Sometimes, you will need to work on files that are shared between all resources, such as the file which defines the site navigation. Plus, if you are creating a new resource it needs to be added to the "master" resource which pulls all the components together to make the complete wai website.
-
-Working on these shared files requires extra care and coordination with the WAI Website Editor as integration of these multiple parts needs coordination to avoid a broken site.
-
-Usually, when changes become available for publication the the WAI website editor will provide a quick review before carrying out integration or update of the live site. A Netlify preview of the entire site is used to check for problems before the new site is published.
-
-### Site build process
-
-The WAI Website is created using a "build" process that converts the source file content in the resources into the wai website content. It combines all the resources and mixes in the shared files including navigation and a theme (visual styling).
-A build is used to both generate the Netlify previews and finally when the site is published.
-
-While the mechanics of the build are complex, involving Jekyll, git submodules and filesystem symlinks, an overview can be useful to keep in mind:
-
-## Core Process
-
-- source files, mainly in the `content/` folder of a resource, are processed by Jekyll so they are:
-  - converted to the final html using layouts and the Liquid templating language
-  - merged with the theme and other surrounding page content such menus and footers
-- static content files in the `content-images/` folder are made available unprocessed to other website files
-- yaml formatted frontmatter (surrounded by ---) in files provides:
-  - configuration for the build
-  - data values used in template tags in the file content
-  - the actual path to the file in the website
-
-## Architecture and Previews
+### Architecture and Previews
 
 - This is a static website:
   - All pages are pre generated before being deployed to live
@@ -129,19 +131,21 @@ Currently the main site supermodule state of submodules is committed during depl
 
 This separation into modules and resources allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify site meaning changes to all modules become very time consuming. With the current configuration, changes to shared files may propagate to other resources or the main site earlier than required, for example adding items to the shared navigation will appear in the next site publication.
 
-## Design Components, Design Style
+## Technical Details
+
+### Design Components, Design Style
 
 [{% include_cached icon.html name="arrow-right" %} Direct link to the Design Components, Design Style.](/components/)
 
 Just as with virtually every other design style guide, this design style guide shows the application of the design for individual components of the website. If there are changes to a component (HTML/CSS), we can update it in the design style guide and the team. It updates consistently through the WAI website. **Currently** the design style guide only has the HTML rendering of the different components, however, there are often easier ways to get the HTML with includes that are provided by the theme. The advantage is that they automatically update when HTML/CSS changes are necessary.
 
-## Jekyll
+### Jekyll
 
 [{% include_cached icon.html name="arrow-right" %} Jekyll Website](https://jekyllrb.com)
 
 Jekyll is a static site generator. That basically means that it takes content files (in Markdown or HTML) and adds consistent templates to it and generates navigation and then outputs the whole site as static HTML pages.
 
-### Configuration
+#### Configuration using git submodules and symblinks
 
 Jekyll is quite limited when it comes to static site generation configuration. The use of git submodules requires the use of symblinks in the main  `wai-website` to ensure Jekyll build sees the resource files in the correct location. This imposes restrictions on what Jekyll config options are used in the resources. In particular, be careful to:
 
@@ -185,7 +189,7 @@ We use front matter to provide metadata that is used for generating the ```<titl
 
 Our source files with the YAML front matter block are processed by Jekyll as a special file.
 
-## GitHub
+### GitHub
 
 Whenever a file is changed on GitHub a (for our purposes) draft preview is generated. Pull Request generate separate previews through Netlify. It means you don't have to install anything on your machine to make changes and preview them (although that is possible).
 
@@ -197,7 +201,7 @@ Due to these many repositories, the main WAI website needs to collect them all i
 
 While it seems like an overly complicated way to copy the data, it allows us to bring changes in with one command line command, even if several repositories have changed.
 
-#### The wai-website-data repository
+### The wai-website-data repository
 
 Currently we include the wai-website repository in every repository to convey common data throughout all the repositories. In detail, we have the following information available:
 
@@ -207,7 +211,7 @@ Currently we include the wai-website repository in every repository to convey co
 
 This approach brings many problems, mostly for _Microsoft Windows_ users due to the use of “symlinks”. From <mark>Jekyll 4.1</mark> on, [`data` files can be added to the theme](https://github.com/jekyll/jekyll/pull/5470), which will greatly simplify our workflow.
 
-## Netlify
+### Netlify Previews
 
 Previews of individual resources are set up in Netlify via Github. The credentials for Netlify are available on the [WAI Website page (Team Only)](https://www.w3.org/WAI/Plan/website#accounts).
 
@@ -226,7 +230,7 @@ publish = "_site"
 
 Change the permalink and commit the file to the repository.
 
-### Creating a New Netlify Site
+#### Creating a New Netlify Site
 
 In the [Netlify web app](https://app.netlify.com/teams/w3c-wai/sites), click the “New site from Git” button, click on GitHub. Select W3C from the account picker on the top left and search for the repository. Click on the repository in the result list.
 
@@ -234,7 +238,7 @@ On the next page, the configuration from the `netlify.toml` file is already avai
 
 Netlify creates a random name for the site, which is usually not what one wants. Click site settings on the page that has opened and then select “Change site name”. In the popup, change the name to the github repository name (without `w3c/`).
 
-### Pull Request Build Notifications
+#### Pull Request Build Notifications
 
 By default, Netlify does not inform users that a Pull Request preview deploys. In the settings for the site, click on “Build & deploy” and make sure the “Deploy contexts” are set like this:
 
