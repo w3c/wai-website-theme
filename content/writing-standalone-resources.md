@@ -1,5 +1,5 @@
 ---
-title: "[Draft] Minimal Header and 'standalone_resource' Layout"
+title: "[Draft] The Minimal 'standalone_resource' Layout"
 permalink: /writing/standalone-resources/
 ref: /writing/standalone-resources/
 lang: en
@@ -8,17 +8,12 @@ github:
   path: content/writing-standalone-resources.md
 ---
 
-**_Note: We are updating this documentation. Your patience is appreciated.<br>Please send any questions to Steve and Shawn.<br>Feel free to submit a Pull Request for improvements to this documentation. Thanks!_**
-
 {::nomarkdown}
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-The minimal header component and the 'standalone_resource' layout are for tools and sets of documents that do not use the main WAI website header and navigation.
-
-Resources that are integrated using the WAI website theme can use the [minimal header component](https://wai-website-theme.netlify.app/components/minimal-header/) on its own, but are more likely to use the extended features of 'standalone_resource' layout. The layout uses the minimal header and also provides specific types of navigation including a 'pager', document type in h1, and a page contents.
-
-Tools that are not integrated provide their own header that looks identical to the to the minimal header, but usually with "tabs" for navigation.
+The 'standalone_resource' layout using the minimal header component is design for tools and sets of documents that do not require the full WAI website layout.
+In particular the header and navigation take up less space.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -28,20 +23,19 @@ Tools that are not integrated provide their own header that looks identical to t
 
 ## Background and what's what
 
-The main WAI website header and navigation takes up a fair bit of screen real estate and adds some visual complexity to pages. We don't want that for some WAI resources; for example, the [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/) and [Supplemental Guidance to WCAG 2](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o1p02-familiar-design/).
+The WAI website header and navigation prided in the default theme layout take up a fair bit of screen real estate and add some visual complexity to pages. Some WAI resources use the simplified header and navigation of the standalone_resource layout; for example, the [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/) and [Supplemental Guidance to WCAG 2](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o1p02-familiar-design/).
 
-A few things evolved in ways that make the current naming not aligned with reality. We decided not to further change the names of existing components and layouts. There are two related things:
-1. minimal header component
-2. standalone_resource layout &mdash; which is actually for things that **are** integrated into the WAI website theme
+The standalone_resource layout uses the Minimal Header component and also provides options for simplified navigation
 
-## Resources that are integrated
+## Resources using the WAI Website Theme
 
-Resources that are fully integrated into the WAI website and use the WAI theme, use the 'stand-alone resources' layout. This is currently used for document sets, such as Supplemental Guidance to WCAG, and interactive Lists, such as _(coming in 2022)_.
+Resources that are fully integrated into the WAI website use the WAI theme, that provides page layouts and components. These can simply use the 'stand-alone resources' layout instead of the default to provide an alternative header and navigation
 
-With the layout, you can:
-* specify links to an About page and an Index page
+With this layout, you can:
+
+* use a simple tab like navigation
+* provide data for a pager control navigation (up, previous, next)
 * enable an automatically-generated "Page Contents" (TOC)
-* provide data for the pager controls (up, previous, next)
 
 These are all configured declaratively using page variables in the usual Jekyll way. They can be specified per page in the frontmatter, or across pages in the `_config.yml` file. (See  [Jekyll - Front Matter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/)). Specifying them in the config file is usually best.
 
@@ -51,42 +45,59 @@ These are all configured declaratively using page variables in the usual Jekyll 
 layout: standalone_resource
 ```
 
-Hint: You can use nested layouts to save repetition.
+### Header content
 
-### Header, name of set of resources and tagline
+See [Supplemental Guidance](https://www.w3.org/WAI/WCAG2/supplemental/) which uses all the features
 
-Required: The name of the set of documents.
-
-Optional: A subtitle or tagline.
+Required: title
+Optional: title-ref - for pager style nav this appears on the first item in the nav
+Required: subtitle
+Optional: link
 
 ```yaml
 standalone_resource_header:
   title: Supplemental Guidance to WCAG 2
+  title-ref: /WCAG2/supplemental/#-cognitiveaccessibilityguidance
   subtitle: Additional ways to improve accessibility, not required to meet WCAG
-```
-### Navigation
-
-### About page link in header, required
-
-```yml
-standalone_resource_header:
   link:
     ref: /WCAG2/supplemental/about/
     title: About Supplemental Guidance and WCAG
 ```
 
-### Index page link in navigation, required
+### Navigation
 
-The icon is optional.
+Two style are supported: Tab and pager
+
+#### Tab style
+
+As used in the [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/):
+
+```yml
+standalone_resource_nav_links:
+  - name: APG Home
+    ref: /ARIA/apg/
+  - name: Patterns
+    ref: /ARIA/apg/patterns/
+  - name: Practices
+    ref: /ARIA/apg/practices/
+  - name: Index
+    ref: /ARIA/apg/example-index/
+  - name: About
+    ref: /ARIA/apg/about/
+```
+
+#### Pager style
+
+As used in the [Supplemental Guidance](https://www.w3.org/WAI/WCAG2/supplemental/):
+
+All required except the icon is optional.
 
 ```yml
 standalone_resource_pager:
   icon: /content-images/wai-wcag-supplemental/brain.svg
   name: All Cognitive
-  ref: /WCAG2/supplemental/#cognitiveaccessibilityguidance```
+  ref: /WCAG2/supplemental/#-cognitiveaccessibilityguidance
 ```
-
-#### Pager in navigation, optional
 
 The pager provides 'up', 'next' and 'previous' links for navigation within the set of documents. It is data driven, using a set of Jekyll arrays to provide the names and URLs.
 
@@ -151,7 +162,7 @@ A right-hand sidebar can be enabled that provides navigation to headings. By def
 sidebar: true
 ```
 
-## Tools that are _not_ integrated
+## Tools that do not use the WAI Website Theme
 
 Some tools &mdash; currently WCAG-EM Report Tool and ATAG Report Tool &mdash; do not use the WAI website theme. Instead they are implemented in other technologies and linked into the WAI website via W3C redirects. They use the Tool version of the [Minimal Header](https://github.com/w3c/wai-website-theme/blob/master/_includes/minimal-header.html) and use the theme styles, including those for the [Minimal Header](https://github.com/w3c/wai-website-theme/blob/master/_components/minimal-header.css) for visual consistency with the WAI website.
 
