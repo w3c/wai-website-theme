@@ -8,3 +8,6 @@ node_modules
 .nosync
 .jekyll-cache
 pnpm-lock.yaml
+
+# Local Netlify folder
+.netlify

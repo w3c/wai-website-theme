@@ -1,5 +1,5 @@
 ---
-title: "Technical Information"
+title: "Architecture, build and deploy"
 permalink: /technical/
 github:
   repository: w3c/wai-website-theme
@@ -12,9 +12,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-This page outlines the fundamental technical services, components and processes used to generate the WAI website.
-
-The primary tool is Jekyll, a Ruby-based static site generating tool. “WAI Website Theme” is a Jekyll theme with HTML templates, "components", CSS, plus front-end script. Source files for the web pages can include Markdown, HTML, CSS, and Javascript using the Liquid template language. YAML front matter provides options such as translations. The Theme repository also includes this documentation.
+This page describes the technical services, components and processes used to generate and deploy the WAI website.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -22,67 +20,69 @@ The primary tool is Jekyll, a Ruby-based static site generating tool. “WAI Web
 
 {% include toc.html %}
 
-## A Summary for Content Authors
+## Concepts for Content Authors
 
-The website theme and development processes help ensure that the site and every page has a _consistent layout and design_. The architecture and workflow allows us to _edit individual resources in their own GitHub repositories_ with previews on Netlify and integrated into the Pull requests.
+The website theme and development processes help ensure that the site and every page has a _consistent layout and design_. The architecture and associated development workflow allows us to _edit individual resources in their own GitHub repositories_ using a GitHub Pull Requests with previews provided on Netlify.
 
-As a content author you will usually be working on content for one part of the WAI website. This can be accomplished by editing HTML or Markdown files in one of the many git repositories that hold the source files. In fact, the WAI site is broken up into *many* modules, called `resources`, each with it's own repository in the W3C's github organization. You can work in isolation on content files in a repository using either GitHub online features or a local development environment. Sometimes you might also work on static files like images or even CSS or javascript.
+The primary tool is Jekyll, a Ruby-based static site generating tool. The “WAI Website Theme” provides HTML templates, common "components", CSS, plus front-end script to provide common styling and behaviour. Source files for the web pages can include Markdown, HTML, CSS, and Javascript using the Liquid template language that comes with Jekyll. YAML front matter at the top of pages provides options such as translations. A build process takes the source files you edit and generates the web page files that get deployed.
 
-In this case you can follow a typical GitHub Flow style workflow, working on your own branch. To support content development, Netlify generates previews which can be used to see how your resource changes look in isolation. There is a link to the preview in the repositories README file and in any Pull Requests you make to track your work.
+As a content author you will usually be working on content for one specific part of the WAI website. This can be accomplished by editing HTML or Markdown files in one of the many git repositories that hold the source files. In fact, the WAI site is broken up into *many* modules, called `resources`, each with it's own repository in the W3C GitHub organization. You can easily work in isolation on content files in a repository using either GitHub online features or a local development environment. Netlify Previews alow you to review what you changes will look like when deployed to the WAI website.
+
+You follow a typical GitHub Flow style workflow, working on your own "feature" branch with an associated Pull Request to support collaboration. Netlify automatically generates previews which can be used to see how your resource changes look. Links to the preview are automatically inserted into the Pull Requests for easy access.
 
 Sometimes, you will need to work on files that are shared between all resources, such as the file which defines the site navigation. Plus, if you are creating a new resource it needs to be added to the "master" resource which pulls all the components together to make the complete wai website.
 
-Working on these shared files requires extra care and coordination with the WAI Website Editor as integration of these multiple parts needs coordination to avoid a broken site.
+Working on these shared files requires extra care and coordination with the WAI Website Editor as integration of these multiple parts care to avoid a broken site.
 
 Usually, when changes become available for publication the the WAI website editor will provide a quick review before carrying out integration or update of the live site. A Netlify preview of the entire site is used to check for problems before the new site is published.
 
 ### Site build process
 
-The WAI Website is created using a "build" process that converts the source file content in the resources into the wai website content. It combines all the resources and mixes in the shared files including navigation and a theme (visual styling). A build is used to both generate the Netlify previews and also when the site is published.
+The WAI Website is created using a "build" process that converts the source file content in the resources into the wai website content. It combines all the resources and mixes in the shared files including shared navigation and a theme.
+
+Separate builds are run for the individual resources (repos) previews and the full website to test integration of all resources or when it is published.
 
 While the mechanics of the build are complex, involving Jekyll, git submodules and filesystem symlinks, an overview can be useful to keep in mind:
 
-- source files, mainly in the `content/` folder of a resource, are processed by Jekyll so they are:
-  - converted to the final html using layouts and the Liquid templating language
+- source files, mainly in the `content/` folder of a resource, are processed by Jekyll and converted to html:
   - merged with the theme and other surrounding page content such menus and footers
-- static content files in the `content-images/` folder are made available unprocessed to other website files
+  - use Jekyll layouts, includes and collections
+  - contain Liquid templating language constructs, HTML, CSS, Javascript or markdown
+- static content files in the `content-*/` folders are made available unprocessed to other website files
 - yaml formatted frontmatter (surrounded by ---) in files provides:
   - configuration for the build
   - data values used in template tags in the file content
   - the actual path to the file in the website
 
-## Info for DevOps
+## Deep Dive for DevOps
 
 Please see the summary info above.
 
 ### Summary of Services
 
-A number of services are used to support managing of the the site source building previews of changes and releasing updates to the live site.
+A number of services are used to support managing of the the site source, building previews of changes and releasing updates to the live site.
 
 - GitHub
   - contains all the source content, code and configuration
   - supports development workflow based on GitHub flow using Pull Requests
   - primary source of all git repositories for version control
-  - issues for tracking issues (suggestions and bugs) , including user supplied
+  - issues used for tracking issues (suggestions and bugs), including user supplied
   - actions - AKA workflows, "scripts" that run on GitHub repositories etc
   - releases - used to trigger the primary release action
   - pages - static hosting of site
-- W3C
+- W3C services
   - provide redirection so the WAI site appears as part of the W3C site
   - an API used as part of the release action to fixup URIs
 - Netlify
   - automatic preview sites for Pull Requests
-  - a live serverless function used for form processing for list modules
-- Dev machine
+  - a live serverless function used for form processing for list resources
+- Local Dev machine
   - optional local builds and testing
   - creating the symblinks used to access in the git submodules for website modules
 
-As a static site the web content to be deployed is generated with a build step.
-
-
 ### Architecture and Previews
 
-- This is a static website:
+- Is a static website:
   - All pages are pre generated before being deployed to live
   - The [Jekyll](https://jekyllrb.com/) static site generator (SSG) is used (a Ruby application)
   - Source file formats include [Markdown](https://daringfireball.net/projects/markdown/), HTML, CSS and Javascript using the [Liquid](https://shopify.github.io/liquid/) template language
@@ -91,10 +91,10 @@ As a static site the web content to be deployed is generated with a build step.
 ### Content Modules or Resources
 
 - The site source files are divided into modules for sections of the site A.K.A. 'resources'
-  - Each resource is held in a separate git repo
-  - One module, `wai-website` acts as the main which includes all the others
+  - Each resource is held in a separate GitHub / git repo
+  - One module, `wai-website` acts as the main for publication and includes all the others
   - Sub-module inclusion for resources and shared data is implemented using git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
-  - Another module, `wai-website-data`, provides shared common theme files and dependencies (Gems) used by all others. The submodules are all included at `/_external/data` and `/_external/resources/*`
+  - The module, `wai-website-data`, provides shared common files and dependencies (Gems) used by all others. The submodules are all included at `/_external/data` and `/_external/resources/*`
   - Linux [symlinks](https://man7.org/linux/man-pages/man7/symlink.7.html) are used to access the submodules from the source including from a `data` folder
 - Each resource (except data) can be individually previewed as if part of the full site
   - References to other modules will obviously be missing except for the `wai-website` preview
@@ -125,11 +125,11 @@ In a nutshell, git submodules are a way to include a git repo into another (supe
 
 The WAI site uses submodules for subparts of the site and also shared theme files. These are included when building both the section preview and the main site. The HEAD commit (head of default branch) of is always used and this requires all supermodules to be updated to reference the latest submodule as part of the build (local, Netlify or deploy).
 
-Currently the main site supermodule state of submodules is committed during deploy. However, previews are not currently commited at all so get out of date. This will be addressed soon. Probably by creating a new Github Actions workflow to update and commit all the supermodules.
-
-### Technical Issues
+### Technical Issues with the Modular Structure
 
 This separation into modules and resources allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify site meaning changes to all modules become very time consuming. With the current configuration, changes to shared files may propagate to other resources or the main site earlier than required, for example adding items to the shared navigation will appear in the next site publication.
+
+It may be better to have a monlithic site and build. lsong all the links and submodules. However the build will need to be fast, eg incremental.
 
 ## Technical Details
 
@@ -145,9 +145,35 @@ Just as with virtually every other design style guide, this design style guide s
 
 Jekyll is a static site generator. That basically means that it takes content files (in Markdown or HTML) and adds consistent templates to it and generates navigation and then outputs the whole site as static HTML pages.
 
-#### Configuration using git submodules and symblinks
+#### Gem Dependencies
 
-Jekyll is quite limited when it comes to static site generation configuration. The use of git submodules requires the use of symblinks in the main  `wai-website` to ensure Jekyll build sees the resource files in the correct location. This imposes restrictions on what Jekyll config options are used in the resources. In particular, be careful to:
+As a Ruby application, Jekyll manages dependencies on code modules AKA Gems. A `Gemfile` specifies the required top-level modules. A `Gemfile.lock` records the actual versions of each module used and those they in turn pull in as determined during the last build. If the lock file is checked into version controll in allows deterministic builds. At least in theory.
+
+A complication with our modular architecture is that all the preview builds and the main website build need to use use the same versions of all modules to avoid problems. So to save a lot of file update housekeeping a shared Gem is used that specifies the required Gems. If all the Gemfile.locks are generated at the same time everything will use the same version of all modules.
+
+##### Problems
+
+However a 'bundle install' or 'bundle update' will recalculate all the versions recorded `gemfile.lock`. As the exact version of Gems are not specified, changes can easily creep in, possible breaking builds.
+
+This happened recently when a new minor version of Jekyll pulled in rouge gem version that broke the builds, requiring all the `gemfile.lock' to be updated, in turn causing problems with open PRs.
+
+The solution is to specify the version of the top level dependencies in the shared `Gemfile`. The any bundle commands with use the same versions. However that is not foolproof as it relies of Gem publishers to not change their dependencies. It will require manual management of version updates, but that is a good thing given the shoddy way some module developers handle version numbers.
+
+#### Shared files using git submodules and symblinks
+
+Some files need to be shared between all the submodules for preview and the main site for deployment. Others are submodule specific but the main website also needs to access them.
+
+Jekyll is quite limited when it comes to configuration. The use of git submodules requires use of symblinks in the main `wai-website` to ensure Jekyll build sees the resource files in the correct location. In addition some files must appear in the same location in both individual resource build for preview and the full website build. This imposes restrictions on what Jekyll config options are used in the resources. The result is a complex file structure.
+
+- shared files such as 'navigation.yml' are located in `_data`
+  - these are symblinks to the imported git data submodule files in `_external/data`
+- other shared theme files are found in a `_includes` and `_layouts` folder provided by the `wai-website-theme` repository and linked remotely (not submodules)
+  - these can be locally overridden to debug) by creating files in an `includes` or `_layouts` folder
+  - additional resource specific files can be add to a `includes\module-name` or `_layouts\module-name` folder. The module-name is used when including the files using liquid syntax.
+- the main site also use `_data`, includes and layouts. It also adds a pages folder with symblinks to `_external/resources/*' to access all the content files in the submodules.
+- change to any of these shared file must be pushed to github to be picked up in a build
+
+In particular, be careful to:
 
 - avoid having resource specific `includes` using the `_include` folder
   - includes to be shared between resources should go in the theme resource

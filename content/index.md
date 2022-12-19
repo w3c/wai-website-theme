@@ -14,32 +14,17 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-This resource shows how to edit content for the WAI website.
+Welcome to the WAI website manual.
+
+Sections describe how to develop and deploy the website as well as how to create content using the theme features and components.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-## Technical Info
+This section describes the architecture, tools and workflows used to build and deploy the website.
 
-* [A technical overview](/technical/)
-* [Files in Repositories](/technical/files/)
-* [Creating a New Resource](/technical/new-resource/)
-* [Navigation](/technical/navigation/)
-
-## Workflow
-
-* [Making changes](/workflow/)
-
-## Editing Documents
+Also see these sections:
 
 * [Create and Edit Documents](/writing/)
-* [The Frontmatter](/writing/frontmatter/)
-* [Markdown](/writing/markdown/)
-* [Custom Markdown Extensions](/writing/wai-markdown/)
-* [Using HTML](/writing/html/)
-* [Images](/writing/images/)
-
-## Design Components
-
-Find all design components and how to invoke them from the [Design Components](/components/) page.
+* [Design Components](/components/)
