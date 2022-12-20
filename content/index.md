@@ -16,7 +16,7 @@ footer: > # Text in footer in HTML
 
 Welcome to the WAI website manual.
 
-Sections describe how to develop and deploy the website as well as how to create content using the theme features and components.
+Sections describe how to develop and deploy the website as well as how to create content using the theme features and custom components.
 
 {::nomarkdown}
 {% include box.html type="end" %}
