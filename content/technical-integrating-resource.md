@@ -48,7 +48,7 @@ Note: The following steps work directly on the wai-website main branch and resou
 1. pull the submodule code into the wai-website
 1. create symblinks to integrate the new content into wai-website
 1. update the config.yml file to include the new resource.
-1. check wai-website preview looks good - fix any issues
+1. check wai-website preview looks good
 1. push wai-website
 1. release wai website
 1. check deployment
@@ -79,7 +79,7 @@ These are the folders and files required for integration, some are optional. Not
 
 NB: The files that are direct children of `_data` must all be links to the included wai-website-data git submodule files. Otherwise resource specific changes have been made and will be lost in integration.
 
-## review page frontmatter and config.yml
+## Review page frontmatter and config.yml
 
 Minimal frontmatter is as follows.
 
@@ -95,31 +95,35 @@ github:
 
 config.yml is mostly template but some sections will need to be copied to the wai-website config.file, with slight modification. See below.
 
-## note designated 'publication' branch of the resource
+## Note designated 'publication' branch of the resource
 
 The workflow dictates that one git branch will be the publication branch. The content of this branch will appear in the wai-website when it is built. Critically, this is the branch used by the git submodule command.
 
 Check carefully as this may or may not be the GitHub 'default' branch.
 
-## ensure a mergable PR to the publication branch with working Netlify preview
+## Ensure a mergable PR to the publication branch with working Netlify preview
 
 The workflow is PR based so there should be a open PR attempting to merge changes onto the publication branch. The integrated Netlify Preview should have been used to confirm the content renders correctly. It is possible to access GitHub PRs locally via git but as it's slightly fiddly the working preview for the PR is preferable.
 
 All the above checks should pass in the PR.
 
-## merge the PR in GitHub
+## Merge the PR in GitHub
 
-Merge in Git hub means the production branch is up to date ready for the git submodule access.
+Merge in GitHub means the production branch is up to date ready for the git submodule access. The wai-website preview and publication will then access it.
 
-## add resource's GitHub repo to wai-website submodules list
+## Add resource's GitHub repo to wai-website submodules list
 
-The file `.gitmodules` lists each resource submodule's repositry URL on GitHub and the branch. Howevwr, the new resource cant' just be added to the file. A git command needs to be run
+The wai-website file `.gitmodules` lists each resource submodule's repositry URL on GitHub and the branch. However, the new resource can't be added by just editing the file. A git command needs to be run:
 
 ```bash
 git submodule add -b production-branch https://github.com/w3c/wai-resource.git _external/resources/wai-resource
+git add .
+git commit -m"add wai-resource submodule"
 ```
 
-## pull the submodule code into the wai-website
+Confirm by viewing the 'gitmodules' files.
+
+## Pull the submodule code into the wai-website
 
 The following will update all submodules as well as fetching the new one:
 
@@ -129,7 +133,7 @@ git submodule update --init --remote
 
 Check the code now exists at '_external/wai-resource/.
 
-## create symblinks to integrate the new content into wai-website
+## Create symblinks to integrate the new content into wai-website
 
 The process is to cd to the directories that will hold the link and then "ln -s" to the target file/directory under "_external". The various folders are listed above.
 
@@ -143,7 +147,7 @@ ls -l
 
 Note: links under "pages" link to the resource's "content/" folder. Thus file changes in the resource do not require link updates to wai-website. Some old links are done per file which makes maintenance a headache.
 
-## update the config.yml file to include the new resource.
+## Update the config.yml file to include the new resource.
 
 config.yml is mostly template but the following sections will need to be copied, with slight modification
 
@@ -165,7 +169,7 @@ collections:
 
 ### Defaults
 
-The issue is that in the resource the config is for the entire website, where as in the wai-website it becomes one sub part.
+The issue is that in the resource the config is for the entire website, where as in the wai-website it becomes one sub part. So for example:
 
 ```yaml
 defaults:
@@ -180,6 +184,7 @@ defaults:
 becomes
 
 ```yaml
+defaults:
     scope:
       path: "pages/wai-wcag-supplemental"
     values:
@@ -188,10 +193,28 @@ becomes
         title: Supplemental Guidance to WCAG 2
 ```
 
-## check wai-website preview looks good - fix any issues
+## Check wai-website preview looks good
 
-## push wai-website
+You can of course do a local build and preview of the wai-website using the Netlify CLI (with `ntl build && ntl dev`).
 
-## release wai website
+It is also possible to manually trigger build on Netlify [wai-website deploys page](https://app.netlify.com/sites/wai-website/deploys).
 
-## check deployment
+## pPush wai-website
+
+The Netlify preview for the entire wai-website will also build when the new master branch contents are pushed to GitHub.
+
+See the [wai-website deploys page](https://app.netlify.com/sites/wai-website/deploys).
+
+## Release wai website
+
+In GitHub create a new release which runs  GitHub action to build the site and deploys it via GitHub pages and a W3C site redirect.
+
+https://github.com/w3c/wai-website/releases
+
+## Check deployment
+
+Check the WAI website is correctly updated.
+
+https://www.w3.org/WAI/
+
+Note: sometimes new pages DO NOT appear when the should. The current theory is indeterminate delays in the GitHub publication to pages mean the final w3c publish step doesn't see the new pages. If this occurs then wait and then run publish.
