@@ -73,11 +73,16 @@ These are the folders and files required for integration, some are optional. Not
 - _collections - Jekyll collections
 - _plugins - ruby plugins for liquid
 - _data/wai-resource - Jekyll data files
-- _data/* - must be symblinks to the data git submodule
 - Gemfile - may include resource specific Gems
 - config.yml - Jekyll config
 
-NB: The files that are direct children of `_data` must all be links to the included wai-website-data git submodule files. Otherwise resource specific changes have been made and will be lost in integration.
+NB: The files that are direct children of `_data` must all be links to the included wai-website-data git submodule files. Otherwise resource specific changes have been made and will be lost in integration. Currently these are:
+
+- lang.json
+- navigation.yml
+- techniques.yml
+- translations.yml
+- wcag.yml
 
 ## Review page frontmatter and config.yml
 
@@ -91,6 +96,7 @@ github:
   repository: w3c/wai-resource
   branch: main
   path: content/filename
+footer: ...
 ```
 
 The config.yml file is mostly template but some sections will need to be copied to the wai-website config.file, with slight modification. See below.
@@ -117,9 +123,6 @@ The wai-website file `.gitmodules` lists each resource submodule's repositry URL
 
 ```bash
 git submodule add -b production-branch https://github.com/w3c/wai-resource.git _external/resources/wai-resource
-git add .
-git commit -m"Add wai-resource submodule"
-git push
 ```
 
 Confirm by inspecting the tail of 'gitmodules' file.
@@ -133,28 +136,32 @@ Confirm by inspecting the tail of 'gitmodules' file.
 
 ## Pull the submodule code into the wai-website
 
-The following will update all submodules as well as fetching the new one:
+If the submodule already existed the following will update all submodules code held in wai-website
 
 ```bash
 git submodule update --init --remote
 ```
 
-You should `git pull` too to get the latest code as usual.
+Check the code now exists at '_external/resources/wai-resource/.
 
-Check the code now exists at '_external/wai-resource/.
+You should `git pull` too to get the latest code as usual.
 
 ## Create symblinks to integrate the new content into wai-website
 
-The process is to cd to the directories that will hold the link and then "ln -s" to the target file/directory under "_external". The various folders are listed above.
+The process is to cd to the directories that will hold the link and then "ln -s" to the target file/directory under "_external". The various folders are listed above. If the resource has the directory you will need to link it.
+
+For example:
 
 ```bash
-cd _data
-ln -s ../_external/data/navigation.yml navigation.yml
+cd _pages
+ln -s ../_external/resources/wai-wcag-supplemental/content/ wai-wcag-supplemental
 ```
 
-Check with `ls -l`:
+Then check with `ls -l`:
 
-`$ navigation.yml -> ../_external/data/navigation.yml`
+`$ wai-wcag-supplemental -> ../_external/resources/wai-wcag-supplemental/content/`
+
+and `ls wai-wcg-supplemental` will show the resource files in it's content folder.
 
 Note: links under "pages" link to the resource's "content/" folder. Thus file changes in the resource do not require link updates to wai-website. Some old links are done per file which makes maintenance a headache.
 
@@ -212,6 +219,10 @@ The Netlify preview for the entire wai-website will also build when the new mast
 
 See the [wai-website deploys page](https://app.netlify.com/sites/wai-website/deploys).
 
+Note: that with Lighthouse scores enabled in Netlify the build takes a long time to load.
+
+Fix any problems found in the preview. Remember some change will need to be made in the resource repo and others in the wai-website repo. Ensure everything gets pushed to GitHub.
+
 ## Push wai-website
 
 ```bash
@@ -219,8 +230,6 @@ git add .
 git commit -m"Integrate wai-resource resource"
 git push
 ```
-
-Fix any problems found in the preview. Remember some change will need to be made in the resource repo and others in the wai-website repo. Ensure everything gets pushed ot GitHub.
 
 ## Release wai website
 
