@@ -1,5 +1,5 @@
 ---
-title: "CWorking on an Existing Resource"
+title: "Working on an Existing Resource"
 permalink: /technical/existing-resource/
 lang: en
 # translators: # Uncomment (remove #) for translations, one - name line per translator.
@@ -26,6 +26,8 @@ Working on an existing resource can be done in GitHub or in a local development 
 {:/}
 
 {% include toc.html %}
+
+The documentation section [Create and Edit Documents](/writing/) describes working with content.
 
 ## Editing in GitHub
 

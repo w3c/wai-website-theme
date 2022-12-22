@@ -13,7 +13,7 @@ github:
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-This page describes the process for editors to submit updates to the WAI website.
+This section describes how content authors work with the website team to publish updates. The documentation section [Create and Edit Documents](/writing/) describes working with content.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -21,9 +21,10 @@ This page describes the process for editors to submit updates to the WAI website
 
 {% include toc.html %}
 
+
 ## Overview
 
-This process enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables all publication on the WAI website to be coordinated by the website manager.
+The workflow described here enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables publication on the WAI website updates to be coordinated by the website manager.
 
 * One branch in each repository is designated as the "**publication**" branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn and Steve.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.

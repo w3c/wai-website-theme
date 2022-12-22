@@ -21,9 +21,15 @@ Use Markdown (or HTML) to write content for the website, add meta information to
 
 {% include toc.html %}
 
-## New resources
+## Working with Resources
 
-To create a new repository, follow the instructions in [Creating a New Resource](/technical/new-resource/).
+The wai website is composed of pages in "resources". Each resource is contained in it's own GitHub repository and can be worked on in isolation with a preview provided by Netlify.
+
+The following articles describe the technical aspects of working with resources.
+
+- [Creating a New Resource](/technical/new-resource/)
+- [Working on an Existing Resource](/technical/exising-resource/)
+- [Updating WAI Website Resources](/workflow/)
 
 To create a new page in an existing repository:
 * Usually it is best to start with the [template](https://raw.githubusercontent.com/w3c/wai-resource-template/master/content/index.md) to get the latest frontmatter.
