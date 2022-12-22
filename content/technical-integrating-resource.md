@@ -93,7 +93,7 @@ github:
   path: content/filename
 ```
 
-config.yml is mostly template but some sections will need to be copied to the wai-website config.file, with slight modification. See below.
+The config.yml file is mostly template but some sections will need to be copied to the wai-website config.file, with slight modification. See below.
 
 ## Note designated 'publication' branch of the resource
 
@@ -118,10 +118,18 @@ The wai-website file `.gitmodules` lists each resource submodule's repositry URL
 ```bash
 git submodule add -b production-branch https://github.com/w3c/wai-resource.git _external/resources/wai-resource
 git add .
-git commit -m"add wai-resource submodule"
+git commit -m"Add wai-resource submodule"
+git push
 ```
 
-Confirm by viewing the 'gitmodules' files.
+Confirm by inspecting the tail of 'gitmodules' file.
+
+```ini
+[submodule "_external/resources/wai-resource"]
+	path = _external/resources/wai-resource
+	url = https://github.com/w3c/wai-resource
+	branch = master
+```
 
 ## Pull the submodule code into the wai-website
 
@@ -130,6 +138,8 @@ The following will update all submodules as well as fetching the new one:
 ```bash
 git submodule update --init --remote
 ```
+
+You should `git pull` too to get the latest code as usual.
 
 Check the code now exists at '_external/wai-resource/.
 
@@ -140,14 +150,15 @@ The process is to cd to the directories that will hold the link and then "ln -s"
 ```bash
 cd _data
 ln -s ../_external/data/navigation.yml navigation.yml
-ls -l
 ```
+
+Check with `ls -l`:
 
 `$ navigation.yml -> ../_external/data/navigation.yml`
 
 Note: links under "pages" link to the resource's "content/" folder. Thus file changes in the resource do not require link updates to wai-website. Some old links are done per file which makes maintenance a headache.
 
-## Update the config.yml file to include the new resource.
+## Update the config.yml file to include the new resource
 
 config.yml is mostly template but the following sections will need to be copied, with slight modification
 
@@ -197,13 +208,19 @@ defaults:
 
 You can of course do a local build and preview of the wai-website using the Netlify CLI (with `ntl build && ntl dev`).
 
-It is also possible to manually trigger build on Netlify [wai-website deploys page](https://app.netlify.com/sites/wai-website/deploys).
-
-## pPush wai-website
-
-The Netlify preview for the entire wai-website will also build when the new master branch contents are pushed to GitHub.
+The Netlify preview for the entire wai-website will also build when the new master branch contents are pushed to GitHub (see below). It is also possible to manually trigger a build on Netlify at anytime.
 
 See the [wai-website deploys page](https://app.netlify.com/sites/wai-website/deploys).
+
+## Push wai-website
+
+```bash
+git add .
+git commit -m"Integrate wai-resource resource"
+git push
+```
+
+Fix any problems found in the preview. Remember some change will need to be made in the resource repo and others in the wai-website repo. Ensure everything gets pushed ot GitHub.
 
 ## Release wai website
 
