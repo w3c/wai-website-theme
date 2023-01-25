@@ -26,7 +26,7 @@ This section describes how content authors work with the website team to publish
 
 The workflow described here enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables publication on the WAI website updates to be coordinated by the website manager.
 
-* One branch in each repository is designated as the "**publication**" branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn and Steve.
+* One branch in each repository is designated as the "**publication**" branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.
 * Scheduled updates are usually published/deployed on Thursdays.
 
@@ -42,9 +42,10 @@ The workflow described here enables parts of the WAI website to be developed ind
     * Include a link to the Task Force and/or Working Group approval to publish.
     * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
     * Assign it to @shawna_slh.
-    * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee.
-  * _**By Wednesday midnight US Eastern time:**_ Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_
-    * Indicate if the technical lead (Steve) needs to be involved in this publication or not.
+<!--    * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee. -->
+  * Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_ 
+    * If other than a simple content update, coordiante with Shawn ideally the week before, or by Monday at the latest.
+	* If a simple content update, then by Wednesday midnight US Eastern time.
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 
 ## Coordinating User Interface, Shared Component, and Content Updates {#coop}
@@ -59,7 +60,7 @@ The workflow described here enables parts of the WAI website to be developed ind
 
 ## Details
 
-Publication branches are protected, and editable only by W3C staff. All updates to appear in the WAI website are on this branch and will be merged by the site manager, technical lead, or maintainers &mdash; currently Shawn and Steve. As backup, any W3C staff (as W3C organization administrators) can edit or merge into the publication branch. To enable this, resource editors and other non-W3C-team have maximum repository access privileges "write".
+Publication branches are protected, and editable only by W3C staff. All updates to appear in the WAI website are on this branch and will be merged by the site manager, technical lead, or maintainers &mdash; currently Shawn. As backup, any W3C staff (as W3C organization administrators) can edit or merge into the publication branch. To enable this, resource editors and other non-W3C-team have maximum repository access privileges "write".
 
 Resource editors provide updates in a single pull request to the publication branch. If there are multiple updates, they can be provided in the default branch (usually main or master), with a single pull request for that branch to be merged into the publication branch.
 
@@ -106,6 +107,6 @@ In the comments,
 * Explain everything that the website manager and/or technical lead needs to particularly be aware of.
 
 The purpose of this information is:
-* to confirm that anything that needed review from Steve or me got that review
-* for the publisher (me or Steve) to use for spot checking that the deploy worked
+* to confirm that anything that needs review from Shawn or other got that review
+* for the publisher to use for spot checking that the deploy worked
 * for troubleshooting if anything goes wrong
