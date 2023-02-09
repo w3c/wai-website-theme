@@ -31,7 +31,7 @@ The documentation section [Create and Edit Documents](/writing/) describes worki
 
 ## Editing in GitHub
 
-This method requires no setup and may be preferred by content authors. All file editing can be done int the GitHub Web App. Jus tNavigate toe the in the resource repo. Files can also be renamed and new files created.
+This method requires no setup and may be preferred by content authors. All file editing can be done int the GitHub Web App. Just Navigate toe the in the resource repo. Files can also be renamed and new files created.
 
 The main disadvantage is each changed file will require its own separate commit. Also, the Netlify preview is regenerated for each commit, which can be slow.
 
@@ -112,3 +112,18 @@ $ git submodule update --remote
 
 See also: [Git - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
+### Symbolic links on Windows
+
+A lot of repositories have symlinks (symbolic links) that point to central files in another repo, so that these files can be changed once for every resource (like languages or countries). When cloning a repository, Git will try to establish these symbolic links, but on Windows this is not enabled or permitted by default so you might run into these problems.
+
+To enable the creation of symbolic links via Git, make sure the option "enable symbolic links" is checked when installing Git.
+
+To make sure Git has permission to create the symbolic links when cloning the repository, go to "Local Security Policy" on your machine. Under "Local Policies" and then "User Rights Assignment" find the policy: "Create symbolic links". Make sure that you, as an administrator or user, are allowed to create them.
+
+To clone the repository and force the creation of symbolic links (change the name of the repository to the one you want to clone), you can use this command: 
+
+```bash
+$ git clone --config core.symlinks=true git@github.com:w3c/wai-fundamentals-overview.git
+```
+
+This will also give an error if you don't have the permissions set correctly yet, so it can also be used as a debug command. If the command is successful, you've cloned the repository including the symbolic links.
