@@ -31,7 +31,7 @@ The documentation section [Create and Edit Documents](/writing/) describes worki
 
 ## Editing in GitHub
 
-This method requires no setup and may be preferred by content authors. All file editing can be done int the GitHub Web App. Just Navigate toe the in the resource repo. Files can also be renamed and new files created.
+This method requires no setup and may be preferred by content authors. All file editing can be done in the GitHub Web App. Navigate to the resource repo. Files can also be renamed and new files created.
 
 The main disadvantage is each changed file will require its own separate commit. Also, the Netlify preview is regenerated for each commit, which can be slow.
 
@@ -39,7 +39,7 @@ The main disadvantage is each changed file will require its own separate commit.
 
 This provides faster edit-preview cycle and allows multiple file changes to be grouped into a single commit. It is also possible to use tooling like VS Code to give syntax highlighting, pretty printing, validation and more. However, does it require a little technical setup and possible familiarity with developer tooling. Develop working on aspects of the site beyond content will want to use the approach.
 
-Note there are problems with running Jeckyll on Windows. And anyway, both the GitHub release workflow and the Netlify builds run on linux. So linux or Mac OS platform is really required. However, WSL on Windows is perfectly satisfactory for command line only access.
+Note there are problems with running Jekyll on Windows. And anyway, both the GitHub release workflow and the Netlify builds run on Linux. So Linux or Mac OS platform is really required. However, WSL on Windows is perfectly satisfactory for command line only access.
 
 ### Get the Resource source code from GitHub
 
@@ -62,7 +62,7 @@ The netlify CLI package allows you to easily build and preview the resource loca
 
 ### Install and Initialize Jekyll
 
-You can follow the [official instructions](https://jekyllrb.com/docs/installation/) but I found on WSL Ubuntu the most reliable (and flexible)  method of installing Ruby and Jeckyll appears to be use [rvm](https://rvm.io/). Once Ruby, Jeckyll and bundle are setup:
+You can follow the [official instructions](https://jekyllrb.com/docs/installation/) but I found on WSL Ubuntu the most reliable (and flexible)  method of installing Ruby and Jekyll appears to be use [rvm](https://rvm.io/). Once Ruby, Jekyll and bundle are setup:
 
 Initializing Jekyll happens on the command line:
 
@@ -92,7 +92,7 @@ $ bundle exec jekyll serve --livereload --incremental
 
 ### Manually Managing Submodules
 
-The netlify CLI build command will initialise all submodules to the latest version on GitHub. The `.gitmodules` specifies which branch is ised for each and can be edited if you need to work on any submodule dependencies. This is the recommended way to work with submodules. However, you can manually manage when the submodules are refreshed fromGitHub.
+The Netlify CLI build command will initialise all submodules to the latest version on GitHub. The `.gitmodules` specifies which branch is used for each and can be edited if you need to work on any submodule dependencies. This is the recommended way to work with submodules. However, you can manually manage when the submodules are refreshed from GitHub.
 
 From your graphical git client, you should be able to “Update all Submodules”.
 
