@@ -1,5 +1,9 @@
 {% for t in include.title %}
-{% if t[0] == "en" %}
+{% if t[0] != "en" %}
+<span lang="{{t[0]}}">
+{% endif %}
 {{t[1]}}
+{% if t[0] != "en" %}
+</span>
 {% endif %}
 {% endfor %}
