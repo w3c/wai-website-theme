@@ -28,7 +28,7 @@ The workflow described here enables parts of the WAI website to be developed ind
 
 * One branch in each repository is designated as the "**publication**" branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.
-* Scheduled updates are usually published/deployed on Thursdays.
+* Scheduled updates are usually published/deployed on Tuesdays.
 
 ## Workflow
 
@@ -44,8 +44,8 @@ The workflow described here enables parts of the WAI website to be developed ind
     * Assign it to @shawna_slh.
 <!--    * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee. -->
   * Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_ 
-    * If other than a simple content update, coordiante with Shawn ideally the week before, or by Monday at the latest.
-	* If a simple content update, then by Wednesday midnight US Eastern time.
+    * If other than a simple content update, coordiante with Shawn at least the week before.
+	* If a simple content update, then by Monday midnight US Eastern time.
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 
 ## Coordinating User Interface, Shared Component, and Content Updates {#coop}
@@ -66,7 +66,7 @@ Resource editors provide updates in a single pull request to the publication bra
 
 Only highly-trusted individuals should have write access to the default branch. Before updates are made in the default branch, content updates have been approved by the Working Group, user interface updates approved by the website manager, and shared component updates approved by the technical lead.
 
-WAI website updates are usually published/deployed on Thursdays about 13:00UTC. Deploys on other days can be arranged ahead of time. Note that the site manager or maintainers will also likely deploy the site at other times, without prior notice.
+WAI website updates are usually published/deployed on Tuesdays about 13:30UTC. Deploys on other days can be arranged ahead of time. Note that the site manager or maintainers will also likely deploy the site at other times, without prior notice.
 
 Editors work with the WAI site manager and technical lead to coordinate on considerations for:
 
@@ -100,7 +100,7 @@ From the Pull Request section, click the "New" button:<br>
 Change the base branch to "publication". Click the "Create pull request" button.<br>
 {% include image.html src="new-pr-2.png" alt="" %}
 
-For the title, put something like "For publication/deply on Thursday 7 July 2022". (Please do no use a number for the month.)
+For the title, put something like "For publication/deply on Tuesday 9 September 2023". (Please do no use a number for the month.)
 
 In the comments,
 * Include a brief summary of the changes. Often a list of the PRs to the main branch since the last publication provides a good summary, and also helps us followup if we need more info.
