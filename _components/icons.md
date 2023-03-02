@@ -48,6 +48,7 @@ variants:
 - name: translations
 - name: rss
 - name: youtube
+- name: mastodon
 - name: twitter
 - name: creative-commons
 - name: arrow-up-thin
