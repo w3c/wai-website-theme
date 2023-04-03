@@ -178,8 +178,6 @@ This method should normally not be necessary, but may be useful for those wantin
 
 #### 1.2.1 Locally Clone & Set Up the Repository
 
-The steps in this step 0
-
 Clone the repository to your local computer to build. For example, the following command would clone the repository to your home folder:
 
 ```bash
@@ -192,7 +190,14 @@ Then go to your checked out version of the site:
 cd ~/wai-website
 ```
 
-then install bundler:
+Then, you also need to initialize the submodules:
+
+```
+git submodule init
+git submodule update --remote
+```
+
+Then install bundler:
 
 ```bash
 gem install bundler
@@ -205,13 +210,6 @@ bundle install
 ```
 
 (Yes, the application is called `bundler`, the command is `bundle`.)
-
-Then, you also need to initialize the submodules:
-
-```
-git submodule init
-git submodule update --remote
-```
 
 #### 1.2.1 Update Submodules
 
