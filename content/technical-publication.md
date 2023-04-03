@@ -38,7 +38,7 @@ The publication process is:
 - one or more resources have their pull requests to the "publication" branch reviewed
 - required matching changes to shared resources like the theme are made - possibly on branches
 - changes to the wai-website _config are made
-- for new resources a git submodule and symblinks are added to wai-website
+- for new resources a git submodule and symlinks are added to wai-website
 - the "publish" branch is merged
 - the Netlify wai-website preview is built and tested
 - the site is published using a GitHub release which triggers a GitHub Action
