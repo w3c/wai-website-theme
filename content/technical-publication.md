@@ -13,7 +13,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`. In addition, Netlfy preview deploys are made automatically when code is pushed to GitHub.
+Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`. In addition, Netlify preview deploys are made automatically when code is pushed to GitHub.
 
 Quicklinks:
 

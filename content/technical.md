@@ -131,7 +131,7 @@ The WAI site uses submodules for subparts of the site and also shared theme file
 
 This separation into modules and resources allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify sites meaning changes to all modules become very time consuming. With the current configuration, changes to shared files may propagate to other resources or the main site earlier than required, for example adding items to the shared navigation will appear in the next site publication.
 
-***NOTE: It may be better to use a monlithic site and build, losing all the links and submodules. However the build will need to be fast, eg incremental for module develoment previews.***
+***NOTE: It may be better to use a monolithic site and build, losing all the links and submodules. However, the build will need to be fast, eg incremental for module development previews.***
 
 ## Technical Details
 
@@ -159,7 +159,7 @@ However a 'bundle install' or 'bundle update' will recalculate all the versions 
 
 This happened recently when a new minor version of Jekyll pulled in a new "rouge" gem version that broke the builds, requiring all the `gemfile.lock` to be updated, in turn causing problems with open PRs. Each active branch in a PR needed the new `Gemfile.lock` to stop broken builds.
 
-***A solution is to specify the version of the top level dependencies in the shared `Gemfile`. Then any bundle commands will use the same versions of all dependencies. However, eventhat that is not foolproof as it relies of Gem publishers to not change their dependencies for a given version. It will require manual management of version updates, but that is a good thing given the shoddy way some module developers handle version numbers.***
+***A solution is to specify the version of the top level dependencies in the shared `Gemfile`. Then any bundle commands will use the same versions of all dependencies. However, even that that is not foolproof as it relies of Gem publishers to not change their dependencies for a given version. It will require manual management of version updates, but that is a good thing given the shoddy way some module developers handle version numbers.***
 
 #### Shared files using git submodules and symlinks
 
@@ -184,7 +184,7 @@ In particular, be careful to:
 - avoid using resource specific `_layouts` using the `_layouts` folder
   - layouts to be shared between resources should go in the theme resource
   - any files in a _resource's `_layouts` folder will also need to be in the website's `_layouts` folder, using symlinks
-- collections and defaults defined in `_config.yml` will neeed to be duplicated in the website's `_config.yml`
+- collections and defaults defined in `_config.yml` will need to be duplicated in the website's `_config.yml`
 - collections need to be symlinked from the website `collections` folder (news seems to be a bit odd)
 - all pages in resources need to be symlinked from the website `pages` folder
 - resource images (and potentially other static files) are symlinked from the website `content-images` folder (watch naming) and appear in the deployed site website `content-images`

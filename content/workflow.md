@@ -44,7 +44,7 @@ The workflow described here enables parts of the WAI website to be developed ind
     * Assign it to @shawna_slh.
 <!--    * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee. -->
   * Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_
-    * If other than a simple content update, coordiante with Shawn at least the week before.
+    * If other than a simple content update, coordinate with Shawn at least the week before.
 	* If a simple content update, then by Monday midnight US Eastern time.
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 

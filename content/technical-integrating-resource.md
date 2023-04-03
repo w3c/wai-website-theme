@@ -39,7 +39,7 @@ Note: in general it is easiest to perform all this work locally, working on both
 
 Note: The following steps work directly on the wai-website main branch and resource designated 'publication' branch. It may well be preferable to work on temporary branches for both before merging to commit to the changes ready for the release. This requires fiddling with the submodule config but is fairly straight forward.
 
-1. verify resource respository and files
+1. verify resource repository and files
 1. review page frontmatter and config.yml
 1. note designated 'publication' branch of the resource
 1. ensure a mergable PR to the publication branch with working Netlify preview
