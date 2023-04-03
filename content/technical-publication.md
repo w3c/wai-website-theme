@@ -77,7 +77,7 @@ The build process consists of several steps for all repos:
 1. deploy to github pages
 1. update urls for inclusion in `www.w3.org/WAI/`.
 
-When a release is made in GitHub the GitHub `deploy`action builds and then generates a `manifest.txt`, copies the built static files to github pages rather than let GitHubPages run Jeckyl again and finally invokes `https://www.w3.org/services/update-wai-map'` to update the w3c URL mapping. Netlify build use the same first 3 steps.
+When a release is made in GitHub, the GitHub `deploy` action builds and then generates a `manifest.txt`, copies the built static files to GitHub pages rather than letting GitHub pages run Jekyll again, and finally invokes `https://www.w3.org/services/update-wai-map'` to update the W3C URL mapping. Netlify build uses the same first 3 steps.
 
 The GitHub Action runs on ubuntu-latest (currently Focal 20.04) and Netlify uses Xenial (16.04).
 

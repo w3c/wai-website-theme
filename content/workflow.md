@@ -43,7 +43,7 @@ The workflow described here enables parts of the WAI website to be developed ind
     * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
     * Assign it to @shawna_slh.
 <!--    * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee. -->
-  * Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_ 
+  * Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_
     * If other than a simple content update, coordiante with Shawn at least the week before.
 	* If a simple content update, then by Monday midnight US Eastern time.
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
@@ -86,9 +86,9 @@ WAI website components:
 * [https://github.com/w3c/wai-website-theme/](https://github.com/w3c/wai-website-theme/) - Jekyll theme - includes components and layouts as well as docs
 * [https://wai-website-theme.netlify.app/components/](https://wai-website-theme.netlify.app/components/) - descriptions of design components
 * [https://github.com/w3c/wai-website-theme/blob/master/_layouts/standalone_resource.html](https://github.com/w3c/wai-website-theme/blob/master/_layouts/standalone_resource.html) - layout for new minimal resources - used for report tools, supplemental guidance, ACT Rules, ARIA APG
-  * as described n [https://github.com/w3c/wai-minimal-header-design/](https://github.com/w3c/wai-minimal-header-design/)
+  * as described in [https://github.com/w3c/wai-minimal-header-design/](https://github.com/w3c/wai-minimal-header-design/)
 
-Currently issues related to these components are in different places. We are in the process of moving all issues to: [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) so they are in one place. We will use labels to group them.
+Currently, issues related to these components are in different places. We are in the process of moving all issues to: [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) so they are in one place. We will use labels to group them.
 
 Please put any new issues in [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) &mdash; and feel free to move existing issues there, too.
 
@@ -100,7 +100,7 @@ From the Pull Request section, click the "New" button:<br>
 Change the base branch to "publication". Click the "Create pull request" button.<br>
 {% include image.html src="new-pr-2.png" alt="" %}
 
-For the title, put something like "For publication/deply on Tuesday 9 September 2023". (Please do no use a number for the month.)
+For the title, put something like "For publication/deploy on Tuesday 9 September 2023". (Please do not use a number for the month.)
 
 In the comments,
 * Include a brief summary of the changes. Often a list of the PRs to the main branch since the last publication provides a good summary, and also helps us followup if we need more info.

@@ -28,7 +28,7 @@ The wai website is composed of pages in "resources". Each resource is contained 
 The following articles describe the technical aspects of working with resources.
 
 - [Creating a New Resource](/technical/new-resource/)
-- [Working on an Existing Resource](/technical/exising-resource/)
+- [Working on an Existing Resource](/technical/existing-resource/)
 - [Updating WAI Website Resources](/workflow/)
 
 To create a new page in an existing repository:

@@ -34,14 +34,14 @@ Find out the file structure in a repository:
 All repositories have a common base structure with the following files
 and folders.
 
-When Jeckyl runs as part of the build process it creates a new `_site` folder containing the website files.
+When Jekyll runs as part of the build process it creates a new `_site` folder containing the website files.
 
 ### Content
 
 These are files containing the site specific content
 
 -   (File) `README.md` – Information about the repository, including a clickable Netlify badge for access to the Netlify preview, logs etc.
-- (Folder) `content` – html nd markdown content files that are processed by Jeckyll during site build to create web pages.
+- (Folder) `content` – html nd markdown content files that are processed by Jekyll during site build to create web pages.
   - (File) `index.md` – In most repositories content goes into the index.md file or …
   - (File) `other.md` – … other Markdown files in the main directory.
 -   (Folder) `content-images/<repo-name>` – static files including images, CSS and JS that appear unprocessed in the website

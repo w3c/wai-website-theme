@@ -233,7 +233,7 @@ In order to see which repository and branch provide a particular submodule inspe
 
 ### SymLinks
 
-Jeckyll is restrictive in terms of file organisation and yet the WAI website architecture is complex with files in many git submodules that need to be processed. The solution used is linux symbolic links (eg as created with "ln -s"). These alow files and directories to actually be "references" to items under various folders `external` in the filesystem. eg pulled into a github submodule directory.
+Jekyll is restrictive in terms of file organisation and yet the WAI website architecture is complex with files in many git submodules that need to be processed. The solution used is linux symbolic links (eg as created with "ln -s"). These alow files and directories to actually be "references" to items under various folders `external` in the filesystem. eg pulled into a github submodule directory.
 
 The following symblinks are used
 
