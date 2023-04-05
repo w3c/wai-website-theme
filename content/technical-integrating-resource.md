@@ -35,18 +35,18 @@ Resources are created using a template which helps ensure the file layout is cor
 
 The following outlines the steps for integrating a new resource. Updating an existing resource may require a subset of these steps depending on what changes have been made.
 
-Note: in general it is easiest to perform all this work locally, working on both the resource and wai-website code using Netlify CLI to preview. However it is probably possible to do most steps using the GitHub web app and Netlify console (the exception being managing symblinks which require a *nix Shell).
+Note: in general it is easiest to perform all this work locally, working on both the resource and wai-website code using Netlify CLI to preview. However it is probably possible to do most steps using the GitHub web app and Netlify console (the exception being managing symlinks which require a *nix Shell).
 
 Note: The following steps work directly on the wai-website main branch and resource designated 'publication' branch. It may well be preferable to work on temporary branches for both before merging to commit to the changes ready for the release. This requires fiddling with the submodule config but is fairly straight forward.
 
-1. verify resource respository and files
+1. verify resource repository and files
 1. review page frontmatter and config.yml
 1. note designated 'publication' branch of the resource
 1. ensure a mergable PR to the publication branch with working Netlify preview
 1. merge the PR in GitHub
 1. add resource's GitHub repo to wai-website submodules list
 1. pull the submodule code into the wai-website
-1. create symblinks to integrate the new content into wai-website
+1. create symlinks to integrate the new content into wai-website
 1. update the config.yml file to include the new resource.
 1. check wai-website preview looks good
 1. push wai-website
@@ -146,7 +146,7 @@ Check the code now exists at '_external/resources/wai-resource/.
 
 You should `git pull` too to get the latest code as usual.
 
-## Create symblinks to integrate the new content into wai-website
+## Create symlinks to integrate the new content into wai-website
 
 The process is to cd to the directories that will hold the link and then "ln -s" to the target file/directory under "_external". The various folders are listed above. If the resource has the directory you will need to link it.
 

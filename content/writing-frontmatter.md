@@ -191,7 +191,7 @@ permalink: /path/to/page/es
 {% include box.html type="end" %}
 {:/}
 
-Note: By convention, translations do not get a closing forward slash `/`. 
+Note: By convention, translations do not get a closing forward slash `/`.
 
 ## `ref` ❗🌐 {#ref}
 
@@ -397,9 +397,9 @@ The URL gets properly adapted to the deployment environment.
 {% include box.html type="end" %}
 {:/}
 
-### `achnowledgements`
+### `acknowledgements`
 
-The achnowledgements attribute uses a reference to another document and replaces the token ACKNOWLEDGEMENTS in the footer text with a link to the achnowledgements.
+The acknowledgements attribute uses a reference to another document and replaces the token ACKNOWLEDGEMENTS in the footer text with a link to the acknowledgements.
 
 {::nomarkdown}
 {% include box.html type="start" title="Examples" class="example simple" %}
@@ -408,7 +408,7 @@ The achnowledgements attribute uses a reference to another document and replaces
 The code:
 
 ```yaml
-achnowledgements: /media/av/achnowledgements/
+acknowledgements: /media/av/acknowledgements/
 footer: >
   <p>Footer Content as HTML. ACKNOWLEDGEMENTS.</p>
 ```

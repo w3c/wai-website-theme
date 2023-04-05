@@ -110,7 +110,7 @@ To view the resource preview
 
 ## Step 4: Create your content
 
-You will almost certaily want to develop and preview locally though it is possible to use the GitHub file editor. You can use use a Linux/Mac shell, or WSL on Windows.
+You will almost certainly want to develop and preview locally though it is possible to use the GitHub file editor. You can use use a Linux/Mac shell, or WSL on Windows.
 
 **NOTE: In order to facilitate sharing and review with others use a GitHub PR for your work. Mark it is  "Draft". When it is ready to publish on the WAI website, coordinate with Shawn or other website maintainer, as described below.**
 
@@ -124,10 +124,10 @@ Also, update the README.md text to remove the template specific lines below the 
 
 ### Local preview of your content
 
-The easiest way to build and preview locally is to use the [Netlify CLI](https://cli.netlify.com/) tool. The resources are configured so you can 
+The easiest way to build and preview locally is to use the [Netlify CLI](https://cli.netlify.com/) tool. The resources are configured so you can
 
 - `Netlify build` - generate the website file in the `_site` directory
-- `Netlify dev` - run a dev server and preview `_site` 
+- `Netlify dev` - run a dev server and preview `_site`
 
 ### Editing shared config files
 

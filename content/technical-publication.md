@@ -13,7 +13,7 @@ footer: > # Text in footer in HTML
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`. In addition, Netlfy preview deploys are made automatically when code is pushed to GitHub.
+Publishing the WAI Website is done using a GitHub Action 'Deploy' than generates the site and publishes the results to GitHub Pages, then updates the URL mapping on `www.w3.org`. In addition, Netlify preview deploys are made automatically when code is pushed to GitHub.
 
 Quicklinks:
 
@@ -38,7 +38,7 @@ The publication process is:
 - one or more resources have their pull requests to the "publication" branch reviewed
 - required matching changes to shared resources like the theme are made - possibly on branches
 - changes to the wai-website _config are made
-- for new resources a git submodule and symblinks are added to wai-website
+- for new resources a git submodule and symlinks are added to wai-website
 - the "publish" branch is merged
 - the Netlify wai-website preview is built and tested
 - the site is published using a GitHub release which triggers a GitHub Action
@@ -77,7 +77,7 @@ The build process consists of several steps for all repos:
 1. deploy to github pages
 1. update urls for inclusion in `www.w3.org/WAI/`.
 
-When a release is made in GitHub the GitHub `deploy`action builds and then generates a `manifest.txt`, copies the built static files to github pages rather than let GitHubPages run Jeckyl again and finally invokes `https://www.w3.org/services/update-wai-map'` to update the w3c URL mapping. Netlify build use the same first 3 steps.
+When a release is made in GitHub, the GitHub `deploy` action builds and then generates a `manifest.txt`, copies the built static files to GitHub pages rather than letting GitHub pages run Jekyll again, and finally invokes `https://www.w3.org/services/update-wai-map'` to update the W3C URL mapping. Netlify build uses the same first 3 steps.
 
 The GitHub Action runs on ubuntu-latest (currently Focal 20.04) and Netlify uses Xenial (16.04).
 
@@ -178,8 +178,6 @@ This method should normally not be necessary, but may be useful for those wantin
 
 #### 1.2.1 Locally Clone & Set Up the Repository
 
-The steps in this step 0
-
 Clone the repository to your local computer to build. For example, the following command would clone the repository to your home folder:
 
 ```bash
@@ -192,7 +190,14 @@ Then go to your checked out version of the site:
 cd ~/wai-website
 ```
 
-then install bundler:
+Then, you also need to initialize the submodules:
+
+```
+git submodule init
+git submodule update --remote
+```
+
+Then install bundler:
 
 ```bash
 gem install bundler
@@ -205,13 +210,6 @@ bundle install
 ```
 
 (Yes, the application is called `bundler`, the command is `bundle`.)
-
-Then, you also need to initialize the submodules:
-
-```
-git submodule init
-git submodule update --remote
-```
 
 #### 1.2.1 Update Submodules
 
@@ -254,5 +252,11 @@ WARNING: skipped symlink /private/var/folders/br/73fx4d5s7dbb0j18tqdt6hfh0000gn/
 ```
 
 The generated site is then output in the `_site` sub directory, for example in `~/wai-website/_site/`
+
+Alternatively, you may need to run the website with Netlify to test Netlify Function:
+
+```bash
+netlify dev
+```
 
 {% include excol.html type="end" %}

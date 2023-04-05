@@ -79,11 +79,11 @@ A number of services are used to support managing of the the site source, buildi
   - a live serverless function used for form processing for list resources
 - Local Dev machine
   - optional local builds and testing
-  - creating the symblinks used to access in the git submodules for website modules
+  - creating the symlinks used to access in the git submodules for website modules
 
 ### Architecture and Previews
 
-The WAI websit is a static generated website:
+The WAI website is a static generated website:
 
 - Pages are pre generated (built) before being deployed. Compared to generated on demand
 - The [Jekyll](https://jekyllrb.com/) static site generator (SSG) is used (a Ruby application)
@@ -131,7 +131,7 @@ The WAI site uses submodules for subparts of the site and also shared theme file
 
 This separation into modules and resources allows independent work on the various sections of the website. However, it also causes a lot of duplication of configuration in each repo and Netlify sites meaning changes to all modules become very time consuming. With the current configuration, changes to shared files may propagate to other resources or the main site earlier than required, for example adding items to the shared navigation will appear in the next site publication.
 
-***NOTE: It may be better to use a monlithic site and build, losing all the links and submodules. However the build will need to be fast, eg incremental for module develoment previews.***
+***NOTE: It may be better to use a monolithic site and build, losing all the links and submodules. However, the build will need to be fast, eg incremental for module development previews.***
 
 ## Technical Details
 
@@ -159,20 +159,20 @@ However a 'bundle install' or 'bundle update' will recalculate all the versions 
 
 This happened recently when a new minor version of Jekyll pulled in a new "rouge" gem version that broke the builds, requiring all the `gemfile.lock` to be updated, in turn causing problems with open PRs. Each active branch in a PR needed the new `Gemfile.lock` to stop broken builds.
 
-***A solution is to specify the version of the top level dependencies in the shared `Gemfile`. Then any bundle commands will use the same versions of all dependencies. However, eventhat that is not foolproof as it relies of Gem publishers to not change their dependencies for a given version. It will require manual management of version updates, but that is a good thing given the shoddy way some module developers handle version numbers.***
+***A solution is to specify the version of the top level dependencies in the shared `Gemfile`. Then any bundle commands will use the same versions of all dependencies. However, even that that is not foolproof as it relies of Gem publishers to not change their dependencies for a given version. It will require manual management of version updates, but that is a good thing given the shoddy way some module developers handle version numbers.***
 
-#### Shared files using git submodules and symblinks
+#### Shared files using git submodules and symlinks
 
 Some files need to be shared between all the submodules for preview and the main site for deployment. Others are submodule specific but the main website also needs to access them.
 
-Jekyll is quite limited when it comes to configuration. The current use of git submodules requires use of symblinks in the main `wai-website` to ensure the Jekyll build sees the resource files in the correct location. In addition some files must appear in the same location in both individual resource builds for preview and the full website build. This imposes restrictions on what Jekyll config options are used in the resources. The result is a complex file structure for resources, especially `wai-website`.
+Jekyll is quite limited when it comes to configuration. The current use of git submodules requires use of symlinks in the main `wai-website` to ensure the Jekyll build sees the resource files in the correct location. In addition some files must appear in the same location in both individual resource builds for preview and the full website build. This imposes restrictions on what Jekyll config options are used in the resources. The result is a complex file structure for resources, especially `wai-website`.
 
 - shared files such as 'navigation.yml' are located in `_data`
-  - these are actually symblinks to the imported git data submodule files in `_external/data`
+  - these are actually symlinks to the imported git data submodule files in `_external/data`
 - other shared theme files are found in a hidden `_includes` and `_layouts` folder provided by the `wai-website-theme` repository and linked remotely (not submodules)
   - these can be locally overridden to debug by creating files in an `_includes` or `_layouts` folder
   - additional resource specific files can be add to a `includes\module-name` or `_layouts\module-name` folder. The module-name is then used when including the files.
-- the main site also use `_data`, plus `_includes` and `_layouts`. In addition the content files are under a `pages` folder with symblinks to `_external/resources/*' to access the content files in all the submodules.
+- the main site also use `_data`, plus `_includes` and `_layouts`. In addition the content files are under a `pages` folder with symlinks to `_external/resources/*' to access the content files in all the submodules.
 - change to any of these shared file must be pushed to github to be picked up in a build
 
 In particular, be careful to:
@@ -180,14 +180,14 @@ In particular, be careful to:
 - avoid having resource specific `includes` using the `_include` folder
   - includes to be shared between resources should go in the theme resource
   - any includes only to be used by the resource should use `include_relative` (but fails in layouts and can't use `../`)
-  - any files in a _resource's `_includes` will also need to be in the website's `_includes`, using symblinks
+  - any files in a _resource's `_includes` will also need to be in the website's `_includes`, using symlinks
 - avoid using resource specific `_layouts` using the `_layouts` folder
   - layouts to be shared between resources should go in the theme resource
-  - any files in a _resource's `_layouts` folder will also need to be in the website's `_layouts` folder, using symblinks
-- collections and defaults defined in `_config.yml` will neeed to be duplicated in the website's `_config.yml`
-- collections need to be symblinked from the website `collections` folder (news seems to be a bit odd)
-- all pages in resources need to be symblinked from the website `pages` folder
-- resource images (and potentially other static files) are symblinked from the website `content-images` folder (watch naming) and appear in the deployed site website `content-images`
+  - any files in a _resource's `_layouts` folder will also need to be in the website's `_layouts` folder, using symlinks
+- collections and defaults defined in `_config.yml` will need to be duplicated in the website's `_config.yml`
+- collections need to be symlinked from the website `collections` folder (news seems to be a bit odd)
+- all pages in resources need to be symlinked from the website `pages` folder
+- resource images (and potentially other static files) are symlinked from the website `content-images` folder (watch naming) and appear in the deployed site website `content-images`
 - shared static files can go in the theme `assets` folder and will appear in the deployed website `assets` folder
 
 ### WAI Website Theme
@@ -233,9 +233,9 @@ In order to see which repository and branch provide a particular submodule inspe
 
 ### SymLinks
 
-Jeckyll is restrictive in terms of file organisation and yet the WAI website architecture is complex with files in many git submodules that need to be processed. The solution used is linux symbolic links (eg as created with "ln -s"). These alow files and directories to actually be "references" to items under various folders `external` in the filesystem. eg pulled into a github submodule directory.
+Jekyll is restrictive in terms of file organisation and yet the WAI website architecture is complex with files in many git submodules that need to be processed. The solution used is linux symbolic links (eg as created with "ln -s"). These alow files and directories to actually be "references" to items under various folders `external` in the filesystem. eg pulled into a github submodule directory.
 
-The following symblinks are used
+The following symlinks are used
 
 - page content under `pages/` - links to page content processed by Jekyll
   - eg directory wcag-act-rules -> ../_external/resources/wcag-act-rules/content/
