@@ -157,6 +157,13 @@ The first section creates an array of page urls that are page urls of this colle
 {%- endfor -%}
 {%- endif -%}
 
+<div>Show me page.parent: {{ page.parent }}</div>
+<div>Show me col.parent: {{ col.parent }}</div>
+<div>Show me a_name: {{ a_name }}</div>
+<div>Show me b_name: {{ b_name }}</div>
+<div>Show me c_name: {{ c_name }}</div>
+<div>Show me d_name: {{ d_name }}</div>
+
 <nav class="mainnav" aria-label="{% include t.html t="Main" lang=page.lang %}" lang="{{ page.lang }}">
   {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
   {%- include_cached navlist.html data=site.data.navigation current=a_url lang=page.lang -%}
