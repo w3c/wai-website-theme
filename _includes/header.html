@@ -157,20 +157,13 @@ The first section creates an array of page urls that are page urls of this colle
 {%- endfor -%}
 {%- endif -%}
 
-<div>Show me page.parent: {{ page.parent }}</div>
-<div>Show me col.parent: {{ col.parent }}</div>
-<div>Show me a_name: {{ a_name }}</div>
-<div>Show me b_name: {{ b_name }}</div>
-<div>Show me c_name: {{ c_name }}</div>
-<div>Show me d_name: {{ d_name }}</div>
-
 <nav class="mainnav" aria-label="{% include t.html t="Main" lang=page.lang %}" lang="{{ page.lang }}">
   {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
   {%- include_cached navlist.html data=site.data.navigation current=a_url lang=page.lang -%}
 </nav>
 
 {%- unless page.url == "/" -%}
-<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb verifyme" aria-label="{% include t.html t="Breadcrumb" lang=page.lang %}" lang="en">
+<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="{% include t.html t="Breadcrumb" lang=page.lang %}" lang="en">
   <ul style="align-self: center;">
     <li><a href="{{ "/" | relative_url }}" lang="en">Home{%comment%}{% include_cached t.html t="Home" lang=pagelang %}{%endcomment%}</a></li>
     {%- unless a_name == "" -%}<li>{% if a_name == '...' %}...{% elsif a_url == enpage.url%}{% include_cached link.html to=a_url text=a_name aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=a_name to=a_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
