@@ -72,7 +72,7 @@ A number of services are used to support managing of the the site source, buildi
   - releases - used to trigger the primary release action
   - pages - static hosting of site
 - W3C services
-  - provide redirection so the WAI site appears as part of the W3C site
+  - provide redirection so the WAI site appears as part of the W3C site; if there are any redirect requests, these should through the WAI website manager (currently Shawn)
   - an API used as part of the release action to fixup URIs
 - Netlify
   - automatic preview sites for Pull Requests
@@ -151,13 +151,13 @@ Jekyll is a static site generator. A site build step takes content source files 
 
 As a Ruby application, Jekyll has mechanism to manage dependencies on code modules AKA Gems. In each resource A `Gemfile` specifies the required top-level modules. A `Gemfile.lock` records the actual versions of each module used and those they in turn pull in as determined during the last `bundle install` step. If the lock file is checked into version control it allows deterministic builds with a known versions of everything. At least in theory.
 
-A complication with our modular architecture is that all the preview builds and the main website builds need to use use the same versions of all modules to avoid problems. In order lot of duplicate file update housekeeping when Gems change a custom shared Gem is used that specifies the required Gems. If all the Gemfile.locks are generated at the same time everything will use the same version of all modules.
+A complication with our modular architecture is that all the preview builds and the main website builds need to use the same versions of all modules to avoid problems. In order lot of duplicate file update housekeeping when Gems change a custom shared Gem is used that specifies the required Gems. If all the Gemfile.locks are generated at the same time everything will use the same version of all modules.
 
 ##### Problem with dependencies
 
-However a 'bundle install' or 'bundle update' will recalculate all the versions recorded in the `gemfile.lock`. As the exact version of Gems are not specified, changes can easily creep in, possible breaking builds. For example if the shared Gem is rebuilt.
+However, a `bundle install` or `bundle update` will recalculate all the versions recorded in the `Gemfile.lock`. As the exact version of Gems are not specified, changes can easily creep in, possible breaking builds. For example if the shared Gem is rebuilt.
 
-This happened recently when a new minor version of Jekyll pulled in a new "rouge" gem version that broke the builds, requiring all the `gemfile.lock` to be updated, in turn causing problems with open PRs. Each active branch in a PR needed the new `Gemfile.lock` to stop broken builds.
+This happened recently when a new minor version of Jekyll pulled in a new "rouge" gem version that broke the builds, requiring all the `Gemfile.lock` to be updated, in turn causing problems with open PRs. Each active branch in a PR needed the new `Gemfile.lock` to stop broken builds.
 
 ***A solution is to specify the version of the top level dependencies in the shared `Gemfile`. Then any bundle commands will use the same versions of all dependencies. However, even that that is not foolproof as it relies of Gem publishers to not change their dependencies for a given version. It will require manual management of version updates, but that is a good thing given the shoddy way some module developers handle version numbers.***
 
@@ -167,13 +167,13 @@ Some files need to be shared between all the submodules for preview and the main
 
 Jekyll is quite limited when it comes to configuration. The current use of git submodules requires use of symlinks in the main `wai-website` to ensure the Jekyll build sees the resource files in the correct location. In addition some files must appear in the same location in both individual resource builds for preview and the full website build. This imposes restrictions on what Jekyll config options are used in the resources. The result is a complex file structure for resources, especially `wai-website`.
 
-- shared files such as 'navigation.yml' are located in `_data`
+- shared files such as `navigation.yml` are located in `_data`
   - these are actually symlinks to the imported git data submodule files in `_external/data`
 - other shared theme files are found in a hidden `_includes` and `_layouts` folder provided by the `wai-website-theme` repository and linked remotely (not submodules)
   - these can be locally overridden to debug by creating files in an `_includes` or `_layouts` folder
-  - additional resource specific files can be add to a `includes\module-name` or `_layouts\module-name` folder. The module-name is then used when including the files.
-- the main site also use `_data`, plus `_includes` and `_layouts`. In addition the content files are under a `pages` folder with symlinks to `_external/resources/*' to access the content files in all the submodules.
-- change to any of these shared file must be pushed to github to be picked up in a build
+  - additional resource specific files can be added to a `includes\module-name` or `_layouts\module-name` folder. The module-name is then used when including the files.
+- the main site also use `_data`, plus `_includes` and `_layouts`. In addition, the content files are under a `pages` folder with symlinks to `_external/resources/*' to access the content files in all the submodules.
+- change to any of these shared file must be pushed to GitHub to be picked up in a build
 
 In particular, be careful to:
 
@@ -265,7 +265,7 @@ This approach brings many problems, mostly for _Microsoft Windows_ users due to 
 
 ### Netlify Previews
 
-Previews of individual resources are set up in Netlify via Github. The credentials for Netlify are available on the [WAI Website page (Team Only)](https://www.w3.org/WAI/Plan/website#accounts). Basically a single Netlify site exists for each resource and is linked to the git hub repo.
+Previews of individual resources are set up in Netlify via GitHub. The credentials for Netlify are available on the [WAI Website page (Team Only)](https://www.w3.org/WAI/Plan/website#accounts). Basically a single Netlify site exists for each resource and is linked to the git hub repo.
 
 The preview should be viewable under `<github-repo>.netlify.app`. The configuration is set in the `netlify.toml` configuration file that includes the following information:
 
@@ -284,24 +284,59 @@ Change the permalink and commit the file to the repository.
 
 #### Creating a New Netlify Site
 
-In the [Netlify web app](https://app.netlify.com/teams/w3c-wai/sites), click the “New site from Git” button, click on GitHub. Select W3C from the account picker on the top left and search for the repository. Click on the repository in the result list.
+In the [Netlify web app](https://app.netlify.com/teams/w3c/sites), click the "Add new site" dropdown and select "Import an existing project". Click on the GitHub button. Select W3C from the account picker on the top left and search for the repository. Click on the repository in the result list.
 
 On the next page, the configuration from the `netlify.toml` file is already available and the configuration needs only to be saves by clicking the “Deploy site” button.
 
-Netlify creates a random name for the site, which is usually not what one wants. Click site settings on the page that has opened and then select “Change site name”. In the popup, change the name to the github repository name (without `w3c/`).
+Netlify creates a random name for the site, which is usually not what one wants. Click site settings on the page that has opened and then select “Change site name”. In the popup, change the name to the GitHub repository name (without `w3c/`).
 
 #### Pull Request Build Notifications
 
-By default, Netlify does not inform users that a Pull Request preview deploys. In the settings for the site, click on “Build & deploy” and make sure the “Deploy contexts” are set like this:
+By default, Netlify does not inform users that a Pull Request preview deploys. In the settings for the site, click on “Build & deploy” and make sure the “Branches & deploy contexts” are set like this:
 
 * Production branch: master[^1]
-* Deploy previews: Automatically build deploy previews for all pull requests
 * Branch deploys: Deploy only the production branch
+* Deploy previews: Any pull request against your production branch / branch deploy branches
 
 [^1]: This should usually be `master` but generally be the “default branch” as set in GitHub.
 
-Under “deploy notifications”, use the “add notification” dropdown to add three “GitHub pull request comment” notifications:
+Under “Deploy notifications”, use the “Add Notification” dropdown to add three “GitHub pull request comment” Notifications:
 
 * Deploy Preview started
 * Deploy Preview succeeded
 * Deploy Preview failed
+
+##### Troubleshooting
+
+If expected deploy previews aren't being added to the pull requests as expected, go through the following steps, as it is the default for what is provided by Netlify, to support the feature:
+
+1. Navigate to [https://app.netlify.com/sites/insert_resource_name/settings/deploys#deploy-notifications](https://app.netlify.com/sites/insert_resource_name/settings/deploys#deploy-notifications)
+2. Ensure the following outgoing DEFAULT notifications are present:
+   1. `Category`: Email Notifications (OPTIONAL)
+      1. Email "notifications_email" (seems to usually be `wai+netlify@w3.org`) when deploy request is pending
+      2. Email "notifications_email" (seems to usually be `wai+netlify@w3.org`) when deploy request is accepted
+      3. Email "notifications_email" (seems to usually be `wai+netlify@w3.org`) when deploy request is rejected
+   2. `Category`: GitHub commit checks Notifications
+      1. Add rich details to commits when Deploy Preview starts
+      2. Add rich details to commits when Deploy Preview succeeds
+      3. Add rich details to commits when Deploy Preview fails
+   3. `Category`: GitHub pull request comment Notifications
+      1. Add Deploy Preview notifications as pull request comments when Deploy Preview starts
+      2. Add Deploy Preview notifications as pull request comments when Deploy Preview succeeds
+      3. Add Deploy Preview notifications as pull request comments when Deploy Preview fails
+      4. Add Deploy Preview notifications as pull request comments when deploy request is pending
+      5. Add Deploy Preview notifications as pull request comments when deploy request is accepted
+      6. Add Deploy Preview notifications as pull request comments when deploy request is rejected
+   4. `Category`: GitHub commit status Notifications
+      1. Add Deploy Preview notifications to commits when Deploy Preview starts
+      2. Add Deploy Preview notifications to commits when Deploy Preview succeeds
+      3. Add Deploy Preview notifications to commits when Deploy Preview fails
+3. If any of the above are missing:
+   1. Select the "Add Notification" dropdown
+   2. Select the related category as listed above
+   3. Select the relevant missing event under the "Event to listen for" section and "Save"
+4. If these steps were completed with the resource having existing {Rs that were expected to have Deploy Preview but don't, then do the following:
+   1. Navigate to [https://app.netlify.com/sites/insert_resource_name/deploys](https://app.netlify.com/sites/insert_resource_name/deploys)
+   2. Select a build which was triggered by any of those existing PRs
+   3. Select Options, then click "Clear cache and retry with latest branch commit"
+   4. Observe that the deploy preview’s link is now commented by the Netlify bot, in the PR

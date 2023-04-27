@@ -255,7 +255,7 @@ WARNING: skipped symlink /private/var/folders/br/73fx4d5s7dbb0j18tqdt6hfh0000gn/
 
 The generated site is then output in the `_site` sub directory, for example in `~/wai-website/_site/`
 
-Alternatively, you may need to run the website with Netlify to test Netlify Function:
+Alternatively, you may need to run the website with Netlify to test Netlify Functions:
 
 ```bash
 netlify dev
