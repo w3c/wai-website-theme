@@ -83,7 +83,9 @@ The first transcript should be `display: block`. All others should be `display: 
   <video id="video-player" preload="metadata" data-youtube-id="" data-youtube-nocookie="true" width="450"></video>
 </div>
 
+{% if include.transcripts %}
 <p>This video is available as a <a href="#transcript">Text Transcript with Descriptions of Visuals</a> below.</p>
+{% endif %}
 
 {%- assign langs = site.data.lang -%}
 
