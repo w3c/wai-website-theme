@@ -142,7 +142,7 @@ The first transcript should be `display: block`. All others should be `display: 
     transcriptButton.addEventListener('click', function(e) {
       // Hide all transcripts
       transcripts.forEach(function(transcript) { transcript.style.display = 'none' });
-      document.querySelector('#' + this.id + "-transcript").style.display = 'block';
+      document.querySelector('#transcript-' + this.id).style.display = 'block';
     })
   })
 
