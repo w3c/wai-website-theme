@@ -19,7 +19,7 @@ summary {
     border-radius: 5px;
     width: 1.3rem;
     height: 1.3rem;
-    line-height: .9;
+    line-height: 1.1rem;
     background: var(--pure-white);
     color: var(--wai-green);
     border: 2px solid var(--wai-green);
@@ -30,6 +30,12 @@ summary {
     background: var(--w3c-blue);
     border-color: var(--w3c-blue);
     color: var(--pure-white);
+  }
+}
+
+@moz-document url-prefix() {
+  summary > *:first-child::before {
+    line-height: 1.3em;
   }
 }
 
