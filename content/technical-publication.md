@@ -23,6 +23,7 @@ Quicklinks:
 Others:
 * [W3C services update wai map](https://www.w3.org/services/update-wai-map)
 * [GitHub-Netlify repo access](https://github.com/organizations/w3c/settings/installations/382034)
+* [navigation.yml file to update](https://github.com/w3c/wai-website-data/blob/master/navigation.yml)
 * WCAG-EM Report Tool: [New Release](https://github.com/w3c/wai-wcag-em-report-tool/releases/new), [Actions monitor](https://github.com/w3c/wai-wcag-em-report-tool/actions)
 
 {::nomarkdown}
