@@ -10,6 +10,7 @@ footer: > # Text in footer in HTML
   <p> This is the text in the footer </p>
 ---
 
+
 {::nomarkdown}
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
