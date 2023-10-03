@@ -2,10 +2,10 @@
 title: "Preparing a Resource for Translations"
 permalink: /technical/translations/
 lang: en
-doc-note-type: draft
 github:
   repository: w3c/wai-website-theme
   path: content/technical-translation.md
+doc-note-type: draft
 ---
 
 {::nomarkdown}
@@ -47,6 +47,10 @@ last_updated: 2020-11-11   # Put the date of this translation YYYY-MM-DD (with m
 github:
   repository: w3c/wai-std-gl-overview
   path: index.md    # Add the language shortcode to the middle of the filename, for example: content/index.fr.md
+
+navigation:
+  previous: /path/to/previous/file/
+  next: /path/to/next/file/
 
 permalink: /standards-guidelines/  # Add the language shortcode to the end, with no / at the end. For example /standards-guidelines/fr
 ref: /standards-guidelines/   # Do not change this
