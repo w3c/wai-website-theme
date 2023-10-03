@@ -67,15 +67,15 @@
         {% elsif page.status == "editors-draft" %}
           [EDITOR’S DRAFT] updated
         {% else %}
-          Updated
+          {% include t.html t='Updated' %}
         {% endif %}
         {{ page.last_updated | date: '%d %B %Y' }}
         {% if page.first_published %}
-        (first published {{ page.first_published }})
+        ({% include t.html t='first published' %} {{ page.first_published }})
         {% endif %}
       </div>
       <div>
-          Editors:
+          {% include t.html t='Editors:' %}
           {% for editor in page.editors %}
           {% if forloop.first %}<ul class="sentence">{% endif %}
             {% assign editorsize = editor | size %}
@@ -91,8 +91,8 @@
           {% endfor %}
           &nbsp;
       {% if page.update_editors %}
-      
-          Update Editor:
+
+          {% include t.html t='Update Editor:' %}
           {% for updateeditor in page.update_editors %}
           {% if forloop.first %}<ul class="sentence">{% endif %}
             {% assign editorsize = updateeditor | size %}
@@ -108,7 +108,7 @@
           {% endfor %}
           &nbsp;
       {% endif %}
-          Contributors:
+          {% include t.html t='Contributors:' %}
           {% for contributor in page.contributors %}
           {% if forloop.first %}<ul class="sentence">{% endif %}
             {% assign contributorsize = contributor | size %}
