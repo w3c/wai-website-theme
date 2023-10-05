@@ -1,0 +1,39 @@
+{% assign original=alldocs | where_exp:"item", "item.lang == 'en' or item.lang == nil" | where_exp:"item", "item.ref == include.page.url or item.url == include.page.url" | first %}
+{% assign t=site.alldocs | where_exp:"item", "item.lang == tlangname and item.ref == include.page.url" | first %}
+{%- capture page_title -%}
+  {%- if t != nil -%}
+    <a href="{{ t.permalink | relative_url }}"> {{ t.title }} ({{ original.title }})
+  {%- elsif t == nil and original.permalink != nil -%}
+    <a href="{{ original.permalink | relative_url }}">{{ original.title }}
+  {%- elsif t == nil and original.permalink == nil and include.page.name.en != nil -%}
+    <a href="{{ include.page.url | relative_url }}">{{ include.page.name.en }}
+  {%- else -%}
+    <a href="{{ include.page.url | relative_url }}">{{ include.page.name }}
+  {%- endif -%}
+  </a>
+{%- endcapture -%}
+{% capture t-date %}{{t.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
+{% capture en-date %}{{original.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
+{%- capture t_status -%}
+  {%- if t == nil -%}none
+  {%- elsif t.size != 0 and t-date < en-date -%}outdated
+  {%- elsif t.size != 0 and t-date >= en-date -%}uptodate
+  {%- endif -%}
+{%- endcapture -%}
+{% include box.html type="start" title=page_title h=include.h %}
+{%- case t_status -%}
+  {%- when "none" -%}
+    {%- capture issue_body_new | newline_to_br -%}
+      {%- include t-github-issue.html status="new" tname=tlangname page=include.page -%}
+    {%- endcapture -%}
+    <p>{% include_cached icon.html name="ex-circle" %} No translation available</p>
+    <p><a href="https://github.com/w3c/wai-translations/issues/new?title=[{{ tlangname }}]+{{original.title | url_encode}}&body={{issue_body_new | url_encode}}">Volunteer to translate this page</a></p>
+  {%- when "outdated" -%}
+    {%- capture issue_body_update | newline_to_br -%}
+      {%- include t-github-issue.html status="update" tname=tlangname page=include.page -%}
+    {%- endcapture -%}
+    <p><mark>{% include_cached icon.html name="warning" %} Translation needs update</mark><p>
+    <p><a href="https://github.com/w3c/wai-translations/issues/new?title=[{{ tlangname }}]+{{original.title | url_encode}}&body={{issue_body_update | url_encode}}">Volunteer to update the translation</a></p>
+  {%- when "uptodate" -%}
+    <p>{% include_cached icon.html name="check-circle" %} Up-to-date</p>
+{%- endcase -%}
