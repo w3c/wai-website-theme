@@ -1,5 +1,5 @@
 {%- assign resource=site.documents | where: "ref", include.to | where: "lang", include.lang -%}
-{%- unless resource -%}
+{%- unless resource.size > 0 -%}
   {%- assign resource=site.pages | where: "ref", include.to | where: "lang", include.lang -%}
 {%- endunless -%}
 {%- if resource -%}
