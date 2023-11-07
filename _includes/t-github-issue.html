@@ -1,0 +1,45 @@
+{%- if include.page.collection -%}{%- assign col = site.collections | where: "label", include.page.collection | first -%}{%- endif- %}
+
+{%- if site.repository -%}
+    {%- assign repo = site.repository -%}
+{%- endif- %}
+{%- if include.page.collection -%}
+    {%- assign repo = col.repository -%}
+{%- endif- %}
+{%- if include.page.github.repository -%}
+    {%- assign repo = include.page.github.repository -%}
+{%- endif- %}
+
+{%- assign branch = "master" -%}
+{%- if site.branch -%}
+    {%- assign branch = site.branch -%}
+{%- endif- %}
+{%- if include.page.collection -%}
+    {%- if col.branch -%}
+    {%- assign branch = col.branch -%}
+    {%- endif -%}
+{%- endif- %}
+{%- if include.page.github.branch -%}
+    {%- assign branch = include.page.github.branch -%}
+{%- endif- %}
+
+{%- assign path = "index.md" -%}
+{%- if include.page.collection -%}
+    {%- assign path = include.page.path -%}
+{%- endif- %}
+{%- if include.page.github.path -%}
+    {%- assign path = include.page.github.path -%}
+{%- endif- %}
+
+I would like to {% if include.status == 'new' %} translate into {{ include.tname }} {% elsif include.status == 'update' %} update the {{ include.tname }} translation of {% endif %} the following resource:
+- Page URL: {{include.page.url | absolute_url}}
+{% if include.status == 'new' %}- Link to original file in GitHub: [https://github.com/{{repo}}/edit/{{branch}}/{{path}}](https://github.com/{{repo}}/edit/{{branch}}/{{path}}){% endif %}
+{% if include.status == 'update' %}- Link to file in GitHub: [https://github.com/{{repo}}/edit/{{branch}}/{{path}}](https://github.com/{{repo}}/edit/{{branch}}/{{path}}){% endif %}
+
+I have read the information on Translating WAI Documents at https://www.w3.org/WAI/about/translating/
+
+I will wait for confirmation that the resource is ready for translation.
+
+{% if include.status == 'new' %}https://github.com/w3c/wai-translations/labels/initial-translation
+{% elsif include.status == 'update' %}https://github.com/w3c/wai-translations/labels/translation-update
+{% endif %}
