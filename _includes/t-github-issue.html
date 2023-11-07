@@ -1,8 +1,5 @@
 {%- if include.page.collection -%}{%- assign col = site.collections | where: "label", include.page.collection | first -%}{%- endif- %}
 
-{%- unless include.page.github.hide -%}
-{%- if include.page.github.repository -%}{%- assign repo = page.github.repository -%}{%endif%}
-
 {%- if site.repository -%}
     {%- assign repo = site.repository -%}
 {%- endif- %}
@@ -36,7 +33,8 @@
 
 I would like to {% if include.status == 'new' %} translate into {{ include.tname }} {% elsif include.status == 'update' %} update the {{ include.tname }} translation of {% endif %} the following resource:
 - Page URL: {{include.page.url | absolute_url}}
-- Link to file in GitHub: [https://github.com/{{repo}}/edit/{{branch}}/{{path}}](https://github.com/{{repo}}/edit/{{branch}}/{{path}})
+{% if include.status == 'new' %}- Link to original file in GitHub: [https://github.com/{{repo}}/edit/{{branch}}/{{path}}](https://github.com/{{repo}}/edit/{{branch}}/{{path}}){% endif %}
+{% if include.status == 'update' %}- Link to file in GitHub: [https://github.com/{{repo}}/edit/{{branch}}/{{path}}](https://github.com/{{repo}}/edit/{{branch}}/{{path}}){% endif %}
 
 I have read the information on Translating WAI Documents at https://www.w3.org/WAI/about/translating/
 

@@ -24,13 +24,13 @@
 {%- case t_status -%}
   {%- when "none" -%}
     {%- capture issue_body_new | newline_to_br -%}
-      {%- include t-github-issue.html status="new" tname=tlangname page=include.page -%}
+      {%- include t-github-issue.html status="new" tname=tlangname page=original -%}
     {%- endcapture -%}
     <p>{% include_cached icon.html name="ex-circle" %} No translation available</p>
     <p><a href="https://github.com/w3c/wai-translations/issues/new?title=[{{ tlangname }}]+{{original.title | url_encode}}&body={{issue_body_new | url_encode}}">Volunteer to translate this page</a></p>
   {%- when "outdated" -%}
     {%- capture issue_body_update | newline_to_br -%}
-      {%- include t-github-issue.html status="update" tname=tlangname page=include.page -%}
+      {%- include t-github-issue.html status="update" tname=tlangname page=t -%}
     {%- endcapture -%}
     <p><mark>{% include_cached icon.html name="warning" %} Translation needs update</mark><p>
     <p><a href="https://github.com/w3c/wai-translations/issues/new?title=[{{ tlangname }}]+{{original.title | url_encode}}&body={{issue_body_update | url_encode}}">Volunteer to update the translation</a></p>
