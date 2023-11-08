@@ -1,4 +1,4 @@
-var tr = {
+{
 
 "audio": "ses",
 
@@ -74,11 +74,11 @@ var tr = {
 
 "preferences": "Seçenekler",
 
-"enterFullScreen": "Tam Ekranı Etkinleştir",
+"enterFullscreen": "Tam Ekranı Etkinleştir",
 
-"exitFullScreen": "Tam Ekranı Kapa",
+"exitFullscreen": "Tam Ekranı Kapa",
 
-"fullScreen": "Tam Ekran",
+"fullscreen": "Tam Ekran",
 
 "speed": "Hız",
 
@@ -204,7 +204,25 @@ var tr = {
 
 "prefDescPause": "Açıklama başladığında video'yu otomatik olarak durdur",
 
-"prefVisibleDesc": "Açıklamayı görünür yap",
+"prefDescVisible": "Açıklamayı görünür yap",
+
+"prefDescVoice": "Voice",
+
+"prefDescRate": "Rate",
+
+"prefDescPitch": "Pitch",
+
+"prefDescPitch1": "Very low",
+
+"prefDescPitch2": "Low",
+
+"prefDescPitch3": "Default",
+
+"prefDescPitch4": "High",
+
+"prefDescPitch5": "Very high",
+
+"sampleDescriptionText": "Adjust settings to hear this sample text.",
 
 "prefHighlight": "Medya'daki belgeyi öne çıkar",
 
@@ -306,6 +324,32 @@ var tr = {
 
 "windowBringTop": "Öne getir",
 
-"windowBringTopAlert": "Bu pencere artık saydadaki diğer objenin önünde."
+"windowBringTopAlert": "Bu pencere artık saydadaki diğer objenin önünde.",
 
-};
+"resultsSummary1": "You searched for:",
+
+"resultsSummary2": "Found",
+
+"resultsSummary3": "matching items.",
+
+"resultsSummary4": "Click the time associated with any item to play the video from that point.",
+
+"noResultsFound": "No results found.",
+
+"searchButtonLabel": "Play at",
+
+"hour": "hour",
+
+"minute": "minute",
+
+"second": "second",
+
+"hours": "hours",
+
+"minutes": "minutes",
+
+"seconds": "seconds",
+
+"enableKeyboardShortcuts": "Enable keyboard shortcuts"
+
+}

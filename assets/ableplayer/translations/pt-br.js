@@ -1,4 +1,4 @@
-var ptbr = {
+{
 
 "audio": "áudio",
 
@@ -8,7 +8,7 @@ var ptbr = {
 
 "faster": "Rápido",
 
-"slower": "Devagar",
+"slower": "Lento",
 
 "play": "Reproduzir",
 
@@ -60,25 +60,25 @@ var ptbr = {
 
 "seekbarLabel": "Linha do tempo",
 
-"mute": "Mutar",
+"mute": "Silenciar",
 
-"unmute": "Desmutar",
+"unmute": "Ativar som",
 
 "volume": "Volume",
 
-"volumeHelp": "Clique para acessar o controlador de volume",
+"volumeHelp": "Acessar o controle de volume",
 
 "volumeUpDown": "Ampliar/reduzir volume",
 
-"volumeSliderClosed": "Controlador de volume fechado",
+"volumeSliderClosed": "Controle de volume fechado",
 
 "preferences": "Preferências",
 
-"enterFullScreen": "Entrar em tela cheia",
+"enterFullscreen": "Entrar em tela cheia",
 
-"exitFullScreen": "Sair da tela cheia",
+"exitFullscreen": "Sair da tela cheia",
 
-"fullScreen": "Tela cheia",
+"fullscreen": "Tela cheia",
 
 "speed": "Velocidade",
 
@@ -104,23 +104,23 @@ var ptbr = {
 
 "statusWaiting": "Aguardando",
 
-"statusBuffering": "Pré-carregando",
+"statusBuffering": "Carregando",
 
 "statusUsingDesc": "Utilizando versão descrita",
 
 "statusLoadingDesc": "Carregando versão descrita",
 
-"statusUsingNoDesc": "Não-utlizando versão descrita",
+"statusUsingNoDesc": "Não utilizando versão descrita",
 
-"statusLoadingNoDesc": "Não-carregando versão descrita",
+"statusLoadingNoDesc": "Não carregando versão descrita",
 
 "statusLoadingNext": "Carregando próxima faixa",
 
-"statusEnd": "Fim da feixa",
+"statusEnd": "Fim da faixa",
 
 "selectedTrack": "Faixa Selecionada",
 
-"alertDescribedVersion": "Usando a versão com audiodescrição dessse vídeo",
+"alertDescribedVersion": "Usando a versão com audiodescrição deste vídeo",
 
 "alertNonDescribedVersion": "Utilizando a versão sem audiodescrição desse vídeo",
 
@@ -154,7 +154,7 @@ var ptbr = {
 
 "prefIntroDescriptionNone": "O vídeo atual não possui audiodescrição em nenhum formato.",
 
-"prefIntroDescription3": "Use o formulário a seguir para definir suas preferências relacionadas à audiodescrição.",
+"prefIntroDescription3": "Use o formulário a seguir para definir suas preferências relacionadas à texto baseado em audiodescrição.",
 
 "prefIntroDescription4": "Depois que salvar suas configurações, a audiodescrição poderá ser ligada/desligada usando o botão Descrição.",
 
@@ -204,7 +204,25 @@ var ptbr = {
 
 "prefDescPause": "Automaticamente pausar um vídeo quando a descrição iniciar",
 
-"prefVisibleDesc": "Fazer com que a descrição esteja visível",
+"prefDescVisible": "Fazer com que a descrição esteja visível",
+
+"prefDescVoice": "Voz",
+
+"prefDescRate": "Taxa",
+
+"prefDescPitch": "Tom",
+
+"prefDescPitch1": "Muito baixo",
+
+"prefDescPitch2": "Baixo",
+
+"prefDescPitch3": "Padrão",
+
+"prefDescPitch4": "Alto",
+
+"prefDescPitch5": "Muito alto",
+
+"sampleDescriptionText": "Ajuste as configurações para ouvir este exemplo de texto.",
 
 "prefHighlight": "Destacar a descrição conforme a mídia for reproduzida",
 
@@ -214,11 +232,11 @@ var ptbr = {
 
 "prefCaptionsColor": "Cor do Texto",
 
-"prefCaptionsBGColor": "Plano de Fundo",
+"prefCaptionsBGColor": "Cor do plano de Fundo",
 
 "prefCaptionsSize": "Tamanho da Fonte",
 
-"prefCaptionsOpacity": "Opacidade",
+"prefCaptionsOpacity": "transparência",
 
 "prefCaptionsStyle": "Estilo",
 
@@ -264,9 +282,9 @@ var ptbr = {
 
 "sampleCaptionText": "Um texto de exemplo para legendas",
 
-"prefSuccess": "Suas alterações foram salvas.",
+"prefSuccess": "Suas alterações foram salvas",
 
-"prefNoChange": "Você não fez nenhuma alteração.",
+"prefNoChange": "Você não fez nenhuma alteração",
 
 "help": "Ajuda",
 
@@ -306,6 +324,32 @@ var ptbr = {
 
 "windowBringTop": "Trazer para frente",
 
-"windowBringTopAlert": "Essa janela está agora atrás dos outros objetos nesta página."
+"windowBringTopAlert": "Essa janela está agora atrás dos outros objetos nesta página",
 
-};
+"resultsSummary1": "Você buscou por:",
+
+"resultsSummary2": "Encontrado",
+
+"resultsSummary3": "itens correspondentes",
+
+"resultsSummary4": "Ative o item de tempo associado para reproduzir o vídeo a partir desse ponto.",
+
+"noResultsFound": "Nenhum resultado encontrado",
+
+"searchButtonLabel": "Tocar no",
+
+"hour": "hora",
+
+"minute": "minuto",
+
+"second": "segundos",
+
+"hours": "horas",
+
+"minutes": "minutos",
+
+"seconds": "segundos",
+
+"enableKeyboardShortcuts": "Ativar atalhos de teclado"
+
+}

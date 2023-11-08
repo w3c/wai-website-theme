@@ -1,4 +1,4 @@
-var he = {
+{
 
 "audio": "שמע",
 
@@ -74,11 +74,11 @@ var he = {
 
 "preferences": "העדפות",
 
-"enterFullScreen": "מעבר למסך מלא",
+"enterFullscreen": "מעבר למסך מלא",
 
-"exitFullScreen": "יציאה ממסך מלא",
+"exitFullscreen": "יציאה ממסך מלא",
 
-"fullScreen": "מסך מלא",
+"fullscreen": "מסך מלא",
 
 "speed": "מהירות",
 
@@ -116,7 +116,7 @@ var he = {
 
 "statusLoading Next": "טוען את הרצועה הבאה",
 
-"statusEnd": "סוף המסלול", "
+"statusEnd": "סוף המסלול",
 
 "selectTrack": "מסלול נבחר",
 
@@ -132,9 +132,9 @@ var he = {
 
 "prefMenuCaptions": "כיתובים",
 
-"prefMenuDescriptions": "תיאורים", "
+"prefMenuDescriptions": "תיאורים",
 
-"prefMenuKeyboard": "מקלדת", "
+"prefMenuKeyboard": "מקלדת",
 
 "prefMenuTranscript": "תמליל",
 
@@ -164,21 +164,21 @@ var he = {
 
 "prefIntroKeyboard3": "הערה: ייתכן שחלק מצירופי המקשים מתנגשים עם המקשים המשמשים את הדפדפן ו / או יישומי תוכנה אחרים, נסה שילובים שונים של מפתחות שינוי כדי למצוא אחד המתאים לך.",
 
-"prefIntroTranscript": "ההעדפות הבאות משפיעות על התמליל האינטראקטיבי".,
+"prefIntroTranscript": "ההעדפות הבאות משפיעות על התמליל האינטראקטיבי.",
 
-"prefCookieWarning": "שמירת ההעדפות שלך דורשת קובצי cookie".,
+"prefCookieWarning": "שמירת ההעדפות שלך דורשת קובצי cookie.",
 
 "prefHeadingKeyboard1": "מקשי משנה המשמשים לקיצורי דרך",
 
 "prefHeadingKeyboard2": "קיצורי מקשים נוכחיים",
 
-"prefHeadingDescription": "תיאור שמע", "
+"prefHeadingDescription": "תיאור שמע",
 
 "prefHeadingTextDescription": "תיאור מבוסס טקסט מבוסס טקסט",
 
-"prefHeadingCaptions": "כיתובים", "
+"prefHeadingCaptions": "כיתובים",
 
-"prefHeadingTranscript": "תמליל אינטראקטיבי"
+"prefHeadingTranscript": "תמליל אינטראקטיבי",
 
 "prefAltKey": "Alt",
 
@@ -204,23 +204,41 @@ var he = {
 
 "prefDescPause": "השהה את הווידאו באופן אוטומטי כאשר התיאור מתחיל",
 
-"prefVisibleDesc": "הפוך תיאור גלוי",
+"prefDescVisible": "הפוך תיאור גלוי",
+
+"prefDescVoice": "Voice",
+
+"prefDescRate": "Rate",
+
+"prefDescPitch": "Pitch",
+
+"prefDescPitch1": "Very low",
+
+"prefDescPitch2": "Low",
+
+"prefDescPitch3": "Default",
+
+"prefDescPitch4": "High",
+
+"prefDescPitch5": "Very high",
+
+"sampleDescriptionText": "Adjust settings to hear this sample text.",
 
 "prefHighlight": "הדגש תמליל כמו משחק מדיה",
 
 "prefTabbable": "הפעל תמליל",
 
-"prefCaptionsFont": "גופן", "
+"prefCaptionsFont": "גופן",
 
-"prefCaptionsColor": "צבע טקסט", "
+"prefCaptionsColor": "צבע טקסט",
 
-"prefCaptionsBGColor": "רקע", "
+"prefCaptionsBGColor": "רקע",
 
-"prefCaptionsSize": "גודל גופן", "
+"prefCaptionsSize": "גודל גופן",
 
 "prefCaptionsOpacity": "אטימות",
 
-"prefCaptionsStyle": "סגנון", "
+"prefCaptionsStyle": "סגנון",
 
 "serif": "serif",
 
@@ -306,6 +324,32 @@ var he = {
 
 "windowBringTop": "שליחה קדימה",
 
-"windowBringTopAlert": "חלון זה נמצא עתה מעל אלמנטים אחרים בעמוד."
+"windowBringTopAlert": "חלון זה נמצא עתה מעל אלמנטים אחרים בעמוד.",
 
-};
+"resultsSummary1": "You searched for:",
+
+"resultsSummary2": "Found",
+
+"resultsSummary3": "matching items.",
+
+"resultsSummary4": "Click the time associated with any item to play the video from that point.",
+
+"noResultsFound": "No results found.",
+
+"searchButtonLabel": "Play at",
+
+"hour": "hour",
+
+"minute": "minute",
+
+"second": "second",
+
+"hours": "hours",
+
+"minutes": "minutes",
+
+"seconds": "seconds",
+
+"enableKeyboardShortcuts": "Enable keyboard shortcuts"
+
+}

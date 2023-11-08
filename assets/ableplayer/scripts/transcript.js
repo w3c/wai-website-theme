@@ -5,29 +5,36 @@
 		var deferred = new $.Deferred();
 		var promise = deferred.promise();
 
-		if (!this.transcriptType) {
-			// previously set transcriptType to null since there are no <track> elements
-			// check again to see if captions have been collected from other sources (e.g., YouTube)
-			if (this.captions.length && (!(this.usingYouTubeCaptions || this.usingVimeoCaptions))) {
-				// captions are possible! Use the default type (popup)
-				// if other types ('external' and 'manual') were desired, transcriptType would not be null here
-				this.transcriptType = 'popup';
-			}
+		if (this.usingYouTubeCaptions || this.usingVimeoCaptions) { 
+			// a transcript is not possible 
+			this.transcriptType = null; 
+			deferred.resolve();
 		}
+		else { 
+			if (!this.transcriptType) {
+				// previously set transcriptType to null since there are no <track> elements
+				// check again to see if captions have been collected from other sources (e.g., YouTube)
 
-		if (this.transcriptType) {
-			if (this.transcriptType === 'popup' || this.transcriptType === 'external') {
-				 this.injectTranscriptArea();
-		 			deferred.resolve();
+				if (this.captions.length) {
+					// captions are possible! Use the default type (popup)
+					// if other types ('external' and 'manual') were desired, transcriptType would not be null here
+					this.transcriptType = 'popup';
+				}
 			}
-			else if (this.transcriptType === 'manual') {
-				this.setupManualTranscript();
+			if (this.transcriptType) {
+				if (this.transcriptType === 'popup' || this.transcriptType === 'external') {
+					this.injectTranscriptArea();
+					deferred.resolve();
+				}
+				else if (this.transcriptType === 'manual') {
+					this.setupManualTranscript();
+					deferred.resolve();
+				}
+			}
+			else {
+				// there is no transcript
 				deferred.resolve();
 			}
-		}
-		else {
-			// there is no transcript
-			deferred.resolve();
 		}
 		return promise;
 	};
@@ -39,7 +46,8 @@
 		thisObj = this;
 		this.$transcriptArea = $('<div>', {
 			'class': 'able-transcript-area',
-			'tabindex': '-1'
+			'role': 'dialog',
+			'aria-label': this.tt.transcriptTitle
 		});
 
 		this.$transcriptToolbar = $('<div>', {
@@ -54,12 +62,12 @@
 
 		// Add auto Scroll checkbox
 		this.$autoScrollTranscriptCheckbox = $('<input>', {
-		 	'id': 'autoscroll-transcript-checkbox',
-		 	'type': 'checkbox'
-		 });
+			'id': 'autoscroll-transcript-checkbox-' + this.mediaId,
+			'type': 'checkbox'
+		});
 		$autoScrollLabel = $('<label>', {
-			 'for': 'autoscroll-transcript-checkbox'
-			}).text(this.tt.autoScroll);
+				'for': 'autoscroll-transcript-checkbox-' + this.mediaId
+		}).text(this.tt.autoScroll);
 		this.$transcriptToolbar.append($autoScrollLabel,this.$autoScrollTranscriptCheckbox);
 
 		// Add field for selecting a transcript language
@@ -69,10 +77,10 @@
 				'class': 'transcript-language-select-wrapper'
 			});
 			$languageSelectLabel = $('<label>',{
-				'for': 'transcript-language-select'
+				'for': 'transcript-language-select-' + this.mediaId
 			}).text(this.tt.language);
 			this.$transcriptLanguageSelect = $('<select>',{
-				'id': 'transcript-language-select'
+				'id': 'transcript-language-select-' + this.mediaId
 			});
 			for (i=0; i < this.captions.length; i++) {
 				$option = $('<option></option>',{
@@ -80,7 +88,7 @@
 					lang: this.captions[i]['language']
 				}).text(this.captions[i]['label']);
 				if (this.captions[i]['def']) {
-				 	$option.prop('selected',true);
+					$option.prop('selected',true);
 				 }
 				this.$transcriptLanguageSelect.append($option);
 			 }
@@ -174,10 +182,19 @@
 
 	AblePlayer.prototype.setupManualTranscript = function() {
 
-		// Add an auto-scroll checkbox to the toolbar
+		var $autoScrollInput, $autoScrollLabel;
 
-		this.$autoScrollTranscriptCheckbox = $('<input id="autoscroll-transcript-checkbox" type="checkbox">');
-		this.$transcriptToolbar.append($('<label for="autoscroll-transcript-checkbox">' + this.tt.autoScroll + ': </label>'), this.$autoScrollTranscriptCheckbox);
+		$autoScrollInput = $('<input>', {
+			'id': 'autoscroll-transcript-checkbox-' + this.mediaId,
+			'type': 'checkbox'
+		});
+		$autoScrollLabel = $('<label>', {
+				'for': 'autoscroll-transcript-checkbox-' + this.mediaId
+		}).text(this.tt.autoScroll);
+
+		// Add an auto-scroll checkbox to the toolbar.
+		this.$autoScrollTranscriptCheckbox = $autoScrollInput;
+		this.$transcriptToolbar.append($autoScrollLabel, this.$autoScrollTranscriptCheckbox);
 
 	};
 
@@ -186,7 +203,9 @@
 		if (!this.transcriptType) {
 			return;
 		}
-
+		if (this.playerCreated && !this.$transcriptArea) { 
+			return; 
+		}
 		if (this.transcriptType === 'external' || this.transcriptType === 'popup') {
 
 			var chapters, captions, descriptions;
@@ -244,7 +263,6 @@
 			}
 
 			var div = this.generateTranscript(chapters || [], captions || [], descriptions || []);
-
 			this.$transcriptDiv.html(div);
 			// reset transcript selected <option> to this.transcriptLang
 			if (this.$transcriptLanguageSelect) {
@@ -257,7 +275,7 @@
 
 		// Make transcript tabbable if preference is turned on.
 		if (this.prefTabbable === 1) {
-			$('.able-transcript span.able-transcript-seekpoint').attr('tabindex','0');
+			this.$transcriptDiv.find('span.able-transcript-seekpoint').attr('tabindex','0');
 		}
 
 		// handle clicks on text within transcript
@@ -286,7 +304,7 @@
 
 	AblePlayer.prototype.highlightTranscript = function (currentTime) {
 
-		//show highlight in transcript marking current caption
+		// Show highlight in transcript marking current caption.
 
 		if (!this.transcriptType) {
 			return;
@@ -310,13 +328,18 @@
 			}
 
 			if (currentTime >= start && currentTime <= end && !isChapterHeading) {
-				// move all previous highlights before adding one to current span
-				thisObj.$transcriptArea.find('.able-highlight').removeClass('able-highlight');
-				$(this).addClass('able-highlight');
+
+				// If this item isn't already highlighted, it should be
+				if (!($(this).hasClass('able-highlight'))) {
+					// remove all previous highlights before adding one to current span
+					thisObj.$transcriptArea.find('.able-highlight').removeClass('able-highlight');
+					$(this).addClass('able-highlight');
+					thisObj.movingHighlight = true;
+				}
 				return false;
 			}
 		});
-		thisObj.currentHighlight = $('.able-highlight');
+		thisObj.currentHighlight = thisObj.$transcriptArea.find('.able-highlight');
 		if (thisObj.currentHighlight.length === 0) {
 			// Nothing highlighted.
 			thisObj.currentHighlight = null;
@@ -343,7 +366,7 @@
 			transcriptTitle = this.tt.transcriptTitle;
 		}
 
-		if (typeof this.transcriptDivLocation === 'undefined') {
+		if (!this.transcriptDivLocation) {
 			// only add an HTML heading to internal transcript
 			// external transcript is expected to have its own heading
 			var headingNumber = this.playerHeadingLevel;
@@ -356,7 +379,6 @@
 			else {
 				var transcriptHeading = 'div';
 			}
-			// var transcriptHeadingTag = '<' + transcriptHeading + ' class="able-transcript-heading">';
 			var $transcriptHeadingTag = $('<' + transcriptHeading + '>');
 			$transcriptHeadingTag.addClass('able-transcript-heading');
 			if (headingNumber > 6) {

@@ -2,41 +2,25 @@
 	// Media events
 	AblePlayer.prototype.onMediaUpdateTime = function (duration, elapsed) {
 
+
 		// duration and elapsed are passed from callback functions of Vimeo API events
 		// duration is expressed as sss.xxx
 		// elapsed is expressed as sss.xxx
 		var thisObj = this;
-
 		this.getMediaTimes(duration,elapsed).then(function(mediaTimes) {
-			if (typeof duration === 'undefined') {
-				thisObj.duration = mediaTimes['duration'];
-			}
-			if (typeof elapsed === 'undefined') {
-				thisObj.elapsed = mediaTimes['elapsed'];
-			}
-			if (thisObj.swappingSrc && (typeof thisObj.swapTime !== 'undefined')) {
-				if (thisObj.swapTime === thisObj.elapsed) {
-					// described version been swapped and media has scrubbed to time of previous version
-					if (thisObj.playing) {
-						// resume playback
-						thisObj.playMedia();
-						// reset vars
-						thisObj.swappingSrc = false;
-						thisObj.swapTime = null;
-					}
-				}
-			}
-			else if (thisObj.startedPlaying) {
+			thisObj.duration = mediaTimes['duration'];
+			thisObj.elapsed = mediaTimes['elapsed'];
+			if (thisObj.duration > 0) { 
 				// do all the usual time-sync stuff during playback
 				if (thisObj.prefHighlight === 1) {
 					thisObj.highlightTranscript(thisObj.elapsed);
-				}
+				}				
 				thisObj.updateCaption(thisObj.elapsed);
 				thisObj.showDescription(thisObj.elapsed);
 				thisObj.updateChapter(thisObj.elapsed);
 				thisObj.updateMeta(thisObj.elapsed);
-				thisObj.refreshControls('timeline', thisObj.duration, thisObj.elapsed);
-			}
+				thisObj.refreshControls('timeline', thisObj.duration, thisObj.elapsed); 
+			}	
 		});
 	};
 
@@ -55,7 +39,6 @@
 	};
 
 	AblePlayer.prototype.onMediaComplete = function () {
-
 		// if there's a playlist, advance to next item and start playing
 		if (this.hasPlaylist && !this.cueingPlaylistItem) {
 			if (this.playlistIndex === (this.$playlist.length - 1)) {
@@ -64,6 +47,10 @@
 					this.playlistIndex = 0;
 					this.cueingPlaylistItem = true; // stopgap to prevent multiple firings
 					this.cuePlaylistItem(0);
+				}
+				else {
+					this.playing = false;
+					this.paused = true;
 				}
 			}
 			else {
@@ -78,80 +65,200 @@
 
 	AblePlayer.prototype.onMediaNewSourceLoad = function () {
 
+		var loadIsComplete = false; 
+
 		if (this.cueingPlaylistItem) {
 			// this variable was set in order to address bugs caused by multiple firings of media 'end' event
 			// safe to reset now
 			this.cueingPlaylistItem = false;
 		}
-		if (this.swappingSrc === true) {
+		if (this.recreatingPlayer) { 
+			// same as above; different bugs 
+			this.recreatingPlayer = false; 
+		}
+		if (this.playbackRate) {
+			// user has set playbackRate on a previous src or track
+			// use that setting on the new src or track too
+			this.setPlaybackRate(this.playbackRate);
+		}
+		if (this.userClickedPlaylist) {
+			if (!this.startedPlaying || this.okToPlay) {
+				// start playing; no further user action is required
+				this.playMedia();
+				loadIsComplete = true; 
+			 }
+		}
+		else if (this.seekTrigger == 'restart' ||
+				this.seekTrigger == 'chapter' ||
+				this.seekTrigger == 'transcript' ||
+				this.seekTrigger == 'search'
+				) {
+			// by clicking on any of these elements, user is likely intending to play
+			// Not included: elements where user might click multiple times in succession
+			// (i.e., 'rewind', 'forward', or seekbar); for these, video remains paused until user initiates play
+			this.playMedia();
+			loadIsComplete = true; 
+		}
+		else if (this.swappingSrc) {
 			// new source file has just been loaded
-			if (this.swapTime > 0) {
-				// this.swappingSrc will be set to false after seek is complete
-				// see onMediaUpdateTime()
-				this.seekTo(this.swapTime);
+			if (this.hasPlaylist) {
+				// a new source file from the playlist has just been loaded
+				if ((this.playlistIndex !== this.$playlist.length) || this.loop) {
+					// this is not the last track in the playlist (OR playlist is looping so it doesn't matter)
+					this.playMedia();
+					loadIsComplete = true; 
+				}
+			}
+			else if (this.swapTime > 0) {
+				if (this.seekStatus === 'complete') { 
+					if (this.okToPlay) {
+						// should be able to resume playback
+						this.playMedia();					
+					}
+					loadIsComplete = true; 
+				}
+				else if (this.seekStatus === 'seeking') { 
+				}
+				else { 
+					if (this.swapTime === this.elapsed) { 
+						// seek is finished! 
+						this.seekStatus = 'complete'; 
+						if (this.okToPlay) {
+							// should be able to resume playback
+							this.playMedia();					
+						}
+						loadIsComplete = true; 
+					}
+					else { 
+						// seeking hasn't started yet 
+						// first, determine whether it's possible 
+						if (this.hasDescTracks) { 
+							// do nothing. Unable to seek ahead if there are descTracks
+							loadIsComplete = true; 
+						}
+						else if (this.durationsAreCloseEnough(this.duration,this.prevDuration)) {
+							// durations of two sources are close enough to making seek ahead in new source ok
+							this.seekStatus = 'seeking'; 
+							this.seekTo(this.swapTime);
+						}
+						else { 							
+							// durations of two sources are too dissimilar to support seeking ahead to swapTime.  						
+							loadIsComplete = true; 
+						}
+					}
+				}
+			}
+			else {				
+				// swapTime is 0. No seeking required. 
+				if (this.playing) { 
+					this.playMedia(); 
+					// swap is complete. Reset vars. 
+					loadIsComplete = true; 					
+				}
+			}
+		}
+		else if (!this.startedPlaying) {
+			if (this.startTime > 0) {
+				if (this.seeking) {
+					// a seek has already been initiated
+					// since canplaythrough has been triggered, the seek is complete
+					this.seeking = false;
+					if (this.okToPlay) {
+						this.playMedia();
+					}
+					loadIsComplete = true; 
+				}
+				else {
+					// haven't started seeking yet
+					this.seekTo(this.startTime);
+				}
+			}
+			else if (this.defaultChapter && typeof this.selectedChapters !== 'undefined') {
+				this.seekToChapter(this.defaultChapter);
 			}
 			else {
-				if (this.playing) {
-					// should be able to resume playback
+				// there is no startTime, therefore no seeking required
+				if (this.okToPlay) {
 					this.playMedia();
 				}
-				this.swappingSrc = false; // swapping is finished
-				this.refreshControls('init');
+				loadIsComplete = true; 				
 			}
+		}
+		else if (this.hasPlaylist) { 
+			// new source media is part of a playlist, but user didn't click on it 
+			// (and somehow, swappingSrc is false)
+			// this may happen when the previous track ends and next track loads 
+			// this same code is called above when swappingSrc is true 
+			if ((this.playlistIndex !== this.$playlist.length) || this.loop) {
+				// this is not the last track in the playlist (OR playlist is looping so it doesn't matter)
+				this.playMedia();
+				loadIsComplete = true; 
+			}
+		}
+		else { 
+			// None of the above. 
+			// User is likely seeking to a new time, but not loading a new media source
+			// need to reset vars 
+			loadIsComplete = true; 
+		}
+		if (loadIsComplete) { 
+			// reset vars 
+			this.swappingSrc = false; 			
+			this.seekStatus = null; 
+			this.swapTime = 0; 
+			this.seekTrigger = null;
+			this.seekingFromTranscript = false;		
+			this.userClickedPlaylist = false;
+			this.okToPlay = false; 	
+		}
+		this.refreshControls('init');
+		if (this.$focusedElement) { 		
+			this.restoreFocus(); 
+			this.$focusedElement = null; 
 		}
 	};
 
-	// End Media events
+	AblePlayer.prototype.durationsAreCloseEnough = function(d1,d2) { 
 
-	AblePlayer.prototype.onWindowResize = function () {
+		// Compare the durations of two media sources to determine whether it's ok to seek ahead after swapping src 
+		// The durations may not be exact, but they might be "close enough" 
+		// returns true if "close enough", otherwise false 
 
-		if (this.fullscreen) { // replace isFullscreen() with a Boolean. see function for explanation
-
-			var newWidth, newHeight;
-
-			newWidth = $(window).width();
-
-			// haven't isolated why, but some browsers return an innerHeight that's 20px too tall in fullscreen mode
-			// Test results:
-			// Browsers that require a 20px adjustment: Firefox, IE11 (Trident), Edge
-			if (this.isUserAgent('Firefox') || this.isUserAgent('Trident') || this.isUserAgent('Edge')) {
-				newHeight = window.innerHeight - this.$playerDiv.outerHeight() - 20;
-			}
-			else if (window.outerHeight >= window.innerHeight) {
-				// Browsers that do NOT require adjustment: Chrome, Safari, Opera, MSIE 10
-				newHeight = window.innerHeight - this.$playerDiv.outerHeight();
-			}
-			else {
-				// Observed in Safari 9.0.1 on Mac OS X: outerHeight is actually less than innerHeight
-				// Maybe a bug, or maybe window.outerHeight is already adjusted for controller height(?)
-				// No longer observed in Safari 9.0.2
-				newHeight = window.outerHeight;
-			}
-			if (!this.$descDiv.is(':hidden')) {
-				newHeight -= this.$descDiv.height();
-			}
-			this.positionCaptions('overlay');
+		var tolerance, diff; 
+		
+		tolerance = 1;  // number of seconds between rounded durations that is considered "close enough" 
+		
+		diff = Math.abs(Math.round(d1) - Math.round(d2)); 
+		
+		if (diff <= tolerance) {
+			return true;  
 		}
-		else { // not fullscreen
-			if (this.restoringAfterFullScreen) {
-				newWidth = this.preFullScreenWidth;
-				newHeight = this.preFullScreenHeight;
-			}
-			else {
-				// not restoring after full screen
-				newWidth = this.$ableWrapper.width();
-				if (typeof this.aspectRatio !== 'undefined') {
-					newHeight = Math.round(newWidth / this.aspectRatio);
-				}
-				else {
-					// not likely, since this.aspectRatio is defined during intialization
-					// however, this is a fallback scenario just in case
-					newHeight = this.$ableWrapper.height();
-				}
-				this.positionCaptions(); // reset with this.prefCaptionsPosition
+		else { 
+			return false; 
+		}
+	};
+
+	AblePlayer.prototype.restoreFocus = function() { 
+
+		// function called after player has been rebuilt (during media swap)
+		// the original focusedElement no longer exists, 
+		// but this function finds a match in the new player 
+		// and places focus there 
+
+		var classList; 
+
+		if (this.$focusedElement) { 
+			
+			if ((this.$focusedElement).attr('role') === 'button') { 
+				classList = this.$focusedElement.attr("class").split(/\s+/);
+				$.each(classList, function(index, item) {
+					if (item.substring(0,20) === 'able-button-handler-') {
+						$('div.able-controller div.' + item).focus();  
+					}
+				});
 			}
 		}
-		this.resizePlayer(newWidth, newHeight);
+
 	};
 
 	AblePlayer.prototype.addSeekbarListeners = function () {
@@ -187,14 +294,31 @@
 
 	AblePlayer.prototype.onClickPlayerButton = function (el) {
 
-		// TODO: This is super-fragile since we need to know the length of the class name to split off; update this to other way of dispatching?
-		var whichButton = $(el).attr('class').split(' ')[0].substr(20);
+		var whichButton, prefsPopup;
+
+		whichButton = this.getButtonNameFromClass($(el).attr('class')); 
+
 		if (whichButton === 'play') {
+			this.clickedPlay = true;
 			this.handlePlay();
 		}
 		else if (whichButton === 'restart') {
 			this.seekTrigger = 'restart';
 			this.handleRestart();
+		}
+		else if (whichButton === 'previous') {
+			this.userClickedPlaylist = true;
+			this.okToPlay = true; 
+			this.seekTrigger = 'previous';
+			this.buttonWithFocus = 'previous';
+			this.handlePrevTrack();
+		}
+		else if (whichButton === 'next') {
+			this.userClickedPlaylist = true;
+			this.okToPlay = true; 
+			this.seekTrigger = 'next';
+			this.buttonWithFocus = 'next';
+			this.handleNextTrack();
 		}
 		else if (whichButton === 'rewind') {
 			this.seekTrigger = 'rewind';
@@ -208,7 +332,7 @@
 			this.handleMute();
 		}
 		else if (whichButton === 'volume') {
-			this.handleVolume();
+			this.handleVolumeButtonClick();
 		}
 		else if (whichButton === 'faster') {
 			this.handleRateIncrease();
@@ -226,22 +350,62 @@
 			this.handleDescriptionToggle();
 		}
 		else if (whichButton === 'sign') {
-			this.handleSignToggle();
+			if (!this.closingSign) {
+				this.handleSignToggle();
+			}
 		}
 		else if (whichButton === 'preferences') {
-			this.handlePrefsClick();
+			if ($(el).attr('data-prefs-popup') === 'menu') {
+				this.handlePrefsClick();
+			}
+			else {
+				this.showingPrefsDialog = true; // stopgap
+				this.closePopups();
+				prefsPopup = $(el).attr('data-prefs-popup');
+				if (prefsPopup === 'keyboard') {
+					this.keyboardPrefsDialog.show();
+				}
+				else if (prefsPopup === 'captions') {
+					this.captionPrefsDialog.show();
+				}
+				else if (prefsPopup === 'descriptions') {
+					this.descPrefsDialog.show();
+				}
+				else if (prefsPopup === 'transcript') {
+					this.transcriptPrefsDialog.show();
+				}
+				this.showingPrefsDialog = false;
+			}
 		}
 		else if (whichButton === 'help') {
 			this.handleHelpClick();
 		}
 		else if (whichButton === 'transcript') {
-			this.handleTranscriptToggle();
+			if (!this.closingTranscript) {
+				this.handleTranscriptToggle();
+			}
 		}
 		else if (whichButton === 'fullscreen') {
 			this.clickedFullscreenButton = true;
 			this.handleFullscreenToggle();
 		}
 	};
+
+	AblePlayer.prototype.getButtonNameFromClass = function (classString) { 
+
+		// player control buttons all have class="able-button-handler-x"  where x is the identifier 
+		// buttons might also have other classes assigned though
+
+		var classes, i; 
+
+		classes = classString.split(' '); 
+		for (i = 0; i < classes.length; i++) { 
+			if (classes[i].substring(0,20) === 'able-button-handler-') { 
+				return classes[i].substring(20); 
+			}
+		}		
+		return classString; 
+	}
 
 	AblePlayer.prototype.okToHandleKeyPress = function () {
 
@@ -271,96 +435,133 @@
 		// including removal of the "media player" design pattern. There's an issue about that:
 		// https://github.com/w3c/aria-practices/issues/27
 
-		if (!this.okToHandleKeyPress()) {
-			return false;
-		}
-		// Convert to lower case.
-		var which = e.which;
+		var which, $thisElement;
 
+		// Convert to lower case.
+		which = e.which;
 		if (which >= 65 && which <= 90) {
 			which += 32;
 		}
+		$thisElement = $(document.activeElement);
+
+		if (which === 27) { // escape
+			if (this.$transcriptArea && $.contains(this.$transcriptArea[0],$thisElement[0]) && !this.hidingPopup) {
+				// This element is part of transcript area.
+				this.handleTranscriptToggle();
+				return false;
+			}
+		}
+		if (!this.okToHandleKeyPress()) {
+			return false;
+		}
 
 		// Only use keypress to control player if focus is NOT on a form field or contenteditable element
+		// (or a textarea element with player in stenoMode)
 		if (!(
 			$(':focus').is('[contenteditable]') ||
 			$(':focus').is('input') ||
-			$(':focus').is('textarea') ||
+			($(':focus').is('textarea') && !this.stenoMode) ||
 			$(':focus').is('select') ||
 			e.target.hasAttribute('contenteditable') ||
 			e.target.tagName === 'INPUT' ||
-			e.target.tagName === 'TEXTAREA' ||
+			(e.target.tagName === 'TEXTAREA' && !this.stenoMode) ||
 			e.target.tagName === 'SELECT'
 		)){
 			if (which === 27) { // escape
 				this.closePopups();
+				this.$tooltipDiv.hide();
+				this.seekBar.hideSliderTooltips();
 			}
 			else if (which === 32) { // spacebar = play/pause
-				if (this.$ableWrapper.find('.able-controller button:focus').length === 0) {
-					// only toggle play if a button does not have focus
-					// if a button has focus, space should activate that button
-					this.handlePlay();
+				// disable spacebar support for play/pause toggle as of 4.2.10
+				// spacebar should not be handled everywhere on the page, since users use that to scroll the page
+				// when the player has focus, most controls are buttons so spacebar should be used to trigger the buttons
+				if ($thisElement.attr('role') === 'button') {
+					// register a click on this element
+					e.preventDefault();
+					$thisElement.click();
 				}
 			}
 			else if (which === 112) { // p = play/pause
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handlePlay();
 				}
 			}
 			else if (which === 115) { // s = stop (now restart)
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handleRestart();
 				}
 			}
 			else if (which === 109) { // m = mute
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handleMute();
 				}
 			}
 			else if (which === 118) { // v = volume
 				if (this.usingModifierKeys(e)) {
-					this.handleVolume();
+					e.preventDefault();
+					this.handleVolumeButtonClick();
 				}
 			}
 			else if (which >= 49 && which <= 57) { // set volume 1-9
 				if (this.usingModifierKeys(e)) {
-					this.handleVolume(which);
+					e.preventDefault();
+					this.handleVolumeKeystroke(which);
 				}
 			}
 			else if (which === 99) { // c = caption toggle
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handleCaptionToggle();
 				}
 			}
 			else if (which === 100) { // d = description
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handleDescriptionToggle();
 				}
 			}
 			else if (which === 102) { // f = forward
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handleFastForward();
 				}
 			}
 			else if (which === 114) { // r = rewind
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handleRewind();
+				}
+			}
+			else if (which === 98) { // b = back (previous track)
+				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
+					this.handlePrevTrack();
+				}
+			}
+			else if (which === 110) { // n = next track
+				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
+					this.handleNextTrack();
 				}
 			}
 			else if (which === 101) { // e = preferences
 				if (this.usingModifierKeys(e)) {
+					e.preventDefault();
 					this.handlePrefsClick();
 				}
 			}
 			else if (which === 13) { // Enter
-				var thisElement = $(document.activeElement);
-				if (thisElement.prop('tagName') === 'SPAN') {
-					// register a click on this SPAN
+				if ($thisElement.attr('role') === 'button' || $thisElement.prop('tagName') === 'SPAN') {
+					// register a click on this element
 					// if it's a transcript span the transcript span click handler will take over
-					thisElement.click();
+					$thisElement.click();
 				}
-				else if (thisElement.prop('tagName') === 'LI') {
-					thisElement.click();
+				else if ($thisElement.prop('tagName') === 'LI') {
+					$thisElement.click();
 				}
 			}
 		}
@@ -374,12 +575,17 @@
 		// and no events are triggered until media begins to play
 		// Able Player gets around this by automatically loading media in some circumstances
 		// (see initialize.js > initPlayer() for details)
+
 		this.$media
 			.on('emptied',function() {
 				// do something
 			})
 			.on('loadedmetadata',function() {
-				thisObj.onMediaNewSourceLoad();
+				// should be able to get duration now
+				thisObj.duration = thisObj.media.duration;				
+				var x = 50.5; 
+				var y = 51.9; 
+				var diff = Math.abs(Math.round(x)-Math.round(y)); 
 			})
 			.on('canplay',function() {
 				// previously handled seeking to startTime here
@@ -387,69 +593,11 @@
 				// so we know player can seek ahead to anything
 			})
 			.on('canplaythrough',function() {
-				if (thisObj.userClickedPlaylist) {
-					if (!thisObj.startedPlaying) {
-							// start playing; no further user action is required
-						thisObj.playMedia();
-				 		}
-					thisObj.userClickedPlaylist = false; // reset
-				}
-				if (thisObj.seekTrigger == 'restart' || thisObj.seekTrigger == 'chapter' || thisObj.seekTrigger == 'transcript') {
-					// by clicking on any of these elements, user is likely intending to play
-					// Not included: elements where user might click multiple times in succession
-					// (i.e., 'rewind', 'forward', or seekbar); for these, video remains paused until user initiates play
-					thisObj.playMedia();
-				}
-				else if (!thisObj.startedPlaying) {
-					if (thisObj.startTime > 0) {
-						if (thisObj.seeking) {
-							// a seek has already been initiated
-							// since canplaythrough has been triggered, the seek is complete
-							thisObj.seeking = false;
-							if (thisObj.autoplay || thisObj.okToPlay) {
-								thisObj.playMedia();
-							}
-						}
-						else {
-							// haven't started seeking yet
-							thisObj.seekTo(thisObj.startTime);
-						}
-					}
-					else if (thisObj.defaultChapter && typeof thisObj.selectedChapters !== 'undefined') {
-						thisObj.seekToChapter(thisObj.defaultChapter);
-					}
-					else {
-						// there is no startTime, therefore no seeking required
-						if (thisObj.autoplay || thisObj.okToPlay) {
-							thisObj.playMedia();
-						}
-					}
-				}
-				else if (thisObj.hasPlaylist) {
-					if ((thisObj.playlistIndex !== thisObj.$playlist.length) || thisObj.loop) {
-						// this is not the last track in the playlist (OR playlist is looping so it doesn't matter)
-						thisObj.playMedia();
-					}
-				}
-				else {
-					// already started playing
-					// we're here because a new media source has been loaded and is ready to resume playback
-					thisObj.getPlayerState().then(function(currentState) {
-						if (thisObj.swappingSrc && currentState === 'stopped') {
-							// Safari is the only browser that returns value of 'stopped' (observed in 12.0.1 on MacOS)
-							// This prevents 'timeupdate' events from triggering, which prevents the new media src
-							// from resuming playback at swapTime
-							// This is a hack to jump start Safari
-							thisObj.startedPlaying = false;
-							if (thisObj.swapTime > 0) {
-								thisObj.seekTo(thisObj.swapTime);
-							}
-							else {
-								thisObj.playMedia();
-							}
-						}
-					});
-				}
+				// previously onMediaNewSourceLoad() was called on 'loadedmetadata' 
+				// but that proved to be too soon for some of this functionality. 
+				// TODO: Monitor this. If moving it here causes performance issues, 
+				// consider moving some or all of this functionality to 'canplay' 
+					thisObj.onMediaNewSourceLoad(); 								
 			})
 			.on('play',function() {
 				// both 'play' and 'playing' seem to be fired in all browsers (including IE11)
@@ -459,6 +607,7 @@
 			.on('playing',function() {
 				thisObj.playing = true;
 				thisObj.paused = false;
+				thisObj.swappingSrc = false; 
 				thisObj.refreshControls('playpause');
 			})
 			.on('ended',function() {
@@ -480,12 +629,12 @@
 			.on('timeupdate',function() {
 				thisObj.onMediaUpdateTime(); // includes a call to refreshControls()
 			})
-			.on('pause',function() {
-				if (!thisObj.clickedPlay) {
+			.on('pause',function() {				
+				if (!thisObj.clickedPlay) {					
 					// 'pause' was triggered automatically, not initiated by user
-					// this happens in some browsers (not Chrome, as of 70.x)
-					// when swapping source (e.g., between tracks in a playlist, or swapping description)
-					if (thisObj.hasPlaylist || thisObj.swappingSrc) {
+					// this happens in some browsers when swapping source
+					// (e.g., between tracks in a playlist or swapping description)
+					if (thisObj.hasPlaylist || thisObj.swappingSrc) {						
 						// do NOT set playing to false.
 						// doing so prevents continual playback after new track is loaded
 					}
@@ -506,9 +655,6 @@
 			})
 			.on('volumechange',function() {
 				thisObj.volume = thisObj.getVolume();
-				if (thisObj.debug) {
-					console.log('media volume change to ' + thisObj.volume + ' (' + thisObj.volumeButton + ')');
-				}
 			})
 			.on('error',function() {
 				if (thisObj.debug) {
@@ -531,75 +677,6 @@
 	};
 
 	AblePlayer.prototype.addVimeoListeners = function () {
-
-// The following content is orphaned. It was in 'canplaythrough' but there's no equivalent event in Vimeo.
-// Maybe it should go under 'loaded' or 'progress' ???
-/*
-				if (thisObj.userClickedPlaylist) {
-					if (!thisObj.startedPlaying) {
-							// start playing; no further user action is required
-						thisObj.playMedia();
-				 		}
-					thisObj.userClickedPlaylist = false; // reset
-				}
-				if (thisObj.seekTrigger == 'restart' || thisObj.seekTrigger == 'chapter' || thisObj.seekTrigger == 'transcript') {
-					// by clicking on any of these elements, user is likely intending to play
-					// Not included: elements where user might click multiple times in succession
-					// (i.e., 'rewind', 'forward', or seekbar); for these, video remains paused until user initiates play
-					thisObj.playMedia();
-				}
-				else if (!thisObj.startedPlaying) {
-					if (thisObj.startTime > 0) {
-						if (thisObj.seeking) {
-							// a seek has already been initiated
-							// since canplaythrough has been triggered, the seek is complete
-							thisObj.seeking = false;
-							if (thisObj.autoplay || thisObj.okToPlay) {
-								thisObj.playMedia();
-							}
-						}
-						else {
-							// haven't started seeking yet
-							thisObj.seekTo(thisObj.startTime);
-						}
-					}
-					else if (thisObj.defaultChapter && typeof thisObj.selectedChapters !== 'undefined') {
-						thisObj.seekToChapter(thisObj.defaultChapter);
-					}
-					else {
-						// there is no startTime, therefore no seeking required
-						if (thisObj.autoplay || thisObj.okToPlay) {
-							thisObj.playMedia();
-						}
-					}
-				}
-				else if (thisObj.hasPlaylist) {
-					if ((thisObj.playlistIndex !== thisObj.$playlist.length) || thisObj.loop) {
-						// this is not the last track in the playlist (OR playlist is looping so it doesn't matter)
-						thisObj.playMedia();
-					}
-				}
-				else {
-					// already started playing
-					// we're here because a new media source has been loaded and is ready to resume playback
-					thisObj.getPlayerState().then(function(currentState) {
-						if (thisObj.swappingSrc && currentState === 'stopped') {
-							// Safari is the only browser that returns value of 'stopped' (observed in 12.0.1 on MacOS)
-							// This prevents 'timeupdate' events from triggering, which prevents the new media src
-							// from resuming playback at swapTime
-							// This is a hack to jump start Safari
-							thisObj.startedPlaying = false;
-							if (thisObj.swapTime > 0) {
-								thisObj.seekTo(thisObj.swapTime);
-							}
-							else {
-								thisObj.playMedia();
-							}
-						}
-					});
-				}
-
-*/
 
 		var thisObj = this;
 
@@ -710,8 +787,8 @@
 		thisObj = this;
 
 		// Appropriately resize media player for full screen.
-		$(window).resize(function () {
-			thisObj.onWindowResize();
+		$(window).on('resize',function () {
+			thisObj.resizePlayer();
 		});
 
 		// Refresh player if it changes from hidden to visible
@@ -753,7 +830,7 @@
 		}
 
 		// handle clicks on player buttons
-		this.$controllerDiv.find('button').on('click',function(e){
+		this.$controllerDiv.find('div[role="button"]').on('click',function(e){
 			e.stopPropagation();
 			thisObj.onClickPlayerButton(this);
 		});
@@ -763,11 +840,16 @@
 
 			if (e.button !== 0) { // not a left click
 				return false;
-			}
+			}			
 			if ($('.able-popup:visible').length || $('.able-volume-popup:visible')) {
 				// at least one popup is visible
 				thisObj.closePopups();
 			}
+			if (e.target.tagName === 'VIDEO') { 
+				// user clicked the video (not an element that sits on top of the video)
+				// handle this as a play/pause toggle click 
+				thisObj.clickedPlay = true; 
+			}			
 		});
 
 		// handle mouse movement over player; make controls visible again if hidden
@@ -798,7 +880,7 @@
 		});
 
 		// if user presses a key from anywhere on the page, show player controls
-		$(document).keydown(function() {
+		$(document).keydown(function(e) {
 			if (thisObj.controlsHidden) {
 				thisObj.fadeControls('in');
 				thisObj.controlsHidden = false;
@@ -833,10 +915,17 @@
 			}
 		});
 
+		// If stenoMode is enabled in an iframe, handle keydown events from the iframe
+		if (this.stenoMode && (typeof this.stenoFrameContents !== 'undefined')) {
+			this.stenoFrameContents.on('keydown',function(e) {
+				thisObj.onPlayerKeyPress(e);
+			});
+		};
+
 		// transcript is not a child of this.$ableDiv
 		// therefore, must be added separately
 		if (this.$transcriptArea) {
-			this.$transcriptArea.keydown(function (e) {
+			this.$transcriptArea.on('keydown',function (e) {
 				if (AblePlayer.nextIndex > 1) {
 					thisObj.onPlayerKeyPress(e);
 				}

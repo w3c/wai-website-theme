@@ -1,7 +1,8 @@
 (function ($) {
 	AblePlayer.prototype.updateCaption = function (time) {
 
-		if (!this.usingYouTubeCaptions && (typeof this.$captionsWrapper !== 'undefined')) {
+		if (!this.usingYouTubeCaptions && !this.usingVimeoCaptions && 
+			(typeof this.$captionsWrapper !== 'undefined')) {
 			if (this.captionsOn) {
 				this.$captionsWrapper.show();
 				if (typeof time !== 'undefined') {
@@ -16,7 +17,7 @@
 	};
 
 	AblePlayer.prototype.updateCaptionsMenu = function (lang) {
-
+		
 		// uncheck all previous menu items
 		this.captionsPopup.find('li').attr('aria-checked','false');
 		if (typeof lang === 'undefined') {
@@ -29,33 +30,40 @@
 		}
 	};
 
-	// Returns the function used when a caption is clicked in the captions menu.
-	// Not called if user clicks "Captions off". Instead, that triggers getCaptionOffFunction()
 	AblePlayer.prototype.getCaptionClickFunction = function (track) {
+
+		// Returns the function used when a caption is clicked in the captions menu.
+		// Not called if user clicks "Captions off". Instead, that triggers getCaptionOffFunction()
 
 		var thisObj = this;
 		return function () {
+
 			thisObj.selectedCaptions = track;
 			thisObj.captionLang = track.language;
 			thisObj.currentCaption = -1;
 			if (thisObj.usingYouTubeCaptions) {
 				if (thisObj.captionsOn) {
-					if (typeof thisObj.ytCaptionModule !== 'undefined') {
-						// captions are already on. Just need to change the language
-						thisObj.youTubePlayer.setOption(thisObj.ytCaptionModule, 'track', {'languageCode': thisObj.captionLang});
+					// Two things must be true in order for setOption() to work: 
+					// The YouTube caption module must be loaded 
+					// and the video must have started playing 
+					if (thisObj.youTubePlayer.getOptions('captions') && thisObj.startedPlaying) {						
+						thisObj.youTubePlayer.setOption('captions', 'track', {'languageCode': thisObj.captionLang});
 					}
 					else {
-						// need to wait for caption module to be loaded to change the language
-						// caption module will be loaded after video starts playing, triggered by onApiChange event
-						// at that point, thosObj.captionLang will be passed to the module as the default language
+						// the two conditions were not met 
+						// try again to set the language after onApiChange event is triggered 
+						// meanwhile, the following variable will hold the value
+						thisObj.captionLangPending = thisObj.captionLang;
 					}
 				}
 				else {
-					// captions are off (i.e., captions module has been unloaded; need to reload it)
-					// user's selected language will be reset after module has successfully loaded
-					// (the onApiChange event will be fired -- see initialize.js > initYouTubePlayer())
-					thisObj.resettingYouTubeCaptions = true;
-					thisObj.youTubePlayer.loadModule(thisObj.ytCaptionModule);
+					if (thisObj.youTubePlayer.getOptions('captions')) { 
+						thisObj.youTubePlayer.setOption('captions', 'track', {'languageCode': thisObj.captionLang});
+					}					
+					else { 
+						thisObj.youTubePlayer.loadModule('captions');
+						thisObj.captionLangPending = thisObj.captionLang; 
+					}
 				}
 			}
 			else if (thisObj.usingVimeoCaptions) {
@@ -77,7 +85,7 @@
 							// some other error occurred
 							console.log('Error loading ' + track.label + ' ' + track.kind + ' track');
 							break;
-    				}
+						}
 				});
 			}
 			else { // using local track elements for captions/subtitles
@@ -92,13 +100,17 @@
 			// immediately after closing it (used in handleCaptionToggle())
 			thisObj.hidingPopup = true;
 			thisObj.captionsPopup.hide();
+			thisObj.$ccButton.attr('aria-expanded', 'false');
+			if (thisObj.mediaType === 'audio') {
+				thisObj.$captionsContainer.removeClass('captions-off');
+			}
 			// Ensure stopgap gets cancelled if handleCaptionToggle() isn't called
 			// e.g., if user triggered button with Enter or mouse click, not spacebar
 			setTimeout(function() {
 				thisObj.hidingPopup = false;
 			}, 100);
 			thisObj.updateCaptionsMenu(thisObj.captionLang);
-			thisObj.$ccButton.focus();
+			thisObj.waitThenFocus(thisObj.$ccButton);
 
 			// save preference to cookie
 			thisObj.prefCaptions = 1;
@@ -112,22 +124,32 @@
 
 		var thisObj = this;
 		return function () {
+
 			if (thisObj.player == 'youtube') {
-				thisObj.youTubePlayer.unloadModule(thisObj.ytCaptionModule);
+				thisObj.youTubePlayer.unloadModule('captions');
+			}
+			else if (thisObj.usingVimeoCaptions) {
+				thisObj.vimeoPlayer.disableTextTrack();
 			}
 			thisObj.captionsOn = false;
 			thisObj.currentCaption = -1;
+
+			if (thisObj.mediaType === 'audio') {
+				thisObj.$captionsContainer.addClass('captions-off');
+			}
+
 			// stopgap to prevent spacebar in Firefox from reopening popup
 			// immediately after closing it (used in handleCaptionToggle())
 			thisObj.hidingPopup = true;
 			thisObj.captionsPopup.hide();
+			thisObj.$ccButton.attr('aria-expanded', 'false');
 			// Ensure stopgap gets cancelled if handleCaptionToggle() isn't called
 			// e.g., if user triggered button with Enter or mouse click, not spacebar
 			setTimeout(function() {
 				thisObj.hidingPopup = false;
 			}, 100);
 			thisObj.updateCaptionsMenu();
-			thisObj.$ccButton.focus();
+			thisObj.waitThenFocus(thisObj.$ccButton);
 
 			// save preference to cookie
 			thisObj.prefCaptions = 0;
@@ -143,7 +165,7 @@
 
 		var c, thisCaption, captionText;
 		var cues;
-		if (this.selectedCaptions) {
+		if (this.selectedCaptions.cues.length) {
 			cues = this.selectedCaptions.cues;
 		}
 		else if (this.captions.length >= 1) {
@@ -173,8 +195,8 @@
 				}
 			}
 		}
-		else {
-			this.$captionsDiv.html('');
+		else {			
+			this.$captionsDiv.html('').css('display','none');
 			this.currentCaption = -1;
 		}
 	};
@@ -250,11 +272,11 @@
 		switch (pref) {
 
 			case 'prefCaptionsFont':
-				options[0] = this.tt.serif;
-				options[1] = this.tt.sans;
-				options[3] = this.tt.cursive;
-				options[4] = this.tt.fantasy;
-				options[2] = this.tt.monospace;
+				options[0] = ['serif',this.tt.serif];
+				options[1] = ['sans-serif',this.tt.sans];
+				options[2] = ['cursive',this.tt.cursive];
+				options[3] = ['fantasy',this.tt.fantasy];
+				options[4] = ['monospace',this.tt.monospace];
 				break;
 
 			case 'prefCaptionsColor':
@@ -324,6 +346,7 @@
 	}
 
 	AblePlayer.prototype.stylizeCaptions = function($element, pref) {
+
 		// $element is the jQuery element containing the captions
 		// this function handles stylizing of the sample caption text in the Prefs dialog
 		// plus the actual production captions
@@ -363,15 +386,15 @@
 				opacity = parseFloat(this.prefCaptionsOpacity) / 100.0;
 				$element.css({
 					'font-family': this.prefCaptionsFont,
-					'font-size': this.prefCaptionsSize,
 					'color': this.prefCaptionsColor,
 					'background-color': this.prefCaptionsBGColor,
 					'opacity': opacity
 				});
 				if ($element === this.$captionsDiv) {
-					if (typeof this.$captionsWrapper !== 'undefined') {
-						lineHeight = parseInt(this.prefCaptionsSize,10) + 25;
-						this.$captionsWrapper.css('line-height',lineHeight + '%');
+					if (typeof this.$captionsDiv !== 'undefined') {
+						this.$captionsDiv.css({
+							'font-size': this.prefCaptionsSize
+						});
 					}
 				}
 				if (this.prefCaptionsPosition === 'below') {

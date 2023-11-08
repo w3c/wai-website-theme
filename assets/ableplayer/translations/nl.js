@@ -1,4 +1,4 @@
-var nl = {
+{
 
 "audio": "audio",
 
@@ -74,11 +74,11 @@ var nl = {
 
 "preferences": "Voorkeuren",
 
-"enterFullScreen": "Ga naar volledig scherm",
+"enterFullscreen": "Ga naar volledig scherm",
 
-"exitFullScreen": "Verlaat volledig scherm",
+"exitFullscreen": "Verlaat volledig scherm",
 
-"fullScreen": "Volledig scherm",
+"fullscreen": "Volledig scherm",
 
 "speed": "Snelheid",
 
@@ -154,7 +154,7 @@ var nl = {
 
 "prefIntroDescriptionNone": "De huidige video heeft in beide formaten geen audiobeschrijving.",
 
-"prefIntroDescription3": "Gebruik het volgende formulier om je voorkeuren gerelateerd aan audiobeschrijving in te stellen.",
+"prefIntroDescription3": "Gebruik het volgende formulier om je voorkeuren gerelateerd aan tekst-gebaseerde audiobeschrijving in te stellen.",
 
 "prefIntroDescription4": "Na het opslaan van je instellingen, kan audiobeschrijving aan of uit gezet worden met de Beschrijving knop.",
 
@@ -204,7 +204,25 @@ var nl = {
 
 "prefDescPause": "Pauzeer video automatisch als beschrijving aan wordt gezet",
 
-"prefVisibleDesc": "Als er een tekst-gebaseerde beschrijving is, maak deze dan zichtbaar",
+"prefDescVisible": "Als er een tekst-gebaseerde beschrijving is, maak deze dan zichtbaar",
+
+"prefDescVoice": "Voice",
+
+"prefDescRate": "Rate",
+
+"prefDescPitch": "Pitch",
+
+"prefDescPitch1": "Very low",
+
+"prefDescPitch2": "Low",
+
+"prefDescPitch3": "Default",
+
+"prefDescPitch4": "High",
+
+"prefDescPitch5": "Very high",
+
+"sampleDescriptionText": "Adjust settings to hear this sample text.",
 
 "prefHighlight": "Transcript highlighten terwijl media speelt",
 
@@ -306,6 +324,32 @@ var nl = {
 
 "windowBringTop": "Verplaats naar voren",
 
-"windowBringTopAlert": "Het scherm staat nu voor andere objecten op deze pagina."
+"windowBringTopAlert": "Het scherm staat nu voor andere objecten op deze pagina.",
 
-};
+"resultsSummary1": "You searched for:",
+
+"resultsSummary2": "Found",
+
+"resultsSummary3": "matching items.",
+
+"resultsSummary4": "Click the time associated with any item to play the video from that point.",
+
+"noResultsFound": "No results found.",
+
+"searchButtonLabel": "Play at",
+
+"hour": "hour",
+
+"minute": "minute",
+
+"second": "second",
+
+"hours": "hours",
+
+"minutes": "minutes",
+
+"seconds": "seconds",
+
+"enableKeyboardShortcuts": "Enable keyboard shortcuts"
+
+}

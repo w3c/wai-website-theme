@@ -10,9 +10,9 @@
 		this.swappingSrc = false; // will change to true temporarily while media source is being swapped
 		this.initializing = false; // will change to true temporarily while initPlayer() is processing
 		this.cueingPlaylistItems = false; // will change to true temporarily while cueing next playlist item
-		this.okToPlay = false; // will change to true if conditions are acceptible for automatic playback after media loads
+		this.buttonWithFocus = null; // will change to 'previous' or 'next' if user clicks either of those buttons
+		this.speechEnabled = null; // will change either to 'true' in initSpeech(), or false if not supported
 
-		this.getUserAgent();
 		this.setIconColor();
 		this.setButtonImages();
 	};
@@ -24,7 +24,7 @@
 		scripts= document.getElementsByTagName('script');
 		for (i=0; i < scripts.length; i++) {
 			scriptSrc = scripts[i].src;
-			scriptFile = scriptSrc.substr(scriptSrc.lastIndexOf('/'));
+			scriptFile = scriptSrc.substring(scriptSrc.lastIndexOf('/'));
 			if (scriptFile.indexOf('ableplayer') !== -1) {
 				// this is the ableplayerscript
 				fullPath = scriptSrc.split('?')[0]; // remove any ? params
@@ -221,11 +221,12 @@
 				break;
 
 			case 'mute':
+			case 'volume-mute':
 				svg[0] = '0 0 20 20';
 				svg[1] = 'M7.839 1.536c0.501-0.501 0.911-0.331 0.911 0.378v16.172c0 0.709-0.41 0.879-0.911 0.378l-4.714-4.713h-3.125v-7.5h3.125l4.714-4.714zM18.75 12.093v1.657h-1.657l-2.093-2.093-2.093 2.093h-1.657v-1.657l2.093-2.093-2.093-2.093v-1.657h1.657l2.093 2.093 2.093-2.093h1.657v1.657l-2.093 2.093z';
 				break;
 
-			case 'volume-mute':
+			case 'volume-soft':
 				svg[0] = '0 0 20 20';
 				svg[1] = 'M10.723 14.473c-0.24 0-0.48-0.092-0.663-0.275-0.366-0.366-0.366-0.96 0-1.326 1.584-1.584 1.584-4.161 0-5.745-0.366-0.366-0.366-0.96 0-1.326s0.96-0.366 1.326 0c2.315 2.315 2.315 6.082 0 8.397-0.183 0.183-0.423 0.275-0.663 0.275zM7.839 1.536c0.501-0.501 0.911-0.331 0.911 0.378v16.172c0 0.709-0.41 0.879-0.911 0.378l-4.714-4.713h-3.125v-7.5h3.125l4.714-4.714z';
 				break;
@@ -327,60 +328,27 @@
 			this.provideFallback();
 		}
 		this.setIconType();
-		this.setDimensions();
 
 		deferred.resolve();
 		return promise;
 	};
 
-	AblePlayer.prototype.setDimensions = function() {
-		// if media element includes width and height attributes,
-		// use these to set the max-width and max-height of the player
-		if (this.$media.attr('width') && this.$media.attr('height')) {
-			this.playerMaxWidth = parseInt(this.$media.attr('width'), 10);
-			this.playerMaxHeight = parseInt(this.$media.attr('height'), 10);
-		}
-		else if (this.$media.attr('width')) {
-			// media element includes a width attribute, but not height
-			this.playerMaxWidth = parseInt(this.$media.attr('width'), 10);
-		}
-		else {
-			// set width to width of #player
-			// don't set height though; YouTube will automatically set that to match width
-			this.playerMaxWidth = this.$media.parent().width();
-			this.playerMaxHeight = this.getMatchingHeight(this.playerMaxWidth);
-		}
-		// override width and height attributes with in-line CSS to make video responsive
-		this.$media.css({
-			'width': '100%',
-			'height': 'auto'
-		});
-	};
+	AblePlayer.prototype.setPlayerSize = function(width, height) {
 
-	AblePlayer.prototype.getMatchingHeight = function(width) {
+		var mediaId = this.$media.attr('id');
 
-		// returns likely height for a video, given width
-		// These calculations assume 16:9 aspect ratio (the YouTube standard)
-		// Videos recorded in other resolutions will be sized to fit, with black bars on each side
-		// This function is only called if the <video> element does not have width and height attributes
+		// Called again after width and height are known 
 
-		var widths, heights, closestWidth, closestIndex, closestHeight, height;
-
-		widths = [ 3840, 2560, 1920, 1280, 854, 640, 426 ];
-		heights = [ 2160, 1440, 1080, 720, 480, 360, 240 ];
-		closestWidth = null;
-		closestIndex = null;
-
-		$.each(widths, function(index){
-			if (closestWidth == null || Math.abs(this - width) < Math.abs(closestWidth - width)) {
-				closestWidth = this;
-				closestIndex = index;
+		if (this.mediaType === 'audio') { 			
+			if (this.playerWidth) { 
+				this.$ableWrapper.css('width',this.playerWidth + 'px'); 
 			}
-		});
-		closestHeight = heights[closestIndex];
-		this.aspectRatio = closestWidth / closestHeight;
-		height = Math.round(width / this.aspectRatio);
-		return height;
+		}
+		else if (width > 0 && height > 0) { 
+			this.playerWidth = width; 
+			this.playerHeight = height; 
+			this.aspectRatio = height / width; 
+		}
 	};
 
 	AblePlayer.prototype.setIconType = function() {
@@ -443,16 +411,14 @@
 					this.iconType = 'image';
 				}
 			}
-			else { // window.getComputedStyle is not supported (IE 8 and earlier)
+			else { 
+				// window.getComputedStyle is not supported (IE 8 and earlier)
 				// No known way to detect computed font
 				// The following retrieves the value from the style sheet, not the computed font
 				// controllerFont = $tempButton.get(0).currentStyle.fontFamily;
 				// It will therefore return "able", even if the user is overriding that with a custom style sheet
 				// To be safe, use images
 				this.iconType = 'image';
-			}
-			if (this.debug) {
-				console.log('Using ' + this.iconType + 's for player controls');
 			}
 			if (typeof $tempButton !== 'undefined') {
 				$tempButton.remove();
@@ -506,6 +472,19 @@
 					$(this).find('button').prepend($youTubeImg);
 				});
 
+				// check to see if list item has Vimeo as its source
+				// if it does, inject a thumbnail from Vimeo
+				var $vimeoVideos = $(this).find('li[data-vimeo-id]');
+				$vimeoVideos.each(function() {
+					var vimeoId = $(this).attr('data-youtube-id');
+					var vimeoPoster = thisObj.getVimeoPosterUrl(vimeoId,'120');
+					var $vimeoImg = $('<img>',{
+						'src': vimeoPoster,
+						'alt': ''
+					});
+					$(this).find('button').prepend($vimeoImg);
+				});
+
 				// add accessibility to the list markup
 				$(this).find('li span').attr('aria-hidden','true');
 				thisObj.playlistIndex = 0;
@@ -538,106 +517,144 @@
 			// redefine this.$sources now that media contains one or more <source> elements
 			this.$sources = this.$media.find('source');
 		}
-
 	};
 
 	AblePlayer.prototype.recreatePlayer = function () {
 
 		// Creates the appropriate player for the current source.
-		var thisObj, prefsGroups, i;
-		thisObj = this;
+		// This function is called each time a new media instance is loaded 
+		// e.g., 
+		// User clicks on an item in a playlist 
+		// User swaps to/from described version of video 
+		// Blocks of code that only need to be executed once are controlled 
+		// by this.playerCreated 
 
 		// TODO: Ensure when recreating player that we carry over the mediaId
 		if (!this.player) {
 			console.log("Can't create player; no appropriate player type detected.");
 			return;
 		}
+
+		var deferred, promise, thisObj, prefsGroups, i;
+
+		deferred = new $.Deferred();
+		promise = deferred.promise();
+		thisObj = this;
+
+		this.playerDeleted = false; // reset after deletePlayer() 
+
+		// set temp stopgap to prevent this function from executing again before finished
+		this.recreatingPlayer = true; 
+
 		if (!this.playerCreated) {
 			// only call these functions once
-			 this.loadCurrentPreferences();
+			this.loadCurrentPreferences();
 			this.injectPlayerCode();
+			this.resizePlayer(this.media.videoWidth,this.media.videoHeight); 
 		}
 
-		// call all remaining functions each time a new media instance is loaded
+		this.getSampleDescriptionText(); 
 
 		this.initSignLanguage();
 
-// 	thisObj.initializing = true;
-		this.initPlayer().then(function() { // initPlayer success
-//		thisObj.initializing = false;
+		this.initPlayer().then(function() {
 
-			 thisObj.setupTracks().then(function() {
+			thisObj.getTracks().then(function() { 
 
-				thisObj.setupAltCaptions().then(function() {
+				thisObj.initDescription().then(function() {
 
-					thisObj.setupTranscript().then(function() {
-
-						if (thisObj.Volume) {
-								thisObj.setMute(false);
+					thisObj.setupTracks().then(function() {
+						if (thisObj.hasClosedDesc) { 
+							if (!thisObj.$descDiv || 
+								(thisObj.$descDiv && !($.contains(thisObj.$ableDiv[0], thisObj.$descDiv[0])))) {
+								// descDiv either doesn't exist, or exists in an orphaned state 
+								// Either way, it needs to be rebuilt...  
+								thisObj.injectTextDescriptionArea();
 							}
-						thisObj.setFullscreen(false);
-						thisObj.setVolume(thisObj.defaultVolume);
-
-						if (thisObj.transcriptType) {
-							thisObj.addTranscriptAreaEvents();
-							thisObj.updateTranscript();
 						}
-						if (thisObj.mediaType === 'video') {
-							thisObj.initDescription();
-						}
-						if (thisObj.captions.length) {
-							thisObj.initDefaultCaption();
-						}
+						thisObj.initSpeech('init');
 
-						// setMediaAttributes() sets textTrack.mode to 'disabled' for all tracks
-						// This tells browsers to ignore the text tracks so Able Player can handle them
-						// However, timing is critical as browsers - especially Safari - tend to ignore this request
-						// unless it's sent late in the intialization process.
-						// If browsers ignore the request, the result is redundant captions
-						thisObj.setMediaAttributes();
-						thisObj.addControls();
-						thisObj.addEventListeners();
+						thisObj.setupTranscript().then(function() {
 
-						// inject each of the hidden forms that will be accessed from the Preferences popup menu
-						prefsGroups = thisObj.getPreferencesGroups();
-						for (i = 0; i < prefsGroups.length; i++) {
-							thisObj.injectPrefsForm(prefsGroups[i]);
-							 }
-						thisObj.setupPopups();
-						thisObj.updateCaption();
-						thisObj.injectVTS();
-						if (thisObj.chaptersDivLocation) {
-							thisObj.populateChaptersDiv();
-							 }
-						thisObj.showSearchResults();
+							thisObj.initStenoFrame().then(function() {
 
-						// Go ahead and load media, without user requesting it
-						// Normally, we wait until user clicks play, rather than unnecessarily consume their bandwidth
-						// Exceptions are if the video is intended to autostart or if running on iOS (a workaround for iOS issues)
-						// TODO: Confirm that this is still necessary with iOS (this would added early, & I don't remember what the issues were)
-						if (thisObj.player === 'html5' &&
-								(thisObj.isIOS() || thisObj.startTime > 0 || thisObj.autoplay || thisObj.okToPlay)) {
-							thisObj.$media[0].load();
-						}
-						// refreshControls is called twice building/initializing the player
-						// this is the second. Best to pause a bit before executing, to be sure all prior steps are complete
-						setTimeout(function() {
-							thisObj.refreshControls('init');
-						},100);
-					},
-					function() {	 // initPlayer fail
-						thisObj.provideFallback();
+								if (thisObj.stenoMode && thisObj.$stenoFrame) {
+									thisObj.stenoFrameContents = thisObj.$stenoFrame.contents();
+								}
+								thisObj.getMediaTimes().then(function(mediaTimes) {
+
+									thisObj.duration = mediaTimes['duration'];
+									thisObj.elapsed = mediaTimes['elapsed'];
+									thisObj.setFullscreen(false);
+
+									if (typeof thisObj.volume === 'undefined') {
+										thisObj.volume = thisObj.defaultVolume;
+									}
+									if (thisObj.volume) {
+										thisObj.setVolume(thisObj.volume);
+									}
+									if (thisObj.transcriptType) {
+										thisObj.addTranscriptAreaEvents();
+										thisObj.updateTranscript();
+									}
+									if (thisObj.captions.length) {
+										thisObj.initDefaultCaption();
+									}
+
+									// setMediaAttributes() sets textTrack.mode to 'disabled' for all tracks
+									// This tells browsers to ignore the text tracks so Able Player can handle them
+									// However, timing is critical as browsers - especially Safari - tend to ignore this request
+									// unless it's sent late in the intialization process.
+									// If browsers ignore the request, the result is redundant captions
+									thisObj.setMediaAttributes();
+									thisObj.addControls();
+									thisObj.addEventListeners();
+
+									// inject each of the hidden forms that will be accessed from the Preferences popup menu
+									prefsGroups = thisObj.getPreferencesGroups();
+									for (i = 0; i < prefsGroups.length; i++) {
+										thisObj.injectPrefsForm(prefsGroups[i]);
+									}
+									thisObj.setupPopups();
+									thisObj.updateCaption();
+									thisObj.injectVTS();
+									if (thisObj.chaptersDivLocation) {
+										thisObj.populateChaptersDiv();
+									}
+									thisObj.showSearchResults();
+
+									// Go ahead and load media, without user requesting it
+									// Ideally, we would wait until user clicks play, rather than unnecessarily consume their bandwidth
+									// However, the media needs to load for us to get the media's duration
+									if (thisObj.player === 'html5') {
+										if (!thisObj.loadingMedia) { 
+											thisObj.$media[0].load();
+											thisObj.loadingMedia = true; 
+										}
+									}
+									// refreshControls is called twice building/initializing the player
+									// this is the second. Best to pause a bit before executing, to be sure all prior steps are complete
+									setTimeout(function() {
+										thisObj.refreshControls('init'); 
+										deferred.resolve(); 
+									},100);								
+								}); 
+							}); 
+						});
 					});
-				});
+				});			 
 			});
+		},
+		function() {	 // initPlayer fail
+			thisObj.provideFallback();
 		});
+		return promise; 
 	};
 
 	AblePlayer.prototype.initPlayer = function () {
 
 		var thisObj = this;
 		var playerPromise;
-
 		// First run player specific initialization.
 		if (this.player === 'html5') {
 			playerPromise = this.initHtml5Player();
@@ -648,13 +665,21 @@
 		else if (this.player === 'vimeo') {
 			playerPromise = this.initVimeoPlayer();
 		}
-
 		// After player specific initialization is done, run remaining general initialization.
 		var deferred = new $.Deferred();
 		var promise = deferred.promise();
 		playerPromise.done(
 			function () { // done/resolved
-				if (thisObj.useFixedSeekInterval === false) {
+				if (thisObj.useFixedSeekInterval) {
+					if (!thisObj.seekInterval) {
+						thisObj.seekInterval = thisObj.defaultSeekInterval;
+					}
+					else {
+						// fixed seekInterval was already assigned, using value of data-seek-interval attribute
+					}
+					thisObj.seekIntervalCalculated = true;
+				}
+				else {
 					thisObj.setSeekInterval();
 				}
 				deferred.resolve();
@@ -667,6 +692,34 @@
 		return promise;
 	};
 
+	AblePlayer.prototype.initStenoFrame = function() {
+
+		var thisObj, deferred, promise, $iframe;
+		thisObj = this;
+
+		deferred = new $.Deferred();
+		promise = deferred.promise();
+
+		if (this.stenoMode && this.$stenoFrame) {
+
+			if (this.$stenoFrame[0].contentWindow,document.readyState == 'complete') {
+				// iframe has already loaded
+				deferred.resolve();
+			}
+			else {
+				// iframe has not loaded. Wait for it.
+				this.$stenoFrame.on('load',function() {
+					deferred.resolve();
+				});
+			}
+		}
+		else {
+			// there is no stenoFrame to initialize
+			deferred.resolve();
+		}
+		return promise;
+	};
+
 	AblePlayer.prototype.setSeekInterval = function () {
 
 		// this function is only called if this.useFixedSeekInterval is false
@@ -675,7 +728,6 @@
 		var thisObj, duration;
 		thisObj = this;
 		this.seekInterval = this.defaultSeekInterval;
-
 		if (this.useChapterTimes) {
 			duration = this.chapterDuration;
 		}
@@ -713,7 +765,6 @@
 		var captions, i;
 
 		captions = this.captions;
-
 		if (captions.length > 0) {
 			for (i=0; i<captions.length; i++) {
 				if (captions[i].def === true) {
@@ -745,6 +796,39 @@
 				// sync all other tracks to this same languge
 				this.syncTrackLanguages('init',this.captionLang);
 			}
+			if (this.player === 'vimeo') {
+				if (this.usingVimeoCaptions && this.prefCaptions == 1) {
+						// initialize Vimeo captions to the default language
+						this.vimeoPlayer.enableTextTrack(this.captionLang).then(function(track) {
+							// track.language = the iso code for the language
+							// track.kind = 'captions' or 'subtitles'
+							// track.label = the human-readable label
+						}).catch(function(error) {
+							switch (error.name) {
+								case 'InvalidTrackLanguageError':
+									// no track was available with the specified language
+									console.log('No ' + track.kind + ' track is available in the specified language (' + track.label + ')');
+									break;
+								case 'InvalidTrackError':
+									// no track was available with the specified language and kind
+									console.log('No ' + track.kind + ' track is available in the specified language (' + track.label + ')');
+									break;
+								default:
+									// some other error occurred
+									console.log('Error loading ' + track.label + ' ' + track.kind + ' track');
+									break;
+							}
+						});
+					}
+					else {
+						// disable Vimeo captions.
+						this.vimeoPlayer.disableTextTrack().then(function() {
+							// Vimeo captions disabled
+						}).catch(function(error) {
+							console.log('Error disabling Vimeo text track: ',error);
+						});
+					}
+				}
 		}
 	};
 
@@ -782,7 +866,10 @@
 		// return 'html5', 'youtube', 'vimeo', or null
 
 		var i, sourceType, $newItem;
-		if (this.youTubeId) {
+		if (this.testFallback) { 
+			return null; 
+		}
+		else if (this.youTubeId) {
 			if (this.mediaType !== 'video') {
 				// attempting to play a YouTube video using an element other than <video>
 				return null;
@@ -800,15 +887,6 @@
 				return 'vimeo';
 			}
 
-		}
-		else if (this.testFallback ||
-						 ((this.isUserAgent('msie 7') || this.isUserAgent('msie 8') || this.isUserAgent('msie 9')) && this.mediaType === 'video') ||
-						 (this.isIOS() && (this.isIOS(4) || this.isIOS(5) || this.isIOS(6)))
-						) {
-			// the user wants to test the fallback player, or
-			// the user is using an older version of IE or IOS,
-			// both of which had buggy implementation of HTML5 video
-			return null;
 		}
 		else if (this.media.canPlayType) {
 			return 'html5';

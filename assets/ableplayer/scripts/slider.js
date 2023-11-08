@@ -21,7 +21,7 @@
 		// trackingMedia is true if this is a media timeline; otherwise false
 		// initialState is either 'visible' or 'hidden'
 
-		var thisObj;
+		var thisObj, coords;
 
 		thisObj = this;
 
@@ -44,7 +44,7 @@
 
 		// Add a seekhead
 		this.seekHead = $('<div>',{
-			'orientation': orientation,
+			'aria-orientation': orientation,
 			'class': 'able-' + className + '-head'
 		});
 
@@ -62,11 +62,21 @@
 			'aria-valuemax': max
 		});
 
+		this.timeTooltipTimeoutId = null;
+		this.overTooltip = false;
 		this.timeTooltip = $('<div>');
 		this.bodyDiv.append(this.timeTooltip);
 
 		this.timeTooltip.attr('role', 'tooltip');
 		this.timeTooltip.addClass('able-tooltip');
+		this.timeTooltip.on('mouseenter focus', function(){
+			thisObj.overTooltip = true;
+			clearInterval(thisObj.timeTooltipTimeoutId);
+		});
+		this.timeTooltip.on('mouseleave blur', function(){
+			thisObj.overTooltip = false;
+			$(this).hide();
+		});
 		this.timeTooltip.hide();
 
 		this.bodyDiv.append(this.loadedDiv);
@@ -76,13 +86,15 @@
 		this.bodyDiv.wrap('<div></div>');
 		this.wrapperDiv = this.bodyDiv.parent();
 
-		if (orientation === 'horizontal') {
-			this.wrapperDiv.width(length);
-			this.loadedDiv.width(0);
-		}
-		else {
-			this.wrapperDiv.height(length);
-			this.loadedDiv.height(0);
+		if (this.skin === 'legacy') {
+			if (orientation === 'horizontal') {
+				this.wrapperDiv.width(length);
+				this.loadedDiv.width(0);
+			}
+			else {
+				this.wrapperDiv.height(length);
+				this.loadedDiv.height(0);
+			}
 		}
 		this.wrapperDiv.addClass('able-' + className + '-wrapper');
 
@@ -96,125 +108,124 @@
 			this.setDuration(max);
 		}
 
-		this.seekHead.hover(function (e) {
-			thisObj.overHead = true;
-			thisObj.refreshTooltip();
-		}, function (e) {
-			thisObj.overHead = false;
+		// handle seekHead events
+		this.seekHead.on('mouseenter mouseleave mousemove mousedown mouseup focus blur touchstart touchmove touchend', function (e) {
 
-			if (!thisObj.overBody && thisObj.tracking && thisObj.trackDevice === 'mouse') {
-				thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
-			}
-			thisObj.refreshTooltip();
-		});
+			coords = thisObj.pointerEventToXY(e);
 
-		this.seekHead.mousemove(function (e) {
-			if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
-				thisObj.trackHeadAtPageX(e.pageX);
+			if (e.type === 'mouseenter' || e.type === 'focus') {
+				thisObj.overHead = true;
 			}
-		});
-
-		this.seekHead.focus(function (e) {
-			thisObj.overHead = true;
-			thisObj.refreshTooltip();
-		});
-
-		this.seekHead.blur(function (e) {
-			thisObj.overHead = false;
-			thisObj.refreshTooltip();
-		});
-
-		this.bodyDiv.hover(function () {
-			thisObj.overBody = true;
-			thisObj.refreshTooltip();
-		}, function (e) {
-			thisObj.overBody = false;
-			thisObj.overBodyMousePos = null;
-			thisObj.refreshTooltip();
-
-			if (!thisObj.overHead && thisObj.tracking && thisObj.trackDevice === 'mouse') {
-				thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
+			else if (e.type === 'mouseleave' || e.type === 'blur') {
+				thisObj.overHead = false;
+				if (!thisObj.overBody && thisObj.tracking && thisObj.trackDevice === 'mouse') {
+					thisObj.stopTracking(thisObj.pageXToPosition(coords.x));
+				}
 			}
-		});
-
-		this.bodyDiv.mousemove(function (e) {
-			thisObj.overBodyMousePos = {
-				x: e.pageX,
-				y: e.pageY
-			};
-			if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
-				thisObj.trackHeadAtPageX(e.pageX);
+			else if (e.type === 'mousemove' || e.type === 'touchmove') {
+				if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+					thisObj.trackHeadAtPageX(coords.x);
+				}
 			}
-			thisObj.refreshTooltip();
-		});
-
-		this.bodyDiv.mousedown(function (e) {
-			thisObj.startTracking('mouse', thisObj.pageXToPosition(e.pageX));
-			thisObj.trackHeadAtPageX(e.pageX);
-			if (!thisObj.seekHead.is(':focus')) {
-				thisObj.seekHead.focus();
-			}
-			e.preventDefault();
-		});
-
-		this.seekHead.mousedown(function (e) {
-			thisObj.startTracking('mouse', thisObj.pageXToPosition(thisObj.seekHead.offset() + (thisObj.seekHead.width() / 2)));
-			if (!thisObj.bodyDiv.is(':focus')) {
-				thisObj.bodyDiv.focus();
-			}
-			e.preventDefault();
-		});
-
-		this.bodyDiv.mouseup(function (e) {
-			if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
-				thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
-			}
-		})
-
-		this.seekHead.mouseup(function (e) {
-			if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
-				thisObj.stopTracking(thisObj.pageXToPosition(e.pageX));
-			}
-		});
-
-		this.bodyDiv.keydown(function (e) {
-			// Home
-			if (e.which === 36) {
-				thisObj.trackImmediatelyTo(0);
-			}
-			// End
-			else if (e.which === 35) {
-				thisObj.trackImmediatelyTo(thisObj.duration);
-			}
-			// Left arrow or down arrow
-			else if (e.which === 37 || e.which === 40) {
-				thisObj.arrowKeyDown(-1);
-			}
-			// Right arrow or up arrow
-			else if (e.which === 39 || e.which === 38) {
-				thisObj.arrowKeyDown(1);
-			}
-			// Page up
-			else if (e.which === 33 && bigInterval > 0) {
-				thisObj.arrowKeyDown(bigInterval);
-			}
-			// Page down
-			else if (e.which === 34 && bigInterval > 0) {
-				thisObj.arrowKeyDown(-bigInterval);
-			}
-
-			else {
-				return;
-			}
-			e.preventDefault();
-		});
-
-		this.bodyDiv.keyup(function (e) {
-			if (e.which >= 33 && e.which <= 40) {
-				if (thisObj.tracking && thisObj.trackDevice === 'keyboard') {
-					thisObj.stopTracking(thisObj.keyTrackPosition);
+			else if (e.type === 'mousedown' || e.type === 'touchstart') {
+				thisObj.startTracking('mouse', thisObj.pageXToPosition(thisObj.seekHead.offset() + (thisObj.seekHead.width() / 2)));
+				if (!thisObj.bodyDiv.is(':focus')) {
+					thisObj.bodyDiv.focus();
 				}
 				e.preventDefault();
+			}
+			else if (e.type === 'mouseup' || e.type === 'touchend') {
+				if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+					thisObj.stopTracking(thisObj.pageXToPosition(coords.x));
+				}
+			}
+			if (e.type !== 'mousemove' && e.type !== 'mousedown' && e.type !== 'mouseup' && e.type !== 'touchstart' && e.type !== 'touchend') {
+				thisObj.refreshTooltip();
+			}
+		});
+
+		// handle bodyDiv events
+		this.bodyDiv.on(
+			'mouseenter mouseleave mousemove mousedown mouseup keydown keyup touchstart touchmove touchend', function (e) {
+
+			coords = thisObj.pointerEventToXY(e);
+
+			if (e.type === 'mouseenter') {
+				thisObj.overBody = true;
+				thisObj.overBodyMousePos = {
+					x: coords.x,
+					y: coords.y
+				};
+			}
+			else if (e.type === 'mouseleave') {
+				thisObj.overBody = false;
+				thisObj.overBodyMousePos = null;
+				if (!thisObj.overHead && thisObj.tracking && thisObj.trackDevice === 'mouse') {
+					thisObj.stopTracking(thisObj.pageXToPosition(coords.x));
+				}
+			}
+			else if (e.type === 'mousemove' || e.type === 'touchmove') {
+				thisObj.overBodyMousePos = {
+					x: coords.x,
+					y: coords.y
+				};
+				if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+					thisObj.trackHeadAtPageX(coords.x);
+				}
+			}
+			else if (e.type === 'mousedown' || e.type === 'touchstart') {
+				thisObj.startTracking('mouse', thisObj.pageXToPosition(coords.x));
+				thisObj.trackHeadAtPageX(coords.x);
+				if (!thisObj.seekHead.is(':focus')) {
+					thisObj.seekHead.focus();
+				}
+				e.preventDefault();
+			}
+			else if (e.type === 'mouseup' || e.type === 'touchend') {
+				if (thisObj.tracking && thisObj.trackDevice === 'mouse') {
+					thisObj.stopTracking(thisObj.pageXToPosition(coords.x));
+				}
+			}
+			else if (e.type === 'keydown') {
+				// Home
+				if (e.which === 36) {
+					thisObj.trackImmediatelyTo(0);
+				}
+				// End
+				else if (e.which === 35) {
+					thisObj.trackImmediatelyTo(thisObj.duration);
+				}
+				// Left arrow or down arrow
+				else if (e.which === 37 || e.which === 40) {
+					thisObj.arrowKeyDown(-1);
+				}
+				// Right arrow or up arrow
+				else if (e.which === 39 || e.which === 38) {
+					thisObj.arrowKeyDown(1);
+				}
+				// Page up
+				else if (e.which === 33 && bigInterval > 0) {
+					thisObj.arrowKeyDown(bigInterval);
+				}
+				// Page down
+				else if (e.which === 34 && bigInterval > 0) {
+					thisObj.arrowKeyDown(-bigInterval);
+				}
+				else {
+					return;
+				}
+				e.preventDefault();
+			}
+			else if (e.type === 'keyup') {
+				if (e.which >= 33 && e.which <= 40) {
+					if (thisObj.tracking && thisObj.trackDevice === 'keyboard') {
+						thisObj.stopTracking(thisObj.keyTrackPosition);
+					}
+					e.preventDefault();
+				}
+			}
+			if (!thisObj.overTooltip && e.type !== 'mouseup' && e.type !== 'keydown' && e.type !== 'keydown') {
+				thisObj.refreshTooltip();
 			}
 		});
 	}
@@ -268,7 +279,6 @@
 	}
 
 	AccessibleSlider.prototype.setDuration = function (duration) {
-
 		if (duration !== this.duration) {
 			this.duration = duration;
 			this.resetHeadLocation();
@@ -305,15 +315,19 @@
 	AccessibleSlider.prototype.setPosition = function (position, updateLive) {
 		this.position = position;
 		this.resetHeadLocation();
-		this.refreshTooltip();
+		if (this.overHead) {
+			this.refreshTooltip();
+		}
 		this.resizeDivs();
 		this.updateAriaValues(position, updateLive);
 	}
 
 	// TODO: Native HTML5 can have several buffered segments, and this actually happens quite often.	Change this to display them all.
 	AccessibleSlider.prototype.setBuffered = function (ratio) {
-		this.buffered = ratio;
-		this.redrawDivs;
+		if (!isNaN(ratio)) {
+			this.buffered = ratio;
+			this.redrawDivs;
+		}
 	}
 
 	AccessibleSlider.prototype.startTracking = function (device, position) {
@@ -422,8 +436,20 @@
 			this.setTooltipPosition(this.overBodyMousePos.x - this.bodyDiv.offset().left);
 		}
 		else {
-			this.timeTooltip.hide();
+
+			clearTimeout(this.timeTooltipTimeoutId);
+			var _this = this;
+			this.timeTooltipTimeoutId = setTimeout(function() {
+				// give user a half second move cursor over tooltip
+				_this.timeTooltip.hide();
+			}, 500);
 		}
+	};
+
+	AccessibleSlider.prototype.hideSliderTooltips = function () {
+		this.overHead = false;
+		this.overBody = false;
+		this.timeTooltip.hide();
 	};
 
 	AccessibleSlider.prototype.setTooltipPosition = function (x) {
@@ -451,6 +477,24 @@
 		else {
 			return dMinutes + ':' + dSeconds;
 		}
+	};
+
+	AccessibleSlider.prototype.pointerEventToXY = function(e) {
+
+		// returns array of coordinates x and y in response to both mouse and touch events
+		// for mouse events, this comes from e.pageX and e.pageY
+		// for touch events, it's a bit more complicated
+		var out = {x:0, y:0};
+		if (e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel') {
+			var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+			out.x = touch.pageX;
+			out.y = touch.pageY;
+		}
+		else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+			out.x = e.pageX;
+			out.y = e.pageY;
+		}
+		return out;
 	};
 
 })(jQuery);
