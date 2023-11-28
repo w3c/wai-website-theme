@@ -1,23 +1,23 @@
 {%- assign langs = site.data.lang -%}
-{%- assign vtt-metadata=site.data.[include.vtt-data-location].vtt | where: "name", include.vtt-name | first -%}
+{%- assign vtt-metadata=site.data.video-metadata | where: "id", include.video-id | first -%}
 <div class="video-container" data-video-type="" dir="ltr">
     <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" data-description-audible="false" width="450">
         {%- if vtt-metadata.captions -%}
         {%- for caption in vtt-metadata.captions -%}
-        {%- if include.lang-folder -%}
+        {%- if vtt-metadata.lang-folder -%}
         {%- assign lang-folder=caption | append: "/" -%}
         {%- endif -%}
         {%- assign l = langs[caption].nativeName -%}
-        <track src="{{ include.path | append: lang-folder | append: include.vtt-name | append: '.' | append: caption | append: '.vtt' | relative_url }}" label="{{l}}" kind="captions" srclang="{{caption}}" {% if caption == page.lang %}default{% endif %}>
+        <track src="{{ 'wai-videos/' | append: vtt-metadata.path | append: '/' | append: lang-folder | append: include.video-id | append: '.' | append: caption | append: '.vtt' | relative_url }}" label="{{l}}" kind="captions" srclang="{{caption}}" {% if caption == page.lang %}default{% endif %}>
         {%- endfor -%}
         {%- endif -%}
         {%- if vtt-metadata.subtitles -%}
         {%- for subtitle in vtt-metadata.subtitles -%}
-        {%- if include.lang-folder -%}
+        {%- if vtt-metadata.lang-folder -%}
         {%- assign lang-folder=subtitle | append: "/" -%}
         {%- endif -%}
         {%- assign l = langs[subtitle].nativeName -%}
-        <track src="{{ include.path | append: lang-folder | append: include.vtt-name | append: '.' | append: subtitle | append: '.vtt' | relative_url }}" label="{{l}}" kind="subtitles" srclang="{{subtitle}}" {% if subtitle == page.lang %}default{% endif %}>
+        <track src="{{ 'wai-videos/' | append: vtt-metadata.path | append: '/' | append: lang-folder | append: include.video-id | append: '.' | append: subtitle | append: '.vtt' | relative_url }}" label="{{l}}" kind="subtitles" srclang="{{subtitle}}" {% if subtitle == page.lang %}default{% endif %}>
         {%- endfor -%}
         {%- endif -%}
     </video>
@@ -27,29 +27,29 @@
     <video preload="metadata" data-youtube-id="{{include.yt-id-ad}}" data-youtube-nocookie="true" data-description-audible="false" width="450">
         {%- if vtt-metadata.captions-ad -%}
         {%- for caption in vtt-metadata.captions-ad -%}
-        {%- if include.lang-folder -%}
+        {%- if vtt-metadata.lang-folder -%}
         {%- assign lang-folder=caption | append: "/" -%}
         {%- endif -%}
         {%- assign l = langs[caption].nativeName -%}
-        <track src="{{ include.path | append: lang-folder | append: include.vtt-name | append: '_ad.' | append: caption | append: '.vtt' | relative_url }}" label="{{l}}" kind="captions" srclang="{{caption}}" {% if caption == page.lang %}default{% endif %}>
+        <track src="{{ 'wai-videos/' | append: vtt-metadata.path | append: '/' | append: lang-folder | append: include.video-id |  append: '_ad.' | append: caption | append: '.vtt' | relative_url }}" label="{{l}}" kind="captions" srclang="{{caption}}" {% if caption == page.lang %}default{% endif %}>
         {%- endfor -%}
         {%- endif -%}
         {%- if vtt-metadata.subtitles-ad -%}
         {%- for subtitle in vtt-metadata.subtitles-ad -%}
-        {%- if include.lang-folder -%}
+        {%- if vtt-metadata.lang-folder -%}
         {%- assign lang-folder=subtitle | append: "/" -%}
         {%- endif -%}
         {%- assign l = langs[subtitle].nativeName -%}
-        <track src="{{ include.path | append: lang-folder | append: include.vtt-name | append: '_ad.' | append: subtitle | append: '.vtt' | relative_url }}" label="{{l}}" kind="subtitles" srclang="{{subtitle}}" {% if subtitle == page.lang %}default{% endif %}>
+        <track src="{{ 'wai-videos/' | append: vtt-metadata.path | append: '/' | append: lang-folder | append: include.video-id | append: '_ad.' | append: subtitle | append: '.vtt' | relative_url }}" label="{{l}}" kind="subtitles" srclang="{{subtitle}}" {% if subtitle == page.lang %}default{% endif %}>
         {%- endfor -%}
         {%- endif -%}
         {%- if vtt-metadata.descriptions-ad -%}
         {%- for desc in vtt-metadata.descriptions-ad -%}
-        {%- if include.lang-folder -%}
+        {%- if vtt-metadata.lang-folder -%}
         {%- assign lang-folder=desc | append: "/" -%}
         {%- endif -%}
         {%- assign l = langs[desc].nativeName -%}
-        <track src="{{ include.path | append: lang-folder | append: include.vtt-name | append: '_ad_desc.' | append: desc | append: '.vtt' | relative_url }}" label="{{l}}" kind="descriptions" srclang="{{desc}}" {% if desc == page.lang %}default{% endif %}>
+        <track src="{{ 'wai-videos/' | append: vtt-metadata.path | append: '/' | append: lang-folder | append: include.video-id | append: '_ad_desc.' | append: desc | append: '.vtt' | relative_url }}" label="{{l}}" kind="descriptions" srclang="{{desc}}" {% if desc == page.lang %}default{% endif %}>
         {%- endfor -%}
         {%- endif -%}
     </video>
