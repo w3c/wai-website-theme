@@ -32,7 +32,7 @@ Transcripts should be added before the include command. They should be of the fo
   .
   .
   .
-  
+
 The first transcript should be `display: block`. All others should be `display: none`.
 
 {% endcomment %}
@@ -42,18 +42,18 @@ The first transcript should be `display: block`. All others should be `display: 
     grid-template-columns: 50% 50%;
     background-color: transparent;
   }
-  
+
   .able-playlist li {
     background-color: transparent;
     border: 0;
     border-radius: 0;
   }
-  
+
   .able-playlist li.able-current {
     background-color: transparent;
     border-color: transparent;
   }
-  
+
   .able-playlist li.able-current button {
     color: #005a6a;
     color: var(--wai-green);
@@ -61,7 +61,7 @@ The first transcript should be `display: block`. All others should be `display: 
     text-decoration: none;
     outline: none;
   }
-  
+
   .able-playlist li button:active, .able-playlist li button:focus, .able-playlist li button:hover {
     background-color: transparent;
     text-decoration: none;
@@ -76,11 +76,11 @@ The first transcript should be `display: block`. All others should be `display: 
     color: #005a6a;
     color: var(--wai-green);
     font-weight: normal;
-  }  
+  }
 </style>
 
 <div class="video-container" data-video-type="" dir="ltr">
-  <video id="video-player" preload="metadata" data-youtube-id="" data-youtube-nocookie="true" width="450"></video>
+  <video id="video-player" preload="metadata" data-youtube-id="" data-youtube-nocookie="true"></video>
 </div>
 
 {% if include.transcripts %}
@@ -119,9 +119,8 @@ The first transcript should be `display: block`. All others should be `display: 
 {{ include.transcripts }}
 {% endif %}
 
-<script src="{{ "/assets/ableplayer/thirdparty/modernizr.custom.js" | relative_url }}"></script>
-<script src="{{ "/assets/scripts/jquery.min.js" | relative_url }}"></script>
-<script src="{{ "/assets/ableplayer/thirdparty/js.cookie.js" | relative_url }}"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 <script src="{{ "/assets/ableplayer/build/ableplayer.min.js" | relative_url }}"></script>
 <script>
   var youTubeDataAPIKey = "{{site.ytkey}}";
