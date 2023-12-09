@@ -49,7 +49,7 @@ variants:
 - name: rss
 - name: youtube
 - name: mastodon
-- name: twitter
+- name: linkedin
 - name: creative-commons
 - name: arrow-up-thin
 - name: arrow-left-thin
