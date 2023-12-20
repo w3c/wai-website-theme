@@ -153,7 +153,7 @@ Some stand-alone resources are not automatically listed in [All WAI Translations
 
 To manually add resources translations:
 1. Navigate to the [wai-website {% include_cached external.html %}](https://github.com/w3c/wai-website) repository.
-2. Update the `translations.md` frontmatter as follows:
+2. In `translations.md` frontmatter, update `other_resources` metadata as follows:
 
 {::nomarkdown}
 {% include box.html type="start" title="Note" %}
