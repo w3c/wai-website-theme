@@ -17,6 +17,8 @@
     url: "/technical/integrating-resource/"
   - name: Navigation
     url: "/technical/navigation/"
+  - name: Translations
+    url: "/technical/translations/"
 - name:
     en: 'Create and Edit Documents'
   pages:

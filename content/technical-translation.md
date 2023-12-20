@@ -1,18 +1,18 @@
 ---
-title: "Preparing a Resource for Translations"
+title: "Translations"
 permalink: /technical/translations/
+ref: /technical/translations/
 lang: en
 github:
   repository: w3c/wai-website-theme
   path: content/technical-translation.md
-doc-note-type: draft
 ---
 
 {::nomarkdown}
 {% include box.html type="start" title="Summary" class="" %}
 {:/}
 
-Tasks needed to get a resource ready for translations.
+Documentation related to WAI website translations.
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -20,13 +20,18 @@ Tasks needed to get a resource ready for translations.
 
 {% include toc.html %}
 
-## Frontmatter template
+## Prepare a Resource for Translations
 
 {::nomarkdown}
-{% include box.html type="start" title="Code" class="example" %}
+{% include box.html type="start" title="Frontmatter Template" class="example" %}
 {:/}
+{% include excol.html type="start" id="optional-id" %}
 
-```md
+Show template
+
+{% include excol.html type="middle" %}
+
+```yml
 ---
 # Translation instructions are after the "#" character in this first section. They are comments that do not show up in the web page. You do not need to translate the instructions after "#".
 # In this first section, do not translate the words before a colon. For example, do not translate "title:". Do translate the text after "title:".
@@ -71,6 +76,7 @@ footer: >
 This is content for my **Example** Document.
 ```
 
+{% include excol.html type="end" %}
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
@@ -78,13 +84,125 @@ This is content for my **Example** Document.
 ### Frontmatter checklist
 
 - All required frontmatter lines for translation interoperability are present. See [Frontmatter guide](/writing/frontmatter/) (lines marked with 🌐)
-- Add comments
-- Adapt footer translation notes depending on content
-- Add link to repository translations notes when existing.
+- Add translation instructions comments when missing
+- Adapt footer translation instructions depending on content (changelog, acknowledgements, etc.)
+- Add a link to the repository `Readme` file when it contains resource-specific Translations Notes.
 
-## Main content
+### Main content
 
-### Links checklist
+#### Links checklist
 
 - When links go to WAI website, make sure permalink is used and not full URI. See [link markdown explanation in the template](https://github.com/w3c/wai-resource-template/blob/master/content/index.md#heading-level-2)
 - When the linked text is the exact same as the title of the page on the WAI website, make sure it uses double brackets. See [link markdown explanation in the template](https://github.com/w3c/wai-resource-template/blob/master/content/index.md#heading-level-2)
+
+## Update Translations Priorities
+
+Priorities for Translating WAI Resources are listed in the [Step-by-Step Guide to Translating WAI Resources](https://www.w3.org/WAI/about/translating/step-by-step/#priorities) and in Translations Sitemaps.
+
+To update the priorities list:
+1. Navigate to the [wai-website-data {% include_cached external.html %}](https://github.com/w3c/wai-website-data) repository.
+2. Update the `translations-priorities.yml` file as follows:
+- `url`: [`ref` value](/writing/frontmatter/#ref) of the resource.
+- Arrange lines in the order you want them to appear in the priorities list.
+- If you want resource subpages to be displayed, use `pages:` and list subpages `url`s below.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" %}
+{:/}
+```yaml
+- url: "/videos/standards-and-benefits/"
+- url: "/fundamentals/accessibility-intro/"
+- url: "/tips/"
+  pages:
+    - url: "/tips/writing/"
+    - url: "/tips/designing/"
+    - url: "/tips/developing/"
+```
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## Add Translations Sitemaps
+
+New Translations Sitemaps can easily be created.
+
+To add a new translation sitemap:
+1. Navigate to the [wai-about-wai {% include_cached external.html %}](https://github.com/w3c/wai-about-wai) repository.
+2. In the `_about/translating/sitemaps/` folder, duplicate an existing sitemap.
+3. Name the new file as follows: `sitemap-<language subtag>.md`
+4. Update the following frontmatter parameters:
+   - `title`\
+   Update language name. Example: "Spanish Translations Progress"
+   - `nav_title`\
+   Update language name. Example: "Spanish"
+   - `github` > `path`\
+   Update filename. Example: `_about/sitemaps/sitemap-es.md`
+   - `permalink`\
+   Update with language subtag. Example: `/about/translating/sitemaps/sitemap-es/`
+   - `ref`\
+   Update with language subtag. Example: `/about/translating/sitemaps/sitemap-es/`
+   - `tlang`\
+   Update with language subtag.
+   - **Note: Do not update `lang` parameter (the language used in the page is English).**
+5. Add this new page in `navigation.yml`, in [wai-website-data {% include_cached external.html %}](https://github.com/w3c/wai-website-data) repository.
+6. When published, [Translations Sitemaps list](https://www.w3.org/WAI/about/translating/sitemaps/) will automatically be updated.
+
+## Manually Add Translations in "All WAI Translations page"
+
+Some stand-alone resources are not automatically listed in [All WAI Translations page](https://www.w3.org/WAI/translations/).
+
+To manually add resources translations:
+1. Navigate to the [wai-website {% include_cached external.html %}](https://github.com/w3c/wai-website) repository.
+2. Update the `translations.md` frontmatter as follows:
+
+{::nomarkdown}
+{% include box.html type="start" title="Note" %}
+{:/}
+
+In the following list, parameters with ❗ emoji are required.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+- `lang` ❗\
+  Language subtag.
+
+- `title` ❗\
+  Translated resource title.
+
+- `en_title` ❗\
+  Original resource title.
+
+- `url` ❗\
+  Absolute link to the resource.
+
+- `translators` \
+  Every translator is specified by their name in a separate line. In addition, organization name can be added (note: see [names and links policy](https://www.w3.org/WAI/about/translating/#links))
+
+- `contributors` \
+  Every contributor is specified by their name in a separate line. In addition, organization name can be added (note: see [names and links policy](https://www.w3.org/WAI/about/translating/#links))
+
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" %}
+{:/}
+```yaml
+other_resources:
+  - lang: "fr"
+    docs:
+      - title: "Outil de rapport WCAG-EM"
+        en_title: "WCAG-EM Report Tool"
+        url: https://www.w3.org/WAI/eval/report-tool/
+        translators:
+          - name: "Jane Doe"
+            org: "Example Organization"
+        contributors:
+          - name: "John Doe"
+            org: "Example Organization"
+```
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+
