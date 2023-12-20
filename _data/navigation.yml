@@ -32,6 +32,8 @@
     url: "/writing/html/"
   - name: Images
     url: "/writing/images/"
+  - name: Videos
+    url: "/writing/videos/"
   - name: Stand-alone Resources
     url: "/writing/standalone-resources/"
 - name:
