@@ -243,6 +243,7 @@ The extension looks for a translated version of the linked-to page: that is, a p
 - When a translation is found, the links points to the translated page.
 - When no translation is found:
   - The links points to the English version;
+  - `hreflang` attribute is set to `en`;
   - "(in English)" is added at the end of the link, in the language of the page (if translated in [`translations.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/translations.yml))
 
 Link text is defined as follows:
