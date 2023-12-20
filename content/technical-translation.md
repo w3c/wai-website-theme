@@ -205,4 +205,54 @@ other_resources:
 {% include box.html type="end" %}
 {:/}
 
+## Technical Details
+
+### Translated pages in header
+
+When a page has been translated into one or more languages, links to these translations are displayed at the top of the page.
+This part is managed by [_includes/header.html](https://github.com/w3c/wai-website-theme/blob/master/_includes/header.html)
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" %}
+{:/}
+<div class="opt languagelist">
+<strong>This&nbsp;page&nbsp;in:</strong>
+<ul class="languagelistul">
+<li><strong>English</strong></li>
+<li><a href="#" lang="es">Español</a></li>
+<li><a href="#" lang="fr">Français</a></li>
+</ul>
+</div>
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+Features:
+- The section lists Jekyll pages with the same [`ref`](/writing/frontmatter/#ref). \
+**Note:** If multiple pages are found with the same [`lang`](/writing/frontmatter/#lang), this section will not work well.
+- Language names displayed come from [`lang.json` file {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/lang.json) (`nativeName` value, capitalized using inline CSS).
+- `dir` attribute is set to `auto` (see [associated behaviour in this W3C Internationalization page {% include_cached external.html %}](https://www.w3.org/International/questions/qa-html-dir#dirauto))
+- `hreflang` attribute is missing <mark>(TO DO)</mark>
+- If "This page in:" has been translated into the language of the current page (in [`translations.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/translations.yml)), this translation is used.
+
+### Links to other pages
+
+[WAI Markdown Extension](/writing/wai-markdown/) automatically modifies links to WAI website internal links, based on the following rules.
+
+The extension looks for a translated version of the linked-to page: that is, a page sharing the same  [`lang`](/writing/frontmatter/#lang) as the current page, and the same [`ref`](/writing/frontmatter/#ref) as the linked-to page:
+- When a translation is found, the links points to the translated page.
+- When no translation is found:
+  - The links points to the English version;
+  - "(in English)" is added at the end of the link, in the language of the page (if translated in [`translations.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/translations.yml))
+
+Link text is defined as follows:
+- When single-brackets are used: \
+Example: `[Custom link text]({%raw%}/{%endraw%}path/to/filename/)`
+  - The custom link text defined between the brackets is used.
+
+- When double-brackets are used:\
+Example: `[[Title of WAI Page]]({%raw%}/{%endraw%}path/to/filename/)`
+  - The [title](/writing/frontmatter/#title) of the linked-to page is used as link text.\
+  This is the title of the translated page if a translation has been found; the title of the English version otherwise.
+  - The link text between brackets is ignored.
 
