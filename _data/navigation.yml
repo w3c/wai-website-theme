@@ -131,6 +131,8 @@
   - name: "Video Links"
     url: "/components/video-links/"
   - name: "Video Player"
+    url: "/components/video-player-data/"
+  - name: "Video Player (deprecated)"
     url: "/components/video-player/"
   - name: "Your Report"
     url: "/components/your-report/"
