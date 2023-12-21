@@ -147,7 +147,66 @@ To add a new translation sitemap:
 5. Add this new page in `navigation.yml`, in [wai-website-data {% include_cached external.html %}](https://github.com/w3c/wai-website-data) repository.
 6. When published, [Translations Sitemaps list](https://www.w3.org/WAI/about/translating/sitemaps/) will automatically be updated.
 
-## Manually Add Translations in "All WAI Translations page"
+
+## "All WAI Translations" Page
+
+This page lists translations of the following items:
+- resources on WAI website (automatic)
+- video captions/subtitles/descriptions (automatic)
+- accessibility standards (manual)
+- stand-alone resources such as WCAG-EM Report Tool (manual)
+
+Logic is directly coded in [`translations.md` {% include_cached external.html %}](https://github.com/w3c/wai-website/blob/master/translations.md).
+
+### WAI Website Resources
+
+Most translations hosted on WAI website are automatically listed.
+
+**If a translation is not shown**, check the presence of the following parameters in the resource frontmatter:
+- [`lang`](/writing/frontmatter/#lang)
+- [`ref`](/writing/frontmatter/#ref)
+- [`title`](/writing/frontmatter/#title)
+
+**To group parts of a multi-page resource in the list**:
+
+{::nomarkdown}
+<ol>
+  <li>
+{:/}
+In the main page of the resource, add and adapt the following parameters in the frontmatter:
+
+{::nomarkdown}
+{% include box.html type="start" class="simple" %}
+{:/}
+```yaml
+resource:
+  title: "How People with Disabilities Use the Web"
+  ref: /people-use-web/
+```
+{::nomarkdown}
+{% include box.html type="end" %}
+ </li>
+  <li>
+{:/}
+
+In other resource pages, add the main page `ref` in the frontmatter:
+
+{::nomarkdown}
+{% include box.html type="start" class="simple" %}
+{:/}
+
+```yaml
+resource:
+  ref: /people-use-web/
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+  </li>
+</ol>
+{:/}
+
+### Manually Added Translations
 
 Some stand-alone resources are not automatically listed in [All WAI Translations page](https://www.w3.org/WAI/translations/).
 
@@ -159,7 +218,9 @@ To manually add resources translations:
 {% include box.html type="start" title="Note" %}
 {:/}
 
-In the following list, parameters with ❗ emoji are required.
+In the following list, parameters are highlighted with emoji:
+- ❗ = required
+- 🌐 = required for translation
 
 {::nomarkdown}
 {% include box.html type="end" %}
@@ -168,7 +229,7 @@ In the following list, parameters with ❗ emoji are required.
 - `lang` ❗\
   Language subtag.
 
-- `title` ❗\
+- `title` 🌐\
   Translated resource title.
 
 - `en_title` ❗\
@@ -187,6 +248,12 @@ In the following list, parameters with ❗ emoji are required.
 {::nomarkdown}
 {% include box.html type="start" title="Example" %}
 {:/}
+{% include excol.html type="start" id="optional-id" %}
+
+Show example
+
+{% include excol.html type="middle" %}
+
 ```yaml
 other_resources:
   - lang: "fr"
@@ -201,13 +268,88 @@ other_resources:
           - name: "John Doe"
             org: "Example Organization"
 ```
+{% include excol.html type="end" %}
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
+### Video Subtitles
+
+Information is pulled from [`video-metadata.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/video-metadata.yml) file, in particular:
+- `name`: video translated title and English title.
+- `main-page`: URL of the main page where the video is shown.
+
+Notes:
+- Translators are not displayed <mark>(TO DO)</mark>
+- "Video Subtitles" heading can be translated when it is added in [`translations.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/translations.yml). <mark>(TO DO)</mark>
+
+### Accessibility Standards Translations
+
+Accessibility standards translations must be manually listed.
+
+To manually add accessibility standards translations:
+1. Navigate to the [wai-website {% include_cached external.html %}](https://github.com/w3c/wai-website) repository.
+2. In `translations.md` frontmatter, update `translated_standards` metadata as follows:
+
+{::nomarkdown}
+{% include box.html type="start" title="Note" %}
+{:/}
+
+In the following list, parameters are highlighted with emoji:
+- ❗ = required
+- 🌐 = required for translation
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+- `lang` ❗\
+  Language subtag.
+
+- `title` 🌐 \
+  Translated resource title.
+
+- `en_title` ❗\
+  Original resource title.
+
+- `url` ❗\
+  Absolute link to the resource.
+
+- `type` \
+  - `authorized` when Authorized Translation
+  - `external` when Unofficial Translation
+
+- `translator` \
+  Name of the lead translating organization/individual.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" %}
+{:/}
+{% include excol.html type="start" id="optional-id" %}
+
+Show example
+
+{% include excol.html type="middle" %}
+
+```yaml
+translated_standards:
+  - lang: "it"
+    docs:
+      - title: "Linee guida per l'accessibilità dei contenuti Web (WCAG) 2.2"
+        en_title: "Web Content Accessibility Guidelines (WCAG) 2.2"
+        url: https://www.w3.org/Translations/WCAG22-it/
+        type: authorized
+        translator: "International Web Association"
+```
+{% include excol.html type="end" %}
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+
 ## Technical Details
 
-### Translated pages in header
+### Translated Pages in Header
 
 When a page has been translated into one or more languages, links to these translations are displayed at the top of the page.
 This part is managed by [_includes/header.html](https://github.com/w3c/wai-website-theme/blob/master/_includes/header.html)
