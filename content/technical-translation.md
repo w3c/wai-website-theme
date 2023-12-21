@@ -81,19 +81,25 @@ This is content for my **Example** Document.
 {% include box.html type="end" %}
 {:/}
 
-### Frontmatter checklist
+### Frontmatter Checklist
 
-- All required frontmatter lines for translation interoperability are present. See [Frontmatter guide](/writing/frontmatter/) (lines marked with 🌐)
+- Check that all the frontmatter lines that are required for translation interoperability are present. See [Frontmatter guide](/writing/frontmatter/) (lines marked with 🌐)
 - Add translation instructions comments when missing
 - Adapt footer translation instructions depending on content (changelog, acknowledgements, etc.)
-- Add a link to the repository `Readme` file when it contains resource-specific Translations Notes.
+- If specific instructions must be followed to translate this resoruce, add a link to the repository `Readme` file containing the Translations Notes.
 
-### Main content
+### Markdown Links Checklist
 
-#### Links checklist
+- When using internal links on WAI website, make sure the [`permalink`](/writing/frontmatter/#permalink) is used and not the full URI.\
+  Good example: `[More on Planning](/media/av/planning/)`\
+  Bad example: `[More on Planning](https://www.w3.org/WAI/media/av/planning/#wcag-standard)`.
+- When the linked text is the exact same as the title of the page on the WAI website, make sure it uses double brackets.\
+Good Example: `[[Planning Audio and Video Media]]({%raw%}/{%endraw%}media/av/planning/)`\
+Bad example: `[Planning Audio and Video Media]({%raw%}/{%endraw%}media/av/planning/)`
 
-- When links go to WAI website, make sure permalink is used and not full URI. See [link markdown explanation in the template](https://github.com/w3c/wai-resource-template/blob/master/content/index.md#heading-level-2)
-- When the linked text is the exact same as the title of the page on the WAI website, make sure it uses double brackets. See [link markdown explanation in the template](https://github.com/w3c/wai-resource-template/blob/master/content/index.md#heading-level-2)
+- When the link goes to a fragment of a WAI website page, make sure the fragment is preceded by a slash.\
+Good example: `[WCAG](/media/av/planning/#wcag-standard)`\
+Bad example: `[WCAG](/media/av/planning#wcag-standard)`.
 
 ## Update Translations Priorities
 
@@ -102,9 +108,9 @@ Priorities for Translating WAI Resources are listed in the [Step-by-Step Guide t
 To update the priorities list:
 1. Navigate to the [wai-website-data {% include_cached external.html %}](https://github.com/w3c/wai-website-data) repository.
 2. Update the `translations-priorities.yml` file as follows:
-- `url`: [`ref` value](/writing/frontmatter/#ref) of the resource.
+- `url` = [`ref`](/writing/frontmatter/#ref) of the resource.
 - Arrange lines in the order you want them to appear in the priorities list.
-- If you want resource subpages to be displayed, use `pages:` and list subpages `url`s below.
+- If you want the subpages of a resource to be displayed, list their `url`s in a `pages` section.
 
 {::nomarkdown}
 {% include box.html type="start" title="Example" %}
@@ -138,13 +144,13 @@ To add a new translation sitemap:
    - `github` > `path`\
    Update filename. Example: `_about/sitemaps/sitemap-es.md`
    - `permalink`\
-   Update with language subtag. Example: `/about/translating/sitemaps/sitemap-es/`
+   Update language subtag. Example: `/about/translating/sitemaps/sitemap-es/`
    - `ref`\
-   Update with language subtag. Example: `/about/translating/sitemaps/sitemap-es/`
+   Update language subtag. Example: `/about/translating/sitemaps/sitemap-es/`
    - `tlang`\
-   Update with language subtag.
-   - **Note: Do not update `lang` parameter (the language used in the page is English).**
-5. Add this new page in `navigation.yml`, in [wai-website-data {% include_cached external.html %}](https://github.com/w3c/wai-website-data) repository.
+   Update language subtag.
+   - **Note: Do not update `lang` parameter (the language used in the page is still English).**
+5. For the new page to appear in the secondary menu, add this new page in `navigation.yml`, in [wai-website-data {% include_cached external.html %}](https://github.com/w3c/wai-website-data) repository.
 6. When published, [Translations Sitemaps list](https://www.w3.org/WAI/about/translating/sitemaps/) will automatically be updated.
 
 
@@ -152,9 +158,9 @@ To add a new translation sitemap:
 
 This page lists translations of the following items:
 - resources on WAI website (automatic)
-- video captions/subtitles/descriptions (automatic)
+- video subtitles (automatic)
 - accessibility standards (manual)
-- stand-alone resources such as WCAG-EM Report Tool (manual)
+- stand-alone resources such as the WCAG-EM Report Tool (manual)
 
 Logic is directly coded in [`translations.md` {% include_cached external.html %}](https://github.com/w3c/wai-website/blob/master/translations.md).
 
@@ -210,7 +216,7 @@ resource:
 
 Some stand-alone resources are not automatically listed in [All WAI Translations page](https://www.w3.org/WAI/translations/).
 
-To manually add resources translations:
+To manually add those translations to the list:
 1. Navigate to the [wai-website {% include_cached external.html %}](https://github.com/w3c/wai-website) repository.
 2. In `translations.md` frontmatter, update `other_resources` metadata as follows:
 
@@ -272,16 +278,6 @@ other_resources:
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
-
-### Video Subtitles
-
-Information is pulled from [`video-metadata.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/video-metadata.yml) file, in particular:
-- `name`: video translated title and English title.
-- `main-page`: URL of the main page where the video is shown.
-
-Notes:
-- Translators are not displayed <mark>(TO DO)</mark>
-- "Video Subtitles" heading can be translated when it is added in [`translations.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/translations.yml). <mark>(TO DO)</mark>
 
 ### Accessibility Standards Translations
 
@@ -346,6 +342,15 @@ translated_standards:
 {% include box.html type="end" %}
 {:/}
 
+### Video Subtitles
+
+Information is pulled from [`video-metadata.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/video-metadata.yml) file. This includes in particular:
+- `name`: translated title of the video, and English title.
+- `main-page`: URL of the main page where the video is shown.
+
+Notes:
+- Translators are not displayed <mark>(TO DO)</mark>
+- "Video Subtitles" heading can be translated when it is added in [`translations.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/translations.yml). <mark>(TO DO)</mark>
 
 ## Technical Details
 
@@ -381,17 +386,17 @@ Features:
 
 [WAI Markdown Extension](/writing/wai-markdown/) automatically modifies links to WAI website internal links, based on the following rules.
 
-The extension looks for a translated version of the linked-to page: that is, a page sharing the same  [`lang`](/writing/frontmatter/#lang) as the current page, and the same [`ref`](/writing/frontmatter/#ref) as the linked-to page:
-- When a translation is found, the links points to the translated page.
+The extension looks for a translated version of the linked-to page: that is, a page sharing the same  [`lang`](/writing/frontmatter/#lang) as the _current page_, and the same [`ref`](/writing/frontmatter/#ref) as the _linked-to page_:
+- When a translation is found, the link points to the translated page.
 - When no translation is found:
-  - The links points to the English version;
+  - The link points to the English version;
   - `hreflang` attribute is set to `en`;
   - "(in English)" is added at the end of the link, in the language of the page (if translated in [`translations.yml` {% include_cached external.html %}](https://github.com/w3c/wai-website-data/blob/master/translations.yml))
 
 Link text is defined as follows:
 - When single-brackets are used: \
 Example: `[Custom link text]({%raw%}/{%endraw%}path/to/filename/)`
-  - The custom link text defined between the brackets is used.
+  - The custom link text between the brackets is displayed.
 
 - When double-brackets are used:\
 Example: `[[Title of WAI Page]]({%raw%}/{%endraw%}path/to/filename/)`
