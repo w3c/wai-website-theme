@@ -40,7 +40,7 @@ To create a new page in an existing repository:
 * [Design Components](/components/) has things like boxes, table options, and much more.
 * [Style Guide](https://www.w3.org/WAI/EO/wiki/Style) has punctuation, editorial style, etc.
 * Images are covered in two places: [Design Components, Images]( https://wai-website-theme.netlify.app/components/images/) and [Create and Edit Documents, Images](/writing/images/) <br>_{<mark>@@To Do:</mark> Figure out if these should separate, or be combined. If separate, make sure they appropriately point to each other.}_
-* Note that **links need to be done a specific way** for translations. See [link markdown explanation in the in the template](https://github.com/w3c/wai-resource-template/blob/master/content/index.md#heading-level-2)
+* Note that **links need to be done a specific way** for translations. See [link markdown explanation in the template](https://github.com/w3c/wai-resource-template/blob/master/content/index.md#heading-level-2)
 
 ## Changelogs
 

@@ -17,6 +17,8 @@
     url: "/technical/integrating-resource/"
   - name: Navigation
     url: "/technical/navigation/"
+  - name: Translations
+    url: "/technical/translations/"
 - name:
     en: 'Create and Edit Documents'
   pages:
@@ -32,6 +34,8 @@
     url: "/writing/html/"
   - name: Images
     url: "/writing/images/"
+  - name: Videos
+    url: "/writing/videos/"
   - name: Stand-alone Resources
     url: "/writing/standalone-resources/"
 - name:
@@ -131,6 +135,8 @@
   - name: "Video Links"
     url: "/components/video-links/"
   - name: "Video Player"
+    url: "/components/video-player-data/"
+  - name: "Video Player (deprecated)"
     url: "/components/video-player/"
   - name: "Your Report"
     url: "/components/your-report/"
