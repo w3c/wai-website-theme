@@ -19,3 +19,8 @@ img {
 
 main img { max-width: 100%; }
 main img:not([width]) { width: var(--img-width); }
+
+main video { 
+  max-width: 100%; 
+  height: auto; 
+}
