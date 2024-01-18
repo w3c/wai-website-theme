@@ -57,29 +57,31 @@
       {% include_cached icon.html name=page.sidebaricon class="sidebaricon" %}
     </div>
   {% else %}
-    {% include secondarynav.html parent=page.parent  %}
+      {% unless page.sidebar == false %}
+        {% include secondarynav.html parent=page.parent  %}
+      {% endunless %}
   {% endif %}
 
   <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
 
-    {% comment %} 
-      
+    {% comment %}
+
        Header will be displayed in three ways, depending on which frontmatter was provided:
 
        - with 'in [Resource]' under the h1  (if page.resource.ref is provided)
        - with 'in [Resource X], [Resource Y]' inside the h1 (if page.parent_in_h1 is provided)
        - just the title (if neither are provided)
-    
-     {% endcomment %}  
+
+     {% endcomment %}
 
     {% if page.resource.ref %}
     <header class="in-resource">
       <h1>
         {% if page.title_icon %}
-        <svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> 
+        <svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg>
         {% endif %}
         {% if page.title_image %}
-        <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;"> 
+        <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;">
         {% endif %}
         {% if page.title_html %}
           {{ page.title_html }}
@@ -97,7 +99,7 @@
           <use xlink:href="{{page.title_icon | relative_url}}"></use>
         </svg> {% endif %}
         {% if page.title_image %}
-          <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;"> 
+          <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;">
         {% endif %}
         {% if page.title_html %}
           {{ page.title_html }}
@@ -119,7 +121,7 @@
                 {% include link.html to=link.ref text=link.name %}
               {%- endif -%}
             {%- endunless -%}{%- endif -%}
-          {%- endfor -%}    
+          {%- endfor -%}
         </span>
       </h1>
     </header>
@@ -127,10 +129,10 @@
     <header>
       <h1>
       {% if page.title_icon %}
-        <svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg> 
+        <svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg>
       {% endif %}
       {% if page.title_image %}
-        <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;"> 
+        <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;">
       {% endif %}
       {% if page.title_html %}
         {{ page.title_html }}
