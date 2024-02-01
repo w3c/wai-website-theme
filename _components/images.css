@@ -1,9 +1,10 @@
 img {
-  &.tiny   {--img-width:  60px;}
-  &.mini   {--img-width:  90px;}
-  &.small  {--img-width: 120px;}
-  &.normal {--img-width: 240px;}
-  &.large  {--img-width: 480px;}
+  &.tiny    {--img-width:  60px;}
+  &.mini    {--img-width:  90px;}
+  &.small   {--img-width: 120px;}
+  &.normal  {--img-width: 240px;}
+  &.medium  {--img-width: 360px;}
+  &.large   {--img-width: 480px;}
   &.left {
     clear: inline-start;
     float: inline-start;

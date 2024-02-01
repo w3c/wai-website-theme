@@ -45,10 +45,11 @@ Put images always into the `/content-images/wai-repo-name/` directory (with wai-
 * `class`: One of the size classes, and one or more of the helper classes.
   - Size classes:
     + `tiny`: 60px
-    + `mini`  :  90px
-    + `small` : 120px
+    + `mini`: 90px
+    + `small`: 120px
     + `normal`: 240px
-    + `large` : 480px
+    + `medium`: 360px
+    + `large`: 480px
   - Helper classes:
     + `video`: rounded corners
     + `left`/`right`: Floating to the beginning/end of the reading direction
