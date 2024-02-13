@@ -444,11 +444,19 @@ if (document.querySelector('main')) {
       element.setAttribute('title',      t('to footnote') + ' ' + element.textContent);
     });
 
+    let pageLang = document.documentElement.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang');
+
     var footnoteBackLinks = footnoteBox.querySelectorAll('a.reversefootnote');
 
     Array.prototype.forEach.call(footnoteBackLinks, function(element, i){
-      element.setAttribute('aria-label', t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('in text'));
-      element.setAttribute('title',      t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('in text'));
+      if (pageLang === "ja") {
+        element.setAttribute('aria-label', t('in text') + ' ' + element.getAttribute('href').replace('#fnref:', '') + ' ' + t('back to footnote'));
+        element.setAttribute('title',      t('in text') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('back to footnote'));
+      }
+      else {
+        element.setAttribute('aria-label', t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:', '') + ' ' + t('in text'));
+        element.setAttribute('title',      t('back to footnote') + ' ' + element.getAttribute('href').replace('#fnref:','') + ' ' + t('in text'));
+      }
     });
 
   }
