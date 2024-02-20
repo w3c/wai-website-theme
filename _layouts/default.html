@@ -143,6 +143,11 @@
       {%- if page.resource.ref -%}{%- unless page.ref == page.resource.ref -%}
         <p>{% include t.html t="in" %} {% include link.html to=page.resource.ref %}</p>
       {%- endunless -%}{%- endif -%}
+      {%- if page.collection == "posts" -%}
+        <section class="meta">
+          <p><strong>Date:</strong> {{ page.date | date: "%d %B %Y" }}</p>
+        </section>
+      {%- endif -%}
     </header>
     {% endif %}
 
