@@ -29,20 +29,28 @@ Put images always into the `/content-images/wai-repo-name/` directory (with wai-
 ## Usage
 
 {% capture example %}
-{% include image.html src="picture.jpg" alt="alternative text" class="video small" %}
+{% include image.html src="picture.jpg" alt="alternative text" class="video small" longdesc="/link/to/path" %}
 {% endcapture %}
 
 ```md
-{% raw %}{% include image.html src="picture.jpg" alt="alternative text" class="someclass" %}{% endraw %}
+{% raw %}{% include image.html
+  src="picture.jpg"
+  alt="alternative text"
+  class="someclass"
+  longdesc="/WAI/fundamentals/components/examples/"
+%}{% endraw %}
 ```
 
 ### Attributes
 
-* `src`/`srcset`: Use like in HTML, images can just be specified as the image name (including extension) but must be placed into the `/content-image/wai-repo-name/` directory. The `sizes` attribute can also be used like in HTML.
+`src`/`srcset`
+: Use like in HTML, images can just be specified as the image name (including extension) but must be placed into the `/content-image/wai-repo-name/` directory. The `sizes` attribute can also be used like in HTML.
 
-* `alt`: Alternative Text
+`alt`
+: Alternative Text
 
-* `class`: One of the size classes, and one or more of the helper classes.
+`class`
+: One of the size classes, and one or more of the helper classes.
   - Size classes:
     + `tiny`: 60px
     + `mini`: 90px
@@ -54,7 +62,13 @@ Put images always into the `/content-images/wai-repo-name/` directory (with wai-
     + `video`: rounded corners
     + `left`/`right`: Floating to the beginning/end of the reading direction
 
-* `style`: Custom style elements.
+`style`
+: Custom style elements.
+
+`longdesc`
+: (optional) URL to a page that contains a long description of the image.\
+If added, a "Long description of image" link will be displayed underneath the image.
+
 
 ## Examples
 
@@ -91,5 +105,8 @@ Put images always into the `/content-images/wai-repo-name/` directory (with wai-
 {% include image.html src="picture.jpg" alt="alternative text" class="normal right" %}
 {% include image.html src="picture.jpg" alt="alternative text" class="large right" %}
 
-clearing paragraph
 {:style="clear:both"}
+
+### Long description
+
+{% include image.html src="picture.jpg" alt="alternative text" longdesc="https://www.w3.org/WAI/fundamentals/components/examples/" %}
