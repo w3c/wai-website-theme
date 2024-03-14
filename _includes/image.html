@@ -11,4 +11,13 @@
     {%- endunless-%}
   {%- endfor -%}
 {%- endif -%}
+{% if include.longdesc %}
+<div class="img-card">
+{% endif %}
 <img src="{{path}}{{include.src}}"{% if include.srcset %} srcset="{{srcset}}"{% endif %} {% if include.sizes %} sizes="{{sizes}}"{% endif %} alt="{{include.alt}}"{% if include.class %} class="{% assign classes = include.class | split: " " %}{% for class in classes %} {{ class }}{% endfor %}"{% endif %}{% if include.style %} style="{{style}}"{% endif %}>
+{% if include.longdesc %}
+<p><a href="{{ include.longdesc }}">{% include t.html t="Long description of image" lang=include.lang %}</a></p>
+{% endif %}
+{% if include.longdesc %}
+</div>
+{% endif %}

@@ -20,3 +20,5 @@ img {
 
 main img { max-width: 100%; }
 main img:not([width]) { width: var(--img-width); }
+
+.img-card p { font-size: small; }
