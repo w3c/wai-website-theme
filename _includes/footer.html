@@ -109,7 +109,7 @@
           &nbsp;
       {% endif %}
           {% include t.html t='Contributors:' %}
-          {% for contributor in page.contributors %}
+          {% for contributor in page.contributing_participants %}
           {% if forloop.first %}<ul class="sentence">{% endif %}
             {% assign contributorsize = contributor | size %}
             {% if contributorsize == 1 %}
