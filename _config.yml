@@ -30,7 +30,7 @@ kramwdown:
   input: GFM
   syntax_highlighter: rouge
 highlighter: rouge
-repository: w3c/wai-resource-template
+repository: w3c/wai-website-theme
 
 ytkey: AIzaSyCiZ9uToWu9jb7BTx47NtzCvmGGXKXp8nI
 
@@ -41,7 +41,7 @@ collections:
     area: "Design Components"
     name: "Components"
     shortname: "Components"
-    repostitory: w3c/wai-website-theme
+    repository: w3c/wai-website-theme
     output: true
     acknowledgements: false
     permalink: /:collection/:path/

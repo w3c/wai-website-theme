@@ -1,25 +1,4 @@
 - name:
-    en: 'WAI Website Manual'
-  pages:
-  - name: WAI Website Manual
-    url: "/overview/"
-  - name: Architecture, Builds and Deployments
-    url: "/technical/"
-  - name: Files in Repositories
-    url: "/technical/files/"
-  - name: Creating a New Resource
-    url: "/technical/new-resource/"
-  - name: Working on an Existing Resource
-    url: "/technical/existing-resource/"
-  - name: Updating WAI Website Resources
-    url: "/workflow/"
-  - name: Integrating a Resource
-    url: "/technical/integrating-resource/"
-  - name: Navigation
-    url: "/technical/navigation/"
-  - name: Translations
-    url: "/technical/translations/"
-- name:
     en: 'Create and Edit Documents'
   pages:
   - name: Create and Edit Documents
