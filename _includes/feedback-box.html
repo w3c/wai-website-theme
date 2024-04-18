@@ -33,7 +33,7 @@
     {%- capture github-file-path -%}{% include_cached github-file-path.html p=page %}{%- endcapture -%}
     <a href="{{ github-file-path }}" class="button"><span>{% include t.html t="Fork &amp; Edit on GitHub" %}</span></a>
     {%- comment -%}<a href="https://github.com/{{repo}}/issues" class="button"><span>List of GitHub Issues</span></a>{%- endcomment -%}
-    <a href="https://github.com/{{repo}}/issues/new?template=content-issue.yml{%- unless page.lang == 'en' -%}&title={{ "[" | append: page.lang | append: "] " | uri_escape }}{%- endunless -%}{%- if page.github.label -%}&wai-id={{page.github.label}}{%- endif -%}&wai-url={{page.url | absolute_url | uri_escape }}" class="button"><span>{% include t.html t="New GitHub Issue" %}</span></a>
+    <a href="https://github.com/{{repo}}/issues/new?template=content-issue.yml{%- unless page.lang == 'en' -%}&title={{ "[" | append: page.lang | append: "] " | uri_escape }}{%- endunless -%}{%- if page.github.label -%}&wai-resource-id={{page.github.label}}{%- endif -%}&wai-url={{page.url | absolute_url | uri_escape }}" class="button"><span>{% include t.html t="New GitHub Issue" %}</span></a>
     {%- endunless -%}
 </div>
 
