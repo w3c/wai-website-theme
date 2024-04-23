@@ -1,5 +1,9 @@
 {%- assign repo = page.github.repository | replace: "w3c/", "" -%}
+{%- if repo != "wai-website" -%}
 {%- assign path = "/" | prepend: repo | prepend: "/content-images/" | relative_url -%}
+{%- else -%}
+{%- assign path = "/content-images/" | relative_url -%}
+{%- endif -%}
 {%- if include.srcset %}
   {%- assign srcset = "" -%}
   {%- assign srcsetsrces = include.srcset | split: ", " -%}
