@@ -1,8 +1,8 @@
 {% assign versions=alldocs | where_exp:"item", "item.ref == include.page.url or item.url == include.page.url" %}
 {% assign original=versions | where_exp:"item", "item.lang == 'en' or item.lang == nil" | first %}
-{% assign t=versions | where_exp:"item", "item.lang == page.tlang" | first %}
+{% assign translation=versions | where_exp:"item", "item.lang == page.tlang" | first %}
 
-{%- capture page_title -%}
+{%- capture original-title -%}
   {%- if original.permalink != nil -%}
     <p><a href="{{ original.permalink | relative_url }}">{{ original.title }}</a></p>
   {%- elsif original.permalink == nil and include.page.name.en != nil -%}
@@ -12,31 +12,31 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{% capture t-date %}{{t.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
-{% capture en-date %}{{original.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
-{%- capture t_status -%}
-  {%- if t == nil -%}none
-  {%- elsif t.size != 0 and t-date < en-date -%}outdated
-  {%- elsif t.size != 0 and t-date >= en-date -%}uptodate
+{% capture translation-date %}{{ translation.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
+{% capture original-date %}{{ original.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
+{%- capture t-status -%}
+  {%- if translation == nil -%}none
+  {%- elsif translation.size != 0 and translation-date < original-date -%}outdated
+  {%- elsif translation.size != 0 and translation-date >= original-date -%}uptodate
   {%- endif -%}
 {%- endcapture -%}
 
 <tr>
-  <th>{{ page_title }}</th>
+  <th>{{ original-title }}</th>
   <td>
-  {%- case t_status -%}
+  {%- case t-status -%}
     {%- when "none" -%}
-      <p>{% include_cached icon.html name="ex-circle" %} No translation available</p>
+      <p>{% include_cached icon.html name="ex-circle" %} No translation</p>
       {%- capture github-file-path -%}{% include_cached github-file-path.html p=original %}{%- endcapture -%}
-      <p><a class="button button-secondary" href="https://github.com/remibetin/wai-translations/issues/new?template=new-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{original.permalink | absolute_url | url_encode }}&github-link={{ github-link }}"><span>Volunteer to translate this page</span></a></p>
+      <p><a class="button button-secondary" href="https://github.com/remibetin/wai-translations/issues/new?template=new-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{original.permalink | absolute_url | url_encode }}&github-link={{ github-file-path }}"><span>Volunteer to translate this page</span></a></p>
     {%- when "outdated" -%}
       <p>{% include_cached icon.html name="warning" %} Translation needs update<p>
-      <p><mark><a href="{{ t.permalink | relative_url }}" lang="{{ tlang }}"> {{ t.title }}</a></mark></p>
-      {%- capture github-file-path -%}{% include_cached github-file-path.html p=t %}{%- endcapture -%}
-      <p><a class="button button-secondary" href="https://github.com/remibetin/wai-translations/issues/new?template=update-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{t.permalink | absolute_url | url_encode }}&github-link={{ github-link }}"><span>Volunteer to update the translation</span></a></p>
+      <p><mark><a href="{{ translation.permalink | relative_url }}" lang="{{ tlang }}"> {{ translation.title }}</a></mark></p>
+      {%- capture github-file-path -%}{% include_cached github-file-path.html p=translation %}{%- endcapture -%}
+      <p><a class="button button-secondary" href="https://github.com/remibetin/wai-translations/issues/new?template=update-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{translation.permalink | absolute_url | url_encode }}&github-link={{ github-file-path }}"><span>Volunteer to update the translation</span></a></p>
     {%- when "uptodate" -%}
       <p>{% include_cached icon.html name="check-circle" %} Up-to-date</p>
-      <p><a href="{{ t.permalink | relative_url }}" lang="{{ tlang }}"> {{ t.title }}</a></p>
+      <p><a href="{{ translation.permalink | relative_url }}" lang="{{ tlang }}"> {{ translation.title }}</a></p>
   {%- endcase -%}
   </td>
 </tr>

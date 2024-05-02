@@ -41,18 +41,6 @@
     <div class="default-grid with-gap{% unless page.noleftcol %} leftcol{% endunless %}">
 
   {% if page.sidebaricon %}
-    {% comment %}
-    This should be properly implemented in the styleguide, but it might be a one-off.
-    {% endcomment %}
-    <style>
-      .sidebaricon {
-        width: 100%;
-        display: block;
-        height: 292px;
-        color: var(--w3c-blue);
-        margin-top: 65px;
-      }
-    </style>
     <div class="sidenav">
       {% include_cached icon.html name=page.sidebaricon class="sidebaricon" %}
     </div>
@@ -128,12 +116,6 @@
     {% else %}
     <header>
       <h1>
-      {% if page.title_icon %}
-        <svg class="icon-in-title" aria-hidden="true"><use xlink:href="{{page.title_icon | relative_url}}"></use></svg>
-      {% endif %}
-      {% if page.title_image %}
-        <img src="{{page.title_image | relative_url }}" alt="" class="title-image right" style="height: 2em;">
-      {% endif %}
       {% if page.title_html %}
         {{ page.title_html }}
       {% else %}
@@ -152,14 +134,16 @@
     {% endif %}
 
     {%- include doc-note-msg.html -%}
-    {%- include translation-note-msg.html -%}
 
+    <!-- Start Translations sitemaps -->
     {% assign tlangname=site.data.lang[page.tlang].name %}
     {% assign alldocs=site.documents | concat: site.pages %}
 
     {% include box.html type="start" h="2" title="Summary" class="full" %}
 
-    This page lists the status of {{ tlangname }} translations for most pages on the WAI website.
+    <p>This page lists the status of {{ tlangname }} translations, for WAI resources for which we welcome translations.</p>
+
+    <p>Learn how to use this translation sitemap in <a href="{{ '/about/translating/sitemaps/' | relative_url }}#how-to-use">Translations Sitemaps</a> page.</p>
 
     {% include box.html type="end" %}
 
@@ -183,7 +167,7 @@
       {%- for prio in site.data.translations-priorities -%}
         {%- include t-status.html page=prio -%}
           {%- for priosub in prio.pages -%}
-            {%- include t-status.html page=priosub-%}
+            {%- include t-status.html page=priosub -%}
           {%- endfor -%}
       {%- endfor -%}
       </tbody>
@@ -205,7 +189,6 @@
       {%- endif -%}
       </h3>
       {% include excol.html type="middle" %}
-      {% assign pages=section.pages | where_exp:"item", "item.mainnav != false and item.hide != true and item.translate == true" -%}
       <table class="quiet translations-table">
         <thead>
           <tr>
@@ -214,19 +197,29 @@
           </tr>
         </thead>
         <tbody>
-      {%- for p in pages -%}
-        {%- include t-status.html page=p lang=page.tlang -%}
-        {% assign subpages=p.pages | where_exp:"item", "item.mainnav != false and item.hide != true" -%}
-        {%- for subpage in subpages -%}
-          {%- include t-status.html page=subpage lang=page.tlang -%}
-        {% include box.html type="end" %}
-        {% endfor %}
-        {% include box.html type="end" %}
-      {% endfor %}
+        {%- assign pages=section.pages | where_exp:"item", "item.mainnav != false and item.hide != true" -%}
+        {%- for p in pages -%}
+          {% if p.translate == true %}
+            {%- include t-status.html page=p -%}
+          {% endif %}
+          {%- assign subpages=p.pages | where_exp:"item", "item.mainnav != false and item.hide != true" -%}
+          {%- for subpage in subpages -%}
+            {% if subpage.translate == true %}
+              {%- include t-status.html page=subpage -%}
+            {% endif %}
+            {%- assign subsubpages=subpage.pages | where_exp:"item", "item.mainnav != false and item.hide != true" -%}
+            {%- for subsubpage in subsubpages -%}
+              {% if subsubpage.translate == true %}
+                {%- include t-status.html page=subsubpage -%}
+              {% endif %}
+            {%- endfor -%}
+          {%- endfor -%}
+        {%- endfor -%}
       </tbody>
     </table>
     {% include excol.html type="end" %}
     {% endfor %}
+    <!-- End Translations sitemaps -->
 
     {%- if page.navigation -%}
       {%- include prevnext-navigation.html -%}
