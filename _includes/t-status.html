@@ -28,12 +28,12 @@
     {%- when "none" -%}
       <p>{% include_cached icon.html name="ex-circle" %} No translation</p>
       {%- capture github-file-path -%}{% include_cached github-file-path.html p=original %}{%- endcapture -%}
-      <p><a class="button button-secondary" href="https://github.com/remibetin/wai-translations/issues/new?template=new-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{original.permalink | absolute_url | url_encode }}&github-link={{ github-file-path }}"><span>Volunteer to translate this page</span></a></p>
+      <p><a class="button button-secondary" href="https://github.com/w3c/wai-translations/issues/new?template=new-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{original.permalink | absolute_url | url_encode }}&github-link={{ github-file-path }}"><span>Volunteer to translate this page</span></a></p>
     {%- when "outdated" -%}
       <p>{% include_cached icon.html name="warning" %} Translation needs update<p>
       <p><mark><a href="{{ translation.permalink | relative_url }}" lang="{{ tlang }}"> {{ translation.title }}</a></mark></p>
       {%- capture github-file-path -%}{% include_cached github-file-path.html p=translation %}{%- endcapture -%}
-      <p><a class="button button-secondary" href="https://github.com/remibetin/wai-translations/issues/new?template=update-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{translation.permalink | absolute_url | url_encode }}&github-link={{ github-file-path }}"><span>Volunteer to update the translation</span></a></p>
+      <p><a class="button button-secondary" href="https://github.com/w3c/wai-translations/issues/new?template=update-translation.yml&title=[{{ tlangname }}]+{{original.title | url_encode}}&url={{translation.permalink | absolute_url | url_encode }}&github-link={{ github-file-path }}"><span>Volunteer to update the translation</span></a></p>
     {%- when "uptodate" -%}
       <p>{% include_cached icon.html name="check-circle" %} Up-to-date</p>
       <p><a href="{{ translation.permalink | relative_url }}" lang="{{ tlang }}"> {{ translation.title }}</a></p>
