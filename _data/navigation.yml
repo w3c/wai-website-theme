@@ -17,6 +17,8 @@
     url: "/writing/videos/"
   - name: Stand-alone Resources
     url: "/writing/standalone-resources/"
+  - name: Workflow
+    url: "/workflow/"
 - name:
     en: 'Design Components'
   pages:
