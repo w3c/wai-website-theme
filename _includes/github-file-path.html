@@ -5,6 +5,8 @@
 {%- endif -%}
 {%- if include.p.github.branch -%}
     {%- assign branch = include.p.github.branch -%}
+{%- elsif site.branch -%}
+  {%- assign branch = site.branch -%}
 {%- else -%}
     {%- assign branch = "master" -%}
 {%- endif -%}
