@@ -3,7 +3,7 @@
 {%- if page.feedbackmail -%}
   {%- assign feedbackmail = page.feedbackmail -%}
 {%- else -%}
-  {%- assign feedbackmail = "wai-eo-editors@w3.org" -%}
+  {%- assign feedbackmail = "wai@w3.org" -%}
 {%- endif -%}
 {% assign reppattern = "$1|" | append: feedbackmail%}
 {%- capture helpdesc -%}{% include t.html t="Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [$1](mailto:$1$2) or via GitHub." replace=reppattern %}{%- endcapture -%}
