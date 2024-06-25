@@ -58,7 +58,7 @@ It is possible to concatenate multiple sets of those subtitles using commas. See
 
 {% include video-card.html
     video-url="//media.w3.org/wai/evaluation-intros/conformance-evaluation.mp4"
-    captions="//media.w3.org/wai/evaluation-intros/conformance-evaluation-cc.srt|en"
+    captions="/wai-videos/evaluating/conformance-evaluation.en.vtt|en|default"
     accessible-version="https://www.w3.org/WAI/test-evaluate/conformance/"
     accessible-version-label="Video: Conformance Evaluation"
 %}

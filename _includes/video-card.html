@@ -6,6 +6,7 @@
   {% endif %}
     <source src="{{ include.video-url }}" type="video/mp4">
     {%- assign captions = include.captions | split: ',' -%}
+    {%- assign langs = site.data.lang -%}
     {%- for caption in captions -%}
       {%- assign c = caption | split: '|' -%}
       {%- assign clangcode = c[1] -%}
