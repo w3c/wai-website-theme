@@ -1,5 +1,9 @@
 {%- assign langs = site.data.lang -%}
 {%- assign vtt-metadata=site.data.video-metadata | where: "id", include.video-id | first -%}
+{%- capture enabletxt -%}{% include t.html t="Enable Audio Description" %}{%- endcapture -%}
+{%- if enabletxt == null or enabletxt == "" -%}{% assign enabletxt = "Enable Audio Description" %}{%- endif -%}
+{%- capture disabletxt -%}{% include t.html t="Disable Audio Description" %}{%- endcapture -%}
+{%- if disabletxt == null or disabletxt == "" -%}{% assign disabletxt = "Disable Audio Description" %}{%- endif -%}
 <div class="video-container" data-video-type="" dir="ltr">
     <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" data-description-audible="false">
         {%- if vtt-metadata.captions -%}
@@ -54,7 +58,7 @@
         {%- endif -%}
     </video>
 </div>
-<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ '/assets/images/icons.svg#icon-audio-description' | relative_url }}"></use></svg> <span>Enable Audio Description</span></button></p>
+<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ '/assets/images/icons.svg#icon-audio-description' | relative_url }}"></use></svg> <span>{{ enabletxt }}</span></button></p>
 {% endif %}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -97,7 +101,7 @@
                         el.setAttribute('hidden', true);
                     });
                     e.currentTarget.setAttribute('data-status', 'non-audio-described');
-                    e.currentTarget.querySelector('span').textContent = 'Enable Audio Description';
+                    e.currentTarget.querySelector('span').textContent = '{{ enabletxt }}';
                 } else {
                     Array.prototype.forEach.call(nonaudiodescribed, function(el, i){
                         el.setAttribute('hidden', true);
@@ -106,7 +110,7 @@
                         el.removeAttribute("hidden");
                     });
                     e.currentTarget.setAttribute('data-status', 'audio-described');
-                    e.currentTarget.querySelector('span').textContent = 'Disable Audio Description';
+                    e.currentTarget.querySelector('span').textContent = '{{ disabletxt }}';
                 }
             });
 
