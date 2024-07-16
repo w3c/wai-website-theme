@@ -15,6 +15,8 @@
     url: "/writing/images/"
   - name: Videos
     url: "/writing/videos/"
+  - name: Navigation
+    url: "/navigation/"
   - name: Stand-alone Resources
     url: "/writing/standalone-resources/"
   - name: Workflow
