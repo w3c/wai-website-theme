@@ -1,4 +1,8 @@
 {%- assign langs = site.data.lang -%}
+{%- capture enabletxt -%}{% include t.html t="Enable Audio Description" %}{%- endcapture -%}
+{%- if enabletxt == null or enabletxt == "" -%}{% assign enabletxt = "Enable Audio Description" %}{%- endif -%}
+{%- capture disabletxt -%}{% include t.html t="Disable Audio Description" %}{%- endcapture -%}
+{%- if disabletxt == null or disabletxt == "" -%}{% assign disabletxt = "Disable Audio Description" %}{%- endif -%}
 <div class="video-container" data-video-type="" dir="ltr">
   <video preload="metadata" data-youtube-id="{{include.yt-id}}" data-youtube-nocookie="true" data-description-audible="false">
     {%- assign captions = include.captions | split: ',' -%}
@@ -50,7 +54,7 @@
       {%- endfor -%}
   </video>
 </div>
-<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | relative_url }}"></use></svg> <span>Enable Audio Description</span></button></p>
+<p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | relative_url }}"></use></svg> <span>{{ enabletxt }}</span></button></p>
 {% endif %}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -120,7 +124,7 @@
         el.setAttribute('hidden', true);
       });
       e.target.setAttribute('data-status', 'non-audio-described');
-      e.target.querySelector('span').innerHTML = 'Enable Audio Description';
+      e.target.querySelector('span').innerHTML = '{{ enabletxt }}';
     } else {
       var videos = document.querySelectorAll('.video-container');
       Array.prototype.forEach.call(videos, function(el, i){
@@ -131,7 +135,7 @@
         el.removeAttribute("hidden");
       });
       e.target.setAttribute('data-status', 'audio-described');
-      e.target.querySelector('span').innerHTML = 'Disable Audio Description';
+      e.target.querySelector('span').innerHTML = '{{ disabletxt }}';
     }
   });
 
