@@ -1,8 +1,8 @@
-{% assign url = "/img/" %}
+{% assign url = "/content-images/" %}
 {% if page.collection %}{% assign url = url | prepend: page.collection | prepend: '/' %}{% endif %}
 {% assign url = url | relative_url %}
 {% if include.srcset %}
-  {% assign srcseturl = "/img/" %}
+  {% assign srcseturl = "/content-images/" %}
   {% if page.collection %}{% assign srcseturl = srcseturl | prepend: page.collection | prepend: '/' %}{% endif %}
   {% assign out = "" %}
   {% assign srcsetsrces = include.srcset | split: ", " %}
