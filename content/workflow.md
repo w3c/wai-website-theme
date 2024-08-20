@@ -40,7 +40,7 @@ The workflow described here enables parts of the WAI website to be developed ind
     * Include a brief summary of the changes. **Explain everything that the website manager and/or technical lead needs to particularly be aware of.**
     * Include a link to the Task Force and/or Working Group approval to publish.
     * Include details on any shared components or other things that need updating outside this resource repo. For example, Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
-    * <s>Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule)<s/>
+    * <s>Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule)</s>
     * Set as reviewer: @shawna_slh.<br>Assign to: remibetin
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 
