@@ -24,26 +24,24 @@ This section describes how content authors work with the website team to publish
 
 The workflow described here enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables publication on the WAI website updates to be coordinated by the website manager.
 
-* One branch in each repository is designated as the "**publication**" branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn.
+* One branch in the repository is designated as the "**publication**" branch. Publication branches are lightly [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn and Rémi.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.
 * Scheduled updates are usually published/deployed on Tuesdays.
 
 ## Workflow
 
 * Each Working Group and editorial team defines their own workflow for drafting, reviewing, approving, and submitting updates.
-  * Pull request used during development  are made to the default branch or other branches, NOT the publication branch.
+  * Pull request used during development are made to the default branch or other branches, NOT the publication branch.
   * Netlify previews are available for all pull requests.
   * Editors and/or project managers ensure [early coordination on user interface, shared component, and content updates](#coop), per below.
-* When the editor wants updates published, they:
+* When the editor wants updates published:
+  * If other than a simple content update, coordinate with Rémi and Shawn at least the week before.<br>If a simple content update, then by Monday midnight US Eastern time is OK.
   * Create a single pull request to the "**publication**" branch. How to and details in [Creating a pull request to the publication branch](#pr) below.
     * Include a brief summary of the changes. **Explain everything that the website manager and/or technical lead needs to particularly be aware of.**
     * Include a link to the Task Force and/or Working Group approval to publish.
-    * Include details on any shared components or other things that need updating outside this resource repo. For example,  Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
-    * Assign it to @shawna_slh.
-<!--    * If there are updates that the technical lead needs to be involved in, also assign it to @SteveALee. -->
-  * Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule) _(requires W3C Member login)_
-    * If other than a simple content update, coordinate with Shawn at least the week before.
-	* If a simple content update, then by Monday midnight US Eastern time.
+    * Include details on any shared components or other things that need updating outside this resource repo. For example, Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
+    * <s>Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule)<s/>
+    * Set as reviewer: @shawna_slh.<br>Assign to: remibetin
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 
 ## Coordinating User Interface, Shared Component, and Content Updates {#coop}
@@ -52,7 +50,7 @@ The workflow described here enables parts of the WAI website to be developed ind
 
 * All user interface ideas must be coordinated with the WAI website manager (currently Shawn) &mdash; ideally from the start of the idea, before people get attached to a particular option.
 
-* All updates to shared components or other beyond the individual repo &mdash; to the website theme, config files, navigation.yml, etc. &mdash; must be coordinated with the WAI website technical lead before a pull request is submitted to the publication branch.
+* All updates to shared components or other beyond the individual repo &mdash; to the website theme, config files, navigation.yml, etc. &mdash; must be coordinated with the WAI website technical lead (currently Rémi) before a pull request is submitted to the publication branch.
 
 * All content updates must be approved by the Working Group that owns the repo content. In some cases, the Working Group has provided blanket approval for some types of updates, such as for some aspects of ACT Rules.
 
