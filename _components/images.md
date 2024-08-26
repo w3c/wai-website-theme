@@ -58,6 +58,7 @@ Put images always into the `/content-images/wai-repo-name/` directory (with wai-
     + `normal`: 240px
     + `medium`: 360px
     + `large`: 480px
+    + `icon`: 1em
   - Helper classes:
     + `video`: rounded corners
     + `left`/`right`: Floating to the beginning/end of the reading direction
@@ -74,6 +75,7 @@ If added, a "Long description of image" link will be displayed underneath the im
 
 ### Sizes
 
+{% include image.html src="picture.jpg" alt="alternative text" class="icon" %}
 {% include image.html src="picture.jpg" alt="alternative text" class="tiny" %}
 {% include image.html src="picture.jpg" alt="alternative text" class="mini" %}
 {% include image.html src="picture.jpg" alt="alternative text" class="small" %}

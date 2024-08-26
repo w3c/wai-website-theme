@@ -5,6 +5,7 @@ img {
   &.normal  {--img-width: 240px;}
   &.medium  {--img-width: 360px;}
   &.large   {--img-width: 480px;}
+  &.icon    {--img-width: 1em;}
   &.left {
     clear: inline-start;
     float: inline-start;
