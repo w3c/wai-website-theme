@@ -322,7 +322,7 @@ to provide the fork and edit this document on GitHub links.
 ```yaml
 github:
   repository: w3c/wai-repository
-  branch: master
+  branch: main
   path: 'index.md'
 ```
 
