@@ -14,7 +14,7 @@ The theme is documented at https://wai-website-theme.netlify.app/ along with ins
 
 ### The default branch name has changed. How to update my fork?
 
-Since 4 September 2024, the default branch is named `main`, for consistency with other W3C repositories and [GitHub default branch name](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#about-the-default-branch).
+Since 5 September 2024, the default branch is named `main`, for consistency with other W3C repositories and [GitHub default branch name](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#about-the-default-branch).
 
 If you have an existing fork, you can [rename your fork's default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch#renaming-a-branch).
 
