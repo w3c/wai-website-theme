@@ -1,62 +1,68 @@
-{%- assign col = site.collections | where: "label", page.collection | first -%}
-{%- if page.changelog -%}
-  {%- assign changelogpage=site.documents | where:"ref", page.changelog | first -%}
-  {%- unless changelogpage.ref -%}
-    {%- assign changelogpage=site.pages | where:"ref", page.changelog | first -%}
-  {%- endunless -%}
-  {% assign changelogpageurl = changelogpage.url | relative_url %}
-  {%- capture changelogtext -%}
-  {%- include_cached t.html t="Changelog" lang=page.lang -%}
+{%- comment -%}
+  Find the page language.
+{%- endcomment -%}
+{%- assign page_lang = 'en' -%}
+{%- if page.lang -%}
+  {%- assign page_lang = page.lang -%}
+{%- endif -%}
+{%- comment -%}
+  Get the changelog page:
+  - Use the `custom_changelog` value when existing. Also supports the legacy `changelog` frontmatter variable for now.
+  - Else, append "changelog/` to the page `ref` or `url` to check if it matches a page.
+{%- endcomment -%}
+{%- if page.custom_changelog -%}
+  {%- assign changelog_url = page.custom_changelog -%}
+{%- elsif page.changelog -%}
+  {%- assign changelog_url = page.changelog -%}
+{%- elsif page.ref -%}
+  {%- assign changelog_url = page.ref | append: "changelog/" -%}
+{%- else -%}
+  {%- assign changelog_url = page.url | append: "changelog/" -%}
+{%- endif -%}
+{%- assign all_docs = site.documents | concat: site.pages -%}
+{%- assign changelog_page = all_docs | where: "url", changelog_url | first -%}
+{%- comment -%}
+  Build the link to the Changelog
+{%- endcomment -%}
+{%- if changelog_page -%}
+  {%- capture changelog -%}
+    <a href="{{ changelog_page.url | relative_url }}">{%- include_cached t.html t="Latest changes" lang=page_lang -%}</a>
   {%- endcapture -%}
-  {%- assign changelog = '<a href="' | append: changelogpageurl | append: '">' | append: changelogtext | append: '</a>' -%}
 {%- else -%}
   {%- assign changelog = "" -%}
 {%- endif -%}
+{%- comment -%}
+  Build the link to the Acknowledgements page
+{%- endcomment -%}
 {%- if page.acknowledgements -%}
-  {%- assign acknowledgementspage=site.documents | where:"ref", page.acknowledgements | first -%}
-  {%- unless acknowledgementspage.ref -%}
-    {%- assign acknowledgementspage=site.pages | where:"ref", page.acknowledgements | first -%}
-  {%- endunless -%}
-  {% assign acknowledgementspageurl = acknowledgementspage.url | relative_url %}
-  {%- capture acknowledgementstext -%}
-  {%- include_cached t.html t="Acknowledgements" lang=page.lang -%}
+  {%- assign acknowledgements_page = all_docs | where:"ref", page.acknowledgements | first -%}
+  {%- capture acknowledgements -%}
+    <a href="{{ acknowledgements_page.url | relative_url }}">{%- include_cached t.html t="Acknowledgements" lang=page_lang -%}</a>
   {%- endcapture -%}
-  {%- assign acknowledgements = '<a href="' | append: acknowledgementspageurl | append: '">' | append: acknowledgementstext | append: '</a>' -%}
 {%- else -%}
   {%- assign acknowledgements = "" -%}
 {%- endif -%}
-{% if col.footer %}
+{%- comment -%}
+  COLLECTION PAGE FOOTER
+  For collections, we use the collection footer when set.
+{%- endcomment -%}
+{%- assign col = site.collections | where: "label", page.collection | first -%}
+{%- if col.footer -%}
 <footer id="wai-page-footer" class="page-footer default-grid" aria-label="Page">
   <div class="inner"
     {% if include.inner-style %}
       style="{{ include.inner-style }}"
     {% endif %}>
     {{ col.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
-    {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
+    {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
   </div>
 </footer>
-{% else %}
-  {% if page.footer %}
-  <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
-    <div class="inner"
-      {% if include.inner-style %}
-        style="{{ include.inner-style }}"
-      {% endif %}>
-      {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
-      {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
-    </div>
-  </footer>
-  {% endif %}
-{% endif %}
-
-{% comment %}
-
+{%- comment -%}
   META FOOTER
-
-  For the tutorials, we used data to form the footer. This way of constructing the footer is now called “metafooter” and needs to be enabled by setting `metafooter: true` in the frontmatter. Do NOT use with raw html `footer: ` frontmatter.
-
-{% endcomment %}
-{% if page.metafooter %}
+  For the tutorials, we use multiple frontmatter variables to form the page footer. This way of constructing the footer is called “metafooter” and needs to be enabled by setting `metafooter: true` in the frontmatter.
+  Do NOT use with raw html `footer: ` frontmatter.
+{%- endcomment -%}
+{%- elsif page.metafooter -%}
   <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
     <div class="inner">
       <div><strong>Status:</strong>
@@ -91,7 +97,6 @@
           {% endfor %}
           &nbsp;
       {% if page.update_editors %}
-
           {% include t.html t='Update Editor:' %}
           {% for updateeditor in page.update_editors %}
           {% if forloop.first %}<ul class="sentence">{% endif %}
@@ -133,7 +138,54 @@
       {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
     </div>
   </footer>
-{% endif %}
+{%- comment -%}
+  DEFAULT PAGE FOOTER
+  Most pages use this page footer.
+{%- endcomment -%}
+{%- else -%}
+  {%- comment -%}
+    Convert dates into integers to compare them later.
+  {%- endcomment -%}
+  {%- assign last_updated = page.last_updated | date: '%s' | plus: 0 | default: 0 -%}
+  {%- assign last_reviewed = page.last_reviewed | date: '%s' | plus: 0 | default: 0 -%}
+  {% if page.footer or page.last_updated or page.last_reviewed %}
+  <footer id="wai-site-footer" class="page-footer default-grid" aria-label="Page">
+    <div class="inner"
+      {%- if include.inner-style -%}
+        style="{{ include.inner-style }}"
+      {%- endif -%}>
+      {%- if page.last_updated or page.last_reviewed -%}
+        <p>
+        {%- if last_updated >= last_reviewed -%}
+          {%- if page_lang == "en" %}<strong>{%- include_cached t.html t="Updated:" lang=page.lang %}</strong> {{ page.last_updated | date: '%e %B %Y' }}.
+          {%- elsif page_lang != "en" -%}<strong>{%- include_cached t.html t="English version updated:" lang=page.lang %}</strong> {{ page.last_updated | date: '%Y-%m-%d' }}.
+          {%- endif -%}
+        {%- elsif last_reviewed > last_updated -%}
+          {%- if page_lang == "en" -%}<strong>{%- include_cached t.html t="This page has been reviewed and is current as of" lang=page.lang %}</strong> {{ page.last_reviewed | date: '%e %B %Y' }}.
+          {%- endif -%}
+        {%- endif -%}
+        {%- if changelog_page %}
+          {{ changelog }}.
+        {%- endif -%}
+        {%- if page_lang != 'en' and page.translation.last_updated %}
+          ({%- include_cached t.html t="Translated:" lang=page.lang %} {{ page.translation.last_updated | date: '%Y-%m-%d' }}).
+        {%- endif -%}
+        {%- if page.first_published %}
+          {{ page.first_published }}
+        {%- endif -%}
+        </p>
+      {%- endif -%}
+      {%- comment -%}
+        For now, we continue to support replacing "CHANGELOG" with the changelog link. But that should soon be removed.
+      {%- endcomment -%}
+      {%- if page.footer -%}
+        {{ page.footer | replace: "CHANGELOG", changelog | replace: "ACKNOWLEDGEMENTS", acknowledgements }}
+      {%- endif -%}
+      {%- if page.license == 'creative-commons' -%}<p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>{%- endif -%}
+    </div>
+  </footer>
+  {% endif %}
+{%- endif -%}
 
 <footer class="site-footer grid-4q" aria-label="Site">
   <div class="q1-start q3-end about">
@@ -146,7 +198,7 @@
         <li><a href="https://w3c.social/@wai">{%include_cached icon.html name="mastodon" %} Mastodon</a></li>
         <li><a href="https://www.linkedin.com/company/w3c-wai/">{%include_cached icon.html name="linkedin" %} LinkedIn</a></li>
         <li><a href="https://www.w3.org/WAI/feed.xml">{%include_cached icon.html name="rss" %} Feed</a></li>
-        <li><a href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlistsv">{%include_cached icon.html name="youtube" %} YouTube</a></li>
+        <li><a href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlists/">{%include_cached icon.html name="youtube" %} YouTube</a></li>
         <li><a href="https://www.w3.org/WAI/news/subscribe/" class="button">Get News in Email</a></li>
       </ul>
     </div>
