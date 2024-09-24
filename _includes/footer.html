@@ -9,9 +9,9 @@
 {%- elsif page.changelog -%}{%- comment -%}Supports legacy method for now{% endcomment -%}
   {%- assign changelog_url = page.changelog -%}
 {%- elsif page.ref -%}
-  {%- capture changelog_url -%}{{ page.ref | append: "changelog/" }}{%- endcapture -%}
+  {%- assign changelog_url = page.url | append: "changelog/" -%}
 {%- else -%}
-  {%- capture changelog_url -%}{{ page.url | append: "changelog/" }}{%- endcapture -%}
+  {%- assign changelog_url = page.url | append: "changelog/" -%}
 {%- endif -%}
 {%- assign all_docs = site.documents | concat: site.pages -%}
 {%- assign changelog_page = all_docs | where: "url", changelog_url | first -%}
@@ -132,17 +132,19 @@
         <p>
         {%- if last_updated >= last_reviewed -%}
           {%- if page_lang == "en" %}<strong>{%- include_cached t.html t="Last updated:" lang=page.lang %}</strong> {{ page.last_updated | date: '%e %B %Y' }}
-          {%- elsif page_lang != "en" -%}<strong>{%- include_cached t.html t="English version last updated:" lang=page.lang %}</strong> {{ page.last_updated | date: '%Y-%m-%d' }}
+          {%- elsif page_lang != "en" -%}<strong>{%- include_cached t.html t="English version date:" lang=page.lang %}</strong> {{ page.last_updated | date: '%Y-%m-%d' }}
           {%- endif -%}
         {%- elsif last_reviewed > last_updated -%}
           {%- if page_lang == "en" -%}<strong>{%- include_cached t.html t="Reviewed as of" lang=page.lang %}</strong> {{ page.last_reviewed | date: '%e %B %Y' }}
-          {%- elsif page_lang != "en" -%}<strong>{%- include_cached t.html t="English version reviewed as of" lang=page.lang %}</strong> {{ page.last_reviewed | date: '%Y-%m-%d' }}
           {%- endif -%}
         {%- endif -%}
         {%- if changelog_page %}
           {{ changelog }}.
         {%- else -%}
           .
+        {%- endif -%}
+        {%- if page_lang != 'en' and page.translation.last_updated %}<br />
+          <strong>{%- include_cached t.html t="Translation date:" lang=page.lang %}</strong> {{ page.translation.last_updated | date: '%Y-%m-%d' }}
         {%- endif -%}
         </p>
       {%- endif -%}
