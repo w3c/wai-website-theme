@@ -19,7 +19,7 @@
   {%- if source[pagelang] -%}
     {%- assign phrase=source[pagelang] -%}
   {%- else -%}
-    {%- unless site.hideTranslationHints or include.hideTranslationHints %}<mark lang="en">Needs Translation</mark> {% endunless -%}
+    {%- unless site.hideTranslationHints or include.hideTranslationHints or site.published == true %}<mark lang="en">Needs Translation</mark> {% endunless -%}
     {%- assign phrase=include.t | prepend: '<span lang="en">' | append: '</span>' -%}
   {%- endif -%}
   {%- if include.replace -%}
