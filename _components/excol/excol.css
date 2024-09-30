@@ -49,6 +49,14 @@ details > div::after {
   clear: both;
 }
 
+/*
+  Firefox 130 does not zero out collapsed content's dimensions.
+  Work around this to preserve behavior of openHiddenNodes.
+*/
+details:not([open]) > summary ~ * {
+  display: none;
+}
+
 .excol-all {
   margin: 16px 0;
 }
