@@ -46,7 +46,7 @@
     <h1 class="post-title">{% include multilang-title.html title=page.country %}</h1>
 
     <div class="post-content">
-      <p>Last Updated: {{page.updated | date: "%-d %B %Y" }}{%if page.updatemsg%} – {{page.updatemsg}}{%endif%}</p>
+      <p>Last Updated: {{page.last_updated | date: "%-d %B %Y" }}{%if page.updatemsg%} – {{page.updatemsg}}{%endif%}</p>
       {% if page.relatedpages %}{% for r in page.relatedpages %}<p>Related page: <a href="{{r.url}}">{{r.title}}</a></p>{% endfor %}{% endif %}
       {% for p in page.policies %}
         {% assign theslug = p.title.en | slugify %}
