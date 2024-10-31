@@ -170,8 +170,8 @@
         {%- if page_lang != 'en' and page.translation.last_updated %}
           ({%- include_cached t.html t="Translated:" lang=page.lang %} {{ page.translation.last_updated | date: '%Y-%m-%d' }}).
         {%- endif -%}
-        {%- if page.first_published %}
-          {{ page.first_published }}
+        {%- if page.first_published %}<br />
+          {% include_cached t.html t="First published" lang=page.lang %} {{ page.first_published }}
         {%- endif -%}
         </p>
       {%- endif -%}
