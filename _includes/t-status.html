@@ -12,12 +12,10 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{% capture translation-date %}{{ translation.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
-{% capture original-date %}{{ original.last_updated | date: '%s' | plus: 0 }}{% endcapture %}
 {%- capture t-status -%}
   {%- if translation == nil -%}none
-  {%- elsif translation.size != 0 and translation-date < original-date -%}outdated
-  {%- elsif translation.size != 0 and translation-date >= original-date -%}uptodate
+  {%- elsif translation.translation.status == "outdated" -%}outdated
+  {%- else -%}uptodate
   {%- endif -%}
 {%- endcapture -%}
 

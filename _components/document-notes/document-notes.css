@@ -54,6 +54,7 @@
 }
 
 .doc-note-translation {
+  border: 2px solid var(--wai-green);
   font-size: .8125rem;
   & p {
     margin-block-start: 5px;
@@ -64,5 +65,10 @@
     &:last-child {
       margin-block-end: 0;
     }
+  }
+  & .translation-needs-update {
+    background-color: var(--gold-light);
+    padding: 8px;
+    margin: 0 -8px -8px -8px;
   }
 }

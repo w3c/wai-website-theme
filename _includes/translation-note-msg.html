@@ -1,47 +1,40 @@
-{%- assign pagelang = 'en' -%}
+{%- assign page_lang = 'en' -%}
 {%- if page.lang -%}
-  {%- assign pagelang = page.lang -%}
+  {%- assign page_lang = page.lang -%}
 {%- endif -%}
-{%- unless pagelang == "en" -%}
-{%- assign enupdatedate = enpage.last_updated | date: "%s" -%}
-{%- assign thisupdatedate = page.last_updated | date: "%s" -%}
-{%- if page.changelog -%}
-  {%- assign chagelogpage=site.documents | where:"ref", page.changelog | first -%}
-  {%- unless changelogpage.ref -%}
-    {%- assign changelogpage=site.pages | where:"ref", page.changelog | first -%}
-  {%- endunless -%}
-  {%- assign changelogpageurl = changelogpage.url | relative_url -%}
-  {%- assign changelogpagereplace = "$1|" | append: changelogpageurl -%}
-{%- else -%}
-  {%- assign changelog = "" -%}
-{%- endif -%}
-<section id="translation-info" class="doc-note-box doc-note-translation">
-  <h2 class="visuallyhidden">{% include t.html t="About this Translation" %}</h2>
-  <p>{% assign replacepattern = enpage.url | relative_url | prepend: "$1|"  %}{% include t.html t='This volunteer translation might not accurately reflect the intentions of the <a href="$1">English original</a>.' replace=replacepattern %}</p>
-  {% if pagelang == 'en' %}
-  <p>{% include_cached icon.html name="check-circle" %} {% include t.html t='Translation up-to-date with the English version.' %}
-    <br>{% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%Y-%m-%d"}}</span>. {% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%Y-%m-%d"}}</span>.
-   </p>
-  <p>{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace=changelogpagereplace %}
-    <br>{% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%Y-%m-%d"}}</span>. {% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%Y-%m-%d"}}</span>.
-  </p>
-  {% else %}
-  {% if enupdatedate <= thisupdatedate %}
-  <p>{% include_cached icon.html name="check-circle" %} {% include t.html t='Translation up-to-date with the English version.' %}
-    <br>{% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%Y-%m-%d"}}</span>. {% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%Y-%m-%d"}}</span>.
-   </p>
-  {% else %}
-  <p>{% include_cached icon.html name="warning" %} {% include t.html t='English version updated since this translation: <a href="$1">Change log</a>.' replace=changelogpagereplace %}
-    <br>{% include t.html t='English updated:' %} <span dir="auto">{{enpage.last_updated | date: "%Y-%m-%d"}}</span>. {% include t.html t='Translation updated:' %} <span dir="auto">{{page.last_updated | date: "%Y-%m-%d"}}</span>.
-  </p>
-  {% endif %}
-  {% endif %}
-  <p>
-    {%- capture translatorslabel %}<strong>{% include t.html t='Translator:' %}</strong>{%- endcapture %}
-    {% include peoplelist.html label=translatorslabel people=page.translators %}
-    {%- capture contributorslabel %}{% include t.html t='Contributor:' %}{%- endcapture %}
-    {% include peoplelist.html label=contributorslabel people=page.contributors %}
-    {%- assign replacepattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
-    <br>{% include t.html t='WAI thanks translators, and welcomes other <a href="$1">translations</a>.' replace=replacepattern %}</p>
-</section>
+{%- unless page_lang == "en" -%}
+  {%- if page.custom_changelog -%}
+    {%- assign changelog_url = page.custom_changelog -%}
+  {%- elsif page.changelog -%}{%- comment -%}Supports legacy method for now{% endcomment -%}
+    {%- assign changelog_url = page.changelog -%}
+  {%- elsif page.ref -%}
+    {%- capture changelog_url -%}{{ page.ref | append: "changelog/" }}{%- endcapture -%}
+  {%- else -%}
+    {%- capture changelog_url -%}{{ page.url | append: "changelog/" }}{%- endcapture -%}
+  {%- endif -%}
+  {%- assign all_docs = site.documents | concat: site.pages -%}
+  {%- assign changelog_page = all_docs | where: "url", changelog_url | first -%}
+  <section id="translation-info" class="doc-note-box doc-note-translation">
+    <h2 class="visuallyhidden">{% include_cached t.html t="About this translation" lang=page_lang %}</h2>
+    <p>
+      {%- assign replace_pattern = enpage.url | relative_url | prepend: "$1|" -%}
+      {%- include t.html t='This volunteer translation might not accurately reflect the intentions of the <a href="$1">English original</a>.' replace=replace_pattern lang=page_lang -%}
+    </p>
+    <p>
+      {%- capture translatorslabel %}<strong>{% include_cached t.html t='Translator:' lang=page_lang %}</strong>{%- endcapture %}
+      {%- include peoplelist.html label=translatorslabel people=page.translators -%}
+      {%- capture contributorslabel %}{% include_cached t.html t='Contributor:' lang=page_lang %}{%- endcapture -%}
+      {%- include peoplelist.html label=contributorslabel people=page.contributors -%}
+      <br />
+      {%- assign replace_pattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
+      {%- include_cached t.html t='The Web Accessibility Initiative (WAI) thanks translators, and welcomes other <a href="$1">translations</a>.' replace=replace_pattern lang=page_lang -%}
+    </p>
+    {%- if page.translation.status == "outdated" -%}
+      <div class="translation-needs-update">
+          <p>{% include_cached icon.html name="warning" %} <strong>{% include_cached t.html t='Notice:' lang=page_lang %}</strong> {% include t.html t='The English original has been substantially updated since this translation.' lang=page_lang %}{%- if changelog_page %} &mdash; <a href="{{ changelog_page.url | relative_url }}">{%- include_cached t.html t="Latest changes" lang=page_lang -%}</a>{%- endif -%}
+          <br />{% include_cached t.html t='English version updated:' lang=page_lang %} <span dir="auto">{{ enpage.last_updated | date: "%Y-%m-%d" }}</span> — {% include_cached t.html t='Translation date:' lang=page_lang %} <span dir="auto">{{ page.translation.last_updated | date: "%Y-%m-%d" }}</span>.
+          <br />{% include_cached t.html t='We welcome a <a href="$1">translation update</a>.' lang=page_lang replace=replace_pattern %}
+        </div>
+    {%- endif -%}
+  </section>
 {%- endunless -%}
