@@ -2,32 +2,45 @@
 title: "Footers (Page and Site)"
 lang: en
 custom_changelog: /writing/changelogs/example/
-last_updated: 2024-09-24
+last_updated: 2024-11-04
 ---
 
 ***Note:** This is only a visual design reference. [The content is defined in the frontmatter](/writing/frontmatter/#footer-).*
 
 ## Page Footer
 
-### With last updated date
+### Example 1: Last updated date
 
 <footer class="page-footer default-grid">
   <div class="inner">
-    <p><strong>Updated:</strong> {{ 'now' | date: "%d %B %Y" }}. <a href="{{ '/writing/changelogs/example/' | relative_url }}">Latest changes</a>.</p>
+    <p><strong>Updated:</strong> {{ 'now' | date: "%d %B %Y" }}. <a href="{{ '/writing/changelogs/example/' | relative_url }}">Latest changes</a>.<br />First published March 2022.</p>
     <p>Editors: Jane Doe. Previously John Doe. Contributors: Jan Doe.</p>
     <p>First developed with support from ONE Project, then updated with support of the TWO Project and later the THREE Project.</p>
   </div>
 </footer>
 
-### With a more recent date of review
+### Example 2: More recent last reviewed date
 
 <footer class="page-footer default-grid">
   <div class="inner">
-    <p><strong>This page has been reviewed and is current as of</strong> {{ 'now' | date: "%d %B %Y" }}. <a href="{{ '/writing/changelogs/example/' | relative_url }}">Latest changes</a>.</p>
+    <p><strong>This page has been reviewed and is current as of</strong> {{ 'now' | date: "%d %B %Y" }}. <a href="{{ '/writing/changelogs/example/' | relative_url }}">Latest changes</a>.<br />First published March 2022.</p>
     <p>Editors: Jane Doe. Previously John Doe. Contributors: Jan Doe.</p>
     <p>First developed with support from ONE Project, then updated with support of the TWO Project and later the THREE Project.</p>
   </div>
 </footer>
+
+### Example 3: Translation
+
+***Note**: Following text is in English for reference. On live website, the page footer is displayed in the translated language.*
+
+<footer class="page-footer default-grid">
+  <div class="inner">
+    <p><strong>English version updated:</strong> {{ 'now' | date: "%Y-%m-%d" }}. <a href="{{ '/writing/changelogs/example/' | relative_url }}">Latest changes</a>. (Translated {{ 'now' | date: "%Y-%m-%d" }}).<br />First published March 2022.</p>
+    <p>Editors: Jane Doe. Previously John Doe. Contributors: Jan Doe.</p>
+    <p>First developed with support from ONE Project, then updated with support of the TWO Project and later the THREE Project.</p>
+  </div>
+</footer>
+
 
 ## Site Footer
 
