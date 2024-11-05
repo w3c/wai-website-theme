@@ -1,13 +1,13 @@
 {%- capture helptitle -%}{% include_cached t.html t="Help improve this page" lang=page.lang %}{%- endcapture -%}
 {%- assign feedbackmail = page.feedbackmail | default: "wai@w3.org"-%}
 {% assign reppattern = "$1|" | append: feedbackmail%}
-{%- capture helpdesc -%}{% include t.html t="Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [$1](mailto:$1$2) or via GitHub." replace=reppattern %}{%- endcapture -%}
+{%- capture helpdesc -%}{% include_cached t.html t="Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [$1](mailto:$1$2) or via GitHub." replace=reppattern lang=page.lang %}{%- endcapture -%}
 {%- capture mailbody -%}
 {% include_cached t.html t="[include a relevant email Subject]" lang=page.lang hideTranslationHints=true %}
 
 {% include_cached t.html t="[put comment here...]" lang=page.lang hideTranslationHints=true %}
 
-{% if feedbackmail == "wai@w3.org" %}{% include t.html t="I give permission to share this to a publicly-archived e-mail list." lang=page.lang hideTranslationHints=true %}{% endif %}
+{% if feedbackmail == "wai@w3.org" %}{% include_cached t.html t="I give permission to share this to a publicly-archived e-mail list." lang=page.lang hideTranslationHints=true %}{% endif %}
 {%- endcapture -%}
 {%- assign mailbody = mailbody | url_encode | replace: "+", "%20" -%}
 {%- assign mailparams = "?body=" | append: mailbody -%}
