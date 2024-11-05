@@ -20,7 +20,11 @@
     {%- assign phrase=source[pagelang] -%}
   {%- else -%}
     {%- unless site.hideTranslationHints or include.hideTranslationHints or site.published == true %}<mark lang="en">Needs Translation</mark> {% endunless -%}
-    {%- assign phrase=include.t | prepend: '<span lang="en">' | append: '</span>' -%}
+    {%- unless include.plainText %}
+      {%- assign phrase=include.t | prepend: '<span lang="en">' | append: '</span>' -%}
+    {%- else %}
+      {%- assign phrase=include.t -%}
+    {% endunless -%}
   {%- endif -%}
   {%- if include.replace -%}
     {%- assign replacements = include.replace | split: "||" -%}
