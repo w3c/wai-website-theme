@@ -33,7 +33,7 @@
       <div class="translation-needs-update">
           <p>{% include_cached icon.html name="warning" %} <strong>{% include_cached t.html t='Notice:' lang=page_lang %}</strong> {% include t.html t='The English original has been substantially updated since this translation.' lang=page_lang %}{%- if changelog_page %} &mdash; <a href="{{ changelog_page.url | relative_url }}">{%- include_cached t.html t="Latest changes" lang=page_lang -%}</a>{%- endif -%}
           <br />{% include_cached t.html t='English version updated:' lang=page_lang %} <span dir="auto">{{ enpage.last_updated | date: "%Y-%m-%d" }}</span> — {% include_cached t.html t='Translation date:' lang=page_lang %} <span dir="auto">{{ page.translation.last_updated | date: "%Y-%m-%d" }}</span>.
-          <br />{% include_cached t.html t='We welcome a <a href="$1">translation update</a>.' lang=page_lang replace=replace_pattern %}
+          <br />{% include_cached t.html t='We welcome a <a href="$1">translation update</a>.' lang=page_lang replace=replace_pattern %}</p>
         </div>
     {%- endif -%}
   </section>
