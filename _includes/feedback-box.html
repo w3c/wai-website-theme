@@ -1,40 +1,28 @@
-{%- if page.collection -%}{%- assign col = site.collections | where: "label", page.collection | first -%}{%- endif- %}
-{%- capture helptitle -%}{% include t.html t="Help improve this page" %}{%- endcapture -%}
-{%- if page.feedbackmail -%}
-  {%- assign feedbackmail = page.feedbackmail -%}
-{%- else -%}
-  {%- assign feedbackmail = "wai@w3.org" -%}
-{%- endif -%}
+{%- capture helptitle -%}{% include_cached t.html t="Help improve this page" lang=page.lang %}{%- endcapture -%}
+{%- assign feedbackmail = page.feedbackmail | default: "wai@w3.org"-%}
 {% assign reppattern = "$1|" | append: feedbackmail%}
-{%- capture helpdesc -%}{% include t.html t="Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [$1](mailto:$1$2) or via GitHub." replace=reppattern %}{%- endcapture -%}
-
-{%- if page.lang -%}
-    {%- assign mailsubject = "[" | append: page.lang | append: "] " | append: page.title | url_encode | replace: "+", "%20" -%}
-{%- else -%}
-    {%- assign mailsubject = page.title | url_encode | replace: "+", "%20" -%}
-{%- endif -%}
-
+{%- capture helpdesc -%}{% include_cached t.html t="Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [$1](mailto:$1$2) or via GitHub." replace=reppattern lang=page.lang %}{%- endcapture -%}
 {%- capture mailbody -%}
-{% include t.html t="[put comment here...]" %}
+{% include_cached t.html t="[include a relevant email Subject]" lang=page.lang plainText=true hideTranslationHints=true %}
 
-{% if feedbackmail == "wai@w3.org" %}{% include t.html t="I give permission to share this to a publicly-archived e-mail list." %}{% endif %}
+{% include_cached t.html t="[put comment here...]" lang=page.lang plainText=true hideTranslationHints=true %}
+
+{% if feedbackmail == "wai@w3.org" %}{% include_cached t.html t="I give permission to share this to a publicly-archived e-mail list." lang=page.lang plainText=true hideTranslationHints=true %}{% endif %}
 {%- endcapture -%}
 {%- assign mailbody = mailbody | url_encode | replace: "+", "%20" -%}
-
-{%- assign mailparams = "?subject=" | append: mailsubject | append: "&body=" | append: mailbody -%}
-
-{%- include box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" id="helpimprove" aria_label="feedback" -%}
+{%- assign mailparams = "?body=" | append: mailbody -%}
+{%- include_cached box.html type="start" title=helptitle h=2 class="icon space-above" icon="comments" id="helpimprove" aria_label="feedback" -%}
 
 {{ helpdesc | replace: "$2", mailparams | markdownify -}}
 
 <div class="button-group">
-    <a href="{{ "mailto:" | append: feedbackmail | append: mailparams }}" class="button"><span>{% include t.html t="E-mail" %}</span></a>
+    <a href="{{ "mailto:" | append: feedbackmail | append: mailparams }}" class="button"><span>{% include_cached t.html t="E-mail" lang=page.lang %}</span></a>
     {%- unless page.github.hide -%}
     {%- capture github-file-path -%}{% include_cached github-file-path.html p=page %}{%- endcapture -%}
-    <a href="{{ github-file-path }}" class="button"><span>{% include t.html t="Fork &amp; Edit on GitHub" %}</span></a>
+    <a href="{{ github-file-path }}" class="button"><span>{% include_cached t.html t="Fork &amp; Edit on GitHub" lang=page.lang %}</span></a>
     {%- comment -%}<a href="https://github.com/{{repo}}/issues" class="button"><span>List of GitHub Issues</span></a>{%- endcomment -%}
-    <a href="https://github.com/{{repo}}/issues/new?template=content-issue.yml{%- unless page.lang == 'en' -%}&title={{ "[" | append: page.lang | append: "] " | uri_escape }}{%- endunless -%}{%- if page.github.label -%}&wai-resource-id={{page.github.label}}{%- endif -%}&wai-url={{page.url | absolute_url | uri_escape }}" class="button"><span>{% include t.html t="New GitHub Issue" %}</span></a>
+    <a href="https://github.com/{{repo}}/issues/new?template=content-issue.yml{%- unless page.lang == 'en' -%}&title={{ "[" | append: page.lang | append: "] " | uri_escape }}{%- endunless -%}{%- if page.github.label -%}&wai-resource-id={{page.github.label}}{%- endif -%}&wai-url={{page.url | absolute_url | uri_escape }}" class="button"><span>{% include_cached t.html t="New GitHub Issue" lang=page.lang %}</span></a>
     {%- endunless -%}
 </div>
 
-{%- include box.html type="end" -%}
+{%- include_cached box.html type="end" -%}
