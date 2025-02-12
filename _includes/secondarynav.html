@@ -71,6 +71,7 @@
           {%- if forloop.first %}<ul>{% endif -%}
           {%- if k.url == searchurl -%}
             {% assign insub = true %}
+            {% assign insubsub = true %}
             {% include menuitem.html name=k.name url=k.url hide=k.hide insub=insubsubsub current=true submenu=subsubsubmenu %}
           {%- else -%}
             {% include menuitem.html name=k.name url=k.url hide=k.hide insub=insubsubsub current=false submenu=subsubsubmenu %}
