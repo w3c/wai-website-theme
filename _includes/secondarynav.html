@@ -25,7 +25,13 @@
         {%- else -%}
           {%- for k in j.pages -%}
             {%- if k.url == searchurl -%}
-              {%- assign currentsubnav = item -%}
+               {%- assign currentsubnav = item -%}
+            {%- else -%}
+              {%- for l in k.pages -%}
+                {%- if l.url == searchurl -%}
+                  {%- assign currentsubnav = item -%}
+                {%- endif -%}
+              {%- endfor -%}
             {%- endif -%}
           {%- endfor -%}
         {%- endif -%}
@@ -43,28 +49,44 @@
   {% endif %}
   {%- assign insub = false -%}
   {%- assign insubsub = false -%}
+  {%- assign insubsubsub = false -%}
   {%- capture submenu -%}
     {%- for j in i.pages -%}
       {%- capture subsubmenu -%}
         {%- for k in j.pages -%}
+          {%- capture subsubsubmenu -%}
+            {%- for l in k.pages -%}
+              {%- if forloop.first %}<ul>{% endif -%}
+                {%- if l.url == searchurl -%}
+                  {% assign insub = true %}
+                  {% assign insubsub = true %}
+                  {% assign insubsubsub = true %}
+                  {% include menuitem.html name=l.name url=l.url hide=l.hide insub=false current=true %}
+                {%- else -%}
+                  {% include menuitem.html name=l.name url=l.url hide=l.hide insub=false current=false %}
+                {%- endif -%}
+              {%- if forloop.last %}</ul>{% endif -%}
+            {%- endfor -%}
+          {%- endcapture -%}
           {%- if forloop.first %}<ul>{% endif -%}
-            {%- if k.url == searchurl -%}
-              {% assign insub = true %}
-              {% assign insubsub = true %}
-              {% include menuitem.html name=k.name url=k.url hide=k.hide insub=false current=true %}
-            {%- else -%}
-              {% include menuitem.html name=k.name url=k.url hide=k.hide insub=false current=false %}
-            {%- endif -%}
+          {%- if k.url == searchurl -%}
+            {% assign insub = true %}
+            {% assign insubsub = true %}
+            {% include menuitem.html name=k.name url=k.url hide=k.hide insub=insubsubsub current=true submenu=subsubsubmenu %}
+          {%- else -%}
+            {% include menuitem.html name=k.name url=k.url hide=k.hide insub=insubsubsub current=false submenu=subsubsubmenu %}
+          {%- endif -%}
           {%- if forloop.last %}</ul>{% endif -%}
+          {% assign insubsubsub = false %}
         {%- endfor -%}
       {%- endcapture -%}
       {%- if forloop.first %}<ul>{% endif -%}
-        {%- if j.url == searchurl -%}
-          {% assign insub = true %}
-          {% include menuitem.html name=j.name url=j.url hide=j.hide insub=insubsub current=true submenu=subsubmenu %}
-        {%- else -%}
-          {% include menuitem.html name=j.name url=j.url hide=j.hide insub=insubsub current=false submenu=subsubmenu %}
-        {%- endif -%}
+      {%- if j.url == searchurl -%}
+        {% assign insub = true %}
+        {% include menuitem.html name=j.name url=j.url hide=j.hide insub=insubsub current=true submenu=subsubmenu %}
+      {%- else -%}
+        {% include menuitem.html name=j.name url=j.url hide=j.hide insub=insubsub current=false submenu=subsubmenu %}
+      {%- endif -%}
       {%- if forloop.last %}</ul>{% endif -%}
       {% assign insubsub = false %}
     {%- endfor -%}
