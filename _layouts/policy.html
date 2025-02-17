@@ -94,13 +94,20 @@
         {% include box.html type="end" %}
       {% endfor %}
     </div>
-{%- if page.navigation -%}
-  {%- include prevnext-navigation.html -%}
-{%- else -%}
-  {%- if page.order -%}
-    {%- include prevnext-order.html -%}
-  {%- endif -%}
-{%- endif -%}
+
+    {% if page.disclaimer %}
+    <div>
+      {{ page.disclaimer }}
+    </div>
+    {% endif %}
+
+    {%- if page.navigation -%}
+      {%- include prevnext-navigation.html -%}
+    {%- else -%}
+      {%- if page.order -%}
+        {%- include prevnext-order.html -%}
+      {%- endif -%}
+    {%- endif -%}
 
     {% include_cached backtotop.html lang=page.lang %}
   </main>
