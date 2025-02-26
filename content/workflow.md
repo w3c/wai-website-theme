@@ -34,17 +34,14 @@ The workflow described here enables parts of the WAI website to be developed ind
   * Netlify previews are available for all pull requests.
   * Editors and/or project managers ensure [early coordination on user interface, shared component, and content updates](#coop), per below.
 * When the editor wants updates published:
-  * If other than a simple content update, coordinate with Rémi and Shawn **at least the week before**.<br>If a simple content update, then **by Monday midnight US Eastern time** is OK.
-  * Create a single pull request to the "publication" branch. How to and details in [Creating a pull request to the publication branch](#pr) below.
+  * If other than a simple content update, coordinate with Rémi and Shawn **at least the week before** the expected publication.
+  * Create a single pull request to the `publication` branch. How to and details in [Creating a pull request to the publication branch](#pr) below.
     * Include a brief summary of the changes. **Explain everything that the website manager and/or technical lead needs to particularly be aware of.**
     * Include a link to the Task Force and/or Working Group approval to publish.
     * Include details on any shared components or other things that need updating outside this resource repo. For example, Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
-    * <s>Add a link to the pull request in the [Publication Schedule](https://www.w3.org/wiki/WAI_Website_Publication_Schedule)</s>
-    * <em>New:</em> Assign to: remibetin.
-    * <em>New:</em> shawna_slh will be automatically added as reviewer. Please make sure Shawn acknowledges the request, by whatever means: email, IRC, Slack, during a team meeting, etc.
-* WAI website updates are usually published/deployed on Tuesdays about 14:00 UTC. Deploys on other days can be arranged ahead of time. Note that the site manager or maintainers will also likely deploy the site at other times, without prior notice.
+    * Assign to: remibetin.
+* WAI website updates are regularly published/deployed, without prior notice. Deploys at specific dates can be arranged ahead of time.
 * When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
-
 
 ## Coordinating User Interface, Shared Component, and Content Updates {#coop}
 
@@ -60,7 +57,7 @@ The workflow described here enables parts of the WAI website to be developed ind
 
 Publication branches are protected, and editable only by W3C staff. All updates to appear in the WAI website are on this branch and will be merged by the site manager, technical lead, or maintainers &mdash; currently Shawn and Rémi. As backup, any W3C staff (as W3C organization administrators) can edit or merge into the publication branch. Resource editors and other non-W3C-team have maximum repository access privileges "write".
 
-Pull requests targeting the publication branch must be approved by Shawn before merging. A ruleset enforces this requirement.
+Pull requests targeting the publication branch must be approved by Rémi before merging, who will coordinate with Shawn and other Team members as appropriate. A ruleset enforces this requirement.
 
 Resource editors provide updates in a single pull request to the publication branch. If there are multiple updates, they can be provided in the default branch (usually main or master), with a single pull request for that branch to be merged into the publication branch.
 
