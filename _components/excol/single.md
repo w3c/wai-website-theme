@@ -1,13 +1,7 @@
 ---
 title: "Expand/Collapse: Single"
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
-footer: > # Text in footer in HTML
+footer: >
    This is the text in the footer
 ---
 
@@ -21,7 +15,7 @@ Expand/collapses, or disclosures, are used to show and or hide content condition
 {% include box.html type="end" %}
 {:/}
 
-## Code 
+## Code
 
 Standard expand collapse:
 

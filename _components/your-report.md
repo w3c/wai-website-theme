@@ -1,20 +1,14 @@
 ---
 title: "Your Report"
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
 inline_css: |
 ---
 
-The Your Report box gives users of accessibility reporting applications an overview of how far along they are in their current process. 
+The Your Report box gives users of accessibility reporting applications an overview of how far along they are in their current process.
 
 ## Used by
 
-This component is used by: 
+This component is used by:
 
 * [ATAG Report Tool](https://w3.org/WAI/atag/report-tool)
 
@@ -58,7 +52,7 @@ Add some JavaScript to make the show/hide button do this:
   heading_before="Report for"
   heading="GreatCMS"
   expanded="false"
-%} 
+%}
 
 ### Expanded
 
@@ -67,5 +61,5 @@ Add some JavaScript to make the show/hide button do this:
   heading_before="Report for"
   heading="GreatCMS"
   expanded="true"
-%} 
+%}
 

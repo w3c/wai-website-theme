@@ -1,13 +1,7 @@
 ---
 title: "Expand/Collapse: Examples"
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
-footer: > # Text in footer in HTML
+footer: >
    This is the text in the footer
 ---
 
@@ -41,4 +35,4 @@ Soome of these may be old, and there are better options. Please check with Shawn
    * [WCAG Quick Ref](https://www.w3.org/WAI/WCAG21/quickref/)
       * top left under h1: > Show About & How to Use / v Hide About & How to Use
 	  * top of left column:  < Hide / > Show Sidebar
-   
+

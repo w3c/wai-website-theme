@@ -1,13 +1,7 @@
 ---
 title: "Document Notes: Archived"
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
-footer: > # Text in footer in HTML
+footer: >
    This is the text in the footer
 doc-note-type: archived
 doc-note-message-md: This is the **message** for this document.
