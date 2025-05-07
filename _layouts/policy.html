@@ -46,11 +46,11 @@
     <p><strong>Last Updated</strong>: {{page.last_updated | date: "%-d %B %Y" }}{%if page.updatemsg%} – {{page.updatemsg}}{%endif%}</p>
     {% include box.html type="start" title="Page Contents" %}
     <ul>
-      {% for policy in page.policies %}
-      {% for title in policy.title limit: 1 %}
+      {% for p in page.policies %}
+      {% for title in p.title limit: 1 %}
       {% assign title-slug = title[1] | slugify %}
       {% endfor %}
-      <li><a href="#{{ title-slug }}">{% include multilang-policy-title.html title=policy.title %}</a></li>
+      <li><a href="#{{ title-slug }}">{% include multilang-policy-title.html title=p.title %}</a></li>
       {% endfor %}
     </ul>
     {% include box.html type="end" %}
