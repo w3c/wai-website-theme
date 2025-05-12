@@ -44,7 +44,7 @@
   <main id="main"{% if page.lang %} lang="{{page.lang}}"{% endif %}>
     <h1 class="post-title">{% include multilang-title.html title=page.country %}</h1>
     <p><strong>Last Updated</strong>: {{page.last_updated | date: "%-d %B %Y" }}{%if page.updatemsg%} – {{page.updatemsg}}{%endif%}</p>
-    {% include box.html type="start" title="Page Contents" %}
+    {% include toc.html type="start" title="Page Contents" %}
     <ul>
       {% for p in page.policies %}
       {% for title in p.title limit: 1 %}
@@ -53,7 +53,7 @@
       <li><a href="#{{ policy-slug }}">{% include multilang-policy-title.html title=p.title %}</a></li>
       {% endfor %}
     </ul>
-    {% include box.html type="end" %}
+    {% include toc.html type="end" %}
     {% if page.relatedpages %}{% for r in page.relatedpages %}<p>Related page: <a href="{{r.url}}">{{r.title}}</a></p>{% endfor %}{% endif %}
     {% for p in page.policies %}
       {% for title in p.title limit: 1 %}
