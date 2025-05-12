@@ -64,7 +64,7 @@
       </h2>
       <div>{% assign urlsize = p.url | size %}
         <h3 style="margin-top:10px;">Official law/policy page{% if urlsize > 1 %}s{% endif %}</h3>
-        {% include multilang-list-policy-links.html title=p.title url=p.url external="true" wrap="h2" id=policy-slug class="policy-heading" %}
+        {% include multilang-list-policy-links.html title=p.title url=p.url external="true" wrap="h2" class="policy-heading" %}
         <h3>Details</h3>
         <ul>
           <li>Date enacted: {{p.enactdate}}</li>
