@@ -3,7 +3,7 @@
 {% if page.wcag_success_criteria %}
   <p><strong>Success Criteria:</strong></p>
   <ul>
-    {%- for sc in site.data.wcag -%}
+    {%- for sc in site.data.wcag-legacy -%}
     {%- if page.wcag_success_criteria contains sc.key -%}<li><a href="https://www.w3.org/WAI/WCAG21/quickref/#qr-{{sc.slug}}"><strong>{{sc.key}}</strong> {{sc.title}}:</a> {{sc.desc}} (Level&nbsp;{{sc.level}})</li>{%- endif -%}
     {%- endfor -%}
   </ul>
@@ -11,7 +11,7 @@
 {% if page.wcag_techniques %}
   <p><strong>Techniques:</strong></p>
   <ul>
-    {%- for tech in site.data.techniques -%}
+    {%- for tech in site.data.techniques-legacy -%}
     {%- if page.wcag_techniques contains tech.key -%}<li><a href="https://www.w3.org/TR/WCAG20-TECHS/{{tech.key}}">{{tech.key}}: {{tech.desc}}</a></li>{%- endif -%}
     {%- endfor -%}
   </ul>
