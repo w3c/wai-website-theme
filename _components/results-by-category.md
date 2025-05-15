@@ -1,12 +1,6 @@
 ---
 title: "Results by category"
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
 inline_css: |
 ---
 
@@ -14,7 +8,7 @@ This component displays the results of a web accessibility report by category. I
 
 ## Used by
 
-This component is used by: 
+This component is used by:
 
 * [ATAG Report Tool](https://w3.org/WAI/atag/report-tool)
 
@@ -28,7 +22,7 @@ This component is used by:
 
 ### Making it work
 
-The data in this component is hardcoded, as it depends on the usage how best to implement. 
+The data in this component is hardcoded, as it depends on the usage how best to implement.
 
 When implementing this in an application, you'll have to create a component that can be passed the numbers or results for each result category.
 
