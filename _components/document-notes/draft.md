@@ -1,8 +1,6 @@
 ---
 title: "Document Notes: Draft"
 lang: en
-footer: >
-   This is the text in the footer
 doc-note-type: draft
 doc-note-message-md: This is the **message** for this document.
 ---

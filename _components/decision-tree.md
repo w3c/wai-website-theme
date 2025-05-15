@@ -1,8 +1,6 @@
 ---
 title: Decision Tree
 lang: en
-footer: >
-   This is the text in the footer
 ---
 
 <ul class="decision-tree">

@@ -1,8 +1,6 @@
 ---
 title: "Document Notes: Deprecated"
 lang: en
-footer: >
-   This is the text in the footer
 doc-note-type: deprecated
 doc-note-message-md: This is the **message** for this document.
 ---

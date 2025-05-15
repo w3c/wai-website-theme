@@ -1,8 +1,6 @@
 ---
 title: Boxes
 lang: en
-footer: >
-   This is the text in the footer
 variants:
 - name: Default Box
   context:

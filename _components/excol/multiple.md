@@ -1,8 +1,6 @@
 ---
 title: "Expand/Collapse: Multiple"
 lang: en
-footer: >
-   This is the text in the footer
 ---
 
 {::nomarkdown}
