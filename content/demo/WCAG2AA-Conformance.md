@@ -10,7 +10,7 @@ github:
 layout: minimal
 class: tight-page
 feedbackmail: wai@w3.org
-footer: > # Text in footer in HTML
+footer: >
   <p><strong>Date:</strong> Updated 13 July 2020.</p>
 ---
 
@@ -32,4 +32,4 @@ footer: > # Text in footer in HTML
     <li><strong><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow">Web Content Accessibility Guidelines (WCAG) Overview</a></strong></li>
   </ul>
   <p><em>(Content providers: see also <a href="https://www.w3.org/WAI/standards-guidelines/wcag/conformance-logos" rel="nofollow">Adding WCAG Conformance Logos</a>.)</em></p>
-  
+
