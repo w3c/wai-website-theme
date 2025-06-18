@@ -3,7 +3,6 @@ title: "Draft Banner"
 lang: en
 redirect_from:
   - /components/publication-warning/
-inline_css: |
 ---
 
 This is the publication warning that appears on the top of unpublished documents:

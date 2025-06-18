@@ -1,0 +1,12 @@
+<section class="default-grid info" aria-label="Notice">
+  <p class="inner">
+    {%- if include.icon -%}
+      {%- include_cached icon.html name="info" -%}
+    {%- endif -%}
+    {%- if include.message -%}
+      {{ include.message }}
+    {%- else -%}
+      {%- include_cached t.html t='This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://w3.org/WAI/">w3.org/WAI/</a>.' lang=include.lang -%}
+    {%- endif -%}
+  </p>
+</section>
