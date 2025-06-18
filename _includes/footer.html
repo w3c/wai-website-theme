@@ -219,10 +219,7 @@
   </div>
 </footer>
 {%- unless site.published == true -%}
-<section class="default-grid info" tabindex="0">
-  <p class="inner">{% if site.warning_icon %}{% include_cached icon.html name="info" %} {% endif %}{% if site.warning_message %}{{site.warning_message}}{% else %}This is an unpublished draft preview that might include content that is not yet approved. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.{% endif %}
-  </p>
-</section>
+{%- include_cached draft-banner.html lang=pagelang message=page.warning_message icon=page.warning_icon -%}
 {%- endunless -%}
 <!-- Details4Everybody -->
 <script src="{{ '/assets/scripts/details4everybody.js' | append: timestamp | relative_url }}"></script>
