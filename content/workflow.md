@@ -1,6 +1,7 @@
 ---
 title: "Updating WAI Website Resources"
 permalink: /workflow/
+last_updated: 2025-07-11
 lang: en
 github:
   repository: w3c/wai-website-theme/
@@ -23,48 +24,36 @@ This section describes how content authors work with the website team to publish
 
 The workflow described here enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables publication on the WAI website updates to be coordinated by the website manager.
 
-* One branch in the repository is designated as the "**publication**" branch. Publication branches are [protected](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) so that all changes to the WAI website are merged only by the site manager, technical lead, or maintainers &mdash; currently Shawn and Rémi.
+* One branch in the repository is designated as the "**publication**" branch.
+* During development, editors use the default branch (usually `draft` or `main`) or other branches, not the publication branch.
+* Content updates must be approved by the Working Group.
+* User interface ideas and shared components updates must be coordinated early with the WAI team.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.
-* Scheduled updates are usually published/deployed on Tuesdays.
+* Updates are published without prior notice. Scheduled updates can be arranged ahead of time.
 
 ## Workflow
 
 * Each Working Group and editorial team defines their own workflow for drafting, reviewing, approving, and submitting updates.
-  * Pull request used during development are made to the default branch or other branches, NOT the publication branch.
-  * Netlify previews are available for all pull requests.
-  * Editors and/or project managers ensure [early coordination on user interface, shared component, and content updates](#coop), per below.
-* When the editor wants updates published:
-  * If other than a simple content update, coordinate with Rémi and Shawn **at least the week before** the expected publication.
-  * Create a single pull request to the `publication` branch. How to and details in [Creating a pull request to the publication branch](#pr) below.
-    * Include a brief summary of the changes. **Explain everything that the website manager and/or technical lead needs to particularly be aware of.**
-    * Include a link to the Task Force and/or Working Group approval to publish.
-    * Include details on any shared components or other things that need updating outside this resource repo. For example, Liquid variables provided in the resource's `_config.yml` file that need to be copied across to the wai-website repo.
-    * Assign to: remibetin.
-* WAI website updates are regularly published/deployed, without prior notice. Deploys at specific dates can be arranged ahead of time.
-* When the updates are published, the publisher does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
+* During development, Editors edit the default branch (usually `main`) or other branches, NOT the publication branch. Netlify previews are available for all pull requests.
+* Before submitting a pull request to the publication branch, Editors must ensure that everything is indeed ready to publish:
+  * Updates to user interface and shared components [have been coordinated early with the WAI team](#coop)
+  * Content updates have been approved by the relevant Working Group [^1]
+  * Content has been tested and carefully quality checked. Website publishers are not able to do thorough reviews before publication
+* When updates are ready to publish:
+  * If other than a simple content update, Editors coordinate with Rémi and Shawn **at least the week before** the expected publication.
+  * Editors create a single pull request to the `publication` branch. See [Creating a pull request to the publication branch](#pr):
+    * Include a brief summary of the changes. Explain everything that the website manager and/or technical lead need to particularly be aware of
+    * Include a link to the Working Group/Task force approval to publish
+    * Include details on any shared components or other things that need updating outside this resource repository. For example, updates to the `_config.yml` file that need to be copied across to the `wai-website` repository.
+    * Assign the pull request to: remibetin.
+* The WAI website technical lead (currently Rémi) regularly publish updates, without prior notice. Publications at specific dates can be arranged ahead of time.
+* After publication, Rémi does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 
-## Coordinating User Interface, Shared Component, and Content Updates {#coop}
+[^1]: In some cases, the Working Group has provided blanket approval for some types of updates, such as for some aspects of ACT Rules.
 
-**Editors are responsible for ensuring that everything submitted for publication is indeed ready to publish** &mdash; that it is approved, tested, and carefully quality checked. Website publishers are not able to do thorough reviews before publication.
+## Coordinating User Interface and Shared Component Updates {#coop}
 
-* All user interface ideas must be coordinated with the WAI website manager (currently Shawn) &mdash; ideally from the start of the idea, before people get attached to a particular option.
-
-* All updates to shared components or other beyond the individual repo &mdash; to the website theme, config files, navigation.yml, etc. &mdash; must be coordinated with the WAI website technical lead (currently Rémi) before a pull request is submitted to the publication branch.
-
-* All content updates must be approved by the Working Group that owns the repo content. In some cases, the Working Group has provided blanket approval for some types of updates, such as for some aspects of ACT Rules.
-
-## Details
-
-Publication branches are protected, and editable only by W3C staff. All updates to appear in the WAI website are on this branch and will be merged by the site manager, technical lead, or maintainers &mdash; currently Shawn and Rémi. As backup, any W3C staff (as W3C organization administrators) can edit or merge into the publication branch. Resource editors and other non-W3C-team have maximum repository access privileges "write".
-
-Pull requests targeting the publication branch must be approved by Rémi before merging, who will coordinate with Shawn and other Team members as appropriate. A ruleset enforces this requirement.
-
-Resource editors provide updates in a single pull request to the publication branch. If there are multiple updates, they can be provided in the default branch (usually main or master), with a single pull request for that branch to be merged into the publication branch.
-
-Only highly-trusted individuals should have write access to the default branch. Before updates are made in the default branch, content updates have been approved by the Working Group, user interface updates approved by the website manager, and shared component updates approved by the technical lead.
-
-Editors work with the WAI site manager and technical lead to coordinate on considerations for:
-
+Editors coordinate with the WAI website manager and technical lead on considerations for:
 * fit with existing content
 * editorial style
 * user experience
@@ -74,18 +63,29 @@ Editors work with the WAI site manager and technical lead to coordinate on consi
 * information architecture
 * technical integration
 
+In particular:
+* **User interface ideas must be coordinated with the WAI website manager (currently Shawn) before a pull request is merged to the default branch**. Ideally, this happens from the start of the idea, before people get attached to a particular option. The related pull requests must be reviewed by the WAI website technical lead (currently Rémi) before they are merged to the default branch.
+
+* **Shared component updates must be coordinated with the WAI website technical lead (currently Rémi) before a pull request is submitted to the publication branch** . This includes theme, configuration files, navigation.yml and other updates beyond the individual repo.
+
+## Details
+
+Publication branches are protected, and editable only by W3C staff.
+
+Pull requests targeting the publication branch must be approved by the WAI website technical lead (currently Rémi) before merging, who will coordinate with Shawn and other Team members as appropriate. A ruleset enforces this requirement.
+
+Pull request are merged to the publication branch by Rémi or Shawn. As backup, any W3C staff (as W3C organization administrators) can merge into the publication branch.
+
+Resource editors and other non-W3C-team have maximum repository access privileges "write". Only highly-trusted individuals should have write access to the default branch.
+
 ## Site-Wide Components {#components}
 
 WAI website components:
 
-* [https://github.com/w3c/wai-website-theme/](https://github.com/w3c/wai-website-theme/) - Jekyll theme - includes components and layouts as well as docs
-* [https://wai-website-theme.netlify.app/components/](https://wai-website-theme.netlify.app/components/) - descriptions of design components
-* [https://github.com/w3c/wai-website-theme/blob/main/_layouts/standalone_resource.html](https://github.com/w3c/wai-website-theme/blob/main/_layouts/standalone_resource.html) - layout for new minimal resources - used for report tools, supplemental guidance, ACT Rules, ARIA APG
-  * as described in [https://github.com/w3c/wai-minimal-header-design/](https://github.com/w3c/wai-minimal-header-design/)
-
-Currently, issues related to these components are in different places. We are in the process of moving all issues to: [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) so they are in one place. We will use labels to group them.
-
-Please put any new issues in [https://github.com/w3c/wai-website/issues/](https://github.com/w3c/wai-website/issues/) &mdash; and feel free to move existing issues there, too.
+* [WAI Website Theme](https://github.com/w3c/wai-website-theme/) – includes components and layouts as well as docs
+* [Design Components](https://wai-website-theme.netlify.app/components/) - descriptions of design components
+* [Standalone resource layout](https://github.com/w3c/wai-website-theme/blob/main/_layouts/standalone_resource.html) - layout for new minimal resources - used for report tools, supplemental guidance, ACT Rules, ARIA APG
+  * as described in [wai-minimal-header-design repository](https://github.com/w3c/wai-minimal-header-design/)
 
 ## Creating a pull request to the publication branch {#pr}
 
