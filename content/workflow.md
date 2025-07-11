@@ -46,7 +46,7 @@ The workflow described here enables parts of the WAI website to be developed ind
     * Include a link to the Working Group/Task force approval to publish
     * Include details on any shared components or other things that need updating outside this resource repository. For example, updates to the `_config.yml` file that need to be copied across to the `wai-website` repository.
     * Assign the pull request to: remibetin.
-* The WAI website technical lead (currently Rémi) regularly publish updates, without prior notice. Publications at specific dates can be arranged ahead of time.
+* The WAI website technical lead (currently Rémi) regularly publishes updates, without prior notice. Publications at specific dates can be arranged ahead of time.
 * After publication, Rémi does an initial check that things worked, and adds a comment in the pull request so the editors can do additional checks.
 
 [^1]: In some cases, the Working Group has provided blanket approval for some types of updates, such as for some aspects of ACT Rules.
