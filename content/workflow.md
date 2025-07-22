@@ -1,7 +1,7 @@
 ---
 title: "Updating WAI Website Resources"
 permalink: /workflow/
-last_updated: 2025-07-11
+last_updated: 2025-07-22
 lang: en
 github:
   repository: w3c/wai-website-theme/
