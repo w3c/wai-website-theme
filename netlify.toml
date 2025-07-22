@@ -1,5 +1,15 @@
+[context.production]
+# Applies to the live environment, generated from the `main` branch.
+command = "git submodule update --init --remote && bundle exec jekyll build --profile --trace --config '_config.yml,_config_prod.yml'"
+# with debugging: command = "git submodule update --init --remote && bundle exec jekyll build --verbose --trace --config '_config.yml,_config_prod.yml'"
+
+[context.deploy-preview]
+# Applies to deploy previews, generated from pull requests.
+# Includes a draft banner
+command = "git submodule update --init --remote && bundle exec jekyll build --profile --trace --config '_config.yml,_config_staging.yml'"
+# with debugging: command = "git submodule update --init --remote && bundle exec jekyll build --verbose --trace --config '_config.yml,_config_staging.yml'"
+
 [build]
-command = "git submodule update --init --remote && bundle exec jekyll build --config '_config.yml,_config_staging.yml'"
 publish = "_site"
 
 [build.environment]
