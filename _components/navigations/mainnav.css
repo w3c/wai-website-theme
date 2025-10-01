@@ -83,8 +83,3 @@
     display: none;
   }
 }
-.page-home #openmenu {
-  @media (--medium) {
-    display: none;
-  }
-}
