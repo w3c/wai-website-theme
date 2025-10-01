@@ -4,7 +4,7 @@
   display: none;
   font-size: .85em;
   &.open {display: block;}
-  @media (--medium) {
+  @media (--large) {
     display: block;
   }
   @media print {
