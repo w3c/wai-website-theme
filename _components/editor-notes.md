@@ -1,14 +1,6 @@
 ---
 title: "Editor Notes"
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
-footer: > # Text in footer in HTML
-  <p> This is the text in the footer </p>
 inline_css: |
 ---
 
@@ -20,7 +12,7 @@ This snippet uses issue number and repository and allows the editor to leave a n
 
 * Issue = issue number (optional)
 * Repo = repository (optional)
-* Note = editor’s note  
+* Note = editor’s note
 * Status = open/proposed/accepted/(empty for gray text notes)
 
 ## Open

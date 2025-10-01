@@ -1,14 +1,6 @@
 ---
 title: "Video Links"
 lang: en
-# translators: # Uncomment (remove #) for translations, one - name line per translator.
-# - name: Translator 1
-# - name: Translator 2
-# contributors:
-# - name: Contributor 1
-# - name: Contributor 2
-footer: > # Text in footer in HTML
-  <p> This is the text in the footer </p>
 doc-note-type: deprecated
 doc-note-message-md: There is the desire and requirement to use video images much more freely than it is possible with such a rigid template. Therefore the template is deprecated. **Use a normal link and image annotation in Markdown with the new images template (preferred).**
 inline_css: |
