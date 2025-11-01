@@ -23,6 +23,7 @@
   --lt-off-white: #fafafa;
   --pure-white: #ffffff;
   --white-transparent: rgba(255, 255, 255, 0.92);;
+  --link-color: var(--w3c-classic);
   --link-color--hover: var(--w3c-dark-blue);
   --link-color--visited: var(--w3c-purple);
   --footer-grey: #efefef;
