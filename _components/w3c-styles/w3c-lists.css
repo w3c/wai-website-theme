@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #Lists
+\*------------------------------------*/
+
+/**
+Remove bullets, margin and padding from lists with the
+'.clean-list' class/. Note that that this may remove list semantics in some circumstances in
+some WebKit browsers. See https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+If it's important that the number of items in a list is announced, add role="list" to the <ul> / <ol>
+ */
+.clean-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.clean-list li,
+.clean-list ol,
+.clean-list ul {
+  margin: 0;
+  padding: 0;
+}

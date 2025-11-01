@@ -183,8 +183,9 @@ The first section creates an array of page urls that are page urls of this colle
 </nav>
 
 {%- unless page.url == "/" -%}
-<nav{% comment %} style="grid-column: 2/8; display: flex;"{% endcomment %} class="default-grid breadcrumb" aria-label="{% include t.html t="Breadcrumb" lang=page.lang %}" lang="en">
-  <ul style="align-self: center;">
+<nav id="w3c-breadcrumb" class="default-grid" aria-label="{% include t.html t="Breadcrumb" lang=page.lang %}" lang="en">
+  <div class="l-cluster" style="grid-column: 2/10">
+  <ul class="w3c-breadcrumbs clean-list">
     <li><a href="{{ "/" | relative_url }}" lang="en">Home{%comment%}{% include_cached t.html t="Home" lang=pagelang %}{%endcomment%}</a></li>
     {%- unless a_name == "" -%}<li>{% if a_name == '...' %}...{% elsif a_url == enpage.url%}{% include_cached link.html to=a_url text=a_name aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=a_name to=a_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
     {%- unless b_name == "" -%}<li>{% if b_url == enpage.url%}{% include_cached link.html text=b_name to=b_url aria-current="page" lang=page.lang hidelangnotice=true %}{% else %}{% include_cached link.html text=b_name to=b_url lang=page.lang hidelangnotice=true %}{% endif %}</li>{%- endunless -%}
@@ -212,5 +213,6 @@ The first section creates an array of page urls that are page urls of this colle
     {%- endif -%}
     {%- if page.parent and page.parent != "/"-%}<li><a href="{{ page.url | relative_url }}" aria-current="page">{% if page.breadcrumb_title%}{{page.breadcrumb_title}}{% else %}{% if page.nav_title %}{% if breadcumb_page.nav_title == "Overview"%}{{page.title}}{% else%}{{page.nav_title}}{% endif %}{%-else-%}{{page.title}}{% endif %}{% endif %}</a></li>{%- endif -%}
   </ul>
+  </div>
 </nav>
 {%- endunless -%}
