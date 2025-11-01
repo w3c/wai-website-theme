@@ -1,6 +1,7 @@
 :root {
   --w3c-classic: #005A9C;
   --w3c-blue: #003366;
+  --w3c-purple: #75336c;
   --wai-green: #005A6A;
   --off-black: #111111;
   --dk-grey: #3b3b3b;
@@ -21,7 +22,7 @@
   --lt-off-white: #fafafa;
   --pure-white: #ffffff;
   --white-transparent: rgba(255, 255, 255, 0.92);;
-  --visited-link: #660066;
+  --link-color--visited: var(--w3c-purple);
   --footer-grey: #efefef;
 }
 
@@ -47,7 +48,7 @@
     --lt-off-white: #050505;
     --pure-white: #000000;
     --white-transparent: rgba(0, 0, 0, 0.92);
-    --visited-link: #660066;
+    --link-color--visited: var(--w3c-purple);
     --footer-grey: #efefef;
   }
 }

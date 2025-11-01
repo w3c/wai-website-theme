@@ -34,7 +34,7 @@
 }
 
 .pager--item a:visited {
-  color: var(--visited-link);
+  color: var(--link-color--visited);
 }
 
 .pager--item a:hover,
