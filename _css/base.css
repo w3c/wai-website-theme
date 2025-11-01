@@ -161,7 +161,7 @@ a {
         color: var(--wai-green);
     }
     &:visited {
-        color: var(--visited-link);
+      color: var(--link-color--visited);
     }
     &.stealthy-link {
         text-decoration: none;
