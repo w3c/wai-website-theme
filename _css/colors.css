@@ -1,6 +1,7 @@
 :root {
   --w3c-classic: #005A9C;
   --w3c-blue: #003366;
+  --w3c-dark-blue: #002a56;
   --w3c-purple: #75336c;
   --wai-green: #005A6A;
   --off-black: #111111;
@@ -22,6 +23,7 @@
   --lt-off-white: #fafafa;
   --pure-white: #ffffff;
   --white-transparent: rgba(255, 255, 255, 0.92);;
+  --link-color--hover: var(--w3c-dark-blue);
   --link-color--visited: var(--w3c-purple);
   --footer-grey: #efefef;
 }

@@ -157,11 +157,11 @@ code {
 
 a {
     color: var(--w3c-blue);
-    &:--hovcus {
-        color: var(--wai-green);
-    }
     &:visited {
       color: var(--link-color--visited);
+    }
+    &:--hovcus {
+        color: var(--link-color--hover);
     }
     &.stealthy-link {
         text-decoration: none;
