@@ -8,11 +8,11 @@
 	padding-bottom: 0.9375rem;
 	padding-top: 0.625rem;
 
-	.l-cluster > * {
+	.w3c-l-cluster > * {
 		margin: 0 -0.6875rem;
 	}
 
-	.l-cluster.l-cluster > * > * {
+	.w3c-l-cluster.w3c-l-cluster > * > * {
     margin: 0 0 0 0.6875rem;
 		padding-right: 1em;
 		position: relative;
@@ -20,7 +20,7 @@
 }
 
 [dir="rtl"] {
-	#w3c-breadcrumb .l-cluster.l-cluster > * > * {
+	#w3c-breadcrumb .w3c-l-cluster.w3c-l-cluster > * > * {
     margin: 0 0.6875rem 0 0;
 		padding-left: 1em;
 		padding-right: 0;
@@ -30,7 +30,7 @@
 .w3c-breadcrumbs a {
   font-size: 0.9375rem;
   line-height: 1.5;
-	color: var(--w3c-dark-blue); /* WAI-specific */
+  color: var(--w3c-off-black);
 	display: block;
   padding-bottom: 0.6875rem;
   padding-top: 0.6875rem;
@@ -38,7 +38,7 @@
 	&:visited,
 	&:hover,
 	&:active {
-		color: var(--w3c-dark-blue); /* WAI-specific */
+		color: var(--w3c-off-black);
 	}
 }
 
@@ -48,7 +48,7 @@
 
 	&:hover,
 	&:focus {
-		outline-color: var(--w3c-dark-blue); /* WAI-specific */
+		outline-color: var(--w3c-off-black);
 	}
 }
 
@@ -57,7 +57,6 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 */
 .w3c-breadcrumbs li:not(:last-child) {
 	&::after {
-    box-sizing: border-box; /* WAI-specific */
 		border-style: solid;
 		border-width: 0.1em 0.1em 0 0;
 		content: '';
@@ -74,7 +73,6 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 [dir="rtl"] {
 	.w3c-breadcrumbs li:not(:last-child) {
 		&::after {
-      box-sizing: border-box;
 			border-width: 0 0 0.1em 0.1em;
 			left: 0.1em;
 			right: auto;
