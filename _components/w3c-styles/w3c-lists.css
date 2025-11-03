@@ -1,5 +1,7 @@
 /*------------------------------------*\
     #Lists
+
+    See: https://design-system.w3.org/styles/lists.html
 \*------------------------------------*/
 
 /**
@@ -8,14 +10,14 @@ Remove bullets, margin and padding from lists with the
 some WebKit browsers. See https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
 If it's important that the number of items in a list is announced, add role="list" to the <ul> / <ol>
  */
-.clean-list {
+.w3c-clean-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.clean-list li,
-.clean-list ol,
-.clean-list ul {
+.w3c-clean-list li,
+.w3c-clean-list ol,
+.w3c-clean-list ul {
   margin: 0;
   padding: 0;
 }
