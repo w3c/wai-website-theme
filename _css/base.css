@@ -156,12 +156,12 @@ code {
 }
 
 a {
-    color: var(--link-color);
+    color: var(--w3c-link-color);
     &:visited {
-      color: var(--link-color--visited);
+      color: var(--w3c-link-color--visited);
     }
     &:--hovcus {
-        color: var(--link-color--hover);
+        color: var(--w3c-link-color--hover);
     }
     &.stealthy-link {
         text-decoration: none;
