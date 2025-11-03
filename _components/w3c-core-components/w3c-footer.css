@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    #Global footer
+\*------------------------------------*/
+
+.w3c-global-footer {
+	border-top: solid 1px var(--w3c-border-color);
+	grid-row-start: 2; /* Needed for sticky footer */
+	grid-row-end: 3; /* Needed for sticky footer */
+	padding: 1.25rem 0 1.5625rem;
+
+  .w3c-l-center {
+    @include stack(1rem);
+  }
+
+  a,
+	.w3c-copyright {
+    font-size: 0.875rem;
+    line-height: calc(20 / 14);
+	}
+
+	.w3c-copyright {
+		margin-bottom: 0;
+	}
+
+	a {
+		color: var(--w3c-off-black);
+
+		&:visited,
+		&:hover,
+		&:active {
+			color: var(--w3c-off-black);
+		}
+	}
+}
+
+.w3c-global-footer__links {
+	display: flex;
+	flex-wrap: wrap;
+
+	> ul {
+		display: flex;
+		flex-wrap: wrap;
+
+    @media (--large) {
+      margin-inline-start: auto;
+    }
+
+	}
+
+	.w3c-l-cluster > * {
+		margin: 0 -0.625rem;
+	}
+
+	.w3c-l-cluster.w3c-l-cluster > * > * {
+		margin: 0 0.625rem;
+	}
+
+	a:not([class]) {
+		display: block;
+		padding-bottom: 0.75rem;
+		padding-top: 0.75rem;
+	}
+
+	.w3c-with-icon--larger {
+		padding: 0.75rem;
+
+		img {
+			height: 1.25rem;
+			width: 1.25rem;
+		}
+
+		&:focus {
+			background-color: var(--w3c-focus-color);
+			background-image: linear-gradient(to top, var(--w3c-black) 3px, var(--w3c-focus-color) 3px, var(--w3c-focus-color));
+		}
+	}
+}

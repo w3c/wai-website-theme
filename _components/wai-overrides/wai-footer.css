@@ -1,0 +1,66 @@
+/*
+  Add some space before the global footer when there is no page footer
+*/
+
+.wai-global-footer {
+  margin-top: 2rem;
+}
+
+.page-footer + .wai-global-footer {
+  margin-top: 0;
+}
+
+/*
+  Use W3C focus style in the footer
+*/
+
+.wai-global-footer {
+  a:not([class]):focus,
+  a.with-icon--before:focus,
+  a.with-icon--after:focus {
+    background-color: #f9dc4a;
+    background-image: linear-gradient(to top, #000 3px, #f9dc4a 3px, #f9dc4a);
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:focus:not(.button) {
+    outline: none;
+  }
+}
+
+/*
+  Add a WAI pre footer to the global footer
+*/
+
+.wai-global-footer__pre-footer {
+    margin-block-end: 2rem;
+
+  .largelink {
+    color: var(--w3c-dark-blue);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    @media print {
+      color: var(--w3c-off-black);
+      font-size: 12pt;
+    }
+    &:--hovcus {
+      text-decoration: underline;
+    }
+  }
+
+  .button {
+    color: var(--w3c-off-white);
+
+    &:not(:--hovcus) {
+      background-color: var(--w3c-w3c-blue);
+      border-color: var(--w3c-w3c-blue);
+    }
+
+    &:visited, &:--hovcus {
+      color: var(--w3c-off-white);
+    }
+  }
+
+}

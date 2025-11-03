@@ -187,35 +187,58 @@
   {% endif %}
 {%- endif -%}
 
-<footer class="site-footer grid-4q" aria-label="Site">
-  <div class="q1-start q3-end about">
-    <div>
-      <p><a class="largelink" href="https://www.w3.org/WAI/" lang="en" dir="auto" translate="no">W3C Web Accessibility Initiative (WAI)</a></p>
-      <p>{% include t.html t="Strategies, standards, and supporting resources to make the Web accessible to people with disabilities." %}</p>
+<footer class="w3c-global-footer wai-global-footer default-grid">
+  <div class="inner">
+    <div class="wai-global-footer__pre-footer">
+      <p><a class="largelink" href="https://www.w3.org/WAI/" style="color: var(--w3c-dark-blue)" lang="en" dir="auto" translate="no">W3C Web Accessibility Initiative (WAI)</a></p>
+      <p>Strategies, standards, and supporting resources to make the Web accessible to people with disabilities.</p>
+      <div class="w3c-l-cluster">
+        <ul class="w3c-clean-list" style="align-items: center">
+          <li>
+            <div class="w3c-with-icon--before w3c-with-icon--larger">
+              <img class="w3c-icon w3c-icon--larger" src="https://w3.org/assets/website-2021/svg/rss.svg" width="30" height="30" alt="" aria-hidden="true">
+              <a href="/news/feed/">Subscribe to our news feed</a>
+            </div>
+          <li><a class="button" href="{{ '/news/subscribe' | relative_url }}">Get News in Email</a>
+          </li>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="social" lang="en" dir="auto" translate="no">
-      <ul>
-        <li><a href="https://w3c.social/@wai">{%include_cached icon.html name="mastodon" %} Mastodon</a></li>
-        <li><a href="https://www.linkedin.com/company/w3c-wai/">{%include_cached icon.html name="linkedin" %} LinkedIn</a></li>
-        <li><a href="https://www.w3.org/WAI/feed.xml">{%include_cached icon.html name="rss" %} Feed</a></li>
-        <li><a href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlists/">{%include_cached icon.html name="youtube" %} YouTube</a></li>
-        <li><a href="https://www.w3.org/WAI/news/subscribe/" class="button">Get News in Email</a></li>
+    <div class="w3c-global-footer__links">
+      <div class="w3c-l-cluster">
+        <ul class="w3c-clean-list" role="list">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/about/contacting/' | relative_url }}">Contact</a></li>
+          <li><a href="{{ '/sitemap/' | relative_url }}">Site Map</a></li>
+          <li><a href="{{ '/about/support/' | relative_url }}">Support WAI</a></li>
+          <li><a href="{{ '/news/' | relative_url }}">News</a></li>
+          <li><a href="{{ '/about/accessibility-statement/' | relative_url }}">Accessibility Statement</a></li>
+          <li><a href="{{ '/translations/' | relative_url }}"> All Translations</a></li>
+          <li><a href="{{ '/roles/' | relative_url }}">Resources for Roles</a></li>
+        </ul>
+      </div>
+      <ul class="w3c-clean-list" role="list">
+        <li><a class="w3c-with-icon--larger" href="https://w3c.social/@wai" hreflang="en">
+          <img class="w3c-icon w3c-icon--larger" src="https://www.w3.org/assets/website-2021/svg/mastodon.svg" width="20" height="20" alt="" aria-hidden="true">
+          <span class="visuallyhidden">WAI on Mastodon</span></a>
+        </li>
+        <li><a class="w3c-with-icon--larger" href="https://www.linkedin.com/company/w3c-wai/" hreflang="en">
+          <img class="w3c-icon w3c-icon--larger" src="{{ '/assets/images/social/linkedin.svg' | relative_url }}" width="20" height="20" alt="" aria-hidden="true">
+          <span class="visuallyhidden">WAI on LinkedIn</span></a>
+        </li>
+        <li><a class="w3c-with-icon--larger" href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlists/" hreflang="en">
+          <img class="w3c-icon w3c-icon--larger" src="{{ '/assets/images/social/youtube.svg' | relative_url }}" width="20" height="20" alt="" aria-hidden="true">
+          <span class="visuallyhidden">WAI on YouTube</span></a>
+        </li>
       </ul>
     </div>
-    <div lang="en" dir="auto" {% if site.data.lang[pagelang].rtl %}style="text-align: right;"{% endif %} translate="no">
-      <p>Copyright © {{ 'now' | date: "%Y" }} World Wide Web Consortium (<a href="https://www.w3.org/">W3C</a><sup>®</sup>). See <a href="{{ "/about/using-wai-material/" | relative_url }}">Permission to Use WAI Material</a>.</p>
-    </div>
-  </div>
-  <div lang="en" dir="auto" {% if site.data.lang[pagelang].rtl %}style="text-align: right;"{% endif %} translate="no" class="q4-start q4-end">
-    <ul style="margin-bottom:0">
-      <li><a href="{{ "/about/support/" | relative_url }}">Sponsors and Funders</a></li>
-      <li><a href="{{ "/about/contacting/" | relative_url }}">Contact WAI</a></li>
-      <li><a href="{{ "/sitemap/" | relative_url }}">Site Map</a></li>
-      <li><a href="{{ "/news/" | relative_url }}">News</a></li>
-      <li><a href="{{ "/about/accessibility-statement/" | relative_url }}">Accessibility Statement</a></li>
-      <li><a href="{{ "/translations/" | relative_url }}"> Translations</a></li>
-      <li><a href="{{ "/roles/" | relative_url }}">Resources for Roles</a></li>
-    </ul>
+    <p class="w3c-copyright">Copyright &copy; {{ 'now' | date: "%Y" }}  <a href="https://www.w3.org/">World Wide Web	Consortium</a>.<br>
+      <abbr title="World Wide Web Consortium">W3C</abbr><sup>&reg;</sup>
+      <a href="https://www.w3.org/policies/#disclaimers">liability</a>,
+      <a href="https://www.w3.org/policies/#trademarks">trademark</a> and
+      <a rel="license" href="https://www.w3.org/copyright/software-license/" title="W3C Software License">permissive license</a>
+      rules apply unless otherwise noted. See <a href="{{ '/about/using-wai-material/' | relative_url }}">Permission to Use WAI Material</a>.</p>
   </div>
 </footer>
 {%- unless site.published == true -%}
