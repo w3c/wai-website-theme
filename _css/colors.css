@@ -1,10 +1,61 @@
+/*------------------------------------*\
+    #Colors
+\*------------------------------------*/
+
 :root {
-  --w3c-classic: #005A9C;
-  --w3c-blue: #003366;
+
+  /* W3C Brand Standards – Primary Brand Colors */
+  --w3c-w3c-blue: #005A9C;
   --w3c-dark-blue: #002a56;
+
+  /* W3C Brand Standards – Accent Colors */
   --w3c-purple: #75336c;
+  --w3c-heather: #635c86;
+  --w3c-ultramarine: #3a84b8;
+  --w3c-powder-blue: #72afd7;
+  --w3c-dark-gray: #545454;
+  --w3c-light-gray: #cac9c9;
+
+  /* W3C Design System – Theme colors */
+  --w3c-black: #000000;
+  --w3c-off-black: var(--w3c-black);
+  --w3c-white: #fff;
+  --w3c-off-white: #fafafa;
+  --w3c-red: #e93737;
+  --w3c-light-red: #ec7070;
+  --w3c-coral: #fc7750;
+  --w3c-light-coral: #fea78d;
+  --w3c-yellow: #f9dc4a;
+  --w3c-deep-green: #0a4343;
+  --w3c-teal-green: #237978;
+  --w3c-aqua: #1bc0d7;
+  --w3c-light-blue: #cbe0fb;
+  --w3c-deep-blue: var(--w3c-dark-blue);
+  --w3c-pink: #ddb0c8;
+  --w3c-light-pink: #eeccdc;
+  --w3c-storm-gray: #545454;
+  --w3c-twiki-gray: var(--w3c-light-gray);
+  --w3c-mist-gray: #f8f8fb;
+
+  /* W3C Design System – Sass variables */
+  --w3c-border-color: var(--w3c-twiki-gray);
+  --w3c-input-border-color: var(--w3c-storm-gray);
+  --w3c-focus-color: var(--w3c-yellow);
+
+  --w3c-link-color: var(--w3c-w3c-blue);
+  --w3c-link-color--visited: var(--w3c-purple);
+  --w3c-link-color--hover: var(--w3c-deep-blue);
+
+  --w3c-success-color: #046704;
+  --w3c-info-color: var(--w3c-deep-blue);
+  --w3c-warning-color: #c28605;
+  --w3c-error-color: #a82615;
+
+  /* WAI Theme Colors */
   --wai-green: #005A6A;
-  --off-black: #111111;
+  --w3c-blue: #003366;
+  --w3c-classic: var(--w3c-w3c-blue);
+  --off-black: var(--w3c-off-black);
   --dk-grey: #3b3b3b;
   --faded-red: #c0272d;
   --red-subtle: #f1d0e1;
@@ -20,12 +71,9 @@
   --trans-line-grey: rgba(221, 221, 221, 0.32);
   --off-white: #f2f2f2;
   --body-bg: #FAFAFC;
-  --lt-off-white: #fafafa;
+  --lt-off-white: var(--w3c-off-white);
   --pure-white: #ffffff;
   --white-transparent: rgba(255, 255, 255, 0.92);;
-  --link-color: var(--w3c-classic);
-  --link-color--hover: var(--w3c-dark-blue);
-  --link-color--visited: var(--w3c-purple);
   --footer-grey: #efefef;
 }
 
