@@ -16,14 +16,7 @@
     width:  65px;
     height: 65px;
     margin-inline-end: 1rem;
-    &.mwa-icon-book {
-      height: 49px;
-      padding-block-start: 16px;
-    }
-    &.mwa-icon-computer {
-      height: 57px;
-      padding-block-start: 8px;
-    }
+    fill: var(--w3c-dark-blue);
   }
   & .title {
     display: block;
