@@ -1,5 +1,6 @@
 /*------------------------------------*\
     #Global footer
+    See: https://design-system.w3.org/components/footer.html
 \*------------------------------------*/
 
 .w3c-global-footer {
@@ -8,9 +9,11 @@
 	grid-row-end: 3; /* Needed for sticky footer */
 	padding: 1.25rem 0 1.5625rem;
 
+  /*
   .w3c-l-center {
     @include stack(1rem);
   }
+  */
 
   a,
 	.w3c-copyright {
