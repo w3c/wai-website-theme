@@ -2,7 +2,7 @@
   Use W3C Dark Blue for the breadcrumbs until WAI properly incorporates black in the theme.
 */
 
-.wai-breadcrumbs--blue a {
+.wai-breadcrumbs a {
   color: var(--w3c-dark-blue);
 
   &:visited,
@@ -10,11 +10,25 @@
   &:active {
     color: var(--w3c-dark-blue);
   }
+
+  &:focus {
+    background-color: #f9dc4a;
+    background-image: linear-gradient(to top, #000 3px, #f9dc4a 3px, #f9dc4a);
+    color: #000;
+    text-decoration: none;
+  }
 }
 
-.wai-breadcrumbs--blue [aria-current] {
+.wai-breadcrumbs :not([aria-current]) {
+  &:focus {
+    outline: none;
+  }
+}
+
+.wai-breadcrumbs [aria-current] {
   &:hover,
   &:focus {
+    outline-offset: -2px;
     outline-color: var(--w3c-dark-blue);
   }
 }
@@ -23,14 +37,14 @@
   Make sure to use border-box box-sizing to get the intended chevron size
 */
 
-.wai-breadcrumbs--box-border li:not(:last-child) {
+.wai-breadcrumbs li:not(:last-child) {
   &::after {
     box-sizing: border-box;
   }
 }
 
 [dir="rtl"] {
-  .wai-breadcrumbs--box-border li:not(:last-child) {
+  .wai-breadcrumbs li:not(:last-child) {
     &::after {
       box-sizing: border-box;
     }
