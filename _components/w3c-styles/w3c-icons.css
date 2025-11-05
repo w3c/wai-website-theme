@@ -57,10 +57,12 @@ Pay attention to whether the icon is before the text or after.
   .w3c-icon {
     margin-right: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
 
+    /*
     @supports (margin-inline-end: 1em) {
       margin-right: 0;
-      margin-inline-end: 0.5rem; /* 2 */
+      margin-inline-end: 0.5rem; !* 2 *!
     }
+    */
   }
 }
 
@@ -68,10 +70,12 @@ Pay attention to whether the icon is before the text or after.
   .w3c-icon {
     margin-left: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
 
+    /*
     @supports (margin-inline-start: 1em) {
       margin-left: 0;
-      margin-inline-start: 0.5rem; /* 2 */
+      margin-inline-start: 0.5rem; !* 2 *!
     }
+    */
   }
 }
 
@@ -81,10 +85,12 @@ Pay attention to whether the icon is before the text or after.
       margin-left: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
       margin-right: 0;
 
+    /*
       @supports (margin-inline-start: 1em) {
         margin-left: 0;
-        margin-inline-end: 0.5rem; /* 2 */
+        margin-inline-end: 0.5rem; !* 2 *!
       }
+    */
     }
   }
 
@@ -93,10 +99,12 @@ Pay attention to whether the icon is before the text or after.
       margin-left: 0;
       margin-right: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
 
+    /*
       @supports (margin-inline-start: 1em) {
         margin-right: 0;
-        margin-inline-start: 0.5rem; /* 2 */
+        margin-inline-start: 0.5rem; !* 2 *!
       }
+    */
     }
   }
 }
