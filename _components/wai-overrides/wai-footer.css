@@ -53,17 +53,17 @@
     }
   }
 
-  .wai-global-footer__news {
+  .wai-global-footer__cta {
     margin-block-start: 1rem;
+
+    ul li {
+      display: flex;
+      align-items: center;
+    }
 
     a:not([class]) {
       padding-bottom: 0.75rem;
       padding-top: 0.75rem;
-
-      &:hover {
-        text-decoration-thickness: 0.165rem;
-      }
-
     }
   }
 
@@ -76,7 +76,7 @@
   }
 
   .w3c-with-icon--larger {
-    padding: 0.75rem;
+    padding: 0 0.75rem;
 
     img, svg {
       height: 1.25rem;
