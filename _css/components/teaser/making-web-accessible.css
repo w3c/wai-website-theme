@@ -13,8 +13,8 @@
     text-align: start;
   }
   & .mwa-icon {
-    width:  65px;
-    height: 65px;
+    width:  3.5rem;
+    height: 3.5rem;
     margin-inline-end: 1rem;
     fill: var(--w3c-dark-blue);
   }
