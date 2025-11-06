@@ -29,6 +29,7 @@
     margin-block-end:.5rem;
   }
   & h3 {
+    color: var(--w3c-dark-blue);
     margin-block-start: 10px;
     font-size: 1.5rem;
     margin-block-end:0;
