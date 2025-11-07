@@ -191,24 +191,24 @@
   <div class="inner">
     <div class="wai-global-footer__content">
       <div class="wai-global-footer__subsite"><a href="https://www.w3.org/WAI/" lang="en" dir="auto" translate="no">W3C Web Accessibility Initiative (WAI)</a></div>
-      <div class="wai-global-footer__subsite-desc">Strategies, standards, and supporting resources to make the Web accessible to people with disabilities.</div>
+      <div class="wai-global-footer__subsite-desc">{% include_cached t.html t="Strategies, standards, resources to make the Web accessible to people with disabilities" lang=pagelang %}</div>
       <div class="wai-global-footer__cta w3c-l-cluster w3c-l-cluster--vertical-align">
         <ul class="w3c-clean-list" role="list">
           <li class="w3c-with-icon--before w3c-with-icon--larger">
             <img class="w3c-icon w3c-icon--larger" src="{{ '/assets/images/email.svg' | relative_url }}" width="30" height="30" alt="" aria-hidden="true">
-            <a href="{{ '/news/subscribe/' | relative_url }}">Get news in email</a>
+            <a href="{{ '/news/subscribe/' | relative_url }}">{% include_cached t.html t="Get News in Email" lang=pagelang %}</a>
           </li>
           <li class="w3c-with-icon--before w3c-with-icon--larger">
             <img class="w3c-icon w3c-icon--larger" src="{{ '/assets/images/social/linkedin.svg' | relative_url }}" width="30" height="30" alt="" aria-hidden="true">
-            <a href="{{ '/news/subscribe/' | relative_url }}">LinkedIn</a>
+            <a href="{{ '/news/subscribe/' | relative_url }}" translate="no">LinkedIn</a>
           </li>
           <li class="w3c-with-icon--before w3c-with-icon--larger">
             <img class="w3c-icon w3c-icon--larger" src="https://www.w3.org/assets/website-2021/svg/mastodon.svg" width="30" height="30" alt="" aria-hidden="true">
-            <a href="{{ '/news/subscribe/' | relative_url }}">Mastodon</a>
+            <a href="{{ '/news/subscribe/' | relative_url }}" translate="no">Mastodon</a>
           </li>
           <li class="w3c-with-icon--before w3c-with-icon--larger">
             <img class="w3c-icon w3c-icon--larger" src="{{ '/assets/images/social/youtube.svg' | relative_url }}" width="30" height="30" alt="" aria-hidden="true">
-            <a href="{{ '/news/subscribe/' | relative_url }}">YouTube</a>
+            <a href="{{ '/news/subscribe/' | relative_url }}" translate="no">YouTube</a>
           </li>
         </ul>
       </div>
@@ -216,18 +216,18 @@
     <div class="w3c-global-footer__links">
       <div class="w3c-l-cluster">
         <ul class="w3c-clean-list" role="list">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/about/contacting/' | relative_url }}">Contact</a></li>
-          <li><a href="{{ '/sitemap/' | relative_url }}">Site map</a></li>
-          <li><a href="{{ '/about/support/' | relative_url }}">Support WAI</a></li>
-          <li><a href="{{ '/news/' | relative_url }}">News</a></li>
-          <li><a href="{{ '/about/accessibility-statement/' | relative_url }}">Accessibility statement</a></li>
-          <li><a href="{{ '/translations/' | relative_url }}"> All translations</a></li>
-          <li><a href="{{ '/roles/' | relative_url }}">Resources for roles</a></li>
+          <li><a href="{{ '/' | relative_url }}">{% include_cached t.html t="Home" lang=pagelang %}</a></li>
+          <li><a href="{{ '/about/contacting/' | relative_url }}">{% include_cached t.html t="Contact" lang=pagelang %}</a></li>
+          <li><a href="{{ '/sitemap/' | relative_url }}">{% include_cached t.html t="Site map" lang=pagelang %}</a></li>
+          <li><a href="{{ '/about/support/' | relative_url }}">{% include_cached t.html t="Support WAI" lang=pagelang %}</a></li>
+          <li><a href="{{ '/news/' | relative_url }}">{% include_cached t.html t="News" lang=pagelang %}</a></li>
+          <li><a href="{{ '/about/accessibility-statement/' | relative_url }}">{% include_cached t.html t="Accessibility statement" lang=pagelang %}</a></li>
+          <li><a href="{{ '/translations/' | relative_url }}">{% include_cached t.html t="All Translations" lang=pagelang %}</a></li>
+          <li><a href="{{ '/roles/' | relative_url }}">{% include_cached t.html t="Resources for roles" lang=pagelang %}</a></li>
         </ul>
       </div>
     </div>
-    <p class="w3c-copyright">Copyright &copy; {{ 'now' | date: "%Y" }}  <a href="https://www.w3.org/">World Wide Web	Consortium</a>.<br>
+    <p class="w3c-copyright" translate="no">Copyright &copy; {{ 'now' | date: "%Y" }}  <a href="https://www.w3.org/">World Wide Web	Consortium</a>.<br>
       <abbr title="World Wide Web Consortium">W3C</abbr><sup>&reg;</sup>
       <a href="https://www.w3.org/policies/#disclaimers">liability</a>,
       <a href="https://www.w3.org/policies/#trademarks">trademark</a> and
