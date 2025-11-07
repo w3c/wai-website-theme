@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    #Breadcrumbs
+    See: https://design-system.w3.org/components/breadcrumbs.html
+    See: https://scottaohara.github.io/a11y_breadcrumbs/
+\*------------------------------------*/
+
+#w3c-breadcrumb {
+	padding-bottom: 0.9375rem;
+	padding-top: 0.625rem;
+
+	.w3c-l-cluster > * {
+		margin: 0 -0.6875rem;
+	}
+
+	.w3c-l-cluster.w3c-l-cluster > * > * {
+    margin: 0 0 0 0.6875rem;
+		padding-right: 1em;
+		position: relative;
+	}
+}
+
+[dir="rtl"] {
+	#w3c-breadcrumb .w3c-l-cluster.w3c-l-cluster > * > * {
+    margin: 0 0.6875rem 0 0;
+		padding-left: 1em;
+		padding-right: 0;
+	}
+}
+
+.w3c-breadcrumbs a {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--w3c-off-black);
+	display: block;
+  padding-bottom: 0.6875rem;
+  padding-top: 0.6875rem;
+
+	&:visited,
+	&:hover,
+	&:active {
+		color: var(--w3c-off-black);
+	}
+}
+
+.w3c-breadcrumbs [aria-current] {
+	font-weight: 600;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		outline-color: var(--w3c-off-black);
+	}
+}
+
+/**
+Separator chevron - see https://codepen.io/jonneal/pen/kptBs
+*/
+.w3c-breadcrumbs li:not(:last-child) {
+	&::after {
+		border-style: solid;
+		border-width: 0.1em 0.1em 0 0;
+		content: '';
+		display: block;
+		height: 0.5em;
+		position: absolute;
+		right: 0.4em;
+		top: 50%;
+		transform: rotate(45deg) translateY(-50%);
+		width: 0.5em;
+	}
+}
+
+[dir="rtl"] {
+	.w3c-breadcrumbs li:not(:last-child) {
+		&::after {
+			border-width: 0 0 0.1em 0.1em;
+			left: 0.1em;
+			right: auto;
+		}
+	}
+}

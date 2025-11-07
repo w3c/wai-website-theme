@@ -156,12 +156,12 @@ code {
 }
 
 a {
-    color: var(--w3c-blue);
-    &:--hovcus {
-        color: var(--wai-green);
-    }
+    color: var(--w3c-link-color);
     &:visited {
-        color: var(--visited-link);
+      color: var(--w3c-link-color--visited);
+    }
+    &:--hovcus {
+        color: var(--w3c-link-color--hover);
     }
     &.stealthy-link {
         text-decoration: none;
@@ -172,6 +172,12 @@ a {
         &:visited {
             color: inherit;
         }
+    }
+    &:not([class]) {
+      text-decoration: underline;
+      -webkit-text-decoration-skip: ink;
+      text-decoration-skip-ink: auto;
+      text-underline-offset: 0.25em;
     }
     @media print {
         & {

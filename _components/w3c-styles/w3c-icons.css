@@ -1,0 +1,110 @@
+/*------------------------------------*\
+    #Icons
+
+    See: https://design-system.w3.org/styles/svg-icons.html
+
+\*------------------------------------*/
+
+/*
+svg {
+  fill: currentColor;
+  height: auto;
+}
+
+svg:not([class]) {
+  width: 100%;
+}
+*/
+
+/**
+SVG icons are sized relative to font size, thanks to the em unit.
+ */
+.w3c-icon {
+  height: 1em;
+  vertical-align: baseline;
+  width: 1em;
+}
+
+.w3c-icon--larger {
+  height: 1.875rem;
+  width: 1.875rem;
+}
+
+
+/**
+Use the `with-icon` class on the SVG's parent, if there
+is a need to specify the spacing between text and icon.
+Pay attention to whether the icon is before the text or after.
+
+2. Logical property creates appropriate spacing irrespective of text direction
+ */
+.w3c-with-icon--before,
+.w3c-with-icon--after,
+.w3c-with-icon--larger {
+  align-items: baseline;
+  display: inline-flex;
+
+  .w3c-icon {
+    flex: 0 0 auto;
+  }
+}
+
+.w3c-with-icon--larger {
+  align-items: center;
+}
+
+.w3c-with-icon--before {
+  .w3c-icon {
+    margin-right: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
+
+    /*
+    @supports (margin-inline-end: 1em) {
+      margin-right: 0;
+      margin-inline-end: 0.5rem; !* 2 *!
+    }
+    */
+  }
+}
+
+.w3c-with-icon--after {
+  .w3c-icon {
+    margin-left: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
+
+    /*
+    @supports (margin-inline-start: 1em) {
+      margin-left: 0;
+      margin-inline-start: 0.5rem; !* 2 *!
+    }
+    */
+  }
+}
+
+[dir="rtl"] {
+  .w3c-with-icon--before {
+    .w3c-icon {
+      margin-left: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
+      margin-right: 0;
+
+    /*
+      @supports (margin-inline-start: 1em) {
+        margin-left: 0;
+        margin-inline-end: 0.5rem; !* 2 *!
+      }
+    */
+    }
+  }
+
+  .w3c-with-icon--after {
+    .w3c-icon {
+      margin-left: 0;
+      margin-right: 0.5rem; /* IE fallback for next rule - only works for ltr languages */
+
+    /*
+      @supports (margin-inline-start: 1em) {
+        margin-right: 0;
+        margin-inline-start: 0.5rem; !* 2 *!
+      }
+    */
+    }
+  }
+}

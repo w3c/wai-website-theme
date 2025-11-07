@@ -1,0 +1,98 @@
+/*
+  Add some space before the global footer when there is no page footer
+*/
+
+.wai-global-footer {
+  margin-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (--large) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.page-footer + .wai-global-footer {
+  margin-top: 0;
+}
+
+/*
+  Use W3C focus style in the footer
+*/
+
+.wai-global-footer {
+  a:not([class]):focus,
+  a.with-icon--before:focus,
+  a.with-icon--after:focus {
+    background-color: #f9dc4a;
+    background-image: linear-gradient(to top, #000 3px, #f9dc4a 3px, #f9dc4a);
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:focus:not(.button) {
+    outline: none;
+  }
+}
+
+/*
+  Add a WAI pre footer to the global footer
+*/
+
+.wai-global-footer__content {
+    margin-bottom: 0.5rem;
+
+  .wai-global-footer__subsite {
+    margin-bottom: 0.5rem;
+
+    a {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--w3c-dark-blue);
+      text-decoration: none;
+
+      &:--hovcus {
+        color: var(--w3c-off-black);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .wai-global-footer__cta {
+    margin-top: 1rem;
+
+    ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    a:not([class]) {
+      padding-bottom: 0.75rem;
+      padding-top: 0.75rem;
+    }
+  }
+
+  .w3c-l-cluster > * {
+    margin: 0 -0.625rem;
+  }
+
+  .w3c-l-cluster.w3c-l-cluster > * > * {
+    margin: 0;
+  }
+
+  .w3c-with-icon--larger {
+    padding: 0 0.75rem;
+
+    img, svg {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+
+    &:focus {
+      background-color: var(--w3c-focus-color);
+      background-image: linear-gradient(to top, var(--w3c-black) 3px, var(--w3c-focus-color) 3px, var(--w3c-focus-color));
+    }
+  }
+
+}
