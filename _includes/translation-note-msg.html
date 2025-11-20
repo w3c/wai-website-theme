@@ -14,12 +14,18 @@
   {%- endif -%}
   {%- assign all_docs = site.documents | concat: site.pages -%}
   {%- assign changelog_page = all_docs | where: "url", changelog_url | first -%}
-  <section id="translation-info" class="doc-note-box doc-note-translation">
+  <section id="translation-info" class="doc-note-box doc-note-translation doc-note-translation--draft">
     <h2 class="visuallyhidden">{% include_cached t.html t="About this translation" lang=page_lang %}</h2>
+    {%- if page.translation.status == "draft" -%}
+    <p class="translation-draft">
+      {%- include t.html t='This translation is a draft. We welcome your comments via GitHub or email from the links below under <a href="#helpimprove">Help improve this page</a>.' -%}
+    </p>
+    {%- endif -%}
     <p>
       {%- assign replace_pattern = enpage.url | relative_url | prepend: "$1|" -%}
       {%- include t.html t='This volunteer translation might not accurately reflect the intentions of the <a href="$1">English original</a>.' replace=replace_pattern lang=page_lang -%}
     </p>
+    {%- if page.translators or page.contributors -%}
     <p>
       {%- capture translatorslabel %}<strong>{% include_cached t.html t='Translator:' lang=page_lang %}</strong>{%- endcapture %}
       {%- include peoplelist.html label=translatorslabel people=page.translators -%}
@@ -29,6 +35,7 @@
       {%- assign replace_pattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
       {%- include_cached t.html t='The Web Accessibility Initiative (WAI) thanks translators, and welcomes other <a href="$1">translations</a>.' replace=replace_pattern lang=page_lang -%}
     </p>
+    {%- endif -%}
     {%- if page.translation.status == "outdated" -%}
       <div class="translation-needs-update">
           <p>{% include_cached icon.html name="warning" %} <strong>{% include_cached t.html t='Notice:' lang=page_lang %}</strong> {% include t.html t='The English original has been substantially updated since this translation.' lang=page_lang %}{%- if changelog_page %} &mdash; <a href="{{ changelog_page.url | relative_url }}">{%- include_cached t.html t="Latest changes" lang=page_lang -%}</a>{%- endif -%}
