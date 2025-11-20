@@ -68,8 +68,8 @@ The message for the translation is automatically generated on the translated pag
 
 <section class="doc-note-box doc-note-translation doc-note-translation--draft">
   <h2 class="visuallyhidden">{% include_cached t.html t="About this translation" lang=page.lang %}</h2>
-  <p class="translation-draft">
-    {%- include t.html t='This translation is a draft. We welcome your comments via GitHub or email from the links below under <a href="#helpimprove">Help improve this page</a>.' -%}
+  <p>
+    {%- include t.html t='<strong>This translation is a draft</strong>. We welcome your comments via GitHub or email from the links below under <a href="#helpimprove">Help improve this page</a>.' -%}
   </p>
   <p>
     {%- assign replace_pattern = page.url | relative_url | prepend: "$1|" -%}
