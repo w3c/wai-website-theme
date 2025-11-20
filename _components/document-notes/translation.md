@@ -5,7 +5,8 @@ last_updated: 2024-11-04
 
 # Do not remove the following lines, used by the examples.
 translation:
-  status: outdated
+  draft: true
+  outdated: true
   last_updated: 2022-01-04
 
 translators:
@@ -61,4 +62,26 @@ The message for the translation is automatically generated on the translated pag
       <br />{% include_cached t.html t='We welcome a <a href="$1">translation update</a>.' lang=page.lang replace=replace_pattern %}</p>
       </div>
   {%- endif -%}
+</section>
+
+## Draft Translation
+
+<section class="doc-note-box doc-note-translation doc-note-translation--draft">
+  <h2 class="visuallyhidden">{% include_cached t.html t="About this translation" lang=page.lang %}</h2>
+  <p>
+    {%- include t.html t='<strong>This translation is a draft</strong>. We welcome your comments via GitHub or email from the links below under <a href="#helpimprove">Help improve this page</a>.' -%}
+  </p>
+  <p>
+    {%- assign replace_pattern = page.url | relative_url | prepend: "$1|" -%}
+    {%- include t.html t='This volunteer translation might not accurately reflect the intentions of the <a href="$1">English original</a>.' replace=replace_pattern lang=page.lang -%}
+  </p>
+  <p>
+    {%- capture translatorslabel %}<strong>{% include_cached t.html t='Translator:' lang=page.lang %}</strong>{%- endcapture %}
+    {%- include peoplelist.html label=translatorslabel people=page.translators -%}
+    {%- capture contributorslabel %}{% include_cached t.html t='Contributor:' lang=page.lang %}{%- endcapture -%}
+    {%- include peoplelist.html label=contributorslabel people=page.contributors -%}
+    <br />
+    {%- assign replace_pattern = "/about/translating/" | relative_url | prepend: "$1|" -%}
+    {%- include_cached t.html t='The Web Accessibility Initiative (WAI) thanks translators, and welcomes other <a href="$1">translations</a>.' replace=replace_pattern lang=page.lang -%}
+  </p>
 </section>
