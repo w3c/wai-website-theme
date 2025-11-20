@@ -5,7 +5,8 @@ last_updated: 2024-11-04
 
 # Do not remove the following lines, used by the examples.
 translation:
-  status: outdated
+  draft: true
+  outdated: true
   last_updated: 2022-01-04
 
 translators:
