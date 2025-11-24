@@ -14,7 +14,7 @@
   {%- endif -%}
   {%- assign all_docs = site.documents | concat: site.pages -%}
   {%- assign changelog_page = all_docs | where: "url", changelog_url | first -%}
-  <section id="translation-info" class="doc-note-box doc-note-translation doc-note-translation--draft">
+  <section id="translation-info" class="doc-note-box doc-note-translation {% if page.translation.draft == true %}doc-note-translation--draft{% endif %}">
     <h2 class="visuallyhidden">{% include_cached t.html t="About this translation" lang=page_lang %}</h2>
     {%- if page.translation.draft == true -%}
     <p>
