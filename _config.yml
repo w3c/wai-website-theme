@@ -31,8 +31,6 @@ kramwdown:
   syntax_highlighter: rouge
 highlighter: rouge
 
-# remote_theme: w3c/wai-website-theme
-
 collections:
   components:
     area: "Design Components"
@@ -50,10 +48,9 @@ defaults:
       layout: "default"
 
 plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-redirect-from
   - jekyll-include-cache
   - jekyll-paginate
-  - jekyll-remote-theme
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
   - wai-website-plugin
