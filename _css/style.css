@@ -1,4 +1,8 @@
 @import "colors.css";
 @import "base.css";
 @import "components/**/*.css";
+@import "w3c-core-components/**/*.css";
+@import "w3c-layouts/**/*.css";
+@import "w3c-styles/**/*.css";
+@import "wai-overrides/**/*.css";
 @import "code.css";
