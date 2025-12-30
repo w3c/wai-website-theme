@@ -54,7 +54,8 @@ The first section creates an array of page urls that are page urls of this colle
   {%- endif -%}
 {%- endif -%}
 {%- assign search = true -%}
-{%- for n in site.data.navigation -%}
+{%- if site.custom_navigation -%}{%- assign nav = site.data.[site.custom_navigation] -%}{%- else -%}{%- assign nav = site.data.navigation -%}{%- endif -%}
+{%- for n in nav -%}
   {%- if search == true -%}
     {%- assign b_name = "" -%}
     {%- assign b_url  = "" -%}

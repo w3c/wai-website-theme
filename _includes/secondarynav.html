@@ -14,7 +14,8 @@
 {%- if col.navigation -%}
   {%- assign currentsubnav = col.navigation -%}
 {%- else -%}
-{%- for item in site.data.navigation -%}
+{%- if site.custom_navigation -%}{%- assign nav = site.data.[site.custom_navigation] -%}{%- else -%}{%- assign nav = site.data.navigation -%}{%- endif -%}
+{%- for item in nav -%}
   {%- for i in item.pages -%}
     {%- if i.url == searchurl -%}
       {%- assign currentsubnav = item -%}
