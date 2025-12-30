@@ -31,7 +31,7 @@ kramwdown:
 highlighter: rouge
 
 collections:
-  content:
+  docs:
     output: true
     permalink: /:path/
 
