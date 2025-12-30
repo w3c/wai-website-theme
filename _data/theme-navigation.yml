@@ -1,0 +1,147 @@
+- name:
+    en: 'Fundamentals'
+  pages:
+  - name: Fundamentals
+    url: "/fundamentals/"
+  - name: Colors
+    url: "/fundamentals/colors/"
+  - name: Frontmatter
+    url: "/fundamentals/frontmatter/"
+  - name: Grid
+    url: "/fundamentals/grid/"
+  - name: Images
+    url: "/fundamentals/images/"
+  - name: Markdown
+    url: "/fundamentals/markdown/"
+  - name: WAI Markdown Extension
+    url: "/fundamentals/wai-markdown/"
+  - name: Using HTML
+    url: "/fundamentals/html/"
+  - name: Videos
+    url: "/fundamentals/videos/"
+  - name: Workflow
+    url: "/workflow/"
+- name:
+    en: 'Components'
+  pages:
+  - name: Components
+    url: "/components/"
+  - name: Buttons
+    url: "/components/button/"
+    pages:
+    - name: Button
+      url: "/components/button/"
+    - name: Button Group
+      url: "/components/button-group/"
+    - name: "Show/Hide Button"
+      url: "/components/show-hide-buttons/"
+  - name: Block Quotes
+    url: "/components/blockquotes/"
+  - name: Boxes
+    url: "/components/boxes/"
+  - name: Decision Tree
+    url: "/components/decision-tree/"
+  - name: "Document Notes"
+    url: "/components/document-notes/archived/"
+    pages:
+    - name: "Archived"
+      url: "/components/document-notes/archived/"
+    - name: "Draft"
+      url: "/components/document-notes/draft/"
+    - name: "Translation"
+      url: "/components/document-notes/translation/"
+    - name: "Deprecated"
+      url: "/components/document-notes/deprecated/"
+  - name: Draft Banner
+    url: "/components/draft-banner/"
+  - name: Editor Notes
+    url: "/components/editor-notes/"
+  - name: Evaluation Form
+    url: "/components/evaluation-form/"
+  - name: "Expand/<wbr>Collapse"
+    url: "/components/excol/single/"
+    pages:
+    - name: "Single"
+      url: "/components/excol/single/"
+    - name: "Multiple"
+      url: "/components/excol/multiple/"
+  - name: Figure
+    url: "/components/figure/"
+  - name: Footer (Page & Site)
+    url: "/components/footer/"
+  - name: Footnotes
+    url: "/components/footnotes/"
+  - name: Form
+    url: "/components/form/elements/"
+    pages:
+    - name: "Elements"
+      url: "/components/form/elements/"
+    - name: "Inputs"
+      url: "/components/form/input/"
+    - name: "Search"
+      url: "/components/form/search/"
+  - name: "Minimal Header"
+    url: "/components/minimal-header/"
+  - name: "Headings"
+    url: "/components/headings/"
+  - name: Icons
+    url: "/components/icons/"
+  - name: Images
+    url: "/components/images/"
+  - name: "Lists"
+    url: "/components/lists/"
+  - name: "Mark"
+    url: "/components/mark/"
+  - name: Navigation
+    url: "/components/navigation/"
+    pages:
+    - name: Navigation
+      url: "/components/navigation/"
+    - name: "Minimal Navigation"
+      url: "/components/minimal-navigation/"
+  - name: "Progress Bar"
+    url: "/components/progress-bar/"
+  - name: "Resource Link"
+    url: "/components/resource-link/"
+  - name: "Results by Category"
+    url: "/components/results-by-category/"
+  - name: "Tables"
+    url: "/components/tables/"
+  - name: "Teasers"
+    url: "/components/teasers/"
+    pages:
+    - name: "Making the Web Accessible"
+      url: "/components/teasers/mwa/"
+  - name: Video
+    url: "/components/video-card/"
+    pages:
+    - name: "Video Card"
+      url: "/components/video-card/"
+    - name: "Video Links (deprecated)"
+      url: "/components/video-links/"
+    - name: "Video Player"
+      url: "/components/video-player-data/"
+      pages:
+    - name: "Video Player (deprecated)"
+      url: "/components/video-player/"
+  - name: "Your Report"
+    url: "/components/your-report/"
+- name:
+    en: 'Templates'
+  pages:
+    - name: Templates
+      url: "/templates/"
+    - name: Default
+      url: "/templates/default/"
+    - name: Home
+      url: "/templates/home/"
+    - name: Minimal
+      url: "/templates/minimal/"
+    - name: Policy
+      url: "/templates/policy/"
+    - name: Sidenav
+      url: "/templates/sidenav/"
+    - name: Stand-alone Resource
+      url: "/templates/standalone-resource/"
+    - name: Translation Sitemap
+      url: "/templates/translation-sitemap/"

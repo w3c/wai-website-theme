@@ -1,3 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem "wai-gems", :path => "_external/data/wai-gems"
+source "https://rubygems.org"
+
+# Specify your gem's dependencies in wai-website-theme.gemspec
+gemspec

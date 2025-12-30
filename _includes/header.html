@@ -111,7 +111,8 @@ The first section creates an array of page urls that are page urls of this colle
   {%- endif -%}
 {%- endif -%}
 {%- assign search = true -%}
-{%- for n in site.data.navigation -%}
+{%- if site.custom_navigation -%}{%- assign nav = site.data.[site.custom_navigation] -%}{%- else -%}{%- assign nav = site.data.navigation -%}{%- endif -%}
+{%- for n in nav -%}
   {%- if search == true -%}
     {%- assign b_name = "" -%}
     {%- assign b_url  = "" -%}
@@ -178,7 +179,7 @@ The first section creates an array of page urls that are page urls of this colle
 
 <nav class="mainnav" aria-label="{% include t.html t="Main" lang=page.lang %}" lang="{{ page.lang }}">
   {%- if page.url == "/" %}{% assign a_url = "" %}{% endif -%}
-  {%- include_cached navlist.html data=site.data.navigation current=a_url lang=page.lang -%}
+  {%- include_cached navlist.html data=nav current=a_url lang=page.lang -%}
 </nav>
 
 {%- unless page.url == "/" -%}

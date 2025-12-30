@@ -177,7 +177,6 @@
     {% include_cached excol.html type="end" %}
 
     <h2>Sitemap</h2>
-
     {% assign sections=site.data.navigation | where_exp:"item", "item.mainnav != false and item.hide != true and item.translate == true" -%}
     {%- for section in sections -%}
       {% include excol.html type="start" %}

@@ -1,4 +1,4 @@
 @import "colors.css";
 @import "base.css";
-@import "../_components/**/*.css";
+@import "components/**/*.css";
 @import "code.css";

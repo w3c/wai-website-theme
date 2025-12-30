@@ -1,59 +1,48 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
+# This config file is meant for settings that affect your whole site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-title: "Web Accessibility Initiative (WAI)'s Website Theme"
-description: > # this means to ignore newlines until "baseurl:"
-  Learn more about the theme of the Web Accessibility Initiative's website.
-baseurl: "/wai-website-theme" # the subpath of your site, e.g. /blog
-twitter:
-  username: w3c_wai
-author: w3c_wai
-exclude:
-  - "_external"
-  - "Gemfile"
-  - "Gemfile.lock"
-  - "README.md"
-  - "w3c.json"
-  - "node_modules"
-repository: w3c/wai-website-theme
-branch: main
-
+# Site-wide settings
+# ------------------
+#
+# title: The title of your site
+# description: >
+#   Write a description for your site.
+# baseurl: "/" # the subpath of your site, e.g. /blog
+# author: w3c_wai
+#
 # Build settings
-markdown: kramdown
-kramwdown:
-  toc_levels: 2..3
-  input: GFM
-  syntax_highlighter: rouge
-highlighter: rouge
-
+# --------------
+#
 # remote_theme: w3c/wai-website-theme
-
-collections:
-  components:
-    area: "Design Components"
-    name: "Components"
-    shortname: "Components"
-    output: true
-    acknowledgements: false
-    permalink: /:collection/:path/
-
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jekyll-include-cache
-  - jekyll-paginate
-  - jekyll-remote-theme
-  - wai-website-plugin
+#
+# plugins:
+#  - jekyll-include-cache
+#  - jekyll-paginate
+#  - jekyll-redirect-from
+#  - jekyll-seo-tag
+#  - jekyll-sitemap
+#  - wai-website-plugin
+#
+# markdown: kramdown
+# kramwdown:
+#  toc_levels: 2..3
+#  input: GFM
+#  syntax_highlighter: rouge
+# highlighter: rouge
+#
+# exclude:
+#  - "_external"
+#  - "Gemfile"
+#  - "Gemfile.lock"
+#  - "README.md"
+#  - "w3c.json"
+#  - "node_modules"
+#
+# defaults:
+#  -
+#    scope:
+#      path: ""
+#    values:
+#      layout: "default"
