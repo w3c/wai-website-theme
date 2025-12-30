@@ -34,7 +34,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function() {
-  var watcher = gulp.watch(['_css/**/*.css', '_components/**/*.css'], ['css']);
+  var watcher = gulp.watch(['_css/**/*.css'], ['css']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });

@@ -21,7 +21,7 @@ RUBY_VERSION = "3.3.3"
 
 [[redirects]]
   from = "/writing/supporting-documents/"
-  to = "/writing/standalone-resources/"
+  to = "/templates/standalone-resource/"
 
 [dev]
 command = "bundle exec jekyll serve -w --livereload --trace --config _config_doc.yml,_config_staging.yml"
