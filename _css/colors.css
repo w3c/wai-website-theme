@@ -42,9 +42,9 @@
   --w3c-input-border-color: var(--w3c-storm-gray);
   --w3c-focus-color: var(--w3c-yellow);
 
-  --w3c-link-color: var(--w3c-w3c-blue);
+  --w3c-link-color: var(--w3c-deep-blue);
   --w3c-link-color--visited: var(--w3c-purple);
-  --w3c-link-color--hover: var(--w3c-deep-blue);
+  --w3c-link-color--hover: var(--w3c-off-black);
 
   --w3c-success-color: #046704;
   --w3c-info-color: var(--w3c-deep-blue);
