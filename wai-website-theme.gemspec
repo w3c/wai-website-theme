@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "This is the theme for the new W3C WAI website"
   spec.homepage      = "https://github.com/w3c/wai-website-theme"
   spec.license       = "Nonstandard"
-  spec.required_ruby_version = '>= 3.4.8'
+  spec.required_ruby_version = '>= 3.3.3'
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_data|LICENSE|README)}i) }
 
