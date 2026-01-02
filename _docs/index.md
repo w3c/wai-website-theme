@@ -33,17 +33,15 @@ After cloning the repository, run:
 
 ## Theme installation
 
-
 ### Instructions
 
 1. Add the following to your Gemfile:
 
     ```ruby
-    # Plugin for building Jekyll with a GitHub-hosted theme
-    gem 'jekyll-remote-theme', '~>0.4.3'
-
-    # The WAI website theme
-    gem 'wai-website-theme', '~>1.10'
+    group :jekyll_plugins do
+        gem 'jekyll-remote-theme', '~>0.4.3'     # Use a GitHub-hosted theme
+        gem 'wai-website-theme', git: 'https://github.com/w3c/wai-website-theme', branch: 'main' # The theme of the site
+    end
     ```
 
 2. Add the following to your `config.yml` file:
@@ -54,20 +52,7 @@ After cloning the repository, run:
 
     Note: You can optionally specify a branch, tag, or commit to use by appending an `@` and the Git ref. For example: `w3c/wai-website-theme@1.9.10` or `w3c/wai-website-theme@test-branch`.
 
-3. List the theme plugins in your `config.yml` file:
-
-    ```yaml
-    plugins:
-      - jekyll-include-cache
-      - jekyll-paginate
-      - jekyll-redirect-from
-      - jekyll-remote-theme
-      - jekyll-seo-tag
-      - jekyll-sitemap
-      - wai-website-plugin
-    ```
-
-4. Run Jekyll
+3. Run Jekyll
 
     In your project root directory, run:
 
@@ -80,3 +65,12 @@ After cloning the repository, run:
   </div>
 </div>
 {:/}
+
+## CSS compilation
+
+The theme uses [PostCSS](https://postcss.org/).
+
+Changes to CSS source files require a step to build the CSS file.
+
+From the project root, install and run `gulp`:
+`npm install && npx gulp css`
