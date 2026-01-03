@@ -1,12 +1,12 @@
 ---
-title: "Standalone Resource Demo"
+title: "COGA – Standalone Resource Demo"
 lang: en
 layout: standalone_resource
 redirect_from:
   - /writing/standalone-resources/demo-coga/
 standalone_resource_doc_name: Standalone Resource Test
 standalone_resource_header:
-  title: Supplemental Guidance to WCAG 2
+  title: "Supplemental Guidance to WCAG 2"
   title-ref: /WCAG2/supplemental/#-cognitiveaccessibilityguidance
   subtitle: Additional ways to improve accessibility, not required to meet WCAG
   link:
