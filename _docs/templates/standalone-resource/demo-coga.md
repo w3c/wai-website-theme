@@ -19,6 +19,7 @@ standalone_resource_nav_links:
     ref: /patterns
   - name: About this Design Guide
     ref: /about
+sidebar: true
 ---
 
 This is an example of the `standalone_resource` layout.

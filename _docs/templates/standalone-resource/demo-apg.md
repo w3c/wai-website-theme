@@ -19,3 +19,4 @@ standalone_resource_nav_links:
     ref: /ARIA/apg/about/
 ---
 
+@@

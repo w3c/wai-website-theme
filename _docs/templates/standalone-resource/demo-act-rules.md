@@ -46,6 +46,7 @@ standalone_resource_nav_links:
 github:
   repository: w3c/wcag-act-rules
   path: content/html-page-lang-b5c3f8.md
+sidebar: true
 ---
 
 <!--<details class="chooser">
