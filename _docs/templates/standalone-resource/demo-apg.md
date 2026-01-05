@@ -1,14 +1,24 @@
 ---
-title: HTML page has lang attribute
+title: "APG – Standalone Resource Demo"
+lang: en
+sidebar: true
 layout: standalone_resource
-standalone_resource_nav_links:
-  - name: All Understanding Docs
-    ref: https://www.w3.org/WAI/WCAG22/Understanding/
-standalone_resource_doc_name: "WCAG 2.2 Understanding Docs"
 standalone_resource_header:
-  title: ARIA Authoring Practices Guide (APG)
-  title-ref: /WCAG2/supplemental/#-cognitiveaccessibilityguidance
-  subtitle: How to build accessibility semantics into web patterns and widgets
+  title: "ARIA Authoring Practices Guide (APG)"
+  title-ref: /aria/apg/
+  subtitle: "How to build accessibility semantics into web patterns and widgets"
+standalone_resource_nav_links:
+  - name: APG Home
+    ref: /ARIA/apg/
+  - name: Patterns
+    ref: /ARIA/apg/patterns/
+  - name: Practices
+    ref: /ARIA/apg/practices/
+  - name: Index
+    ref: /ARIA/apg/example-index/
+  - name: About
+    ref: /ARIA/apg/about/
+sidebar: true
 ---
 
 <!--<details class="chooser">
