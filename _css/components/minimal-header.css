@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding-block: 1em;
+  padding-block: 1rem;
 
   @media (--medlarge) {
     gap: 1.5rem;
@@ -92,43 +92,5 @@
 \*------------------------------------*/
 
 .tool-header {
-  display: flex;
-  align-items: center;
-}
-
-.tool-header a{
-  text-decoration: none;
-}
-
-.tool-header-name {
-  font-size: 1.125rem;
-  line-height: 1.2;
-
-  @media (--large) {
-    font-size: 1.375rem;
-  }
-
-  & a {
-    text-decoration: none;
-    &:--hovcus, &[aria-current="page"] {
-      text-decoration: underline;
-    }
-    &[aria-current="page"] {
-      text-decoration: underline;
-    }
-  }
-
-}
-
-.tool-header-logo {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  align-self: start;
-}
-
-.tool-header-logo img {
-  display: block;
-  margin: 0.75em 0 0.75em 0.5em;
-  height: 1.5em;
+  padding-block: 0.5rem;
 }
