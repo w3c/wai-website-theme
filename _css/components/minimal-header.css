@@ -93,4 +93,8 @@
 
 .tool-header {
   padding-block: 0.5rem;
+
+  .minimal-header-info {
+    flex: 1 0 33%;
+  }
 }

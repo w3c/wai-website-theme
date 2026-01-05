@@ -79,7 +79,7 @@ layout: none
   <div class="page-content svelte-1mdlt3n" id="overview">
     <div class="default-grid">
       <main class="main-without-panel svelte-1mdlt3n">
-        <h1>WCAG-EM Report Tool – Tool Demo</h1>
+        <h1>WCAG-EM Report Tool – Standalone Resource Demo</h1>
         <p>@@</p>
       </main>
     </div>
