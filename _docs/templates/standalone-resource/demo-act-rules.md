@@ -32,21 +32,16 @@ rule_meta:
 layout: standalone_resource
 redirect_from:
   - /writing/standalone-resources/demo-act
-standalone_resource_header:
-  title: ACT Rules
-  title-ref: /standards-guidelines/act/rules/
-  subtitle: Rules for accessibility conformance testing (ACT)
 standalone_resource_nav_links:
   - name: All Rules
     ref: /standards-guidelines/act/rules/
-  - name: About
+  - name: About Rules
     ref: /standards-guidelines/act/rules/about/
-  - name: Implementations
-    ref: /standards-guidelines/act/implementations/
+standalone_resource_doc_name: "WCAG 2 Test Rules"
+type_of_guidance: "Test Rule"
 github:
   repository: w3c/wcag-act-rules
   path: content/html-page-lang-b5c3f8.md
-sidebar: true
 ---
 
 <!--<details class="chooser">
