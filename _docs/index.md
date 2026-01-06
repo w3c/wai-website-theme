@@ -26,7 +26,6 @@ Before you begin, make sure you have the following installed:
 After cloning the repository, run:
 
 ```bash
-  git submodule update --init --remote
   bundle install
   bundle exec jekyll serve -w --config _config_doc.yml
 ```
@@ -39,22 +38,21 @@ After cloning the repository, run:
 
     ```ruby
     group :jekyll_plugins do
-        gem 'jekyll-remote-theme', '~>0.4.3'     # Use a GitHub-hosted theme
-        gem 'wai-website-theme', git: 'https://github.com/w3c/wai-website-theme', branch: 'main' # The theme of the site
+        gem 'wai-website-theme', git: 'https://github.com/w3c/wai-website-theme', branch: 'main'
     end
     ```
 
-2. Add the following to your `config.yml` file:
+    Note: You can optionally specify a branch, tag, or commit to use. For more information, see [Bundler documentation](https://bundler.io/man/gemfile.5.html#GIT).
+
+2. Run `bundle install`
+
+3. Add the following to your `config.yml` file
 
     ```yaml
-      remote_theme: w3c/wai-website-theme
+      theme: wai-website-theme
     ```
 
-    Note: You can optionally specify a branch, tag, or commit to use by appending an `@` and the Git ref. For example: `w3c/wai-website-theme@1.9.10` or `w3c/wai-website-theme@test-branch`.
-
-3. Run Jekyll
-
-    In your project root directory, run:
+4. Run Jekyll. In your project root directory, run:
 
       ```bash
       bundle install
@@ -65,12 +63,3 @@ After cloning the repository, run:
   </div>
 </div>
 {:/}
-
-## CSS compilation
-
-The theme uses [PostCSS](https://postcss.org/).
-
-Changes to CSS source files require a step to build the CSS file.
-
-From the project root, install and run `gulp`:
-`npm install && npx gulp css`
