@@ -12,6 +12,16 @@ The theme CSS can also be used by W3C tools built outside Jekyll, like the [ATAG
 
 See the [documentation](https://wai-website-theme.netlify.app/) for usage information.
 
+## How to update wcag22.json
+
+To update `wcag22.json`, run the following within the project directory:
+
+```
+node _update-wcag-json.mjs
+```
+
+This requires [Node.js](https://nodejs.org/) version 20 or later.
+
 <details><summary>Archived content</summary>
 
 ## FAQ
