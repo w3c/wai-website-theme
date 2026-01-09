@@ -15,6 +15,8 @@ class: teaser
     </header>
 {:/}
 
+{% include toc.html %}
+
 ## Pre-requisites
 
 Before you begin, make sure you have the following installed:
@@ -31,8 +33,6 @@ After cloning the repository, run:
 ```
 
 ## Theme installation
-
-### Instructions
 
 1. Add the following to your Gemfile:
 
@@ -58,6 +58,28 @@ After cloning the repository, run:
       bundle install
       bundle exec jekyll serve
       ```
+
+## Theme update
+
+To update the theme in existing projects, run the following within the project directory:
+
+```
+bundle update wai-website-theme --conservative
+```
+
+When there are updates, this will update the `revision` value in the `Gemfile.lock` to use the latest commit.
+
+**Note:** Make sure to include the `--conservative` flag to avoid unintended updates of the theme dependencies.
+
+## How to update wcag22.json
+
+To update `_data/wcag22.json`, run the following within the project directory:
+
+```
+node _update-wcag-json.mjs
+```
+
+This requires [Node.js](https://nodejs.org/) version 20 or later.
 
 {::nomarkdown}
   </div>

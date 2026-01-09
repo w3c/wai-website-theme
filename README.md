@@ -8,19 +8,9 @@ The theme can be used by all Jekyll sites that make up the W3C WAI website.
 
 The theme CSS can also be used by W3C tools built outside Jekyll, like the [ATAG Report Tool](https://www.w3.org/WAI/atag/report-tool/).
 
-## Usage
+## Installation and usage
 
-See the [documentation](https://wai-website-theme.netlify.app/) for usage information.
-
-## How to update wcag22.json
-
-To update `wcag22.json`, run the following within the project directory:
-
-```
-node _update-wcag-json.mjs
-```
-
-This requires [Node.js](https://nodejs.org/) version 20 or later.
+See the [documentation](https://wai-website-theme.netlify.app/) for installation instructions and usage information.
 
 <details><summary>Archived content</summary>
 
