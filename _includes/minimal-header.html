@@ -6,12 +6,12 @@
       {% if include.title-ref %}</a>{% endif %}
     </div>
     {% if include.subtitle %}<div class="minimal-header-subtitle">{{ include.subtitle }}</div>{% endif %}
+    {%- if include.link -%}
+    <div class="minimal-header-link">
+      <a href="{{ include.link.ref | relative_url }}">{{ include.link.title }}</a>
+    </div>
+    {%- endif -%}
   </div>
-  {%- if include.link -%}
-  <div class="minimal-header-link">
-    <a href="{{ include.link.ref | relative_url }}">{{ include.link.title }}</a>
-  </div>
-  {%- endif -%}
   <div class="minimal-header-logo">
     <div class="logos">
       <a lang="en" class="home w3c" href="https://www.w3.org/">
