@@ -1,106 +1,132 @@
-
-/*------------------------------------*\
-    #Minimal header
-\*------------------------------------*/
-
-.minimal-header-container {
-  background-color: var(--w3c-classic);
+.tool-header {
+  display: flex;
+  align-items: center;
 }
-
-.minimal-header-container > .minimal-header {
-  grid-column: navigation-start / content-end;
+.tool-header a{
+  text-decoration: none;
+}
+.tool-header-name {
+  font-size: 1.125em;
+  line-height: 1;
+}
+.tool-header-logo {
+margin-left: auto;
+display: flex;
+align-items: center;
+align-self: start;
+}
+.tool-header-logo img {
+  display: block;
+  margin: 0.75em 0 0.75em 0.5em;
+  height: 1.5em;
 }
 
 .minimal-header {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding-block: 1rem;
-
-  @media (--medlarge) {
-    gap: 1.5rem;
-    flex-wrap: nowrap;
-  }
-
+  margin: 1.2em 0;
+  align-items: stretch;
 }
 
-.minimal-header-title {
-  font-size: 1.125rem;
-  line-height: 1.2;
-
-  @media (--large) {
-    font-size: 1.375rem;
-  }
-
-  & a {
-    text-decoration: none;
-    &:--hovcus, &[aria-current="page"] {
-      text-decoration: underline;
-    }
-    &[aria-current="page"] {
-      text-decoration: underline;
-    }
-  }
-
-}
-
-.minimal-header-subtitle, .minimal-header-link {
-
-  @media (--large) {
-    padding-inline-start: 1rem;
-    border-inline-start: 1px solid var(--gold);
-  }
-}
-
-.minimal-header-subtitle{
-  font-style: italic;
-}
-
-.minimal-header-info {
-  flex: 1 0 70%;
+.minimal-header-container  {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-direction: column  ;
+}
 
-  @media (--large) {
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-  }
+.minimal-header .minimal-header-name,
+.minimal-header .minimal-header-subtitle,
+.minimal-header .minimal-header-link
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.minimal-header-name {
+    flex: width 0 0;
 }
 
 .minimal-header-subtitle,
 .minimal-header-link {
-  font-size: .875em;
-  color: var(--pure-white);
+    flex: 1 0 0;
 }
 
+.minimal-header-name {
+  font-size: 1.125em;
+  line-height: 1;
+}
+
+.minimal-header-subtitle {
+  margin-top: 8px;
+  display: block;
+  font-size: .8em;
+}
 .minimal-header-link {
-  font-size: .85em;
+    border-left: 1px solid var(--gold);
+    padding-left: 8px;
+    margin-left: 18px;
+    display: block;
+    font-size: .8em;
+}
+
+.minimal-header-subtitle {
+    font-style: italic;
+  }
+
+.minimal-header-link {
+    font-weight: normal;
+    margin-right: 16px;
+}
+
+@media (min-width: 60em) {
+  .tool-header-name,
+  .minimal-header-name {
+    font-size: 1.5em;
+  }
+  .minimal-header-subtitle,
+  .minimal-header-link {
+    font-size: 80%;
+  }
+
+  .minimal-header-container  {
+    flex-direction: row;
+  }
+  .minimal-header-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left: 1px solid var(--gold);
+    padding-left: 8px;
+    margin-left: 18px;
+  }
 }
 
 .minimal-header-logo {
-
-  .logos {
-    padding: 0;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: start;
+}
+.minimal-header-logo img {
+  margin: 1px 0 1px 0;
+  height: 1.5em;
+}
+@media (min-width: 60em) {
+  .minimal-header-logo {
+    flex-direction: row;
   }
-
-  .logos .home svg, .logos .home img {
-    height: 36px;
+  .tool-header-logo img,
+  .minimal-header-logo img {
+    height: 2em;
   }
 }
 
-/*------------------------------------*\
-    #Tool header
-\*------------------------------------*/
+.minimal-header-logo a :nth-child(2) {
+  margin-left: -13px;
+}
 
-.tool-header {
-  padding-block: 0.5rem;
-
-  .minimal-header-info {
-    flex: 1 0 33%;
-  }
+.minimal-header-container {
+  background-color: var(--w3c-classic);
+}
+.minimal-header-container > .minimal-header {
+  grid-column: navigation-start / content-end;
 }
