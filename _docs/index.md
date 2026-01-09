@@ -15,6 +15,8 @@ class: teaser
     </header>
 {:/}
 
+{% include toc.html %}
+
 ## Pre-requisites
 
 Before you begin, make sure you have the following installed:
@@ -26,55 +28,58 @@ Before you begin, make sure you have the following installed:
 After cloning the repository, run:
 
 ```bash
-  git submodule update --init --remote
   bundle install
   bundle exec jekyll serve -w --config _config_doc.yml
 ```
 
 ## Theme installation
 
-
-### Instructions
-
 1. Add the following to your Gemfile:
 
     ```ruby
-    # Plugin for building Jekyll with a GitHub-hosted theme
-    gem 'jekyll-remote-theme', '~>0.4.3'
-
-    # The WAI website theme
-    gem 'wai-website-theme', '~>1.10'
+    group :jekyll_plugins do
+        gem 'wai-website-theme', git: 'https://github.com/w3c/wai-website-theme', branch: 'main'
+    end
     ```
 
-2. Add the following to your `config.yml` file:
+    Note: You can optionally specify a branch, tag, or commit to use. For more information, see [Bundler documentation](https://bundler.io/man/gemfile.5.html#GIT).
+
+2. Run `bundle install`
+
+3. Add the following to your `config.yml` file
 
     ```yaml
-      remote_theme: w3c/wai-website-theme
+      theme: wai-website-theme
     ```
 
-    Note: You can optionally specify a branch, tag, or commit to use by appending an `@` and the Git ref. For example: `w3c/wai-website-theme@1.9.10` or `w3c/wai-website-theme@test-branch`.
-
-3. List the theme plugins in your `config.yml` file:
-
-    ```yaml
-    plugins:
-      - jekyll-include-cache
-      - jekyll-paginate
-      - jekyll-redirect-from
-      - jekyll-remote-theme
-      - jekyll-seo-tag
-      - jekyll-sitemap
-      - wai-website-plugin
-    ```
-
-4. Run Jekyll
-
-    In your project root directory, run:
+4. Run Jekyll. In your project root directory, run:
 
       ```bash
       bundle install
       bundle exec jekyll serve
       ```
+
+## Theme update
+
+To update the theme in existing projects, run the following within the project directory:
+
+```
+bundle update wai-website-theme --conservative
+```
+
+When there are updates, this will update the `revision` value in the `Gemfile.lock` to use the latest commit.
+
+**Note:** Make sure to include the `--conservative` flag to avoid unintended updates of the theme dependencies.
+
+## How to update wcag22.json
+
+To update `_data/wcag22.json`, run the following within the project directory:
+
+```
+node _update-wcag-json.mjs
+```
+
+This requires [Node.js](https://nodejs.org/) version 20 or later.
 
 {::nomarkdown}
   </div>
