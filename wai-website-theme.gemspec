@@ -3,7 +3,7 @@
 Gem::Specification.new do |spec|
   spec.name          = "wai-website-theme"
   spec.version       = "1.10"
-  spec.authors       = ["Eric Eggert, Rémi Bétin"]
+  spec.authors       = ["Eric Eggert", "Rémi Bétin"]
   spec.email         = ["wai@w3.org"]
 
   spec.summary       = "This is the theme of the W3C WAI website"
