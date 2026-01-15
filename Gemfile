@@ -7,5 +7,5 @@ gemspec
 
 # Gems loaded irrespective of site configuration.
 group :jekyll_plugins do
-    gem 'wai-website-plugin', git: 'https://github.com/w3c/wai-website-plugin', branch: 'v2026' # The Jekyll plugins needed by the theme
+    gem 'wai-website-plugin', git: 'https://github.com/w3c/wai-website-plugin', branch: 'main' # The Jekyll plugins needed by the theme
 end
