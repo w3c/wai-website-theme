@@ -81,21 +81,18 @@
         {% endif %}
       </div>
       <div>
-          {% include t.html t='Editors:' %}
-          {% for editor in page.editors %}
-          {% if forloop.first %}<ul class="sentence">{% endif %}
-            {% assign editorsize = editor | size %}
-            {% if editorsize == 1 %}
-              {% assign editor1 = editor | replace: '"}', '' %}
-              {% assign editor2 = editor1 | replace: '{"', '' %}
-              {% assign editor3 = editor2 | split: '"=>"' %}
-            <li><a href="{{ editor3[1] }}">{{ editor3[0] }}</a></li>
-            {% else %}
-            <li>{{ editor }}</li>
-            {% endif%}
-          {% if forloop.last %}</ul>{% endif %}
-          {% endfor %}
-          &nbsp;
+      {% include t.html t='Editors:' %}
+      {% for editor in page.editors -%}
+        {% if forloop.first %}<ul class="sentence">{% endif %}
+        {%- if editor.size > 0 and editor.first != nil -%}
+        {%- for linked_editor in editor -%}
+          <li><a href="{{ linked_editor[1] }}">{{ linked_editor[0] }}</a></li>
+        {%- endfor -%}
+        {%- else -%}
+          <li>{{ editor }}</li>
+        {%- endif -%}
+        {% if forloop.last %}</ul>{% endif %}
+      {%- endfor -%}
       {% if page.update_editors %}
           {% include t.html t='Update Editor:' %}
           {% for updateeditor in page.update_editors %}
