@@ -5,7 +5,7 @@
         {{ include.title }}
       {% if include.title-ref %}</a>{% endif %}
     </div>
-    {% if include.subtitle %}<div class="minimal-header-subtitle">{{ include.subtitle }}</div>{% endif %}
+    {% if include.subtitle %}<p class="minimal-header-subtitle">{{ include.subtitle }}</p>{% endif %}
     {%- if include.link -%}
     <div class="minimal-header-link">
       <a href="{{ include.link.ref | relative_url }}">{{ include.link.title }}</a>
