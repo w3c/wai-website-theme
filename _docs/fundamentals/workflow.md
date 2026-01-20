@@ -54,7 +54,7 @@ The workflow described here enables parts of the WAI website to be developed ind
 
 * WG/TF staff contact
 * WAI website technical lead &mdash; currently Rémi
-* WAI website technical manager &mdash; currently Shawn
+* WAI website manager &mdash; currently Shawn
 
 Editors coordinate with the WAI website manager and technical lead on considerations for:
 * fit with existing content
