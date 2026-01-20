@@ -22,7 +22,7 @@ This section describes how content authors work with the website team to publish
 The workflow described here enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables publication on the WAI website updates to be coordinated by the website manager.
 
 * One branch in the repository is designated as the "**publication**" branch.
-* During development, editors use the default branch (usually `draft` or `main`) or other branches, not the publication branch.
+* During development, editors use the default branch (usually `draft`, `develop`, `main`) or other branches, not the publication branch.
 * Content updates must be approved by the Working Group.
 * User interface ideas and shared components updates must be coordinated early with the WAI team.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.
@@ -50,6 +50,12 @@ The workflow described here enables parts of the WAI website to be developed ind
 
 ## Coordinating User Interface and Shared Component Updates {#coop}
 
+"Coordinate" means either sending an email or assigning a GitHub issue to the:
+
+* WG/TF staff contact
+* WAI website technical lead &mdash; currently Rémi
+* WAI website technical manager &mdash; currently Shawn
+
 Editors coordinate with the WAI website manager and technical lead on considerations for:
 * fit with existing content
 * editorial style
@@ -71,7 +77,7 @@ Publication branches are protected, and editable only by W3C staff.
 
 Pull requests targeting the publication branch must be approved by the WAI website technical lead (currently Rémi) before merging, who will coordinate with Shawn and other Team members as appropriate. A ruleset enforces this requirement.
 
-Pull request are merged to the publication branch by Rémi or Shawn. As backup, any W3C staff (as W3C organization administrators) can merge into the publication branch.
+Pull requests are merged to the publication branch by Rémi or Shawn. As backup, any W3C staff (as W3C organization administrators) can merge into the publication branch.
 
 Resource editors and other non-W3C-team have maximum repository access privileges "write". Only highly-trusted individuals should have write access to the default branch.
 
