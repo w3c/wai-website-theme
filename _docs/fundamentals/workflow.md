@@ -22,7 +22,7 @@ This section describes how content authors work with the website team to publish
 The workflow described here enables parts of the WAI website to be developed independently through the lightweight [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow), and enables publication on the WAI website updates to be coordinated by the website manager.
 
 * One branch in the repository is designated as the "**publication**" branch.
-* During development, editors use the default branch (usually `draft`, `develop`, `main`) or other branches, not the publication branch.
+* During development, editors use the default branch (usually `draft` or `main`) or other branches, not the publication branch.
 * Content updates must be approved by the Working Group.
 * User interface ideas and shared components updates must be coordinated early with the WAI team.
 * Editors provide a single pull request to the publication branch when updates are ready for publication.
