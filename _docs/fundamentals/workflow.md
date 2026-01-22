@@ -50,6 +50,12 @@ The workflow described here enables parts of the WAI website to be developed ind
 
 ## Coordinating User Interface and Shared Component Updates {#coop}
 
+"Coordinate" means either sending an email or assigning a GitHub issue to the:
+
+* WG/TF staff contact
+* WAI website technical lead &mdash; currently Rémi
+* WAI website manager &mdash; currently Shawn
+
 Editors coordinate with the WAI website manager and technical lead on considerations for:
 * fit with existing content
 * editorial style
@@ -71,7 +77,7 @@ Publication branches are protected, and editable only by W3C staff.
 
 Pull requests targeting the publication branch must be approved by the WAI website technical lead (currently Rémi) before merging, who will coordinate with Shawn and other Team members as appropriate. A ruleset enforces this requirement.
 
-Pull request are merged to the publication branch by Rémi or Shawn. As backup, any W3C staff (as W3C organization administrators) can merge into the publication branch.
+Pull requests are merged to the publication branch by Rémi or Shawn. As backup, any W3C staff (as W3C organization administrators) can merge into the publication branch.
 
 Resource editors and other non-W3C-team have maximum repository access privileges "write". Only highly-trusted individuals should have write access to the default branch.
 
