@@ -74,6 +74,9 @@ layout: standalone_resource
 
 - ACT Rules: [Open the ACT Rules example in a new tab](/templates/standalone-resource/demo-act-rules/){:target="_blank"}
 - COGA: [Open the COGA example in a new tab](/templates/standalone-resource/demo-coga/){:target="_blank"}
+- APG: [Open the APG example in a new tab](/templates/standalone-resource/demo-apg/){:target="_blank"}
+- Understanding WCAG: [Open the Understanding WCAG example in a new tab](/templates/standalone-resource/demo-understanding/){:target="_blank"}
+- WCAG-EM Report Tool: [Open the WCAG-EM Report Tool example in a new tab](/templates/standalone-resource/demo-wcag-em-report-tool/){:target="_blank"}
 
 ## Includes used
 
