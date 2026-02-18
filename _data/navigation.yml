@@ -72,57 +72,68 @@
     - name:
         en: "Perspectives Videos"
         fr: "Vidéos d'illustration"
+        id: "Gambaran Umum Video Perspektif"
       url: "/perspective-videos/"
       translate: true
       pages:
       - name:
           en: "Keyboard Compatibility"
           fr: "Compatibilité avec le clavier"
+          id: "Kompatibilitas dengan Kibor"
         url: "/perspective-videos/keyboard/"
         translate: true
       - name:
           en: "Colors with Good Contrast"
           fr: "Couleurs bien constratées"
+          id: "Warna dengan Kontras yang Baik"
         url: "/perspective-videos/contrast/"
         translate: true
       - name:
           en: "Clear Layout and Design"
           fr: "Mise en page et design clairs"
+          id: "Tata Letak dan Desain yang Jelas"
         url: "/perspective-videos/layout/"
         translate: true
       - name:
           en: "Text to Speech"
           fr: "Synthèse vocale"
+          id: "Teks-ke-Ucapan"
         url: "/perspective-videos/speech/"
         translate: true
       - name:
           en: "Large Links, Buttons, and Controls"
           fr: "Liens, boutons et composants assez grands"
+          id: "Tautan, Tombol, dan Kontrol yang Besar"
         url: "/perspective-videos/controls/"
         translate: true
       - name:
           en: "Video Captions"
           fr: "Sous-titres de vidéo"
+          id: "Takarir Video"
         url: "/perspective-videos/captions/"
         translate: true
       - name:
           en: "Customizable Text"
           fr: "Texte personnalisable"
+          id: "Teks yang Dapat Disesuaikan"
         url: "/perspective-videos/customizable/"
         translate: true
       - name:
           en: "Speech Recognition"
           fr: "Reconnaissance vocale"
+          id: "Pengenalan Ucapan"
         url: "/perspective-videos/voice/"
         translate: true
       - name:
           en: "Understandable Content"
           fr: "Contenu compréhensible"
+          id: "Konten yang Dapat Dimengerti"
         url: "/perspective-videos/understandable/"
         translate: true
       - name:
           en: "Notifications and Feedback"
           fr: "Notifications et retours"
+          id: "Notifikasi dan Umpan Balik"
         url: "/perspective-videos/notifications/"
         translate: true
       - name:
@@ -521,7 +532,9 @@
           ja: "変更履歴"
         url: "/media/av/changelog/"
         hide: true
-  - name: Tutorials
+  - name:
+      en: "Tutorials"
+      id: "Tutorial"
     url: "/tutorials/"
     pages:
     - name: Page Structure
