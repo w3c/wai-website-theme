@@ -578,7 +578,7 @@
         url: "/tutorials/images/complex/"
         pages:
         - name: Example
-          url: "/tutorials/images/examples/2014-first-qtr/"
+          url: "/tutorials/images/examples/long-description/"
           hide: true
       - name: Groups of Images
         url: "/tutorials/images/groups/"
