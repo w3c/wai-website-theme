@@ -145,3 +145,10 @@
       url: "/templates/standalone-resource/"
     - name: Translation Sitemap
       url: "/templates/translation-sitemap/"
+- name:
+    en: 'WAI Style Guide'
+  pages:
+    - name: WAI Style Guide
+      url: "/style-guide/"
+    - name: About This Style Guide
+      url: "/style-guide/about/"
