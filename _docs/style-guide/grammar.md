@@ -112,7 +112,7 @@ Use to:
 > * An ellipsis (…) indicates that words have been omitted from a sentence or quotation  
 > * Test(s)
 
-**!NOTE:** Parenthetical asides can be distracting, so use them sparingly and, where it makes sense to, rewrite the content as separate sentences.
+**Note:** Parenthetical asides can be distracting, so use them sparingly and, where it makes sense to, rewrite the content as separate sentences.
 
 ### Colons
 
@@ -164,7 +164,7 @@ In a phrase listing three or more items, place a comma before the final conjunct
 > * The number of new cases has been declining — last week’s daily average was the lowest since January.
 > * Make the web work — for everyone.  
 
-**!NOTE:** Avoid using em dashes to combine related ideas if it would make a long or complex sentence.
+**Note:** Avoid using em dashes to combine related ideas if it would make a long or complex sentence.
 
 Compare with the use of a [colon](#colon), which calls attention to the words that *follow* it.
 
