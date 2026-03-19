@@ -19,6 +19,7 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 
 <b>People-first language:</b> Puts the <b>individual</b> before the disability  
 
+> [!TIP]
 > Examples:
 >
 > * people with disabilities  
@@ -28,6 +29,7 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 
 <b>Identity-first language:</b> Puts the <b>disability</b> before the individual
 
+> [!TIP]
 > Examples:
 >
 > * disabled people  
@@ -48,12 +50,14 @@ See also [Terms to avoid relating to disability / disabled people](#terms-to-avo
 
 Use gender-neutral language, as feasible.
 
+> [!TIP]
 > Example:
 >
 > Use “chair”, not “chairman”. 
 
 Avoid assumptions about gender.
 
+> [!TIP]
 > Example:
 >
 > Not all builders are male.
@@ -71,6 +75,7 @@ When writing for a global audience, use pronouns that are both **inclusive** and
 
 Avoid assuming gender by skipping 'he/she and his/her', where possible. Use a <b>plural subject</b> instead.
 
+> [!TIP]
 > Example:
 >  
 > * <b>Avoid:</b> A developer should test <b>his</b> code before release.
@@ -85,6 +90,7 @@ Singular, “they” can be problematic because it’s:
 
 Use a <b>noun</b> instead.
 
+> [!TIP]
 > Example:
 > 
 > * <b>Avoid:</b> If an author can avoid jargon, <b>they</b> should do so.
@@ -115,6 +121,7 @@ Provide the full term with the abbreviation on first use — there are [a few wa
 
 Use positive contractions and avoid negative contractions.
 
+> [!TIP]
 > Examples:
 > 
 > * <b>Avoid:</b> “cannot” instead of “can’t”; “do not” instead of don’t, and “will not” instead of “won’t”
@@ -132,6 +139,7 @@ Break up chunks of information to make it easier to parse using the guidance und
 
 Use a verb instead of a noun describing an action.
 
+> [!TIP]
 > Examples:
 >
 > * Example 1:
@@ -147,6 +155,7 @@ Use a verb instead of a noun describing an action.
 
 Write in the active voice, where possible — that is, the subject of the sentence performs the action.
 
+> [!TIP]
 > Example:
 >
 > * <b>Avoid the passive voice:</b> Additional information will be provided when available.
@@ -159,6 +168,7 @@ Write in the active voice, where possible — that is, the subject of the senten
 * Explain specialist terms on first use.  
 * Remove redundant phrases, filler words, and phrases that repeat the same idea.
 
+> [!TIP]
 > Example of unnecessary words:
 >  
 > * <b>Avoid:</b> <b>Try to</b> write link text <b>so</b> that <b>it</b> <b>clearly</b> describes where the link goes.
@@ -183,6 +193,7 @@ Write in the active voice, where possible — that is, the subject of the senten
 
 Use this word to specifically refer to people with disabilities, and not to other situations.
 
+> [!TIP]
 > Example:
 >
 > * <b>Avoid:</b> To reach more users, our website is now accessible in several languages.
@@ -192,6 +203,7 @@ Use this word to specifically refer to people with disabilities, and not to othe
 
 Use “click”, not “select” (even though some people will not use a mouse or actually click the element).
 
+> [!TIP]
 > Examples: 
 
 > * Click the “Submit” button.  
@@ -205,12 +217,14 @@ Use “eye-hand coordination”, not “hand-eye coordination”.
 
 <b>Speech recognition</b> converts what is said into text for speech-to-text (STT) transcription, virtual assistants, and other speech user interfaces.
 
+> [!TIP]
 > Example:
 >
 > Speech recognition powers [virtual assistants](https://www.google.com/search?cs=0&sca_esv=5c87a0e2847a9f64&q=virtual+assistants&sa=X&ved=2ahUKEwig3JPq5P2PAxXBX0EAHaN5L50QxccNegQIBBAB&mstk=AUtExfCTFIZsHUsJYQlPctWxIoA2kmQg8uDu_ubh8nWfaA6wg2THu_veJsrxggz6YXSIV_eNO7eUefMTbWORk5rTmaCfpJ_ZWYk12YYupkST3WNfB4ieGRoRwG_uXMvRECVCGFdm82NC0snmLjNkP00ZVM8soQM_T00otMJ-m1D3GNUiQGc&csui=3) to understand commands.
 
 <b>Voice recognition</b> identifies who is speaking by analyzing their unique vocal characteristics.
 
+> [!TIP]
 > Example:
 >
 > Voice recognition is used for security features like [voice biometrics](https://www.google.com/search?cs=0&sca_esv=5c87a0e2847a9f64&q=voice+biometrics&sa=X&ved=2ahUKEwig3JPq5P2PAxXBX0EAHaN5L50QxccNegQIBBAD&mstk=AUtExfCTFIZsHUsJYQlPctWxIoA2kmQg8uDu_ubh8nWfaA6wg2THu_veJsrxggz6YXSIV_eNO7eUefMTbWORk5rTmaCfpJ_ZWYk12YYupkST3WNfB4ieGRoRwG_uXMvRECVCGFdm82NC0snmLjNkP00ZVM8soQM_T00otMJ-m1D3GNUiQGc&csui=3) to authenticate a user.
@@ -219,6 +233,7 @@ Use “eye-hand coordination”, not “hand-eye coordination”.
 
 A string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
 
+> [!TIP]
 > Example:
 >
 > https://www.w3.org/WAI/index.html — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.
@@ -227,6 +242,7 @@ A string of characters that identifies a resource. It provides information on ho
 
 A string of characters that identifies a resource. It does not always describe how to locate the resource. Use this term when referring to a resource identifier.
 
+> [!TIP]
 > Example:
 >
 > mailto:kevin@w3.org — this identifies an email resource.
@@ -239,6 +255,7 @@ A string of characters that identifies a resource. It does not always describe h
 * When writing about WCAG 2  in general, use “WCAG 2”.  
 * If referring to a specific version of WCAG,  use the version number.
 
+> [!TIP]
 > Example of referring to a specific version:
 >
 > It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/). 
@@ -255,6 +272,7 @@ Treat “Web Content Accessibility Guidelines (WCAG) 2” and “W3C Accessibili
 
 When referring to the WCAG title, it’s a <b>[proper noun](#/w3c/wcag3/wiki/WCAG3-writing-style-guide/grammar-capitalization-proper-nouns):</b> Do not put the article (“the”) in front of WCAG.
 
+> [!TIP]
 > Examples:
 >
 > * Follow WCAG.  
@@ -262,6 +280,7 @@ When referring to the WCAG title, it’s a <b>[proper noun](#/w3c/wcag3/wiki/WCA
 
 Use WCAG with a <b>singular verb</b>.
 
+> [!TIP]
 > Examples:
 >
 > * Web Content Accessibility Guidelines (WCAG) 2 <b>is</b> published by W3C.  
@@ -269,6 +288,7 @@ Use WCAG with a <b>singular verb</b>.
 
 When WCAG is used as an <b>adjective:</b> Use the article (“the”) in front of WCAG.
 
+> [!TIP]
 > Example: 
 >
 > Follow the WCAG standard.
@@ -277,6 +297,7 @@ When WCAG is used as an <b>adjective:</b> Use the article (“the”) in front o
 
 Do not use a colon between the success criterion (SC) number and its title.
 
+> [!TIP]
 > Example:
 >  
 > * <b>Avoid:</b> Success Criterion 1.4.5: Images of Text.
@@ -284,6 +305,7 @@ Do not use a colon between the success criterion (SC) number and its title.
 
 Do not refer to SCs by number alone.
 
+> [!TIP]
 > Example: 
   
 > * <b>Avoid:</b> This applies to Success Criterion 1.4.5.
@@ -301,6 +323,7 @@ Do not refer to SCs by number alone.
 
 <b>Nouns and noun phrases</b> that are derogatory and dehumanizing, or incorrect:
 
+> [!TIP]
 > Examples:
 >
 > * “the blind”  
@@ -313,6 +336,7 @@ Do not refer to SCs by number alone.
 
 <b>Adjectives</b> that are negative, euphemistic, or patronizing:
 
+> [!TIP]
 > Examples:
 >
 > * blind to  
@@ -334,6 +358,7 @@ Do not refer to SCs by number alone.
 
 <b>Verbs</b> that suggest suffering, helplessness, or weakness:
 
+> [!TIP]
 > Examples:
 >
 > * afflicted by  
@@ -347,6 +372,7 @@ Do not refer to SCs by number alone.
 * Avoid terminology that directly states people with disabilities <b>cannot do something</b> — instead, switch the phrasing around to focus on the impact of bad design and how good design can enable people to do things.  
 * Avoid phrasing that presents a disability as something that <b>needs to be fixed</b>.
 
+> [!TIP]
 > Example:
 > 
 > * <b>Avoid:</b> Assistive technologies can help <b>correct</b> their speech in face-to-face conversations.
@@ -376,6 +402,7 @@ It’s okay to use “loss” in contexts that describe a <b>change</b> — for 
 
 The first time you use an abbreviation (that is, acronyms, initialisms, and numeronyms), give the expanded form; then use the abbreviation for subsequent references.
 
+> [!TIP]
 > Example:
 >
 > * <b>First use:</b> World Wide Web Consortium (W3C)  
@@ -383,6 +410,7 @@ The first time you use an abbreviation (that is, acronyms, initialisms, and nume
 
 **Exception:** If the term is more commonly known by its abbreviation, you do not need to expand it.
 
+> [!TIP]
 > Examples:
 >
 > ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
@@ -391,6 +419,7 @@ The first time you use an abbreviation (that is, acronyms, initialisms, and nume
 
 If you have a reason for not expanding an abbreviation, mark up the first instance of the abbreviation with an `<abbr>` element that contains the expansion.
 
+> [!TIP]
 > Examples:
 >
 > * `<abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>`  
@@ -400,6 +429,7 @@ If you have a reason for not expanding an abbreviation, mark up the first instan
 
 Use <b>title case</b> if the full term is a proper noun.
 
+> [!TIP]
 > Examples: 
 >
 > * Web Content Accessibility Guidelines (WCAG)  
@@ -407,6 +437,7 @@ Use <b>title case</b> if the full term is a proper noun.
 
 Use <b>lowercase</b> when the full term is a common noun.
 
+> [!TIP]
 > Examples: 
 >
 > * real-time communication (RTC)  
@@ -423,24 +454,28 @@ Use <b>lowercase</b> when the full term is a common noun.
 
 Put the day first:
 
+> [!TIP]
 > Example: 
 >
 > 1 January (instead of January 1)
 
 Do not use letter suffixes after the day:
 
+> [!TIP]
 > Example: 
 >
 > 30 April (instead of 30th April)
 
 Use numbers for the day and year, words for the month:
 
+> [!TIP]
 > Example:
 >
 > 31 May 2022
 
 In cases where numbers only must be used (such as in a form), use the following format: YYYY-MM-DD:
 
+> [!TIP]
 > Example:
 >
 > 2025-10-21
@@ -463,6 +498,7 @@ Use sentence case, not title case.
 
 Link text should describe where the link will take the user. 
 
+> [!TIP]
 > Example:
 >
 > * <b>Avoid:</b> “Click here”, “Learn more”, “Read more”
@@ -474,6 +510,7 @@ Never use the same link text for links that lead to different destinations.
 
 Whenever feasible, place links to documents at the end of sentences.
 
+> [!TIP]
 > Example:
 > 
 > * <b>Avoid:</b> See [Easy Checks — A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/easy-checks/) for the latest draft.
@@ -483,6 +520,7 @@ Whenever feasible, place links to documents at the end of sentences.
 
 Provide the <b>file format</b> so the user knows what to expect.
 
+> [!TIP]
 > Example:
 > 
 > * <b>Avoid:</b> To download the full report, see Annual Report 2025.
@@ -510,6 +548,7 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 * Start each item with a <b>capital letter</b>.  
 * End each item in a full stop or a question mark.
 
+> [!TIP]
 > Example:
 >
 > * In spring I mulch the roses.  
@@ -521,6 +560,7 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 * Begin each item with a <b>lowercase letter</b> (except for proper nouns).  
 * End each item with no punctuation.
 
+> [!TIP]
 > Example:
 >
 > Shopping list:
@@ -535,6 +575,7 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 * Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.  
 * End each item with no punctuation.
 
+> [!TIP]
 > Examples:
 >
 > * To give your day structure, use the 1-3-5 Rule and focus on:  
@@ -554,6 +595,7 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 
 Always use a <b>digit</b>:
 
+> [!TIP]
 > Examples:
 >
 > * She is 5 years old.  
@@ -578,6 +620,7 @@ For these units, use the abbreviation *after* the digit:
 * Up to nine: use words.
 * 10 and above: use digits.
 
+> [!TIP]
 > Examples:
 >
 > * She invited nine friends.  
@@ -591,6 +634,7 @@ For these units, use the abbreviation *after* the digit:
 * See [Ages, measurements, percentages, and ratios](#ages,-measurements,-percentages,-and-ratios).  
 * Use words for very large numbers when they are rounded figures.
 
+> [!TIP]
 > Examples of writing very large numbers:
 > 
 > 1 million, 2.2 billion, 3.5 trillion
@@ -599,6 +643,7 @@ For these units, use the abbreviation *after* the digit:
 
 If a number starts a sentence, use words or reword so as not to start with a number.
 
+> [!TIP]
 > Examples:
 > 
 > * <b>Avoid:</b> 10 of the 25 participants had issues completing the task.
@@ -610,6 +655,7 @@ If a number starts a sentence, use words or reword so as not to start with a num
 
 With *related* numbers, where one number is usually written in digits and the other not, use <b>digits</b> for both.
 
+> [!TIP]
 > Example:
 >
 > We bought 1 bag containing 500 seeds. 
@@ -618,6 +664,7 @@ With *related* numbers, where one number is usually written in digits and the ot
 
 With *adjacent* numbers that express different categories of numbers, use a <b>mixture of words and digits</b>.
 
+> [!TIP]
 > Example:
 >
 > The cook needs twelve 2-pound bags of flour.
@@ -630,6 +677,7 @@ For guidance on how to write dates, see [Dates — Style for different content t
 
 Numbers over 3 digits get commas.
 
+> [!TIP]
 > Examples: 
 >
 > * 9,000  
@@ -641,6 +689,7 @@ Numbers over 3 digits get commas.
 
 Use the `<cite>` attribute to mark up the title of a creative work.
 
+> [!TIP]
 > Example:
 >
 > `<p>According to <cite>The Hitchhiker’s Guide to the Galaxy</cite>, the answer to life, the universe, and everything is 42.</p>`
