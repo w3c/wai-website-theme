@@ -16,4 +16,4 @@ This is a living document. It aims to follow the recommendations in this style g
 
 ## Feedback
 
-Please raise issues with questions, comments, and suggestions in the [W3C style-guidev2025 GitHub repository](https://github.com/w3c/style-guide-v2025/issues).
+Please raise issues with questions, comments, and suggestions (add method and link).
