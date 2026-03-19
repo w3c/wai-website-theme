@@ -3,9 +3,6 @@ title: "WAI Style Guide"
 lang: en
 ---
 
-Add toc with links to the sub pages (use relative /style-guide/etc
-example: [[Standards]](/standards-guidelines/)
-
 ## Table of contents
 
 * [About this style guide](/style-guide/about)
