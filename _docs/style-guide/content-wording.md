@@ -41,8 +41,7 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 * “Deaf” (with a capital letter): Denotes cultural identity and membership in a community that primarily uses sign language, such as American Sign Language (ASL)  
 * “deaf” (with a lower case letter): A medical term to describe anyone who does not hear very much or at all. 
 
-> [!NOTE] 
-> A person who is hard of hearing may not use sign language or identify with Deaf culture)
+ **Note:** A person who is hard of hearing may not use sign language or identify with Deaf culture)
 
 See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability-disabled-people).
 
