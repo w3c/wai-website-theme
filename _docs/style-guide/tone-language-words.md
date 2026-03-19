@@ -1,5 +1,5 @@
 ---
-title: "Content and Wording"
+title: "Tone, Language and Words"
 lang: en
 ---
 
