@@ -18,7 +18,7 @@ lang: en
 * **Headings:**  
   * Use headings and subheadings to group related ideas.  
   * Write concise, unique headings that clearly describe the content beneath them.  
-  * Front-load headings with relevant keywords to aid readability and SEO.  
+  * Front-load headings with relevant keywords to aid readability and search engine optimization (SEO).  
 * **Sentences:**   
   * Write short, simple sentences that avoid using complex structures, such as nested subordinate clauses.  
   * Stick to one idea per sentence.  
@@ -48,6 +48,7 @@ Use italics sparingly to:
 * add stress emphasis to a word or phrase where this helps to make the meaning clearer by highlighting differences between ideas  
 * indicate foreign words that are not commonly used in the English language
 
+> [!TIP]
 > Examples:
 >
 > * This policy applies to *new* staff, not existing staff.  
