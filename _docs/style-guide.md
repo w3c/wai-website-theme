@@ -44,6 +44,6 @@ lang: en
     * [Commas](/style-guide/grammar/#commas)
     * [Dashes and hyphens](/style-guide/grammar/#dashes-and-hyphens)
     * [Ellipsis](/style-guide/grammar/#ellipsis)
-    * [Full stops / periods](/style-guide/grammar/#full-stops-periods)
+    * [Full stops / periods](/style-guide/grammar/#full-stops--periods)
     * [Quotation marks](/style-guide/grammar/#quotation-marks)
     * [Slashes](/style-guide/grammar/#slashes)
