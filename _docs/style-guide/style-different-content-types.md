@@ -278,10 +278,6 @@ With *adjacent* numbers that express different categories of numbers, use a <b>m
 >
 > The cook needs twelve 2-pound bags of flour.
 
-#### Dates
-
-For guidance on how to write dates, see [Dates — Digits versus words](#dates).
-
 ### Punctuating numbers
 
 Numbers over 3 digits get commas.
