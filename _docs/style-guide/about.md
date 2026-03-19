@@ -11,8 +11,7 @@ This style guide sets guidelines for writing materials for W3C Accessibility Gui
 
 This is a living document. It aims to follow the recommendations in this style guide.
 
-> [!IMPORTANT] 
-> These guidelines are written for the **English language**. Translators may apply regional conventions and or orthotypography.
+**Important:**  These guidelines are written for the **English language**. Translators may apply regional conventions and or orthotypography.
 
 ## Feedback
 
