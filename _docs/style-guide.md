@@ -9,14 +9,14 @@ example: [[Standards]](/standards-guidelines/)
 ## Table of contents
 
 * [About this style guide](/style-guide/about)
-* [[Structure and presentation]](/style-guide/structure-presentation)
+* [Structure and presentation](/style-guide/structure-presentation)
   * [Structure](/style-guide/structure-presentation/#structure)
     * [Logical flow and order](/style-guide/structure-presentation/#logical-flow-and-order)
     * [Using structural elements](/style-guide/structure-presentation/#using-structural-elements)
   * [Formatting](/style-guide/structure-presentation/#formatting)
     * [Bold](/style-guide/structure-presentation/formatting/#bold)
     * [Italics](/style-guide/structure-presentation/formatting/#italics)
-* [[Content and wording]](/style-guide/content-wording)
+* [Content and wording](/style-guide/content-wording)
   * [Tone](/style-guide/content-wording/#tone)
   * [Language](/style-guide/content-wording/#language)
     * [Disability language](/style-guide/content-wording/language/#disability-language) 
@@ -26,27 +26,27 @@ example: [[Standards]](/standards-guidelines/)
     * [Correct usage of key terms](/style-guide/content-wording/spelling/#correct-use-of-key-terms)
     * [Terms to avoid](/style-guide/content-wording/spelling/#terms-to-avoid)
     * [Context-dependent terms](/style-guide/content-wording/spelling/#context-dependent-terms)
-* [[Style for different content types (A–Z)]]
-  * [Abbreviations]
-  * [Dates]
-  * [Headings]
-  * [Links]
-  * [Lists]
-  * [Numbers]
-  * [Symbols]
-* [[Grammar]]
-  * [Capitalization]
-    * [All caps]
-    * [Braille]
-    * [Glossaries]
-    * [Proper nouns]
-  * [That versus which] 
-  * [Punctuation]
-    * [Brackets]
-    * [Colons]
-    * [Commas]
-    * [Dashes and hyphens]
-    * [Ellipsis]
-    * [Full stops / periods]
-    * [Quotation marks]
-    * [Slashes]
+* [Style for different content types (A–Z)](/style-guide/style-different-content-types)
+  * [Abbreviations](/style-guide/style-different-content-types/#abbreviations)
+  * [Dates](/style-guide/style-different-content-types/#dates)
+  * [Headings](/style-guide/style-different-content-types/#headings)
+  * [Links](/style-guide/style-different-content-types/#links)
+  * [Lists](/style-guide/style-different-content-types/#lists)
+  * [Numbers](/style-guide/style-different-content-types/#numbers)
+  * [Symbols](/style-guide/style-different-content-types/#symbols)
+* [Grammar](/style-guide/grammar)
+  * [Capitalization](/style-guide/grammar/#capitalization)
+    * [All caps](/style-guide/grammar/#all-caps)
+    * [Braille](/style-guide/grammar/#braille)
+    * [Glossaries](/style-guide/grammar/#glossaries)
+    * [Proper nouns](/style-guide/grammar/#proper-nouns)
+  * [That versus which](/style-guide/grammar/#that-versus-which)
+  * [Punctuation](/style-guide/grammar/#punctuation)
+    * [Brackets](/style-guide/grammar/punctuation/#brackets)
+    * [Colons](/style-guide/grammar/punctuation/#colons)
+    * [Commas](/style-guide/grammar/punctuation/#commas)
+    * [Dashes and hyphens](/style-guide/grammar/punctuation/#dashes-and-hyphens)
+    * [Ellipsis](/style-guide/grammar/punctuation/#ellipsis)
+    * [Full stops / periods](/style-guide/grammar/punctuation/#full-stops---periods)
+    * [Quotation marks](/style-guide/grammar/punctuation/#quotation-marks)
+    * [Slashes](/style-guide/grammar/punctuation/#slashes)
