@@ -44,7 +44,7 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 > [!NOTE] 
 > A person who is hard of hearing may not use sign language or identify with Deaf culture)
 
-See also [Terms to avoid relating to disability / disabled people](/style-guide/content-wording/#terms-to-avoid-relating-to-disability-disabled-people).
+See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability-disabled-people).
 
 ### Inclusive language
 
