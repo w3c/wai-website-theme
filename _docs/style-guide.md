@@ -12,28 +12,28 @@ example: [[Standards]](/standards-guidelines/)
 * [[Structure and presentation]](/style-guide/structure-presentation)
   * [Structure](/style-guide/structure-presentation/#structure)
     * [Logical flow and order](/style-guide/structure-presentation/#logical-flow-and-order)
-    * [Using structural elements]
-  * [Formatting]
-    * [Bold]  
-    * [Italics] 
-* [[Content and wording]]
-  * [Tone]
-  * [Language] 
-    * [Disability language]  
-    * [Inclusive language]  
-    * [Plain language]
-  * [Spelling] 
-    * [Correct usage of key terms]
-    * [Terms to avoid]
-    * [Context-dependent terms] 
-  * [Style for different content types (A–Z)]
-    * [Abbreviations]
-    * [Dates]
-    * [Headings]
-    * [Links]
-    * [Lists]
-    * [Numbers]
-    * [Symbols]
+    * [Using structural elements](/style-guide/structure-presentation/#using-structural-elements)
+  * [Formatting](/style-guide/structure-presentation/#formatting)
+    * [Bold](/style-guide/structure-presentation/formatting/#bold)
+    * [Italics](/style-guide/structure-presentation/formatting/#italics)
+* [[Content and wording]](/style-guide/content-wording)
+  * [Tone](/style-guide/content-wording/#tone)
+  * [Language](/style-guide/content-wording/#language)
+    * [Disability language](/style-guide/content-wording/language/#disability-language) 
+    * [Inclusive language](/style-guide/content-wording/language/#inclusive-language)  
+    * [Plain language](/style-guide/content-wording/language/#plain-language) 
+  * [Spelling](/style-guide/content-wording/#spelling)
+    * [Correct usage of key terms](/style-guide/content-wording/spelling/#correct-use-of-key-terms)
+    * [Terms to avoid](/style-guide/content-wording/spelling/#terms-to-avoid)
+    * [Context-dependent terms](/style-guide/content-wording/spelling/#context-dependent-terms)
+* [[Style for different content types (A–Z)]]
+  * [Abbreviations]
+  * [Dates]
+  * [Headings]
+  * [Links]
+  * [Lists]
+  * [Numbers]
+  * [Symbols]
 * [[Grammar]]
   * [Capitalization]
     * [All caps]
