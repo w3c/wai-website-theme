@@ -32,7 +32,7 @@ If you have a reason for not expanding an abbreviation, mark up the first instan
 > Examples:
 >
 > * `<abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>`  
-> * `<a href="https://en.wikipedia.org/wiki/Transmission\_Control\_Protocol"><abbr title="Transmission Control Protocol">TCP</abbr></a>`
+> * `<abbr title="Transmission Control Protocol">TCP</abbr>`
 
 ### Capitalization in abbreviations
 
