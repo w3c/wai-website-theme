@@ -9,7 +9,7 @@ lang: en
 
 ### Abbreviations 
 
-See [Capitalization in abbreviations](/w3c/wcag3/wiki/Content-and-wording/#capitalization-in-abbreviations).
+See [Capitalization in abbreviations](/style-guide/style-different-content-types/#capitalization-in-abbreviations).
 
 ### All caps 
 
@@ -25,11 +25,11 @@ Use lowercase for terms in a glossary.
 
 ### Headings 
 
-See [Capitalization in headings](/w3c/wcag3/wiki/Content-and-wording/#capitalization-in-headings). 
+See [Capitalization in headings]((/style-guide/style-different-content-types/#capitalization-in-headings). 
 
 ### Lists
 
-See [Capitalization in lists](/w3c/wcag3/wiki/Content-and-wording/#capitalization-in-lists).
+See [Capitalization in lists]((/style-guide/style-different-content-types/#capitalization-in-lists).
 
 ### Proper nouns 
 
@@ -204,7 +204,7 @@ With two compound adjectives modifying the same noun, use a hanging hyphen.
 >
 > The pre<b>-</b> and post<b>-</b>deployment stages are equally important.
 
-For guidance on terms we no longer hyphenate and are written as one word, see the [Spelling](/w3c/wcag3/wiki/Content-and-wording/#spelling) section.
+For guidance on terms we no longer hyphenate and are written as one word, see the [Spelling](/style-guide/content-wording/#spelling) section.
 
 ### Ellipsis
 
@@ -231,19 +231,19 @@ When a sentence ends with an abbreviation that has a full stop, do not add anoth
 
 ### Headings
 
-For guidance on punctuating headings, see [Headings — Style for different content types (A–Z)](/w3c/wcag3/wiki/Content-and-wording/#headings).
+For guidance on punctuating headings, see [Headings — Style for different content types (A–Z)](/style-guide/style-different-content-types/#headings).
 
 ### Links
 
-For guidance on punctuating links, see [Links — Style for different content types (A–Z)](/w3c/wcag3/wiki/Content-and-wording/#links).
+For guidance on punctuating links, see [Links — Style for different content types (A–Z)](/style-guide/style-different-content-types/#links).
 
 ### Lists
 
-For guidance on punctuating lists, see [Lists — Style for different content types (A–Z)](/w3c/wcag3/wiki/Content-and-wording/#lists).
+For guidance on punctuating lists, see [Lists — Style for different content types (A–Z)](/style-guide/style-different-content-types/#lists).
 
 ### Numbers
 
-For guidance on punctuating numbers, see [Numbers — Style for different content types (A–Z](/w3c/wcag3/wiki/Content-and-wording/#numbers).
+For guidance on punctuating numbers, see [Numbers — Style for different content types (A–Z](/style-guide/style-different-content-types/#numbers).
 
 ### Quotation marks
 
