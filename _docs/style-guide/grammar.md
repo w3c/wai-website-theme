@@ -1,5 +1,5 @@
 ---
-title: "Grammar and Punctuation"
+title: "Grammar"
 lang: en
 ---
 
