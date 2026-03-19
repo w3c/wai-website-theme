@@ -152,3 +152,9 @@
       url: "/style-guide/"
     - name: About This Style Guide
       url: "/style-guide/about/"
+    - name: Structure and Presentation
+      url: "/style-guide/structure-presentation/"
+    - name: Content and Wording
+      url: "/style-guide/content-wording/"
+    - name: Grammar
+      url: "/style-guide/grammar/"
