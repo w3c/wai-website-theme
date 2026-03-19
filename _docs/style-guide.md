@@ -13,7 +13,7 @@ lang: en
   * [Formatting](/style-guide/structure-presentation/#formatting)
     * [Bold](/style-guide/structure-presentation/#bold)
     * [Italics](/style-guide/structure-presentation/#italics)
-* [Content and wording](/style-guide/content-wording)
+* [Content and wording](/style-guide/tone-language-words)
   * [Tone](/style-guide/content-wording/#tone)
   * [Language](/style-guide/content-wording/#language)
     * [Disability language](/style-guide/content-wording/#disability-language) 
