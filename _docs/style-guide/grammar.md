@@ -217,7 +217,7 @@ With two compound adjectives modifying the same noun, use a hanging hyphen.
 >
 > The pre<b>-</b> and post<b>-</b>deployment stages are equally important.
 
-For guidance on terms we no longer hyphenate and are written as one word, see the [Spelling](/style-guide/content-wording/#spelling) section.
+For guidance on terms we no longer hyphenate and are written as one word, see the [Spelling](/style-guide/tone-language-words/#spelling) section.
 
 ### Ellipsis
 
