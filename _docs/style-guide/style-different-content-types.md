@@ -1,5 +1,5 @@
 ---
-title: "Style for Different Content Types (A-Z)"
+title: "Style for Different Content Types (A–Z)"
 lang: en
 ---
 
