@@ -44,7 +44,7 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 > [!NOTE] 
 > A person who is hard of hearing may not use sign language or identify with Deaf culture)
 
-See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability/disabled-people).
+See also [Terms to avoid relating to disability / disabled people](/style-guide/content-wording/#terms-to-avoid).
 
 ### Inclusive language
 
@@ -64,8 +64,8 @@ Avoid assumptions about gender.
 
 See also:
 
-* [Disability language](#disability-language)
-* [Pronouns: Gender inclusivity and translation considerations](#pronouns-gender-inclusivity-and-translation-considerations)
+* [Disability language](/style-guide/content-wording/#disability-language)
+* [Pronouns: Gender inclusivity and translation considerations](/style-guide/content-wording/#inclusive-language/#pronouns-gender-inclusivity-and-translation-considerations)
 
 #### Pronouns: Gender inclusivity and translation considerations
 
@@ -115,7 +115,7 @@ Plain language uses clear wording, structure and design that enables readers to 
 
 Provide the full term with the abbreviation on first use — there are [a few ways you can do this](https://www.w3.org/WAI/WCAG21/Techniques/general/G102#related).
 
-**Exceptions:** See [Abbreviations — Style for different content types](#abbreviations).
+**Exceptions:** See [Abbreviations — Style for different content types](/style-guide/style-different-content-types/#abbreviations/#abbreviations).
 
 ##### Contractions
 
@@ -133,7 +133,7 @@ Use “you” and “your” when talking to the reader; and “we” when talki
 
 ##### Structure
 
-Break up chunks of information to make it easier to parse using the guidance under [Structure](https://github.com/w3c/wcag3/wiki/Structure-and-presentation#structure).
+Break up chunks of information to make it easier to parse using the guidance under [Structure](/style-guide/structure-presentation/#structure).
 
 ##### Verbs
 
@@ -220,7 +220,7 @@ Use “eye-hand coordination”, not “hand-eye coordination”.
 > [!TIP]
 > Example:
 >
-> Speech recognition powers [virtual assistants](https://www.google.com/search?cs=0&sca_esv=5c87a0e2847a9f64&q=virtual+assistants&sa=X&ved=2ahUKEwig3JPq5P2PAxXBX0EAHaN5L50QxccNegQIBBAB&mstk=AUtExfCTFIZsHUsJYQlPctWxIoA2kmQg8uDu_ubh8nWfaA6wg2THu_veJsrxggz6YXSIV_eNO7eUefMTbWORk5rTmaCfpJ_ZWYk12YYupkST3WNfB4ieGRoRwG_uXMvRECVCGFdm82NC0snmLjNkP00ZVM8soQM_T00otMJ-m1D3GNUiQGc&csui=3) to understand commands.
+> Speech recognition powers [virtual assistants]([https://www.google.com/search?cs=0&sca_esv=5c87a0e2847a9f64&q=virtual+assistants&sa=X&ved=2ahUKEwig3JPq5P2PAxXBX0EAHaN5L50QxccNegQIBBAB&mstk=AUtExfCTFIZsHUsJYQlPctWxIoA2kmQg8uDu_ubh8nWfaA6wg2THu_veJsrxggz6YXSIV_eNO7eUefMTbWORk5rTmaCfpJ_ZWYk12YYupkST3WNfB4ieGRoRwG_uXMvRECVCGFdm82NC0snmLjNkP00ZVM8soQM_T00otMJ-m1D3GNUiQGc&csui=3](https://www.google.com/search?q=what+are+virtual+assistants&cs=0&sca_esv=5c87a0e2847a9f64&sxsrf=ANbL-n7SQFvwyM0jiaHp5J4PDFdxl2Dx7w%3A1773887998608&ei=_mG7abLnJJrm1e8PpY3_uA8&biw=2181&bih=1271&ved=0ahUKEwiy3pzg96qTAxUac_UHHaXGH_cQ4dUDCBE&uact=5&oq=what+are+virtual+assistants&gs_lp=Egxnd3Mtd2l6LXNlcnAiG3doYXQgYXJlIHZpcnR1YWwgYXNzaXN0YW50czIKEAAYgAQYRhj5ATIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMggQABgWGAoYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yJBAAGIAEGEYY-QEYlwUYjAUY3QQYRhj5ARj0Axj1Axj2A9gBAUiILFDfDFiBFnABeAGQAQCYAewBoAHgEKoBBDItMTC4AQPIAQD4AQGYAgOgAsgDwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigXCAg4QABiwAxjkAhjWBNgBAcICFxAuGLADGLgGGNgCGMgDGNoGGNwG2AEBwgIGEAAYBxgewgIkEAAYgAQYRhj5ARiXBRiMBRjdBBhGGPkBGPQDGPUDGPYD2AEBmAMAiAYBkAYTugYGCAEQARgJkgcFMS4wLjKgB-tesgcDMi0yuAfBA8IHBzAuMS4xLjHIBxaACAA&sclient=gws-wiz-serp)) to understand commands.
 
 <b>Voice recognition</b> identifies who is speaking by analyzing their unique vocal characteristics.
 
@@ -270,7 +270,7 @@ A string of characters that identifies a resource. It does not always describe h
 
 Treat “Web Content Accessibility Guidelines (WCAG) 2” and “W3C Accessibility Guidelines (WCAG) 3” as titles of standards, not as plural “guidelines”.
 
-When referring to the WCAG title, it’s a <b>[proper noun](#/w3c/wcag3/wiki/WCAG3-writing-style-guide/grammar-capitalization-proper-nouns):</b> Do not put the article (“the”) in front of WCAG.
+When referring to the WCAG title, it’s a <b>[proper noun](/style-guide/grammar/#proper-nouns):</b> Do not put the article (“the”) in front of WCAG.
 
 > [!TIP]
 > Examples:
