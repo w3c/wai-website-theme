@@ -235,7 +235,7 @@ A string of characters that identifies a resource. It provides information on ho
 > [!TIP]
 > Example:
 >
-> https://www.w3.org/WAI/index.html — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.
+> https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.
 
 #### URI (Uniform Resource Identifier) 
 
