@@ -280,7 +280,7 @@ With *adjacent* numbers that express different categories of numbers, use a <b>m
 
 #### Dates
 
-For guidance on how to write dates, see [Dates — Style for different content types(A–Z)](#dates).
+For guidance on how to write dates, see [Dates — Digits versus words](#dates).
 
 ### Punctuating numbers
 
