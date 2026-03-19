@@ -40,6 +40,7 @@ Only capitalize nouns that are proper nouns — compare:
 
 If a proper noun is singular, it’s not capitalized in the plural.
 
+> [!TIP]
 > Example:
 >
 > “The Government is focussed on social policy, but previous governments focussed on economic policy” — here, “the Government” is a proper noun because it refers to the current national government.
@@ -50,6 +51,7 @@ If a proper noun is singular, it’s not capitalized in the plural.
 
 Treat WCAG levels as proper nouns.
 
+> [!TIP]
 > Example:
 >
 > * <b>Use:</b> WCAG Level A, Level AA and Level AAA  
@@ -60,6 +62,7 @@ Treat WCAG levels as proper nouns.
 * Use title case when it includes the name of the group.  
 * Use lowercase when it does not include the name of the group, or when it’s in the plural form.
 
+> [!TIP]
 > Examples:
 >
 > * The Mobile Accessibility Task Force met yesterday.  
@@ -78,12 +81,14 @@ Use lowercase for the following nouns, unless these are part of a name or title:
 
 <b>That:</b> Introduces an essential or restrictive clause that is crucial for understanding the sentence. 
 
+> [!TIP]
 > Example:
 >
 > “The meeting that starts at 10 a.m. will be online” — here, the time is important, as it helps to identify which meeting is online.
 
 <b>Which:</b> Introduces a non-essential or non-restrictive clause that provides extra, but not necessary, information.
 
+> [!TIP]
 > Example:
 >
 > “The meeting, which starts at 10 a.m., will be online.” — here, the time is additional, non-essential information.
@@ -100,14 +105,14 @@ Use to:
 * clarify something in a parenthetical aside  
 * signal an optional plural
 
+> [!TIP]
 > Examples:
 > 
 > * Internet of Things (IoT)  
 > * An ellipsis (…) indicates that words have been omitted from a sentence or quotation  
 > * Test(s)
 
-> [!NOTE] 
-> Parenthetical asides can be distracting, so use them sparingly and, where it makes sense to, rewrite the content as separate sentences.
+**!NOTE:** Parenthetical asides can be distracting, so use them sparingly and, where it makes sense to, rewrite the content as separate sentences.
 
 ### Colons
 
@@ -115,6 +120,7 @@ Use to:
 
 Use a colon to introduce something, putting the emphasis on the clause or list that follows it.
 
+> [!TIP]
 > Examples:
 > 
 > * Contact us: email@example.com  
@@ -129,6 +135,7 @@ Use to:
 * connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence)  
 * break up complex lists that contain internal commas
 
+> [!TIP]
 > Examples:
 >
 > * Bananas and apples are both fruits; however, they do not look alike.  
@@ -138,6 +145,7 @@ Use to:
 
 In a phrase listing three or more items, place a comma before the final conjunction.
 
+> [!TIP]
 > Example:
 >
 > I bought apples, oranges, and bananas.
@@ -149,14 +157,14 @@ In a phrase listing three or more items, place a comma before the final conjunct
 * Use an em dash (—) to clarify or elaborate on what was just said.  
 * Put a space before and after an em dash.
 
+> [!TIP]
 > Examples:
 >
 > * Many animals hibernate during winter — for example, bears.
 > * The number of new cases has been declining — last week’s daily average was the lowest since January.
 > * Make the web work — for everyone.  
 
-> [!NOTE] 
-> Avoid using em dashes to combine related ideas if it would make a long or complex sentence.
+**!NOTE:** Avoid using em dashes to combine related ideas if it would make a long or complex sentence.
 
 Compare with the use of a [colon](#colon), which calls attention to the words that *follow* it.
 
@@ -165,6 +173,7 @@ Compare with the use of a [colon](#colon), which calls attention to the words th
 * Use an en dash (–) to indicate a range of numbers, such as in dates, pages and sports results.  
 * Do not put a space before and after an en dash.
 
+> [!TIP]
 > Examples:
 >
 > * The years 1990–2000 were transformative.  
@@ -173,6 +182,7 @@ Compare with the use of a [colon](#colon), which calls attention to the words th
 
 **Exception:** Do not use an en dash for a <b>range of time</b> — instead, use “from … to” or “between … and”.
 
+> [!TIP]
 > Example:
 >
 > * The meeting is from 9 a.m. to 10:30 a.m.  
@@ -182,6 +192,7 @@ Compare with the use of a [colon](#colon), which calls attention to the words th
 
 Use a hyphen (-) to hyphenate compound adjectives.
 
+> [!TIP]
 > Examples:
 >
 > * peer-to-peer connection  
@@ -193,6 +204,7 @@ Do *not* hyphenate:
 * an adverb that ends in “ly”  
 * an adverb that follows a noun
 
+> [!TIP]
 > Examples
 >
 > * They are two <b>closely related</b> concepts.  
@@ -200,6 +212,7 @@ Do *not* hyphenate:
 
 With two compound adjectives modifying the same noun, use a hanging hyphen.
 
+> [!TIP]
 > Example:
 >
 > The pre<b>-</b> and post<b>-</b>deployment stages are equally important.
@@ -216,6 +229,7 @@ Use an ellipsis (...) to:
 
 Place a space before and after an ellipsis.
 
+> [!TIP]
 > Example:
 >
 > I was wondering … but it’s probably not important.
@@ -224,6 +238,7 @@ Place a space before and after an ellipsis.
 
 When a sentence ends with an abbreviation that has a full stop, do not add another full stop.
 
+> [!TIP]
 > Example:
 >
 > * <b>Use:</b> Let’s meet at 2:30 p.m.
@@ -249,6 +264,7 @@ For guidance on punctuating numbers, see [Numbers — Style for different conten
 
 Use double quotation marks to reference a term.
 
+> [!TIP]
 > Example:
 >
 > This accessibility requirement is sometimes called “sufficient color contrast”; however, the technical term is “luminosity contrast”.
@@ -261,6 +277,7 @@ Generally, only use a forward slash in dates, fractions, and URLs.
 
 For indicating an optional plural, use parentheses instead.
 
+> [!TIP]
 > Example:
 >
 > * <b>Use:</b> Test(s)  
@@ -268,6 +285,7 @@ For indicating an optional plural, use parentheses instead.
 
 Where possible, do not use a forward slash to show two things that have a close relationship or are in opposition — instead use a hyphen or a conjunction.
 
+> [!TIP]
 > Examples:
 >
 > Example 1:
@@ -292,6 +310,7 @@ Where possible, do not use a forward slash to show two things that have a close 
 
 **Exception:** Use a forward slash to show close relationship or opposition if it makes more sense than using words.
 
+> [!TIP]
 > Example:
 >
 > * <b>Use:</b> In inclusive writing, avoid gender pronouns (she/her, he/his) where possible.  
