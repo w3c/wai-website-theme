@@ -10,7 +10,7 @@ example: [[Standards]](/standards-guidelines/)
 
 * [[About this style guide]](/style-guide/about)
 * [[Structure and presentation]](/style-guide/structure-presentation)
-  * [Structure](/style-guide/structure-presentation/structure)
+  * [Structure](/style-guide/structure-presentation/#structure)
     * [Logical flow and order](/style-guide/structure-presentation/#logical-flow-and-order)
     * [Using structural elements]
   * [Formatting]
