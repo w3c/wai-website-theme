@@ -48,11 +48,14 @@ Use italics sparingly to:
 * add stress emphasis to a word or phrase where this helps to make the meaning clearer by highlighting differences between ideas  
 * indicate foreign words that are not commonly used in the English language
 
-> [!TIP]
-> Examples:
->
-> * This policy applies to *new* staff, not existing staff.  
-> * The Japanese aesthetic of <i>wabi-sabi</i> values simplicity and imperfection.
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>This policy applies to <i>new</i> staff, not existing staff.</li>
+  <li>The Japanese aesthetic of <i>wabi-sabi</i> values simplicity and imperfection.</li>
+</ul>
+</aside>
 
 <b>When to avoid italics:</b>
 

@@ -19,13 +19,16 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 
 <b>People-first language:</b> Puts the <b>individual</b> before the disability  
 
-> [!TIP]
-> Examples:
->
-> * people with disabilities  
-> * people with physical impairments  
-> * people who are blind  
-> * people with autism
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>people with disabilities</li>
+  <li>people with physical impairments</li>  
+  <li>people who are blind</li>
+  <li>people with autism</li>
+</ul>
+</aside>
 
 <b>Identity-first language:</b> Puts the <b>disability</b> before the individual
 
@@ -74,11 +77,14 @@ When writing for a global audience, use pronouns that are both **inclusive** and
 
 Avoid assuming gender by skipping 'he/she and his/her', where possible. Use a <b>plural subject</b> instead.
 
-> [!TIP]
-> Example:
->  
-> * <b>Avoid:</b> A developer should test <b>his</b> code before release.
-> * <b>Use:</b> <b>Developers</b> should test <b>their</b> code before release.
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Avoid: A developer should test <b>his</b> code before release.</li>
+  <li>Use: <b>Developers</b> should test <b>their</b> code before release.</li>
+</ul>
+</aside>
 
 ##### Use a noun to avoid singular “they”
 

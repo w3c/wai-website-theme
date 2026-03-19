@@ -254,3 +254,12 @@ figcaption {
     border-block-end: 1px solid var(--line-grey);
     margin-block-end: .5em;
 }
+
+.example {
+    margin-left: 3em;
+    margin-top: -0.75em;
+
+    ul {
+        margin-top: 0;
+    }
+}
