@@ -112,7 +112,7 @@ Plain language uses clear wording, structure and design that enables readers to 
 
 ##### Abbreviations
 
-Provide the full term with the abbreviation on first use — there are [a few ways you can do this](https://www.w3.org/WAI/WCAG21/Techniques/general/G102#related).
+Provide the full term with the abbreviation on first use — there are [a few ways you can do this](https://www.w3.org/WAI/WCAG22/Techniques/general/G102#related).
 
 **Exceptions:** See [Abbreviations — Style for different content types](/style-guide/style-different-content-types/#abbreviations).
 
