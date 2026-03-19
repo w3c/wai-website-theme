@@ -3,7 +3,7 @@ title: "About This Style Guide"
 lang: en
 ---
 
-This style guide sets guidelines for writing materials for W3C Accessibility Guidelines (WCAG 3) and other W3C documents. The purpose of the guide is to support:
+This style guide sets guidelines for writing materials for W3C WAI. The purpose of the guide is to support:
 
 * readability,  
 * consistency, and  
