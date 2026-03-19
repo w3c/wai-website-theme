@@ -93,13 +93,13 @@ In cases where numbers only must be used (such as in a form), use the following 
 
 * Nest headings properly, for example, `<h1>` should be followed by `<h1>` or `<h2>`, not by `<h3>` or lower.  
 * Use no terminal punctuation for headings, unless a question mark is required.  
-* See also the guidance on [Headings — Structure](https://github.com/w3c/wcag3/wiki/Structure-and-presentation#structure)
+* See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure)
 
 ### Capitalization in headings
 
 Use sentence case, not title case.
 
-**Exception:** Capitalize any terms in the heading that are [proper nouns](#/w3c/wcag3/wiki/WCAG3-writing-style-guide/grammar-capitalization-proper-nouns).
+**Exception:** Capitalize any terms in the heading that are [proper nouns](/style-guide/grammar/#proper-nouns).
 
 ## Links
 
@@ -166,7 +166,7 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 
 #### List items are fragments or not complete sentences
 
-* Begin each item with a <b>lowercase letter</b> (except for proper nouns).  
+* Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).  
 * End each item with no punctuation.
 
 > [!TIP]
@@ -240,7 +240,7 @@ For these units, use the abbreviation *after* the digit:
 
 **Exceptions:** 
 
-* See [Ages, measurements, percentages, and ratios](#ages,-measurements,-percentages,-and-ratios).  
+* See [Ages, measurements, percentages, and ratios](#ages-measurements-percentages-and-ratios).  
 * Use words for very large numbers when they are rounded figures.
 
 > [!TIP]
