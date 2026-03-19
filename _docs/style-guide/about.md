@@ -11,7 +11,4 @@ This style guide sets guidelines for writing materials for W3C WAI. The purpose 
 
 This is a living document. It aims to follow the recommendations in this style guide.
 
-
-## Feedback
-
-Please raise issues with questions, comments, and suggestions (add method and link).
+**Important:**  These guidelines are written for the **US English language**. Translators may apply regional conventions.
