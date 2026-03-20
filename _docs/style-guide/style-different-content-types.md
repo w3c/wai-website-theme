@@ -112,7 +112,7 @@ Nest headings properly, for example, `<h1>` should be followed by `<h1>` or `<h2
 
 Use no terminal punctuation for headings, unless a question mark is required.  
 
-See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure)
+See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure).
 
 ### Capitalization in headings
 
@@ -282,7 +282,7 @@ For these units, use the abbreviation *after* the digit:
 <i>Examples:</i><br>
 
 <ul>
-  <li>He invited nine friends. </li>
+  <li>He invited nine friends.</li>
   <li>They bought 10 plants.</li>
   <li>She came first.</li>
   <li>It was the ninth time this happened.</li>
@@ -312,7 +312,7 @@ If a number starts a sentence, use words or reword so as not to start with a num
   <li>Avoid: 10 of the 25 participants had issues completing the task.</li>
   <li>Use:</li>
   <ul>
-    <li>Ten of the 25 participants had issues completing the task. </li>
+    <li>Ten of the 25 participants had issues completing the task.</li>
     <li>Of the 25 participants, 10 had issues completing the task.</li>
   </ul>
 </ul>
@@ -322,29 +322,34 @@ If a number starts a sentence, use words or reword so as not to start with a num
 
 With *related* numbers, where one number is usually written in digits and the other not, use <b>digits</b> for both.
 
-> [!TIP]
-> Example:
->
-> We bought 1 bag containing 500 seeds. 
+<aside class="example">
+<i>Example:</i><br>
+
+We bought 1 bag containing 500 seeds. 
+</aside>
 
 #### Adjacent numbers
 
 With *adjacent* numbers that express different categories of numbers, use a <b>mixture of words and digits</b>.
 
-> [!TIP]
-> Example:
->
-> The cook needs twelve 2-pound bags of flour.
+<aside class="example">
+<i>Example:</i><br>
+
+The cook needs twelve 2-pound bags of flour. 
+</aside>
 
 ### Punctuating numbers
 
 Numbers over 3 digits get commas.
 
-> [!TIP]
-> Examples: 
->
-> * 9,000  
-> * 9,990,900
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>9,000</li>
+  <li>9,990,900</li>
+</ul>
+</aside> 
 
 **Exceptions:** Use no punctuation for years, addresses, page numbers, or code line numbers.
 
@@ -352,10 +357,11 @@ Numbers over 3 digits get commas.
 
 Use the `<cite>` attribute to mark up the title of a creative work.
 
-> [!TIP]
-> Example:
->
-> `<p>According to <cite>The Hitchhiker’s Guide to the Galaxy</cite>, the answer to life, the universe, and everything is 42.</p>`
+<aside class="example">
+<i>Example:</i><br>
+
+According to <cite>The Hitchhiker’s Guide to the Galaxy</cite>, the answer to life, the universe, and everything is 42.
+</aside>
 
 ## Symbols
 
