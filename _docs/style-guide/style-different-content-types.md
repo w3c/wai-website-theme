@@ -70,7 +70,7 @@ Use <b>lowercase</b> when the full term is a common noun.
 * <b>e.g.:</b> Instead, use the expanded term, “for example”.  
 * <b>etc.:</b> Instead, start the phrase with “such as” to indicate other possible options.  
 * <b>i.e.:</b> Instead, use “that is” or “in other words”.  
-* <b>v.s.:</b> Instead, use “versus”.
+* <b>v.s.:</b> Instead, use “versus”, “compared with”, or “in contrast to”.
 
 ## Dates
 
