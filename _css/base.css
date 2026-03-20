@@ -256,10 +256,17 @@ figcaption {
 }
 
 .example {
-    margin-left: 3em;
-    margin-top: -0.75em;
+  margin-left: 3em;
+  margin-top: -0.75em;
 
-    ul {
-        margin-top: 0;
-    }
+  ul {
+    margin-top: 0;
+  }
+}
+
+.inset-text {
+    border-inline-start: 2px solid var(--cloudy);
+    padding-inline-start: 1em;
+    margin-block: 1em;
+    margin-inline-start: 1em;
 }

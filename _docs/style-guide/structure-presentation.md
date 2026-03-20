@@ -9,26 +9,26 @@ lang: en
 
 ### Logical flow and order
 
-* Create a clear structure before drafting your content.  
-* Outline information in the order readers need it — start with what readers need to understand or do first, then provide supporting details and background information.   
+* Create a clear structure before drafting your content.
+* Outline information in the order readers need it — start with what readers need to understand or do first, then provide supporting details and background information.
 * Show how sections contrast or relate to each other.
 
 ### Using structural elements
 
-* **Headings:**  
-  * Use headings and subheadings to group related ideas.  
-  * Write concise, unique headings that clearly describe the content beneath them.  
-  * Front-load headings with relevant keywords to aid readability and search engine optimization (SEO).  
-* **Sentences:**   
-  * Write short, simple sentences that avoid using complex structures, such as nested subordinate clauses.  
-  * Stick to one idea per sentence.  
-  * Keep the subject and verb close together.  
-* **Paragraphs:**   
-  * Keep paragraphs short.  
-  * Stick to one topic per paragraph.  
-  * Make sure the paragraph content fits the topic of the heading it sits under.  
-* **Lists:**  
-  * Use lists for steps, options, and related items.  
+* **Headings:**
+  * Use headings and subheadings to group related ideas.
+  * Write concise, unique headings that clearly describe the content beneath them.
+  * Front-load headings with relevant keywords to aid readability and search engine optimization (SEO).
+* **Sentences:**
+  * Write short, simple sentences that avoid using complex structures, such as nested subordinate clauses.
+  * Stick to one idea per sentence.
+  * Keep the subject and verb close together.
+* **Paragraphs:**
+  * Keep paragraphs short.
+  * Stick to one topic per paragraph.
+  * Make sure the paragraph content fits the topic of the heading it sits under.
+* **Lists:**
+  * Use lists for steps, options, and related items.
 
 ## Formatting
 
@@ -38,24 +38,23 @@ Use bold sparingly to highlight important or urgent information, such as names, 
 
 <b>When to avoid bold:</b>
 
-* Avoid bolding large blocks of text — it makes the text harder to read and is overwhelming to the eye.  
+* Avoid bolding large blocks of text — it makes the text harder to read and is overwhelming to the eye.
 * Never use bold in place of heading tags (h1–h6), which are needed for conveying the structure of content to assistive technology users.
 
 ### Italics
 
-Use italics sparingly to: 
+Use italics sparingly to:
 
-* add stress emphasis to a word or phrase where this helps to make the meaning clearer by highlighting differences between ideas  
+* add stress emphasis to a word or phrase where this helps to make the meaning clearer by highlighting differences between ideas
 * indicate foreign words that are not commonly used in the English language
 
-<aside class="example">
-<i>Examples:</i><br>
-
+<div class="inset-text">
+<p>Examples:</p>
 <ul>
   <li>This policy applies to <i>new</i> staff, not existing staff.</li>
   <li>The Japanese aesthetic of <i>wabi-sabi</i> values simplicity and imperfection.</li>
 </ul>
-</aside>
+</div>
 
 <b>When to avoid italics:</b>
 
