@@ -25,7 +25,7 @@ Use lowercase for terms in a glossary.
 
 ### Headings 
 
-See [Capitalization in headings]((/style-guide/style-different-content-types/#capitalization-in-headings). 
+See [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings). 
 
 ### Lists
 
@@ -330,7 +330,7 @@ Example 2:
 
 <ul>
   <li>Avoid: The project examines cause/effect relationships.</li>
-  <li>Use: The project examines cause-<b>and</b>-effect relationships.  </li>
+  <li>Use: The project examines cause-<b>and</b>-effect relationships.</li>
 </ul>
 
 Example 3:
@@ -344,7 +344,7 @@ Example 4:
 
 <ul>
   <li>Avoid: Add a potato and/or an onion.</li>
-  <li>Use: Add a potato, <b>or</b> an onion, <b>or both</li>
+  <li>Use: Add a potato, <b>or</b> an onion, <b>or both</b>b></b></li>
 </ul>
 </aside> 
 
@@ -355,6 +355,6 @@ Example 4:
 
 <ul>
   <li>Avoid: In inclusive writing, avoid gender pronouns (she or her, he or his).</li>
-  <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his) where possible.  </li>
+  <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his) where possible.</li>
 </ul>
 </aside>
