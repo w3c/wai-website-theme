@@ -33,7 +33,7 @@ ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 If you have a reason for not expanding an abbreviation, mark up the first instance of the abbreviation with an `<abbr>` element that contains the expansion.
 
 <aside class="example">
-<i>Example:</i><br>
+<i>Examples:</i><br>
 
 <ul>
   <li><code><abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr></code></li>
@@ -146,7 +146,7 @@ Whenever feasible, place links to documents at the end of sentences.
 
 <ul>
   <li>Avoid: See <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/">Easy Checks — A First Review of Web Accessibility</a> for the latest draft.</li>
-  <li>Use: For the latest draft, see <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/">Easy Checks — A First Review of Web Accessibility</a></li>
+  <li>Use: For the latest draft, see <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/">Easy Checks — A First Review of Web Accessibility</a>.</li>
 </ul>
 </aside>
 
@@ -275,8 +275,9 @@ For these units, use the abbreviation *after* the digit:
 
 #### Numbers showing quantity or order
 
-* Up to nine: use words.
-* 10 and above: use digits.
+Up to nine: use words.
+
+From 10 and above: use digits.
 
 <aside class="example">
 <i>Examples:</i><br>
