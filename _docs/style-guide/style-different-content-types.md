@@ -371,4 +371,12 @@ Except where there is a lack of space (for example, in a table or chart), use wo
 * <b>Ampersand:</b>  
   * <b>&</b>: Use “and” instead.  
 * <b>Number sign (octothorpe):</b>  
-  * <b>#</b>: Use “number” instead.
+  * <b>#</b>: Use “number” or a suitable noun instead.
+ 
+<i>Examples:</i><br>
+
+<ul>
+  <li>Number 3 is correct.</li>
+  <li>Statement 2 is true.</li>
+</ul>
+</aside> 
