@@ -45,19 +45,25 @@ If you have a reason for not expanding an abbreviation, mark up the first instan
 
 Use <b>title case</b> if the full term is a proper noun.
 
-> [!TIP]
-> Examples: 
->
-> * Web Content Accessibility Guidelines (WCAG)  
-> * Framework for Accessible Specification of Technologies (FAST) Task Force
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Web Content Accessibility Guidelines (WCAG)</li>
+  <li>Framework for Accessible Specification of Technologies (FAST) Task Force</li>
+</ul>
+</aside>
 
 Use <b>lowercase</b> when the full term is a common noun.
 
-> [!TIP]
-> Examples: 
->
-> * real-time communication (RTC)  
-> * augmentative and alternative communication (AAC)
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>real-time communication (RTC)</li>
+  <li>augmentative and alternative communication (AAC)</li>
+</ul>
+</aside>
 
 ### Abbreviations to avoid
 
@@ -70,31 +76,35 @@ Use <b>lowercase</b> when the full term is a common noun.
 
 Put the day first:
 
-> [!TIP]
-> Example: 
->
-> 1 January (instead of January 1)
+<aside class="example">
+<i>Example:</i><br>
+
+1 January (instead of January 1)
+</aside>
 
 Do not use letter suffixes after the day:
 
-> [!TIP]
-> Example: 
->
-> 30 April (instead of 30th April)
+<aside class="example">
+<i>Example:</i><br>
+
+30 April (instead of 30th April)
+</aside>
 
 Use numbers for the day and year, words for the month:
 
-> [!TIP]
-> Example:
->
-> 31 May 2022
+<aside class="example">
+<i>Example:</i><br>
+
+31 May 2022
+</aside>
 
 In cases where numbers only must be used (such as in a form), use the following format: YYYY-MM-DD:
 
-> [!TIP]
-> Example:
->
-> 2025-10-21
+<aside class="example">
+<i>Example:</i><br>
+
+2025-10-21
+</aside>
 
 ## Headings
 
@@ -114,11 +124,14 @@ Use sentence case, not title case.
 
 Link text should describe where the link will take the user. 
 
-> [!TIP]
-> Example:
->
-> * <b>Avoid:</b> “Click here”, “Learn more”, “Read more”
-> * <b>Use:</b> “Rubbish recycling tips”
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: “Click here”, “Learn more”, “Read more”</li>
+  <li>Use: “Rubbish recycling tips”</li>
+</ul>
+</aside>
 
 Never use the same link text for links that lead to different destinations.
 
@@ -126,21 +139,27 @@ Never use the same link text for links that lead to different destinations.
 
 Whenever feasible, place links to documents at the end of sentences.
 
-> [!TIP]
-> Example:
-> 
-> * <b>Avoid:</b> See [Easy Checks — A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/easy-checks/) for the latest draft.
-> * <b>Use:</b> For the latest draft, see [Easy Checks — A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/easy-checks/). 
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: See [Easy Checks — A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/easy-checks/) for the latest draft.</li>
+  <li>Use: For the latest draft, see [Easy Checks — A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/easy-checks/)</li>
+</ul>
+</aside>
 
 ### Links to non-HTML documents
 
 Provide the <b>file format</b> so the user knows what to expect.
 
-> [!TIP]
-> Example:
-> 
-> * <b>Avoid:</b> To download the full report, see Annual Report 2025.
-> * <b>Use:</b> To download the full report, see Annual Report 2025 (PDF). 
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: To download the full report, see Annual Report 2025.</li>
+  <li>Use: To download the full report, see Annual Report 2025 (PDF).</li>
+</ul>
+</aside>
 
 ### Punctuating links
 
@@ -164,26 +183,32 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 * Start each item with a <b>capital letter</b>.  
 * End each item in a full stop or a question mark.
 
-> [!TIP]
-> Example:
->
-> * In spring I mulch the roses.  
-> * In summer I grow vegetables.  
-> * In autumn I sow and repair the lawn. 
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>In spring I mulch the roses.</li>
+  <li>In summer I grow vegetables.</li>
+  <li>In autumn I sow and repair the lawn.</li>
+</ul>
+</aside>
 
 #### List items are fragments or not complete sentences
 
 * Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).  
 * End each item with no punctuation.
 
-> [!TIP]
-> Example:
->
-> Shopping list:
->
-> * bread  
-> * milk  
-> * eggs
+<aside class="example">
+<i>Example:</i><br>
+
+Shopping list:
+
+<ul>
+  <li>bread</li>
+  <li>milk</li>
+  <li>eggs</li>
+</ul>
+</aside>
 
 #### List items complete the introductory phrase or sentence in the body text
 
@@ -191,17 +216,23 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 * Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.  
 * End each item with no punctuation.
 
-> [!TIP]
-> Examples:
->
-> * To give your day structure, use the 1-3-5 Rule and focus on:  
->   * one big task  
->   * three medium tasks  
->   * five small tasks  
-> * To prepare for a productive day:  
->   1. wake up early  
->   2. review goals  
->   3. prioritize the most important tasks
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>To give your day structure, use the 1-3-5 Rule and focus on:</li>
+  <ul>
+    <li>one big task</li>
+    <li>three medium tasks</li>
+    <li>five small tasks</li>
+  </ul>
+</ul>
+<ol>To prepare for a productive day:</ol>
+  <li>wake up early</li>
+  <li>review goals</li>
+  <li>prioritize the most important tasks</li>
+</ol>
+</aside>
 
 ## Numbers
 
