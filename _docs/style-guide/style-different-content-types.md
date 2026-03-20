@@ -28,7 +28,7 @@ The first time you use an abbreviation (that is, acronyms, initialisms, and nume
 ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 </aside>
 
-####`<abbr>` element
+#### `<abbr>` element
 
 If you have a reason for not expanding an abbreviation, mark up the first instance of the abbreviation with an `<abbr>` element that contains the expansion.
 
