@@ -32,12 +32,15 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 
 <b>Identity-first language:</b> Puts the <b>disability</b> before the individual
 
-> [!TIP]
-> Examples:
->
-> * disabled people  
-> * blind people  
-> * autistic people
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>disabled people</li>
+  <li>blind people</li>
+  <li>autistic people</li>
+</ul>
+</aside>
 
 <b>Deaf versus deaf:</b>
 
@@ -52,17 +55,23 @@ See also [Terms to avoid relating to disability / disabled people](#terms-to-avo
 
 Use gender-neutral language, as feasible.
 
-> [!TIP]
-> Example:
->
-> Use “chair”, not “chairman”. 
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Use “chair”, not “chairman”.</li>
+</ul>
+</aside>
 
 Avoid assumptions about gender.
 
-> [!TIP]
-> Example:
->
-> Not all builders are male.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Not all builders are male.</li>
+</ul>
+</aside>
 
 See also:
 
@@ -95,11 +104,14 @@ Singular, “they” can be problematic because it’s:
 
 Use a <b>noun</b> instead.
 
-> [!TIP]
-> Example:
-> 
-> * <b>Avoid:</b> If an author can avoid jargon, <b>they</b> should do so.
-> * <b>Use:</b> If an author can avoid jargon, <b>the author</b> should do so. 
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: If an author can avoid jargon, <b>they</b> should do so.</li>
+  <li>Use: If an author can avoid jargon, <b>the author</b> should do so.<li>
+</ul>
+</aside>
 
 **Exceptions:** Use:
 
@@ -126,11 +138,14 @@ Provide the full term with the abbreviation on first use — there are [a few wa
 
 Use positive contractions and avoid negative contractions.
 
-> [!TIP]
-> Examples:
-> 
-> * <b>Avoid:</b> “cannot” instead of “can’t”; “do not” instead of don’t, and “will not” instead of “won’t”
-> * <b>Use:</b> it’s, that’s, you’re, they’ll, we’ve, let’s
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Avoid: “cannot” instead of “can’t”; “do not” instead of don’t, and “will not” instead of “won’t”</li>
+   <li>Use: it’s, that’s, you’re, they’ll, we’ve, let’s<li>
+</ul>
+</aside>
 
 ##### Personal pronouns
 
@@ -144,27 +159,36 @@ Break up chunks of information to make it easier to parse using the guidance und
 
 Use a verb instead of a noun describing an action.
 
-> [!TIP]
-> Examples:
->
-> * Example 1:
->    
->   * <b>Avoid:</b> We conducted an analysis of the results.  
->   * <b>Use:</b> We analyzed the results.
->
-> * Example 2:  
->   * <b>Avoid:</b> They carried out an investigation into the issue.
->   * <b>Use:</b> They investigated the issue.  
+<aside class="example">
+<i>Examples:</i><br>
+
+Example 1:
+
+<ul>
+  <li>Avoid: We conducted an analysis of the results.</li>
+  <li>Use: We analyzed the results.<li>
+</ul>
+
+Example 2:
+
+<ul>
+  <li>Avoid: They carried out an investigation into the issue.</li>
+  <li>Use: They investigated the issue.<li>
+</ul>
+</aside>
 
 ##### Voice
 
 Write in the active voice, where possible — that is, the subject of the sentence performs the action.
 
-> [!TIP]
-> Example:
->
-> * <b>Avoid the passive voice:</b> Additional information will be provided when available.
-> * <b>Use the active voice:</b> We will provide updated information when it’s available.  
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid the passive voice: Additional information will be provided when available.</li>
+  <li>Use the active voice: We will provide updated information when it’s available.</li>
+</ul>
+</aside>
 
 ##### Words
 
@@ -173,11 +197,14 @@ Write in the active voice, where possible — that is, the subject of the senten
 * Explain specialist terms on first use.  
 * Remove redundant phrases, filler words, and phrases that repeat the same idea.
 
-> [!TIP]
-> Example of unnecessary words:
->  
-> * <b>Avoid:</b> <b>Try to</b> write link text <b>so</b> that <b>it</b> <b>clearly</b> describes where the link goes.
-> * <b>Use:</b> Write link text that describes where the link goes.
+<aside class="example">
+<i>Example of unnecessary words:</i><br>
+
+<ul>
+  <li>Avoid: <b>Try to</b> write link text <b>so</b> that <b>it</b> <b>clearly</b> describes where the link goes.</li>
+   <li>Use: Write link text that describes where the link goes.<li>
+</ul>
+</aside> 
 
 ## Spelling
 
@@ -198,21 +225,27 @@ Write in the active voice, where possible — that is, the subject of the senten
 
 Use this word to specifically refer to people with disabilities, and not to other situations.
 
-> [!TIP]
-> Example:
->
-> * <b>Avoid:</b> To reach more users, our website is now accessible in several languages.
-> * <b>Use:</b> To reach more users, our website is now available in several languages.  
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: To reach more users, our website is now accessible in several languages.</li>
+   <li>Use: To reach more users, our website is now available in several languages.<li>
+</ul>
+</aside> 
 
 #### Click
 
 Use “click”, not “select” (even though some people will not use a mouse or actually click the element).
 
-> [!TIP]
-> Examples: 
+<aside class="example">
+<i>Examples:</i><br>
 
-> * Click the “Submit” button.  
-> * Click the link.
+<ul>
+  <li>Click the “Submit” button.</li>
+   <li>Click the link.<li>
+</ul>
+</aside>
 
 #### Eye-hand coordination
 
@@ -222,35 +255,47 @@ Use “eye-hand coordination”, not “hand-eye coordination”.
 
 <b>Speech recognition</b> converts what is said into text for speech-to-text (STT) transcription, virtual assistants, and other speech user interfaces.
 
-> [!TIP]
-> Example:
->
-> Speech recognition powers virtual assistants to understand commands.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Speech recognition powers virtual assistants to understand commands.</li>
+</ul>
+</aside> 
 
 <b>Voice recognition</b> identifies who is speaking by analyzing their unique vocal characteristics.
 
-> [!TIP]
-> Example:
->
-> Voice recognition is used for security features like voice biometrics to authenticate a user.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Voice recognition is used for security features like voice biometrics to authenticate a user.</li>
+</ul>
+</aside> 
 
 #### URL (Uniform Resource Locator)
 
 A string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
 
-> [!TIP]
-> Example:
->
-> https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.</li>
+</ul>
+</aside> 
 
 #### URI (Uniform Resource Identifier) 
 
 A string of characters that identifies a resource. It does not always describe how to locate the resource. Use this term when referring to a resource identifier.
 
-> [!TIP]
-> Example:
->
-> mailto:kevin@w3.org — this identifies an email resource.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>mailto:kevin@w3.org — this identifies an email resource.</li>
+</ul>
+</aside>
 
 #### WCAG references
 
@@ -260,10 +305,13 @@ A string of characters that identifies a resource. It does not always describe h
 * When writing about WCAG 2  in general, use “WCAG 2”.  
 * If referring to a specific version of WCAG,  use the version number.
 
-> [!TIP]
-> Example of referring to a specific version:
->
-> It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/). 
+<aside class="example">
+<i>Example of referring to a specific version:</i><br>
+
+<ul>
+  <li>It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).</li>
+</ul>
+</aside>
 
 ##### WCAG 3
 
@@ -277,44 +325,59 @@ Treat “Web Content Accessibility Guidelines (WCAG) 2” and “W3C Accessibili
 
 When referring to the WCAG title, it’s a <b>[proper noun](/style-guide/grammar/#proper-nouns):</b> Do not put the article (“the”) in front of WCAG.
 
-> [!TIP]
-> Examples:
->
-> * Follow WCAG.  
-> * Follow Web Content Accessibility Guidelines (WCAG).
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Follow WCAG.</li>
+  <li>Follow Web Content Accessibility Guidelines (WCAG).</li>
+</ul>
+</aside>
 
 Use WCAG with a <b>singular verb</b>.
 
-> [!TIP]
-> Examples:
->
-> * Web Content Accessibility Guidelines (WCAG) 2 <b>is</b> published by W3C.  
-> * WCAG 3.0 <b>is</b> not expected to become a W3C Recommendation this year.
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Web Content Accessibility Guidelines (WCAG) 2 <b>is</b> published by W3C.</li>
+  <li>WCAG 3.0 <b>is</b> not expected to become a W3C Recommendation this year.</li>
+</ul>
+</aside>
 
 When WCAG is used as an <b>adjective:</b> Use the article (“the”) in front of WCAG.
 
-> [!TIP]
-> Example: 
->
-> Follow the WCAG standard.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Follow the WCAG standard.</li>
+</ul>
+</aside>
 
 ##### WCAG success criteria
 
 Do not use a colon between the success criterion (SC) number and its title.
 
-> [!TIP]
-> Example:
->  
-> * <b>Avoid:</b> Success Criterion 1.4.5: Images of Text.
-> * <b>Use:</b> Success Criterion 1.4.5 Images of Text.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: Success Criterion 1.4.5: Images of Text.</li>
+  <li>Use: Success Criterion 1.4.5 Images of Text.</li>
+</ul>
+</aside>
 
 Do not refer to SCs by number alone.
 
-> [!TIP]
-> Example: 
-  
-> * <b>Avoid:</b> This applies to Success Criterion 1.4.5.
-> * <b>Use:</b> This applies to Success Criterion 1.4.5 Images of Text.
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: This applies to Success Criterion 1.4.5.</li>
+  <li>Use: This applies to Success Criterion 1.4.5 Images of Text.</li>
+</ul>
+</aside>
 
 ### Terms to avoid
 
@@ -328,60 +391,71 @@ Do not refer to SCs by number alone.
 
 <b>Nouns and noun phrases</b> that are derogatory and dehumanizing, or incorrect:
 
-> [!TIP]
-> Examples:
->
-> * “the blind”  
-> * burn victim  
-> * deaf-mute  
-> * “the disabled”  
-> * different abilities  
-> * harelip — use “cleft lip”  
-> * special needs
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>“the blind”</li>
+  <li>burn victim</li>
+  <li>deaf-mute</li>
+  <li>“the disabled”</li>
+  <li>different abilities</li>
+  <li>harelip — use “cleft lip”</li>
+  <li>special needs</li>
+</ul>
+</aside>
 
 <b>Adjectives</b> that are negative, euphemistic, or patronizing:
 
-> [!TIP]
-> Examples:
->
-> * blind to  
-> * brave  
-> * crippled  
-> * crazy  
-> * deformed  
-> * differently abled  
-> * deaf to  
-> * dumb  
-> * handicapped  
-> * high/low-functioning  
-> * insane  
-> * inspirational  
-> * lame  
-> * retarded  
-> * specially abled  
-> * wheelchair bound
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>blind to</li>
+  <li>brave</li>
+  <li>crippled</li>
+  <li>crazy</li>
+  <li>deformed</li>
+  <li>differently abled</li>
+  <li>deaf to</li>
+  <li>dumb</li>
+  <li>handicapped</li>
+  <li>high/low-functioning</li>
+  <li>insane</li>
+  <li>lame</li>
+  <li>retarded</li>
+  <li>specially abled</li>
+  <li>wheelchair bound</li>
+</ul>
+</aside>
 
 <b>Verbs</b> that suggest suffering, helplessness, or weakness:
 
-> [!TIP]
-> Examples:
->
-> * afflicted by  
-> * confined to [a wheelchair]  
-> * stricken with  
-> * suffers from  
-> * is a victim of
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>afflicted by</li>
+  <li>confined to [a wheelchair]</li>
+  <li>stricken with</li>
+  <li>suffers from</li>
+  <li>is a victim of</li>
+</ul>
+</aside>
 
 <b>Ability-defining or “fixing” language</b>:
 
 * Avoid terminology that directly states people with disabilities <b>cannot do something</b> — instead, switch the phrasing around to focus on the impact of bad design and how good design can enable people to do things.  
 * Avoid phrasing that presents a disability as something that <b>needs to be fixed</b>.
 
-> [!TIP]
-> Example:
-> 
-> * <b>Avoid:</b> Assistive technologies can help <b>correct</b> their speech in face-to-face conversations.
-> * <b>Use:</b> Assistive technologies can enable them to participate in face-to-face conversations. 
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: Assistive technologies can help <b>correct</b> their speech in face-to-face conversations.</li>
+  <li>Use: Assistive technologies can enable them to participate in face-to-face conversations.</li>
+</ul>
+</aside> 
 
 ### Context-dependent terms
 
