@@ -36,8 +36,8 @@ If you have a reason for not expanding an abbreviation, mark up the first instan
 <i>Example:</i><br>
 
 <ul>
-  <li>`<abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>`</li>
-  <li>`<abbr title="Transmission Control Protocol">TCP</abbr>`</li>
+  <li><code><abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr></code></li>
+  <li><code><abbr title="Transmission Control Protocol">TCP</abbr></code>code></li>
 </ul>
 </aside>
 
