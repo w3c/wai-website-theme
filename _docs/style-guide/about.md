@@ -5,9 +5,9 @@ lang: en
 
 This style guide sets guidelines for writing materials for W3C WAI. The purpose of the guide is to support:
 
-* readability,  
-* consistency, and  
-* better, easier translations.
+* readability 
+* consistency 
+* better, easier translations
 
 This is a living document. It aims to follow the recommendations in this style guide.
 
