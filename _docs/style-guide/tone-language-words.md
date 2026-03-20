@@ -109,11 +109,11 @@ Use a <b>noun</b> instead.
 
 <ul>
   <li>Avoid: If an author can avoid jargon, <b>they</b> should do so.</li>
-  <li>Use: If an author can avoid jargon, <b>the author</b> should do so.<li>
+  <li>Use: If an author can avoid jargon, <b>the author</b> should do so.</li>
 </ul>
 </aside>
 
-<p>**Exceptions:** Use:</p>
+**Exceptions:** Use:
 
 * personal pronouns that real people use for themselves  
 * pronouns assigned to named personas
@@ -143,7 +143,7 @@ Use positive contractions and avoid negative contractions.
 
 <ul>
   <li>Avoid: “cannot” instead of “can’t”; “do not” instead of don’t, and “will not” instead of “won’t”</li>
-   <li>Use: it’s, that’s, you’re, they’ll, we’ve, let’s<li>
+   <li>Use: it’s, that’s, you’re, they’ll, we’ve, let’s</li>
 </ul>
 </aside>
 
@@ -166,14 +166,14 @@ Example 1:
 
 <ul>
   <li>Avoid: We conducted an analysis of the results.</li>
-  <li>Use: We analyzed the results.<li>
+  <li>Use: We analyzed the results.</li>
 </ul>
 
 Example 2:
 
 <ul>
   <li>Avoid: They carried out an investigation into the issue.</li>
-  <li>Use: They investigated the issue.<li>
+  <li>Use: They investigated the issue.</li>
 </ul>
 </aside>
 
@@ -202,7 +202,7 @@ Write in the active voice, where possible — that is, the subject of the senten
 
 <ul>
   <li>Avoid: <b>Try to</b> write link text <b>so</b> that <b>it</b> <b>clearly</b> describes where the link goes.</li>
-   <li>Use: Write link text that describes where the link goes.<li>
+   <li>Use: Write link text that describes where the link goes.</li>
 </ul>
 </aside> 
 
@@ -230,7 +230,7 @@ Use this word to specifically refer to people with disabilities, and not to othe
 
 <ul>
   <li>Avoid: To reach more users, our website is now accessible in several languages.</li>
-   <li>Use: To reach more users, our website is now available in several languages.<li>
+   <li>Use: To reach more users, our website is now available in several languages.</li>
 </ul>
 </aside> 
 
@@ -243,7 +243,7 @@ Use “click”, not “select” (even though some people will not use a mouse 
 
 <ul>
   <li>Click the “Submit” button.</li>
-   <li>Click the link.<li>
+   <li>Click the link.</li>
 </ul>
 </aside>
 
@@ -384,7 +384,7 @@ Do not refer to SCs by number alone.
 * <b>Abort:</b> Use “cancel” instead.  
 * <b>For instance:</b> Use “for example” instead.  
 * <b>Persons:</b> Use “people” instead.  
-* <b>Please:</b> Omit this unnecessary extra word in *informational content* and *instructions*.  
+* <b>Please:</b> Omit this unnecessary extra word in *informational* content and *instructions*.  
 * <b>Refer to:</b> Use “see” instead.
 
 #### Terms to avoid relating to disability/disabled people
