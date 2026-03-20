@@ -243,9 +243,9 @@ Use “click”, not “select” (even though some people will not use a mouse 
 </ul>
 </aside>
 
-#### Eye-hand coordination
+#### Hand-eye coordination
 
-Use “eye-hand coordination”, not “hand-eye coordination”.
+Use “hand-eye coordination”, not “eye-hand coordination”.
 
 #### Speech versus voice recognition
 
