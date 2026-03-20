@@ -11,28 +11,35 @@ lang: en
 
 The first time you use an abbreviation (that is, acronyms, initialisms, and numeronyms), give the expanded form; then use the abbreviation for subsequent references.
 
-> [!TIP]
-> Example:
->
-> * <b>First use:</b> World Wide Web Consortium (W3C)  
-> * <b>Second use:</b> W3C
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>First use: World Wide Web Consortium (W3C)</li>
+  <li>Second use:</b> W3C</li>
+</ul>
+</aside>
 
 **Exception:** If the term is more commonly known by its abbreviation, you do not need to expand it.
 
-> [!TIP]
-> Examples:
->
-> ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
+<aside class="example">
+<i>Examples:</i><br>
+
+ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
+</aside>
 
 ####`<abbr>` element
 
 If you have a reason for not expanding an abbreviation, mark up the first instance of the abbreviation with an `<abbr>` element that contains the expansion.
 
-> [!TIP]
-> Examples:
->
-> * `<abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>`  
-> * `<abbr title="Transmission Control Protocol">TCP</abbr>`
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>`<abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>`</li>
+  <li>`<abbr title="Transmission Control Protocol">TCP</abbr>`</li>
+</ul>
+</aside>
 
 ### Capitalization in abbreviations
 
