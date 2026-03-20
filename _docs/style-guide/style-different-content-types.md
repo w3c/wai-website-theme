@@ -108,9 +108,11 @@ In cases where numbers only must be used (such as in a form), use the following 
 
 ## Headings
 
-* Nest headings properly, for example, `<h1>` should be followed by `<h1>` or `<h2>`, not by `<h3>` or lower.  
-* Use no terminal punctuation for headings, unless a question mark is required.  
-* See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure)
+Nest headings properly, for example, `<h1>` should be followed by `<h1>` or `<h2>`, not by `<h3>` or lower.  
+
+Use no terminal punctuation for headings, unless a question mark is required.  
+
+See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure)
 
 ### Capitalization in headings
 
@@ -163,8 +165,9 @@ Provide the <b>file format</b> so the user knows what to expect.
 
 ### Punctuating links
 
-* If the linked text is at the end of a complete sentence, add a full stop after the link.  
-* If the linked text is a raw URL, do not add a full stop.
+If the linked text is at the end of a complete sentence, add a full stop after the link.  
+
+If the linked text is a raw URL, do not add a full stop.
 
 ## Lists
 
@@ -180,8 +183,9 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 
 #### List items are complete sentences
 
-* Start each item with a <b>capital letter</b>.  
-* End each item in a full stop or a question mark.
+Start each item with a <b>capital letter</b>.  
+
+End each item in a full stop or a question mark.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -195,8 +199,9 @@ When a sentence or phrase introduces a list in the body text, place a **colon** 
 
 #### List items are fragments or not complete sentences
 
-* Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).  
-* End each item with no punctuation.
+Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).  
+
+End each item with no punctuation.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -212,9 +217,11 @@ Shopping list:
 
 #### List items complete the introductory phrase or sentence in the body text
 
-* Treat all the items in the list as a grammatical part of the introductory phrase or sentence.  
-* Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.  
-* End each item with no punctuation.
+Treat all the items in the list as a grammatical part of the introductory phrase or sentence.  
+
+Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.  
+
+End each item with no punctuation.
 
 <aside class="example">
 <i>Examples:</i><br>
@@ -243,14 +250,17 @@ To prepare for a productive day:
 
 Always use a <b>digit</b>:
 
-> [!TIP]
-> Examples:
->
-> * She is 5 years old.  
-> * They run 5 kilometres every day.  
-> * He is 6 feet tall.  
-> * We drink 2 litres of water a day.  
-> * I bought 2 kilos of tomatoes.
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>She is 5 years old.</li>
+  <li>They run 5 kilometres every day.</li>
+  <li>He is 6 feet tall.</li>
+  <li>We drink 2 litres of water a day.</li>
+  <li>I bought 2 kilos of tomatoes.</li>
+</ul>
+</aside>
 
 For these units, use the abbreviation *after* the digit:
 
@@ -268,36 +278,45 @@ For these units, use the abbreviation *after* the digit:
 * Up to nine: use words.
 * 10 and above: use digits.
 
-> [!TIP]
-> Examples:
->
-> * She invited nine friends.  
-> * They bought 10 plants.  
-> * She came first.  
-> * It was the ninth time this happened.  
-> * I was 10th in the queue.
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>He invited nine friends. </li>
+  <li>They bought 10 plants.</li>
+  <li>She came first.</li>
+  <li>It was the ninth time this happened.</li>
+  <li>I was 10th in the queue.</li>
+</ul>
+</aside>
 
 **Exceptions:** 
 
 * See [Ages, measurements, percentages, and ratios](#ages-measurements-percentages-and-ratios).  
 * Use words for very large numbers when they are rounded figures.
 
-> [!TIP]
-> Examples of writing very large numbers:
-> 
-> 1 million, 2.2 billion, 3.5 trillion
+<aside class="example">
+<i>Examples of writing very large numbers:</i><br>
+
+1 million, 2.2 billion, 3.5 trillion
+</aside>
 
 #### Start of a sentence
 
 If a number starts a sentence, use words or reword so as not to start with a number.
 
-> [!TIP]
-> Examples:
-> 
-> * <b>Avoid:</b> 10 of the 25 participants had issues completing the task.
-> * <b>Use:</b>   
->   * Ten of the 25 participants had issues completing the task.  
->   * Of the 25 participants, 10 had issues completing the task. 
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Avoid: 10 of the 25 participants had issues completing the task.</li>
+  <li>Use:</li>
+  <ul>
+    <li>Ten of the 25 participants had issues completing the task. </li>
+    <li>Of the 25 participants, 10 had issues completing the task.</li>
+  </ul>
+</ul>
+</aside>
 
 #### Related numbers
 
