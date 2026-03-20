@@ -71,7 +71,7 @@ Treat WCAG levels as proper nouns.
 
 <ul>
   <li>The Mobile Accessibility Task Force met yesterday.</li>
-  <li>The working group met yesterday.</li>  
+  <li>The working group agreed to publish the note.</li>  
 </ul>
 </aside>
 
