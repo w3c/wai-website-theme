@@ -32,6 +32,14 @@ After cloning the repository, run:
   bundle exec jekyll serve -w --config _config_doc.yml
 ```
 
+### Building CSS
+
+The CSS files used in the local build are built and minimized from SCSS files. To this, run:
+
+```bash
+  gulp css
+```
+
 ## Theme installation
 
 1. Add the following to your Gemfile:
