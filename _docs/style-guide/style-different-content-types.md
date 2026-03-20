@@ -171,7 +171,7 @@ If the linked text is a raw URL, do not add a full stop.
 
 ## Lists
 
-Use the same grammatical structure for each list item to make it easy to read and scan. In other words, the list items should be written in the same form—for example, all nouns, all verb phrases, or all full sentences.
+Use the same grammatical structure for each list item to make it easy to read and scan. In other words, the list items should be written in the same form — for example, all nouns, all verb phrases, or all full sentences.
 
 When items in a list consist of very long sentences, or of several sentences, consider reformatting the items as regular paragraphs of text.
 
