@@ -16,7 +16,7 @@ The first time you use an abbreviation (that is, acronyms, initialisms, and nume
 
 <ul>
   <li>First use: World Wide Web Consortium (W3C)</li>
-  <li>Second use:</b> W3C</li>
+  <li>Second use: W3C</li>
 </ul>
 </aside>
 
@@ -143,8 +143,8 @@ Whenever feasible, place links to documents at the end of sentences.
 <i>Example:</i><br>
 
 <ul>
-  <li>Avoid: See [Easy Checks — A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/easy-checks/) for the latest draft.</li>
-  <li>Use: For the latest draft, see [Easy Checks — A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/easy-checks/)</li>
+  <li>Avoid: See <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/">Easy Checks — A First Review of Web Accessibility</a> for the latest draft.</li>
+  <li>Use: For the latest draft, see <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/">Easy Checks — A First Review of Web Accessibility</a></li>
 </ul>
 </aside>
 
@@ -219,15 +219,16 @@ Shopping list:
 <aside class="example">
 <i>Examples:</i><br>
 
+To give your day structure, use the 1-3-5 Rule and focus on:
+
 <ul>
-  <li>To give your day structure, use the 1-3-5 Rule and focus on:</li>
-  <ul>
-    <li>one big task</li>
-    <li>three medium tasks</li>
-    <li>five small tasks</li>
-  </ul>
+  <li>one big task</li>
+  <li>three medium tasks</li>
+  <li>five small tasks</li>
 </ul>
-<ol>To prepare for a productive day:</ol>
+
+To prepare for a productive day:
+<ol>
   <li>wake up early</li>
   <li>review goals</li>
   <li>prioritize the most important tasks</li>
