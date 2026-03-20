@@ -344,7 +344,7 @@ Example 4:
 
 <ul>
   <li>Avoid: Add a potato and/or an onion.</li>
-  <li>Use: Add a potato, <b>or</b> an onion, <b>or both</b></li>
+  <li>Use: Add a potato, <b>or</b> an onion, <b>or both</b>.</li>
 </ul>
 </aside> 
 
