@@ -58,9 +58,7 @@ Use gender-neutral language, as feasible.
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>Use “chair”, not “chairman”.</li>
-</ul>
+Use “chair”, not “chairman”.
 </aside>
 
 Avoid assumptions about gender.
@@ -68,9 +66,7 @@ Avoid assumptions about gender.
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>Not all builders are male.</li>
-</ul>
+Not all builders are male.
 </aside>
 
 See also:
@@ -143,7 +139,7 @@ Use positive contractions and avoid negative contractions.
 
 <ul>
   <li>Avoid: “cannot” instead of “can’t”; “do not” instead of don’t, and “will not” instead of “won’t”</li>
-   <li>Use: it’s, that’s, you’re, they’ll, we’ve, let’s</li>
+  <li>Use: it’s, that’s, you’re, they’ll, we’ve, let’s</li>
 </ul>
 </aside>
 
@@ -202,7 +198,7 @@ Write in the active voice, where possible — that is, the subject of the senten
 
 <ul>
   <li>Avoid: <b>Try to</b> write link text <b>so</b> that <b>it</b> <b>clearly</b> describes where the link goes.</li>
-   <li>Use: Write link text that describes where the link goes.</li>
+  <li>Use: Write link text that describes where the link goes.</li>
 </ul>
 </aside> 
 
@@ -230,7 +226,7 @@ Use this word to specifically refer to people with disabilities, and not to othe
 
 <ul>
   <li>Avoid: To reach more users, our website is now accessible in several languages.</li>
-   <li>Use: To reach more users, our website is now available in several languages.</li>
+  <li>Use: To reach more users, our website is now available in several languages.</li>
 </ul>
 </aside> 
 
@@ -243,7 +239,7 @@ Use “click”, not “select” (even though some people will not use a mouse 
 
 <ul>
   <li>Click the “Submit” button.</li>
-   <li>Click the link.</li>
+  <li>Click the link.</li>
 </ul>
 </aside>
 
@@ -258,9 +254,7 @@ Use “eye-hand coordination”, not “hand-eye coordination”.
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>Speech recognition powers virtual assistants to understand commands.</li>
-</ul>
+Speech recognition powers virtual assistants to understand commands.
 </aside> 
 
 <b>Voice recognition</b> identifies who is speaking by analyzing their unique vocal characteristics.
@@ -268,9 +262,7 @@ Use “eye-hand coordination”, not “hand-eye coordination”.
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>Voice recognition is used for security features like voice biometrics to authenticate a user.</li>
-</ul>
+Voice recognition is used for security features like voice biometrics to authenticate a user.
 </aside> 
 
 #### URL (Uniform Resource Locator)
@@ -280,9 +272,7 @@ A string of characters that identifies a resource. It provides information on ho
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.</li>
-</ul>
+https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.
 </aside> 
 
 #### URI (Uniform Resource Identifier) 
@@ -292,9 +282,7 @@ A string of characters that identifies a resource. It does not always describe h
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>mailto:kevin@w3.org — this identifies an email resource.</li>
-</ul>
+mailto:kevin@w3.org — this identifies an email resource.
 </aside>
 
 #### WCAG references
@@ -308,9 +296,7 @@ A string of characters that identifies a resource. It does not always describe h
 <aside class="example">
 <i>Example of referring to a specific version:</i><br>
 
-<ul>
-  <li>It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).</li>
-</ul>
+It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).
 </aside>
 
 ##### WCAG 3
@@ -350,9 +336,7 @@ When WCAG is used as an <b>adjective:</b> Use the article (“the”) in front o
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>Follow the WCAG standard.</li>
-</ul>
+Follow the WCAG standard.
 </aside>
 
 ##### WCAG success criteria
