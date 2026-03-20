@@ -17,7 +17,7 @@ lang: en
 
 Some people with disabilities prefer “people-first language”. Others prefer “identify-first language”. Consider using a mixture of both.
 
-<b>People-first language:</b> Puts the <b>individual</b> before the disability  
+<b>People-first language</b> puts the <b>individual</b> before the disability. 
 
 <aside class="example">
 <i>Examples:</i><br>
@@ -30,7 +30,7 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 </ul>
 </aside>
 
-<b>Identity-first language:</b> Puts the <b>disability</b> before the individual
+<b>Identity-first language</b> puts the <b>disability</b> before the individual.
 
 <aside class="example">
 <i>Examples:</i><br>
@@ -113,7 +113,7 @@ Use a <b>noun</b> instead.
 </ul>
 </aside>
 
-**Exceptions:** Use:
+<p>**Exceptions:** Use:</p>
 
 * personal pronouns that real people use for themselves  
 * pronouns assigned to named personas
