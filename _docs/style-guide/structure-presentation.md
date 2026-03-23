@@ -18,7 +18,7 @@ lang: en
 * **Headings:**
   * Use headings and subheadings to group related ideas.
   * Write concise, unique headings that clearly describe the content beneath them.
-  * Front-load headings with relevant keywords to aid readability and search engine optimization (SEO).
+  * Front-load headings with relevant keywords to aid readability.
 * **Sentences:**
   * Write short, simple sentences that avoid using complex structures, such as nested subordinate clauses.
   * Stick to one idea per sentence.
