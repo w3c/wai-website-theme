@@ -360,7 +360,7 @@ The cook needs twelve 2-pound bags of flour.
 
 ### Punctuating numbers
 
-Numbers over 3 digits get commas.
+Use commas in numbers with more than three digits.
 
 <aside class="example">
 <i>Examples:</i><br>
