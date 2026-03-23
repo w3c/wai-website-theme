@@ -149,7 +149,6 @@ Use a colon to introduce something, putting the emphasis on the clause or list t
 
 <ul>
   <li>Contact us: email@example.com</li>
-  <li>An ellipsis (…) indicates that words have been omitted from a sentence or quotation.</li> 
   <li>They had one goal: to finish the marathon.</li>
 </ul>
 </aside>
