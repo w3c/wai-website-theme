@@ -3,6 +3,24 @@ title: "WAI Style Guide"
 lang: en
 ---
 
+{::nomarkdown}
+{% include box.html type="start" title="About this style guide" %}
+{:/}
+
+This style guide sets guidelines for writing materials for W3C WAI. The purpose of the guide is to support:
+
+* readability 
+* consistency 
+* better, easier translations
+
+This is a living document. It aims to follow the recommendations in this style guide.
+
+**Important:**  These guidelines are written for the **US English language**. Translators may apply regional conventions.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
 ## Table of contents
 
 * [About this style guide](/style-guide/about/)
