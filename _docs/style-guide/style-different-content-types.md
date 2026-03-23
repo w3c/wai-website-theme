@@ -201,7 +201,7 @@ End each item in a full stop or a question mark.
 
 Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).  
 
-End each item with no punctuation.
+End each item with no conjunction or punctuation.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -214,6 +214,8 @@ Shopping list:
   <li>eggs</li>
 </ul>
 </aside>
+
+If distinction between "and" and "or" is necessary, specify the nature of the list beforehand, such as "one of the following" or "all of the following".
 
 #### List items complete the introductory phrase or sentence in the body text
 
