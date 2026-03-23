@@ -52,7 +52,7 @@ Use italics sparingly to:
 <p>Examples:</p>
 <ul>
   <li>This policy applies to <i>new</i> staff, not existing staff.</li>
-  <li>The Japanese aesthetic of <i>wabi-sabi</i> values simplicity and imperfection.</li>
+  <li>The Japanese aesthetic of <i lang="ja-Latn>wabi-sabi</i> values simplicity and imperfection.</li>
 </ul>
 </div>
 
