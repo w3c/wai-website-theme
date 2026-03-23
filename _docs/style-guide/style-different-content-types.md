@@ -137,7 +137,7 @@ Link text should describe where the link will take the user.
 
 <ul>
   <li>Avoid: “Click here”, “Learn more”, “Read more”</li>
-  <li>Use: “Rubbish recycling tips”</li>
+  <li>Use: “WAI Resources”</li>
 </ul>
 </aside>
 
@@ -186,6 +186,17 @@ When items in a list consist of very long sentences, or of several sentences, co
 #### Text that introduces a list
 
 When a sentence or phrase introduces a list in the body text, place a **colon** at the end of this text.
+
+<aside class="example">
+<i>Example:</i><br>
+
+Web accessibility means that people can:
+
+<ul>
+  <li>perceive, understand, navigate, and interact with the web</li>
+  <li>contribute to the web</li>
+</ul>
+</aside>
 
 #### List items are complete sentences
 
