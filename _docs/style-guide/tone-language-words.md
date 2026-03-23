@@ -76,7 +76,7 @@ See also:
 
 #### Pronouns: Gender inclusivity and translation considerations
 
-When writing for a global audience, use pronouns that are both **inclusive** and **easy to translate**. 
+Use pronouns that are both **inclusive** and **easy to translate** for W3C's global audience.
 
 ##### Use a plural subject to avoid (he/she, his/her)
 
