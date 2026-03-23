@@ -38,8 +38,7 @@ Use bold sparingly to highlight important or urgent information, such as names, 
 
 <b>When to avoid bold:</b>
 
-* Avoid bolding text in whole paragraphs and sections.
-* Never use bold in place of heading tags (h1–h6), which are needed for conveying the structure of content to assistive technology users.
+Avoid bolding text in whole paragraphs and sections.
 
 ### Italics
 
