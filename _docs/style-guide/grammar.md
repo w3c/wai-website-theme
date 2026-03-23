@@ -144,7 +144,7 @@ Use a colon to introduce something, putting the emphasis on the clause or list t
 
 Compare with the use of an [em dash](#em-dash), which adds an amplifying or explanatory element to the main point.
 
-#### Semi colon
+#### Semicolon
 
 Use to:
 
