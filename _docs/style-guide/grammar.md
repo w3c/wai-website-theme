@@ -106,7 +106,7 @@ Use lowercase for the following nouns, unless these are part of a name or title:
 
 ### Brackets
 
-#### Parentheses
+#### Parentheses (round brackets)
 
 Use to:
 
