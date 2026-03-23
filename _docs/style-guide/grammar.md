@@ -23,6 +23,18 @@ Use lowercase for braille (unless referring to the person Louis Braille).
 
 Use lowercase for terms in a glossary.
 
+<aside class="example">
+<i>Example:</i><br>
+
+The following items in this glossary apply to all technologies:
+
+<ul>
+  <li>abbreviation</li>
+  <li>alternative to time-based media</li>
+  <li>audio</li>
+</ul>
+</aside>
+
 ### Headings 
 
 See [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings). 
