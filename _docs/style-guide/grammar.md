@@ -167,7 +167,7 @@ Use to:
 
 <ul>
   <li>Bananas and apples are both fruits; however, they do not look alike.</li>
-  <li>The conference has attendees from Seattle, Washington; Denver, Colorado; and Miami, Florida.</li> 
+  <li>Meeting attendees are from London, England; Tokyo, Japan; and São Paulo, Brazil.</li> 
 </ul>
 </aside>
 
