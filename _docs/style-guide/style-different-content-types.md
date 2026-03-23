@@ -41,6 +41,12 @@ If you have a reason for not expanding an abbreviation, mark up the first instan
 </ul>
 </aside>
 
+### Re-expanding abbreviations
+
+* <b>Independent sections:</b> Consider re-expanding the abbreviation in sections that are intended to be read independently of the main text.
+* <b>Tables and Figures:</b> Always re-expand the abbreviation in captions and figures, which should be self-contained.
+* <b>Change of context:</b> If an abbreviation could have multiple meanings and the context changes, re-expand it to clarify which meaning is intended.
+
 ### Capitalization in abbreviations
 
 Use <b>title case</b> if the full term is a proper noun.
