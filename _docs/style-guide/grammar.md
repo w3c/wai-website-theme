@@ -43,7 +43,7 @@ If a proper noun is singular, it’s not capitalized in the plural.
 <aside class="example">
 <i>Example:</i><br>
 
-“The Government is focussed on social policy, but previous governments focussed on economic policy” — here, “the Government” is a proper noun because it refers to the current national government.
+“The Government is focused on social policy, but previous governments focused on economic policy” — here, “the Government” is a proper noun because it refers to the current national government.
 </aside>
 
 #### Nouns that are capitalized at W3C
