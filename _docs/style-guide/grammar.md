@@ -29,7 +29,7 @@ See [Capitalization in headings](/style-guide/style-different-content-types/#cap
 
 ### Lists
 
-See [Capitalization in lists]((/style-guide/style-different-content-types/#capitalization-in-lists).
+See [Capitalization and punctuation in lists — Style for different content types (A–Z)](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
 ### Proper nouns 
 
