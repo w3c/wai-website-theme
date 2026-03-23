@@ -219,7 +219,7 @@ Write in the active voice, where possible — that is, the subject of the senten
 
 #### Accessible
 
-Use this word to refer specifically to people with disabilities or to places that are easy to reach or enter. Don’t use it to mean things like “convenient,” “available,” or “easy to use.”
+Use this word to refer specifically to people with disabilities or to places that are easy to reach or enter. Do not use it to mean things like “convenient,” “available,” or “easy to use.”
 
 <aside class="example">
 <i>Example:</i><br>
