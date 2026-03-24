@@ -177,7 +177,7 @@ Compare with the use of an [em dash](#em-dash), which adds an amplifying or expl
 
 #### Semicolon
 
-Use a semicolon in the following scenarios:
+Use a semicolon in the following scenarios.
 
 Connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence):
 
@@ -190,7 +190,7 @@ Bananas and apples are both fruits; however, they do not look alike.
 Break up complex lists that contain internal commas:
 
 <aside class="example">
-<i>Examples:</i><br>
+<i>Example:</i><br>
 
 <ul>
   <li>Meeting attendees are from London, England; Tokyo, Japan; and São Paulo, Brazil.</li> 
