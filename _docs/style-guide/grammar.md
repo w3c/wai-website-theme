@@ -243,17 +243,6 @@ Compare with the use of a [colon](#colon), which calls attention to the words th
 </ul>
 </aside>
 
-**Exception:** Do not use an en dash for a <b>range of time</b> — instead, use “from … to” or “between … and”.
-
-<aside class="example">
-<i>Examples:</i><br>
-
-<ul>
-  <li>The meeting is from 9 a.m. to 10:30 a.m.</li>
-  <li>Let’s meet between 12 noon and 1 p.m.</li>
-</ul>
-</aside>
-
 #### Hyphen
 
 Use a hyphen (-) to hyphenate compound adjectives.
