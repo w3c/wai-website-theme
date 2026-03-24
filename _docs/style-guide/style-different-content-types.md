@@ -114,7 +114,7 @@ In cases where numbers only must be used (such as in a form), use the following 
 
 ## Headings
 
-Nest headings properly, for example, `<h1>` should be followed by `<h1>` or `<h2>`, not by `<h3>` or lower.  
+Nest headings properly — for example, `<h1>` should not be followed by `<h3>` or lower.  
 
 Use no terminal punctuation for headings, unless a question mark is required.  
 
