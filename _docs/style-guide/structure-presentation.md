@@ -9,7 +9,8 @@ lang: en
 
 ### Logical flow and order
 
-* Create a clear structure before drafting your content.
+Create a clear structure before drafting your content:
+
 * Outline information in the order readers need it — start with what readers need to understand or do first, then provide supporting details and background information.
 * Show the relationship between sections — for example, you could use a note or a label to signal how one section builds on, contrasts with or gives an example of the previous concept.
 
