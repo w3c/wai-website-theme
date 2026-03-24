@@ -142,7 +142,7 @@ Link text should describe where the link will take the user.
 </ul>
 </aside>
 
-Never use the same link text for links that lead to different destinations.
+On a given page, never use the same link text for links that lead to different destinations.
 
 ### In-line links
 
