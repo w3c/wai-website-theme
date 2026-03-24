@@ -45,7 +45,7 @@ Avoid bolding text in whole paragraphs and sections.
 
 Use italics sparingly to:
 
-* add stress emphasis to a word or phrase where this helps to make the meaning clearer by highlighting differences between ideas
+* emphasise a word or phrase if it helps make the meaning clearer, especially to show differences between ideas
 * indicate foreign words that are not commonly used in the English language
 
 <div class="inset-text">
