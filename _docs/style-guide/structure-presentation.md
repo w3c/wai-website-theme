@@ -43,17 +43,22 @@ Avoid bolding text in whole paragraphs and sections.
 
 ### Italics
 
-Use italics sparingly to:
+Use italics sparingly in the following scenarios.
 
-* emphasise a word or phrase if it helps make the meaning clearer, especially to show differences between ideas
-* indicate foreign words that are not commonly used in the English language
+Emphasise a word or phrase if it helps make the meaning clearer, especially to show differences between ideas:
 
 <div class="inset-text">
-<p>Examples:</p>
-<ul>
-  <li>This policy applies to <i>new</i> staff, not existing staff.</li>
-  <li>The Japanese aesthetic of <i lang="ja-Latn>wabi-sabi</i> values simplicity and imperfection.</li>
-</ul>
+<p>Example:</p>
+
+  This policy applies to <i>new</i> staff, not existing staff.
+</div>
+
+Indicate foreign words that are not commonly used in the English language:
+
+<div class="inset-text">
+<p>Example:</p>
+
+The Japanese aesthetic of <i lang="ja-Latn>wabi-sabi</i> values simplicity and imperfection.
 </div>
 
 <b>When to avoid italics:</b>
