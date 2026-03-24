@@ -155,7 +155,7 @@ Break up chunks of information to make it easier to parse using the guidance und
 
 ##### Verbs
 
-Use a verb instead of a noun describing an action.
+Avoid turning the action into a noun. Use a verb instead. 
 
 <aside class="example">
 <i>Examples:</i><br>
@@ -177,7 +177,7 @@ Example 2:
 
 ##### Voice
 
-Write in the active voice, where possible — that is, the subject of the sentence performs the action.
+Avoid the passive voice, where possible. Write in the active voice — that is, the subject of the sentence performs the action.
 
 <aside class="example">
 <i>Example:</i><br>
