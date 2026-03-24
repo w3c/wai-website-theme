@@ -283,12 +283,9 @@ Always use a <b>digit</b>:
 
 For these units, use the abbreviation *after* the digit:
 
-* File sizes: 5GB, 1.2MB (capital letters)  
-* Percentages: 9% (symbol)  
-* Temperature: 25°C, 77°F  
-* Times: 5 a.m., 10:30 p.m.   
-  * **Exceptions:** 12 noon and 12 midnight   
-    (not 12 p.m. or 12 a.m.)
+* File sizes: 5GB, 1.2MB (capital letters)
+* Percentages: 9% (symbol)
+* Temperature: 25°C, 77°F
 
 ### Digits versus words
 
@@ -406,4 +403,18 @@ Except where there is a lack of space (for example, in a table or chart), use wo
   <li>Number 3 is correct.</li>
   <li>Statement 2 is true.</li>
 </ul>
-</aside> 
+</aside>
+
+## Times
+
+* Use the 24-hour clock.
+* In a sentence, do not use the en dash. Use “from … to” or “between … and” instead.
+
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>The meeting is from 09:00 to 10:30.</li>
+  <li>They agreed to meet between 13:00 and 15:00.</li>
+</ul>
+</aside>
