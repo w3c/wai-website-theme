@@ -296,17 +296,24 @@ For these units, use the abbreviation *after* the digit:
 
 Up to nine: use words.
 
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>He invited nine friends.</li>
+  <li>She came first.</li>
+  <li>It was the ninth time this happened.</li>
+</ul>
+</aside>
+
 From 10 and above: use digits.
 
 <aside class="example">
 <i>Examples:</i><br>
 
 <ul>
-  <li>He invited nine friends.</li>
   <li>They bought 10 plants.</li>
-  <li>She came first.</li>
-  <li>It was the ninth time this happened.</li>
-  <li>I was 10th in the queue.</li>
+  <li>I was 12th in the queue.</li>
 </ul>
 </aside>
 
@@ -392,6 +399,7 @@ Except where there is a lack of space (for example, in a table or chart), use wo
 * <b>Number sign (octothorpe):</b>  
   * <b>#</b>: Use “number” or a suitable noun instead.
  
+<aside class="example">
 <i>Examples:</i><br>
 
 <ul>
