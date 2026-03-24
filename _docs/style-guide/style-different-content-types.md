@@ -104,7 +104,7 @@ Use numbers for the day and year, words for the month:
 31 May 2022
 </aside>
 
-In cases where numbers only must be used (such as in a form), use the following format: YYYY-MM-DD:
+In cases where numbers only must be used, use the following format: YYYY-MM-DD:
 
 <aside class="example">
 <i>Example:</i><br>
