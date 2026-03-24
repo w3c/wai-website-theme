@@ -80,7 +80,7 @@ Use pronouns that are both **inclusive** and **easy to translate** for W3C's glo
 
 ##### Use a plural subject to avoid (he/she, his/her)
 
-Avoid assuming gender by skipping 'he/she and his/her', where possible. Use a <b>plural subject</b> instead.
+Avoid assuming gender by skipping "he/she" and "his/her", where possible. Use a <b>plural subject</b> instead.
 
 <aside class="example">
 <i>Examples:</i><br>
