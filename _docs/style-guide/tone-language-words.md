@@ -132,7 +132,7 @@ Provide the full term with the abbreviation on first use — there are [a few wa
 
 ##### Contractions
 
-Use positive contractions and avoid negative contractions.
+Avoid negative contractions and use positive contractions.
 
 <aside class="example">
 <i>Examples:</i><br>
