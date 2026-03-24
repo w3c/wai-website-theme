@@ -24,7 +24,7 @@ custom_navigation: theme-navigation
 
 # Build settings
 markdown: kramdown
-kramwdown:
+kramdown:
   toc_levels: 2..3
   input: GFM
   syntax_highlighter: rouge
@@ -34,6 +34,10 @@ collections:
   docs:
     output: true
     permalink: /:path/
+  style-guide:
+    output: true
+    permalink: /:collection/:name/
+    sort_by: order
 
 defaults:
   -

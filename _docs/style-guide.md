@@ -9,8 +9,8 @@ lang: en
 
 This style guide sets guidelines for writing materials for W3C WAI. The purpose of the guide is to support:
 
-* readability 
-* consistency 
+* readability
+* consistency
 * better, easier translations
 
 This is a living document. It aims to follow the recommendations in this style guide.
@@ -34,9 +34,9 @@ This is a living document. It aims to follow the recommendations in this style g
 * [Tone, language, and words](/style-guide/tone-language-words/)
   * [Tone](/style-guide/content-wording/#tone)
   * [Language](/style-guide/content-wording/#language)
-    * [Disability language](/style-guide/content-wording/#disability-language) 
-    * [Inclusive language](/style-guide/content-wording/#inclusive-language)  
-    * [Plain language](/style-guide/content-wording/#plain-language) 
+    * [Disability language](/style-guide/content-wording/#disability-language)
+    * [Inclusive language](/style-guide/content-wording/#inclusive-language)
+    * [Plain language](/style-guide/content-wording/#plain-language)
   * [Spelling](/style-guide/content-wording/#spelling)
     * [Correct usage of key terms](/style-guide/content-wording/#correct-usage-of-key-terms)
     * [Terms to avoid](/style-guide/content-wording/#terms-to-avoid)

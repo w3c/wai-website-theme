@@ -1,30 +1,31 @@
 ---
 title: "Tone, Language, and Words"
 lang: en
+order: 1
 ---
 
 {% include toc.html %}
 
 ## Tone
 
-* Authoritative and factual  
-* Clear and straight-forward  
+* Authoritative and factual
+* Clear and straight-forward
 * Inclusive and respectful
 
-## Language 
+## Language
 
 ### Disability language
 
 Some people with disabilities prefer “people-first language”. Others prefer “identify-first language”. Consider using a mixture of both.
 
-<b>People-first language</b> puts the <b>individual</b> before the disability. 
+<b>People-first language</b> puts the <b>individual</b> before the disability.
 
 <aside class="example">
 <i>Examples:</i><br>
 
 <ul>
   <li>people with disabilities</li>
-  <li>people with physical impairments</li>  
+  <li>people with physical impairments</li>
   <li>people who are blind</li>
   <li>people with autism</li>
 </ul>
@@ -45,7 +46,7 @@ Some people with disabilities prefer “people-first language”. Others prefer 
 <b>Deaf versus deaf:</b>
 
 * “Deaf” (with a capital letter): Denotes cultural identity and membership in a community that primarily uses sign language.
-* “deaf” (with a lower case letter): A medical term to describe anyone who does not hear very much or at all. 
+* “deaf” (with a lower case letter): A medical term to describe anyone who does not hear very much or at all.
 
  **Note:** A person who is deaf or hard of hearing may not use sign language or identify with Deaf culture.
 
@@ -95,7 +96,7 @@ Avoid assuming gender by skipping "he/she" and "his/her", where possible. Use a 
 
 Singular, “they” can be problematic because it’s:
 
-* hard to translate in some languages  
+* hard to translate in some languages
 * harder for many people to understand and can seem grammatically incorrect — especially for some people with language disabilities
 
 Use a <b>noun</b> instead.
@@ -111,15 +112,15 @@ Use a <b>noun</b> instead.
 
 **Exceptions:** Use:
 
-* personal pronouns that real people use for themselves  
+* personal pronouns that real people use for themselves
 * pronouns assigned to named personas
 
 ### Plain language
 
 Plain language uses clear wording, structure and design that enables readers to easily:
 
-* <b>find</b> what they need  
-* <b>understand</b> what they find  
+* <b>find</b> what they need
+* <b>understand</b> what they find
 * <b>use</b> the content to complete tasks
 
 #### Techniques for writing in plain language
@@ -145,7 +146,7 @@ Avoid negative contractions and use positive contractions.
 
 ##### Personal pronouns
 
-Use “you” and “your” when talking to the reader. 
+Use “you” and “your” when talking to the reader.
 
 Use “we” when speaking for an organisation (like W3C), but only if it’s clear who “we” means.
 
@@ -155,7 +156,7 @@ Break up chunks of information to make it easier to parse using the guidance und
 
 ##### Verbs
 
-Avoid turning the action into a noun. Use a verb instead. 
+Avoid turning the action into a noun. Use a verb instead.
 
 <aside class="example">
 <i>Examples:</i><br>
@@ -190,9 +191,9 @@ Avoid the passive voice, where possible. Write in the active voice — that is, 
 
 ##### Words
 
-* Use everyday, familiar words.  
-* Avoid jargon and metaphors.  
-* Explain specialist terms on first use.  
+* Use everyday, familiar words.
+* Avoid jargon and metaphors.
+* Explain specialist terms on first use.
 * Remove redundant phrases, filler words, and phrases that repeat the same idea.
 
 <aside class="example">
@@ -202,17 +203,17 @@ Avoid the passive voice, where possible. Write in the active voice — that is, 
   <li>Avoid: <b>Try to</b> write link text <b>so</b> that <b>it</b> <b>clearly</b> describes where the link goes.</li>
   <li>Use: Write link text that describes where the link goes.</li>
 </ul>
-</aside> 
+</aside>
 
 ## Spelling
 
-* Use American English:  
-  * Use the [Merriam-Webster dictionary](https://www.merriam-webster.com/) to check spelling.  
-* Words to watch out for:  
-  * checkbox, checkboxes (one word)  
-  * email (no hyphen)  
-  * lowercase (one word)  
-  * web page (two words)  
+* Use American English:
+  * Use the [Merriam-Webster dictionary](https://www.merriam-webster.com/) to check spelling.
+* Words to watch out for:
+  * checkbox, checkboxes (one word)
+  * email (no hyphen)
+  * lowercase (one word)
+  * web page (two words)
   * website (one word)
 
 ## Terms
@@ -230,7 +231,7 @@ Use this word to refer specifically to people with disabilities or to places tha
   <li>Avoid: To reach more users, our website is now accessible in several languages.</li>
   <li>Use: To reach more users, our website is now available in several languages.</li>
 </ul>
-</aside> 
+</aside>
 
 #### Click
 
@@ -257,7 +258,7 @@ Use “hand-eye coordination”, not “eye-hand coordination”.
 <i>Example:</i><br>
 
 Speech recognition powers virtual assistants to understand commands.
-</aside> 
+</aside>
 
 <b>Voice recognition</b> identifies who is speaking by analyzing their unique vocal characteristics.
 
@@ -265,7 +266,7 @@ Speech recognition powers virtual assistants to understand commands.
 <i>Example:</i><br>
 
 Voice recognition is used for security features like voice biometrics to authenticate a user.
-</aside> 
+</aside>
 
 #### URL (Uniform Resource Locator)
 
@@ -275,9 +276,9 @@ A string of characters that identifies a resource. It provides information on ho
 <i>Example:</i><br>
 
 https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a webpage at the w3.org domain accessed using the secure HTTP protocol.
-</aside> 
+</aside>
 
-#### URI (Uniform Resource Identifier) 
+#### URI (Uniform Resource Identifier)
 
 A string of characters that identifies a resource. It does not always describe how to locate the resource. Use this term when referring to a resource identifier.
 
@@ -291,8 +292,8 @@ mailto:kevin@w3.org — this identifies an email resource.
 
 ##### WCAG 2
 
-* When expanding the abbreviation “WCAG 2”, use “Web Content Accessibility Guidelines”.  
-* When writing about WCAG 2  in general, use “WCAG 2”.  
+* When expanding the abbreviation “WCAG 2”, use “Web Content Accessibility Guidelines”.
+* When writing about WCAG 2  in general, use “WCAG 2”.
 * If referring to a specific version of WCAG,  use the version number.
 
 <aside class="example">
@@ -303,8 +304,8 @@ It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.
 
 ##### WCAG 3
 
-* When expanding the abbreviation “WCAG 3”, use “W3C Accessibility Guidelines”.  
-* If referring to the TR (technical report) document, use “WCAG 3.0”.  
+* When expanding the abbreviation “WCAG 3”, use “W3C Accessibility Guidelines”.
+* If referring to the TR (technical report) document, use “WCAG 3.0”.
 * When writing about WCAG 3 in general, use “WCAG 3”.
 
 ##### WCAG article and verb
@@ -367,10 +368,10 @@ Do not refer to SCs by number alone.
 
 ### Terms to avoid
 
-* <b>Abort:</b> Use “cancel” instead.  
-* <b>For instance:</b> Use “for example” instead.  
-* <b>Persons:</b> Use “people” instead.  
-* <b>Please:</b> Omit this unnecessary extra word in *informational* content and *instructions*.  
+* <b>Abort:</b> Use “cancel” instead.
+* <b>For instance:</b> Use “for example” instead.
+* <b>Persons:</b> Use “people” instead.
+* <b>Please:</b> Omit this unnecessary extra word in *informational* content and *instructions*.
 * <b>Refer to:</b> Use “see” instead.
 
 #### Terms to avoid relating to disability/disabled people
@@ -431,7 +432,7 @@ Do not refer to SCs by number alone.
 
 <b>Ability-defining or “fixing” language</b>:
 
-* Avoid terminology that directly states people with disabilities <b>cannot do something</b> — instead, switch the phrasing around to focus on the impact of bad design and how good design can enable people to do things.  
+* Avoid terminology that directly states people with disabilities <b>cannot do something</b> — instead, switch the phrasing around to focus on the impact of bad design and how good design can enable people to do things.
 * Avoid phrasing that presents a disability as something that <b>needs to be fixed</b>.
 
 <aside class="example">
@@ -441,20 +442,20 @@ Do not refer to SCs by number alone.
   <li>Avoid: Assistive technologies can help <b>correct</b> their speech in face-to-face conversations.</li>
   <li>Use: Assistive technologies can enable them to participate in face-to-face conversations.</li>
 </ul>
-</aside> 
+</aside>
 
 ### Context-dependent terms
 
 <b>“Color blind”:</b>
 
-* Using “color blind” can be misleading, as most people with color deficiencies do see some colors — instead:  
-  * when referring to people’s abilities, use “people who cannot distinguish between certain colors” (often called “color blindness”)   
+* Using “color blind” can be misleading, as most people with color deficiencies do see some colors — instead:
+  * when referring to people’s abilities, use “people who cannot distinguish between certain colors” (often called “color blindness”)
   * when addressing the medical condition, use “color vision deficiency”
 
 <b>“Loss”:</b>
 
-Avoid using “loss” when referring to congenital conditions that describe a <b>state</b> — for example:  
-  * “hearing loss” is not appropriate for people who are born deaf  
-  * “vision loss” is not appropriate for people who are born blind  
+Avoid using “loss” when referring to congenital conditions that describe a <b>state</b> — for example:
+  * “hearing loss” is not appropriate for people who are born deaf
+  * “vision loss” is not appropriate for people who are born blind
 
 It’s okay to use “loss” in contexts that describe a <b>change</b> — for example, “as we age, we have hearing loss”.

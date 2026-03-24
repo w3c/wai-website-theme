@@ -1,17 +1,18 @@
 ---
 title: "Grammar"
 lang: en
+order: 3
 ---
 
 {% include toc.html %}
 
 ## Capitalization
 
-### Abbreviations 
+### Abbreviations
 
 See [Capitalization in abbreviations](/style-guide/style-different-content-types/#capitalization-in-abbreviations).
 
-### All caps 
+### All caps
 
 Avoid using all caps for words (except acronyms).
 
@@ -35,19 +36,19 @@ The following items in this glossary apply to all technologies:
 </ul>
 </aside>
 
-### Headings 
+### Headings
 
-See [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings). 
+See [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings).
 
 ### Lists
 
 See [Capitalization and punctuation in lists — Style for different content types (A–Z)](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
-### Proper nouns 
+### Proper nouns
 
 Only capitalize nouns that are proper nouns — compare:
 
-* “Success Criterion 1.1.1 is about non-text content.” — here, “Success Criterion” is a proper noun.  
+* “Success Criterion 1.1.1 is about non-text content.” — here, “Success Criterion” is a proper noun.
 * “One success criterion has been removed.” — here, without the full name, “success criterion” becomes a common noun and is not capitalized.
 
 If a proper noun is singular, it’s not capitalized in the plural.
@@ -69,18 +70,18 @@ Treat WCAG levels as proper nouns.
 
 <ul>
   <li>Avoid: WCAG levels A, AA, and AAA</li>
-  <li>Use: WCAG Level A, Level AA and Level AAA</li>  
+  <li>Use: WCAG Level A, Level AA and Level AAA</li>
 </ul>
 </aside>
 
 ##### Working group, task force
 
-Use title case when it includes the name of the group. 
+Use title case when it includes the name of the group.
 
 <aside class="example">
 <i>Example:</i><br>
 
-The Mobile Accessibility Task Force met yesterday. 
+The Mobile Accessibility Task Force met yesterday.
 </aside>
 
 Use lowercase when it does not include the name of the group, or when it’s in the plural form.
@@ -88,7 +89,7 @@ Use lowercase when it does not include the name of the group, or when it’s in 
 <aside class="example">
 <i>Example:</i><br>
 
-The working group agreed to publish the note. 
+The working group agreed to publish the note.
 </aside>
 
 **Exception:** Capitalize “Members” in the singular or plural when referring to organizations that are W3C Members.
@@ -97,12 +98,12 @@ The working group agreed to publish the note.
 
 Use lowercase for the following nouns, unless these are part of a name or title:
 
-* web (the web)  
+* web (the web)
 * internet (the internet)
 
 ## That versus which
 
-<b>That:</b> Introduces an essential or restrictive clause that is crucial for understanding the sentence. 
+<b>That:</b> Introduces an essential or restrictive clause that is crucial for understanding the sentence.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -142,7 +143,7 @@ Clarify something in a parenthetical aside:
 <i>Example:</i><br>
 
 <ul>
-  <li>An ellipsis (…) indicates that words have been omitted from a sentence or quotation</li> 
+  <li>An ellipsis (…) indicates that words have been omitted from a sentence or quotation</li>
 </ul>
 </aside>
 
@@ -193,7 +194,7 @@ Break up complex lists that contain internal commas:
 <i>Example:</i><br>
 
 <ul>
-  <li>Meeting attendees are from London, England; Tokyo, Japan; and São Paulo, Brazil.</li> 
+  <li>Meeting attendees are from London, England; Tokyo, Japan; and São Paulo, Brazil.</li>
 </ul>
 </aside>
 
@@ -205,13 +206,13 @@ In a phrase listing three or more items, place a comma before the final conjunct
 <i>Example:</i><br>
 
 I bought apples, oranges, and bananas.
-</aside> 
+</aside>
 
 ### Dashes and hyphens
 
 #### Em dash
 
-* Use an em dash (—) to clarify or elaborate on what was just said.  
+* Use an em dash (—) to clarify or elaborate on what was just said.
 * Put a space before and after an em dash.
 
 <aside class="example">
@@ -230,7 +231,7 @@ Compare with the use of a [colon](#colon), which calls attention to the words th
 
 #### En dash
 
-* Use an en dash (–) to indicate a range of numbers, such as in dates, pages and sports results.  
+* Use an en dash (–) to indicate a range of numbers, such as in dates, pages and sports results.
 * Do not put a space before and after an en dash.
 
 <aside class="example">
@@ -259,7 +260,7 @@ Use a hyphen (-) to hyphenate compound adjectives.
 
 Do *not* hyphenate:
 
-* an adverb that ends in “ly”  
+* an adverb that ends in “ly”
 * an adverb that follows a noun
 
 <aside class="example">
@@ -285,8 +286,8 @@ For guidance on terms we no longer hyphenate and are written as one word, see th
 
 Use an ellipsis (...) to:
 
-* show an omission of words  
-* represent a pause  
+* show an omission of words
+* represent a pause
 * suggest there’s something left unsaid
 
 Place a space before and after an ellipsis.
@@ -372,7 +373,7 @@ Example 4:
   <li>Avoid: Add a potato and/or an onion.</li>
   <li>Use: Add a potato, <b>or</b> an onion, <b>or both</b>.</li>
 </ul>
-</aside> 
+</aside>
 
 **Exception:** Use a forward slash to show close relationship or opposition if it makes more sense than using words.
 

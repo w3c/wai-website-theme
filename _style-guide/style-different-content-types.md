@@ -1,6 +1,7 @@
 ---
 title: "Style for Different Content Types (A–Z)"
 lang: en
+order: 2
 ---
 
 {% include toc.html %}
@@ -73,9 +74,9 @@ Use <b>lowercase</b> when the full term is a common noun.
 
 ### Abbreviations to avoid
 
-* <b>e.g.:</b> Instead, use the expanded term, “for example”.  
-* <b>etc.:</b> Instead, start the phrase with “such as” to indicate other possible options.  
-* <b>i.e.:</b> Instead, use “that is” or “in other words”.  
+* <b>e.g.:</b> Instead, use the expanded term, “for example”.
+* <b>etc.:</b> Instead, start the phrase with “such as” to indicate other possible options.
+* <b>i.e.:</b> Instead, use “that is” or “in other words”.
 * <b>v.s.:</b> Instead, use “versus”, “compared with”, or “in contrast to”.
 
 ## Dates
@@ -114,9 +115,9 @@ In cases where numbers only must be used, use the following format: YYYY-MM-DD:
 
 ## Headings
 
-Nest headings properly — for example, `<h1>` should not be followed by `<h3>` or lower.  
+Nest headings properly — for example, `<h1>` should not be followed by `<h3>` or lower.
 
-Use no terminal punctuation for headings, unless a question mark is required.  
+Use no terminal punctuation for headings, unless a question mark is required.
 
 See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure).
 
@@ -130,7 +131,7 @@ Use sentence case, not title case.
 
 ### Link text
 
-Link text should describe where the link will take the user. 
+Link text should describe where the link will take the user.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -171,7 +172,7 @@ Provide the <b>file format</b> so the user knows what to expect.
 
 ### Punctuating links
 
-If the linked text is at the end of a complete sentence, add a full stop after the link.  
+If the linked text is at the end of a complete sentence, add a full stop after the link.
 
 If the linked text is a raw URL, do not add a full stop.
 
@@ -200,7 +201,7 @@ Web accessibility means that people can:
 
 #### List items are complete sentences
 
-Start each item with a <b>capital letter</b>.  
+Start each item with a <b>capital letter</b>.
 
 End each item in a full stop or a question mark.
 
@@ -216,7 +217,7 @@ End each item in a full stop or a question mark.
 
 #### List items are fragments or not complete sentences
 
-Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).  
+Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).
 
 End each item with no conjunction or punctuation.
 
@@ -236,9 +237,9 @@ If distinction between "and" and "or" is necessary, specify the nature of the li
 
 #### List items complete the introductory phrase or sentence in the body text
 
-Treat all the items in the list as a grammatical part of the introductory phrase or sentence.  
+Treat all the items in the list as a grammatical part of the introductory phrase or sentence.
 
-Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.  
+Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.
 
 End each item with no punctuation.
 
@@ -314,9 +315,9 @@ From 10 and above: use digits.
 </ul>
 </aside>
 
-**Exceptions:** 
+**Exceptions:**
 
-* See [Ages, measurements, percentages, and ratios](#ages-measurements-percentages-and-ratios).  
+* See [Ages, measurements, percentages, and ratios](#ages-measurements-percentages-and-ratios).
 * Use words for very large numbers when they are rounded figures.
 
 <aside class="example">
@@ -349,7 +350,7 @@ With *related* numbers, where one number is usually written in digits and the ot
 <aside class="example">
 <i>Example:</i><br>
 
-We bought 1 bag containing 500 seeds. 
+We bought 1 bag containing 500 seeds.
 </aside>
 
 #### Adjacent numbers
@@ -359,7 +360,7 @@ With *adjacent* numbers that express different categories of numbers, use a <b>m
 <aside class="example">
 <i>Example:</i><br>
 
-The cook needs twelve 2-pound bags of flour. 
+The cook needs twelve 2-pound bags of flour.
 </aside>
 
 ### Punctuating numbers
@@ -373,7 +374,7 @@ Use commas in numbers with more than three digits.
   <li>9,000</li>
   <li>9,990,900</li>
 </ul>
-</aside> 
+</aside>
 
 **Exceptions:** Use no punctuation for years, addresses, page numbers, or code line numbers.
 
@@ -391,11 +392,11 @@ According to <cite>The Hitchhiker’s Guide to the Galaxy</cite>, the answer to 
 
 Except where there is a lack of space (for example, in a table or chart), use words for the following symbols:
 
-* <b>Ampersand:</b>  
-  * <b>&</b>: Use “and” instead.  
-* <b>Number sign (octothorpe):</b>  
+* <b>Ampersand:</b>
+  * <b>&</b>: Use “and” instead.
+* <b>Number sign (octothorpe):</b>
   * <b>#</b>: Use “number” or a suitable noun instead.
- 
+
 <aside class="example">
 <i>Examples:</i><br>
 

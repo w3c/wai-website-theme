@@ -150,8 +150,9 @@
   pages:
     - name: WAI Style Guide
       url: "/style-guide/"
-    - name: About This Style Guide
-      url: "/style-guide/about/"
+    - name: "All-in-One"
+      url: "/style-guide/one-page/"
+      hide: true
     - name: Structure and Presentation
       url: "/style-guide/structure-presentation/"
     - name: Tone, Language, and Words
