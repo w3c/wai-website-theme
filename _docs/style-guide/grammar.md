@@ -75,16 +75,20 @@ Treat WCAG levels as proper nouns.
 
 ##### Working group, task force
 
-* Use title case when it includes the name of the group.  
-* Use lowercase when it does not include the name of the group, or when it’s in the plural form.
+Use title case when it includes the name of the group. 
 
 <aside class="example">
-<i>Examples:</i><br>
+<i>Example:</i><br>
 
-<ul>
-  <li>The Mobile Accessibility Task Force met yesterday.</li>
-  <li>The working group agreed to publish the note.</li>  
-</ul>
+The Mobile Accessibility Task Force met yesterday. 
+</aside>
+
+Use lowercase when it does not include the name of the group, or when it’s in the plural form.
+
+<aside class="example">
+<i>Example:</i><br>
+
+The working group agreed to publish the note. 
 </aside>
 
 **Exception:** Capitalize “Members” in the singular or plural when referring to organizations that are W3C Members.
@@ -120,18 +124,34 @@ Use lowercase for the following nouns, unless these are part of a name or title:
 
 #### Parentheses (round brackets)
 
-Use to:
+Use parentheses in the following scenarios.
 
-* provide the abbreviation for a term  
-* clarify something in a parenthetical aside  
-* signal an optional plural
+Provide the abbreviation for a term:
 
 <aside class="example">
-<i>Examples:</i><br>
+<i>Example:</i><br>
 
 <ul>
   <li>Internet of Things (IoT)</li>
+</ul>
+</aside>
+
+Clarify something in a parenthetical aside:
+
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
   <li>An ellipsis (…) indicates that words have been omitted from a sentence or quotation</li> 
+</ul>
+</aside>
+
+Signal an optional plural:
+
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
   <li>Test(s)</li>
 </ul>
 </aside>
@@ -157,16 +177,22 @@ Compare with the use of an [em dash](#em-dash), which adds an amplifying or expl
 
 #### Semicolon
 
-Use to:
+Use a semicolon in the following scenarios:
 
-* connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence)  
-* break up complex lists that contain internal commas
+Connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence):
+
+<aside class="example">
+<i>Example:</i><br>
+
+Bananas and apples are both fruits; however, they do not look alike.
+</aside>
+
+Break up complex lists that contain internal commas:
 
 <aside class="example">
 <i>Examples:</i><br>
 
 <ul>
-  <li>Bananas and apples are both fruits; however, they do not look alike.</li>
   <li>Meeting attendees are from London, England; Tokyo, Japan; and São Paulo, Brazil.</li> 
 </ul>
 </aside>
