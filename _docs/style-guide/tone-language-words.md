@@ -145,7 +145,9 @@ Use positive contractions and avoid negative contractions.
 
 ##### Personal pronouns
 
-Use “you” and “your” when talking to the reader; and “we” when talking on behalf of W3C. 
+Use “you” and “your” when talking to the reader. 
+
+Use “we” when speaking for an organisation (like W3C), but only if it’s clear who “we” means.
 
 ##### Structure
 
