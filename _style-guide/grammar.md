@@ -346,5 +346,3 @@ Example 4:
   <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his) where possible.</li>
 </ul>
 </aside>
-
-If it’s important whether just one item or all items apply, make that clear before the list — for example, say “one of the following” or “all of the following”.
