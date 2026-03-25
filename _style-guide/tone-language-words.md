@@ -133,15 +133,23 @@ Provide the full term with the abbreviation on first use — there are [a few wa
 
 ##### Contractions
 
-Avoid negative contractions and use positive contractions.
+Avoid negative contractions.
 
 <aside class="example">
 <i>Examples:</i><br>
 
 <ul>
-  <li>Avoid: “cannot” instead of “can’t”; “do not” instead of don’t, and “will not” instead of “won’t”</li>
-  <li>Use: it’s, that’s, you’re, they’ll, we’ve, let’s</li>
+  <li>Avoid: “can’t”, don’t, “won’t”</li>
+  <li>Use: “cannot”, “do not”, “will not” </li>
 </ul>
+</aside>
+
+Use positive contractions.
+
+<aside class="example">
+<i>Examples:</i><br>
+
+Use: it’s, that’s, you’re, they’ll, we’ve, let’s
 </aside>
 
 ##### Personal pronouns
