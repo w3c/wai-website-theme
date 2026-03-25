@@ -59,49 +59,6 @@ If a proper noun is singular, it’s not capitalized in the plural.
 “The Government is focused on social policy, but previous governments focused on economic policy” — here, “the Government” is a proper noun because it refers to the current national government.
 </aside>
 
-#### Nouns that are capitalized at W3C
-
-##### WCAG levels
-
-Treat each WCAG level as a proper nouns.
-
-<aside class="example">
-<i>Example:</i><br>
-
-<ul>
-  <li>Avoid:</li>
-  <ul>
-    <li>WCAG levels A, AA, and AAA</li>
-    <li>WCAG Level A, AA, and AAA</li>
-  </ul>
-  <li>Use: WCAG Level A, Level AA and Level AAA</li>
-</ul>
-</aside>
-
-##### Working group, task force
-
-Use title case when it includes the name of the group.
-
-<aside class="example">
-<i>Examples:</i><br>
-
-<ul>
-  <li>The Mobile Accessibility Task Force met yesterday.</li>
-  <li>The WCAG2ICT Task Force will lead the session.</li>
-</ul>
-</aside>
-
-Use lowercase when it does not include the name of a group, or when it’s in the plural form.
-
-<aside class="example">
-<i>Example:</i><br>
-
-<ul>
-  <li>You can apply to join a W3C working group.</li>
-  <li>The working groups develop digital accessibility guidelines.</li>
-</ul>
-</aside>
-
 #### Proper nouns that have become common nouns
 
 Use lowercase for the following nouns, unless these are part of a name or title:
