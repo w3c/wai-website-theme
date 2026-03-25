@@ -46,7 +46,7 @@ Avoid bolding text in whole paragraphs and sections.
 
 Use italics sparingly in the following scenarios.
 
-Scenario 1: To emphasise a word or phrase if it helps make the meaning clearer, especially to show differences between ideas:
+Scenario 1: To emphasize a word or phrase if it helps make the meaning clearer, especially to show differences between ideas:
 
 <div class="inset-text">
 <p>Example:</p>
