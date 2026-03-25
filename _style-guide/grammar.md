@@ -92,7 +92,7 @@ Use lowercase for the following nouns, unless these are part of a name or title:
 
 Use parentheses in the following scenarios.
 
-Provide the abbreviation for a term:
+Scenario 1: To provide the abbreviation for a term:
 
 <aside class="example">
 <i>Example:</i><br>
@@ -102,7 +102,7 @@ Provide the abbreviation for a term:
 </ul>
 </aside>
 
-Clarify something in a parenthetical aside:
+Scenario 2: To clarify something in a parenthetical aside:
 
 <aside class="example">
 <i>Example:</i><br>
@@ -141,7 +141,7 @@ Compare with the use of an [em dash](#em-dash), which adds an amplifying or expl
 
 Use a semicolon in the following scenarios.
 
-Connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence):
+Scenario 1: To connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence):
 
 <aside class="example">
 <i>Example:</i><br>
@@ -149,7 +149,7 @@ Connect two or more independent clauses not joined by a conjunction (that is, ea
 Bananas and apples are both fruits; however, they do not look alike.
 </aside>
 
-Break up complex lists that contain internal commas:
+Scenario 2: To break up complex lists that contain internal commas:
 
 <aside class="example">
 <i>Example:</i><br>
