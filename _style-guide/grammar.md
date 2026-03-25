@@ -124,7 +124,7 @@ Test(s)
 
 #### Colon
 
-Use a colon to introduce something, putting the emphasis on the clause or list that follows it.
+Use a colon to introduce the main idea(s), giving the sense of "as follows".
 
 <aside class="example">
 <i>Examples:</i><br>
@@ -135,7 +135,7 @@ Use a colon to introduce something, putting the emphasis on the clause or list t
 </ul>
 </aside>
 
-Compare with the use of an [em dash](#em-dash), which adds an amplifying or explanatory element to the main point.
+Compare with the use of an [em dash](#em-dash), which clarifies or elaborates on the main idea that was just said.
 
 #### Semicolon
 
@@ -188,7 +188,7 @@ I bought apples, oranges, and bananas.
 
 **Note:** Avoid using em dashes to combine related ideas if it would make a long or complex sentence.
 
-Compare with the use of a [colon](#colon), which calls attention to the words that *follow* it.
+Compare with the use of a [colon](#colon), which introduces the main idea(s), giving the sense of "as follows".
 
 #### En dash
 
