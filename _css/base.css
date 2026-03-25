@@ -258,7 +258,7 @@ figcaption {
 .inset-text {
     border-inline-start: 2px solid var(--cloudy);
     padding-inline-start: 1em;
-    margin: 1em 1em 1em 0;
+    margin: 1em 0 1em 1em;
 }
 
 /* Related variation: tighter space between the inset text and the previous paragraph when they are directly related. */
