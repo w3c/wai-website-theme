@@ -117,8 +117,6 @@ In cases where numbers only must be used, use the following format: YYYY-MM-DD:
 
 Nest headings properly — for example, `<h1>` should not be followed by `<h3>` or lower.
 
-Use no terminal punctuation for headings, unless a question mark is required.
-
 See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure).
 
 ### Capitalization in headings
@@ -126,6 +124,10 @@ See also the guidance on [Headings — Structure](/style-guide/structure-present
 Use sentence case, not title case.
 
 **Exception:** Capitalize any terms in the heading that are [proper nouns](/style-guide/grammar/#proper-nouns).
+
+### Punctuation in headings
+
+Use no terminal punctuation for headings, unless a question mark is required.
 
 ## Links
 
@@ -170,7 +172,7 @@ Provide the <b>file format</b> so the user knows what to expect.
 </ul>
 </aside>
 
-### Punctuating links
+### Punctuation in links
 
 If the linked text is at the end of a complete sentence, add a full stop after the link.
 
@@ -397,7 +399,7 @@ With *adjacent* numbers that express different categories of numbers, use a <b>m
 The cook needs twelve 2-pound bags of flour.
 </aside>
 
-### Punctuating numbers
+### Punctuation in numbers
 
 Use commas in numbers with more than three digits.
 
