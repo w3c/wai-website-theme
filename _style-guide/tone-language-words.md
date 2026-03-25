@@ -459,3 +459,57 @@ Avoid using “loss” when referring to congenital conditions that describe a <
   * “vision loss” is not appropriate for people who are born blind
 
 It’s okay to use “loss” in contexts that describe a <b>change</b> — for example, “as we age, we have hearing loss”.
+
+### W3C terms
+
+#### Member(s)
+
+Capitalize “Members” in the singular or plural when referring to organizations that are W3C Members.
+
+#### WCAG levels
+
+Treat each WCAG level as a proper nouns.
+
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid:</li>
+  <ul>
+    <li>WCAG levels A, AA, and AAA</li>
+    <li>WCAG Level A, AA, and AAA</li>
+  </ul>
+  <li>Use: WCAG Level A, Level AA and Level AAA</li>
+</ul>
+</aside>
+
+##### Working group, task force
+
+When referring to a specific working group or task force, always include its name and capitalize the whole term.
+
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Avoid:
+    <ul>
+      <li>The Task Force met yesterday.</li>
+      <li>The task force will lead the session.</li>
+    </ul>
+  <li>Use: 
+    <ul>
+      <li>The Mobile Accessibility Task Force met yesterday.</li>
+      <li>The WCAG2ICT Task Force will lead the session.</li>
+    </ul>
+</ul>
+</aside>
+
+Use lowercase when it’s in the plural form.
+
+<aside class="example">
+<i>Example:</i><br>
+
+The working groups develop digital accessibility guidelines.
+</aside>
+
+
