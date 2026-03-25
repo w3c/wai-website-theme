@@ -59,7 +59,7 @@ Scenario 2: To indicate foreign words that are not commonly used in the English 
 <div class="inset-text">
 <p>Example:</p>
 
-The Japanese aesthetic of <i lang="ja-Latn>wabi-sabi</i> values simplicity and imperfection.
+The Japanese aesthetic of <i lang="ja-Latn">wabi-sabi</i> values simplicity and imperfection.
 </div>
 
 <b>When to avoid italics:</b>
