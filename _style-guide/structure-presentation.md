@@ -46,7 +46,7 @@ Avoid bolding text in whole paragraphs and sections.
 
 Use italics sparingly in the following scenarios.
 
-To emphasise a word or phrase if it helps make the meaning clearer, especially to show differences between ideas:
+Scenario 1: To emphasise a word or phrase if it helps make the meaning clearer, especially to show differences between ideas:
 
 <div class="inset-text">
 <p>Example:</p>
@@ -54,7 +54,7 @@ To emphasise a word or phrase if it helps make the meaning clearer, especially t
 This policy applies to <i>new</i> staff, not existing staff.
 </div>
 
-To indicate foreign words that are not commonly used in the English language:
+Scenario 2: To indicate foreign words that are not commonly used in the English language:
 
 <div class="inset-text">
 <p>Example:</p>
