@@ -416,7 +416,7 @@ Capitalize “Members” in the singular or plural when referring to organizatio
 <aside class="example">
 <i>Example of referring to a specific version:</i><br>
 
-It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).
+It conforms to <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>.
 </aside>
 
 ##### WCAG 3
