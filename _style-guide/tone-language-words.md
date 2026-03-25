@@ -388,6 +388,15 @@ It’s okay to use “loss” in contexts that describe a <b>change</b> — for 
 
 Capitalize “Members” in the singular or plural when referring to organizations that are W3C Members.
 
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>W3C Members are organizations of all sizes and all types.</li>
+  <li>A range of organizations join the World Wide Web Consortium as Members to work with us.</li>
+</ul>
+</aside>
+
 #### WCAG terms
 
 ##### WCAG 2
@@ -509,7 +518,10 @@ When referring to a specific working group or task force, always include its nam
 Use lowercase when it’s in the plural form.
 
 <aside class="example">
-<i>Example:</i><br>
+<i>Examples:</i><br>
 
-The working groups develop digital accessibility guidelines.
+<ul>
+  <li>The working groups develop digital accessibility guidelines.</li>
+  <li>The task forces support the working groups.</li>
+</ul>
 </aside>
