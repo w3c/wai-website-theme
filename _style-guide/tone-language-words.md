@@ -496,6 +496,7 @@ When referring to a specific working group or task force, always include its nam
       <li>The Task Force met yesterday.</li>
       <li>The task force will lead the session.</li>
     </ul>
+  </li>
   <li>Use:
     <ul>
       <li>The Mobile Accessibility Task Force met yesterday.</li>
