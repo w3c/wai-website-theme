@@ -188,7 +188,7 @@ When items in a list consist of very long sentences, or of several sentences, co
 
 #### Text that introduces a list
 
-When a sentence or phrase introduces a list in the body text, place a **colon** at the end of this text.
+Punctuation: When a sentence or phrase introduces a list in the body text, place a **colon** at the end of this text.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -205,7 +205,7 @@ Web accessibility means that people can:
 
 Start each item with a <b>capital letter</b>.
 
-End each item in a full stop or a question mark.
+Punctuation: End each item in a full stop or a question mark.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -221,7 +221,7 @@ End each item in a full stop or a question mark.
 
 Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).
 
-End each item with no conjunction or punctuation.
+Punctuation: End each item with no conjunction or punctuation.
 
 <aside class="example">
 <i>Example:</i><br>
@@ -243,7 +243,7 @@ Treat all the items in the list as a grammatical part of the introductory phrase
 
 Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.
 
-End each item with no punctuation.
+Punctuation: End each item with no punctuation.
 
 <aside class="example">
 <i>Examples:</i><br>
