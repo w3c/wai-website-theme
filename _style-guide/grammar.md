@@ -110,7 +110,7 @@ Scenario 2: To clarify something in a parenthetical aside:
 An ellipsis (…) indicates that words have been omitted from a sentence or quotation
 </aside>
 
-Signal an optional plural:
+Scenario 3: To signal an optional plural:
 
 <aside class="example">
 <i>Example:</i><br>
