@@ -261,19 +261,19 @@ I was wondering … but it’s probably not important.
 
 ### Headings
 
-See [punctuation in headings](/style-guide/style-different-content-types/#headings).
+See [punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings).
 
 ### Links
 
-See [punctuation in links](/style-guide/style-different-content-types/#links).
+See [punctuation in links](/style-guide/style-different-content-types/#punctuation-in-links).
 
 ### Lists
 
-See [punctuation in lists](/style-guide/style-different-content-types/#lists).
+See [punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
 ### Numbers
 
-See [punctuation in numbers](/style-guide/style-different-content-types/#numbers).
+See [punctuation in numbers](/style-guide/style-different-content-types/#punctuation-in-numbers).
 
 ### Quotation marks
 
