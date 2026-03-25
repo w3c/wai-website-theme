@@ -24,8 +24,8 @@ Use lowercase for braille (unless referring to the person Louis Braille).
 
 Use lowercase for terms in a glossary.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 The following items in this glossary apply to all technologies:
 
@@ -34,7 +34,7 @@ The following items in this glossary apply to all technologies:
   <li>alternative to time-based media</li>
   <li>audio</li>
 </ul>
-</aside>
+</div>
 
 ### Headings
 
@@ -53,11 +53,11 @@ Only capitalize nouns that are proper nouns — compare:
 
 If a proper noun is singular, it’s not capitalized in the plural.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 “The Government is focused on social policy, but previous governments focused on economic policy” — here, “the Government” is a proper noun because it refers to the current national government.
-</aside>
+</div>
 
 #### Proper nouns that have become common nouns
 
@@ -70,19 +70,19 @@ Use lowercase for the following nouns, unless these are part of a name or title:
 
 <b>That:</b> Introduces an essential or restrictive clause that is crucial for understanding the sentence.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 “The meeting that starts at 10 a.m. will be online” — here, the time is important, as it helps to identify which meeting is online.
-</aside>
+</div>
 
 <b>Which:</b> Introduces a non-essential or non-restrictive clause that provides extra, but not necessary, information.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 “The meeting, which starts at 10 a.m., will be online.” — here, the time is additional, non-essential information.
-</aside>
+</div>
 
 ## Punctuation
 
@@ -94,29 +94,29 @@ Use parentheses in the following scenarios.
 
 Scenario 1: To provide the abbreviation for a term:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>Internet of Things (IoT)</li>
 </ul>
-</aside>
+</div>
 
 Scenario 2: To clarify something in a parenthetical aside:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 An ellipsis (…) indicates that words have been omitted from a sentence or quotation
-</aside>
+</div>
 
 Scenario 3: To signal an optional plural:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 Test(s)
-</aside>
+</div>
 
 **Note:** Parenthetical asides can be distracting, so use them sparingly and, where it makes sense to, rewrite the content as separate sentences.
 
@@ -126,14 +126,14 @@ Test(s)
 
 Use a colon to introduce the main idea(s), giving the sense of "as follows".
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>Contact us: email@example.com</li>
   <li>They had one goal: to finish the marathon.</li>
 </ul>
-</aside>
+</div>
 
 Compare with the use of an [em dash](#em-dash), which clarifies or elaborates on the main idea that was just said.
 
@@ -143,31 +143,31 @@ Use a semicolon in the following scenarios.
 
 Scenario 1: To connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence):
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 Bananas and apples are both fruits; however, they do not look alike.
-</aside>
+</div>
 
 Scenario 2: To break up complex lists that contain internal commas:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>Meeting attendees are from London, England; Tokyo, Japan; and São Paulo, Brazil.</li>
 </ul>
-</aside>
+</div>
 
 ### Commas
 
 In a phrase listing three or more items, place a comma before the final conjunction.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 I bought apples, oranges, and bananas.
-</aside>
+</div>
 
 ### Dashes and hyphens
 
@@ -176,15 +176,15 @@ I bought apples, oranges, and bananas.
 * Use an em dash (—) to clarify or elaborate on what was just said.
 * Put a space before and after an em dash.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>Many animals hibernate during winter — for example, bears.</li>
   <li>The number of new cases has been declining — last week’s daily average was the lowest since January.</li>
   <li>Make the web work — for everyone.</li>
 </ul>
-</aside>
+</div>
 
 **Note:** Avoid using em dashes to combine related ideas if it would make a long or complex sentence.
 
@@ -195,51 +195,51 @@ Compare with the use of a [colon](#colon), which introduces the main idea(s), gi
 * Use an en dash (–) to indicate a range of numbers, such as in dates, pages and sports results.
 * Do not put a space before and after an en dash.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>The years 1990–2000 were transformative.</li>
   <li>Read pages 10–15.</li>
   <li>They defeated the defending champions 106–76.</li>
 </ul>
-</aside>
+</div>
 
 #### Hyphen
 
 Use a hyphen (-) to hyphenate compound adjectives.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>peer-to-peer connection</li>
   <li>short-term memory</li>
   <li>well-known technique</li>
 </ul>
-</aside>
+</div>
 
 Do *not* hyphenate:
 
 * an adverb that ends in “ly”
 * an adverb that follows a noun
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>They are two <b>closely related</b> concepts.</li>
   <li>The technique is <b>well known</b>.</li>
 </ul>
-</aside>
+</div>
 
 With two compound adjectives modifying the same noun, use a hanging hyphen.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 The pre<b>-</b> and post<b>-</b>deployment stages are equally important.
-</aside>
+</div>
 
 For guidance on terms we no longer hyphenate and are written as one word, see the section on [Spelling](/style-guide/tone-language-words/#spelling).
 
@@ -253,11 +253,11 @@ Use an ellipsis (...) to:
 
 Place a space before and after an ellipsis.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 I was wondering … but it’s probably not important.
-</aside>
+</div>
 
 ### Headings
 
@@ -279,11 +279,11 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 Use double quotation marks to reference a term.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 This accessibility requirement is sometimes called “sufficient color contrast”; however, the technical term is “luminosity contrast”.
-</aside>
+</div>
 
 ### Slashes
 
@@ -293,19 +293,19 @@ Generally, only use a forward slash in dates, fractions, and URLs.
 
 For indicating an optional plural, use parentheses instead.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>Avoid: Test/s</li>
   <li>Use: Test(s)</li>
 </ul>
-</aside>
+</div>
 
 Where possible, do not use a forward slash to show two things that have a close relationship or are in opposition — instead use a hyphen or a conjunction.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 Example 1:
 
@@ -334,15 +334,15 @@ Example 4:
   <li>Avoid: Add a potato and/or an onion.</li>
   <li>Use: Add a potato, <b>or</b> an onion, <b>or both</b>.</li>
 </ul>
-</aside>
+</div>
 
 **Exception:** Use a forward slash to show close relationship or opposition if it makes more sense than using words.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>Avoid: In inclusive writing, avoid gender pronouns (she or her, he or his).</li>
   <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his) where possible.</li>
 </ul>
-</aside>
+</div>

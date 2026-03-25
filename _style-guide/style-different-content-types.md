@@ -12,35 +12,35 @@ order: 2
 
 The first time you use an abbreviation (that is, acronyms, initialisms, and numeronyms), give the expanded form; then use the abbreviation for subsequent references.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>First use: World Wide Web Consortium (W3C)</li>
   <li>Second use: W3C</li>
 </ul>
-</aside>
+</div>
 
 **Exception:** If the term is more commonly known by its abbreviation, you do not need to expand it.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
-</aside>
+</div>
 
 #### `<abbr>` element
 
 If you have a reason for not expanding an abbreviation, mark up the first instance of the abbreviation with an `<abbr>` element that contains the expansion.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li><code><abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr></code></li>
   <li><code><abbr title="Transmission Control Protocol">TCP</abbr></code></li>
 </ul>
-</aside>
+</div>
 
 ### Re-expanding abbreviations
 
@@ -52,25 +52,25 @@ If you have a reason for not expanding an abbreviation, mark up the first instan
 
 Use <b>title case</b> if the full term is a proper noun.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>Web Content Accessibility Guidelines (WCAG)</li>
   <li>Framework for Accessible Specification of Technologies (FAST) Task Force</li>
 </ul>
-</aside>
+</div>
 
 Use <b>lowercase</b> when the full term is a common noun.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>real-time communication (RTC)</li>
   <li>augmentative and alternative communication (AAC)</li>
 </ul>
-</aside>
+</div>
 
 ### Abbreviations to avoid
 
@@ -83,35 +83,35 @@ Use <b>lowercase</b> when the full term is a common noun.
 
 Put the day first:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 1 January (instead of January 1)
-</aside>
+</div>
 
 Do not use letter suffixes after the day:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 30 April (instead of 30th April)
-</aside>
+</div>
 
 Use numbers for the day and year, words for the month:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 31 May 2022
-</aside>
+</div>
 
 In cases where numbers only must be used, use the following format: YYYY-MM-DD:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 2025-10-21
-</aside>
+</div>
 
 ## Headings
 
@@ -135,14 +135,14 @@ Use no terminal punctuation for headings, unless a question mark is required.
 
 Link text should describe where the link will take the user.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>Avoid: “Click here”, “Learn more”, “Read more”</li>
   <li>Use: “WAI Resources”</li>
 </ul>
-</aside>
+</div>
 
 On a given page, never use the same link text for links that lead to different destinations.
 
@@ -150,27 +150,27 @@ On a given page, never use the same link text for links that lead to different d
 
 Whenever feasible, place links to documents at the end of sentences.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>Avoid: See <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/">Easy Checks — A First Review of Web Accessibility</a> for the latest draft.</li>
   <li>Use: For the latest draft, see <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/">Easy Checks — A First Review of Web Accessibility</a>.</li>
 </ul>
-</aside>
+</div>
 
 ### Links to non-HTML documents
 
 Provide the <b>file format</b> so the user knows what to expect.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>Avoid: To download the full report, see Annual Report 2025.</li>
   <li>Use: To download the full report, see Annual Report 2025 (PDF).</li>
 </ul>
-</aside>
+</div>
 
 ### Punctuation in links
 
@@ -190,8 +190,8 @@ When items in a list consist of very long sentences, or of several sentences, co
 
 When a sentence or phrase introduces a list in the body text, place a **colon** at the end of this text.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 Web accessibility means that people can:
 
@@ -199,7 +199,7 @@ Web accessibility means that people can:
   <li>perceive, understand, navigate, and interact with the web</li>
   <li>contribute to the web</li>
 </ul>
-</aside>
+</div>
 
 #### List items are complete sentences
 
@@ -207,15 +207,15 @@ Start each item with a <b>capital letter</b>.
 
 End each item in a **full stop** or a **question mark**.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
   <li>In spring I mulch the roses.</li>
   <li>In summer I grow vegetables.</li>
   <li>In autumn I sow and repair the lawn.</li>
 </ul>
-</aside>
+</div>
 
 #### List items are fragments or not complete sentences
 
@@ -223,8 +223,8 @@ Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style
 
 End each item with **no punctuation**.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 Shopping list:
 
@@ -233,7 +233,7 @@ Shopping list:
   <li>milk</li>
   <li>eggs</li>
 </ul>
-</aside>
+</div>
 
 #### List items complete the introductory phrase or sentence in the body text
 
@@ -243,8 +243,8 @@ Begin each item with a <b>lowercase letter</b>, even if the list is a numbered l
 
 End each item with **no punctuation**.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 To give your day structure, use the 1-3-5 Rule and focus on:
 
@@ -260,7 +260,7 @@ To prepare for a productive day:
   <li>review goals</li>
   <li>prioritize the most important tasks</li>
 </ol>
-</aside>
+</div>
 
 ### Specifying list requirements (all items versus only one item)
 
@@ -268,8 +268,8 @@ To prepare for a productive day:
 
 Use  “all of the following”:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 To complete your application, you must provide all of the following:
 
@@ -278,14 +278,14 @@ To complete your application, you must provide all of the following:
   <li>proof of address</li>
   <li>completed application form</li>
 </ul>
-</aside>
+</div>
 
 #### If only one item in the list is allowed
 
 Use  “one of the following”:
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 To verify your identity, provide one of the following:
 
@@ -294,7 +294,7 @@ To verify your identity, provide one of the following:
   <li>driver's license</li>
   <li>birth certificate</li>
 </ul>
-</aside>
+</div>
 
 ## Numbers
 
@@ -304,8 +304,8 @@ To verify your identity, provide one of the following:
 
 Always use a <b>digit</b>:
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>She is 5 years old.</li>
@@ -314,7 +314,7 @@ Always use a <b>digit</b>:
   <li>We drink 2 litres of water a day.</li>
   <li>I bought 2 kilos of tomatoes.</li>
 </ul>
-</aside>
+</div>
 
 For these units, use the abbreviation *after* the digit:
 
@@ -328,44 +328,44 @@ For these units, use the abbreviation *after* the digit:
 
 Up to nine: use words.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>He invited nine friends.</li>
   <li>She came first.</li>
   <li>It was the ninth time this happened.</li>
 </ul>
-</aside>
+</div>
 
 From 10 and above: use digits.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>They bought 10 plants.</li>
   <li>I was 12th in the queue.</li>
 </ul>
-</aside>
+</div>
 
 **Exceptions:**
 
 * See [Ages, measurements, percentages, and ratios](#ages-measurements-percentages-and-ratios).
 * Use words for very large numbers when they are rounded figures.
 
-<aside class="example">
-<i>Examples of writing very large numbers:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples of writing very large numbers:
 
 1 million, 2.2 billion, 3.5 trillion
-</aside>
+</div>
 
 #### Start of a sentence
 
 If a number starts a sentence, use words or reword so as not to start with a digit.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>Avoid: 10 of the 25 participants had issues completing the task.</li>
@@ -375,40 +375,40 @@ If a number starts a sentence, use words or reword so as not to start with a dig
     <li>Of the 25 participants, 10 had issues completing the task.</li>
   </ul>
 </ul>
-</aside>
+</div>
 
 #### Related numbers
 
 With *related* numbers, where one number is usually written in digits and the other not, use <b>digits</b> for both.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 We bought 1 bag containing 500 seeds.
-</aside>
+</div>
 
 #### Adjacent numbers
 
 With *adjacent* numbers that express different categories of numbers, use a <b>mixture of words and digits</b>.
 
-<aside class="example">
-<i>Example:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 The cook needs twelve 2-pound bags of flour.
-</aside>
+</div>
 
 ### Punctuation in numbers
 
 Use commas in numbers with more than three digits.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>9,000</li>
   <li>9,990,900</li>
 </ul>
-</aside>
+</div>
 
 **Exceptions:** Use no punctuation for years, addresses, page numbers, or code line numbers.
 
@@ -421,25 +421,25 @@ Except where there is a lack of space (for example, in a table or chart), use wo
 * <b>Number sign (octothorpe):</b>
   * <b>#</b>: Use “number” or a suitable noun instead.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>Number 3 is correct.</li>
   <li>Statement 2 is true.</li>
 </ul>
-</aside>
+</div>
 
 ## Times
 
 * Use the 24-hour clock.
 * In a sentence, do not use the [en dash](/style-guide/grammar/#en-dash). Use “from … to” or “between … and” instead.
 
-<aside class="example">
-<i>Examples:</i><br>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
 <ul>
   <li>The meeting is from 09:00 to 10:30.</li>
   <li>They agreed to meet between 13:00 and 15:00.</li>
 </ul>
-</aside>
+</div>

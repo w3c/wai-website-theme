@@ -48,16 +48,16 @@ Use italics sparingly in the following scenarios.
 
 Scenario 1: To emphasize a word or phrase if it helps make the meaning clearer, especially to show differences between ideas:
 
-<div class="inset-text">
-<p>Example:</p>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 This policy applies to <i>new</i> staff, not existing staff.
 </div>
 
 Scenario 2: To indicate foreign words that are not commonly used in the English language:
 
-<div class="inset-text">
-<p>Example:</p>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 The Japanese aesthetic of <i lang="ja-Latn">wabi-sabi</i> values simplicity and imperfection.
 </div>
