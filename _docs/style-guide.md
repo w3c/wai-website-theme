@@ -1,11 +1,11 @@
 ---
 title: "WAI Style Guide"
 lang: en
+resource:
+  title: "WAI Style Guide"
 ---
 
-{::nomarkdown}
-{% include box.html type="start" title="About this style guide" %}
-{:/}
+## About this style guide
 
 This style guide sets guidelines for writing materials for W3C WAI. The purpose of the guide is to support:
 
@@ -17,13 +17,12 @@ This is a living document. It aims to follow the recommendations in this style g
 
 **Important:**  These guidelines are written for the **US English language**. Translators may apply regional conventions.
 
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
+You can navigate the style guide:
+- section by section, using the [table of contents](#toc) below
+- as a [single continuous page](/style-guide/one-page/)
 
-## Table of contents
+## Table of contents {#toc}
 
-* [About this style guide](/style-guide/about/)
 * [Structure and presentation](/style-guide/structure-presentation/)
   * [Structure](/style-guide/structure-presentation/#structure)
     * [Logical flow and order](/style-guide/structure-presentation/#logical-flow-and-order)

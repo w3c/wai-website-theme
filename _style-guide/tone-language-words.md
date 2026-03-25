@@ -1,7 +1,10 @@
 ---
-title: "Tone, Language, and Words"
+title: "Tone, Language, and Words – WAI Style Guide"
+title_html: "Tone, Language, and Words"
 lang: en
 order: 1
+resource:
+  ref: /style-guide/
 ---
 
 {% include toc.html %}

@@ -1,6 +1,8 @@
 ---
-title: "WAI Style Guide (All-In-One)"
+title: "WAI Style Guide (Single Page View)"
 lang: en
+resource:
+  ref: /style-guide/
 ---
 
 {::options toc_levels="2,3" /}
@@ -17,6 +19,8 @@ lang: en
 {:/}
 
 {% for subpage in site.style-guide %}
-## {{ subpage.title }}
+
+{{ subpage | jsonify }}
+## {{ subpage.title_html }}
 {{ subpage.content | offset_headings }}
 {% endfor %}
