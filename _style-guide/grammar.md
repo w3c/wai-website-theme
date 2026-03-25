@@ -62,6 +62,8 @@ Example:
 “The Government is focused on social policy, but previous governments focused on economic policy” — here, “the Government” is a proper noun because it refers to the current national government.
 </div>
 
+**Exceptions:** Some [W3C terms](/style-guide/tone-language-words/#w3c-terms) do not follow this rule.
+
 #### Proper nouns that have become common nouns
 
 Use lowercase for the following nouns, unless these are part of a name or title:
