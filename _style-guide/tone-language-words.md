@@ -400,8 +400,8 @@ Capitalize “Members” in the singular or plural when referring to organizatio
 <i>Examples:</i><br>
 
 <ul>
+  <li>The organization joined the World Wide Web Consortium as a Member to work with us.</li>
   <li>W3C Members are organizations of all sizes and all types.</li>
-  <li>A range of organizations join the World Wide Web Consortium as Members to work with us.</li>
 </ul>
 </aside>
 
