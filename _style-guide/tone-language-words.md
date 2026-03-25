@@ -444,18 +444,18 @@ Follow the WCAG standard.
 
 ##### WCAG levels
 
-Treat each WCAG level as a proper nouns.
+Treat each WCAG level as a proper noun.
 
 <aside class="example">
-<i>Example:</i><br>
+<i>Examples:</i><br>
 
 <ul>
   <li>Avoid:</li>
   <ul>
-    <li>WCAG levels A, AA, and AAA</li>
-    <li>WCAG Level A, AA, and AAA</li>
+    <li>levels A, AA, and AAA</li>
+    <li>Level A, AA, and AAA</li>
   </ul>
-  <li>Use: WCAG Level A, Level AA and Level AAA</li>
+  <li>Use: Level A, Level AA and Level AAA</li>
 </ul>
 </aside>
 
@@ -501,6 +501,7 @@ When referring to a specific working group or task force, always include its nam
       <li>The Mobile Accessibility Task Force met yesterday.</li>
       <li>The WCAG2ICT Task Force will lead the session.</li>
     </ul>
+  </li>
 </ul>
 </aside>
 
