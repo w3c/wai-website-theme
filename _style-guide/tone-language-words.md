@@ -288,84 +288,6 @@ A string of characters that identifies a resource. It does not always describe h
 mailto:kevin@w3.org — this identifies an email resource.
 </aside>
 
-#### WCAG references
-
-##### WCAG 2
-
-* When expanding the abbreviation “WCAG 2”, use “Web Content Accessibility Guidelines”.
-* When writing about WCAG 2  in general, use “WCAG 2”.
-* If referring to a specific version of WCAG,  use the version number.
-
-<aside class="example">
-<i>Example of referring to a specific version:</i><br>
-
-It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).
-</aside>
-
-##### WCAG 3
-
-* When expanding the abbreviation “WCAG 3”, use “W3C Accessibility Guidelines”.
-* If referring to the TR (technical report) document, use “WCAG 3.0”.
-* When writing about WCAG 3 in general, use “WCAG 3”.
-
-##### WCAG article and verb
-
-Treat “Web Content Accessibility Guidelines (WCAG) 2” and “W3C Accessibility Guidelines (WCAG) 3” as titles of standards, not as plural “guidelines”.
-
-When referring to the WCAG title, it’s a <b>[proper noun](/style-guide/grammar/#proper-nouns):</b> Do not put the article (“the”) in front of WCAG.
-
-<aside class="example">
-<i>Examples:</i><br>
-
-<ul>
-  <li>Follow WCAG.</li>
-  <li>Follow Web Content Accessibility Guidelines (WCAG).</li>
-</ul>
-</aside>
-
-Use WCAG with a <b>singular verb</b>.
-
-<aside class="example">
-<i>Examples:</i><br>
-
-<ul>
-  <li>Web Content Accessibility Guidelines (WCAG) 2 <b>is</b> published by W3C.</li>
-  <li>WCAG 3.0 <b>is</b> not expected to become a W3C Recommendation this year.</li>
-</ul>
-</aside>
-
-When WCAG is used as an <b>adjective:</b> Use the article (“the”) in front of WCAG.
-
-<aside class="example">
-<i>Example:</i><br>
-
-Follow the WCAG standard.
-</aside>
-
-##### WCAG success criteria
-
-Do not use a colon between the success criterion (SC) number and its title.
-
-<aside class="example">
-<i>Example:</i><br>
-
-<ul>
-  <li>Avoid: Success Criterion 1.4.5: Images of Text.</li>
-  <li>Use: Success Criterion 1.4.5 Images of Text.</li>
-</ul>
-</aside>
-
-Do not refer to SCs by number alone.
-
-<aside class="example">
-<i>Example:</i><br>
-
-<ul>
-  <li>Avoid: This applies to Success Criterion 1.4.5.</li>
-  <li>Use: This applies to Success Criterion 1.4.5 Images of Text.</li>
-</ul>
-</aside>
-
 ### Terms to avoid
 
 * <b>Abort:</b> Use “cancel” instead.
@@ -466,7 +388,61 @@ It’s okay to use “loss” in contexts that describe a <b>change</b> — for 
 
 Capitalize “Members” in the singular or plural when referring to organizations that are W3C Members.
 
-#### WCAG levels
+#### WCAG terms
+
+##### WCAG 2
+
+* When expanding the abbreviation “WCAG 2”, use “Web Content Accessibility Guidelines”.
+* When writing about WCAG 2  in general, use “WCAG 2”.
+* If referring to a specific version of WCAG,  use the version number.
+
+<aside class="example">
+<i>Example of referring to a specific version:</i><br>
+
+It conforms to [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).
+</aside>
+
+##### WCAG 3
+
+* When expanding the abbreviation “WCAG 3”, use “W3C Accessibility Guidelines”.
+* If referring to the TR (technical report) document, use “WCAG 3.0”.
+* When writing about WCAG 3 in general, use “WCAG 3”.
+
+##### WCAG article and verb
+
+Treat “Web Content Accessibility Guidelines (WCAG) 2” and “W3C Accessibility Guidelines (WCAG) 3” as titles of standards, not as plural “guidelines”.
+
+When referring to the WCAG title, it’s a <b>[proper noun](/style-guide/grammar/#proper-nouns):</b> Do not put the article (“the”) in front of WCAG.
+
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Follow WCAG.</li>
+  <li>Follow Web Content Accessibility Guidelines (WCAG).</li>
+</ul>
+</aside>
+
+Use WCAG with a <b>singular verb</b>.
+
+<aside class="example">
+<i>Examples:</i><br>
+
+<ul>
+  <li>Web Content Accessibility Guidelines (WCAG) 2 <b>is</b> published by W3C.</li>
+  <li>WCAG 3.0 <b>is</b> not expected to become a W3C Recommendation this year.</li>
+</ul>
+</aside>
+
+When WCAG is used as an <b>adjective:</b> Use the article (“the”) in front of WCAG.
+
+<aside class="example">
+<i>Example:</i><br>
+
+Follow the WCAG standard.
+</aside>
+
+##### WCAG levels
 
 Treat each WCAG level as a proper nouns.
 
@@ -483,7 +459,31 @@ Treat each WCAG level as a proper nouns.
 </ul>
 </aside>
 
-##### Working group, task force
+##### WCAG success criteria
+
+Do not use a colon between the success criterion (SC) number and its title.
+
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: Success Criterion 1.4.5: Images of Text.</li>
+  <li>Use: Success Criterion 1.4.5 Images of Text.</li>
+</ul>
+</aside>
+
+Do not refer to SCs by number alone.
+
+<aside class="example">
+<i>Example:</i><br>
+
+<ul>
+  <li>Avoid: This applies to Success Criterion 1.4.5.</li>
+  <li>Use: This applies to Success Criterion 1.4.5 Images of Text.</li>
+</ul>
+</aside>
+
+#### Working group, task force
 
 When referring to a specific working group or task force, always include its name and capitalize the whole term.
 
@@ -496,7 +496,7 @@ When referring to a specific working group or task force, always include its nam
       <li>The Task Force met yesterday.</li>
       <li>The task force will lead the session.</li>
     </ul>
-  <li>Use: 
+  <li>Use:
     <ul>
       <li>The Mobile Accessibility Task Force met yesterday.</li>
       <li>The WCAG2ICT Task Force will lead the session.</li>
@@ -511,5 +511,3 @@ Use lowercase when it’s in the plural form.
 
 The working groups develop digital accessibility guidelines.
 </aside>
-
-
