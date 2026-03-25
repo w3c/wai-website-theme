@@ -412,16 +412,6 @@ Use commas in numbers with more than three digits.
 
 **Exceptions:** Use no punctuation for years, addresses, page numbers, or code line numbers.
 
-## Referencing other works or the source of a quote
-
-Use the `<cite>` attribute to mark up the title of a creative work.
-
-<aside class="example">
-<i>Example:</i><br>
-
-According to <cite>The Hitchhiker’s Guide to the Galaxy</cite>, the answer to life, the universe, and everything is 42.
-</aside>
-
 ## Symbols
 
 Except where there is a lack of space (for example, in a table or chart), use words for the following symbols:
