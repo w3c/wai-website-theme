@@ -235,8 +235,6 @@ Shopping list:
 </ul>
 </aside>
 
-If distinction between  “and” and  “or” is necessary, specify the nature of the list beforehand, such as  “one of the following” or “all of the following”.
-
 #### List items complete the introductory phrase or sentence in the body text
 
 Treat all the items in the list as a grammatical part of the introductory phrase or sentence.
