@@ -233,7 +233,7 @@ Shopping list:
 </ul>
 </aside>
 
-If distinction between "and" and "or" is necessary, specify the nature of the list beforehand, such as "one of the following" or "all of the following".
+If distinction between  “and” and  “or” is necessary, specify the nature of the list beforehand, such as  “one of the following” or “all of the following”.
 
 #### List items complete the introductory phrase or sentence in the body text
 
@@ -260,6 +260,40 @@ To prepare for a productive day:
   <li>review goals</li>
   <li>prioritize the most important tasks</li>
 </ol>
+</aside>
+
+### Specifying list requirements (all items versus only one item)
+
+#### If every item in the list is required
+
+Use  “all of the following”:
+
+<aside class="example">
+<i>Example:</i><br>
+
+To complete your application, you must provide all of the following:
+
+<ul>
+  <li>proof of identity</li>
+  <li>proof of address</li>
+  <li>completed application form</li>
+</ul>
+</aside>
+
+#### If only one item in the list is allowed
+
+Use  “one of the following”:
+
+<aside class="example">
+<i>Example:</i><br>
+
+To verify your identity, provide one of the following:
+
+<ul>
+  <li>passport</li>
+  <li>driver's license</li>
+  <li>birth certificate</li>
+</ul>
 </aside>
 
 ## Numbers
