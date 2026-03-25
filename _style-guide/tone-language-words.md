@@ -79,12 +79,14 @@ See also:
 
 Use pronouns that are both **inclusive** and **easy to translate** for W3C's global audience.
 
-##### Use a plural subject to avoid (he/she, his/her)
+##### Use a plural noun to avoid (he/she, his/her)
 
-Avoid assuming gender by skipping "he/she" and "his/her", where possible. Use a <b>plural subject</b> instead.
+Avoid assuming gender by skipping "he/she" and "his/her", where possible. Use a <b>plural noun</b> instead.
 
 <aside class="example">
-<i>Examples:</i><br>
+<i>Example:</i><br>
+
+Using the noun  “developer”:
 
 <ul>
   <li>Avoid: A developer should test <b>his</b> code before release.</li>
