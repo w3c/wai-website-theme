@@ -362,7 +362,7 @@ From 10 and above: use digits.
 
 #### Start of a sentence
 
-If a number starts a sentence, use words or reword so as not to start with a number.
+If a number starts a sentence, use words or reword so as not to start with a digit.
 
 <aside class="example">
 <i>Examples:</i><br>
@@ -443,7 +443,7 @@ Except where there is a lack of space (for example, in a table or chart), use wo
 ## Times
 
 * Use the 24-hour clock.
-* In a sentence, do not use the en dash. Use “from … to” or “between … and” instead.
+* In a sentence, do not use the [en dash](/style-guide/grammar/#en-dash). Use “from … to” or “between … and” instead.
 
 <aside class="example">
 <i>Examples:</i><br>
