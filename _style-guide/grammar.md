@@ -42,7 +42,7 @@ See [Capitalization in headings](/style-guide/style-different-content-types/#cap
 
 ### Lists
 
-See [Capitalization and punctuation in lists — Style for different content types (A–Z)](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
+See [Capitalization and punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
 ### Proper nouns
 
@@ -241,7 +241,7 @@ With two compound adjectives modifying the same noun, use a hanging hyphen.
 The pre<b>-</b> and post<b>-</b>deployment stages are equally important.
 </aside>
 
-For guidance on terms we no longer hyphenate and are written as one word, see the [Spelling](/style-guide/tone-language-words/#spelling) section.
+For guidance on terms we no longer hyphenate and are written as one word, see the section on [Spelling](/style-guide/tone-language-words/#spelling).
 
 ### Ellipsis
 
@@ -261,19 +261,19 @@ I was wondering … but it’s probably not important.
 
 ### Headings
 
-For guidance on punctuating headings, see [Headings — Style for different content types (A–Z)](/style-guide/style-different-content-types/#headings).
+See [punctuation in headings](/style-guide/style-different-content-types/#headings).
 
 ### Links
 
-For guidance on punctuating links, see [Links — Style for different content types (A–Z)](/style-guide/style-different-content-types/#links).
+See [punctuation in links](/style-guide/style-different-content-types/#links).
 
 ### Lists
 
-For guidance on punctuating lists, see [Lists — Style for different content types (A–Z)](/style-guide/style-different-content-types/#lists).
+See [punctuation in lists](/style-guide/style-different-content-types/#lists).
 
 ### Numbers
 
-For guidance on punctuating numbers, see [Numbers — Style for different content types (A–Z](/style-guide/style-different-content-types/#numbers).
+See [punctuation in numbers](/style-guide/style-different-content-types/#numbers).
 
 ### Quotation marks
 
