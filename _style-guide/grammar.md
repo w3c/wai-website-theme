@@ -63,13 +63,17 @@ If a proper noun is singular, it’s not capitalized in the plural.
 
 ##### WCAG levels
 
-Treat WCAG levels as proper nouns.
+Treat each WCAG level as a proper nouns.
 
 <aside class="example">
 <i>Example:</i><br>
 
 <ul>
-  <li>Avoid: WCAG levels A, AA, and AAA</li>
+  <li>Avoid:</li>
+  <ul>
+    <li>WCAG levels A, AA, and AAA</li>
+    <li>WCAG Level A, AA, and AAA</li>
+  </ul>
   <li>Use: WCAG Level A, Level AA and Level AAA</li>
 </ul>
 </aside>
@@ -79,20 +83,24 @@ Treat WCAG levels as proper nouns.
 Use title case when it includes the name of the group.
 
 <aside class="example">
-<i>Example:</i><br>
+<i>Examples:</i><br>
 
-The Mobile Accessibility Task Force met yesterday.
+<ul>
+  <li>The Mobile Accessibility Task Force met yesterday.</li>
+  <li>The WCAG2ICT Task Force will lead the session.</li>
+</ul>
 </aside>
 
-Use lowercase when it does not include the name of the group, or when it’s in the plural form.
+Use lowercase when it does not include the name of a group, or when it’s in the plural form.
 
 <aside class="example">
 <i>Example:</i><br>
 
-The working group agreed to publish the note.
+<ul>
+  <li>You can apply to join a W3C working group.</li>
+  <li>The working groups develop digital accessibility guidelines.</li>
+</ul>
 </aside>
-
-**Exception:** Capitalize “Members” in the singular or plural when referring to organizations that are W3C Members.
 
 #### Proper nouns that have become common nouns
 
@@ -142,9 +150,7 @@ Clarify something in a parenthetical aside:
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>An ellipsis (…) indicates that words have been omitted from a sentence or quotation</li>
-</ul>
+An ellipsis (…) indicates that words have been omitted from a sentence or quotation
 </aside>
 
 Signal an optional plural:
@@ -152,9 +158,7 @@ Signal an optional plural:
 <aside class="example">
 <i>Example:</i><br>
 
-<ul>
-  <li>Test(s)</li>
-</ul>
+Test(s)
 </aside>
 
 **Note:** Parenthetical asides can be distracting, so use them sparingly and, where it makes sense to, rewrite the content as separate sentences.
