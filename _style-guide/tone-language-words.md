@@ -424,8 +424,8 @@ It conforms to <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility
 ##### WCAG 3
 
 * When expanding the abbreviation “WCAG 3”, use “W3C Accessibility Guidelines”.
-* If referring to the TR (technical report) document, use “WCAG 3.0”.
 * When writing about WCAG 3 in general, use “WCAG 3”.
+* If referring to the TR (technical report) document, use “WCAG 3.0”.
 
 ##### WCAG article and verb
 
