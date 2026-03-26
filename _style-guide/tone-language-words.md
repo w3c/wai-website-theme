@@ -248,7 +248,7 @@ Example:
 
 #### Click (versus select)
 
-When giving instructions to activate a button or a link, do not say “select” instead of “click” just to make the wording work for people who do not use a mouse or actually click the element.
+When giving instructions to activate a button or a link, do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
 
 Use “<b>click</b>” because everyone understands what this means. 
 
