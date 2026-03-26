@@ -1,6 +1,7 @@
 ---
 title: "Tone, Language, and Words – WAI Style Guide"
 title_html: "Tone, Language, and Words"
+nav_title: "Tone, Language, and Words"
 lang: en
 order: 1
 ---

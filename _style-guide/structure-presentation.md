@@ -1,6 +1,7 @@
 ---
 title: "Structure and Presentation – WAI Style Guide"
 title_html: "Structure and Presentation"
+nav_title: "Structure and Presentation"
 lang: en
 order: 0
 ---

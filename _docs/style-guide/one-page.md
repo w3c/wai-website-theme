@@ -1,8 +1,6 @@
 ---
-title: "WAI Style Guide (Single Page View)"
+title: "WAI Style Guide – Single Page Version"
 lang: en
-resource:
-  ref: /style-guide/
 ---
 
 {::options toc_levels="2,3" /}

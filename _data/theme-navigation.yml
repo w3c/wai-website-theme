@@ -150,7 +150,7 @@
   pages:
     - name: WAI Style Guide
       url: "/style-guide/"
-    - name: "All-in-One"
+    - name: Single Page Version
       url: "/style-guide/one-page/"
       hide: true
     - name: Structure and Presentation

@@ -1,6 +1,7 @@
 ---
 title: "Grammar – WAI Style Guide"
 title_html: "Grammar"
+nav_title: "Grammar"
 lang: en
 order: 3
 ---
