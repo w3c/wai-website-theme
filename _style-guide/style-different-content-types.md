@@ -13,7 +13,9 @@ resource:
 
 ### Expanding abbreviations
 
-The first time you use an abbreviation (that is, acronyms, initialisms, and numeronyms), give the expanded form; then use the abbreviation for subsequent references.
+The first time you use an abbreviation (that is, an acronym, initialism, or numeronym), explain what it means using one of the following options.
+
+Option 1: Spell it out and put the abbreviation in parentheses after the expanded term. For subsequent references, use the abbreviation.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -24,7 +26,7 @@ Example:
 </ul>
 </div>
 
-**Exception:** If the term is more commonly known by its abbreviation, you do not need to expand it.
+**Exception:** If the term is commonly known by its abbreviation, you do not need to provide the full meaning.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -32,9 +34,19 @@ Examples:
 ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 </div>
 
+Option 2: Give an explanation. Do this when the expanded form of an unfamiliar abbreviation is no longer meaningful.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+TPAC, W3C's annual conference, gathers our community for thought-provoking discussions and coordinated work.
+
+<b>Explanation:</b> TPAC stands for an old term, "Technical Plenary and Advisory Committee" that is no longer meaningful.
+</div>
+
 #### `<abbr>` element
 
-If you have a reason for not expanding an abbreviation, mark up the first instance of the abbreviation with an `<abbr>` element that contains the expansion.
+If you choose not to spell out an _unfamiliar_ abbreviation (for example, due to limited space), use an `<abbr>` tag that contains the full meaning the first time the abbreviation appears.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -47,9 +59,9 @@ Examples:
 
 ### Re-expanding abbreviations
 
-* <b>Independent sections:</b> Consider re-expanding the abbreviation in sections that are intended to be read independently of the main text.
-* <b>Tables and Figures:</b> Always re-expand the abbreviation in captions and figures, which should be self-contained.
-* <b>Change of context:</b> If an abbreviation could have multiple meanings and the context changes, re-expand it to clarify which meaning is intended.
+* <b>Independent sections:</b> In sections that are intended to be read independently of the main text, consider spelling out the abbreviation again, followed by the abbreviation in parentheses.
+* <b>Tables and Figures:</b> In captions and figures, which should be self-contained, always provide the full meaning of an abbreviation.
+* <b>Change of context:</b> If an abbreviation could have multiple meanings and the context changes, provide the full meaning to clarify which meaning is intended.
 
 ### Capitalization in abbreviations
 
