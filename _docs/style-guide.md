@@ -79,7 +79,7 @@ You can navigate the style guide:
     * [Ellipsis](/style-guide/grammar/#ellipsis)
     * [Headings](/style-guide/grammar/#headings-2)
     * [Links](/style-guide/grammar/#links-2)
-    * [Lists](/style-guide/grammar/#lists)
+    * [Lists](/style-guide/grammar/#lists-2)
     * [Numbers](/style-guide/grammar/#numbers)
     * [Quotation marks](/style-guide/grammar/#quotation-marks)
     * [Slashes](/style-guide/grammar/#slashes)
