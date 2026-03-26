@@ -13,9 +13,9 @@ resource:
 
 ### Expanding abbreviations
 
-The first time you use an abbreviation (that is, an acronym, initialism, or numeronym), explain what it means using one of the following options.
+Expand abbreviations when they are first used on the page. For further instances just use the abbreviation.
 
-Option 1: Spell it out and put the abbreviation in parentheses after the expanded term. For subsequent references, use the abbreviation.
+Expand abbreviation and put the short form in brackets afterwards.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -34,19 +34,9 @@ Examples:
 ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 </div>
 
-Option 2: Give an explanation. Do this when the expanded form of an unfamiliar abbreviation is no longer meaningful.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-TPAC, W3C's annual conference, gathers our community for thought-provoking discussions and coordinated work.
-
-<b>Explanation:</b> TPAC stands for an old term, "Technical Plenary and Advisory Committee" that is no longer meaningful in the context of the conference.
-</div>
-
 #### `<abbr>` element
 
-If you choose not to spell out an _unfamiliar_ abbreviation (for example, due to limited space), use an `<abbr>` tag that contains the full meaning the first time the abbreviation appears.
+If you choose not to spell out an _unfamiliar_ abbreviation, use an `<abbr>` tag that contains the full expansion the first time the abbreviation appears.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -60,7 +50,6 @@ Examples:
 ### Re-expanding abbreviations
 
 * <b>Independent sections:</b> In sections that are intended to be read independently of the main text, consider spelling out the abbreviation again, followed by the abbreviation in parentheses.
-* <b>Tables and Figures:</b> In captions and figures, which should be self-contained, always provide the full meaning of an abbreviation.
 * <b>Change of context:</b> If an abbreviation could have multiple meanings and the context changes, provide the full meaning to clarify which meaning is intended.
 
 ### Capitalization in abbreviations
@@ -92,7 +81,7 @@ Examples:
 * <b>e.g.:</b> Instead, use the expanded term, “for example”.
 * <b>etc.:</b> Instead, start the phrase with “such as” to indicate other possible options.
 * <b>i.e.:</b> Instead, use “that is” or “in other words”.
-* <b>v.s.:</b> Instead, use “versus”, “compared with”, or “in contrast to”.
+* <b>vs.:</b> Instead, use “versus”, “compared with”, or “in contrast to”.
 
 ## Dates
 
