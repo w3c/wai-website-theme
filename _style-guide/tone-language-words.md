@@ -246,17 +246,27 @@ Example:
 </ul>
 </div>
 
-#### Click
+#### Click (versus select)
 
-Use “click”, not “select” (even though some people will not use a mouse or actually click the element).
+When giving instructions to activate a button or a link, do not say “select” instead of “click” just to make the wording work for people who do not use a mouse or actually click the element.
+
+Use “<b>click</b>” because everyone understands what this means. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 <ul>
   <li>Click the “Submit” button.</li>
-  <li>Click the link.</li>
+  <li>Use: Click the link.</li>
 </ul>
+</div>
+
+Use “<b>select</b>” when someone needs to choose an option from a list.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+Select from the dropdown menu.
 </div>
 
 #### Hand-eye coordination
