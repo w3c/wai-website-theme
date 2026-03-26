@@ -264,11 +264,11 @@ Example:
 I was wondering … but it’s probably not important.
 </div>
 
-### Headings
+### Headings {#2}
 
 See [punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings).
 
-### Links
+### Links {#2}
 
 See [punctuation in links](/style-guide/style-different-content-types/#punctuation-in-links).
 
