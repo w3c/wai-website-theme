@@ -272,7 +272,7 @@ See [punctuation in headings](/style-guide/style-different-content-types/#punctu
 
 See [punctuation in links](/style-guide/style-different-content-types/#punctuation-in-links).
 
-### Lists
+### Lists {#2}
 
 See [punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
