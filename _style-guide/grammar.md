@@ -3,8 +3,6 @@ title: "Grammar – WAI Style Guide"
 title_html: "Grammar"
 lang: en
 order: 3
-resource:
-  ref: /style-guide/
 ---
 
 {% include toc.html %}

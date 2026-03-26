@@ -3,8 +3,6 @@ title: "Style for Different Content Types (A–Z) – WAI Style Guide"
 title_html: "Style for Different Content Types (A–Z)"
 lang: en
 order: 2
-resource:
-  ref: /style-guide/
 ---
 
 {% include toc.html %}

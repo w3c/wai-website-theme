@@ -3,8 +3,6 @@ title: "Structure and Presentation – WAI Style Guide"
 title_html: "Structure and Presentation"
 lang: en
 order: 0
-resource:
-  ref: /style-guide/
 ---
 
 {% include toc.html %}

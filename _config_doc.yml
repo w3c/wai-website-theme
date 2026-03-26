@@ -45,6 +45,20 @@ defaults:
       path: ""
     values:
       layout: default
+  -
+    scope:
+      path: "_style-guide"
+    values:
+      last_updated: 2026-03-26 # To update just before merging, not after each WIP commit
+      changelog: /style-guide/changelog/
+      resource:
+        ref: /style-guide/
+  -
+    scope:
+      path: "_docs/style-guide.md"
+    values:
+      last_updated: 2026-03-26 # To update just before merging, not after each WIP commit
+      changelog: /style-guide/changelog/
 
 plugins:
   - jekyll-include-cache

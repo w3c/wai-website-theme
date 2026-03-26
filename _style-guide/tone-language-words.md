@@ -3,8 +3,6 @@ title: "Tone, Language, and Words – WAI Style Guide"
 title_html: "Tone, Language, and Words"
 lang: en
 order: 1
-resource:
-  ref: /style-guide/
 ---
 
 {% include toc.html %}
@@ -250,7 +248,7 @@ Example:
 
 When giving instructions to activate a button or a link, do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
 
-Use “<b>click</b>” because everyone understands what this means. 
+Use “<b>click</b>” because everyone understands what this means.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
