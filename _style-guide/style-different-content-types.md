@@ -41,7 +41,7 @@ Example:
 
 TPAC, W3C's annual conference, gathers our community for thought-provoking discussions and coordinated work.
 
-<b>Explanation:</b> TPAC stands for an old term, "Technical Plenary and Advisory Committee" that is no longer meaningful.
+<b>Explanation:</b> TPAC stands for an old term, "Technical Plenary and Advisory Committee" that is no longer meaningful in the context of the conference.
 </div>
 
 #### `<abbr>` element
