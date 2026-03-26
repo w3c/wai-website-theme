@@ -20,5 +20,6 @@ resource:
 
 {% for subpage in site.style-guide %}
 ## {{ subpage.title_html }}
-{{ subpage.content | offset_headings }}
+{%- capture include_tag %}{% raw %}{% include toc.html %}{% endraw %}{% endcapture -%}
+{{ subpage.content | replace: include_tag, '' | offset_headings }}
 {% endfor %}
