@@ -19,8 +19,6 @@ resource:
 {:/}
 
 {% for subpage in site.style-guide %}
-
-{{ subpage | jsonify }}
 ## {{ subpage.title_html }}
 {{ subpage.content | offset_headings }}
 {% endfor %}
