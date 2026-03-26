@@ -13,9 +13,7 @@ order: 3
 
 ### Expanding abbreviations
 
-Expand abbreviations when they are first used on the page. For further instances just use the abbreviation.
-
-Expand abbreviation and put the short form in brackets afterwards.
+Expand an abbreviation the first time you use it on the page. Put the short form in brackets afterwards. For further instances, just use the abbreviation.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -36,7 +34,7 @@ ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 
 #### `<abbr>` element
 
-If you choose not to spell out an _unfamiliar_ abbreviation, use an `<abbr>` tag that contains the full expansion the first time the abbreviation appears.
+If you choose not to spell out an _unfamiliar_ abbreviation, use an `<abbr>` element that contains the full expansion the first time the abbreviation appears.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
