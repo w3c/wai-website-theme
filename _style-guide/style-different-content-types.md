@@ -1,9 +1,10 @@
 ---
 title: "Style for Different Content Types (A–Z) – WAI Style Guide"
+title_sentence: "Style for different content types (A-Z)"
 title_html: "Style for Different Content Types (A–Z)"
 nav_title: "Style for Different Content Types (A–Z)"
 lang: en
-order: 2
+order: 3
 ---
 
 {% include toc.html %}

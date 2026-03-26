@@ -1,9 +1,10 @@
 ---
 title: "Grammar – WAI Style Guide"
+title_sentence: "Grammar"
 title_html: "Grammar"
 nav_title: "Grammar"
 lang: en
-order: 3
+order: 4
 ---
 
 {% include toc.html %}

@@ -284,3 +284,7 @@ p:has(+ .inset-text--related) {
     margin-block-start: 0.25em;
   }
 }
+
+.lead {
+  font-size: 1.4rem;
+}

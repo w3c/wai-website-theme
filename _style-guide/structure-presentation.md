@@ -1,9 +1,10 @@
 ---
 title: "Structure and Presentation – WAI Style Guide"
+title_sentence: "Structure and presentation"
 title_html: "Structure and Presentation"
 nav_title: "Structure and Presentation"
 lang: en
-order: 0
+order: 1
 ---
 
 {% include toc.html %}

@@ -1,7 +1,9 @@
 ---
 title: "WAI Style Guide – Single Page Version"
 lang: en
+lead: "Guidelines for writing materials for W3C WAI."
 ---
+{% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
 
 {::options toc_levels="2,3" /}
 
@@ -17,7 +19,7 @@ lang: en
 {:/}
 
 {% for subpage in site.style-guide %}
-## {{ subpage.title_html }}
-{%- capture include_tag %}{% raw %}{% include toc.html %}{% endraw %}{% endcapture -%}
+## {{ subpage.title_sentence }}
+{% capture include_tag %}{% raw %}{% include toc.html %}{% endraw %}{% endcapture %}
 {{ subpage.content | replace: include_tag, '' | offset_headings }}
 {% endfor %}

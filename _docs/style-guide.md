@@ -1,21 +1,17 @@
 ---
 title: "WAI Style Guide"
 lang: en
+lead: "Guidelines for writing materials for W3C WAI."
 resource:
   title: "WAI Style Guide"
 ---
 
-## About this style guide
+{% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+{%- assign about = site.style-guide | find: "name", "about.md" -%}
+## {{ about.title_sentence }}
+{{ about.content }}
 
-This style guide sets guidelines for writing materials for W3C WAI. The purpose of the guide is to support:
-
-* readability
-* consistency
-* better, easier translations
-
-This is a living document. It aims to follow the recommendations in this style guide.
-
-**Important:**  These guidelines are written for the **US English language**. Translators may apply regional conventions.
+## Get started
 
 You can navigate the style guide:
 - section by section, using the [table of contents](#toc) below
