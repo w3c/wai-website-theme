@@ -257,7 +257,7 @@ Examples:
 
 <ul>
   <li>Click the “Submit” button.</li>
-  <li>Use: Click the link.</li>
+  <li>Click the link.</li>
 </ul>
 </div>
 
