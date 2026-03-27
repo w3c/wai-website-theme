@@ -268,7 +268,7 @@ I was wondering … but it’s probably not important.
 
 See [punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings).
 
-### Links {#2}
+### Links
 
 See [punctuation in links](/style-guide/style-different-content-types/#punctuation-in-links).
 
