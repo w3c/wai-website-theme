@@ -8,6 +8,14 @@ lead: "Guidelines for writing materials for W3C WAI."
 {::options toc_levels="2,3" /}
 
 {::nomarkdown}
+{% include_cached box.html type="start" %}
+{:/}
+This page provides a one-page view of the guidance. To navigate the guide section by section, see the [style guide index page](/style-guide/).
+{::nomarkdown}
+{% include_cached box.html type="end" %}
+{:/}
+
+{::nomarkdown}
 {% include_cached toc.html type="start" title="Page Contents" %}
 {:/}
 
