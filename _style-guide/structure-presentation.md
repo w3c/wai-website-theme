@@ -14,7 +14,7 @@ order: 1
 ### Logical flow and order
 
 * Present what readers need to know or do first, followed by supporting details and background.
-* Make connections between sections clear. For example, show how one section builds on, contrasts with, or illustrates another.
+* Make connections between sections clear. For example, use wording that shows how one section builds on, contrasts with, or illustrates another.
 
 ### Using structural elements
 
