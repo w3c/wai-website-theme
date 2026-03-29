@@ -13,10 +13,8 @@ order: 1
 
 ### Logical flow and order
 
-Create a clear structure before drafting your content:
-
-* Outline information in the order readers need it — start with what readers need to understand or do first, then provide supporting details and background information.
-* Show the relationship between sections — for example, you could use a note or a label to signal how one section builds on, contrasts with or gives an example of the previous concept.
+* Present what readers need to know or do first, followed by supporting details and background.
+* Make relationships between sections clear (for example, how each one builds on, contrasts with, or illustrates a previous point).
 
 ### Using structural elements
 
