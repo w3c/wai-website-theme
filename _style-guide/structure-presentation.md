@@ -14,7 +14,7 @@ order: 1
 ### Logical flow and order
 
 * Present what readers need to know or do first, followed by supporting details and background.
-* Make relationships between sections clear (for example, how each one builds on, contrasts with, or illustrates a previous point).
+* Make connections between sections clear. For example, show how one section builds on, contrasts with, or illustrates another.
 
 ### Using structural elements
 
@@ -55,7 +55,7 @@ Example:
 This policy applies to <i>new</i> staff, not existing staff.
 </div>
 
-Scenario 2: To indicate foreign words that are not commonly used in the English language:
+Scenario 2: To indicate foreign words that are not common in English:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
