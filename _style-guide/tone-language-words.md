@@ -493,17 +493,6 @@ the web page satisfies all the Level A, Level AA and Level AAA success criteria
 
 ##### WCAG success criteria
 
-Do not use a colon between the success criterion (SC) number and its title.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>Avoid: Success Criterion 1.4.5: Images of Text.</li>
-  <li>Use: Success Criterion 1.4.5 Images of Text.</li>
-</ul>
-</div>
-
 Do not refer to SCs by number alone. Use the full title.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
@@ -512,6 +501,17 @@ Example:
 <ul>
   <li>Avoid: This applies to Success Criterion 1.4.5.</li>
   <li>Use: This applies to Success Criterion 1.4.5 Images of Text.</li>
+</ul>
+</div>
+
+Do not use a colon between the success criterion (SC) number and its title.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Avoid: Success Criterion 1.4.5: Images of Text.</li>
+  <li>Use: Success Criterion 1.4.5 Images of Text.</li>
 </ul>
 </div>
 
