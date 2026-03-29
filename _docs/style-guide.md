@@ -1,7 +1,7 @@
 ---
 title: "WAI Style Guide"
 lang: en
-lead: "Guidelines for writing materials for W3C WAI."
+lead: "Follow these guidelines when writing materials for W3C WAI."
 resource:
   title: "WAI Style Guide"
 ---
