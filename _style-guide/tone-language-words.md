@@ -12,16 +12,16 @@ order: 2
 ## Tone
 
 * Authoritative and factual
-* Clear and straight-forward
+* Clear and straightforward
 * Inclusive and respectful
 
 ## Language
 
 ### Disability language
 
-Some people with disabilities prefer “people-first language”. Others prefer “identify-first language”. Consider using a mixture of both.
+Some people with disabilities prefer “people-first language”. Others prefer “identity-first language”. Consider using a mixture of both.
 
-<b>People-first language</b> puts the <b>individual</b> before the disability.
+<b>People-first language</b> puts the <b>person</b> before the disability.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -34,7 +34,7 @@ Examples:
 </ul>
 </div>
 
-<b>Identity-first language</b> puts the <b>disability</b> before the individual.
+<b>Identity-first language</b> puts the <b>disability</b> before the person.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -48,8 +48,8 @@ Examples:
 
 <b>Deaf versus deaf:</b>
 
-* “Deaf” (with a capital letter): Denotes cultural identity and membership in a community that primarily uses sign language.
-* “deaf” (with a lower case letter): A medical term to describe anyone who does not hear very much or at all.
+* “Deaf” (with a capital letter): Refers to a cultural identity and a community that primarily uses sign language.
+* “deaf” (with a lower case letter): Refers to a medical condition describing limited or no hearing.
 
  **Note:** A person who is deaf or hard of hearing may not use sign language or identify with Deaf culture.
 
@@ -57,7 +57,7 @@ See also [Terms to avoid relating to disability / disabled people](#terms-to-avo
 
 ### Inclusive language
 
-Use gender-neutral language, as feasible.
+Use gender-neutral language, where possible.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -80,7 +80,7 @@ See also:
 
 #### Pronouns: Gender inclusivity and translation considerations
 
-Use pronouns that are both **inclusive** and **easy to translate** for W3C's global audience.
+Use pronouns that are **inclusive** and **easy to translate** for W3C's global audience.
 
 ##### Use a plural noun to avoid (he/she, his/her)
 
@@ -97,12 +97,13 @@ Using the noun  “developer”:
 </ul>
 </div>
 
-##### Use a noun to avoid singular “they”
+##### Use a noun instead of singular “they”
 
-Singular, “they” can be problematic because it’s:
+Singular, “they” can be:
 
 * hard to translate in some languages
-* harder for many people to understand and can seem grammatically incorrect — especially for some people with language disabilities
+* hard to understand for some people — especially for some people with language disabilities
+* seen as grammatically incorrect by some people
 
 To avoid using singular “they”, use a <b>noun</b> instead.
 
@@ -132,7 +133,7 @@ Plain language uses clear wording, structure and design. It helps readers easily
 
 ##### Abbreviations
 
-Provide the expanded form with the abbreviation on first use — see [Expanding abbreviations](/style-guide/style-different-content-types/#expanding-abbreviations).
+Provide the full term with the abbreviation on first use — see [Expanding abbreviations](/style-guide/style-different-content-types/#expanding-abbreviations).
 
 ##### Contractions
 
@@ -157,17 +158,17 @@ Use: it’s, that’s, you’re, they’ll, we’ve, let’s
 
 ##### Personal pronouns
 
-Use “you” and “your” when talking to the reader.
+Use “you” and “your” to address the reader.
 
-Use “we” when speaking for an organisation (like W3C), but only if it’s clear who “we” means.
+Use “we” when speaking for an organisation (like W3C), but only when it’s clear who “we” refers to.
 
 ##### Structure
 
-Break up chunks of information to make it easier to parse — see [Using structural elements](/style-guide/structure-presentation/#using-structural-elements).
+Break up information into smaller sections to make it easier to read — see [Using structural elements](/style-guide/structure-presentation/#using-structural-elements).
 
 ##### Verbs
 
-Avoid turning the action into a noun. Use a verb instead.
+Do not turn actions into nouns. Use verbs instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -205,7 +206,7 @@ Example:
 * Use everyday, familiar words.
 * Avoid jargon and metaphors.
 * Explain specialist terms on first use.
-* Remove redundant phrases, filler words, and phrases that repeat the same idea.
+* Remove unnecessary words.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example of unnecessary words:
@@ -233,22 +234,22 @@ Example of unnecessary words:
 
 #### Accessible
 
-Do not use this word to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to people with disabilities or to places that are easy to reach or enter. 
+Do not use this word to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to accessibility for people with disabilities or to places that are easy to reach or enter. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
 <ul>
-  <li>Avoid: To reach more users, our website is now accessible in several languages.</li>
-  <li>Use: To reach more users, our website is now available in several languages.</li>
+  <li>Avoid: Our website is accessible in several languages.</li>
+  <li>Use: Our website is available in several languages.</li>
 </ul>
 </div>
 
 #### Click (versus select)
 
-When instructing a user to activate a button or a link, do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
+Do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
 
-Use “<b>click</b>” because everyone understands what this means.
+Use “<b>click</b>” when activating a button or a link, because everyone understands what this means.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -259,7 +260,7 @@ Examples:
 </ul>
 </div>
 
-Use “<b>select</b>” when someone needs to choose an option from a list.
+Use “<b>select</b>” when choosing from options.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -273,7 +274,7 @@ Use “hand-eye coordination”, not “eye-hand coordination”.
 
 #### Speech versus voice recognition
 
-<b>Speech recognition</b> converts what is said into text for speech-to-text (STT) transcription, virtual assistants, and other speech user interfaces.
+<b>Speech recognition</b> converts spoken words into text for speech-to-text (STT) transcription, virtual assistants, and other speech user interfaces.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
