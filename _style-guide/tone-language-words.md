@@ -104,7 +104,7 @@ Singular, “they” can be problematic because it’s:
 * hard to translate in some languages
 * harder for many people to understand and can seem grammatically incorrect — especially for some people with language disabilities
 
-Use a <b>noun</b> instead.
+To avoid using singular “they”, use a <b>noun</b> instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -122,19 +122,17 @@ Example:
 
 ### Plain language
 
-Plain language uses clear wording, structure and design that enables readers to easily:
+Plain language uses clear wording, structure and design. It helps readers easily:
 
-* <b>find</b> what they need
-* <b>understand</b> what they find
-* <b>use</b> the content to complete tasks
+* <b>find</b> information
+* <b>understand</b> it
+* <b>use</b> it to complete tasks
 
 #### Techniques for writing in plain language
 
 ##### Abbreviations
 
-Provide the full term with the abbreviation on first use — there are [a few ways you can do this](https://www.w3.org/WAI/WCAG22/Techniques/general/G102#related).
-
-**Exceptions:** See [Abbreviations — Style for different content types](/style-guide/style-different-content-types/#abbreviations).
+Provide the expanded form with the abbreviation on first use — see [Expanding abbreviations](/style-guide/style-different-content-types/#expanding-abbreviations).
 
 ##### Contractions
 
@@ -165,7 +163,7 @@ Use “we” when speaking for an organisation (like W3C), but only if it’s cl
 
 ##### Structure
 
-Break up chunks of information to make it easier to parse using the guidance under [Structure](/style-guide/structure-presentation/#structure).
+Break up chunks of information to make it easier to parse — see [Using structural elements](/style-guide/structure-presentation/#using-structural-elements).
 
 ##### Verbs
 
@@ -197,8 +195,8 @@ Avoid the passive voice, where possible. Write in the active voice — that is, 
 Example:
 
 <ul>
-  <li>Avoid the passive voice: Additional information will be provided when available.</li>
-  <li>Use the active voice: We will provide updated information when it’s available.</li>
+  <li>Avoid the passive voice: Additional information will be provided here when available.</li>
+  <li>Use the active voice: We’ll provide updated information here when it’s available.</li>
 </ul>
 </div>
 
@@ -221,7 +219,7 @@ Example of unnecessary words:
 ## Spelling
 
 * Use American English:
-  * Use the [Merriam-Webster dictionary](https://www.merriam-webster.com/) to check spelling.
+  * To check spelling, use the [Merriam-Webster dictionary](https://www.merriam-webster.com/).
 * Words to watch out for:
   * checkbox, checkboxes (one word)
   * email (no hyphen)
@@ -235,7 +233,7 @@ Example of unnecessary words:
 
 #### Accessible
 
-Use this word to refer specifically to people with disabilities or to places that are easy to reach or enter. Do not use it to mean things like “convenient,” “available,” or “easy to use.”
+Do not use this word to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to people with disabilities or to places that are easy to reach or enter. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -248,7 +246,7 @@ Example:
 
 #### Click (versus select)
 
-When giving instructions to activate a button or a link, do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
+When instructing a user to activate a button or a link, do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
 
 Use “<b>click</b>” because everyone understands what this means.
 
@@ -319,9 +317,9 @@ mailto:kevin@w3.org — this identifies an email resource.
 * <b>Please:</b> Omit this unnecessary extra word in *informational* content and *instructions*.
 * <b>Refer to:</b> Use “see” instead.
 
-#### Terms to avoid relating to disability/disabled people
+#### Terms to avoid relating to disability / disabled people
 
-<b>Nouns and noun phrases</b> that are derogatory and dehumanizing, or incorrect:
+<b>Nouns and noun phrases</b> that are derogatory, dehumanizing, or incorrect:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -394,7 +392,7 @@ Example:
 <b>“Color blind”:</b>
 
 * Using “color blind” can be misleading, as most people with color deficiencies do see some colors — instead:
-  * when referring to people’s abilities, use “people who cannot distinguish between certain colors” (often called “color blindness”)
+  * when referring to people’s abilities, use “people who cannot distinguish between certain colors (often called 'color blindness')”
   * when addressing the medical condition, use “color vision deficiency”
 
 <b>“Loss”:</b>
@@ -480,14 +478,15 @@ Treat each WCAG level as a proper noun.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
+the web page satisfies all the Level A, Level AA and Level AAA success criteria
 
 <ul>
   <li>Avoid:</li>
   <ul>
-    <li>levels A, AA, and AAA</li>
-    <li>Level A, AA, and AAA</li>
+    <li>The web page satisfies levels A, AA, and AAA success criteria</li>
+    <li>The web page satisfies Level A, AA, and AAA success criteria</li>
   </ul>
-  <li>Use: Level A, Level AA and Level AAA</li>
+  <li>Use: The web page satisfies Level A, Level AA and Level AAA success criteria</li>
 </ul>
 </div>
 
@@ -504,7 +503,7 @@ Example:
 </ul>
 </div>
 
-Do not refer to SCs by number alone.
+Do not refer to SCs by number alone. Use the full title.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
