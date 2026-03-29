@@ -24,6 +24,8 @@ Example:
 </ul>
 </div>
 
+There are a few ways you can do this — see [techniques for expanding abbreviations](https://www.w3.org/WAI/WCAG22/Techniques/general/G102#related).
+
 **Exception:** If the term is commonly known by its abbreviation, you do not need to provide the full meaning.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
