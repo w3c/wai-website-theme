@@ -53,7 +53,7 @@ Examples:
 
  **Note:** A person who is deaf or hard of hearing may not use sign language or identify with Deaf culture.
 
-See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability-disabled-people).
+See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability--disabled-people).
 
 ### Inclusive language
 
@@ -75,8 +75,8 @@ Not all builders are male.
 
 See also:
 
-* [Disability language](/style-guide/content-wording/#disability-language)
-* [Pronouns: Gender inclusivity and translation considerations](/style-guide/content-wording/#pronouns-gender-inclusivity-and-translation-considerations)
+* [Disability language](/style-guide/tone-language-words/#disability-language)
+* [Pronouns: Gender inclusivity and translation considerations](/style-guide/tone-language-words/#pronouns-gender-inclusivity-and-translation-considerations)
 
 #### Pronouns: Gender inclusivity and translation considerations
 
