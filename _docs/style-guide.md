@@ -56,6 +56,7 @@ You can navigate the style guide:
     * [Punctuation in links](/style-guide/style-different-content-types/#punctuation-in-links)
   * [Lists](/style-guide/style-different-content-types/#lists)
     * [Parallel structure](/style-guide/style-different-content-types/#parallel-structure)
+    * [Long list items](/style-guide/style-different-content-types/#long-list-items)
     * [Capitalization and punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists)
     * [Specifying list requirements (all items versus only one item)](/style-guide/style-different-content-types/#specifying-list-requirements-all-items-versus-only-one-item)
   * [Numbers](/style-guide/style-different-content-types/#numbers)
