@@ -1,7 +1,7 @@
 ---
 title: "WAI Style Guide – Single Page Version"
 lang: en
-lead: "Guidelines for writing materials for W3C WAI."
+lead: "Follow these guidelines when writing materials for W3C WAI."
 ---
 {% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
 
