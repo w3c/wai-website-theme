@@ -46,6 +46,7 @@ You can navigate the style guide:
     * [Abbreviations to avoid](/style-guide/style-different-content-types/#abbreviations-to-avoid)
   * [Dates](/style-guide/style-different-content-types/#dates)
   * [Headings](/style-guide/style-different-content-types/#headings)
+    * [Correct heading hierarchy](/style-guide/style-different-content-types/#correct-heading-hierarchy)
     * [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings)
     * [Punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings) 
   * [Links](/style-guide/style-different-content-types/#links)
