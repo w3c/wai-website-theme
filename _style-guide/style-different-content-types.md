@@ -109,7 +109,7 @@ Example:
 31 May 2022
 </div>
 
-Id numbers only are required, use YYYY-MM-DD:
+If numbers only are required, use YYYY-MM-DD:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -296,7 +296,7 @@ To complete your application, you must provide all of the following:
 </ul>
 </div>
 
-#### If only one item is needed
+#### If only one item is required
 
 Use  “one of the following”:
 
@@ -368,7 +368,7 @@ Examples:
 **Exceptions:**
 
 * See [Ages, measurements, percentages, and ratios](#ages-measurements-percentages-and-ratios).
-* Use words for very large rounded numbers.
+* Use words for very large, rounded numbers.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples of writing very large numbers:
