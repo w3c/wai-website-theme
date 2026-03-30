@@ -119,9 +119,11 @@ Example:
 
 ## Headings
 
+### Correct heading hierarchy
+
 Nest headings properly — for example, `<h1>` should not be followed by `<h3>` or lower.
 
-See also the guidance on [Headings — Structure](/style-guide/structure-presentation/#structure).
+See also the guidance on [structuring headings](/style-guide/structure-presentation/#using-structural-elements).
 
 ### Capitalization in headings
 
@@ -141,6 +143,8 @@ Link text should describe where the link will take the user.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
+
+To write link text for a link that takes the user to a page titled “WAI Resources”:
 
 <ul>
   <li>Avoid: “Click here”, “Learn more”, “Read more”</li>
@@ -268,6 +272,10 @@ To prepare for a productive day:
 </ol>
 </div>
 
+#### List items that are a mix of complete sentences and fragments
+
+If a list consists of a mix of complete and incomplete sentences and **must be presented as is**, each item should start with a capital letter and end in a full stop, whether it consists of a complete sentence or not.
+
 ### Specifying list requirements (all items versus only one item)
 
 #### If every item in the list is required
@@ -322,7 +330,7 @@ Examples:
 </ul>
 </div>
 
-For these units, use the abbreviation *after* the digit:
+**Note:** For these units that use the abbreviations, place it *after* the digit:
 
 * File sizes: 5GB, 1.2MB (capital letters)
 * Percentages: 9% (symbol)
