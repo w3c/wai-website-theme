@@ -13,20 +13,20 @@ order: 3
 
 ### Expanding abbreviations
 
-Expand an abbreviation the first time you use it on the page. Put the short form in brackets afterwards. For further instances, just use the abbreviation.
+Spell out an abbreviation the first time you use it on a page. Put the short form in parentheses afterwards. After that, you can just use the abbreviation.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
 <ul>
   <li>First use: World Wide Web Consortium (W3C)</li>
-  <li>Second use: W3C</li>
+  <li>Later use: W3C</li>
 </ul>
 </div>
 
 There are a few ways you can do this — see [techniques for expanding abbreviations](https://www.w3.org/WAI/WCAG22/Techniques/general/G102#related).
 
-**Exception:** If the term is commonly known by its abbreviation, you do not need to provide the full meaning.
+**Exception:** If a term is widely known by its abbreviation, you do not need to spell it out.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -36,7 +36,7 @@ ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 
 #### `<abbr>` element
 
-If you choose not to spell out an _unfamiliar_ abbreviation, use an `<abbr>` element that contains the full expansion the first time the abbreviation appears.
+If you do not spell out an _unfamiliar_ abbreviation, wrap it in an `<abbr>` element that contains the full meaning the first time it appears.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -49,12 +49,12 @@ Examples:
 
 ### Re-expanding abbreviations
 
-* <b>Independent sections:</b> In sections that are intended to be read independently of the main text, consider spelling out the abbreviation again, followed by the abbreviation in parentheses.
+* <b>Independent sections:</b> In sections that may be read independently of the main text, spell out the abbreviation again, followed by the abbreviation in parentheses.
 * <b>Change of context:</b> If an abbreviation could have multiple meanings and the context changes, provide the full meaning to clarify which meaning is intended.
 
 ### Capitalization in abbreviations
 
-Use <b>title case</b> if the full term is a proper noun.
+Use <b>title case</b> for proper nouns.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -65,7 +65,7 @@ Examples:
 </ul>
 </div>
 
-Use <b>lowercase</b> when the full term is a common noun.
+Use <b>lowercase</b> for common nouns.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -78,10 +78,10 @@ Examples:
 
 ### Abbreviations to avoid
 
-* <b>e.g.:</b> Instead, use the expanded term, “for example”.
-* <b>etc.:</b> Instead, start the phrase with “such as” to indicate other possible options.
-* <b>i.e.:</b> Instead, use “that is” or “in other words”.
-* <b>vs.:</b> Instead, use “versus”, “compared with”, or “in contrast to”.
+* <b>e.g.:</b> Use “for example”.
+* <b>etc.:</b> Start the phrase with “such as” to indicate other possible options.
+* <b>i.e.:</b> Use “that is” or “in other words”.
+* <b>vs.:</b> Use “versus”, “compared with”, or “in contrast to”.
 
 ## Dates
 
@@ -109,7 +109,7 @@ Example:
 31 May 2022
 </div>
 
-In cases where numbers only must be used, use the following format: YYYY-MM-DD:
+Id numbers only are required, use YYYY-MM-DD:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -139,7 +139,7 @@ Use no terminal punctuation for headings, unless a question mark is required.
 
 ### Link text
 
-Link text should describe where the link will take the user.
+Link text should describe the destination.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -152,11 +152,11 @@ To write link text for a link that takes the user to a page titled “WAI Resour
 </ul>
 </div>
 
-On a given page, never use the same link text for links that lead to different destinations.
+On a given page, do not use the same link text for links that go to different destinations.
 
 ### In-line links
 
-Whenever feasible, place links to documents at the end of sentences.
+Place links at the end of sentences, if possible.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -169,7 +169,7 @@ Example:
 
 ### Links to non-HTML documents
 
-Provide the <b>file format</b> so the user knows what to expect.
+Include the <b>file format</b> so the user knows what to expect.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -182,15 +182,17 @@ Example:
 
 ### Punctuation in links
 
-If the linked text is at the end of a complete sentence, add a full stop after the link.
+Add a full stop after the linked text if it ends a sentence.
 
-If the linked text is a raw URL, do not add a full stop.
+Do not add a full stop a raw URL.
 
 ## Lists
 
 ### Parallel structure
 
-Use the same grammatical structure for each list item to make it easy to read and scan. In other words, the list items should be written in the same form — for example, all nouns, all verb phrases, or all full sentences.
+Keep the same grammatical form for each list item: all noun phrases, all verb phrases, or all full sentences.
+
+### Long list items
 
 When items in a list consist of very long sentences, or of several sentences, consider reformatting the items as regular paragraphs of text.
 
@@ -198,7 +200,7 @@ When items in a list consist of very long sentences, or of several sentences, co
 
 #### Text that introduces a list
 
-When a sentence or phrase introduces a list in the body text, place a **colon** at the end of this text.
+End with a <b>colon</b>.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -213,9 +215,9 @@ Web accessibility means that people can:
 
 #### List items are complete sentences
 
-Start each item with a <b>capital letter</b>.
+<b>Capitalize</b> the first letter.
 
-End each item in a **full stop** or a **question mark**.
+End with a <b>full stop</b> or a <b>question mark</b>.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -229,9 +231,9 @@ Example:
 
 #### List items are fragments or not complete sentences
 
-Begin each item with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).
+Start with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).
 
-End each item with **no punctuation**.
+End each item with <b>no punctuation</b>.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -249,9 +251,9 @@ Shopping list:
 
 Treat all the items in the list as a grammatical part of the introductory phrase or sentence.
 
-Begin each item with a <b>lowercase letter</b>, even if the list is a numbered list.
+Start with a <b>lowercase letter</b>, even if the list is a numbered list.
 
-End each item with **no punctuation**.
+End each item with <b>no punctuation</b>.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -274,11 +276,11 @@ To prepare for a productive day:
 
 #### List items that are a mix of complete sentences and fragments
 
-If a list consists of a mix of complete and incomplete sentences and **must be presented as is**, each item should start with a capital letter and end in a full stop, whether it consists of a complete sentence or not.
+If you must mix sentences and fragments, start with a capital letter and end with a full stop or question mark for all items.
 
 ### Specifying list requirements (all items versus only one item)
 
-#### If every item in the list is required
+#### If all items are required
 
 Use  “all of the following”:
 
@@ -294,7 +296,7 @@ To complete your application, you must provide all of the following:
 </ul>
 </div>
 
-#### If only one item in the list is allowed
+#### If only one item is needed
 
 Use  “one of the following”:
 
@@ -312,7 +314,7 @@ To verify your identity, provide one of the following:
 
 ## Numbers
 
-### When to write as a digit
+### When to write as digits
 
 #### Ages, measurements, percentages, and ratios
 
@@ -330,7 +332,7 @@ Examples:
 </ul>
 </div>
 
-**Note:** For these units that use the abbreviations, place it *after* the digit:
+**Note:** Place the following unit abbreviations *after* the digit:
 
 * File sizes: 5GB, 1.2MB (capital letters)
 * Percentages: 9% (symbol)
@@ -340,7 +342,7 @@ Examples:
 
 #### Numbers showing quantity or order
 
-Up to nine: use words.
+Numbers up to nine: use words.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -352,7 +354,7 @@ Examples:
 </ul>
 </div>
 
-From 10 and above: use digits.
+Numbers 10 and above: use digits.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -366,7 +368,7 @@ Examples:
 **Exceptions:**
 
 * See [Ages, measurements, percentages, and ratios](#ages-measurements-percentages-and-ratios).
-* Use words for very large numbers when they are rounded figures.
+* Use words for very large rounded numbers.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples of writing very large numbers:
@@ -376,7 +378,7 @@ Examples of writing very large numbers:
 
 #### Start of a sentence
 
-If a number starts a sentence, use words or reword so as not to start with a digit.
+Avoid starting a sentence with a digit. Use words or reword.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -393,7 +395,7 @@ Examples:
 
 #### Related numbers
 
-With *related* numbers, where one number is usually written in digits and the other not, use <b>digits</b> for both.
+ With *related* numbers, where one number is usually written in digits and the other not, use <b>digits</b> for both.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
