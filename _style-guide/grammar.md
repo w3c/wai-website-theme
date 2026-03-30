@@ -191,7 +191,7 @@ Examples:
 </ul>
 </div>
 
-**Note:** Avoid using em dashes to combine related ideas if it would make a long or complex sentence.
+**Note:** Avoid using em dashes to join related ideas if it makes the sentence long or complicated.
 
 Compare with the use of a [colon](#colon), which introduces the main idea(s), giving the sense of "as follows".
 
@@ -296,7 +296,7 @@ This accessibility requirement is sometimes called â€œsufficient color contrastâ
 
 Generally, only use a forward slash in dates, fractions, and URLs.
 
-For indicating an optional plural, use parentheses instead.
+Do not use a forward slash to indicate an optional plural. Use parentheses instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
