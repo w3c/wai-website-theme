@@ -129,7 +129,7 @@ Test(s)
 
 #### Colon
 
-Use a colon to introduce the main idea(s), giving the sense of “as follows.”
+Use a colon to introduce the main idea(s). It gives the sense of “as follows.”
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -238,7 +238,7 @@ Examples:
 </ul>
 </div>
 
-With two compound adjectives modifying the same noun, use a hanging hyphen.
+Use a hanging hyphen when two compound adjectives modify the same noun.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -307,7 +307,7 @@ Example:
 </ul>
 </div>
 
-Try not use a forward slash to show two things that have a close relationship or are in opposition — use a hyphen or words like “and” or “or” instead.
+Try not to use a forward slash to show two things that have a close relationship or that are in opposition. Use a hyphen or words like “and” or “or” instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
