@@ -17,15 +17,15 @@ See [Capitalization in abbreviations](/style-guide/style-different-content-types
 
 ### All caps
 
-Avoid using all caps for words (except acronyms).
+Avoid using all capital letters for words (except acronyms).
 
 ### Braille
 
-Use lowercase for braille (unless referring to the person Louis Braille).
+Use lowercase for “braille” (unless you are referring to Louis Braille).
 
 ### Glossaries
 
-Use lowercase for terms in a glossary.
+Use lowercase for glossary terms.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -54,12 +54,12 @@ Only capitalize nouns that are proper nouns — compare:
 * “Success Criterion 1.1.1 is about non-text content.” — here, “Success Criterion” is a proper noun.
 * “One success criterion has been removed.” — here, without the full name, “success criterion” becomes a common noun and is not capitalized.
 
-If a proper noun is singular, it’s not capitalized in the plural.
+If a proper noun is singular, do not capitalize it in the plural.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-“The Government is focused on social policy, but previous governments focused on economic policy” — here, “the Government” is a proper noun because it refers to the current national government.
+“The Government is focused on social policy, but previous governments focused on economic policy” — here, “Government” is a proper noun because it refers to the current national government.
 </div>
 
 **Exceptions:** Some [W3C terms](/style-guide/tone-language-words/#w3c-terms) do not follow this rule.
@@ -73,7 +73,7 @@ Use lowercase for the following nouns, unless these are part of a name or title:
 
 ## That versus which
 
-<b>That:</b> Introduces an essential or restrictive clause that is crucial for understanding the sentence.
+<b>That:</b> Introduces essential information needed to understand the sentence
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -81,7 +81,7 @@ Example:
 “The meeting that starts at 10 a.m. will be online” — here, the time is important, as it helps to identify which meeting is online.
 </div>
 
-<b>Which:</b> Introduces a non-essential or non-restrictive clause that provides extra, but not necessary, information.
+<b>Which:</b> Introduces extra information that is not essential.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -123,13 +123,13 @@ Example:
 Test(s)
 </div>
 
-**Note:** Parenthetical asides can be distracting, so use them sparingly and, where it makes sense to, rewrite the content as separate sentences.
+**Note:** Parenthetical asides can be distracting. Use them only when necessary, or split the information into a new sentence.
 
 ### Colons
 
 #### Colon
 
-Use a colon to introduce the main idea(s), giving the sense of "as follows".
+Use a colon to introduce the main idea(s), giving the sense of “as follows.”
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -179,7 +179,7 @@ I bought apples, oranges, and bananas.
 #### Em dash
 
 * Use an em dash (—) to clarify or elaborate on what was just said.
-* Put a space before and after an em dash.
+* Add a space before and after an em dash.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -191,14 +191,14 @@ Examples:
 </ul>
 </div>
 
-**Note:** Avoid using em dashes to join related ideas if it makes the sentence long or complicated.
+**Note:** Do not use an em dash to join related ideas if it makes the sentence long or complicated.
 
 Compare with the use of a [colon](#colon), which introduces the main idea(s), giving the sense of "as follows".
 
 #### En dash
 
-* Use an en dash (–) to indicate a range of numbers, such as in dates, pages and sports results.
-* Do not put a space before and after an en dash.
+* Use an en dash (–) to indicate a range in numbers, such as in dates, pages and sports results.
+* Do not add a space before and after an en dash.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -212,7 +212,7 @@ Examples:
 
 #### Hyphen
 
-Use a hyphen (-) to hyphenate compound adjectives.
+Use a hyphen (-) to join compound adjectives.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -250,13 +250,13 @@ For guidance on terms we no longer hyphenate and are written as one word, see th
 
 ### Ellipsis
 
-Use an ellipsis (...) to:
+Use an ellipsis (...) to show:
 
-* show an omission of words
-* represent a pause
-* suggest there’s something left unsaid
+* missing words
+* a pause
+* something left unsaid
 
-Place a space before and after an ellipsis.
+Add a space before and after an ellipsis.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -307,7 +307,7 @@ Example:
 </ul>
 </div>
 
-Where possible, do not use a forward slash to show two things that have a close relationship or are in opposition — instead use a hyphen or a conjunction.
+Try not use a forward slash to show two things that have a close relationship or are in opposition — use a hyphen or words like “and” or “or” instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -341,7 +341,7 @@ Example 4:
 </ul>
 </div>
 
-**Exception:** Use a forward slash to show close relationship or opposition if it makes more sense than using words.
+**Exception:** You can use a forward slash if it shows a relationship or contrast better than when using words.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
