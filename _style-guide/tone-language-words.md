@@ -55,7 +55,7 @@ Examples:
 
 See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability--disabled-people).
 
-### Inclusive language
+### Gender-inclusive language
 
 Use gender-neutral language, where possible.
 
