@@ -30,7 +30,7 @@ You can navigate the style guide:
   * [Tone](/style-guide/tone-language-words/#tone)
   * [Language](/style-guide/tone-language-words/#language)
     * [Disability language](/style-guide/tone-language-words/#disability-language)
-    * [Inclusive language](/style-guide/tone-language-words/#inclusive-language)
+    * [Gender-inclusive language](/style-guide/tone-language-words/#gender-inclusive-language)
     * [Plain language](/style-guide/tone-language-words/#plain-language)
   * [Spelling](/style-guide/tone-language-words/#spelling)
   * [Terms](/style-guide/tone-language-words/#terms)
