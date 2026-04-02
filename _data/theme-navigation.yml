@@ -148,7 +148,7 @@
 - name:
     en: 'WAI Style Guide'
   pages:
-    - name: WAI Style Guide
+    - name: Style Guide
       url: "/style-guide/"
     - name: Single Page Version
       url: "/style-guide/one-page/"
