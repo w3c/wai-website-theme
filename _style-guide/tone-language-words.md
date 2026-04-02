@@ -102,7 +102,7 @@ Using the noun  “developer”:
 Singular, “they” can be:
 
 * hard to translate in some languages
-* hard to understand for some people — especially for some people with language disabilities
+* hard to understand for some people
 * seen as grammatically incorrect by some people
 
 To avoid using singular “they”, use a <b>noun</b> instead.
