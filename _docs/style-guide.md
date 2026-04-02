@@ -1,5 +1,5 @@
 ---
-title: "WAI Style Guide"
+title: "Style Guide"
 lang: en
 lead: "Follow these guidelines when writing materials for W3C WAI."
 resource:
