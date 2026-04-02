@@ -264,7 +264,7 @@ Example:
 I was wondering … but it’s probably not important.
 </div>
 
-### Headings {#2}
+### Headings
 
 See [punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings).
 
@@ -272,7 +272,7 @@ See [punctuation in headings](/style-guide/style-different-content-types/#punctu
 
 See [punctuation in links](/style-guide/style-different-content-types/#punctuation-in-links).
 
-### Lists {#2}
+### Lists
 
 See [punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
