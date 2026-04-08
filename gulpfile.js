@@ -4,7 +4,6 @@ const atImport = require('postcss-easy-import');
 const postcssPresetEnv = require('postcss-preset-env');
 const cssnano = require('gulp-cssnano');
 const sourcemaps = require('gulp-sourcemaps');
-var pixrem = require('gulp-pixrem');
 
 const csssource = "_css/style.css";
 
@@ -27,7 +26,6 @@ gulp.task('css', function () {
     return gulp.src(csssource)
         .pipe(sourcemaps.init())
         .pipe(postcss(processors))
-        .pipe(pixrem({ rootValue: '16px' }))
         .pipe(cssnano({safe: true}))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('assets/css/'));
