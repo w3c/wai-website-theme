@@ -9,6 +9,6 @@ order: 0
 
 The purpose of the guide is to support readability, consistency, and easier translations.
 
-This is a living document. It aims to follow the recommendations in this style guide.
+This is a living document. Substantive changes will be listed in the changelog.
 
 **Important:**  These guidelines are written for the **US English language**. Translators may adapt them to apply regional conventions. 
