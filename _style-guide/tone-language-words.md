@@ -473,24 +473,6 @@ Example:
 Follow the WCAG standard.
 </div>
 
-##### WCAG levels
-
-Treat each WCAG level as a proper noun.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-the web page satisfies all the Level A, Level AA and Level AAA success criteria
-
-<ul>
-  <li>Avoid:</li>
-  <ul>
-    <li>The web page satisfies levels A, AA, and AAA success criteria</li>
-    <li>The web page satisfies Level A, AA, and AAA success criteria</li>
-  </ul>
-  <li>Use: The web page satisfies Level A, Level AA and Level AAA success criteria</li>
-</ul>
-</div>
-
 ##### WCAG success criteria
 
 Do not refer to SCs by number alone. Use the full title.
