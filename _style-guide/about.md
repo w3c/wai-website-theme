@@ -11,4 +11,4 @@ The purpose of the guide is to support readability, consistency, and easier tran
 
 This is a living document. Substantive changes will be listed in the changelog.
 
-**Important:**  These guidelines are written for the **US English language**. Translators may adapt them to apply regional conventions. 
+This style guide is for US English. Translators can use conventions in their language.
