@@ -240,8 +240,8 @@ Do not use this word to mean things like “convenient,” “available,” or �
 Example:
 
 <ul>
-  <li>Avoid: Our website is accessible in several languages.</li>
-  <li>Use: Our website is available in several languages.</li>
+  <li>Avoid: The gardens are accessible to the public.</li>
+  <li>Use: The gardens are open to the public.</li>
 </ul>
 </div>
 
