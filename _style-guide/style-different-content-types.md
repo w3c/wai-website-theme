@@ -34,9 +34,7 @@ Examples:
 ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 </div>
 
-#### `<abbr>` element
-
-If you do not spell out an _unfamiliar_ abbreviation, wrap it in an `<abbr>` element that contains the full meaning the first time it appears.
+Instead use `<abbr>` element the first time it appears.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
