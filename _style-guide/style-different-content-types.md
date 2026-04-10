@@ -330,12 +330,6 @@ Examples:
 </ul>
 </div>
 
-**Note:** Place the following unit abbreviations *after* the digit:
-
-* File sizes: 5GB, 1.2MB (capital letters)
-* Percentages: 9% (symbol)
-* Temperature: 25°C, 77°F
-
 ### Digits versus words
 
 #### Numbers showing quantity or order
