@@ -44,7 +44,6 @@ Examples:
 
 <ul>
   <li>disabled people</li>
-  <li>Physically disabled people</li>
   <li>blind people</li>
   <li>autistic people</li>
 </ul>
