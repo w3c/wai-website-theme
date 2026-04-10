@@ -56,7 +56,7 @@ Examples:
 * Some people who are deaf or hard of hearing do not use sign language.
 * Some people do not consider deafness a disability.
 
-<b>Blind, autistic</b>
+<b>Autistic, blind</b>
 
 * Most autistic people prefer "autistic people", not "people with autism".
 * Most blind people prefer "blind", not "visually impaired".
