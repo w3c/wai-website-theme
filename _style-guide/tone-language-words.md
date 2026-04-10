@@ -280,7 +280,7 @@ Select from the dropdown menu.
 
 Use “hand-eye coordination”, not “eye-hand coordination”.
 
-#### Speech versus voice recognition
+#### Speech recognition, voice recognition
 
 <b>Speech recognition</b> converts spoken words into text for speech-to-text (STT) transcription, virtual assistants, and other speech user interfaces.
 
