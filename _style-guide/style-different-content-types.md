@@ -276,40 +276,6 @@ To prepare for a productive day:
 
 If you must mix sentences and fragments, start with a capital letter and end with a full stop or question mark for all items.
 
-### Specifying list requirements (all items versus only one item)
-
-#### If all items are required
-
-Use  “all of the following”:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-To complete your application, you must provide all of the following:
-
-<ul>
-  <li>proof of identity</li>
-  <li>proof of address</li>
-  <li>completed application form</li>
-</ul>
-</div>
-
-#### If only one item is required
-
-Use  “one of the following”:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-To verify your identity, provide one of the following:
-
-<ul>
-  <li>passport</li>
-  <li>driver's license</li>
-  <li>birth certificate</li>
-</ul>
-</div>
-
 ## Numbers
 
 ### When to write as digits
