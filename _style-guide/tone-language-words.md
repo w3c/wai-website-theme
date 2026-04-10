@@ -471,7 +471,7 @@ Follow the WCAG standard.
 
 ##### WCAG success criteria
 
-Do not refer to SCs by number alone. Use the full title.
+Do not refer to success criteria by number alone. Include the title.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -482,7 +482,7 @@ Example:
 </ul>
 </div>
 
-Do not use a colon between the success criterion (SC) number and its title.
+Do not use a colon between the success criterion number and title.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
