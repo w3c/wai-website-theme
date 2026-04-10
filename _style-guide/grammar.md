@@ -150,7 +150,7 @@ Example:
 
 ### Commas
 
-In a phrase listing three or more items, place a comma before the final conjunction.
+In a phrase listing three or more items, place a comma before the final conjunction ("Oxford comma").
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
