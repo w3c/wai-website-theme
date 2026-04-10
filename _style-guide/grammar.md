@@ -197,7 +197,7 @@ Compare with the use of a [colon](#colon), which introduces the main idea(s), gi
 
 #### En dash
 
-* Use an en dash (–) to indicate a range in numbers, such as in dates, pages and sports results.
+* Use an en dash (–) to indicate a range in numbers, such as in dates, pages, and sports results.
 * Do not add a space before and after an en dash.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
