@@ -284,19 +284,7 @@ Use “hand-eye coordination”, not “eye-hand coordination”.
 
 <b>Speech recognition</b> converts spoken words into text for speech-to-text (STT) transcription, virtual assistants, and other speech user interfaces.
 
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Speech recognition powers virtual assistants to understand commands.
-</div>
-
-<b>Voice recognition</b> identifies who is speaking by analyzing their unique vocal characteristics.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Voice recognition is used for security features like voice biometrics to authenticate a user.
-</div>
+<b>Voice recognition</b> identifies who is speaking by analyzing their unique vocal characteristics, such as voice biometrics to authenticate a user.
 
 #### URL (Uniform Resource Locator)
 
