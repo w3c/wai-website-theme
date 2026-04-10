@@ -227,7 +227,7 @@ Example of unnecessary words:
 
 ## Spelling
 
-* Use American English:
+* Use US English:
   * To check spelling, use the [Merriam-Webster dictionary](https://www.merriam-webster.com/).
 * Words to watch out for:
   * checkbox, checkboxes (one word)
