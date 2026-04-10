@@ -19,6 +19,8 @@ order: 2
 
 ### Disability language
 
+{% include ednote.html issue="39" repo="w3c/style-guide-v2025" note="Simplify guidance to reduce burden" status="open" %}
+
 Some people with disabilities prefer “people-first language”. Some prefer “identity-first language”.
 
 For most W3C documents, use people-first language first, then use a mix of both.
@@ -316,6 +318,8 @@ mailto:kevin@w3.org — this identifies an email resource.
 
 #### Terms to avoid relating to disability / disabled people
 
+{% include ednote.html issue="45" repo="w3c/style-guide-v2025" note="Move disability language together" status="open" %}
+
 <b>Nouns and noun phrases</b> that are derogatory, dehumanizing, or incorrect:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
@@ -494,6 +498,8 @@ Example:
 </div>
 
 #### Working group, task force
+
+{% include ednote.html issue="46" repo="w3c/style-guide-v2025" note="Capitalzation of groups" status="open" %}
 
 When referring to a specific working group or task force, always include its name and capitalize the whole term.
 

@@ -49,6 +49,8 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 ### Proper nouns
 
+{% include ednote.html issue="38" repo="w3c/style-guide-v2025" note="Remove general guidance" status="open" %}
+
 Only capitalize nouns that are proper nouns — compare:
 
 * “Success Criterion 1.1.1 is about non-text content.” — here, “Success Criterion” is a proper noun.
@@ -92,6 +94,8 @@ Example:
 ## Punctuation
 
 ### Brackets
+
+{% include ednote.html issue="44" repo="w3c/style-guide-v2025" note="Needs more simplification" status="open" %}
 
 Use brackets in the following scenarios.
 
