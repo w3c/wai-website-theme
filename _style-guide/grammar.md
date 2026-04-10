@@ -93,21 +93,9 @@ Example:
 
 ### Brackets
 
-#### Parentheses (round brackets)
+Use brackets in the following scenarios.
 
-Use parentheses in the following scenarios.
-
-Scenario 1: To provide the abbreviation for a term:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>Internet of Things (IoT)</li>
-</ul>
-</div>
-
-Scenario 2: To clarify something in a parenthetical aside:
+Scenario 1: To clarify something in an aside:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -115,15 +103,7 @@ Example:
 An ellipsis (…) indicates that words have been omitted from a sentence or quotation
 </div>
 
-Scenario 3: To signal an optional plural:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Test(s)
-</div>
-
-**Note:** Parenthetical asides can be distracting. Use them only when necessary, or split the information into a new sentence.
+**Note:** Use asides sparingly. Consider putting information in a separate sentence.
 
 ### Colons
 
@@ -177,6 +157,8 @@ I bought apples, oranges, and bananas.
 ### Dashes and hyphens
 
 #### Em dash
+
+{% include ednote.html issue="10" repo="w3c/style-guide-v2025" note="Associating related information and keeping simple sentences" status="open" %}
 
 * Use an em dash (—) to clarify or elaborate on what was just said.
 * Add a space before and after an em dash.
