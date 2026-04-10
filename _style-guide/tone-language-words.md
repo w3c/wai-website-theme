@@ -19,7 +19,9 @@ order: 2
 
 ### Disability language
 
-Some people with disabilities prefer “people-first language”. Others prefer “identity-first language”. Consider using a mixture of both.
+Some people with disabilities prefer “people-first language”. Some prefer “identity-first language”.
+
+For most W3C documents, use people-first language first, then use a mix of both.
 
 <b>People-first language</b> puts the <b>person</b> before the disability.
 
@@ -28,7 +30,7 @@ Examples:
 
 <ul>
   <li>people with disabilities</li>
-  <li>people with physical impairments</li>
+  <li>people with physical disabilities</li>
   <li>people who are blind</li>
   <li>people with autism</li>
 </ul>
@@ -41,17 +43,23 @@ Examples:
 
 <ul>
   <li>disabled people</li>
+  <li>hysically disabled people</li>
   <li>blind people</li>
   <li>autistic people</li>
 </ul>
 </div>
 
-<b>Deaf versus deaf:</b>
+<b>Deaf, deaf:</b>
 
 * “Deaf” (with a capital letter): Refers to a cultural identity and a community that primarily uses sign language.
 * “deaf” (with a lower case letter): Refers to a medical condition describing limited or no hearing.
+* Some people who are deaf or hard of hearing do not use sign language.
+* Some people do not consider deafness a disability.
 
- **Note:** A person who is deaf or hard of hearing may not use sign language or identify with Deaf culture.
+<b>Blind, autistic</b>
+
+* Most autistic people prefer "autistic people", not "people with autism".
+* Most blind people prefer "blind", not "visually impaired".
 
 See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability--disabled-people).
 
