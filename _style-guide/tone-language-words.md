@@ -32,7 +32,6 @@ Examples:
 
 <ul>
   <li>people with disabilities</li>
-  <li>people with physical disabilities</li>
   <li>people who are blind</li>
   <li>people with autism</li>
 </ul>
