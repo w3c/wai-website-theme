@@ -97,9 +97,7 @@ Example:
 
 {% include ednote.html issue="44" repo="w3c/style-guide-v2025" note="Needs more simplification" status="open" %}
 
-Use brackets in the following scenarios.
-
-Scenario 1: To clarify something in an aside:
+Use brackets to clarify something in an aside:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
