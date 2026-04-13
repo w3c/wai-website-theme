@@ -19,7 +19,7 @@ order: 2
 
 ### Disability language
 
-{% include ednote.html issue="39" repo="w3c/style-guide-v2025" note="Simplify guidance to reduce burden" status="open" %}
+<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/39">Issue #39</a> — Simplify guidance to reduce burden</span></p>
 
 #### Referring to disabled people
 
@@ -507,7 +507,7 @@ Example:
 
 #### Working group, task force
 
-{% include ednote.html issue="46" repo="w3c/style-guide-v2025" note="Capitalzation of groups" status="open" %}
+<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/46">Issue #46</a> — Capitalzation of groups</span></p>
 
 When referring to a specific working group or task force, always include its name and capitalize the whole term.
 

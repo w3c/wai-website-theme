@@ -49,7 +49,7 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 ### Proper nouns
 
-{% include ednote.html issue="38" repo="w3c/style-guide-v2025" note="Remove general guidance" status="open" %}
+<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/38">Issue #38</a> — Remove general guidance</span></p>
 
 Only capitalize nouns that are proper nouns — compare:
 
@@ -95,7 +95,7 @@ Example:
 
 ### Brackets
 
-{% include ednote.html issue="44" repo="w3c/style-guide-v2025" note="Needs more simplification" status="open" %}
+<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/44">Issue #44</a> — Needs more simplification</span></p>
 
 Use brackets to clarify something in an aside:
 
@@ -160,7 +160,7 @@ I bought apples, oranges, and bananas.
 
 #### Em dash
 
-{% include ednote.html issue="10" repo="w3c/style-guide-v2025" note="Associating related information and keeping simple sentences" status="open" %}
+<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/10">Issue #10</a> — Associating related information and keeping simple sentences</span></p>
 
 * Use an em dash (—) to introduce clarification, explanation or emphasis after a complete clause.
 * The part after the dash does not have to be a complete sentence.
