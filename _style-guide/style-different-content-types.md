@@ -34,17 +34,6 @@ Examples:
 ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 </div>
 
-Instead use `<abbr>` element the first time it appears.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li><code><abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr></code></li>
-  <li><code><abbr title="Transmission Control Protocol">TCP</abbr></code></li>
-</ul>
-</div>
-
 ### Re-expanding abbreviations
 
 * <b>Independent sections:</b> In sections that may be read independently of the main text, spell out the abbreviation again, followed by the abbreviation in parentheses.
