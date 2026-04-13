@@ -162,7 +162,8 @@ I bought apples, oranges, and bananas.
 
 {% include ednote.html issue="10" repo="w3c/style-guide-v2025" note="Associating related information and keeping simple sentences" status="open" %}
 
-* Use an em dash (—) to clarify or elaborate on what was just said.
+* Use an em dash (—) to introduce clarification, explanation or emphasis after a complete clause.
+* The part after the dash does not have to be a complete sentence.
 * Add a space before and after an em dash.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
