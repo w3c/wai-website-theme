@@ -128,7 +128,7 @@ Compare with the use of an [em dash](#em-dash), which clarifies or elaborates on
 
 Use a semicolon in the following scenarios.
 
-Scenario 1: To connect two or more independent clauses not joined by a conjunction (that is, each clause can stand alone as a *grammatically complete* sentence):
+Scenario 1: To join two independent clauses into a single written sentence when they are closely related. The clause after the semicolon should form a *grammatically complete* sentence:
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
