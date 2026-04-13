@@ -74,7 +74,7 @@ Some people who are deaf or hard of hearing do not use sign language.
 
 Some people do not consider deafness a disability.
 
-#### Terms to avoid in disability language
+#### General terms to avoid in disability language
 
 <b>Nouns and noun phrases</b> that are derogatory, dehumanizing, or incorrect:
 
