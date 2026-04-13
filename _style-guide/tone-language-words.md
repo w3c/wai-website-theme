@@ -68,6 +68,8 @@ Most blind people prefer "blind", not "visually impaired".
 * “Deaf” (with a capital letter): Refers to a cultural identity and a community that primarily uses sign language.
 * “deaf” (with a lower case letter): Refers to a medical condition describing limited or no hearing.
 
+When referring generally to people who are deaf, use lowercase "deaf".
+
 Some people who are deaf or hard of hearing do not use sign language.
 
 Some people do not consider deafness a disability.
