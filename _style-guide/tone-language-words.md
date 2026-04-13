@@ -21,14 +21,18 @@ order: 2
 
 {% include ednote.html issue="39" repo="w3c/style-guide-v2025" note="Simplify guidance to reduce burden" status="open" %}
 
-Some people with disabilities prefer “people-first language”. Some prefer “identity-first language”.
+#### Referring to disabled people
 
-For most W3C documents, use people-first language first, then use a mix of both.
+##### People-first language, indentity-first language
+
+Use people-first language.
 
 <b>People-first language</b> puts the <b>person</b> before the disability.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
+
+Use:
 
 <ul>
   <li>people with disabilities</li>
@@ -42,6 +46,8 @@ Examples:
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
+Avoid:
+
 <ul>
   <li>disabled people</li>
   <li>blind people</li>
@@ -49,19 +55,109 @@ Examples:
 </ul>
 </div>
 
-<b>Deaf, deaf:</b>
+##### Autistic
+
+Most autistic people prefer "autistic people", not "people with autism".
+
+##### Blind
+
+Most blind people prefer "blind", not "visually impaired".
+
+##### Deaf, deaf
 
 * “Deaf” (with a capital letter): Refers to a cultural identity and a community that primarily uses sign language.
 * “deaf” (with a lower case letter): Refers to a medical condition describing limited or no hearing.
-* Some people who are deaf or hard of hearing do not use sign language.
-* Some people do not consider deafness a disability.
 
-<b>Autistic, blind</b>
+Some people who are deaf or hard of hearing do not use sign language.
 
-* Most autistic people prefer "autistic people", not "people with autism".
-* Most blind people prefer "blind", not "visually impaired".
+Some people do not consider deafness a disability.
 
-See also [Terms to avoid relating to disability / disabled people](#terms-to-avoid-relating-to-disability--disabled-people).
+#### Terms to avoid in disability language
+
+<b>Nouns and noun phrases</b> that are derogatory, dehumanizing, or incorrect:
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>“the blind”</li>
+  <li>burn victim</li>
+  <li>deaf-mute</li>
+  <li>“the disabled”</li>
+  <li>different abilities</li>
+  <li>harelip — use “cleft lip”</li>
+  <li>hearing impaired, hearing impairment</li>
+  <li>special needs</li>
+</ul>
+</div>
+
+<b>Adjectives</b> that are negative, euphemistic, or patronizing:
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>blind to</li>
+  <li>brave</li>
+  <li>crippled</li>
+  <li>crazy</li>
+  <li>deformed</li>
+  <li>differently abled</li>
+  <li>deaf to</li>
+  <li>dumb</li>
+  <li>handicapped</li>
+  <li>high/low-functioning</li>
+  <li>insane</li>
+  <li>lame</li>
+  <li>retarded</li>
+  <li>specially abled</li>
+  <li>wheelchair bound</li>
+</ul>
+</div>
+
+<b>Verbs</b> that suggest suffering, helplessness, or weakness:
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>afflicted by</li>
+  <li>confined to [a wheelchair]</li>
+  <li>stricken with</li>
+  <li>suffers from</li>
+  <li>is a victim of</li>
+</ul>
+</div>
+
+<b>Ability-defining or “fixing” language</b>:
+
+* Avoid terminology that directly states people with disabilities <b>cannot do something</b> — instead, switch the phrasing around to focus on the impact of bad design and how good design can enable people to do things.
+* Avoid phrasing that presents a disability as something that <b>needs to be fixed</b>.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Avoid: Assistive technologies can help <b>correct</b> their speech in face-to-face conversations.</li>
+  <li>Use: Assistive technologies can enable them to participate in face-to-face conversations.</li>
+</ul>
+</div>
+
+#### Context-dependent terms
+
+<b>“Color blind”:</b>
+
+* Using “color blind” can be misleading, as most people with color deficiencies do see some colors — instead:
+  * when referring to people’s abilities, use “people who cannot distinguish between certain colors (often called 'color blindness')”
+  * when addressing the medical condition, use “color vision deficiency”
+
+<b>“Loss”:</b>
+
+Avoid using “loss” when referring to congenital conditions that describe a <b>state</b> — for example:
+  * “hearing loss” is not appropriate for people who are born deaf
+  * “vision loss” is not appropriate for people who are born blind
+
+It’s okay to use “loss” in contexts that describe a <b>change</b> — for example, “as we age, we have hearing loss”.
 
 ### Gender-inclusive language
 
@@ -313,94 +409,6 @@ mailto:kevin@w3.org — this identifies an email resource.
 * <b>Persons:</b> Use “people” instead.
 * <b>Please:</b> Omit this unnecessary extra word in *informational* content and *instructions*.
 * <b>Refer to:</b> Use “see” instead.
-
-#### Terms to avoid relating to disability / disabled people
-
-{% include ednote.html issue="45" repo="w3c/style-guide-v2025" note="Move disability language together" status="open" %}
-
-<b>Nouns and noun phrases</b> that are derogatory, dehumanizing, or incorrect:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>“the blind”</li>
-  <li>burn victim</li>
-  <li>deaf-mute</li>
-  <li>“the disabled”</li>
-  <li>different abilities</li>
-  <li>harelip — use “cleft lip”</li>
-  <li>special needs</li>
-</ul>
-</div>
-
-<b>Adjectives</b> that are negative, euphemistic, or patronizing:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>blind to</li>
-  <li>brave</li>
-  <li>crippled</li>
-  <li>crazy</li>
-  <li>deformed</li>
-  <li>differently abled</li>
-  <li>deaf to</li>
-  <li>dumb</li>
-  <li>handicapped</li>
-  <li>high/low-functioning</li>
-  <li>insane</li>
-  <li>lame</li>
-  <li>retarded</li>
-  <li>specially abled</li>
-  <li>wheelchair bound</li>
-</ul>
-</div>
-
-<b>Verbs</b> that suggest suffering, helplessness, or weakness:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>afflicted by</li>
-  <li>confined to [a wheelchair]</li>
-  <li>stricken with</li>
-  <li>suffers from</li>
-  <li>is a victim of</li>
-</ul>
-</div>
-
-<b>Ability-defining or “fixing” language</b>:
-
-* Avoid terminology that directly states people with disabilities <b>cannot do something</b> — instead, switch the phrasing around to focus on the impact of bad design and how good design can enable people to do things.
-* Avoid phrasing that presents a disability as something that <b>needs to be fixed</b>.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>Avoid: Assistive technologies can help <b>correct</b> their speech in face-to-face conversations.</li>
-  <li>Use: Assistive technologies can enable them to participate in face-to-face conversations.</li>
-</ul>
-</div>
-
-### Context-dependent terms
-
-<b>“Color blind”:</b>
-
-* Using “color blind” can be misleading, as most people with color deficiencies do see some colors — instead:
-  * when referring to people’s abilities, use “people who cannot distinguish between certain colors (often called 'color blindness')”
-  * when addressing the medical condition, use “color vision deficiency”
-
-<b>“Loss”:</b>
-
-Avoid using “loss” when referring to congenital conditions that describe a <b>state</b> — for example:
-  * “hearing loss” is not appropriate for people who are born deaf
-  * “vision loss” is not appropriate for people who are born blind
-
-It’s okay to use “loss” in contexts that describe a <b>change</b> — for example, “as we age, we have hearing loss”.
 
 ### W3C terms
 
