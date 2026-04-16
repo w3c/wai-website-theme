@@ -253,18 +253,21 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/44">Issue #44</a> — Needs more simplification</span></p>
-
-Use parentheses to clarify something in an aside:
+Use parentheses sparingly for clarifiction.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
+Example:
 
-- An ellipsis (…) indicates that words have been omitted from a sentence or quotation
-- Captions (also called “intralingual subtitles”) provide content to people who are Deaf and others who cannot hear the audio.
+- Captions (also called “intralingual subtitles”) provide content to people who are deaf and others who cannot hear the audio.
 </div>
 
-**Note:** Use asides sparingly. Consider putting information in a separate sentence.
+Consider a separate sentence instead of complicating one sentence with parentheses.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+- Captions provide content to people who are deaf and others who cannot hear the audio. Captions are also called “intralingual subtitles”.
+</div>
 
 ### Quotation marks
 
