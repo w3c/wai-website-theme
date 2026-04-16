@@ -438,38 +438,25 @@ Example:
 </ul>
 </div>
 
-#### Working group, task force
+#### Working Group, Task Force
 
-<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/46">Issue #46</a> — Capitalzation of groups</span></p>
-
-When referring to a specific working group or task force, always include its name and capitalize the whole term.
+Capitalize "Working Group" and "Task Force" as proper nouns.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 <ul>
-  <li>Avoid:
-    <ul>
-      <li>The Task Force met yesterday.</li>
-      <li>The task force will lead the session.</li>
-    </ul>
-  </li>
-  <li>Use:
-    <ul>
-      <li>The Mobile Accessibility Task Force met yesterday.</li>
-      <li>The WCAG2ICT Task Force will lead the session.</li>
-    </ul>
-  </li>
+   <li>You can join Working Groups and specific Task Forces.</li>
+   <li>The Accessibility Guidelines Working Group is discussing the issue.</li>
 </ul>
 </div>
 
-Use lowercase when it’s in the plural form.
+Use lowercase for general "groups".
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
+Example:
 
 <ul>
-  <li>The working groups develop digital accessibility guidelines.</li>
-  <li>The task forces support the working groups.</li>
+  <li>Several groups are discussing the issue.</li>
 </ul>
 </div>
