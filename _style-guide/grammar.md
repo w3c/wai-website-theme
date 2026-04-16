@@ -93,20 +93,6 @@ Example:
 
 ## Punctuation
 
-### Brackets
-
-<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/44">Issue #44</a> — Needs more simplification</span></p>
-
-Use brackets to clarify something in an aside:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-An ellipsis (…) indicates that words have been omitted from a sentence or quotation
-</div>
-
-**Note:** Use asides sparingly. Consider putting information in a separate sentence.
-
 ### Colons
 
 #### Colon
@@ -264,6 +250,21 @@ See [punctuation in lists](/style-guide/style-different-content-types/#capitaliz
 ### Numbers
 
 See [punctuation in numbers](/style-guide/style-different-content-types/#punctuation-in-numbers).
+
+### Parentheses
+
+<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/44">Issue #44</a> — Needs more simplification</span></p>
+
+Use parentheses to clarify something in an aside:
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+- An ellipsis (…) indicates that words have been omitted from a sentence or quotation
+- Captions (also called “intralingual subtitles”) provide content to people who are Deaf and others who cannot hear the audio.
+</div>
+
+**Note:** Use asides sparingly. Consider putting information in a separate sentence.
 
 ### Quotation marks
 
