@@ -86,8 +86,6 @@ Example:
 
 ## Punctuation
 
-### Colons
-
 #### Colon
 
 Use a colon to introduce the main idea(s). It gives the sense of “as follows.”
@@ -137,30 +135,33 @@ I bought apples, oranges, and bananas.
 
 Put a space before and after em dashes.
 
-You can use an em dash to add clarification, explanation, or emphasis after a complete clause — if it's short and simple. The part after the dash does not have to be a complete sentence.
+##### Em dashes in list items
 
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>WCAG 3 will have a different structure, different conformance model, and broader scope — see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-  <li>Write in active voice — that is, the subject performs the action.</li>
-  <li>It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.</li>
-</ul>
-</div>
-
-If a sentence combining ideas with an em dash would be long or complicated, use separate grammatically complete sentences instead.
+Use em dashes when list items have a short phrase followed by an explanation.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
-
+<b>Sections in this resourse:</b>
 <ul>
-  <li>Avoid: The instructor should introduce different user needs for audio and video content — for example, the needs of people who do not see the video and people who do not hear the audio.</li>
-  <li>Use: The instructor should introduce different user needs for audio and video content. For example, explain the needs of people who do not see the video and people who do not hear the audio.</li>
+  <li><strong><a href="/WAI/people-use-web/user-stories/">Stories of Web Users</a></strong> (also called “personas”) — represent the experiences of people with different disabilities.</li>
+  <li><strong><a href="/WAI/people-use-web/abilities-barriers/">Diverse Abilities and Barriers</a></strong> — introduces the wide diversity of abilities and highlights some accessibility barriers that people experience because of inaccessible digital technology.</li>
+  <li><strong><a href="/WAI/people-use-web/tools-techniques/">Tools and Techniques</a></strong> — covers the tools and techniques that disabled people use to interact with digital technology.</li>
 </ul>
 </div>
 
-Compare with the use of a [colon](#colon), which introduces the main idea(s), giving the sense of "as follows".
+##### Em dashes in sentences
+
+<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/10">Issue #10</a> — Associating related information and keeping simple sentences</span></p>
+
+Use em dashes sparingly in sentences. They convey emphasis or a sharp break in thought. (Also, they are now associated with AI writing.)
+
+Often it's better to use separate sentences instead of combining ideas with an em dash. If the related information is short independent clauses, you can use semicolons. See [semicolon](#semicolon).
+
+You can use an em dash to add clarification, explanation, or emphasis after a complete clause — if it's short and simple. The part after the dash does not have to be a complete sentence.
+
+Avoid long or complicated sentences with em dashes. Instead, use separate sentences.
+
+Compare with the use of a [colon](#colon), which introduces the main ideas, giving the sense of "as follows".
 
 #### En dash (–)
 
