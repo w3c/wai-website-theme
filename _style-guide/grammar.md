@@ -135,21 +135,21 @@ I bought apples, oranges, and bananas.
 
 #### Em dash (—)
 
-Put a space before and after em dashs.
+Put a space before and after em dashes.
 
-You can use an em dash to introduce clarification, explanation, or emphasis after a complete clause — if it is short and simple. The part after the dash does not have to be a complete sentence.
+You can use an em dash to add clarification, explanation, or emphasis after a complete clause — if it's short and simple. The part after the dash does not have to be a complete sentence.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 <ul>
-  <li>WCAG 3 will have a different structure, different conformance model, and broader scope — see [WCAG 3 Introduction](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/).</li>
+  <li>WCAG 3 will have a different structure, different conformance model, and broader scope — see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
   <li>Write in active voice — that is, the subject performs the action.</li>
   <li>It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.</li>
 </ul>
 </div>
 
-If a sentence combining ideas with an em dash would be long or complicated, make it separate grammatically complete sentences instead.
+If a sentence combining ideas with an em dash would be long or complicated, use separate grammatically complete sentences instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
