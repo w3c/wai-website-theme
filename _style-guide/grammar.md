@@ -105,24 +105,20 @@ Compare with the use of an [em dash](#em-dash), which clarifies or elaborates on
 
 #### Semicolon
 
-Use a semicolon in the following scenarios.
-
-Scenario 1: To join two independent clauses into a single written sentence when they are closely related. The clause after the semicolon should form a *grammatically complete* sentence:
+To show a important relationship, you can join two short independent clauses with a semicolon. Both clauses should be grammatically complete sentences.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-Bananas and apples are both fruits; however, they do not look alike.
+Kiran and Nour have low vision; however, they use different assistive technologies.
 </div>
 
-Scenario 2: To break up complex lists that contain internal commas:
+Do not combine clauses if it makes the sentence long or complicated. Instead, make them separate sentences.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-<ul>
-  <li>Meeting attendees are from London, England; Tokyo, Japan; and São Paulo, Brazil.</li>
-</ul>
+Kiran and Nour have a similar type of low vision. However, they use different adaptive strategies and assistive technologies based on their situation.
 </div>
 
 ### Commas
