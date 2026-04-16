@@ -254,7 +254,7 @@ Use parentheses sparingly for clarification.
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-- Captions (also called “intralingual subtitles”) provide content to people who are deaf and others who cannot hear the audio.
+Captions (also called “intralingual subtitles”) provide content to people who are deaf and others who cannot hear the audio.
 </div>
 
 Consider a separate sentence instead of complicating one sentence with parentheses.
@@ -262,7 +262,7 @@ Consider a separate sentence instead of complicating one sentence with parenthes
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-- Captions provide content to people who are deaf and others who cannot hear the audio. Captions are also called “intralingual subtitles”.
+Captions provide content to people who are deaf and others who cannot hear the audio. Captions are also called “intralingual subtitles”.
 </div>
 
 ### Quotation marks
