@@ -133,31 +133,38 @@ I bought apples, oranges, and bananas.
 
 ### Dashes and hyphens
 
-#### Em dash
+#### Em dash (—)
 
-<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/10">Issue #10</a> — Associating related information and keeping simple sentences</span></p>
+Put a space before and after em dashs.
 
-* Use an em dash (—) to introduce clarification, explanation or emphasis after a complete clause.
-* The part after the dash does not have to be a complete sentence.
-* Add a space before and after an em dash.
+You can use an em dash to introduce clarification, explanation, or emphasis after a complete clause — if it is short and simple. The part after the dash does not have to be a complete sentence.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 <ul>
-  <li>Many animals hibernate during winter — for example, bears.</li>
-  <li>The number of new cases has been declining — last week’s daily average was the lowest since January.</li>
-  <li>Make the web work — for everyone.</li>
+  <li>WCAG 3 will have a different structure, different conformance model, and broader scope — see [WCAG 3 Introduction](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/).</li>
+  <li>Write in active voice — that is, the subject performs the action.</li>
+  <li>It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.</li>
 </ul>
 </div>
 
-**Note:** Do not use an em dash to join related ideas if it makes the sentence long or complicated.
+If a sentence combining ideas with an em dash would be long or complicated, make it separate grammatically complete sentences instead.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Avoid: The instructor should introduce different user needs for audio and video content — for example, the needs of people who do not see the video and people who do not hear the audio.</li>
+  <li>Use: The instructor should introduce different user needs for audio and video content. For example, explain the needs of people who do not see the video and people who do not hear the audio.</li>
+</ul>
+</div>
 
 Compare with the use of a [colon](#colon), which introduces the main idea(s), giving the sense of "as follows".
 
-#### En dash
+#### En dash (–)
 
-* Use an en dash (–) to indicate a range in numbers, such as in dates, pages, and sports results.
+* Use an en dash to indicate a range in numbers, such as in dates, pages, and sports results.
 * Do not add a space before and after an en dash.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
@@ -170,9 +177,9 @@ Examples:
 </ul>
 </div>
 
-#### Hyphen
+#### Hyphen (-)
 
-Use a hyphen (-) to join compound adjectives.
+Use a hyphen to join compound adjectives.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -208,9 +215,9 @@ The pre<b>-</b> and post<b>-</b>deployment stages are equally important.
 
 For guidance on terms we no longer hyphenate and are written as one word, see the section on [Spelling](/style-guide/tone-language-words/#spelling).
 
-### Ellipsis
+### Ellipsis (...)
 
-Use an ellipsis (...) to show:
+Use an ellipsis to show:
 
 * missing words
 * a pause
