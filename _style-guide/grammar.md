@@ -101,7 +101,7 @@ Examples:
 </ul>
 </div>
 
-Compare with the use of an [em dash](#em-dash), which clarifies or elaborates on the main idea that was just said.
+Compare with the use of an [em dash](#em-dash-), which clarifies or elaborates on the main idea that was just said.
 
 #### Semicolon
 
