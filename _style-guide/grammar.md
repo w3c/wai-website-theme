@@ -49,22 +49,15 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 ### Proper nouns
 
-<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/38">Issue #38</a> — Remove general guidance</span></p>
-
-Only capitalize nouns that are proper nouns — compare:
-
-* “Success Criterion 1.1.1 is about non-text content.” — here, “Success Criterion” is a proper noun.
-* “One success criterion has been removed.” — here, without the full name, “success criterion” becomes a common noun and is not capitalized.
-
-If a proper noun is singular, do not capitalize it in the plural.
+Only capitalize nouns that are proper nouns.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
+Examples:
 
-“The Government is focused on social policy, but previous governments focused on economic policy” — here, “Government” is a proper noun because it refers to the current national government.
+* Proper noun capitalized: “Success Criterion 1.1.1 is about non-text content.”
+* Common noun lowercase: “One success criterion has been removed.”
+
 </div>
-
-**Exceptions:** Some [W3C terms](/style-guide/tone-language-words/#w3c-terms) do not follow this rule.
 
 #### Proper nouns that have become common nouns
 
