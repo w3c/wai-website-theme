@@ -179,10 +179,6 @@ Do not add a full stop a raw URL.
 
 Keep the same grammatical form for each list item: all noun phrases, all verb phrases, or all full sentences.
 
-### Long list items
-
-When items in a list consist of very long sentences, or of several sentences, consider reformatting the items as regular paragraphs of text.
-
 ### Capitalization and punctuation in lists
 
 #### Text that introduces a list
