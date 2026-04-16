@@ -46,6 +46,8 @@ Examples:
 </ul>
 </div>
 
+Exception: Use "autistic people", not "people with autism".
+
 <b>Identity-first language</b> puts the disability before the person.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
@@ -59,8 +61,6 @@ Examples:
 </div>
 
 #### Disability-specific terms
-
-Use "autistic people", not "people with autism".
 
 Use "blind", not "visually impaired".
 
