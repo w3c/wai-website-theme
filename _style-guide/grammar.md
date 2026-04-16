@@ -249,7 +249,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-Use parentheses sparingly for clarifiction.
+Use parentheses sparingly for clarification.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
