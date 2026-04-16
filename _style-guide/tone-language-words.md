@@ -19,147 +19,80 @@ order: 2
 
 ### Disability language
 
-<p><span style="border: 5px solid var(--faded-red);"><strong style="background-color: var(--faded-red);border-right: 5px solid var(--faded-red); color: var(--pure-white);">Open Issue</strong> <a href="https://github.com/w3c/style-guide-v2025/issues/39">Issue #39</a> — Simplify guidance to reduce burden</span></p>
+#### People-first language, identity-first language
 
-#### Referring to disabled people
+Use <b>both</b> people-first and identify-first language.
 
-##### People-first language, indentity-first language
-
-Use people-first language.
-
-<b>People-first language</b> puts the <b>person</b> before the disability.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-Use:
-
-<ul>
-  <li>people with disabilities</li>
-  <li>people who are blind</li>
-  <li>people with autism</li>
-</ul>
-</div>
-
-<b>Identity-first language</b> puts the <b>disability</b> before the person.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-Avoid:
-
-<ul>
-  <li>disabled people</li>
-  <li>blind people</li>
-  <li>autistic people</li>
-</ul>
-</div>
-
-##### Autistic
-
-Most autistic people prefer "autistic people", not "people with autism".
-
-##### Blind
-
-Most blind people prefer "blind", not "visually impaired".
-
-##### Deaf, deaf
-
-* “Deaf” (with a capital letter): Refers to a cultural identity and a community that primarily uses sign language.
-* “deaf” (with a lower case letter): Refers to a medical condition describing limited or no hearing.
-
-When referring generally to people who are deaf, use lowercase "deaf".
-
-Some people who are deaf or hard of hearing do not use sign language.
-
-Some people do not consider deafness a disability.
-
-#### General terms to avoid in disability language
-
-<b>Nouns and noun phrases</b> that are derogatory, dehumanizing, or incorrect:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>“the blind”</li>
-  <li>burn victim</li>
-  <li>deaf-mute</li>
-  <li>“the disabled”</li>
-  <li>different abilities</li>
-  <li>harelip — use “cleft lip”</li>
-  <li>hearing impaired, hearing impairment</li>
-  <li>special needs</li>
-</ul>
-</div>
-
-<b>Adjectives</b> that are negative, euphemistic, or patronizing:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>blind to</li>
-  <li>brave</li>
-  <li>crippled</li>
-  <li>crazy</li>
-  <li>deformed</li>
-  <li>differently abled</li>
-  <li>deaf to</li>
-  <li>dumb</li>
-  <li>handicapped</li>
-  <li>high/low-functioning</li>
-  <li>insane</li>
-  <li>lame</li>
-  <li>retarded</li>
-  <li>specially abled</li>
-  <li>wheelchair bound</li>
-</ul>
-</div>
-
-<b>Verbs</b> that suggest suffering, helplessness, or weakness:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>afflicted by</li>
-  <li>confined to [a wheelchair]</li>
-  <li>stricken with</li>
-  <li>suffers from</li>
-  <li>is a victim of</li>
-</ul>
-</div>
-
-<b>Ability-defining or “fixing” language</b>:
-
-* Avoid terminology that directly states people with disabilities <b>cannot do something</b> — instead, switch the phrasing around to focus on the impact of bad design and how good design can enable people to do things.
-* Avoid phrasing that presents a disability as something that <b>needs to be fixed</b>.
+* In the first instance, use people-first.
+* In the second instance, use identity-first.
+* Then use a mix of both.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
+<p>Accessibility is about ensuring that digital technology is usable by <b>people with disabilities</b>. ... The fundamental goal of accessibility is meeting the needs of <b>disabled people</b> in the real world.
+</p>
+</div>
+
+<b>People-first language</b> puts the person before the disability.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
 <ul>
-  <li>Avoid: Assistive technologies can help <b>correct</b> their speech in face-to-face conversations.</li>
-  <li>Use: Assistive technologies can enable them to participate in face-to-face conversations.</li>
+  <li>people with disabilities</li>
+  <li>people who are blind</li>
+  <li>people who are hard-of-hearing</li>
 </ul>
 </div>
 
-#### Context-dependent terms
+<b>Identity-first language</b> puts the disability before the person.
 
-<b>“Color blind”:</b>
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
 
-* Using “color blind” can be misleading, as most people with color deficiencies do see some colors — instead:
-  * when referring to people’s abilities, use “people who cannot distinguish between certain colors (often called 'color blindness')”
-  * when addressing the medical condition, use “color vision deficiency”
+<ul>
+  <li>disabled people</li>
+  <li>blind people</li>
+  <li>hard-of-hearing people</li>
+</ul>
+</div>
 
-<b>“Loss”:</b>
+#### Disability-specific terms
 
-Avoid using “loss” when referring to congenital conditions that describe a <b>state</b> — for example:
-  * “hearing loss” is not appropriate for people who are born deaf
-  * “vision loss” is not appropriate for people who are born blind
+Use "autistic people", not "people with autism".
 
-It’s okay to use “loss” in contexts that describe a <b>change</b> — for example, “as we age, we have hearing loss”.
+Use "blind", not "visually impaired".
+
+Use "deaf" lowercase. Avoid "hearing-impaired" and "hearing-impairment" for deafness.
+
+“Color blind”:
+* Avoid "color blind".
+* When referring to people’s abilities, use “people who cannot distinguish between certain colors (often called 'color blindness')”.
+* When referring to the medical condition, use “color vision deficiency”.
+
+“Loss”:
+* Avoid “loss” as a general description that includes people with congenital conditions.
+* It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.
+
+#### Terms to avoid
+
+Avoid terms that can be negative, derogatory, dehumanizing, patronizing; that are euphemisms; that suggest suffering, helplessness, or weakness.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>burn victim</li>
+  <li>confined to a wheelchair, wheelchair bound</li>
+  <li>deaf-mute</li>
+  <li>differently abled, different abilities</li>
+  <li>“the disabled”, “the blind”, etc.</li>
+  <li>handicapped</li>
+  <li>high-functioning, low-functioning</li>
+  <li>special needs, specially abled</li>
+</ul>
+</div>
 
 ### Gender-inclusive language
 
