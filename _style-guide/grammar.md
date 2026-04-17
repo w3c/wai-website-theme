@@ -134,7 +134,7 @@ I bought apples, oranges, and bananas.
 
 Put a space before and after em dashes.
 
-##### Em dashes for  list items
+##### Em dashes for list items
 
 Use em dashes when list items have a short phrase followed by an explanation.
 
