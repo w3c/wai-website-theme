@@ -39,23 +39,11 @@ order: 1
 
 Use bold sparingly to highlight important or urgent information, such as names, dates, deadlines, or key actionable points.
 
-<b>When to avoid bold:</b>
-
-Avoid bolding text in whole paragraphs and sections.
+Avoid bolding text in whole paragraphs or sections.
 
 ### Italics
 
-Use italics sparingly in the following scenarios.
-
-Scenario 1: To emphasize a word or phrase if it helps make the meaning clearer, especially to show differences between ideas:
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-This policy applies to <i>new</i> staff, not existing staff.
-</div>
-
-Scenario 2: To indicate foreign words that are not common in English:
+Use italics to indicate foreign words that are not common in English.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -63,6 +51,12 @@ Example:
 The Japanese aesthetic of <i lang="ja-Latn">wabi-sabi</i> values simplicity and imperfection.
 </div>
 
-<b>When to avoid italics:</b>
+Use italics sparingly to emphasize a word or phrase if it helps make the meaning clearer, especially to show differences between ideas.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+This policy applies to <i>new</i> staff, not existing staff.
+</div>
 
 Avoid italicizing text in whole paragraphs and sections.
