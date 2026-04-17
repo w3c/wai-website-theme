@@ -229,13 +229,15 @@ Example 2:
 
 ##### Voice
 
-Avoid the passive voice, where possible. Write in the active voice — that is, the subject of the sentence performs the action.
+Write in active voice; that is, the subject performs the action.
+
+Avoid passive voice where possible. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
 <ul>
-  <li>Avoid the passive voice: Additional information will be provided here when available.</li>
+  <li>Avoid the passive voice: Additional information will be provided here when it's available.</li>
   <li>Use the active voice: We’ll provide updated information here when it’s available.</li>
 </ul>
 </div>
@@ -273,7 +275,7 @@ Example of unnecessary words:
 
 #### Accessible
 
-Do not use this word to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to accessibility for people with disabilities or to places that are easy to reach or enter. 
+Do not use "accessible" to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to accessibility for people with disabilities or to places that are easy to reach or enter. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -319,7 +321,7 @@ Use “hand-eye coordination”, not “eye-hand coordination”.
 
 #### URL (Uniform Resource Locator)
 
-A string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
+URR is a string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -329,12 +331,12 @@ https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a
 
 #### URI (Uniform Resource Identifier)
 
-A string of characters that identifies a resource. It does not always describe how to locate the resource. Use this term when referring to a resource identifier.
+URI is a string of characters that identifies a resource. It does not always describe how to locate the resource. Use this term when referring to a resource identifier.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-mailto:kevin@w3.org — this identifies an email resource.
+mailto:wai@w3.org — this identifies an email resource.
 </div>
 
 ### Terms to avoid

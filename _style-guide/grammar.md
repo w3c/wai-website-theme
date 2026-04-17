@@ -9,6 +9,76 @@ order: 4
 
 {% include toc.html %}
 
+
+## Approaches for related information in sentences
+
+When you have related information, you can [present|format] it with:
+* separate sentences
+* em dash
+* semicolon
+* parentheses
+
+In most cases, use separate sentences. This is best for plain language.
+
+You can use a transition such as "For example", "See", "Thus", "Therefore",  "Specifically", "Instead", or "However".
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+
+Example 1:
+<ul>
+  <li>Avoid em dash: Forms are commonly used to provide user interaction — for example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Avoid semicolon: Forms are commonly used to provide user interaction; for example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Avoid parenthesis: Forms are commonly used to provide user interaction (for example, forms are used for logging in, registering, commenting, and purchasing).</li>
+  <li>Use two sentences: Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
+</ul>
+
+Example 2:
+<ul>
+  <li>Avoid em dash: WCAG 3 will have a different structure, different conformance model, and broader scope — see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+  <li>Use two sentences: WCAG 3 will have a different structure, different conformance model, and broader scope. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+</ul>
+</div>
+
+### Options
+
+#### Semicolon (optional)
+
+If the information is short, simple independent clauses, you can use one sentence with a semicolon. Both clauses should be grammatically complete sentences.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>It's easy; see the <a href="/style-guide/structure-presentation/#structure">Structure section</a>.</li>
+</ul>
+</div>
+
+### Em dash (optional)
+
+If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Note that em dashes are associated with AI writing.)
+
+The first part should be a complete sentence. The part after the dash does not need to be a complete sentence.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>The W3C mission is to make the web work — for everyone.</li>
+</ul>
+</div>
+
+### Parentheses (optional)
+
+When related information applies to a point within a simple sentence, you can put the information in parentheses within the sentence. Be aware that parentheses break up the sentence flow and make the sentence more complex.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Captions (called “intralingual subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.</li>
+</ul>
+</div>
+
 ## Capitalization
 
 ### Abbreviations
@@ -27,18 +97,6 @@ Use lowercase for “braille” (unless you are referring to Louis Braille).
 
 Use lowercase for glossary terms.
 
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-The following items in this glossary apply to all technologies:
-
-<ul>
-  <li>abbreviation</li>
-  <li>alternative to time-based media</li>
-  <li>audio</li>
-</ul>
-</div>
-
 ### Headings
 
 See [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings).
@@ -49,17 +107,23 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 ### Proper nouns
 
-Only capitalize nouns that are proper nouns.
+_@@Tamsin: The general guidance is not needed here. It's common English.
+The capitalization for Success Criteria is needed! I think that belongs under WCAG terms.
+I'll leave that for you to do. :)_
+
+Capitalize proper nouns. User lower case for common nouns.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
-* Proper noun capitalized: “The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.”
-* Common noun lowercase: “One success criterion has been removed.”
+* Proper noun capitalized: The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
+* Common noun lowercase: WCAG 2.2 provides 9 additional success criteria since WCAG 2.1.
 
 </div>
 
 #### Proper nouns that have become common nouns
+
+_ @@ Tamsin. Pesonally, I would look for these words in a list of specific terms. I don't have strong feelings on what to do with them for now. _
 
 Use lowercase for the following nouns, unless these are part of a name or title:
 
@@ -73,7 +137,7 @@ Use lowercase for the following nouns, unless these are part of a name or title:
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-“The meeting that starts at 10 a.m. will be online” — here, the time is important, as it helps to identify which meeting is online.
+The time is essential to identify specific meetings: “The meeting that starts at 10:00 is online. The other meetings are in-person.”
 </div>
 
 <b>Which:</b> Introduces extra information that is not essential.
@@ -81,12 +145,10 @@ Example:
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-“The meeting, which starts at 10 a.m., will be online.” — here, the time is additional, non-essential information.
+The time is not essential: “The meeting, which starts at 10:00, is online.”
 </div>
 
 ## Punctuation
-
-### Colons
 
 #### Colon
 
@@ -105,21 +167,8 @@ Compare with the use of an [em dash](#em-dash-), which clarifies or elaborates o
 
 #### Semicolon
 
-To show a important relationship, you can join two short independent clauses with a semicolon. Both clauses should be grammatically complete sentences.
+See [Semicolon (optional) in Approaches for related information in sentences](/style-guide/grammar/#semicolon-optional).
 
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Kiran and Nour have low vision; however, they use different assistive technologies.
-</div>
-
-Do not combine clauses if it makes the sentence long or complicated. Instead, make them separate sentences.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Kiran and Nour have a similar type of low vision. However, they use different adaptive strategies and assistive technologies based on their situation.
-</div>
 
 ### Commas
 
@@ -137,30 +186,24 @@ I bought apples, oranges, and bananas.
 
 Put a space before and after em dashes.
 
-You can use an em dash to add clarification, explanation, or emphasis after a complete clause — if it's short and simple. The part after the dash does not have to be a complete sentence.
+##### Em dashes for list items
 
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>WCAG 3 will have a different structure, different conformance model, and broader scope — see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-  <li>Write in active voice — that is, the subject performs the action.</li>
-  <li>It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.</li>
-</ul>
-</div>
-
-If a sentence combining ideas with an em dash would be long or complicated, use separate grammatically complete sentences instead.
+Use em dashes when list items have a short phrase followed by an explanation.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
+<p>Some example uses of this curricula include:</p>
 <ul>
-  <li>Avoid: The instructor should introduce different user needs for audio and video content — for example, the needs of people who do not see the video and people who do not hear the audio.</li>
-  <li>Use: The instructor should introduce different user needs for audio and video content. For example, explain the needs of people who do not see the video and people who do not hear the audio.</li>
+  <li><strong>faculty lecturer</strong> — selects topics from the foundation, developer, and designer modules to teach accessibility to computer science students</li>
+  <li><strong>employee training coordinator</strong> — compares the course content offered by different providers based on the modules provided in this resource</li>
+  <li><strong>procurer</strong> — includes requirements in a training Request for Proposals (RFP) based on the modules provided in this resource</li>
 </ul>
 </div>
 
-Compare with the use of a [colon](#colon), which introduces the main idea(s), giving the sense of "as follows".
+##### Em dashes in sentences
+
+See [Em dash (optional) in Approaches for related information in sentences](/style-guide/grammar/#em-dash-optional).
 
 #### En dash (–)
 
@@ -249,21 +292,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-Use parentheses sparingly for clarification.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Captions (also called “intralingual subtitles”) provide content to people who are deaf and others who cannot hear the audio.
-</div>
-
-Consider a separate sentence instead of complicating one sentence with parentheses.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Captions provide content to people who are deaf and others who cannot hear the audio. Captions are also called “intralingual subtitles”.
-</div>
+See [Parentheses (optional) in Approaches for related information in sentences](/style-guide/grammar/#parentheses-optional).
 
 ### Quotation marks
 
@@ -295,7 +324,6 @@ Example:
 Try not to use a forward slash to show two things that have a close relationship or that are in opposition. Use a hyphen or words like “and” or “or” instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
 
 Example 1:
 

@@ -179,6 +179,10 @@ Do not add a full stop a raw URL.
 
 Keep the same grammatical form for each list item: all noun phrases, all verb phrases, or all full sentences.
 
+### Long list items
+
+When items in a list have several sentences, consider if the list structure is particulary useful for conveying the information. If not, use regular paragraphs instead of a list.
+
 ### Capitalization and punctuation in lists
 
 #### Text that introduces a list
@@ -338,7 +342,7 @@ Examples:
 
 #### Related numbers
 
- With *related* numbers, where one number is usually written in digits and the other not, use <b>digits</b> for both.
+With *related* numbers, where one number is usually written in digits and the other not, use <b>digits</b> for both.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
