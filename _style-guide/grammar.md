@@ -12,7 +12,7 @@ order: 4
 
 ## Approaches for related information in sentences
 
-When you have related information, you can @@[present|format] it with:
+When you have related information, you can present it with:
 * separate sentences
 * em dash
 * semicolon
@@ -111,10 +111,6 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 ### Proper nouns
 
-_@@Tamsin: The general guidance is not needed here. It's common English.
-The capitalization for Success Criteria is needed! I think that belongs under WCAG terms.
-I'll leave that for you to do. :)_
-
 Capitalize proper nouns. User lower case for common nouns.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
@@ -126,8 +122,6 @@ Examples:
 </div>
 
 #### Proper nouns that have become common nouns
-
-_@@ Tamsin. Pesonally, I would look for these words in a list of specific terms. For example, I'd look in the <a href="https://www.w3.org/guide/manual-of-style/#Terms">13. Commonly Misspelled Terms</a> I don't have strong feelings on what to do with them for now._
 
 Use lowercase for the following nouns, unless these are part of a name or title:
 
