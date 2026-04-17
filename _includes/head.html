@@ -17,8 +17,8 @@
     window.addEventListener("load", downloadJSAtOnload, false);
   </script>
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | append: include.timestamp | relative_url }}">
-{% endif %}
-{% if  include.type == 'end' %}
-  <link rel="alternate" type="application/rss+xml" href="{{ "/feed.xml" | relative_url }}">
+{%- endif -%}
+{%- if  include.type == 'end' %}
+  <link rel="alternate" type="application/rss+xml" href="{{ '/feed.xml' | relative_url }}">
 </head>
-{% endif %}
+{% endif -%}

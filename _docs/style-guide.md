@@ -4,9 +4,9 @@ lang: en
 lead: "Follow these guidelines when writing materials for W3C WAI."
 resource:
   title: "WAI Style Guide"
+class: tight-page
 ---
 
-{% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
 {%- assign about = site.style-guide | find: "name", "about.md" -%}
 ## {{ about.title_sentence }}
 {{ about.content }}
@@ -48,7 +48,7 @@ You can navigate the style guide:
   * [Headings](/style-guide/style-different-content-types/#headings)
     * [Correct heading hierarchy](/style-guide/style-different-content-types/#correct-heading-hierarchy)
     * [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings)
-    * [Punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings) 
+    * [Punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings)
   * [Links](/style-guide/style-different-content-types/#links)
     * [Link text](/style-guide/style-different-content-types/#link-text)
     * [In-line links](/style-guide/style-different-content-types/#in-line-links)
