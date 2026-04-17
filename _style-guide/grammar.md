@@ -69,7 +69,7 @@ Example:
 </ul>
 </div>
 
-See also [Em dashes](/style-guide/grammar/#em-dashes).
+See also [Em dashes](/style-guide/grammar/#em-dash).
 
 #### Parentheses (optional)
 
@@ -161,7 +161,7 @@ Examples:
 </ul>
 </div>
 
-Compare with the use of an [em dash](#em-dash-), which clarifies or elaborates on the main idea that was just said.
+Compare with the use of an [em dash](#em-dash), which clarifies or elaborates on the main idea that was just said.
 
 #### Semicolon
 
@@ -180,7 +180,7 @@ I bought apples, oranges, and bananas.
 
 ### Dashes and hyphens
 
-#### Em dash (—)
+#### Em dash (—) {#em-dash}
 
 Put a space before and after em dashes.
 
