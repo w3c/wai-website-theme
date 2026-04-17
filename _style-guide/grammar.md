@@ -12,7 +12,7 @@ order: 4
 
 ## Approaches for related information in sentences
 
-When you have related information, you can [present|format] it with:
+When you have related information, you can @@[present|format] it with:
 * separate sentences
 * em dash
 * semicolon
@@ -39,7 +39,9 @@ Example 2:
 </ul>
 </div>
 
-### Options
+### One sentence options
+
+Optionally, you can combine the information into one sentence using a semicolon, em dash, or parentheses, as described below. Avoid long or complex sentences.
 
 #### Semicolon (optional)
 
@@ -53,7 +55,7 @@ Example:
 </ul>
 </div>
 
-### Em dash (optional)
+#### Em dash (optional)
 
 If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Note that em dashes are associated with AI writing.)
 
@@ -67,7 +69,9 @@ Example:
 </ul>
 </div>
 
-### Parentheses (optional)
+See also [Em dashes](/style-guide/grammar/#em-dashes).
+
+#### Parentheses (optional)
 
 When related information applies to a point within a simple sentence, you can put the information in parentheses within the sentence. Be aware that parentheses break up the sentence flow and make the sentence more complex.
 
@@ -123,7 +127,7 @@ Examples:
 
 #### Proper nouns that have become common nouns
 
-_ @@ Tamsin. Pesonally, I would look for these words in a list of specific terms. I don't have strong feelings on what to do with them for now. _
+_@@ Tamsin. Pesonally, I would look for these words in a list of specific terms. For example, I'd look in the <a href="https://www.w3.org/guide/manual-of-style/#Terms">13. Commonly Misspelled Terms</a> I don't have strong feelings on what to do with them for now._
 
 Use lowercase for the following nouns, unless these are part of a name or title:
 
