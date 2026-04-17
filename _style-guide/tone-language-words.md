@@ -321,7 +321,7 @@ Use “hand-eye coordination”, not “eye-hand coordination”.
 
 #### URL (Uniform Resource Locator)
 
-URR is a string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
+URL is a string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
