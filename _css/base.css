@@ -254,3 +254,37 @@ figcaption {
     border-block-end: 1px solid var(--line-grey);
     margin-block-end: .5em;
 }
+
+.inset-text {
+    border-inline-start: 2px solid var(--cloudy);
+    padding-inline-start: 1em;
+    margin: 1em 0 1em 1em;
+}
+
+/* Related variation: tighter space between the inset text and the previous paragraph when they are directly related. */
+.inset-text--related {
+  margin-block-start: 0.75em;
+
+  > *:first-child {
+    margin-block-start: 0.75em;
+  }
+}
+
+p:has(+ .inset-text--related) {
+  margin-block-end: 0.75em;
+}
+
+/* Condensed variation: tighter space between the first and second element within the inset text, when deemed relevant. */
+.inset-text--condensed {
+  > *:first-child {
+    margin-block-end: 0.25em;
+  }
+
+  > *:nth-child(2) {
+    margin-block-start: 0.25em;
+  }
+}
+
+.lead {
+  font-size: 1.4rem;
+}

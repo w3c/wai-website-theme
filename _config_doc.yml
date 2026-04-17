@@ -24,7 +24,7 @@ custom_navigation: theme-navigation
 
 # Build settings
 markdown: kramdown
-kramwdown:
+kramdown:
   toc_levels: 2..3
   input: GFM
   syntax_highlighter: rouge
@@ -34,6 +34,10 @@ collections:
   docs:
     output: true
     permalink: /:path/
+  style-guide:
+    output: true
+    permalink: /:collection/:name/
+    sort_by: order
 
 defaults:
   -
@@ -41,6 +45,26 @@ defaults:
       path: ""
     values:
       layout: default
+  -
+    scope:
+      path: "_style-guide"
+    values:
+      last_updated: 2026-04-17
+      changelog: /style-guide/changelog/
+      resource:
+        ref: /style-guide/
+  -
+    scope:
+      path: "_docs/style-guide.md"
+    values:
+      last_updated: 2026-04-17
+      changelog: /style-guide/changelog/
+  -
+    scope:
+      path: "_docs/style-guide"
+    values:
+      last_updated: 2026-04-17
+      changelog: /style-guide/changelog/
 
 plugins:
   - jekyll-include-cache
