@@ -9,6 +9,76 @@ order: 4
 
 {% include toc.html %}
 
+
+## Approaches for related information in sentences
+
+When you have related information, you can [present|format] it with:
+* separate sentences
+* em dash
+* semicolon
+* parentheses
+
+In most cases, use separate sentences. This is best for plain language.
+
+You can use a transition such as "For example", "See", "Thus", "Therefore",  "Specifically", "Instead", or "However".
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+
+Example 1:
+<ul>
+  <li>Avoid em dash: Forms are commonly used to provide user interaction — for example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Avoid semicolon: Forms are commonly used to provide user interaction; for example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Avoid parenthesis: Forms are commonly used to provide user interaction (for example, forms are used for logging in, registering, commenting, and purchasing).</li>
+  <li>Use two sentences: Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
+</ul>
+
+Example 2:
+<ul>
+  <li>Avoid em dash: WCAG 3 will have a different structure, different conformance model, and broader scope — see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+  <li>Use two sentences: WCAG 3 will have a different structure, different conformance model, and broader scope. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+</ul>
+</div>
+
+### Options
+
+#### Semicolon (optional)
+
+If the information is short, simple independent clauses, you can use one sentence with a semicolon. Both clauses should be grammatically complete sentences.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>It's easy; see the <a href="/style-guide/structure-presentation/#structure">Structure section</a>.</li>
+</ul>
+</div>
+
+### Em dash (optional)
+
+If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Note that em dashes are associated with AI writing.)
+
+The first part should be a complete sentence. The part after the dash does not need to be a complete sentence.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>The W3C mission is to make the web work — for everyone.</li>
+</ul>
+</div>
+
+### Parentheses (optional)
+
+When related information applies to a point within a simple sentence, you can put the information in parentheses within the sentence. Be aware that parentheses break up the sentence flow and make the sentence more complex.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Captions (called “intralingual subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.</li>
+</ul>
+</div>
+
 ## Capitalization
 
 ### Abbreviations
@@ -97,26 +167,8 @@ Compare with the use of an [em dash](#em-dash-), which clarifies or elaborates o
 
 #### Semicolon
 
-_** @@ delete below ?? ** and replace with_
-See [Related information in sentences, Semicolon (optional exception)](/style-guide/grammar/@@).
+See [Semicolon (optional) in Approaches for related information in sentences](/style-guide/grammar/#semicolon-optional).
 
-To show a important relationship, you can join two short independent clauses with a semicolon. Both clauses should be grammatically complete sentences.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Kiran and Nour have low vision; however, they use different assistive technologies.
-</div>
-
-Do not combine clauses if it makes the sentence long or complicated. Instead, make them separate sentences.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Kiran and Nour have a similar type of low vision. However, they use different adaptive strategies and assistive technologies based on their situation.
-</div>
-
-_** @@ delete above ?? **_
 
 ### Commas
 
@@ -141,34 +193,17 @@ Use em dashes when list items have a short phrase followed by an explanation.
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-<b>Sections in this resourse:</b>
+<p>Some example uses of this curricula include:</p>
 <ul>
-  <li><strong><a href="/WAI/people-use-web/user-stories/">Stories of Web Users</a></strong> (also called “personas”) — represent the experiences of people with different disabilities.</li>
-  <li><strong><a href="/WAI/people-use-web/abilities-barriers/">Diverse Abilities and Barriers</a></strong> — introduces the wide diversity of abilities and highlights some accessibility barriers that people experience because of inaccessible digital technology.</li>
-  <li><strong><a href="/WAI/people-use-web/tools-techniques/">Tools and Techniques</a></strong> — covers the tools and techniques that disabled people use to interact with digital technology.</li>
+  <li><strong>faculty lecturer</strong> — selects topics from the foundation, developer, and designer modules to teach accessibility to computer science students</li>
+  <li><strong>employee training coordinator</strong> — compares the course content offered by different providers based on the modules provided in this resource</li>
+  <li><strong>procurer</strong> — includes requirements in a training Request for Proposals (RFP) based on the modules provided in this resource</li>
 </ul>
 </div>
 
 ##### Em dashes in sentences
 
-_** @@ delete below ?? ** and replace with:_
-See [Related information in sentences, En dashes (optional exception)](/style-guide/grammar/@@).
-
-Use em dashes sparingly in short sentences to convey emphasis or a sharp break in thought. The first part should be a complete sentence. The part after the dash does not need to be a complete sentence.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>The W3C mission is to make the web work — for everyone.</li>
-</ul>
-</div>
-
-Usually it's better to use separate sentences instead of combining ideas with an em dash. (Also note that em dashes are associated with AI writing.) 
-
-Avoid long or complicated sentences with em dashes. Instead, use separate sentences.
-
-_** @@ delete above ?? **_
+See [Em dash (optional) in Approaches for related information in sentences](/style-guide/grammar/#em-dash-optional).
 
 #### En dash (–)
 
@@ -257,26 +292,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-_** @@ delete below ?? ** and replace with:_
-See [Related information in sentences, Parentheses (optional exception)](/style-guide/grammar/@@).
-
-Use parentheses sparingly for clarifiction.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-- Captions (called “intralingual subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.
-</div>
-
-Consider a separate sentence instead of complicating one sentence with parentheses.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-- Captions provide content to people who are deaf and hard-of-hearing. Captions are called “intralingual subtitles” in some areas.
-</div>
-
-_** @@ delete above ?? **_
+See [Parentheses (optional) in Approaches for related information in sentences](/style-guide/grammar/#parentheses-optional).
 
 ### Quotation marks
 
@@ -346,66 +362,5 @@ Example:
 <ul>
   <li>Avoid: In inclusive writing, avoid gender pronouns (she or her, he or his).</li>
   <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his) where possible.</li>
-</ul>
-</div>
-
-## Related information in sentences
-
-To keep simple sentences, put related information in a separate sentence.
-
-You can use a transition such as "For example", "Thus", "Specifically", "Therefore", "However", "Instead", or "See".
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-
-Example 1:
-<ul>
-  <li>Avoid: Forms are commonly used to provide user interaction; for example, for logging in, registering, commenting, and purchasing.</li>
-  <li>Use: Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
-</ul>
-
-Example 2:
-<ul>
-  <li>Avoid: WCAG 3 will have a different structure, different conformance model, and broader scope — see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-  <li>Use: WCAG 3 will have a different structure, different conformance model, and broader scope. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-</ul>
-</div>
-
-### Optional Exceptions
-
-#### Semicolon (optional exception)
-
-If the information is short, simple independent clauses, you can use one sentence with a semicolon. Both clauses should be grammatically complete sentences.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>It's easy; see the <a href="/style-guide/structure-presentation/#structure">Structure section</a>.</li>
-</ul>
-</div>
-
-### Em dash (optional exception)
-
-If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Note that em dashes are associated with AI writing.)
-
-The first part should be a complete sentence. The part after the dash does not need to be a complete sentence.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>The W3C mission is to make the web work — for everyone.</li>
-</ul>
-</div>
-
-### Parentheses (optional exception)
-
-When related information applies to a point within a simple sentence, you can put the information in parentheses within the sentence. Be aware that parentheses break up the sentence flow and make the sentence more complex.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>Captions (called “intralingual subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.</li>
 </ul>
 </div>
