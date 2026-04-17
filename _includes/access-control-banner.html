@@ -1,0 +1,28 @@
+{%- capture acl_class -%}
+  {%- if include.acl == "member" -%}
+    w3c-acl-member
+  {%- elsif include.acl == "team" -%}
+    w3c-acl-team
+  {%- elsif include.acl == "restricted" -%}
+    w3c-acl-private
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture acl_message -%}
+  {%- if include.acl == "member" -%}
+    This page is restricted to W3C Members
+  {%- elsif include.acl == "team" -%}
+    This page is restricted to W3C Staff
+  {%- elsif include.acl == "restricted" -%}
+    This page is restricted
+  {%- else -%}
+    This page is restricted
+  {%- endif -%}
+{%- endcapture %}
+<div class="w3c-global-header">
+  <div class="w3c-banner w3c-banner--access-control{% if acl_class %} {{ acl_class }}{% endif %}">
+    <div class="w3c-banner__inner w3c-l-center">
+      <img class="w3c-icon" src="https://www.w3.org/assets/website-2021/svg/lock.svg" width="20" height="20" alt aria-hidden="true"/>
+      <p>{{ include.message | default: acl_message }}</p>
+    </div>
+  </div>
+</div>
