@@ -79,7 +79,7 @@ When related information applies to a point within a simple sentence, you can pu
 Example:
 
 <ul>
-  <li>Captions (called “intralingual subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.</li>
+  <li>Captions (called “subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.</li>
 </ul>
 </div>
 
