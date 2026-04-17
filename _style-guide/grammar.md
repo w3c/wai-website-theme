@@ -54,7 +54,7 @@ Only capitalize nouns that are proper nouns.
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
-* Proper noun capitalized: “Success Criterion 1.1.1 is about non-text content.”
+* Proper noun capitalized: “The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.”
 * Common noun lowercase: “One success criterion has been removed.”
 
 </div>
