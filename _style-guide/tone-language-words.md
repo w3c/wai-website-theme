@@ -30,11 +30,15 @@ Use <b>both</b> people-first and identify-first language.
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-<p>Accessibility is about ensuring that digital technology is usable by <b>people with disabilities</b>. ... The fundamental goal of accessibility is meeting the needs of <b>disabled people</b> in the real world.
+<p>Accessibility is about ensuring that digital technology is usable by <b>people with disabilities</b>. The fundamental goal of accessibility is meeting the needs of <b>disabled people</b> in the real world.
 </p>
 </div>
 
-<b>People-first language</b> puts the person before the disability.
+<strong>Exception:</strong> Always use "autistic people", not "people with autism".
+
+##### People-first language
+
+People-first language puts the person before the disability.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -42,13 +46,13 @@ Examples:
 <ul>
   <li>people with disabilities</li>
   <li>people who are blind</li>
-  <li>people who are hard-of-hearing</li>
+  <li>people who are deaf</li>
 </ul>
 </div>
 
-Exception: Use "autistic people", not "people with autism".
+##### Identity-first language
 
-<b>Identity-first language</b> puts the disability before the person.
+Identity-first language puts the disability before the person.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -56,28 +60,35 @@ Examples:
 <ul>
   <li>disabled people</li>
   <li>blind people</li>
-  <li>hard-of-hearing people</li>
+  <li>deaf people</li>
 </ul>
 </div>
 
 #### Disability-specific terms
 
-Use "blind", not "visually impaired".
+##### Blind
 
-Use "deaf" lowercase. Avoid "hearing-impaired" and "hearing-impairment" for deafness.
+- Avoid "visually impaired"
+- Use "blind".
 
-“Color blind”:
+##### Color blind
+
 * Avoid "color blind".
 * When referring to people’s abilities, use “people who cannot distinguish between certain colors (often called 'color blindness')”.
 * When referring to the medical condition, use “color vision deficiency”.
 
-“Loss”:
+##### Deaf
+
+- Avoid "hearing-impaired" and "hearing-impairment".
+- Use "deaf" lowercase when referring to the medical condition.
+
+##### “Loss”:
 * Avoid “loss” as a general description that includes people with congenital conditions.
 * It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.
 
 #### Terms to avoid
 
-Avoid terms that can be negative, derogatory, dehumanizing, patronizing; that are euphemisms; that suggest suffering, helplessness, or weakness.
+Avoid terms that are negative, derogatory, dehumanizing, or patronizing; euphemisms; and terms that suggest suffering, helplessness, or weakness.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -111,11 +122,6 @@ Example:
 
 Not all builders are male.
 </div>
-
-See also:
-
-* [Disability language](/style-guide/tone-language-words/#disability-language)
-* [Pronouns: Gender inclusivity and translation considerations](/style-guide/tone-language-words/#pronouns-gender-inclusivity-and-translation-considerations)
 
 #### Pronouns: Gender inclusivity and translation considerations
 
@@ -203,7 +209,10 @@ Use “we” when speaking for an organisation (like W3C), but only when it’s 
 
 ##### Structure
 
-Break up information into smaller sections to make it easier to read — see [Using structural elements](/style-guide/structure-presentation/#using-structural-elements).
+Break up information into smaller sections to make it easier to read — see:
+
+- [Using structural elements](/style-guide/structure-presentation/#using-structural-elements)
+- [Keeping simple sentences](/style-guide/structure-presentation/#keeping-simple-sententences)
 
 ##### Verbs
 
@@ -229,9 +238,9 @@ Example 2:
 
 ##### Voice
 
-Write in active voice; that is, the subject performs the action.
+Write in the active voice; that is, the subject performs the action.
 
-Avoid passive voice where possible. 
+Avoid the passive voice where possible. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -275,7 +284,7 @@ Example of unnecessary words:
 
 #### Accessible
 
-Do not use "accessible" to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to accessibility for people with disabilities or to places that are easy to reach or enter. 
+Do not use "accessible" to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to accessibility for people with disabilities or to places that are easy to reach or enter for disabled people. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -347,6 +356,8 @@ mailto:wai@w3.org — this identifies an email resource.
 * <b>Please:</b> Omit this unnecessary extra word in *informational* content and *instructions*.
 * <b>Refer to:</b> Use “see” instead.
 
+See also [Disability-specific terms](/style-guide/tone-language-words/#disability-specific-terms)
+
 ### W3C terms
 
 #### Member(s)
@@ -359,6 +370,22 @@ Examples:
 <ul>
   <li>The organization joined the World Wide Web Consortium as a Member to work with us.</li>
   <li>W3C Members are organizations of all sizes and all types.</li>
+</ul>
+</div>
+
+#### Working Group(s), Task Force(s)
+
+Include the title of the group when referring to a specific working group or task force.
+
+Capitalize “Working Groups” and “Task Forces” in the singular or plural.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>The Accessibility Guidelines Working Group is discussing the issue.</li>
+  <li>The AG Working Group is discussing the issue.</li>
+  <li>You can join Working Groups and specific Task Forces.</li>
 </ul>
 </div>
 
@@ -437,28 +464,5 @@ Example:
 <ul>
   <li>Avoid: Success Criterion 1.4.5: Images of Text.</li>
   <li>Use: Success Criterion 1.4.5 Images of Text.</li>
-</ul>
-</div>
-
-#### Working Group, Task Force
-
-Capitalize "Working Group" and "Task Force" as proper nouns.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-   <li>You can join Working Groups and specific Task Forces.</li>
-   <li>The Accessibility Guidelines Working Group is discussing the issue.</li>
-</ul>
-</div>
-
-Use lowercase for general "groups".
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>Several groups are discussing the issue.</li>
 </ul>
 </div>
