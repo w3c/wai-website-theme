@@ -57,7 +57,6 @@ Example 1:
   <li>Avoid parentheses: Forms are commonly used to provide user interaction (for example, forms are used for logging in, registering, commenting, and purchasing).</li>
   <li><b>Use two sentences:</b> Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
 </ul>
-</div>
 
 Example 2:
 
