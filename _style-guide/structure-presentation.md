@@ -23,7 +23,7 @@ order: 1
   * Write concise, unique headings that clearly describe the content beneath them.
   * Front-load headings with relevant keywords to aid readability.
 * **Sentences:**
-  * Write short, simple sentences.
+  * Write short, [simple sentences](#keeping-simple-sentences).
   * Stick to one idea per sentence.
   * Keep the subject and verb close together.
 * **Paragraphs:**
@@ -32,6 +32,43 @@ order: 1
   * Make sure the paragraph content fits the topic of the heading it sits under.
 * **Lists:**
   * Use lists for steps, options, and related items.
+
+### Syntax
+
+#### Keeping simple sentences
+
+When you want to add related information to an idea, you can present it using:
+
+- an [em dash](/style-guide/grammar/#em-dash-)
+- [parentheses](/style-guide/grammar/#parentheses)
+- a [semicolon](/style-guide/grammar/#semicolon)
+- separate sentences
+
+Use separate sentences if adding the related information makes a sentence long or complex. This is best for readability.
+
+To create the separate sentence, use a transition such as “For example”, “See”, “Thus”, “Therefore”, “Specifically”, “Instead”, or “However”.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example 1:
+
+<ul>
+  <li>Avoid em dash: Forms are commonly used to provide user interaction — for example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Avoid semicolon: Forms are commonly used to provide user interaction; for example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Avoid parentheses: Forms are commonly used to provide user interaction (for example, forms are used for logging in, registering, commenting, and purchasing).</li>
+  <li><b>Use two sentences:</b> Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
+</ul>
+
+Example 2:
+
+<ul>
+  <li>Avoid em dash: WCAG 3 will have a different structure, different conformance model, and broader scope — for more details, <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+  <li>Avoid semicolon: WCAG 3 will have a different structure, different conformance model, and broader scope; for more details, <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+  <li>Avoid parentheses: WCAG 3 will have a different structure, different conformance model, and broader scope (for more details, see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+  <li><b>Use two sentences:</b> WCAG 3 will have a different structure, different conformance model, and broader scope. For more details, see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+</ul>
+</div>
+
+<strong>Note:</strong> If dividing related information into two sentences, both must be independent clauses.
 
 ## Formatting
 
