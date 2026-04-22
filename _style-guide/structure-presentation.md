@@ -62,11 +62,11 @@ Examples:
 
 If dividing a complex sentence into two sentences, you might need to add words to make complete sentences.
 
-### Optional approach: one sentence
+#### Optional approach: one sentence
 
 In some cases described below, you can use one sentence with a semicolon, parentheses, or em dash. Avoid long or complex sentences.
 
-#### Semicolon (optional)
+##### Semicolon (optional)
 
 If the information is short and simple, you can use one sentence with a semicolon. The text before and the text after the semicolon should both be grammatically complete sentences.
 
@@ -78,7 +78,7 @@ Example:
 </ul>
 </div>
 
-#### Parentheses (optional)
+##### Parentheses (optional)
 
 For a short clarification within a simple sentence, you can use parentheses within the sentence. Be aware that the parenthetical information will break up the sentence flow.
 
@@ -90,7 +90,7 @@ Example:
 </ul>
 </div>
 
-#### Em dash (optional)
+##### Em dash (optional)
 
 If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Be aware that em dashes are associated with AI writing.)
 
