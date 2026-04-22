@@ -23,7 +23,7 @@ order: 1
   * Write concise, unique headings that clearly describe the content beneath them.
   * Front-load headings with relevant keywords to aid readability.
 * **Sentences:**
-  * Write short, [simple sentences](#keeping-simple-sentences).
+  * Write short, [simple sentences](#syntax-for-related-information-in-sentences).
   * Stick to one idea per sentence.
   * Keep the subject and verb close together.
 * **Paragraphs:**
@@ -33,42 +33,78 @@ order: 1
 * **Lists:**
   * Use lists for steps, options, and related items.
 
-### Syntax
+### Syntax for related information in sentences
 
-#### Keeping simple sentences
+Related information can be presented using:
 
-When you want to add related information to an idea, you can present it using:
-
-- an [em dash](/style-guide/grammar/#em-dash-)
-- [parentheses](/style-guide/grammar/#parentheses)
-- a [semicolon](/style-guide/grammar/#semicolon)
 - separate sentences
+- a semicolon
+- parentheses
+- an em dash
 
-Use separate sentences if adding the related information makes a sentence long or complex. This is best for readability.
+#### Default approach: separate sentences
 
-To create the separate sentence, use a transition such as “For example”, “See”, “Thus”, “Therefore”, “Specifically”, “Instead”, or “However”.
+In most cases, use separate sentences. This is usually best for readability.
+
+You can use a transition such as “For example”, "That is", “See”, or others.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example 1:
+
+Examples:
 
 <ul>
-  <li>Avoid em dash: Forms are commonly used to provide user interaction — for example, forms are used for logging in, registering, commenting, and purchasing.</li>
-  <li>Avoid semicolon: Forms are commonly used to provide user interaction; for example, forms are used for logging in, registering, commenting, and purchasing.</li>
-  <li>Avoid parentheses: Forms are commonly used to provide user interaction (for example, forms are used for logging in, registering, commenting, and purchasing).</li>
-  <li><b>Use two sentences:</b> Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
+  <li>Is there enough space in the main audio for the description? That is, are there sufficient pauses throughout the narration or speaking where the relevant description will fit?</li>
+  <li>WCAG 3 will have a different structure, different conformance model, and broader scope. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
 </ul>
 
-Example 2:
+</div>
+
+If dividing a complex sentence into two sentences, you might need to add words to make complete sentences.
+
+### Optional approach: one sentence
+
+In some cases described below, you can use one sentence with a semicolon, parentheses, or em dash. Avoid long or complex sentences.
+
+#### Semicolon (optional)
+
+If the information is short, simple independent clauses, you can use one sentence with a semicolon. Both clauses should be grammatically complete sentences.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
 
 <ul>
-  <li>Avoid em dash: WCAG 3 will have a different structure, different conformance model, and broader scope — for more details, <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-  <li>Avoid semicolon: WCAG 3 will have a different structure, different conformance model, and broader scope; for more details, <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-  <li>Avoid parentheses: WCAG 3 will have a different structure, different conformance model, and broader scope (for more details, see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-  <li><b>Use two sentences:</b> WCAG 3 will have a different structure, different conformance model, and broader scope. For more details, see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
+  <li>It's easy; see the <a href="/style-guide/structure-presentation/#structure">Structure section</a>.</li>
 </ul>
 </div>
 
-<strong>Note:</strong> If dividing related information into two sentences, both must be independent clauses.
+#### Parentheses (optional)
+
+For a short clarification within a simple sentence, you can use parentheses within the sentence. Be aware that the parenthetical information will break up the sentence flow.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Captions (called “subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.</li>
+</ul>
+</div>
+
+#### Em dash (optional)
+
+If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Be aware that em dashes are associated with AI writing.)
+
+The first part should be a complete sentence. The part after the dash does not need to be a complete sentence.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>The W3C mission is to make the web work — for everyone.</li>
+</ul>
+</div>
+
+Related: The grammar section covers [em dashes for list items](/style-guide/grammar/#em-dashes-for-list-items).
 
 ## Formatting
 
