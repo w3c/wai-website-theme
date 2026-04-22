@@ -91,7 +91,7 @@ Examples:
 </ul>
 </div>
 
-</s>
+</s> <!-- end delete colon section -->
 
 #### Semicolon
 
