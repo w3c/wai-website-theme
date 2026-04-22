@@ -68,7 +68,7 @@ In some cases described below, you can use one sentence with a semicolon, parent
 
 #### Semicolon (optional)
 
-If the information is short, simple independent clauses, you can use one sentence with a semicolon. Both clauses should be grammatically complete sentences.
+If the information is short and simple, you can use one sentence with a semicolon. The text before and the text after the semicolon should both be grammatically complete sentences.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
