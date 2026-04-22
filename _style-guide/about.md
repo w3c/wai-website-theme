@@ -9,6 +9,6 @@ order: 0
 
 The purpose of the guide is to support readability, consistency, and easier translations.
 
-This is a living document. Substantive changes will be listed in the changelog.
+This is a living document. For the list of substantive changes, see the [changelog](/style-guide/changelog).
 
 This style guide is for US English. Translators can use conventions in their language.

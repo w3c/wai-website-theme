@@ -9,80 +9,6 @@ order: 4
 
 {% include toc.html %}
 
-
-## Approaches for related information in sentences
-
-When you have related information, you can present it with:
-* separate sentences
-* em dash
-* semicolon
-* parentheses
-
-In most cases, use separate sentences. This is best for plain language.
-
-You can use a transition such as "For example", "See", "Thus", "Therefore",  "Specifically", "Instead", or "However".
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-
-Example 1:
-<ul>
-  <li>Avoid em dash: Forms are commonly used to provide user interaction — for example, forms are used for logging in, registering, commenting, and purchasing.</li>
-  <li>Avoid semicolon: Forms are commonly used to provide user interaction; for example, forms are used for logging in, registering, commenting, and purchasing.</li>
-  <li>Avoid parenthesis: Forms are commonly used to provide user interaction (for example, forms are used for logging in, registering, commenting, and purchasing).</li>
-  <li>Use two sentences: Forms are commonly used to provide user interaction. For example, forms are used for logging in, registering, commenting, and purchasing.</li>
-</ul>
-
-Example 2:
-<ul>
-  <li>Avoid em dash: WCAG 3 will have a different structure, different conformance model, and broader scope — see <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-  <li>Use two sentences: WCAG 3 will have a different structure, different conformance model, and broader scope. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3 Introduction</a>.</li>
-</ul>
-</div>
-
-### One sentence options
-
-Optionally, you can combine the information into one sentence using a semicolon, em dash, or parentheses, as described below. Avoid long or complex sentences.
-
-#### Semicolon (optional)
-
-If the information is short, simple independent clauses, you can use one sentence with a semicolon. Both clauses should be grammatically complete sentences.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>It's easy; see the <a href="/style-guide/structure-presentation/#structure">Structure section</a>.</li>
-</ul>
-</div>
-
-#### Em dash (optional)
-
-If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Note that em dashes are associated with AI writing.)
-
-The first part should be a complete sentence. The part after the dash does not need to be a complete sentence.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>The W3C mission is to make the web work — for everyone.</li>
-</ul>
-</div>
-
-See also [Em dashes](/style-guide/grammar/#em-dash).
-
-#### Parentheses (optional)
-
-When related information applies to a point within a simple sentence, you can put the information in parentheses within the sentence. Be aware that parentheses break up the sentence flow and make the sentence more complex.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-<ul>
-  <li>Captions (called “subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.</li>
-</ul>
-</div>
-
 ## Capitalization
 
 ### Abbreviations
@@ -99,7 +25,7 @@ Use lowercase for “braille” (unless you are referring to Louis Braille).
 
 ### Glossaries
 
-Use lowercase for glossary terms.
+Use lowercase for glossary terms (except for [proper nouns](#proper-nouns)).
 
 ### Headings
 
@@ -111,13 +37,15 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 ### Proper nouns
 
-Capitalize proper nouns. User lower case for common nouns.
+Capitalize proper nouns. 
+
+If a proper noun is singular, it becomes a common noun in the plural &mdash; use lower case.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
-* Proper noun capitalized: The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
-* Common noun lowercase: WCAG 2.2 provides 9 additional success criteria since WCAG 2.1.
+* Proper noun is capitalized: The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
+* Common noun uses lowercase: WCAG 2.2 provides nine additional success criteria since WCAG 2.1.
 
 </div>
 
@@ -148,6 +76,8 @@ The time is not essential: “The meeting, which starts at 10:00, is online.”
 
 ## Punctuation
 
+<s> <!-- I think delete the colon section. For simplicity and consistency, I want us to use em dashes for list items. Then this does not provide information beyond standard grammar. And I'm guessing the mis-use of colon is not a common error in WCAG 3 writing? -->
+
 #### Colon
 
 Use a colon to introduce the main idea(s). It gives the sense of “as follows.”
@@ -161,12 +91,11 @@ Examples:
 </ul>
 </div>
 
-Compare with the use of an [em dash](#em-dash), which clarifies or elaborates on the main idea that was just said.
+</s> <!-- end delete colon section -->
 
 #### Semicolon
 
-See [Semicolon (optional) in Approaches for related information in sentences](/style-guide/grammar/#semicolon-optional).
-
+See [Semicolon (optional) in Syntax for related information in sentences](/style-guide/grammar/#semicolon-optional).
 
 ### Commas
 
@@ -182,28 +111,26 @@ I bought apples, oranges, and bananas.
 
 #### Em dash (—) {#em-dash}
 
-Put a space before and after em dashes.
+Put a space before and after an em dash.
+
+For em dashes in sentences, see [Em dash (optional) in Syntax for related information in sentences](/style-guide/grammar/#em-dash-optional).
 
 ##### Em dashes for list items
 
-Use em dashes when list items have a short phrase followed by an explanation.
+Use em dashes when list items have a short phrase followed by an explanation or clarification.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
 
-<p>Some example uses of this curricula include:</p>
+<p>Users of this curricula include:</p>
 <ul>
-  <li><strong>faculty lecturer</strong> — selects topics from the foundation, developer, and designer modules to teach accessibility to computer science students</li>
-  <li><strong>employee training coordinator</strong> — compares the course content offered by different providers based on the modules provided in this resource</li>
-  <li><strong>procurer</strong> — includes requirements in a training Request for Proposals (RFP) based on the modules provided in this resource</li>
+  <li><b>faculty lecturer</b> — selects topics from the foundation, developer, and designer modules to teach accessibility to computer science students</li>
+  <li><b>employee training coordinator</b> — compares the course content offered by different providers based on the modules provided in this resource</li>
+  <li><b>procurer</b> — includes requirements in a training Request for Proposals (RFP) based on the modules provided in this resource</li>
 </ul>
 </div>
 
-##### Em dashes in sentences
-
-See [Em dash (optional) in Approaches for related information in sentences](/style-guide/grammar/#em-dash-optional).
-
-#### En dash (–)
+#### En dash (–) {#en-dash}
 
 * Use an en dash to indicate a range in numbers, such as in dates, pages, and sports results.
 * Do not add a space before and after an en dash.
@@ -290,7 +217,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-See [Parentheses (optional) in Approaches for related information in sentences](/style-guide/grammar/#parentheses-optional).
+See [Parentheses (optional) in Syntax for related information in sentences](/style-guide/grammar/#parentheses-optional).
 
 ### Quotation marks
 
@@ -359,6 +286,6 @@ Example:
 
 <ul>
   <li>Avoid: In inclusive writing, avoid gender pronouns (she or her, he or his).</li>
-  <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his) where possible.</li>
+  <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his).</li>
 </ul>
 </div>
