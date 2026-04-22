@@ -76,7 +76,7 @@ The time is not essential: “The meeting, which starts at 10:00, is online.”
 
 ## Punctuation
 
-<s> <!-- For simplicity and consistency, I want us to use em dashes for list items. Then this does not provide information beyond standard grammar. And I'm guessing it's not a common error in WCAG 3 writing? -->
+<s> <!-- I think delete the colon section. For simplicity and consistency, I want us to use em dashes for list items. Then this does not provide information beyond standard grammar. And I'm guessing the mis-use of colon is not a common error in WCAG 3 writing? -->
 
 #### Colon
 
