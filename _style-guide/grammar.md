@@ -25,7 +25,7 @@ Use lowercase for “braille” (unless you are referring to Louis Braille).
 
 ### Glossaries
 
-Use lowercase for glossary terms- (except for [proper nouns](#proper-nouns)).
+Use lowercase for glossary terms (except for [proper nouns](#proper-nouns)).
 
 ### Headings
 
@@ -76,6 +76,8 @@ The time is not essential: “The meeting, which starts at 10:00, is online.”
 
 ## Punctuation
 
+<s> <!-- For simplicity and consistency, I want us to use em dashes for list items. Then this does not provide information beyond standard grammar. And I'm guessing it's not a common error in WCAG 3 writing? -->
+
 #### Colon
 
 Use a colon to introduce the main idea(s). It gives the sense of “as follows.”
@@ -89,27 +91,11 @@ Examples:
 </ul>
 </div>
 
-Compare the colon with the use of an [em dash](#em-dash), which clarifies or elaborates on the main idea that was just said.
+</s>
 
 #### Semicolon
 
-<b>Scenario 1:</b> To show a important relationship, you can join two short independent clauses into one sentence using a semicolon. Both clauses should be grammatically complete sentences.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-W3C maintains a public list of patent disclosures; that page also includes instructions for disclosing a patent.
-</div>
-
-Do not combine clauses using a semicolon if it makes the sentence long or complex. Instead, make them separate sentences &mdash; see [Keeping simple sentences](/style-guide/structure-presentation/#keeping-simple-sententences).
-
-<b>Scenario 2:</b> To break up complex lists that contain internal commas.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-The guidelines address the needs of users with blindness, low vision and other vision impairments; deafness and hearing loss; limited movement and dexterity; speech disabilities; sensory disorders; and cognitive and learning disabilities.
-</div>
+See [Semicolon (optional) in Syntax for related information in sentences](/style-guide/grammar/#semicolon-optional).
 
 ### Commas
 
@@ -125,25 +111,9 @@ I bought apples, oranges, and bananas.
 
 #### Em dash (—) {#em-dash}
 
-Use an em dash to introduce clarification, explanation or emphasis.
-
-The clause after the dash does not have to be a complete sentence.
-
 Put a space before and after an em dash.
 
-Examples:
-
-<ul>
-  <li>It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.</li>
-  <li>Write in active voice — that is, the subject performs the action.</li>
-  <li>Make the web work &mdash; for everyone</li>
-  
-</ul>
-</div>
-
-Do not use an em dash to join related ideas if it makes the sentence long or complex. Instead, make them separate sentences &mdash; see [Keeping simple sentences](/style-guide/structure-presentation/#keeping-simple-sententences).
-
-Compare the em dash with the use of a [colon](#colon), which introduces the main idea.
+For em dashes in sentences, see [Em dash (optional) in Syntax for related information in sentences](/style-guide/grammar/#em-dash-optional).
 
 ##### Em dashes for list items
 
@@ -247,15 +217,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-Use parentheses sparingly to clarify something in an aside.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
-
-Captions (called “subtitles” in some areas) provide content to people who are deaf and hard-of-hearing.
-</div>
-
-Do not add information in parentheses if it makes the sentence long or complex. Instead, place the content in a separate sentence &mdash; see [Keeping simple sentences](/style-guide/structure-presentation/#keeping-simple-sententences).
+See [Parentheses (optional) in Syntax for related information in sentences](/style-guide/grammar/#parentheses-optional).
 
 ### Quotation marks
 
