@@ -33,7 +33,7 @@ order: 1
 * **Lists:**
   * Use lists for steps, options, and related items.
 
-### Syntax for related information in sentences
+### Related information in sentences
 
 Related information can be presented using:
 
