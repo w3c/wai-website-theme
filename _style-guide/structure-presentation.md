@@ -23,7 +23,7 @@ order: 1
   * Write concise, unique headings that clearly describe the content beneath them.
   * Front-load headings with relevant keywords to aid readability.
 * **Sentences:**
-  * Write short, [simple sentences](#syntax-for-related-information-in-sentences).
+  * Write short, simple sentences.
   * Stick to one idea per sentence.
   * Keep the subject and verb close together.
 * **Paragraphs:**
