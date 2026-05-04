@@ -60,7 +60,7 @@ Examples:
 <ul>
   <li>disabled people</li>
   <li>blind people</li>
-  <li>deaf people</li>
+  <li>hard-of-hearing people</li>
 </ul>
 </div>
 
