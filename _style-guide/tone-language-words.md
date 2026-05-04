@@ -46,7 +46,7 @@ Examples:
 <ul>
   <li>people with disabilities</li>
   <li>people who are blind</li>
-  <li>people who are deaf</li>
+  <li>people who are hard-of-hearing</li>
 </ul>
 </div>
 
