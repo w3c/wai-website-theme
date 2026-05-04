@@ -362,30 +362,32 @@ See also [Disability-specific terms](/style-guide/tone-language-words/#disabilit
 
 #### Member(s)
 
-Capitalize “Members” in the singular or plural when referring to organizations that are W3C Members.
+Treat “W3C Members” as a [proper noun](/style-guide/grammar/#proper-nouns).
+
+Treat “members” as a common noun when used in the plural.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 <ul>
-  <li>The organization joined the World Wide Web Consortium as a Member to work with us.</li>
-  <li>W3C Members are organizations of all sizes and all types.</li>
+  <li>The organization joined as a W3C Member to work with us.</li>
+  <li>W3C members are organizations of all sizes and all types.</li>
 </ul>
 </div>
 
-#### Working Group(s), Task Force(s)
+#### Working group(s), task force(s)
 
-Include the title of the group when referring to a specific working group or task force.
+Include the title of the group when referring to a specific working group or task force and treat the term as a [proper noun](/style-guide/grammar/#proper-nouns)..
 
-Capitalize “Working Groups” and “Task Forces” in the singular or plural.
+Treat “working group” and “task force” as common nouns when used without the title of the group or when used in the plural.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 <ul>
   <li>The Accessibility Guidelines Working Group is discussing the issue.</li>
-  <li>The AG Working Group is discussing the issue.</li>
-  <li>You can join Working Groups and specific Task Forces.</li>
+  <li>A new working group has been created.</li>
+  <li>You can join working groups and specific task forces.</li>
 </ul>
 </div>
 
