@@ -76,23 +76,6 @@ The time is not essential: “The meeting, which starts at 10:00, is online.”
 
 ## Punctuation
 
-<s> <!-- I think delete the colon section. For simplicity and consistency, I want us to use em dashes for list items. Then this does not provide information beyond standard grammar. And I'm guessing the mis-use of colon is not a common error in WCAG 3 writing? -->
-
-#### Colon
-
-Use a colon to introduce the main idea(s). It gives the sense of “as follows.”
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>Contact us: email@example.com</li>
-  <li>They had one goal: to finish the marathon.</li>
-</ul>
-</div>
-
-</s> <!-- end delete colon section -->
-
 #### Semicolon
 
 See [Semicolon (optional) in Syntax for related information in sentences](/style-guide/grammar/#semicolon-optional).
