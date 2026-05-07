@@ -39,7 +39,7 @@ ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 * <b>Independent sections:</b> In sections that may be read independently of the main text, spell out the abbreviation again, followed by the abbreviation in parentheses.
 * <b>Change of context:</b> If an abbreviation could have multiple meanings and the context changes, provide the full meaning to clarify which meaning is intended.
 
-### Capitalization in abbreviations
+### Capitalization in expanded terms
 
 Use <b>title case</b> for proper nouns.
 
@@ -171,7 +171,7 @@ Example:
 
 Add a full stop after the linked text if it ends a sentence.
 
-Do not add a full stop a raw URL.
+Do not add a full stop after a raw URL.
 
 ## Lists
 
@@ -181,7 +181,7 @@ Keep the same grammatical form for each list item: all noun phrases, all verb ph
 
 ### Long list items
 
-When items in a list have several sentences, consider if the list structure is particulary useful for conveying the information. If not, use regular paragraphs instead of a list.
+When items in a list have several sentences, consider if the list structure is particularly useful for conveying the information. If not, use regular paragraphs instead of a list.
 
 ### Capitalization and punctuation in lists
 
