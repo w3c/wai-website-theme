@@ -377,7 +377,7 @@ Examples:
 
 #### Working group(s), task force(s)
 
-Include the title of the group when referring to a specific working group or task force and treat the term as a [proper noun](/style-guide/grammar/#proper-nouns)..
+Include the title of the group when referring to a specific working group or task force and treat the term as a [proper noun](/style-guide/grammar/#proper-nouns).
 
 Treat “working group” and “task force” as common nouns when used without the title of the group or when used in the plural.
 
