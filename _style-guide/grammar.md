@@ -96,7 +96,7 @@ I bought apples, oranges, and bananas.
 
 Put a space before and after an em dash.
 
-For em dashes in sentences, see [Em dash (optional) in Syntax for related information in sentences](/style-guide/grammar/#em-dash-optional).
+For em dashes in sentences, see [Em dash (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
 
 ##### Em dashes for list items
 
@@ -200,7 +200,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-See [Parentheses (optional) in Syntax for related information in sentences](/style-guide/grammar/#parentheses-optional).
+See [Parentheses (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
 
 ### Quotation marks
 
