@@ -356,7 +356,7 @@ mailto:wai@w3.org — this identifies an email resource.
 * <b>Please:</b> Omit this unnecessary extra word in *informational* content and *instructions*.
 * <b>Refer to:</b> Use “see” instead.
 
-See also [Disability-specific terms](/style-guide/tone-language-words/#disability-specific-terms)
+See also [Disability-specific terms](/style-guide/tone-language-words/#disability-specific-terms).
 
 ### W3C terms
 
