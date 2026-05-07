@@ -396,7 +396,7 @@ Examples:
 ## Times
 
 * Use the 24-hour clock.
-* In a sentence, do not use the [en dash](/style-guide/grammar/#en-dash-). Use “from … to” or “between … and” instead.
+* In a sentence, do not use the [en dash](/style-guide/grammar/#en-dash). Use “from … to” or “between … and” instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
