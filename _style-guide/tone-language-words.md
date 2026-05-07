@@ -209,10 +209,7 @@ Use “we” when speaking for an organisation (like W3C), but only when it’s 
 
 ##### Structure
 
-Break up information into smaller sections to make it easier to read — see:
-
-- [Using structural elements](/style-guide/structure-presentation/#using-structural-elements)
-- [Keeping simple sentences](/style-guide/structure-presentation/#keeping-simple-sententences)
+Break up information into smaller sections to make it easier to read. See [Using structural elements](/style-guide/structure-presentation/#using-structural-elements).
 
 ##### Verbs
 
