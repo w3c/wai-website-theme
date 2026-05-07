@@ -76,9 +76,9 @@ The time is not essential: “The meeting, which starts at 10:00, is online.”
 
 ## Punctuation
 
-#### Semicolon
+### Semicolon
 
-See [Semicolon (optional) in Syntax for related information in sentences](/style-guide/grammar/#semicolon-optional).
+See [Semicolon (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
 
 ### Commas
 
