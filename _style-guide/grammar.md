@@ -200,7 +200,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-See [Parentheses (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
+See [Parentheses (optional) in Related information in sentences](/style-guide/structure-presentation/#parentheses-optional).
 
 ### Quotation marks
 
