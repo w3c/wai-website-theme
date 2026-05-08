@@ -292,6 +292,29 @@ Example:
 </ul>
 </div>
 
+#### Applies when/except when
+
+Used within WCAG 3 requirements these terms set out limitations of applicability of requirements.
+
+Use 'applies when' when the limitation is broad.
+
+Use 'except when' when the limitation is narrow.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<blockquote>
+  <p>A mechanism is available to turn captions on and off.</p>
+  <p><b>Except when</b> captions are hard-coded into the video content.</p>
+</blockquote>
+
+<blockquote>
+  <p>Diacritics required to identify the correct meaning of each word are available.</p>
+  <p><b>Applies when</b> a human language has a version that removes diacritics for proficient readers.</p>
+</blockquote>
+</div>
+
+
 #### Click (versus select)
 
 Do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
@@ -318,6 +341,13 @@ Select from the dropdown menu.
 #### Hand-eye coordination
 
 Use “hand-eye coordination”, not “eye-hand coordination”.
+
+#### Key terms
+
+* "down-event" not "down event"
+* "hard-coded" not "hard coded"
+* "up-event" not "up event"
+
 
 #### Speech recognition, voice recognition
 

@@ -67,6 +67,7 @@ Examples:
 
 * <b>e.g.:</b> Use “for example”.
 * <b>etc.:</b> Start the phrase with “such as” to indicate other possible options.
+  * Note: Where non-exhaustive list is being presented, use the phrase "included, but not limited to"
 * <b>i.e.:</b> Use “that is” or “in other words”.
 * <b>vs.:</b> Use “versus”, “compared with”, or “in contrast to”.
 

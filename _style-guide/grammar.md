@@ -212,6 +212,8 @@ Example:
 This accessibility requirement is sometimes called “sufficient color contrast”; however, the technical term is “luminosity contrast”.
 </div>
 
+Avoid using quotes in a way that could be taken to suggest irony or in a non-standard way. For more information, see [scare quotes](https://en.wikipedia.org/wiki/Scare_quotes)
+
 ### Slashes
 
 #### Forward slash
