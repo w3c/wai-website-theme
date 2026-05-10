@@ -66,8 +66,7 @@ Examples:
 ### Abbreviations to avoid
 
 * <b>e.g.:</b> Use “for example”.
-* <b>etc.:</b> Start the phrase with “such as” to indicate other possible options.
-  * Note: Where non-exhaustive list is being presented, use the phrase "included, but not limited to"
+* <b>etc.:</b> Start the phrase with “including, but not limited to” to indicate other possible options where a non-exhaustive list is being presented.
 * <b>i.e.:</b> Use “that is” or “in other words”.
 * <b>vs.:</b> Use “versus”, “compared with”, or “in contrast to”.
 
