@@ -168,7 +168,7 @@ Example:
 
 ### Plain language
 
-Plain language uses clear wording, structure and design. It helps readers easily:
+Plain language uses clear wording, structure, and design. It helps readers easily:
 
 * <b>find</b> information
 * <b>understand</b> it
@@ -281,7 +281,7 @@ Example of unnecessary words:
 
 #### Accessible
 
-Do not use "accessible" to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to accessibility for people with disabilities or to places that are easy to reach or enter for disabled people. 
+Do not use "accessible" to mean things like “convenient,” “available,” or “easy to use.” Use it to refer specifically to accessibility for people with disabilities, or to places that are easy to reach or enter for disabled people. 
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
