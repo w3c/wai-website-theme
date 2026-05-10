@@ -216,8 +216,6 @@ Break up information into smaller sections to make it easier to read. See [Using
 Do not turn actions into nouns. Use verbs instead.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
 Example 1:
 
 <ul>
@@ -270,8 +268,11 @@ Example of unnecessary words:
   * To check spelling, use the [Merriam-Webster dictionary](https://www.merriam-webster.com/).
 * Words to watch out for:
   * checkbox, checkboxes (one word)
+  * down-event (needs hypen)
   * email (no hyphen)
+  * hard-coded (needs hypen)
   * lowercase (one word)
+  * up-event (needs hypen)
   * web page (two words)
   * website (one word)
 
@@ -291,29 +292,6 @@ Example:
   <li>Use: The gardens are open to the public.</li>
 </ul>
 </div>
-
-#### Applies when/except when
-
-Used within WCAG 3 requirements these terms set out limitations of applicability of requirements.
-
-Use 'applies when' when the limitation is broad.
-
-Use 'except when' when the limitation is narrow.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<blockquote>
-  <p>A mechanism is available to turn captions on and off.</p>
-  <p><b>Except when</b> captions are hard-coded into the video content.</p>
-</blockquote>
-
-<blockquote>
-  <p>Diacritics required to identify the correct meaning of each word are available.</p>
-  <p><b>Applies when</b> a human language has a version that removes diacritics for proficient readers.</p>
-</blockquote>
-</div>
-
 
 #### Click (versus select)
 
@@ -341,13 +319,6 @@ Select from the dropdown menu.
 #### Hand-eye coordination
 
 Use “hand-eye coordination”, not “eye-hand coordination”.
-
-#### Key terms
-
-* "down-event" not "down event"
-* "hard-coded" not "hard coded"
-* "up-event" not "up event"
-
 
 #### Speech recognition, voice recognition
 
@@ -389,7 +360,7 @@ See also [Disability-specific terms](/style-guide/tone-language-words/#disabilit
 
 #### Member(s)
 
-Treat “W3C Members” as a [proper noun](/style-guide/grammar/#proper-nouns).
+Treat “W3C Member” as a [proper noun](/style-guide/grammar/#proper-nouns).
 
 Treat “members” as a common noun when used in the plural.
 
@@ -419,6 +390,26 @@ Examples:
 </div>
 
 #### WCAG terms
+
+##### Applies when / except when
+
+These terms define the limits of when WCAG 3 requirements apply.
+
+Use “applies when” to describe when requirements apply.
+
+Use “except when” to describe specific exceptions.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example 1:
+
+Diacritics required to identify the correct meaning of each word are available.<br />
+<b>Applies when</b> a human language has a version that removes diacritics for proficient readers.
+
+Example 2:
+
+A mechanism is available to turn captions on and off.<br />
+<b>Except when</b> captions are hard-coded into the video content.
+</div>
 
 ##### WCAG 2
 
