@@ -66,7 +66,9 @@ Examples:
 ### Abbreviations to avoid
 
 * <b>e.g.:</b> Use “for example”.
-* <b>etc.:</b> Start the phrase with “including, but not limited to” to indicate other possible options where a non-exhaustive list is being presented.
+* <b>etc.:</b>
+  * In general contexts, use “such as” to introduce one or more examples.
+  * In legal or policy contexts, use “including, but not limited to,” to introduce a non-exhaustive list of examples.
 * <b>i.e.:</b> Use “that is” or “in other words”.
 * <b>vs.:</b> Use “versus”, “compared with”, or “in contrast to”.
 
