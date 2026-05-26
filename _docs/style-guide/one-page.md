@@ -2,11 +2,16 @@
 title: "WAI Style Guide – Single Page Version"
 lang: en
 lead: "Follow these guidelines when writing materials for W3C WAI."
+inline_css: |
+  header:has(+ .box--near-header) .lead {
+      margin-block-end: 1.5rem;
+    }
+  }
 ---
 {::options toc_levels="2,3" /}
 
 {::nomarkdown}
-{% include_cached box.html type="start" %}
+{% include_cached box.html type="start" class="-near-header" %}
 {:/}
 This page provides a one-page view of the guidance. To navigate the guide section by section, see the [style guide index page](/style-guide/).
 {::nomarkdown}
