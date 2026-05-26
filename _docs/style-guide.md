@@ -6,7 +6,6 @@ resource:
   title: "WAI Style Guide"
 ---
 
-{% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
 {%- assign about = site.style-guide | find: "name", "about.md" -%}
 ## {{ about.title_sentence }}
 {{ about.content }}
