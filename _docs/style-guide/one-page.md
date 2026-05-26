@@ -3,8 +3,6 @@ title: "WAI Style Guide – Single Page Version"
 lang: en
 lead: "Follow these guidelines when writing materials for W3C WAI."
 ---
-{% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
-
 {::options toc_levels="2,3" /}
 
 {::nomarkdown}
