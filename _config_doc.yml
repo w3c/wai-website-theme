@@ -51,6 +51,7 @@ defaults:
     values:
       last_updated: 2026-05-07
       changelog: /style-guide/changelog/
+      class: wai-headings
       resource:
         ref: /style-guide/
   -
@@ -59,12 +60,14 @@ defaults:
     values:
       last_updated: 2026-05-07
       changelog: /style-guide/changelog/
+      class: wai-headings
   -
     scope:
       path: "_docs/style-guide"
     values:
       last_updated: 2026-05-07
       changelog: /style-guide/changelog/
+      class: wai-headings
 
 plugins:
   - jekyll-include-cache

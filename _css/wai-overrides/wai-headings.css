@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    #W3C-like Headings
+
+    Exploratory step towards applying W3C design system heading styles to the WAI website.
+    The current version experiments with different type and spacing scales.
+    For now, the styles only apply to headings inside a ".wai-headings" container.
+
+\*------------------------------------*/
+
+.wai-headings {
+
+  h1, h2, h3, h4, h5 {
+    color: #000;
+    font-weight: 600;
+    margin-block-end: 1.25rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    border: none;
+    padding-block-end: 0.25rem;
+    margin-block-start: 4rem;
+  }
+
+  h3, h2 + h3 {
+    font-size: 1.5rem;
+    margin-block-start: 3rem;
+  }
+
+  h4, h3 + h4 {
+    font-size: 1.25rem;
+    margin-block-start: 2.5rem;
+  }
+
+  h5, h4 + h5 {
+    font-size: 1.125rem;
+    margin-block-start: 2rem;
+  }
+
+  h6, h5 + h6 {
+    font-size: 1rem;
+    margin-block-start: 1.5rem;
+    margin-block-end: 1rem;
+  }
+
+}
