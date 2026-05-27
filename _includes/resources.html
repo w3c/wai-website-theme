@@ -4,7 +4,7 @@
   <p><strong>Success Criteria:</strong></p>
   <ul>
     {%- for sc in site.data.wcag-legacy -%}
-    {%- if page.wcag_success_criteria contains sc.key -%}<li><a href="https://www.w3.org/WAI/WCAG22/quickref/#qr-{{sc.slug}}"><strong>{{sc.key}}</strong> {{sc.title}}:</a> {{sc.desc}} (Level&nbsp;{{sc.level}})</li>{%- endif -%}
+    {%- if page.wcag_success_criteria contains sc.key -%}<li><a href="https://www.w3.org/WAI/WCAG22/quickref/#{{sc.slug}}"><strong>{{sc.key}}</strong> {{sc.title}}:</a> {{sc.desc}} (Level&nbsp;{{sc.level}})</li>{%- endif -%}
     {%- endfor -%}
   </ul>
 {% endif %}
