@@ -80,11 +80,11 @@ Examples:
 ##### Deaf
 
 - Avoid "hearing-impaired" and "hearing-impairment".
-- Use "deaf" lowercase when referring to the medical condition.
+- Use "deaf" (lowercase "d") when referring to the medical condition.
 
 ##### “Loss”:
 * Avoid “loss” as a general description that includes people with congenital conditions.
-* It’s okay to use “loss” to describe a change — for example, “as we age, we have hearing loss”.
+* It’s okay to use “loss” to describe a change. For example, “as we age, we have hearing loss”.
 
 #### Terms to avoid
 
@@ -98,10 +98,10 @@ Examples:
   <li>confined to a wheelchair, wheelchair bound</li>
   <li>deaf-mute</li>
   <li>differently abled, different abilities</li>
-  <li>“the disabled”, “the blind”, etc.</li>
   <li>handicapped</li>
   <li>high-functioning, low-functioning</li>
   <li>special needs, specially abled</li>
+  <li>“the disabled”, “the blind”, and so on</li>
 </ul>
 </div>
 
@@ -178,7 +178,7 @@ Plain language uses clear wording, structure and design. It helps readers easily
 
 ##### Abbreviations
 
-Provide the full term with the abbreviation on first use — see [Expanding abbreviations](/style-guide/style-different-content-types/#expanding-abbreviations).
+Provide the full term with the abbreviation on first use. See [Expanding abbreviations](/style-guide/style-different-content-types/#expanding-abbreviations).
 
 ##### Contractions
 
@@ -328,7 +328,7 @@ Use “hand-eye coordination”, not “eye-hand coordination”.
 
 #### URL (Uniform Resource Locator)
 
-URL is a string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
+A URL is a string of characters that identifies a resource. It provides information on how to locate and access the resource. Use this term when referring to links to webpages.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -338,7 +338,7 @@ https://www.w3.org/WAI/ — this identifies the resource, the WAI homepage, as a
 
 #### URI (Uniform Resource Identifier)
 
-URI is a string of characters that identifies a resource. It does not always describe how to locate the resource. Use this term when referring to a resource identifier.
+A URI is a string of characters that identifies a resource. It does not always describe how to locate the resource. Use this term when referring to a resource identifier.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Example:
@@ -397,15 +397,19 @@ These terms define the limits of when WCAG 3 requirements apply.
 
 Use “applies when” to describe when requirements apply.
 
-Use “except when” to describe specific exceptions.
-
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example 1:
+
+Example:
 
 Diacritics required to identify the correct meaning of each word are available.<br />
 <b>Applies when</b> a human language has a version that removes diacritics for proficient readers.
+</div>
 
-Example 2:
+Use “except when” to describe specific exceptions.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+
+Example:
 
 A mechanism is available to turn captions on and off.<br />
 <b>Except when</b> captions are hard-coded into the video content.

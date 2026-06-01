@@ -35,18 +35,23 @@ See [Capitalization in headings](/style-guide/style-different-content-types/#cap
 
 See [Capitalization and punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
-### Proper nouns
+### Proper names
 
-Capitalize proper nouns. 
-
-If a proper noun is singular, it becomes a common noun in the plural &mdash; use lower case.
+Capitalize official titles, standards, and specific regulations when they function as proper names in the singular.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
-* Proper noun is capitalized: The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
-* Common noun uses lowercase: WCAG 2.2 provides nine additional success criteria since WCAG 2.1.
+* The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
+ </div>
 
+Use lowercase if you are not using the official title. It becomes a common noun phrase in the singular or plural.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+* The goal of each success criterion in WCAG 2.2 is to make web content accessible to people with disabilities.
+* WCAG 2.2 provides nine additional success criteria since WCAG 2.1.
 </div>
 
 #### Proper nouns that have become common nouns
@@ -76,9 +81,6 @@ The time is not essential: “The meeting, which starts at 10:00, is online.”
 
 ## Punctuation
 
-### Semicolon
-
-See [Semicolon (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
 
 ### Commas
 
@@ -213,6 +215,10 @@ This accessibility requirement is sometimes called “sufficient color contrast�
 </div>
 
 Avoid using quotes in a way that could be taken to suggest irony or in a non-standard way. For more information, see [scare quotes](https://en.wikipedia.org/wiki/Scare_quotes).
+
+### Semicolons
+
+See [Semicolon (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
 
 ### Slashes
 

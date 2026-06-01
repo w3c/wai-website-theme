@@ -24,7 +24,7 @@ Example:
 </ul>
 </div>
 
-There are a few ways you can do this — see [techniques for expanding abbreviations](https://www.w3.org/WAI/WCAG22/Techniques/general/G102#related).
+There are a few ways you can do this. See [techniques for expanding abbreviations](https://www.w3.org/WAI/WCAG22/Techniques/general/G102#related).
 
 **Exception:** If a term is widely known by its abbreviation, you do not need to spell it out.
 
@@ -67,7 +67,7 @@ Examples:
 
 * <b>e.g.:</b> Use “for example”.
 * <b>etc.:</b>
-  * In general contexts, use “such as” to introduce one or more examples.
+  * In general contexts, use “such as” to introduce one or more examples. Use "and so on" to continue a non-exhaustive list of examples.
   * Where the text might be used within a legal context, use “including, but not limited to,” to introduce a non-exhaustive list of examples.
 * <b>i.e.:</b> Use “that is” or “in other words”.
 * <b>vs.:</b> Use “versus”, “compared with”, or “in contrast to”.
@@ -110,9 +110,9 @@ Example:
 
 ### Correct heading hierarchy
 
-Nest headings properly — for example, `<h1>` should not be followed by `<h3>` or lower.
+Nest headings properly. For example, `<h1>` should not be followed by `<h3>` or lower.
 
-See also the guidance on [structuring headings](/style-guide/structure-presentation/#using-structural-elements).
+See also the guidance on [how to write good headings to structure your content](/style-guide/structure-presentation/#using-structural-elements).
 
 ### Capitalization in headings
 
@@ -219,8 +219,6 @@ Example:
 </div>
 
 #### List items are fragments or not complete sentences
-
-Start with a <b>lowercase letter</b> (except for [proper nouns](/style-guide/grammar/#proper-nouns)).
 
 End each item with <b>no punctuation</b>.
 
