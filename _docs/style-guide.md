@@ -71,7 +71,7 @@ You can navigate the style guide:
     * [Glossaries](/style-guide/grammar/#glossaries)
     * [Headings](/style-guide/grammar/#headings)
     * [Lists](/style-guide/grammar/#lists)
-    * [Proper nouns](/style-guide/grammar/#proper-nouns)
+    * [Proper names](/style-guide/grammar/#proper-names)
   * [That versus which](/style-guide/grammar/#that-versus-which)
   * [Punctuation](/style-guide/grammar/#punctuation)
     * [Commas](/style-guide/grammar/#commas)
