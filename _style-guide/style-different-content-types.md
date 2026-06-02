@@ -112,7 +112,7 @@ Example:
 
 Nest headings properly. For example, `<h1>` should not be followed by `<h3>` or lower.
 
-See also the guidance on [how to write good headings to structure your content](/style-guide/structure-presentation/#using-structural-elements).
+See also the guidance on [how to write good headings](/style-guide/structure-presentation/#using-structural-elements).
 
 ### Capitalization in headings
 
