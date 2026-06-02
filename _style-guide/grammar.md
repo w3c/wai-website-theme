@@ -218,7 +218,7 @@ Avoid using quotes in a way that could be taken to suggest irony or in a non-sta
 
 ### Semicolons
 
-See [Semicolon (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
+See [Semicolon (optional)](/style-guide/structure-presentation/#semicolon-optional).
 
 ### Slashes
 
