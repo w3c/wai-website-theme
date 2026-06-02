@@ -37,21 +37,27 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 ### Proper names
 
-Capitalize official titles, standards, and specific regulations when they function as proper names in the singular.
+Capitalize proper names.
+
+A proper name identifies a specific person, place, organization, document, standard, regulation, group, or other entity. Proper names can consist of one or more words.
+
+Use <b>capitalization</b> when referring to an entity by its proper name.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 * The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
+* The Accessibility Guidelines Working Group develops accessibility standards.
  </div>
 
-Use lowercase if you are not using the official title. It becomes a common noun phrase in the singular or plural.
+ Use <b>lowercase</b> when referring to an entity generically rather than by its proper name.
 
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+ <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
 * The goal of each success criterion in WCAG 2.2 is to make web content accessible to people with disabilities.
-* WCAG 2.2 provides nine additional success criteria since WCAG 2.1.
+* WCAG 2.2 provides nine additional success criteria beyond WCAG 2.1.
+* Several working groups contribute to W3C standards development.
 </div>
 
 #### Proper nouns that have become common nouns
