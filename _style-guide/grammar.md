@@ -39,9 +39,9 @@ See [Capitalization and punctuation in lists](/style-guide/style-different-conte
 
 Capitalize proper names.
 
-A proper name identifies a specific person, place, organization, document, standard, regulation, group, or other entity. Proper names can consist of one or more words.
+A proper name identifies the official name of a specific person, place, organization, document, standard, regulation, group, or other entity. Proper names can consist of one or more words.
 
-Use <b>capitalization</b> when referring to an entity by its proper name.
+Use <b>capitalization</b> for official names.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -50,7 +50,7 @@ Examples:
 * The Accessibility Guidelines Working Group develops accessibility standards.
  </div>
 
- Use <b>lowercase</b> when referring to an entity generically rather than by its proper name.
+ Use <b>lowercase</b> for generic references, whether singular or plural.
 
  <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
