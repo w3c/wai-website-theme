@@ -84,7 +84,7 @@ Examples:
 
 ##### “Loss”:
 * Avoid “loss” as a general description that includes people with congenital conditions.
-* It’s okay to use “loss” to describe a change. For example, “as we age, we have hearing loss”.
+* It’s okay to use “loss” to describe a change. For example, “as we age, we may experience hearing loss”.
 
 #### Terms to avoid
 
