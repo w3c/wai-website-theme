@@ -60,7 +60,11 @@ Examples:
 
 </div>
 
-If dividing a complex sentence into two sentences, you might need to add words to make complete sentences.
+If dividing a complex sentence into two sentences, you might need to add words to make each sentence grammatically complete.
+
+The best option is to make each sentence grammatically complete. However, if doing so would require significant additional wording or result in awkward phrasing, a grammatically incomplete sentence is acceptable. 
+
+Note: For <b>formal documents</b>, always make grammatically complete sentences.
 
 #### Optional approach: one sentence
 
