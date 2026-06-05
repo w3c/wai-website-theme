@@ -55,7 +55,7 @@ produces on the live website:
 {% include box.html type="end" %}
 {:/}
 
-## `changelog` {#changelog}
+## `custom_changelog` {#changelog}
 
 (`string`) Path to a custom Changelog page. If not set, `<ref>/changelog/` is used, if such page exists.
 
@@ -67,7 +67,7 @@ Example 1:
 
 ```yaml
 ref: /media/av/planning/
-changelog: /media/av/changelog/
+custom_changelog: /media/av/changelog/
 ```
 
 makes the "Latest changes" link point to `/media/av/changelog/` page.
