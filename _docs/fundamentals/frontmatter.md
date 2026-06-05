@@ -1,7 +1,7 @@
 ---
 title: "Frontmatter"
 nav_title: "Frontmatter"
-last_updated: 2025-11-21
+last_updated: 2026-06-05
 redirect_from:
   - /writing/frontmatter/
 inline_css: |
