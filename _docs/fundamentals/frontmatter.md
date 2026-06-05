@@ -55,36 +55,6 @@ produces on the live website:
 {% include box.html type="end" %}
 {:/}
 
-## `custom_changelog` {#changelog}
-
-(`string`) Path to a custom Changelog page. If not set, `<ref>/changelog/` is used, if such page exists.
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example" %}
-{:/}
-
-Example 1:
-
-```yaml
-ref: /media/av/planning/
-custom_changelog: /media/av/changelog/
-```
-
-makes the "Latest changes" link point to `/media/av/changelog/` page.
-
-Example 2:
-
-```yaml
-ref: /media/av/planning/
-# No changelog variable
-```
-
-makes the "Latest changes" link point to `/media/av/planning/changelog/`, if such page exists.
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
 ## `class` {#class}
 
 (`string`) Specifies a class on the `body` element.\
@@ -157,6 +127,35 @@ Following keys are available:
 `orglink`
 : (`string`) Link to the organization website.
 
+## `custom_changelog` {#changelog}
+
+(`string`) Path to a custom Changelog page. If not set, `<ref>/changelog/` is used, if such page exists.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example" %}
+{:/}
+
+Example 1:
+
+```yaml
+ref: /media/av/planning/
+custom_changelog: /media/av/changelog/
+```
+
+makes the "Latest changes" link point to `/media/av/changelog/` page.
+
+Example 2:
+
+```yaml
+ref: /media/av/planning/
+# No changelog variable
+```
+
+makes the "Latest changes" link point to `/media/av/planning/changelog/`, if such page exists.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
 
 ## `date` {#date}
 
