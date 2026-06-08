@@ -35,32 +35,136 @@ See [Capitalization in headings](/style-guide/style-different-content-types/#cap
 
 See [Capitalization and punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
-### Proper names
+### Official names versus common terms
 
-Capitalize proper names.
+#### Singular forms
 
-A proper name identifies the official name of a specific person, place, organization, document, standard, regulation, group, or other entity. Proper names can consist of one or more words.
+Capitalize terms when they form part of an official name. Use lowercase when using a common term instead of its official name.
 
-Use <b>capitalization</b> for official names.
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Common term</th>
+      <th scope="col">Official name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>advisory board</td>
+      <td>W3C Advisory Board</td>
+    </tr>
+    <tr>
+      <td>advisory committee</td>
+      <td>W3C Advisory Committee</td>
+    </tr>
+    <tr>
+      <td>candidate recommendation</td>
+      <td>W3C Candidate Recommendation</td>
+    </tr>
+    <tr>
+      <td>code of conduct</td>
+      <td>W3C Code of Conduct</td>
+    </tr>
+    <tr>
+      <td>editor's draft</td>
+      <td>W3C Editor's Draft</td>
+    </tr>
+    <tr>
+      <td>group note</td>
+      <td>W3C Group Note</td>
+    </tr>
+    <tr>
+      <td>interest group</td>
+      <td>WAI Interest Group</td>
+    </tr>
+    <tr>
+      <td>invited expert</td>
+      <td>W3C Invited Expert</td>
+    </tr>
+    <tr>
+      <td>member</td>
+      <td>W3C Member</td>
+    </tr>
+    <tr>
+      <td>participant</td>
+      <td>W3C Participant</td>
+    </tr>
+    <tr>
+      <td>patent policy</td>
+      <td>W3C Patent Policy</td>
+    </tr>
+    <tr>
+      <td>process document</td>
+      <td>W3C Process Document</td>
+    </tr>
+    <tr>
+      <td>recommendation</td>
+      <td>W3C Recommendation</td>
+    </tr>
+    <tr>
+      <td>staff contact</td>
+      <td>W3C Staff Contact</td>
+    </tr>
+    <tr>
+      <td>statement</td>
+      <td>W3C Statement</td>
+    </tr>
+    <tr>
+      <td>task force</td>
+      <td>COGA Task Force</td>
+    </tr>
+    <tr>
+      <td>technical report</td>
+      <td>W3C Technical Report</td>
+    </tr>
+    <tr>
+      <td>working draft</td>
+      <td>W3C First Public Working Draft</td>
+    </tr>
+    <tr>
+      <td>working group</td>
+      <td>ARIA Working Group</td>
+    </tr>
+    <tr>
+      <td>workshop</td>
+      <td>W3C Workshop</td>
+    </tr>
+  </tbody>
+</table>
+
+Use official names where practical. This reduces ambiguity.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
-* The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
-* The Accessibility Guidelines Working Group develops accessibility standards.
- </div>
+Use:
 
- Use <b>lowercase</b> for generic references, whether singular or plural.
+* the W3C Advisory Board
+* the WAI Interest Group
 
- <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
+Avoid:
 
-* The goal of each success criterion in WCAG 2.2 is to make web content accessible to people with disabilities.
-* WCAG 2.2 provides nine additional success criteria beyond WCAG 2.1.
-* Several working groups contribute to W3C standards development.
+* the Advisory Board
+* the Interest Group
 </div>
 
-#### Proper nouns that have become common nouns
+#### Plural forms
+
+Use lowercase for plural forms. This applies even when the singular form is capitalized as part of an official name.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+* We have published a new <b>W3C Recommendation</b>.
+
+* We have published several <b>W3C recommendations</b>.
+
+* WCAG 2.2 includes <b>Success Criterion 2.5.8 Target Size (Minimum)</b>.
+
+* WCAG 2.2 contains 86 <b>success criteria</b>.
+</div>
+
+### Proper nouns that have become common nouns
 
 Use lowercase for the following nouns, unless these are part of a name or title:
 
