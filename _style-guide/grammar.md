@@ -141,11 +141,13 @@ Use:
 
 * the W3C Advisory Board
 * the WAI Interest Group
+* the ARIA Working Group
 
 Avoid:
 
 * the Advisory Board
 * the Interest Group
+* the Working Group
 </div>
 
 #### Plural forms
@@ -155,13 +157,14 @@ Use lowercase for plural forms. This applies even when the singular form is capi
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
+* The organization joined as a <b>W3C Member</b> to work with us.
+* Organizations of all sizes and all types are W3C <b>members</b>.
 * We have published a new <b>W3C Recommendation</b>.
-
 * We have published several <b>W3C recommendations</b>.
-
 * WCAG 2.2 includes <b>Success Criterion 2.5.8 Target Size (Minimum)</b>.
-
-* WCAG 2.2 contains 86 <b>success criteria</b>.
+* WCAG 2.2 contains 86 <b>success criteria.</b>
+* The <b>Accessibility Guidelines Working Group</b> is discussing the issue.
+* Three <b>working groups</b> support W3C's mission to make the web accessible to people with disabilities.
 </div>
 
 ### Proper nouns that have become common nouns

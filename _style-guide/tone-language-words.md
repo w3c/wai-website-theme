@@ -358,36 +358,9 @@ See also [Disability-specific terms](/style-guide/tone-language-words/#disabilit
 
 ### W3C terms
 
-#### Member(s)
+#### W3C official names
 
-Treat “W3C Member” as a [proper noun](/style-guide/grammar/#proper-nouns).
-
-Treat “members” as a common noun when used in the plural.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>The organization joined as a W3C Member to work with us.</li>
-  <li>W3C members are organizations of all sizes and all types.</li>
-</ul>
-</div>
-
-#### Working group(s), task force(s)
-
-Include the title of the group when referring to a specific working group or task force and treat the term as a [proper noun](/style-guide/grammar/#proper-nouns).
-
-Treat “working group” and “task force” as common nouns when used without the title of the group or when used in the plural.
-
-<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Examples:
-
-<ul>
-  <li>The Accessibility Guidelines Working Group is discussing the issue.</li>
-  <li>A new working group has been created.</li>
-  <li>You can join working groups and specific task forces.</li>
-</ul>
-</div>
+Capitalize W3C terms only when using their official names. For examples of commonly used W3C terms and their official names, see [Official names versus common terms](/style-guide/grammar/#official-names-versus-common-terms).
 
 #### WCAG terms
 
