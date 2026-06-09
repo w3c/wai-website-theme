@@ -45,7 +45,7 @@ Capitalize terms when they form part of an official name. Use lowercase when usi
   <thead>
     <tr>
       <th scope="col">Common term</th>
-      <th scope="col">Official name</th>
+<th scope="col">Example official name</th>
     </tr>
   </thead>
   <tbody>
