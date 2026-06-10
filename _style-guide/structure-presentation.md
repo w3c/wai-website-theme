@@ -60,7 +60,11 @@ Examples:
 
 </div>
 
-If dividing a complex sentence into two sentences, you might need to add words to make complete sentences.
+If dividing a complex sentence into two sentences, you might need to add words to make each sentence grammatically complete.
+
+The best option is to make each sentence grammatically complete. However, if doing so would require significant additional wording or result in awkward phrasing, a grammatically incomplete sentence is acceptable. 
+
+Note: For <b>formal documents</b>, always make grammatically complete sentences.
 
 #### Optional approach: one sentence
 
@@ -68,13 +72,15 @@ In some cases described below, you can use one sentence with a semicolon, parent
 
 ##### Semicolon (optional)
 
-If the information is short and simple, you can use one sentence with a semicolon. The text before and the text after the semicolon should both be grammatically complete sentences.
+If the information is short and simple, you can use a semicolon to combine two related ideas. The text before and the text after the semicolon should both be grammatically complete sentences.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
-Example:
+Examples:
 
 <ul>
-  <li>It's easy; see the <a href="/style-guide/structure-presentation/#structure">Structure section</a>.</li>
+  <li>The rule is simple; applying it consistently is harder.</li>
+  <li>The first draft focused on accuracy; the second focused on readability.</li>
+
 </ul>
 </div>
 
@@ -92,7 +98,7 @@ Example:
 
 ##### Em dash (optional)
 
-If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. (Be aware that em dashes are associated with AI writing.)
+If you want to convey emphasis or a sharp break in thought, you can use an em dash with simple clauses. Be aware that em dashes are associated with AI writing.
 
 The first part should be a complete sentence. The part after the dash does not need to be a complete sentence.
 

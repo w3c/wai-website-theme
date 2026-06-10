@@ -35,21 +35,139 @@ See [Capitalization in headings](/style-guide/style-different-content-types/#cap
 
 See [Capitalization and punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
 
-### Proper nouns
+### Official names versus common terms
 
-Capitalize proper nouns. 
+#### Singular forms
 
-If a proper noun is singular, it becomes a common noun in the plural &mdash; use lower case.
+Capitalize terms when they form part of an official name. Use lowercase when using a common term instead of its official name.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Common term</th>
+<th scope="col">Example official name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>advisory board</td>
+      <td>W3C Advisory Board</td>
+    </tr>
+    <tr>
+      <td>advisory committee</td>
+      <td>W3C Advisory Committee</td>
+    </tr>
+    <tr>
+      <td>candidate recommendation</td>
+      <td>W3C Candidate Recommendation</td>
+    </tr>
+    <tr>
+      <td>code of conduct</td>
+      <td>W3C Code of Conduct</td>
+    </tr>
+    <tr>
+      <td>editor's draft</td>
+      <td>W3C Editor's Draft</td>
+    </tr>
+    <tr>
+      <td>group note</td>
+      <td>W3C Group Note</td>
+    </tr>
+    <tr>
+      <td>interest group</td>
+      <td>WAI Interest Group</td>
+    </tr>
+    <tr>
+      <td>invited expert</td>
+      <td>W3C Invited Expert</td>
+    </tr>
+    <tr>
+      <td>member</td>
+      <td>W3C Member</td>
+    </tr>
+    <tr>
+      <td>participant</td>
+      <td>W3C Participant</td>
+    </tr>
+    <tr>
+      <td>patent policy</td>
+      <td>W3C Patent Policy</td>
+    </tr>
+    <tr>
+      <td>process document</td>
+      <td>W3C Process Document</td>
+    </tr>
+    <tr>
+      <td>recommendation</td>
+      <td>W3C Recommendation</td>
+    </tr>
+    <tr>
+      <td>staff contact</td>
+      <td>W3C Staff Contact</td>
+    </tr>
+    <tr>
+      <td>statement</td>
+      <td>W3C Statement</td>
+    </tr>
+    <tr>
+      <td>task force</td>
+      <td>COGA Task Force</td>
+    </tr>
+    <tr>
+      <td>technical report</td>
+      <td>W3C Technical Report</td>
+    </tr>
+    <tr>
+      <td>working draft</td>
+      <td>W3C First Public Working Draft</td>
+    </tr>
+    <tr>
+      <td>working group</td>
+      <td>ARIA Working Group</td>
+    </tr>
+    <tr>
+      <td>workshop</td>
+      <td>W3C Workshop</td>
+    </tr>
+  </tbody>
+</table>
+
+Use official names where practical. This reduces ambiguity.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
 
-* Proper noun is capitalized: The goal of Success Criterion 2.5.8 Target Size (Minimum) is to make controls easier to activate.
-* Common noun uses lowercase: WCAG 2.2 provides nine additional success criteria since WCAG 2.1.
+Use:
 
+* the W3C Advisory Board
+* the WAI Interest Group
+* the ARIA Working Group
+
+Avoid:
+
+* the Advisory Board
+* the Interest Group
+* the Working Group
 </div>
 
-#### Proper nouns that have become common nouns
+#### Plural forms
+
+Use lowercase for plural forms. This applies even when the singular form is capitalized as part of an official name.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+* The organization joined as a <b>W3C Member</b> to work with us.
+* Organizations of all sizes and all types are W3C <b>members</b>.
+* We have published a new <b>W3C Recommendation</b>.
+* We have published several <b>W3C recommendations</b>.
+* WCAG 2.2 includes <b>Success Criterion 2.5.8 Target Size (Minimum)</b>.
+* WCAG 2.2 contains 86 <b>success criteria.</b>
+* The <b>Accessibility Guidelines Working Group</b> is discussing the issue.
+* Three <b>working groups</b> support W3C's mission to make the web accessible to people with disabilities.
+</div>
+
+### Proper nouns that have become common nouns
 
 Use lowercase for the following nouns, unless these are part of a name or title:
 
@@ -76,9 +194,6 @@ The time is not essential: “The meeting, which starts at 10:00, is online.”
 
 ## Punctuation
 
-### Semicolon
-
-See [Semicolon (optional) in Related information in sentences](/style-guide/structure-presentation/#semicolon-optional).
 
 ### Commas
 
@@ -200,7 +315,7 @@ See [punctuation in numbers](/style-guide/style-different-content-types/#punctua
 
 ### Parentheses
 
-See [Parentheses (optional) in Related information in sentences](/style-guide/structure-presentation/#parentheses-optional).
+See [Parentheses (optional)](/style-guide/structure-presentation/#parentheses-optional).
 
 ### Quotation marks
 
@@ -213,6 +328,10 @@ This accessibility requirement is sometimes called “sufficient color contrast�
 </div>
 
 Avoid using quotes in a way that could be taken to suggest irony or in a non-standard way. For more information, see [scare quotes](https://en.wikipedia.org/wiki/Scare_quotes).
+
+### Semicolons
+
+See [Semicolon (optional)](/style-guide/structure-presentation/#semicolon-optional).
 
 ### Slashes
 
