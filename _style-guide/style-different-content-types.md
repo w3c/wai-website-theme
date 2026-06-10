@@ -41,7 +41,7 @@ ARIA, CAPTCHA, GIF, HTML, PDF, WiFi
 
 ### Capitalization in expanded terms
 
-Use <b>title case</b> for proper nouns.
+Use <b>title case</b> for proper names.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
@@ -118,7 +118,7 @@ See also the guidance on [how to write good headings](/style-guide/structure-pre
 
 Use sentence case, not title case.
 
-**Exception:** Capitalize any terms in the heading that are [proper nouns](/style-guide/grammar/#proper-nouns).
+**Exception:** Capitalize any terms in the heading that are proper names.
 
 ### Punctuation in headings
 

@@ -25,7 +25,7 @@ Use lowercase for “braille” (unless you are referring to Louis Braille).
 
 ### Glossaries
 
-Use lowercase for glossary terms (except for [proper nouns](#proper-nouns)).
+Use lowercase for glossary terms (except for proper names).
 
 ### Headings
 
