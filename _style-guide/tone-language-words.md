@@ -410,7 +410,7 @@ It conforms to <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility
 
 Treat “Web Content Accessibility Guidelines (WCAG) 2” and “W3C Accessibility Guidelines (WCAG) 3” as titles of standards, not as plural “guidelines”.
 
-When referring to the WCAG title, it’s a <b>[proper noun](/style-guide/grammar/#proper-nouns):</b> Do not put the article (“the”) in front of WCAG.
+When referring to the WCAG title, it’s a proper name:</b> Do not put the article (“the”) in front of WCAG.
 
 <div class="inset-text inset-text--related inset-text--condensed" markdown="1">
 Examples:
