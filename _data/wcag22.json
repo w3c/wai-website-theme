@@ -445,7 +445,7 @@
                             {
                                 "id": "G82",
                                 "technology": "general",
-                                "title": "Providing a text alternative that identifies the purpose of the non-text content",
+                                "title": "Providing a text alternative that identifies the purpose of interactive non-text content",
                                 "suffix": "using one technique from each group outlined below"
                             }
                         ],
@@ -625,7 +625,7 @@
                     {
                         "id": "F3",
                         "technology": "failures",
-                        "title": "Failure of Success Criterion 1.1.1 due to using CSS to include images that convey important information"
+                        "title": "Failure of Success Criterion 1.1.1 due to conveying information exclusively using CSS background images"
                     },
                     {
                         "id": "F13",
@@ -1360,6 +1360,11 @@
                                 "suffix": "using the following techniques:",
                                 "using": [
                                     {
+                                        "id": "ARIA26",
+                                        "technology": "aria",
+                                        "title": "Using aria-current to identify the current item in a set"
+                                    },
+                                    {
                                         "id": "G138",
                                         "technology": "general",
                                         "title": "Using semantic markup whenever color cues are used"
@@ -1836,7 +1841,7 @@
                         "title": "Using semantics to identify important features (e.g., <code>coga-simplification=\"simplest\"</code>)"
                     },
                     {
-                        "title": "Using <code>aria-invalid</code> and <code>aria-required</code>"
+                        "title": "Using <code>required</code>, or the combination of <code>aria-required</code> and <code>aria-invalid</code>, to programmatically identify required fields and/or those with validation errors"
                     }
                 ]
             }
@@ -4155,6 +4160,16 @@
                         "id": "H80",
                         "technology": "html",
                         "title": "Identifying the purpose of a link using link text combined with the preceding heading element"
+                    },
+                    {
+                        "id": "G201",
+                        "technology": "general",
+                        "title": "Giving users advanced warning when opening a new window"
+                    },
+                    {
+                        "id": "SCR24",
+                        "technology": "client-side-script",
+                        "title": "Using progressive enhancement to open new windows on user request"
                     }
                 ],
                 "failure": [
@@ -4230,6 +4245,11 @@
                         "id": "PDF2",
                         "technology": "pdf",
                         "title": "Creating bookmarks in PDF documents"
+                    },
+                    {
+                        "id": "H99",
+                        "technology": "html",
+                        "title": "Provide a page-selection mechanism"
                     }
                 ]
             }
@@ -4263,7 +4283,19 @@
                         "title": "Providing descriptive labels"
                     }
                 ],
-                "sufficientNote": "Headings and labels must be programmatically determined, per Success Criterion 1.3.1."
+                "sufficientNote": "Headings and labels must be programmatically determined, per Success Criterion 1.3.1.",
+                "advisory": [
+                    {
+                        "id": "G201",
+                        "technology": "general",
+                        "title": "Giving users advanced warning when opening a new window"
+                    },
+                    {
+                        "id": "SCR24",
+                        "technology": "client-side-script",
+                        "title": "Using progressive enhancement to open new windows on user request"
+                    }
+                ]
             }
         },
         {
@@ -4366,6 +4398,11 @@
                         "id": "G128",
                         "technology": "general",
                         "title": "Indicating current location within navigation bars"
+                    },
+                    {
+                        "id": "ARIA26",
+                        "technology": "aria",
+                        "title": "Using aria-current to identify the current item in a set"
                     },
                     {
                         "id": "G127",
@@ -4479,6 +4516,16 @@
                         "id": "H33",
                         "technology": "html",
                         "title": "Supplementing link text with the title attribute"
+                    },
+                    {
+                        "id": "G201",
+                        "technology": "general",
+                        "title": "Giving users advanced warning when opening a new window"
+                    },
+                    {
+                        "id": "SCR24",
+                        "technology": "client-side-script",
+                        "title": "Using progressive enhancement to open new windows on user request"
                     }
                 ],
                 "failure": [
@@ -5216,7 +5263,7 @@
                                             {
                                                 "id": "H54",
                                                 "technology": "html",
-                                                "title": "Using the dfn element to identify the defining instance of a word"
+                                                "title": "Using the dfn element to identify the defining instance of a word or phrase"
                                             }
                                         ]
                                     }
@@ -5283,7 +5330,7 @@
                                             {
                                                 "id": "H54",
                                                 "technology": "html",
-                                                "title": "Using the dfn element to identify the defining instance of a word"
+                                                "title": "Using the dfn element to identify the defining instance of a word or phrase"
                                             }
                                         ]
                                     }
@@ -5520,18 +5567,6 @@
                     }
                 ],
                 "sufficientNote": "A change of content is not always a change of context. This success criterion is automatically met if changes in content are not also changes of context.",
-                "advisory": [
-                    {
-                        "id": "G200",
-                        "technology": "general",
-                        "title": "Opening new windows and tabs from a link only when necessary"
-                    },
-                    {
-                        "id": "G201",
-                        "technology": "general",
-                        "title": "Giving users advanced warning when opening a new window"
-                    }
-                ],
                 "failure": [
                     {
                         "id": "F55",
@@ -5594,13 +5629,6 @@
                     }
                 ],
                 "sufficientNote": "A change of content is not always a change of context. This success criterion is automatically met if changes in content are not also changes of context.",
-                "advisory": [
-                    {
-                        "id": "G201",
-                        "technology": "general",
-                        "title": "Giving users advanced warning when opening a new window"
-                    }
-                ],
                 "failure": [
                     {
                         "id": "F36",
@@ -5786,9 +5814,9 @@
                 ],
                 "advisory": [
                     {
-                        "id": "G200",
+                        "id": "G201",
                         "technology": "general",
-                        "title": "Opening new windows and tabs from a link only when necessary"
+                        "title": "Giving users advanced warning when opening a new window"
                     }
                 ],
                 "failure": [
@@ -6897,7 +6925,9 @@
                                 "title": "Using role=log to identify sequential information updates"
                             },
                             {
-                                "title": "Using <code>role=\"progressbar\"</code> (future link)"
+                                "id": "ARIA25",
+                                "technology": "aria",
+                                "title": "Using an ARIA live region to convey the status of a progress bar"
                             },
                             {
                                 "and": [
@@ -6912,19 +6942,18 @@
                                         "title": "Providing help by an assistant in the web page"
                                     }
                                 ]
+                            },
+                            {
+                                "id": "ARIA27",
+                                "technology": "aria",
+                                "title": "Using ariaNotify to convey the status of a progress bar"
                             }
                         ]
                     }
                 ],
                 "advisory": [
                     {
-                        "title": "Using aria-live regions with chat clients (future link)"
-                    },
-                    {
                         "title": "Using aria-live regions to support <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus\">1.4.13 Content on Hover or Focus</a> (future link)"
-                    },
-                    {
-                        "title": "Using <code>role=\"marquee\"</code> (future link)"
                     },
                     {
                         "title": "Using <code>role=\"timer\"</code> (future link)"
