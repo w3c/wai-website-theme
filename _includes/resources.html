@@ -5,7 +5,7 @@
   <ul>
     {%- for sc in site.data.wcag22.successcriteria -%}
       {%- if page.wcag_success_criteria contains sc.num -%}
-        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#{{sc.id}}"><strong>{{sc.num}}</strong> {{sc.handle}}</a>
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/{{sc.id}}"><strong>{{sc.num}}</strong> {{sc.handle}}</a>
           (Level&nbsp;{{sc.level}})</li>
       {%- endif -%}
     {%- endfor -%}
