@@ -1288,9 +1288,16 @@
         hide: true
     - name: 'WAI Interest Group'
       url: "/about/groups/waiig/"
-    - name: 'Past groups'
-      url: "/about/groups/previous-groups/"
+    - name: 'Closed groups'
+      url: "/about/groups/"
       pages:
+      - name: 'CSS Accessibility'
+        url: "/about/groups/task-forces/css-a11y/"
+        hide: true
+        pages:
+          - name: Work Statement
+            url: "/about/groups/task-forces/css-a11y/work-statement/"
+            hide: true
       - name: 'Education and Outreach'
         url: "/about/groups/eowg/"
         hide: true
@@ -1300,14 +1307,7 @@
             hide: true
           - name: Participants
             url: "/about/groups/eowg/participants/"
-            hide: true
-      - name: 'CSS Accessibility'
-        url: "/about/groups/task-forces/css-a11y/"
-        hide: true
-        pages:
-          - name: Work Statement
-            url: "/about/groups/task-forces/css-a11y/work-statement/"
-            hide: true
+            hide: true            
       - name: 'Silver'
         url: "/about/groups/task-forces/silver/"
         hide: true
