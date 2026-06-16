@@ -6983,5 +6983,1632 @@
                 ]
             }
         }
+    ],
+    "techniques": [
+        {
+            "id": "ARIA1",
+            "technology": "aria",
+            "title": "Using the aria-describedby property to provide a descriptive label for user interface controls"
+        },
+        {
+            "id": "ARIA2",
+            "technology": "aria",
+            "title": "Identifying a required field with the aria-required property"
+        },
+        {
+            "id": "ARIA4",
+            "technology": "aria",
+            "title": "Using a WAI-ARIA role to expose the role of a user interface component"
+        },
+        {
+            "id": "ARIA5",
+            "technology": "aria",
+            "title": "Using WAI-ARIA state and property attributes to expose the state of a user interface component"
+        },
+        {
+            "id": "ARIA6",
+            "technology": "aria",
+            "title": "Using aria-label to provide labels for objects"
+        },
+        {
+            "id": "ARIA7",
+            "technology": "aria",
+            "title": "Using aria-labelledby for link purpose"
+        },
+        {
+            "id": "ARIA8",
+            "technology": "aria",
+            "title": "Using aria-label for link purpose"
+        },
+        {
+            "id": "ARIA9",
+            "technology": "aria",
+            "title": "Using aria-labelledby to concatenate a label from several text nodes"
+        },
+        {
+            "id": "ARIA10",
+            "technology": "aria",
+            "title": "Using aria-labelledby to provide a text alternative for non-text content"
+        },
+        {
+            "id": "ARIA11",
+            "technology": "aria",
+            "title": "Using ARIA landmarks to identify regions of a page"
+        },
+        {
+            "id": "ARIA12",
+            "technology": "aria",
+            "title": "Using role=heading to identify headings"
+        },
+        {
+            "id": "ARIA13",
+            "technology": "aria",
+            "title": "Using aria-labelledby to name regions and landmarks"
+        },
+        {
+            "id": "ARIA14",
+            "technology": "aria",
+            "title": "Using aria-label to provide an accessible name where a visible label cannot be used"
+        },
+        {
+            "id": "ARIA15",
+            "technology": "aria",
+            "title": "Using aria-describedby to provide descriptions of images"
+        },
+        {
+            "id": "ARIA16",
+            "technology": "aria",
+            "title": "Using aria-labelledby to provide a name for user interface controls"
+        },
+        {
+            "id": "ARIA17",
+            "technology": "aria",
+            "title": "Using grouping roles to identify related form controls"
+        },
+        {
+            "id": "ARIA18",
+            "technology": "aria",
+            "title": "Using aria-alertdialog to Identify Errors"
+        },
+        {
+            "id": "ARIA19",
+            "technology": "aria",
+            "title": "Using ARIA role=alert or Live Regions to Identify Errors"
+        },
+        {
+            "id": "ARIA20",
+            "technology": "aria",
+            "title": "Using the region role to identify a region of the page"
+        },
+        {
+            "id": "ARIA21",
+            "technology": "aria",
+            "title": "Using aria-invalid to Indicate An Error Field"
+        },
+        {
+            "id": "ARIA22",
+            "technology": "aria",
+            "title": "Using role=status to present status messages"
+        },
+        {
+            "id": "ARIA23",
+            "technology": "aria",
+            "title": "Using role=log to identify sequential information updates"
+        },
+        {
+            "id": "ARIA24",
+            "technology": "aria",
+            "title": "Semantically identifying a font icon with role=\"img\""
+        },
+        {
+            "id": "ARIA25",
+            "technology": "aria",
+            "title": "Using an ARIA live region to convey the status of a progress bar"
+        },
+        {
+            "id": "ARIA26",
+            "technology": "aria",
+            "title": "Using aria-current to identify the current item in a set"
+        },
+        {
+            "id": "ARIA27",
+            "technology": "aria",
+            "title": "Using ariaNotify to convey the status of a progress bar"
+        },
+        {
+            "id": "C6",
+            "technology": "css",
+            "title": "Positioning content based on structural markup"
+        },
+        {
+            "id": "C7",
+            "technology": "css",
+            "title": "Using CSS to hide a portion of the link text"
+        },
+        {
+            "id": "C8",
+            "technology": "css",
+            "title": "Using CSS letter-spacing to control spacing within a word"
+        },
+        {
+            "id": "C9",
+            "technology": "css",
+            "title": "Using CSS to include decorative images"
+        },
+        {
+            "id": "C12",
+            "technology": "css",
+            "title": "Using percent for font sizes"
+        },
+        {
+            "id": "C13",
+            "technology": "css",
+            "title": "Using named font sizes"
+        },
+        {
+            "id": "C14",
+            "technology": "css",
+            "title": "Using em units for font sizes"
+        },
+        {
+            "id": "C15",
+            "technology": "css",
+            "title": "Using CSS to change the presentation of a user interface component when it receives focus"
+        },
+        {
+            "id": "C17",
+            "technology": "css",
+            "title": "Scaling form elements which contain text"
+        },
+        {
+            "id": "C18",
+            "technology": "css",
+            "title": "Using CSS margin and padding rules instead of spacer images for layout design"
+        },
+        {
+            "id": "C19",
+            "technology": "css",
+            "title": "Specifying alignment either to the left or right in CSS"
+        },
+        {
+            "id": "C20",
+            "technology": "css",
+            "title": "Using relative measurements to set column widths so that lines can average 80 characters or less when the browser is resized"
+        },
+        {
+            "id": "C21",
+            "technology": "css",
+            "title": "Specifying line spacing in CSS"
+        },
+        {
+            "id": "C22",
+            "technology": "css",
+            "title": "Using CSS to control visual presentation of text"
+        },
+        {
+            "id": "C23",
+            "technology": "css",
+            "title": "Specifying text and background colors of secondary content such as banners, features and navigation in CSS while not specifying text and background colors of the main content"
+        },
+        {
+            "id": "C25",
+            "technology": "css",
+            "title": "Specifying borders and layout in CSS to delineate areas of a web page while not specifying text and text-background colors"
+        },
+        {
+            "id": "C27",
+            "technology": "css",
+            "title": "Making the DOM order match the visual order"
+        },
+        {
+            "id": "C28",
+            "technology": "css",
+            "title": "Specifying the size of text containers using em units"
+        },
+        {
+            "id": "C30",
+            "technology": "css",
+            "title": "Using CSS to replace text with images of text and providing user interface controls to switch"
+        },
+        {
+            "id": "C31",
+            "technology": "css",
+            "title": "Using CSS Flexbox to reflow content"
+        },
+        {
+            "id": "C32",
+            "technology": "css",
+            "title": "Using media queries and grid CSS to reflow columns"
+        },
+        {
+            "id": "C33",
+            "technology": "css",
+            "title": "Allowing for Reflow with Long URLs and Strings of Text"
+        },
+        {
+            "id": "C34",
+            "technology": "css",
+            "title": "Using media queries to un-fixing sticky headers / footers"
+        },
+        {
+            "id": "C35",
+            "technology": "css",
+            "title": "Allowing for text spacing without wrapping"
+        },
+        {
+            "id": "C36",
+            "technology": "css",
+            "title": "Allowing for text spacing override"
+        },
+        {
+            "id": "C37",
+            "technology": "css",
+            "title": "Using CSS max-width and height to fit images"
+        },
+        {
+            "id": "C38",
+            "technology": "css",
+            "title": "Using CSS width, max-width and flexbox to fit labels and inputs"
+        },
+        {
+            "id": "C39",
+            "technology": "css",
+            "title": "Using the CSS prefers-reduced-motion query to prevent motion"
+        },
+        {
+            "id": "C40",
+            "technology": "css",
+            "title": "Creating a two-color focus indicator to ensure sufficient contrast with all components"
+        },
+        {
+            "id": "C41",
+            "technology": "css",
+            "title": "Creating a strong focus indicator within the component"
+        },
+        {
+            "id": "C42",
+            "technology": "css",
+            "title": "Using min-height and min-width on target container to ensure sufficient target spacing"
+        },
+        {
+            "id": "C43",
+            "technology": "css",
+            "title": "Using CSS scroll-padding to un-obscure content"
+        },
+        {
+            "id": "C44",
+            "technology": "css",
+            "title": "Using CSS to ensure targets are at least 44 by 44 CSS pixels"
+        },
+        {
+            "id": "C45",
+            "technology": "css",
+            "title": "Using CSS :focus-visible to provide keyboard focus indication"
+        },
+        {
+            "id": "G1",
+            "technology": "general",
+            "title": "Adding a link at the top of each page that goes directly to the main content area"
+        },
+        {
+            "id": "G4",
+            "technology": "general",
+            "title": "Allowing the content to be paused and restarted from where it was paused"
+        },
+        {
+            "id": "G5",
+            "technology": "general",
+            "title": "Allowing users to complete an activity without any time limit"
+        },
+        {
+            "id": "G8",
+            "technology": "general",
+            "title": "Providing a movie with extended audio descriptions"
+        },
+        {
+            "id": "G9",
+            "technology": "general",
+            "title": "Creating captions for live synchronized media"
+        },
+        {
+            "id": "G10",
+            "technology": "general",
+            "title": "Creating components using a technology that supports the accessibility API features of the platforms on which the user agents will be run to expose the names and roles, allow user-settable properties to be directly set, and provide notification of changes"
+        },
+        {
+            "id": "G11",
+            "technology": "general",
+            "title": "Creating content that blinks for less than 5 seconds"
+        },
+        {
+            "id": "G13",
+            "technology": "general",
+            "title": "Describing what will happen before a change to a form control that causes a change of context to occur is made"
+        },
+        {
+            "id": "G14",
+            "technology": "general",
+            "title": "Ensuring that information conveyed by color differences is also available in text"
+        },
+        {
+            "id": "G15",
+            "technology": "general",
+            "title": "Using a tool to ensure that content does not violate the general flash threshold or red flash threshold"
+        },
+        {
+            "id": "G17",
+            "technology": "general",
+            "title": "Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text"
+        },
+        {
+            "id": "G18",
+            "technology": "general",
+            "title": "Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text"
+        },
+        {
+            "id": "G19",
+            "technology": "general",
+            "title": "Ensuring that no component of the content flashes more than three times in any 1-second period"
+        },
+        {
+            "id": "G21",
+            "technology": "general",
+            "title": "Ensuring that users are not trapped in content"
+        },
+        {
+            "id": "G53",
+            "technology": "general",
+            "title": "Identifying the purpose of a link using link text combined with the text of the enclosing sentence"
+        },
+        {
+            "id": "G54",
+            "technology": "general",
+            "title": "Including a sign language interpreter in the video stream"
+        },
+        {
+            "id": "G55",
+            "technology": "general",
+            "title": "Linking to definitions"
+        },
+        {
+            "id": "G56",
+            "technology": "general",
+            "title": "Mixing audio files so that non-speech sounds are at least 20 decibels lower than the speech audio content"
+        },
+        {
+            "id": "G57",
+            "technology": "general",
+            "title": "Ordering the content in a meaningful sequence"
+        },
+        {
+            "id": "G58",
+            "technology": "general",
+            "title": "Placing a link to the alternative for time-based media immediately next to the non-text content"
+        },
+        {
+            "id": "G59",
+            "technology": "general",
+            "title": "Placing the interactive elements in an order that follows sequences and relationships within the content"
+        },
+        {
+            "id": "G60",
+            "technology": "general",
+            "title": "Playing a sound that turns off automatically within three seconds"
+        },
+        {
+            "id": "G61",
+            "technology": "general",
+            "title": "Presenting repeated components in the same relative order each time they appear"
+        },
+        {
+            "id": "G62",
+            "technology": "general",
+            "title": "Providing a glossary"
+        },
+        {
+            "id": "G63",
+            "technology": "general",
+            "title": "Providing a site map"
+        },
+        {
+            "id": "G64",
+            "technology": "general",
+            "title": "Providing a Table of Contents"
+        },
+        {
+            "id": "G65",
+            "technology": "general",
+            "title": "Providing a breadcrumb trail"
+        },
+        {
+            "id": "G69",
+            "technology": "general",
+            "title": "Providing an alternative for time based media"
+        },
+        {
+            "id": "G70",
+            "technology": "general",
+            "title": "Providing a function to search an online dictionary"
+        },
+        {
+            "id": "G71",
+            "technology": "general",
+            "title": "Providing a help link on every web page"
+        },
+        {
+            "id": "G73",
+            "technology": "general",
+            "title": "Providing a long description in another location with a link to it that is immediately adjacent to the non-text content"
+        },
+        {
+            "id": "G74",
+            "technology": "general",
+            "title": "Providing a long description in text near the non-text content, with a reference to the location of the long description in the short description"
+        },
+        {
+            "id": "G75",
+            "technology": "general",
+            "title": "Providing a mechanism to postpone any updating of content"
+        },
+        {
+            "id": "G76",
+            "technology": "general",
+            "title": "Providing a mechanism to request an update of the content instead of updating automatically"
+        },
+        {
+            "id": "G78",
+            "technology": "general",
+            "title": "Providing a second, user-selectable, audio track that includes audio descriptions"
+        },
+        {
+            "id": "G79",
+            "technology": "general",
+            "title": "Providing a spoken version of the text"
+        },
+        {
+            "id": "G80",
+            "technology": "general",
+            "title": "Providing a submit button to initiate a change of context"
+        },
+        {
+            "id": "G81",
+            "technology": "general",
+            "title": "Providing a synchronized video of the sign language interpreter that can be displayed in a different viewport or overlaid on the image by the player"
+        },
+        {
+            "id": "G83",
+            "technology": "general",
+            "title": "Providing text descriptions to identify required fields that were not completed"
+        },
+        {
+            "id": "G84",
+            "technology": "general",
+            "title": "Providing a text description when the user provides information that is not in the list of allowed values"
+        },
+        {
+            "id": "G85",
+            "technology": "general",
+            "title": "Providing a text description when user input falls outside the required format or values"
+        },
+        {
+            "id": "G86",
+            "technology": "general",
+            "title": "Providing a text summary that can be understood by people with lower secondary education level reading ability"
+        },
+        {
+            "id": "G87",
+            "technology": "general",
+            "title": "Providing closed captions"
+        },
+        {
+            "id": "G88",
+            "technology": "general",
+            "title": "Providing descriptive titles for web pages"
+        },
+        {
+            "id": "G89",
+            "technology": "general",
+            "title": "Providing expected data format and example"
+        },
+        {
+            "id": "G90",
+            "technology": "general",
+            "title": "Providing keyboard-triggered event handlers"
+        },
+        {
+            "id": "G91",
+            "technology": "general",
+            "title": "Providing link text that describes the purpose of a link"
+        },
+        {
+            "id": "G92",
+            "technology": "general",
+            "title": "Providing long description for non-text content that serves the same purpose and presents the same information"
+        },
+        {
+            "id": "G93",
+            "technology": "general",
+            "title": "Providing open (always visible) captions"
+        },
+        {
+            "id": "G96",
+            "technology": "general",
+            "title": "Providing textual identification of items that otherwise rely only on sensory information to be understood"
+        },
+        {
+            "id": "G97",
+            "technology": "general",
+            "title": "Providing the first use of an abbreviation immediately before or after the expanded form"
+        },
+        {
+            "id": "G98",
+            "technology": "general",
+            "title": "Providing the ability for the user to review and correct answers before submitting"
+        },
+        {
+            "id": "G99",
+            "technology": "general",
+            "title": "Providing the ability to recover deleted information"
+        },
+        {
+            "id": "G101",
+            "technology": "general",
+            "title": "Providing the definition of a word or phrase used in an unusual or restricted way"
+        },
+        {
+            "id": "G102",
+            "technology": "general",
+            "title": "Providing the expansion or explanation of an abbreviation"
+        },
+        {
+            "id": "G103",
+            "technology": "general",
+            "title": "Providing visual illustrations, pictures, and symbols to help explain ideas, events, and processes"
+        },
+        {
+            "id": "G105",
+            "technology": "general",
+            "title": "Saving data so that it can be used after a user re-authenticates"
+        },
+        {
+            "id": "G107",
+            "technology": "general",
+            "title": "Using \"activate\" rather than \"focus\" as a trigger for changes of context"
+        },
+        {
+            "id": "G108",
+            "technology": "general",
+            "title": "Using markup features to expose the name and role, allow user-settable properties to be directly set, and provide notification of changes"
+        },
+        {
+            "id": "G110",
+            "technology": "general",
+            "title": "Using an instant client-side redirect"
+        },
+        {
+            "id": "G111",
+            "technology": "general",
+            "title": "Using color and pattern"
+        },
+        {
+            "id": "G112",
+            "technology": "general",
+            "title": "Using inline definitions"
+        },
+        {
+            "id": "G115",
+            "technology": "general",
+            "title": "Using semantic elements to mark up structure"
+        },
+        {
+            "id": "G117",
+            "technology": "general",
+            "title": "Using text to convey information that is conveyed by variations in presentation of text"
+        },
+        {
+            "id": "G120",
+            "technology": "general",
+            "title": "Providing the pronunciation immediately following the word"
+        },
+        {
+            "id": "G121",
+            "technology": "general",
+            "title": "Linking to pronunciations"
+        },
+        {
+            "id": "G123",
+            "technology": "general",
+            "title": "Adding a link at the beginning of a block of repeated content to go to the end of the block"
+        },
+        {
+            "id": "G124",
+            "technology": "general",
+            "title": "Adding links at the top of the page to each area of the content"
+        },
+        {
+            "id": "G125",
+            "technology": "general",
+            "title": "Providing links to navigate to related web pages"
+        },
+        {
+            "id": "G126",
+            "technology": "general",
+            "title": "Providing a list of links to all other web pages"
+        },
+        {
+            "id": "G127",
+            "technology": "general",
+            "title": "Identifying a web page's relationship to a larger collection of web pages"
+        },
+        {
+            "id": "G128",
+            "technology": "general",
+            "title": "Indicating current location within navigation bars"
+        },
+        {
+            "id": "G130",
+            "technology": "general",
+            "title": "Providing descriptive headings"
+        },
+        {
+            "id": "G131",
+            "technology": "general",
+            "title": "Providing descriptive labels"
+        },
+        {
+            "id": "G133",
+            "technology": "general",
+            "title": "Providing a checkbox on the first page of a multipart form that allows users to ask for longer session time limit or no session time limit"
+        },
+        {
+            "id": "G135",
+            "technology": "general",
+            "title": "Using the accessibility API features of a technology to expose names and roles, to allow user-settable properties to be directly set, and to provide notification of changes"
+        },
+        {
+            "id": "G138",
+            "technology": "general",
+            "title": "Using semantic markup whenever color cues are used"
+        },
+        {
+            "id": "G139",
+            "technology": "general",
+            "title": "Creating a mechanism that allows users to jump to errors"
+        },
+        {
+            "id": "G140",
+            "technology": "general",
+            "title": "Separating information and structure from presentation to enable different presentations"
+        },
+        {
+            "id": "G141",
+            "technology": "general",
+            "title": "Organizing a page using headings"
+        },
+        {
+            "id": "G142",
+            "technology": "general",
+            "title": "Using a technology that has commonly-available user agents that support zoom"
+        },
+        {
+            "id": "G143",
+            "technology": "general",
+            "title": "Providing a text alternative that describes the purpose of the CAPTCHA"
+        },
+        {
+            "id": "G144",
+            "technology": "general",
+            "title": "Ensuring that the web page contains another CAPTCHA serving the same purpose using a different modality"
+        },
+        {
+            "id": "G145",
+            "technology": "general",
+            "title": "Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text"
+        },
+        {
+            "id": "G146",
+            "technology": "general",
+            "title": "Using liquid layout"
+        },
+        {
+            "id": "G148",
+            "technology": "general",
+            "title": "Not specifying background color, not specifying text color, and not using technology features that change those defaults"
+        },
+        {
+            "id": "G149",
+            "technology": "general",
+            "title": "Using user interface components that are highlighted by the user agent when they receive focus"
+        },
+        {
+            "id": "G150",
+            "technology": "general",
+            "title": "Providing text based alternatives for live audio-only content"
+        },
+        {
+            "id": "G151",
+            "technology": "general",
+            "title": "Providing a link to a text transcript of a prepared statement or script if the script is followed"
+        },
+        {
+            "id": "G152",
+            "technology": "general",
+            "title": "Setting animated gif images to stop blinking after n cycles (within 5 seconds)"
+        },
+        {
+            "id": "G153",
+            "technology": "general",
+            "title": "Making the text easier to read"
+        },
+        {
+            "id": "G155",
+            "technology": "general",
+            "title": "Providing a checkbox in addition to a submit button"
+        },
+        {
+            "id": "G156",
+            "technology": "general",
+            "title": "Using a technology that has commonly-available user agents that can change the foreground and background of blocks of text"
+        },
+        {
+            "id": "G157",
+            "technology": "general",
+            "title": "Incorporating a live audio captioning service into a web page"
+        },
+        {
+            "id": "G158",
+            "technology": "general",
+            "title": "Providing an alternative for time-based media for audio-only content"
+        },
+        {
+            "id": "G159",
+            "technology": "general",
+            "title": "Providing an alternative for time-based media for video-only content"
+        },
+        {
+            "id": "G160",
+            "technology": "general",
+            "title": "Providing sign language versions of information, ideas, and processes that must be understood in order to use the content"
+        },
+        {
+            "id": "G161",
+            "technology": "general",
+            "title": "Providing a search function to help users find content"
+        },
+        {
+            "id": "G162",
+            "technology": "general",
+            "title": "Positioning labels to maximize predictability of relationships"
+        },
+        {
+            "id": "G163",
+            "technology": "general",
+            "title": "Using standard diacritical marks that can be turned off"
+        },
+        {
+            "id": "G164",
+            "technology": "general",
+            "title": "Providing a stated time within which an online request (or transaction) may be amended or canceled by the user after making the request"
+        },
+        {
+            "id": "G165",
+            "technology": "general",
+            "title": "Using the default focus indicator for the platform so that high visibility default focus indicators will carry over"
+        },
+        {
+            "id": "G166",
+            "technology": "general",
+            "title": "Providing audio that describes the important video content and describing it as such"
+        },
+        {
+            "id": "G167",
+            "technology": "general",
+            "title": "Using an adjacent button to label the purpose of a field"
+        },
+        {
+            "id": "G168",
+            "technology": "general",
+            "title": "Requesting confirmation to continue with selected action"
+        },
+        {
+            "id": "G169",
+            "technology": "general",
+            "title": "Aligning text on only one side"
+        },
+        {
+            "id": "G170",
+            "technology": "general",
+            "title": "Providing a control near the beginning of the web page that turns off sounds that play automatically"
+        },
+        {
+            "id": "G171",
+            "technology": "general",
+            "title": "Playing sounds only on user request"
+        },
+        {
+            "id": "G172",
+            "technology": "general",
+            "title": "Providing a mechanism to remove full justification of text"
+        },
+        {
+            "id": "G173",
+            "technology": "general",
+            "title": "Providing a version of a movie with audio descriptions"
+        },
+        {
+            "id": "G174",
+            "technology": "general",
+            "title": "Providing a control with a sufficient contrast ratio that allows users to switch to a presentation that uses sufficient contrast"
+        },
+        {
+            "id": "G175",
+            "technology": "general",
+            "title": "Providing a multi color selection tool on the page for foreground and background colors"
+        },
+        {
+            "id": "G176",
+            "technology": "general",
+            "title": "Keeping the flashing area small enough"
+        },
+        {
+            "id": "G177",
+            "technology": "general",
+            "title": "Providing suggested correction text"
+        },
+        {
+            "id": "G178",
+            "technology": "general",
+            "title": "Providing controls on the web page that allow users to incrementally change the size of all text on the page up to 200 percent"
+        },
+        {
+            "id": "G179",
+            "technology": "general",
+            "title": "Ensuring that there is no loss of content or functionality when the text resizes and text containers do not change their width"
+        },
+        {
+            "id": "G180",
+            "technology": "general",
+            "title": "Providing the user with a means to set the time limit to 10 times the default time limit"
+        },
+        {
+            "id": "G181",
+            "technology": "general",
+            "title": "Encoding user data as hidden or encrypted data in a re-authorization page"
+        },
+        {
+            "id": "G182",
+            "technology": "general",
+            "title": "Ensuring that additional visual cues are available when text color differences are used to convey information"
+        },
+        {
+            "id": "G183",
+            "technology": "general",
+            "title": "Using a contrast ratio of 3:1 with surrounding text and providing additional visual cues on hover for links or controls where color alone is used to identify them"
+        },
+        {
+            "id": "G184",
+            "technology": "general",
+            "title": "Providing text instructions at the beginning of a form or set of fields that describes the necessary input"
+        },
+        {
+            "id": "G185",
+            "technology": "general",
+            "title": "Linking to all of the pages on the site from the home page"
+        },
+        {
+            "id": "G186",
+            "technology": "general",
+            "title": "Using a control in the web page that stops moving, blinking, or auto-updating content"
+        },
+        {
+            "id": "G188",
+            "technology": "general",
+            "title": "Providing a button on the page to increase line spaces and paragraph spaces"
+        },
+        {
+            "id": "G189",
+            "technology": "general",
+            "title": "Providing a control near the beginning of the web page that changes the link text"
+        },
+        {
+            "id": "G191",
+            "technology": "general",
+            "title": "Providing a link, button, or other mechanism that reloads the page without any blinking content"
+        },
+        {
+            "id": "G193",
+            "technology": "general",
+            "title": "Providing help by an assistant in the web page"
+        },
+        {
+            "id": "G194",
+            "technology": "general",
+            "title": "Providing spell checking and suggestions for text input"
+        },
+        {
+            "id": "G195",
+            "technology": "general",
+            "title": "Using an author-supplied, visible focus indicator"
+        },
+        {
+            "id": "G196",
+            "technology": "general",
+            "title": "Using a text alternative on one item within a group of images that describes all items in the group"
+        },
+        {
+            "id": "G197",
+            "technology": "general",
+            "title": "Using labels, names, and text alternatives consistently for content that has the same functionality"
+        },
+        {
+            "id": "G198",
+            "technology": "general",
+            "title": "Providing a way for the user to turn the time limit off"
+        },
+        {
+            "id": "G199",
+            "technology": "general",
+            "title": "Providing success feedback when data is submitted successfully"
+        },
+        {
+            "id": "G201",
+            "technology": "general",
+            "title": "Giving users advanced warning when opening a new window"
+        },
+        {
+            "id": "G202",
+            "technology": "general",
+            "title": "Ensuring keyboard control for all functionality"
+        },
+        {
+            "id": "G203",
+            "technology": "general",
+            "title": "Using a static text alternative to describe a talking head video"
+        },
+        {
+            "id": "G204",
+            "technology": "general",
+            "title": "Not interfering with the user agent's reflow of text as the viewing window is narrowed"
+        },
+        {
+            "id": "G205",
+            "technology": "general",
+            "title": "Including a text cue for colored form control labels"
+        },
+        {
+            "id": "G206",
+            "technology": "general",
+            "title": "Providing options within the content to switch to a layout that does not require the user to scroll horizontally to read a line of text"
+        },
+        {
+            "id": "G207",
+            "technology": "general",
+            "title": "Ensuring that a contrast ratio of 3:1 is provided for icons"
+        },
+        {
+            "id": "G208",
+            "technology": "general",
+            "title": "Including the text of the visible label as part of the accessible name"
+        },
+        {
+            "id": "G209",
+            "technology": "general",
+            "title": "Provide sufficient contrast at the boundaries between adjoining colors"
+        },
+        {
+            "id": "G210",
+            "technology": "general",
+            "title": "Ensuring that drag-and-drop actions can be cancelled"
+        },
+        {
+            "id": "G211",
+            "technology": "general",
+            "title": "Matching the accessible name to the visible label"
+        },
+        {
+            "id": "G212",
+            "technology": "general",
+            "title": "Using native controls to ensure functionality is triggered on the up-event."
+        },
+        {
+            "id": "G213",
+            "technology": "general",
+            "title": "Provide conventional controls and an application setting for motion activated input"
+        },
+        {
+            "id": "G214",
+            "technology": "general",
+            "title": "Using a control to allow access to content in different orientations which is otherwise restricted"
+        },
+        {
+            "id": "G215",
+            "technology": "general",
+            "title": "Providing controls to achieve the same result as path based or multipoint gestures"
+        },
+        {
+            "id": "G216",
+            "technology": "general",
+            "title": "Providing single point activation for a control slider"
+        },
+        {
+            "id": "G217",
+            "technology": "general",
+            "title": "Providing a mechanism to allow users to remap or turn off character key shortcuts"
+        },
+        {
+            "id": "G218",
+            "technology": "general",
+            "title": "Email link authentication"
+        },
+        {
+            "id": "G219",
+            "technology": "general",
+            "title": "Ensuring that an alternative is available for dragging movements that operate on content"
+        },
+        {
+            "id": "G220",
+            "technology": "general",
+            "title": "Provide a contact-us link in a consistent location"
+        },
+        {
+            "id": "G221",
+            "technology": "general",
+            "title": "Provide data from a previous step in a process"
+        },
+        {
+            "id": "G224",
+            "technology": "general",
+            "title": "Accounting for meaningful text indentation and Reflow"
+        },
+        {
+            "id": "G225",
+            "technology": "general",
+            "title": "Section panels that scroll horizontally are designed to fit within a width of 320 CSS pixels on a vertically scrolling page"
+        },
+        {
+            "id": "G226",
+            "technology": "general",
+            "title": "Providing audio descriptions by incorporating narration in the soundtrack"
+        },
+        {
+            "id": "H2",
+            "technology": "html",
+            "title": "Combining adjacent image and text links for the same resource"
+        },
+        {
+            "id": "H24",
+            "technology": "html",
+            "title": "Providing text alternatives for the area elements of image maps"
+        },
+        {
+            "id": "H28",
+            "technology": "html",
+            "title": "Providing definitions for abbreviations by using the abbr element"
+        },
+        {
+            "id": "H30",
+            "technology": "html",
+            "title": "Providing link text that describes the purpose of a link for anchor elements"
+        },
+        {
+            "id": "H32",
+            "technology": "html",
+            "title": "Providing submit buttons"
+        },
+        {
+            "id": "H33",
+            "technology": "html",
+            "title": "Supplementing link text with the title attribute"
+        },
+        {
+            "id": "H34",
+            "technology": "html",
+            "title": "Using a Unicode right-to-left mark (RLM) or left-to-right mark (LRM) to mix text direction inline"
+        },
+        {
+            "id": "H36",
+            "technology": "html",
+            "title": "Using alt attributes on images used as submit buttons"
+        },
+        {
+            "id": "H37",
+            "technology": "html",
+            "title": "Using alt attributes on img elements"
+        },
+        {
+            "id": "H39",
+            "technology": "html",
+            "title": "Using caption elements to associate data table captions with data tables"
+        },
+        {
+            "id": "H40",
+            "technology": "html",
+            "title": "Using description lists"
+        },
+        {
+            "id": "H42",
+            "technology": "html",
+            "title": "Using h1-h6 to identify headings"
+        },
+        {
+            "id": "H43",
+            "technology": "html",
+            "title": "Using id and headers attributes to associate data cells with header cells in data tables"
+        },
+        {
+            "id": "H44",
+            "technology": "html",
+            "title": "Using label elements to associate text labels with form controls"
+        },
+        {
+            "id": "H48",
+            "technology": "html",
+            "title": "Using ol, ul and dl for lists or groups of links"
+        },
+        {
+            "id": "H49",
+            "technology": "html",
+            "title": "Using semantic markup to mark emphasized or special text"
+        },
+        {
+            "id": "H51",
+            "technology": "html",
+            "title": "Using table markup to present tabular information"
+        },
+        {
+            "id": "H53",
+            "technology": "html",
+            "title": "Using the body of the object element"
+        },
+        {
+            "id": "H54",
+            "technology": "html",
+            "title": "Using the dfn element to identify the defining instance of a word or phrase"
+        },
+        {
+            "id": "H56",
+            "technology": "html",
+            "title": "Using the dir attribute on an inline element to resolve problems with nested directional runs"
+        },
+        {
+            "id": "H57",
+            "technology": "html",
+            "title": "Using the language attribute on the HTML element"
+        },
+        {
+            "id": "H58",
+            "technology": "html",
+            "title": "Using language attributes to identify changes in the human language"
+        },
+        {
+            "id": "H62",
+            "technology": "html",
+            "title": "Using the ruby element"
+        },
+        {
+            "id": "H63",
+            "technology": "html",
+            "title": "Using the scope attribute to associate header cells with data cells in data tables"
+        },
+        {
+            "id": "H64",
+            "technology": "html",
+            "title": "Using the title attribute of the iframe element"
+        },
+        {
+            "id": "H65",
+            "technology": "html",
+            "title": "Using the title attribute to identify form controls when the label element cannot be used"
+        },
+        {
+            "id": "H67",
+            "technology": "html",
+            "title": "Using null alt text and no title attribute on img elements for images that assistive technology should ignore"
+        },
+        {
+            "id": "H69",
+            "technology": "html",
+            "title": "Providing heading elements at the beginning of each section of content"
+        },
+        {
+            "id": "H71",
+            "technology": "html",
+            "title": "Providing a description for groups of form controls using fieldset and legend elements"
+        },
+        {
+            "id": "H76",
+            "technology": "html",
+            "title": "Using meta refresh to create an instant client-side redirect"
+        },
+        {
+            "id": "H77",
+            "technology": "html",
+            "title": "Identifying the purpose of a link using link text combined with its enclosing list item"
+        },
+        {
+            "id": "H78",
+            "technology": "html",
+            "title": "Identifying the purpose of a link using link text combined with its enclosing paragraph"
+        },
+        {
+            "id": "H79",
+            "technology": "html",
+            "title": "Identifying the purpose of a link in a data table using the link text combined with its enclosing table cell and associated table header cells"
+        },
+        {
+            "id": "H80",
+            "technology": "html",
+            "title": "Identifying the purpose of a link using link text combined with the preceding heading element"
+        },
+        {
+            "id": "H81",
+            "technology": "html",
+            "title": "Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested"
+        },
+        {
+            "id": "H83",
+            "technology": "html",
+            "title": "Using the target attribute to open a new window on user request and indicating this in link text"
+        },
+        {
+            "id": "H84",
+            "technology": "html",
+            "title": "Using a button with a select element to perform an action"
+        },
+        {
+            "id": "H85",
+            "technology": "html",
+            "title": "Using optgroup to group option elements inside a select"
+        },
+        {
+            "id": "H86",
+            "technology": "html",
+            "title": "Providing text alternatives for emojis, emoticons, ASCII art, and leetspeak"
+        },
+        {
+            "id": "H88",
+            "technology": "html",
+            "title": "Using HTML according to spec"
+        },
+        {
+            "id": "H89",
+            "technology": "html",
+            "title": "Using the title attribute to provide context-sensitive help"
+        },
+        {
+            "id": "H90",
+            "technology": "html",
+            "title": "Indicating required form controls using label or legend"
+        },
+        {
+            "id": "H91",
+            "technology": "html",
+            "title": "Using HTML form controls and links"
+        },
+        {
+            "id": "H95",
+            "technology": "html",
+            "title": "Using the track element to provide captions"
+        },
+        {
+            "id": "H96",
+            "technology": "html",
+            "title": "Using the track element to provide audio descriptions"
+        },
+        {
+            "id": "H97",
+            "technology": "html",
+            "title": "Grouping related links using the nav element"
+        },
+        {
+            "id": "H98",
+            "technology": "html",
+            "title": "Using HTML autocomplete attributes"
+        },
+        {
+            "id": "H99",
+            "technology": "html",
+            "title": "Provide a page-selection mechanism"
+        },
+        {
+            "id": "H100",
+            "technology": "html",
+            "title": "Providing properly marked up email and password inputs"
+        },
+        {
+            "id": "H101",
+            "technology": "html",
+            "title": "Using semantic HTML elements to identify regions of a page"
+        },
+        {
+            "id": "H102",
+            "technology": "html",
+            "title": "Creating modal dialogs with the HTML dialog element"
+        },
+        {
+            "id": "PDF1",
+            "technology": "pdf",
+            "title": "Applying text alternatives to images with the Alt entry in PDF documents"
+        },
+        {
+            "id": "PDF2",
+            "technology": "pdf",
+            "title": "Creating bookmarks in PDF documents"
+        },
+        {
+            "id": "PDF3",
+            "technology": "pdf",
+            "title": "Ensuring correct tab and reading order in PDF documents"
+        },
+        {
+            "id": "PDF4",
+            "technology": "pdf",
+            "title": "Hiding decorative images with the Artifact tag in PDF documents"
+        },
+        {
+            "id": "PDF5",
+            "technology": "pdf",
+            "title": "Indicating required form controls in PDF forms"
+        },
+        {
+            "id": "PDF6",
+            "technology": "pdf",
+            "title": "Using table elements for table markup in PDF Documents"
+        },
+        {
+            "id": "PDF7",
+            "technology": "pdf",
+            "title": "Performing OCR on a scanned PDF document to provide actual text"
+        },
+        {
+            "id": "PDF8",
+            "technology": "pdf",
+            "title": "Providing definitions for abbreviations via an E entry for a structure element"
+        },
+        {
+            "id": "PDF9",
+            "technology": "pdf",
+            "title": "Providing headings by marking content with heading tags in PDF documents"
+        },
+        {
+            "id": "PDF10",
+            "technology": "pdf",
+            "title": "Providing labels for interactive form controls in PDF documents"
+        },
+        {
+            "id": "PDF11",
+            "technology": "pdf",
+            "title": "Providing links and link text using the Link annotation and the /Link structure element in PDF documents"
+        },
+        {
+            "id": "PDF12",
+            "technology": "pdf",
+            "title": "Providing name, role, value information for form fields in PDF documents"
+        },
+        {
+            "id": "PDF13",
+            "technology": "pdf",
+            "title": "Providing replacement text using the /Alt entry for links in PDF documents"
+        },
+        {
+            "id": "PDF14",
+            "technology": "pdf",
+            "title": "Providing running headers and footers in PDF documents"
+        },
+        {
+            "id": "PDF15",
+            "technology": "pdf",
+            "title": "Providing submit buttons with the submit-form action in PDF forms"
+        },
+        {
+            "id": "PDF16",
+            "technology": "pdf",
+            "title": "Setting the default language using the /Lang entry in the document catalog of a PDF document"
+        },
+        {
+            "id": "PDF17",
+            "technology": "pdf",
+            "title": "Specifying consistent page numbering for PDF documents"
+        },
+        {
+            "id": "PDF19",
+            "technology": "pdf",
+            "title": "Specifying the language for a passage or phrase with the Lang entry in PDF documents"
+        },
+        {
+            "id": "PDF20",
+            "technology": "pdf",
+            "title": "Using Adobe Acrobat Pro's Table Editor to repair mistagged tables"
+        },
+        {
+            "id": "PDF21",
+            "technology": "pdf",
+            "title": "Using List tags for lists in PDF documents"
+        },
+        {
+            "id": "PDF22",
+            "technology": "pdf",
+            "title": "Indicating when user input falls outside the required format or values in PDF forms"
+        },
+        {
+            "id": "PDF23",
+            "technology": "pdf",
+            "title": "Providing interactive form controls in PDF documents"
+        },
+        {
+            "id": "SCR1",
+            "technology": "client-side-script",
+            "title": "Allowing the user to extend the default time limit"
+        },
+        {
+            "id": "SCR2",
+            "technology": "client-side-script",
+            "title": "Using redundant keyboard and mouse event handlers"
+        },
+        {
+            "id": "SCR14",
+            "technology": "client-side-script",
+            "title": "Using scripts to make nonessential alerts optional"
+        },
+        {
+            "id": "SCR16",
+            "technology": "client-side-script",
+            "title": "Providing a script that warns the user a time limit is about to expire"
+        },
+        {
+            "id": "SCR18",
+            "technology": "client-side-script",
+            "title": "Providing client-side validation and alert"
+        },
+        {
+            "id": "SCR19",
+            "technology": "client-side-script",
+            "title": "Using an onchange event on a select element without causing a change of context"
+        },
+        {
+            "id": "SCR20",
+            "technology": "client-side-script",
+            "title": "Using both keyboard and other device-specific functions"
+        },
+        {
+            "id": "SCR22",
+            "technology": "client-side-script",
+            "title": "Using scripts to control blinking and stop it in five seconds or less"
+        },
+        {
+            "id": "SCR24",
+            "technology": "client-side-script",
+            "title": "Using progressive enhancement to open new windows on user request"
+        },
+        {
+            "id": "SCR26",
+            "technology": "client-side-script",
+            "title": "Inserting dynamic content into the Document Object Model immediately following its trigger element"
+        },
+        {
+            "id": "SCR27",
+            "technology": "client-side-script",
+            "title": "Reordering page sections using the Document Object Model"
+        },
+        {
+            "id": "SCR28",
+            "technology": "client-side-script",
+            "title": "Using an expandable and collapsible menu to bypass block of content"
+        },
+        {
+            "id": "SCR29",
+            "technology": "client-side-script",
+            "title": "Adding keyboard-accessible actions to static HTML elements"
+        },
+        {
+            "id": "SCR30",
+            "technology": "client-side-script",
+            "title": "Using scripts to change the link text"
+        },
+        {
+            "id": "SCR31",
+            "technology": "client-side-script",
+            "title": "Using script to change the background color or border of the element with focus"
+        },
+        {
+            "id": "SCR32",
+            "technology": "client-side-script",
+            "title": "Providing client-side validation and adding error text via the DOM"
+        },
+        {
+            "id": "SCR33",
+            "technology": "client-side-script",
+            "title": "Using script to scroll content, and providing a mechanism to pause it"
+        },
+        {
+            "id": "SCR34",
+            "technology": "client-side-script",
+            "title": "Calculating size and position in a way that scales with text size"
+        },
+        {
+            "id": "SCR35",
+            "technology": "client-side-script",
+            "title": "Making actions keyboard accessible by using the onclick event of anchors and buttons"
+        },
+        {
+            "id": "SCR36",
+            "technology": "client-side-script",
+            "title": "Providing a mechanism to allow users to display moving, scrolling, or auto-updating text in a static window or area"
+        },
+        {
+            "id": "SCR39",
+            "technology": "client-side-script",
+            "title": "Making content on focus or hover hoverable, dismissible, and persistent"
+        },
+        {
+            "id": "SCR40",
+            "technology": "client-side-script",
+            "title": "Using the CSS prefers-reduced-motion query in JavaScript to prevent motion"
+        },
+        {
+            "id": "SM1",
+            "technology": "smil",
+            "title": "Adding extended audio description in SMIL 1.0"
+        },
+        {
+            "id": "SM2",
+            "technology": "smil",
+            "title": "Adding extended audio description in SMIL 2.0"
+        },
+        {
+            "id": "SM6",
+            "technology": "smil",
+            "title": "Providing audio description in SMIL 1.0"
+        },
+        {
+            "id": "SM7",
+            "technology": "smil",
+            "title": "Providing audio description in SMIL 2.0"
+        },
+        {
+            "id": "SM11",
+            "technology": "smil",
+            "title": "Providing captions through synchronized text streams in SMIL 1.0"
+        },
+        {
+            "id": "SM12",
+            "technology": "smil",
+            "title": "Providing captions through synchronized text streams in SMIL 2.0"
+        },
+        {
+            "id": "SM13",
+            "technology": "smil",
+            "title": "Providing sign language interpretation through synchronized video streams in SMIL 1.0"
+        },
+        {
+            "id": "SM14",
+            "technology": "smil",
+            "title": "Providing sign language interpretation through synchronized video streams in SMIL 2.0"
+        },
+        {
+            "id": "SVR1",
+            "technology": "server-side-script",
+            "title": "Implementing automatic redirects on the server side instead of on the client side"
+        },
+        {
+            "id": "SVR5",
+            "technology": "server-side-script",
+            "title": "Specifying the default language in the HTTP header"
+        },
+        {
+            "id": "T1",
+            "technology": "text",
+            "title": "Using standard text formatting conventions for paragraphs"
+        },
+        {
+            "id": "T2",
+            "technology": "text",
+            "title": "Using standard text formatting conventions for lists"
+        },
+        {
+            "id": "T3",
+            "technology": "text",
+            "title": "Using standard text formatting conventions for headings"
+        }
     ]
 }
