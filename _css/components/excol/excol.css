@@ -1,3 +1,10 @@
+:root {
+  --w3c-icon-plus-solid: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4zm-9 7v4H7v2h4v4h2v-4h4v-2h-4V7z'/%3E%3C/svg%3E");
+  --w3c-icon-plus-hollow: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 11h4v2h-4v4h-2v-4H7v-2h4V7h2z'/%3E%3Cpath d='M20.2 0A4 4 0 0 1 24 4v16.2a4 4 0 0 1-3.8 3.8H4a4 4 0 0 1-4-3.8V4a4 4 0 0 1 4-4h16zM4 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z'/%3E%3C/svg%3E");
+  --w3c-icon-minus-solid: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4zM7 11v2h10v-2z'/%3E%3C/svg%3E");
+  --w3c-icon-minus-hollow: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 13H7v-2h10z'/%3E%3Cpath d='M20.2 0A4 4 0 0 1 24 4v16.2a4 4 0 0 1-3.8 3.8H4a4 4 0 0 1-4-3.8V4a4 4 0 0 1 4-4h16zM4 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z'/%3E%3C/svg%3E");
+}
+
 details {
   padding-left: 2rem;
 }
@@ -12,24 +19,26 @@ summary::-webkit-details-marker {
 }
 
 summary {
+  & > *:first-child {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   & > *:first-child::before {
-    content: '+';
+    content: '';
     margin-inline-end: 0.5rem;
-    display: inline-block;
-    border-radius: 5px;
-    width: 1.3rem;
-    height: 1.3rem;
-    line-height: 1.1rem;
-    background: var(--pure-white);
-    color: var(--wai-green);
-    border: 2px solid var(--wai-green);
+    padding-block-start: 0.15rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--wai-green);
     text-align: center;
     font-weight: bold;
+    mask: var(--w3c-icon-plus-hollow) center / contain no-repeat;
   }
+
   &:--hovcus > *:first-child::before {
     background: var(--w3c-blue);
-    border-color: var(--w3c-blue);
-    color: var(--pure-white);
+    mask-image: var(--w3c-icon-plus-solid);
   }
 }
 
@@ -39,8 +48,14 @@ summary {
   }
 }
 
-details[open] > summary > *:first-child::before {
-  content: '–';
+details[open] > summary {
+  & > *:first-child::before {
+    mask-image: var(--w3c-icon-minus-hollow);
+  }
+
+  &:--hovcus > *:first-child::before {
+    mask-image: var(--w3c-icon-minus-solid);
+  }
 }
 
 details > div::after {
