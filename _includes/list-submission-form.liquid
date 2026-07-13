@@ -38,6 +38,12 @@
     {% assign method = include.method %}
   {% endif -%}
 
+  {%- if site.env.WAI_LIVE_SITE or site.env.NETLIFY -%}
+    {%- assign turnstile_sitekey = "0x4AAAAAADrGl49RsUW31TYC" -%}
+  {%- else -%}
+    {%- assign turnstile_sitekey = "1x00000000000000000000AA" -%}
+  {%- endif -%}
+
   {% if site.env.WAI_LIVE_SITE %}
     {%assign WAI_REFERRER_HACK = "/WAI"%}
   {%else%}
@@ -61,6 +67,8 @@
 
 {%- elsif include.type == 'end' -%}
 
+  <div class="cf-turnstile" data-sitekey="{{ turnstile_sitekey }}" data-theme="light"></div>
   {%- include html-form.liquid type="end" -%}
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 {% endif -%}
