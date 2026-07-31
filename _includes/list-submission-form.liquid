@@ -38,16 +38,12 @@
     {% assign method = include.method %}
   {% endif -%}
 
-  {%- if site.env.WAI_LIVE_SITE or site.env.NETLIFY -%}
-    {%- assign turnstile_sitekey = "0x4AAAAAADrGl49RsUW31TYC" -%}
-  {%- else -%}
-    {%- assign turnstile_sitekey = "1x00000000000000000000AA" -%}
-  {%- endif -%}
-
   {% if site.env.WAI_LIVE_SITE %}
-    {%assign WAI_REFERRER_HACK = "/WAI"%}
+    {%- assign turnstile_sitekey = "0x4AAAAAADrGl49RsUW31TYC" -%}
+    {%- assign WAI_REFERRER_HACK = "/WAI" -%}
   {%else%}
-    {%assign WAI_REFERRER_HACK = ""%}
+    {%- assign turnstile_sitekey = "1x00000000000000000000AA" -%}
+    {%- assign WAI_REFERRER_HACK = "" -%}
   {%endif%}
 
   {% capture args %}
