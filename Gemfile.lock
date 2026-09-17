@@ -33,10 +33,14 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
+    ffi (1.17.3-aarch64-linux-gnu)
     ffi (1.17.3-arm64-darwin)
     ffi (1.17.3-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
     google-protobuf (4.33.2)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.33.2-aarch64-linux-gnu)
       bigdecimal
       rake (>= 13)
     google-protobuf (4.33.2-arm64-darwin)
@@ -91,6 +95,8 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
     mercenary (0.4.0)
+    nokogiri (1.19.1-aarch64-linux-gnu)
+      racc (~> 1.4)
     nokogiri (1.19.1-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.19.1-x86_64-linux-gnu)
@@ -109,6 +115,8 @@ GEM
     sass-embedded (1.97.1)
       google-protobuf (~> 4.31)
       rake (>= 13)
+    sass-embedded (1.97.1-aarch64-linux-gnu)
+      google-protobuf (~> 4.31)
     sass-embedded (1.97.1-arm64-darwin)
       google-protobuf (~> 4.31)
     sass-embedded (1.97.1-x86_64-linux-gnu)
@@ -119,6 +127,7 @@ GEM
     webrick (1.9.2)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-25
   x86_64-linux
 
@@ -135,10 +144,12 @@ CHECKSUMS
   csv (3.3.5) sha256=6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f
   em-websocket (0.5.3) sha256=f56a92bde4e6cb879256d58ee31f124181f68f8887bd14d53d5d9a292758c6a8
   eventmachine (1.2.7) sha256=994016e42aa041477ba9cff45cbe50de2047f25dd418eba003e84f0d16560972
+  ffi (1.17.3-aarch64-linux-gnu)
   ffi (1.17.3-arm64-darwin) sha256=0c690555d4cee17a7f07c04d59df39b2fba74ec440b19da1f685c6579bb0717f
   ffi (1.17.3-x86_64-linux-gnu) sha256=3746b01f677aae7b16dc1acb7cb3cc17b3e35bdae7676a3f568153fb0e2c887f
   forwardable-extended (2.6.0) sha256=1bec948c469bbddfadeb3bd90eb8c85f6e627a412a3e852acfd7eaedbac3ec97
   google-protobuf (4.33.2) sha256=748150d6c642fd655ef39efa23ecf2abe6d616020039a6d1c1764be1da530315
+  google-protobuf (4.33.2-aarch64-linux-gnu)
   google-protobuf (4.33.2-arm64-darwin) sha256=6d0ac185fed18768e5f16338455b1e4b7c38a97fc46f352e709f7a3007b64e1d
   google-protobuf (4.33.2-x86_64-linux-gnu) sha256=73cba041477afcac92ff383fcbdec195ea28d96b994876d1deaa944d18f91786
   http_parser.rb (0.8.1) sha256=9ae8df145b39aa5398b2f90090d651c67bd8e2ebfe4507c966579f641e11097a
@@ -158,6 +169,7 @@ CHECKSUMS
   listen (3.9.0) sha256=db9e4424e0e5834480385197c139cb6b0ae0ef28cc13310cfd1ca78377d59c67
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   mercenary (0.4.0) sha256=b25a1e4a59adca88665e08e24acf0af30da5b5d859f7d8f38fba52c28f405138
+  nokogiri (1.19.1-aarch64-linux-gnu)
   nokogiri (1.19.1-arm64-darwin) sha256=dfe2d337e6700eac47290407c289d56bcf85805d128c1b5a6434ddb79731cb9e
   nokogiri (1.19.1-x86_64-linux-gnu) sha256=1a4902842a186b4f901078e692d12257678e6133858d0566152fe29cdb98456a
   pathutil (0.16.2) sha256=e43b74365631cab4f6d5e4228f812927efc9cb2c71e62976edcb252ee948d589
@@ -170,6 +182,7 @@ CHECKSUMS
   rouge (4.7.0) sha256=dba5896715c0325c362e895460a6d350803dbf6427454f49a47500f3193ea739
   safe_yaml (1.0.5) sha256=a6ac2d64b7eb027bdeeca1851fe7e7af0d668e133e8a88066a0c6f7087d9f848
   sass-embedded (1.97.1) sha256=112ee8895854e7a8ea985937f7458f649fed8df255ed61e189f8a4b185e768d9
+  sass-embedded (1.97.1-aarch64-linux-gnu)
   sass-embedded (1.97.1-arm64-darwin) sha256=9da08e5cc569ef62235fc515a87c75a47b0de40d8416c563ba1abfbe60e606d9
   sass-embedded (1.97.1-x86_64-linux-gnu) sha256=9a294bb0acb1a539ed19f0e511098a9740b4aab4389e169585e8da1337fbd8b4
   terminal-table (3.0.2) sha256=f951b6af5f3e00203fb290a669e0a85c5dd5b051b3b023392ccfd67ba5abae91

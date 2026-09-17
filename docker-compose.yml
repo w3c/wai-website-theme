@@ -1,0 +1,16 @@
+services:
+  jekyll:
+    build: .
+    working_dir: /app
+    ports:
+      - "127.0.0.1:4000:4000"
+      - "127.0.0.1:35729:35729"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    environment:
+      - JEKYLL_ENV=development
+    restart: unless-stopped
+
+volumes:
+  node_modules:

@@ -12,6 +12,15 @@ The theme CSS can also be used by W3C tools built outside Jekyll, like the [ATAG
 
 See the [documentation](https://wai-website-theme.netlify.app/) for installation instructions and usage information.
 
+### Alternative: Run locally with Docker
+
+Prerequisite: Install [Docker](https://docs.docker.com/get-started/get-docker/) and
+[Docker Compose](https://docs.docker.com/compose/install/), or install the all-in-one [Docker Desktop](https://docs.docker.com/desktop/).
+
+1. `docker compose up --build`
+2. Open http://localhost:4000/
+3. Stop with Ctrl+C
+
 <details><summary>Archived content</summary>
 
 ## FAQ
@@ -25,4 +34,3 @@ If you have an existing fork, you can [rename your fork's default branch](https:
 If you have a local clone, you can either delete and re-clone the repository, or update it by [running the commands from GitHub documentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch#updating-a-local-clone-after-a-branch-name-changes).
 
 </details>
-
