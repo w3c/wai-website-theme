@@ -1,47 +1,49 @@
-details {
-  padding-left: 2rem;
-}
-summary {
-  cursor: pointer;
-  display: block;
-  margin-inline-start: -2rem;
+:root {
+  --w3c-color-excol-idle: var(--wai-green);
+  --w3c-color-excol-hovcus: var(--w3c-blue);
+
+  @media (forced-colors: active) {
+    --w3c-color-excol-idle: ButtonText;
+    --w3c-color-excol-hovcus: ButtonText;
+  }
 }
 
-summary::-webkit-details-marker {
+details {
+  margin-block: 40px 20px;
+  padding-inline-start: 2rem;
+}
+
+summary {
+  display: flex;
+  gap: 0.5em;
+  margin-inline-start: -2rem;
+
+  > :is(*, h2, h3, h4) {
+    margin: 0;
+    overflow: clip;
+  }
+}
+
+summary .excol-inline-icon {
+  flex: none;
+  color: var(--w3c-color-excol-idle);
+}
+
+summary:--hovcus .excol-inline-icon {
+  color: var(--w3c-color-excol-hovcus);
+}
+
+summary .excol-inline-icon [data-operation][data-state] {
   display: none;
 }
 
-summary {
-  & > *:first-child::before {
-    content: '+';
-    margin-inline-end: 0.5rem;
-    display: inline-block;
-    border-radius: 5px;
-    width: 1.3rem;
-    height: 1.3rem;
-    line-height: 1.1rem;
-    background: var(--pure-white);
-    color: var(--wai-green);
-    border: 2px solid var(--wai-green);
-    text-align: center;
-    font-weight: bold;
-  }
-  &:--hovcus > *:first-child::before {
-    background: var(--w3c-blue);
-    border-color: var(--w3c-blue);
-    color: var(--pure-white);
-  }
+details:not([open]) > summary:not(:--hovcus) .excol-inline-icon [data-operation="expand"][data-state="idle"],
+details:not([open]) > summary:--hovcus .excol-inline-icon [data-operation="expand"][data-state="hovcus"],
+details[open] > summary:not(:--hovcus) .excol-inline-icon [data-operation="collapse"][data-state="idle"],
+details[open] > summary:--hovcus .excol-inline-icon [data-operation="collapse"][data-state="hovcus"] {
+  display: inline;
 }
 
-@moz-document url-prefix() {
-  summary > *:first-child::before {
-    line-height: 1.3em;
-  }
-}
-
-details[open] > summary > *:first-child::before {
-  content: '–';
-}
 
 details > div::after {
   content: "";
