@@ -54,3 +54,16 @@ details > div::after {
 .excol-all {
   margin: 16px 0;
 }
+
+/* When printing, open details/summary disclosures */
+
+@media print {
+  details::details-content {
+    content-visibility: visible;
+    height: auto !important;
+  }
+
+  summary .excol-inline-icon {
+    display: none;
+  }
+}
