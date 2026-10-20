@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    #Access control banner
+\*------------------------------------*/
+.w3c-banner.w3c-banner--access-control.w3c-acl-private, .w3c-banner.w3c-banner--access-control.w3c-acl-user {
+  background-color: #237978;
+  color: #fff;
+}
+.w3c-banner.w3c-banner--access-control.w3c-acl-private .w3c-icon, .w3c-banner.w3c-banner--access-control.w3c-acl-user .w3c-icon {
+  filter: invert(1);
+}
+
+.w3c-banner--access-control.w3c-acl-member {
+  background-color: #ddb0c8;
+  color: #000;
+}
+
+.w3c-banner--access-control.w3c-acl-team {
+  background-color: #ec7070;
+  color: #000;
+}

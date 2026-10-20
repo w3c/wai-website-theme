@@ -1,8 +1,13 @@
 @import "colors.css";
 @import "base.css";
+@import "wai-overrides/wai-headings.css";
 @import "components/**/*.css";
-@import "w3c-core-components/**/*.css";
+@import "w3c-core-components/w3c-breadcrumbs.css";
+@import "w3c-core-components/w3c-footer.css";
+@import "w3c-core-components/w3c-global-header.css";
+@import "w3c-core-components/w3c-access-control.css";
 @import "w3c-layouts/**/*.css";
 @import "w3c-styles/**/*.css";
-@import "wai-overrides/**/*.css";
+@import "wai-overrides/wai-breadcrumbs.css";
+@import "wai-overrides/wai-footer.css";
 @import "code.css";

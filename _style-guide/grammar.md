@@ -1,0 +1,395 @@
+---
+title: "Grammar – WAI Style Guide"
+title_sentence: "Grammar"
+title_html: "Grammar"
+nav_title: "Grammar"
+lang: en
+order: 4
+---
+
+{% include toc.html %}
+
+## Capitalization
+
+### Abbreviations
+
+See [Capitalization in abbreviations](/style-guide/style-different-content-types/#capitalization-in-abbreviations).
+
+### All caps
+
+Avoid using all capital letters for words (except acronyms).
+
+### Braille
+
+Use lowercase for “braille” (unless you are referring to Louis Braille).
+
+### Glossaries
+
+Use lowercase for glossary terms (except for proper names).
+
+### Headings
+
+See [Capitalization in headings](/style-guide/style-different-content-types/#capitalization-in-headings).
+
+### Lists
+
+See [Capitalization and punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
+
+### Official names versus common terms
+
+#### Singular forms
+
+Capitalize terms when they form part of an official name. Use lowercase when using a common term instead of its official name.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Common term</th>
+<th scope="col">Example official name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>advisory board</td>
+      <td>W3C Advisory Board</td>
+    </tr>
+    <tr>
+      <td>advisory committee</td>
+      <td>W3C Advisory Committee</td>
+    </tr>
+    <tr>
+      <td>candidate recommendation</td>
+      <td>W3C Candidate Recommendation</td>
+    </tr>
+    <tr>
+      <td>code of conduct</td>
+      <td>W3C Code of Conduct</td>
+    </tr>
+    <tr>
+      <td>editor's draft</td>
+      <td>W3C Editor's Draft</td>
+    </tr>
+    <tr>
+      <td>group note</td>
+      <td>W3C Group Note</td>
+    </tr>
+    <tr>
+      <td>interest group</td>
+      <td>WAI Interest Group</td>
+    </tr>
+    <tr>
+      <td>invited expert</td>
+      <td>W3C Invited Expert</td>
+    </tr>
+    <tr>
+      <td>member</td>
+      <td>W3C Member</td>
+    </tr>
+    <tr>
+      <td>participant</td>
+      <td>W3C Participant</td>
+    </tr>
+    <tr>
+      <td>patent policy</td>
+      <td>W3C Patent Policy</td>
+    </tr>
+    <tr>
+      <td>process document</td>
+      <td>W3C Process Document</td>
+    </tr>
+    <tr>
+      <td>recommendation</td>
+      <td>W3C Recommendation</td>
+    </tr>
+    <tr>
+      <td>staff contact</td>
+      <td>W3C Staff Contact</td>
+    </tr>
+    <tr>
+      <td>statement</td>
+      <td>W3C Statement</td>
+    </tr>
+    <tr>
+      <td>task force</td>
+      <td>COGA Task Force</td>
+    </tr>
+    <tr>
+      <td>technical report</td>
+      <td>W3C Technical Report</td>
+    </tr>
+    <tr>
+      <td>working draft</td>
+      <td>W3C First Public Working Draft</td>
+    </tr>
+    <tr>
+      <td>working group</td>
+      <td>ARIA Working Group</td>
+    </tr>
+    <tr>
+      <td>workshop</td>
+      <td>W3C Workshop</td>
+    </tr>
+  </tbody>
+</table>
+
+Use official names where practical. This reduces ambiguity.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+Use:
+
+* the W3C Advisory Board
+* the WAI Interest Group
+* the ARIA Working Group
+
+Avoid:
+
+* the Advisory Board
+* the Interest Group
+* the Working Group
+</div>
+
+#### Plural forms
+
+Use lowercase for plural forms. This applies even when the singular form is capitalized as part of an official name.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+* The organization joined as a <b>W3C Member</b> to work with us.
+* Organizations of all sizes and all types are W3C <b>members</b>.
+* We have published a new <b>W3C Recommendation</b>.
+* We have published several <b>W3C recommendations</b>.
+* WCAG 2.2 includes <b>Success Criterion 2.5.8 Target Size (Minimum)</b>.
+* WCAG 2.2 contains 86 <b>success criteria.</b>
+* The <b>Accessibility Guidelines Working Group</b> is discussing the issue.
+* Three <b>working groups</b> support W3C's mission to make the web accessible to people with disabilities.
+</div>
+
+### Proper nouns that have become common nouns
+
+Use lowercase for the following nouns, unless these are part of a name or title:
+
+* web (the web)
+* internet (the internet)
+
+## That versus which
+
+<b>That:</b> Introduces essential information needed to understand the sentence
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+The time is essential to identify specific meetings: “The meeting that starts at 10:00 is online. The other meetings are in-person.”
+</div>
+
+<b>Which:</b> Introduces extra information that is not essential.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+The time is not essential: “The meeting, which starts at 10:00, is online.”
+</div>
+
+## Punctuation
+
+
+### Commas
+
+In a phrase listing three or more items, place a comma before the final conjunction ("Oxford comma").
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+I bought apples, oranges, and bananas.
+</div>
+
+### Dashes and hyphens
+
+#### Em dash (—) {#em-dash}
+
+Put a space before and after an em dash.
+
+For em dashes in sentences, see [Em dash (optional) in Related information in sentences](/style-guide/structure-presentation/#em-dash-optional).
+
+##### Em dashes for list items
+
+Use em dashes when list items have a short phrase followed by an explanation or clarification.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<p>Users of this curricula include:</p>
+<ul>
+  <li><b>faculty lecturer</b> — selects topics from the foundation, developer, and designer modules to teach accessibility to computer science students</li>
+  <li><b>employee training coordinator</b> — compares the course content offered by different providers based on the modules provided in this resource</li>
+  <li><b>procurer</b> — includes requirements in a training Request for Proposals (RFP) based on the modules provided in this resource</li>
+</ul>
+</div>
+
+#### En dash (–) {#en-dash}
+
+* Use an en dash to indicate a range in numbers, such as in dates, pages, and sports results.
+* Do not add a space before and after an en dash.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>The years 1990–2000 were transformative.</li>
+  <li>Read pages 10–15.</li>
+  <li>They defeated the defending champions 106–76.</li>
+</ul>
+</div>
+
+#### Hyphen (-)
+
+Use a hyphen to join compound adjectives.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>peer-to-peer connection</li>
+  <li>short-term memory</li>
+  <li>well-known technique</li>
+</ul>
+</div>
+
+Do *not* hyphenate:
+
+* an adverb that ends in “ly”
+* an adverb that follows a noun
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Examples:
+
+<ul>
+  <li>They are two <b>closely related</b> concepts.</li>
+  <li>The technique is <b>well known</b>.</li>
+</ul>
+</div>
+
+Use a hanging hyphen when two compound adjectives modify the same noun.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+The pre<b>-</b> and post<b>-</b>deployment stages are equally important.
+</div>
+
+For guidance on terms we no longer hyphenate and are written as one word, see the section on [Spelling](/style-guide/tone-language-words/#spelling).
+
+### Ellipsis (...)
+
+Use an ellipsis to show:
+
+* missing words
+* a pause
+* something left unsaid
+
+Add a space before and after an ellipsis.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+I was wondering … but it’s probably not important.
+</div>
+
+### Headings
+
+See [punctuation in headings](/style-guide/style-different-content-types/#punctuation-in-headings).
+
+### Links
+
+See [punctuation in links](/style-guide/style-different-content-types/#punctuation-in-links).
+
+### Lists
+
+See [punctuation in lists](/style-guide/style-different-content-types/#capitalization-and-punctuation-in-lists).
+
+### Numbers
+
+See [punctuation in numbers](/style-guide/style-different-content-types/#punctuation-in-numbers).
+
+### Parentheses
+
+See [Parentheses (optional)](/style-guide/structure-presentation/#parentheses-optional).
+
+### Quotation marks
+
+Use double quotation marks to reference a term.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+This accessibility requirement is sometimes called “sufficient color contrast”; however, the technical term is “luminosity contrast”.
+</div>
+
+Avoid using quotes in a way that could be taken to suggest irony or in a non-standard way. For more information, see [scare quotes](https://en.wikipedia.org/wiki/Scare_quotes).
+
+### Semicolons
+
+See [Semicolon (optional)](/style-guide/structure-presentation/#semicolon-optional).
+
+### Slashes
+
+#### Forward slash
+
+Generally, only use a forward slash in dates, fractions, and URLs.
+
+Do not use a forward slash to indicate an optional plural. Use parentheses instead.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Avoid: Test/s</li>
+  <li>Use: Test(s)</li>
+</ul>
+</div>
+
+Try not to use a forward slash to show two things that have a close relationship or that are in opposition. Use a hyphen or words like “and” or “or” instead.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+
+Example 1:
+
+<ul>
+  <li>Avoid: The issue was part of the larger nature/nurture debate.</li>
+  <li>Use: The issue was part of the larger nature<b>-</b>nurture debate.</li>
+</ul>
+
+Example 2:
+
+<ul>
+  <li>Avoid: The project examines cause/effect relationships.</li>
+  <li>Use: The project examines cause-<b>and</b>-effect relationships.</li>
+</ul>
+
+Example 3:
+
+<ul>
+  <li>Avoid: If/when I have a dog, I’ll need a fenced yard.</li>
+  <li>Use: If <b>or</b> when I have a dog, I’ll need a fenced yard.</li>
+</ul>
+
+Example 4:
+
+<ul>
+  <li>Avoid: Add a potato and/or an onion.</li>
+  <li>Use: Add a potato, <b>or</b> an onion, <b>or both</b>.</li>
+</ul>
+</div>
+
+**Exception:** You can use a forward slash if it shows a relationship or contrast better than when using words.
+
+<div class="inset-text inset-text--related inset-text--condensed" markdown="1">
+Example:
+
+<ul>
+  <li>Avoid: In inclusive writing, avoid gender pronouns (she or her, he or his).</li>
+  <li>Use: In inclusive writing, avoid gender pronouns (she/her, he/his).</li>
+</ul>
+</div>

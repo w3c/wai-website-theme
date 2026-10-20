@@ -147,3 +147,11 @@
     border-block-start: 1px solid #eed009;
   }
 }
+
+.sidebaricon {
+  width: 100%;
+  display: block;
+  height: 292px;
+  color: var(--w3c-blue);
+  margin-top: 65px;
+}

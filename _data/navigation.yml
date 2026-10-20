@@ -359,6 +359,10 @@
       fr: "Stratégies de réparations provisoires"
     url: "/planning/interim-repairs/"
     translate: true
+    pages:
+      - name: Changelog
+        url: "/planning/interim-repairs/changelog/"
+        hide: true
   - name: Planning and Managing Accessibility
     url: "/planning-and-managing/"
     translate: true
@@ -411,6 +415,9 @@
     pages:
       - name: Example
         url: "/planning/org-policies/example/"
+      - name: Changelog
+        url: "/planning/org-policies/changelog/"
+        hide: true
   - name: Developing an Accessibility Statement
     url: "/planning/statements/"
     pages:
@@ -732,6 +739,9 @@
     url: "/test-evaluate/conformance/"
     translate: true
     pages:
+      - name: Changelog
+        url: "/test-evaluate/conformance/changelog/"
+        hide: true
       - name: WCAG-EM Conformance Methodology
         url: "/test-evaluate/conformance/wcag-em/"
       - name: WCAG-EM Report Tool
@@ -841,6 +851,9 @@
       url: "/teach-advocate/accessibility-training/presentation-outlines/"
     - name: Workshop Outline
       url: "/teach-advocate/accessibility-training/workshop-outline/"
+    - name: Changelog
+      url: "/teach-advocate/accessibility-training/changelog/"
+      hide: true
 # - name: Presentations You Can Use
 #   url: "/teach-advocate/presentations-to-use/"
   - name: Before and After Demo (BAD)

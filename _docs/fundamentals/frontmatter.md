@@ -1,252 +1,94 @@
 ---
-title: "The Frontmatter"
+title: "Frontmatter"
+nav_title: "Frontmatter"
+last_updated: 2026-06-05
 redirect_from:
   - /writing/frontmatter/
-lang: en
+inline_css: |
+  pre.highlight{
+    background: #FFF;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--line-grey);
+  }
 ---
 
 {::nomarkdown}
-{% include box.html type="start" title="Summary" class="" %}
+{% include box.html type="start" title="Introduction" class="" %}
 {:/}
 
-You can use different values in the frontmatter to set the metadata of your document.
+Use frontmatter variables to set the metadata of your document.
+
+Required variables are marked with an asterisk (*).\
+Experimental (not widely used) variables are marked with a 🧪 emoji.
+
+Generic information can be found on [Front Matter - Jekyll Documentation {% include_cached external.html %}](https://jekyllrb.com/docs/front-matter/) page.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
-
 
 {% include toc.html %}
 
-In the following list, Frontmatter lines are highlighted with emoji:
+## `acknowledgements` {#acknowledgements}
 
-- ❗ = Required
-- 🌐 = Required for translation interoperability and _should_ be edited by translators.
-- 🚸 = Do not use unless absolutely needed. – Frontmatter lines are often used to provide non-standard and limited use-case functionality. If often used to solve a specific use case, it is better to develop that feature properly.
-
-## Title
-
-### `title` ❗🌐 {#title}
-
-A title that describes the page. Will be used as an `h1` and in the HTML `title`.
+(`string`) Path to an Acknowledgements page. The token `ACKNOWLEDGEMENTS` in the [`footer`](#footer) variable is replaced with this value. The URL gets properly adapted to the deployment environment.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
+The code:
+
 ```yaml
-title: Accessibility Fundamentals
+acknowledgements: /media/av/acknowledgements/
+footer: >
+  <p>Footer content. ACKNOWLEDGEMENTS.</p>
 ```
 
-or:
+produces on the live website:
 
-```yaml
-title: "Web Accessibility Perspectives: Keyboard Navigation"
+```html
+<p>Footer content. <a href="/WAI/media/av/acknowledgements/">Acknowledgements</a>.</p>
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-Note: When using colons (`:`) in the values of the Frontmatter, using straight (`"`) or single (`'`) quotes is required.
+## `class` {#class}
 
-### `title_html` 🌐🚸 {#title_html}
-
-If you _need_ to use HTML in the title (for example to highlight a word, use code markup or force a line break), you can use this line to provide that HTML variant. The `title` will still be used in the HTML title, for example, or when referring to the page using [WAI Markdown links](/writing/wai-markdown/#links).
+(`string`) Specifies a class on the `body` element.\
+(Note that the page automatically creates a class with the name of the current page on the body element.)
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 ```yaml
-title: The br Element
-title_html: "The <code>&lt;br></code> element"
-```
-
-or:
-
-```yaml
-title: "Web Accessibility Perspectives: Keyboard Navigation"
-title_html: "Web Accessibility Perspectives:<br>Keyboard Navigation"
+class: tight-page
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-### `nav_title` ❗🌐 {#nav_title}
+Common value:
+* `tight-page`: Uses less space above `h2` headings, mainly used on for overview-ish pages.
 
-A short title that we’ll use as the navigation text (in the left navigation) in the future. It should be short and succinct.
+## `contributors` {#contributors}
+
+(`map array`) A list of people who contributed to the translation.
+
+Every (translation) contributor is specified by their name in a separate line, like:
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 ```yaml
-nav_title: Fundamentals
-```
-
-or:
-
-```yaml
-nav_title: Keyboard
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-### `title_image` 🌐 {#title_image}
-
-To right-float an image on the title, specify it in the title_image line. If the image contains text, it needs to be adjusted to the language of the document.
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-title_image: /content-images/wai-media-guide/planning.svg
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-### `title_icon` 🌐 {#title_icon}
-
-An icon that is displayed left of the `<h1>`.
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-title_icon: /tips/img/icons.svg#developing
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-## `lang` ❗🌐 {#lang}
-
-Specify the language of the current document. Use the two-letter code, and if needed add specifiers by appending them using dashes (`-`). An [up to date list of language codes](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) can be found here on iana.org. Search for the language and then look for subtag.
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-lang: en
-```
-
-or:
-
-```yaml
-lang: de
-```
-
-or:
-
-```yaml
-lang: pt-BR
-```
-
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-Note: `pt-BR` above means “Portuguese as spoken in Brazil”. We usually only use region identifier when the language is significantly differently interpreted in different regions or when there is a reasonable expectation to get diverging translations.
-
-
-## `permalink` ❗🌐 {#permalink}
-
-This determines where a page will be put when the site is generated.
-
-For English pages it looks like this: `/path/to/page/`. Note that it
-does not use `/WAI/` or `https://www.w3.org/`.
-
-For translations, add the language code to the end of the permalink,
-like `/path/to/page/es` for Spanish or `/path/to/page/de` for German
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-permalink: /path/to/page/
-```
-
-or:
-
-```yaml
-permalink: /path/to/page/es
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-Note: By convention, translations do not get a closing forward slash `/`.
-
-## `ref` ❗🌐 {#ref}
-
-The unique identifier (“<em>ref</em>erence”) of a page. It uses the permalink of the English version of the page and is used (among other things) to identify the set of translations of a page.
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-lang: en
-permalink: /path/to/page/
-ref: /path/to/page/
-```
-
-or:
-
-```yaml
-lang: es
-permalink: /path/to/page/es
-ref: /path/to/page/
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-## `last_updated` 🌐 {#last_updated}
-
-A ISO date that specifies when the document was last edited in the
-format of YYYY-MM-DD (e.g. 2019-03-07 or 2020-11-24).
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-last_updated: 2019-03-07
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-Note: We do not version our pages and we also do not keep old versions. Occasionally we use change logs to highlight changes between versions but there is no way translators can tell by looking at the date(s) if there were major or minor changes.
-
-## `translators` 🌐 {#translators}
-
-Every translator is specified by their name in a separate line, like:
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-translators:
-- name: "Ms Smith"
-- name: "Mr Smith"
+contributors:
+- name: "Jane Doe"
+- name: "John Doe"
 ```
 
 {::nomarkdown}
@@ -257,97 +99,172 @@ In addition, links can be added (note: there are strict [rules of which
 pages to link to](https://www.w3.org/WAI/about/translating/#links)):
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
-{:/}
-
-```yaml
-translators:
-- name: "Ms Smith"
-  link: "https://smithspersonalhomepage.example.com"
-- name: "Mr Smith"
-```
-
-{::nomarkdown}
-{% include box.html type="end" %}
-{:/}
-
-## `contributors` 🌐 {#contributors}
-
-Every (translation!) contributor is specified by their name in a separate line, like:
-
-{::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 ```yaml
 contributors:
-- name: "Ms Smith"
-- name: "Mr Smith"
+- name: "Jane Doe"
+  link: "https://doespersonalhomepage.example.com"
+- name: "John Doe"
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-In addition, links can be added (note: there are strict [rules of which
-pages to link to](https://www.w3.org/WAI/about/translating/#links)):
+Following keys are available:
+
+`name` *
+: (`string`) Translator name.
+
+`link`
+: (`string`) Link to the translator personal page.
+
+`org`
+: (`string`) Name of the translator organization.
+
+`orglink`
+: (`string`) Link to the organization website.
+
+## `custom_changelog` {#changelog}
+
+(`string`) Path to a custom Changelog page. If not set, `<ref>/changelog/` is used, if such page exists.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Examples" class="example" %}
+{:/}
+
+Example 1:
+
+```yaml
+ref: /media/av/planning/
+custom_changelog: /media/av/changelog/
+```
+
+makes the "Latest changes" link point to `/media/av/changelog/` page.
+
+Example 2:
+
+```yaml
+ref: /media/av/planning/
+# No changelog variable
+```
+
+makes the "Latest changes" link point to `/media/av/planning/changelog/`, if such page exists.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `date` {#date}
+
+{::nomarkdown}
+{% include box.html type="start" title="Note" class="simple" %}
+{:/}
+
+This variable is only used for news posts.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+
+(`string`) The publication date of a news post. Format is based on [ISO 8601 {% include_cached external.html %}](https://www.iso.org/iso-8601-date-and-time-format.html): `YYYY-MM-DD`.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example" %}
 {:/}
 
 ```yaml
-contributors:
-- name: "Ms Smith"
-  link: "https://smithspersonalhomepage.example.com"
-- name: "Mr Smith"
+date: 2024-10-01
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-## `github` ❗🌐 {#github}
 
-The `github` key defines the repository, branch and path of the document
-to provide the fork and edit this document on GitHub links.
+## `description` {#description}
+
+Most of the SEO/social media metadata is provided by the [Jekyll SEO Tag plugin {% include_cached external.html %}](https://github.com/jekyll/jekyll-seo-tag). We provide sensible metadata by default. However, this line should be added to the frontmatter to customize social media preview.
+
+(`string`) Provides a short description of what the page is all about.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 ```yaml
-github:
-  repository: w3c/wai-repository
-  branch: main
-  path: 'index.md'
+description: The rationale for organizations to address accessibility. It includes tangible and intangible benefits, and the risks of not addressing accessibility adequately.
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-For translations, the language abbreviation is put between the filename
-and the extension. Examples:
+## `feedbackmail` {#feedbackmail}
 
--   `index.md` ➡️ `index.de.md`
--   `this-is-a-longer-name.md` ➡️ `this-is-a-longer-name.el.md`
-
-## `footer` ❗🌐 {#footer}
-
-The footer has information about the document. The content of the footer
-needs to be translated.
+(`string`) Customs the e-mail address used in the "Help improve this page" box (in text and buttons). Fallback value is `wai@w3.org`.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+feedbackmail: public-wcag-act@w3.org
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `first_published` {#first_published}
+
+(`string`) The date that the page was first published. Format is plain text.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example" %}
+{:/}
+
+```yaml
+first_published: "March 2024"
+```
+
+or
+
+```yaml
+first_published: "9 December 2009"
+```
+
+or
+
+```yaml
+first_published: "as “Conformance Evaluation of Web Sites for Accessibility” in September 2005"
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `footer` \* {#footer}
+
+(`string`) Footer of the document, written in HTML.
+
+You can use `>` or `|` to support multiline:
+- `|` keeps the newlines
+- `>` replaces newlines with a space character.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 ```yaml
 footer: >
-  <p><strong>Date:</strong> Reviewed 00 Month 202X. Updated 00 Month 202X. First published 00 Month 202X. CHANGELOG.<br>
-  History: ...</p>
-  <p><strong>Editors:</strong> Name and Name. Contributors: Name, Name, and <a href="https://www.w3.org/WAI/EO/participants">EOWG Participants</a>. ACKNOWLEDGEMENTS lists contributors. Previous editors: Name; previous contributors: Name.</p>
-  <p>Developed [by|with input from]  the Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>), with the <a href="@@">Acme Task Force</a>. Previously developed  as part of the <a href="@@">Acme Project</a> funded by the Money Org. Updated as part of the <a href="@@">Acme Project</a> funded by the Money Org.</p>
+  <p>First published 10 October 2023.<br />
+    History: ...</p>
+  <p><strong>Editors:</strong> Name and Name. Contributors: Name, Name. ACKNOWLEDGEMENTS lists contributors. Previous editors: Name; previous contributors: Name.</p>
+  <p>Previously developed  as part of the <a href="@@">Acme Project</a> funded by the Sponsor Org. Updated as part of the <a href="@@">Acme Project</a> funded by the Sponsor Org.</p>
 ```
 
 {::nomarkdown}
@@ -366,70 +283,229 @@ footer: >
 {% include box.html type="end" %}
 {:/}
 
-### `changelog`
+## `footnotestitle`
 
-The changelog attribute uses a reference to another document and replaces the token CHANGELOG in the footer text with a link to the changelog.
+(`string`) Customs heading of the Footnotes list box. Fallback value is `Footnotes`.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
-The code:
-
 ```yaml
-changelog: /media/av/changelog/
-footer: >
-  <p>Footer Content as HTML. CHANGELOG.</p>
+footnotestitle: Resources
 ```
-
-produces:
-
-```html
-<p>Footer Content as HTML. <a href="/media/av/changelog/">Changelog</a>.</p>
-```
-
-The URL gets properly adapted to the deployment environment.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-### `acknowledgements`
+## `github` {#github}
 
-The acknowledgements attribute uses a reference to another document and replaces the token ACKNOWLEDGEMENTS in the footer text with a link to the acknowledgements.
+(`map`) GitHub related information. May be used to generate the "Fork and edit on GitHub" and "New GitHub issue" links in the “Help improve this page” box.
+
+`repository`, `branch` and `path` are **not** required for pages developed in the `wai-website` repository.
+
+Following keys are available:
+
+`label`
+: (`string`) GitHub label to apply when a new issue is created from this page, prepended with `wai-`.
+
+`repository`
+: (`string`) GitHub repository. If not set, `repository` value in `config.yml` is used.
+
+`branch`
+: (`string`) Branch of the document. If not set, `branch` value in `config.yml` is used.
+
+`path`
+: (`string`) Path to the document. Programmatically inferred in `wai-website` repository.
+
+For translations, the language tag is put between the filename and the extension. Examples:
+- `index.md` ➡️ `index.de.md`
+- `this-is-a-longer-name.md` ➡️ `this-is-a-longer-name.el.md`
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example: Page developed in `wai-website` repository" class="example" %}
 {:/}
 
-The code:
-
 ```yaml
-acknowledgements: /media/av/acknowledgements/
-footer: >
-  <p>Footer Content as HTML. ACKNOWLEDGEMENTS.</p>
+github:
+  label: wai-tips
 ```
-
-produces:
-
-```html
-<p>Footer Content as HTML. <a href="/media/av/acknowledgements/">Acknowledgements</a>.</p>
-```
-
-The URL gets properly adapted to the deployment environment.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-### `license`
+{::nomarkdown}
+{% include box.html type="start" title="Example: Page developed outside `wai-website` repository" class="example" %}
+{:/}
 
-Define a license for the content. If no license is set, the [W3C Document License](https://https://w3.org/WAI/about/using-wai-material/#official-w3c-document-license) is assumed. Specify `creative-commons` to output a paragraph in the footer area that links to the Creative Commons license and sets the metadata of the page appropriately.
-
-*  Creative Commons (`creative-commons`) — include for resources we specifically want people to adapt for their environment, such as sample presentations, curricula, business case. For now, do not include on other things.
+```yaml
+github:
+  label: wai-resource-name
+  repository: w3c/wai-repository
+  branch: main
+  path: 'index.md'
+```
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="end" %}
+{:/}
+
+## `image` {#image}
+
+Most of the SEO/social media metadata is provided by the [Jekyll SEO Tag plugin {% include_cached external.html %}](https://github.com/jekyll/jekyll-seo-tag). We provide sensible metadata by default. However, this line should be added to the frontmatter to customize social media preview.
+
+(`string`) A short social media sharing image. This image might also be re-used when linking to a page from other sections of the website, for example as a home page teaser[^1].
+
+[^1]: Not yet implemented.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+image: /content-images/business-case/social.png
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `inline_css` {#inline_css}
+
+{::nomarkdown}
+{% include box.html type="start" title="Notice" icon="warning" %}
+{:/}
+
+Do not use this variable unless absolutely needed. Contact the WAI website managers to consider adding new styles to the WAI website theme instead.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+(`string`) Adds custom CSS to the document. Use `|` to support multiline.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+inline_css: |
+  .hint {opacity: .9;}
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `lang` \* {#lang}
+
+(`string`) The language tag of the current document.
+
+Where possible, use a single language subtag from [IANA Language Subtag Registry {% include_cached external.html %}](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
+
+We usually only add region/script subtags when the language is significantly differently interpreted in different regions or when there is a reasonable expectation to get diverging translations. More info on [Choosing a Language Tag](https://www.w3.org/International/questions/qa-choosing-language-tags).
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example" %}
+{:/}
+
+```yaml
+lang: en
+```
+
+or:
+
+```yaml
+lang: de
+```
+
+or:
+
+```yaml
+lang: pt-BR
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `last_reviewed` {#last_reviewed}
+
+(`string`) The date that the page was last checked for accuracy. Format is based on [ISO 8601 {% include_cached external.html %}](https://www.iso.org/iso-8601-date-and-time-format.html): `YYYY-MM-DD`.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example" %}
+{:/}
+
+```yaml
+last_reviewed: 2024-10-01
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `last_updated` \* {#last_updated}
+
+(`string`) The date that the page was last substantively updated. Format is based on [ISO 8601 {% include_cached external.html %}](https://www.iso.org/iso-8601-date-and-time-format.html): `YYYY-MM-DD`.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+last_updated: 2024-09-29
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `layout` {#layout}
+
+{::nomarkdown}
+{% include box.html type="start" title="Notice" icon="warning" %}
+{:/}
+
+Contact the WAI website managers prior to applying a custom layout.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+(`string`) Applies a custom layout to the page. Generally fallbacks to `default`.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+  layout: minimal
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+Frequently used values:
+- `act_implementation`
+- `home`
+- `minimal`
+- `overview`
+- `standalone_resource`
+- `sidenav`
+
+## `license` {#license}
+
+(`string`) Defines a license for the content. If not set, the [W3C Document License](https://w3.org/WAI/about/using-wai-material/#official-w3c-document-license) is assumed.
+
+Possible value:
+- `creative-commons`: outputs a paragraph in the footer area that links to the Creative Commons license and sets the metadata of the page appropriately.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 The code:
@@ -437,113 +513,457 @@ The code:
 ```yaml
 license: creative-commons
 footer: >
-  <p>Footer Content as HTML.</p>
+  <p>Footer content.</p>
 ```
 
 produces:
 
 ```html
-<p>Footer Content as HTML.</p>
+<p>Footer content.</p>
 <p>{% include_cached icon.html name="creative-commons" %} This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 ```
-
-The URL gets properly adapted to the deployment environment.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-## `navigation`
+## `metafooter` {#metafooter}
 
-Navigation specifies next and previous pages (by their `ref` <em>ref</em>erence), so that previous/next arrows can be shown:
+(`boolean`) Use frontmatter variables to build the page footer, instead of the the [`footer`](#footer) value. Only [Tutorials](https://www.w3.org/WAI/tutorials/) pages use the `metafooter` for now.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+metafooter: true
+editors:
+- Eric Eggert: "https://www.w3.org/People/yatil/"
+- Shadi Abou-Zahra: "https://www.w3.org/People/shadi/"
+update_editors:
+- Brian Elton
+contributing_participants:
+- see <a href="/WAI/tutorials/acknowledgements/">Acknowledgements</a>
+support: Developed by the Education and Outreach Working Group (<a href="https://www.w3.org/groups/wg/eowg">EOWG</a>). Developed with support from the <a href="https://www.w3.org/WAI/ACT/">WAI-ACT project</a>, co-funded by the <strong>European Commission <abbr title="Information Society Technologies">IST</abbr> Programme</strong>.
+```
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+If `metafooter` is set to `true`, the footer will be built using the following variables:
+
+### `editors` {#editors}
+
+(`string array`) list of editors.
+
+### `update_editors` {#update_editors}
+
+(`string array`) list of update editors.
+
+### `contributing_participants` {#contributing_participants}
+
+(`string array`) Contributing participants. A link to an "Acknowledgements" page is often used.
+
+### `support` {#support}
+
+(`array`) Additional information about participants, sponsoring, funding projects, etc.
+
+## `navigation` {#navigation}
+
+(`map`) Specifies next and previous pages (by their [`ref`](#ref) reference), so that previous/next arrows can be shown.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 ```yaml
 navigation:
-  previous: /path/to/previous/file/
-  next: /path/to/next/file/
+  previous: /media/av/users-orgs/
+  next: /media/av/av-content/
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-## `class`
+Following keys are available:
 
-Sometimes it is useful to specify a class on the body element. (Note that the page automatically creates a class with the name of the current page on the body element.)
+`previous`
+: (`string`) [`ref`](#ref) of the previous page
+
+`next`
+: (`string`) [`ref`](#ref) of the next page
+
+## `nav_title` * 🧪 {#nav_title}
+
+(`string`) A short title that we will use as the navigation text (in the left navigation) in the future. It should be short and succinct.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Examples" class="example" %}
 {:/}
 
 ```yaml
-class: tight-page
+nav_title: Fundamentals
+```
+
+or:
+
+```yaml
+nav_title: Keyboard
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-* `tight-page`: Uses less space above `h2` headings, mainly used on for overview-ish pages.
+## `parent` {#parent}
 
-## `feedbackmail`
-
-In the "Help improve this page" box, the default e-mail address (in text and buttons) is wai-eo-editors@w3.org<br>
-To change that, use `feedbackmail`.
+(`string`) Used in header and secondarynav.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Example" class="example" %}
 {:/}
 
 ```yaml
-feedbackmail: wai@w3.org
+  parent: /fundamentals/accessibility-principles/
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-## `footnotestitle`
+## `permalink` \* {#permalink}
 
-The title used as a heading of the Footnotes list box. Falls back to ”Footnotes”.
+(`string`) Output path of a page. The URL gets properly adapted to the deployment environment.
 
-## SEO & Social Media Metadata {#seo-sm}
+Note: Collection pages generally have a default permalink, set in the `_config.yml` configuration file.
 
-Most of the SEO/SM metadata is provided by the [Jekyll SEO Tag plugin](https://github.com/jekyll/jekyll-seo-tag). We provide sensible metadata by default, however two lines should be added to the Frontmatter to customize Social Media preview:
-
-### `description` 🌐 {#description}
-
-Provide a short description of what the page is all about.
+For translations, add the language tag to the end of the permalink, without a closing slash (`/`), like `/path/to/page/es`
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Examples" class="example" %}
 {:/}
 
 ```yaml
-description: The rationale for organizations to address accessibility. It includes tangible and intangible benefits, and the risks of not addressing accessibility adequately.
+permalink: /standards-guidelines/wcag/
 ```
+
+or:
+
+```yaml
+permalink: /standards-guidelines/wcag/es
+```
+
+Note that we do not use `/WAI/` or `https://www.w3.org/`.
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
 
-### `image` 🌐 {#image}
+## `ref` \* {#ref}
 
-Provide a short social media sharing image. This image might also be re-used when linking to a page from other sections of the website, for example as a home page teaser[^1].
-
-[^1]: Not yet implemented.
+(`string`) Unique identifier (“<em>ref</em>erence”) of a page. Must match the permalink of the English version of the page. Is used (among other things) to identify the set of translations of a page.
 
 {::nomarkdown}
-{% include box.html type="start" title="Examples" class="example simple" %}
+{% include box.html type="start" title="Examples" class="example" %}
 {:/}
 
 ```yaml
-image: /content-images/wai-bcase/social.png
+lang: en
+permalink: /standards-guidelines/wcag/
+ref: /standards-guidelines/wcag/
+```
+
+or:
+
+```yaml
+lang: es
+permalink: /standards-guidelines/wcag/es
+ref: /standards-guidelines/wcag/
 ```
 
 {::nomarkdown}
 {% include box.html type="end" %}
 {:/}
+
+## `resource` {#resource}
+
+(`map`) Specifies that the current page is part of a multi-page resource.
+
+Usage:
+- On resource subpages, the resource homepage is displayed underneath the `h1` element.\
+  Example: [Writing for Web Accessibility](https://www.w3.org/WAI/tips/writing/).
+- In [All WAI translations](https://www.w3.org/WAI/translations/) page, translations are grouped by resource.
+
+Following keys are available:
+
+`ref` *
+: (`string`) [`ref`](#ref) of the resource homepage.
+
+`title`
+: (`string`) Resource title to display. Only use this key on the resource homepage.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example: Resource subpage" class="example" %}
+{:/}
+
+```yaml
+resource:
+  ref: /tips/
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+{::nomarkdown}
+{% include box.html type="start" title="Example: Resource homepage" class="example" %}
+{:/}
+
+```yaml
+resource:
+  title: "Tips for Getting Started"
+  ref: /tips/
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `title` \* {#title}
+
+(`string`) A title that describes the page. Used as an `h1` and in the HTML `title` tag.
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example" %}
+{:/}
+
+```yaml
+title: Accessibility Fundamentals
+```
+
+or:
+
+```yaml
+title: "Web Accessibility Perspectives: Keyboard Navigation"
+```
+
+Note: when using colons (`:`) in the values of the frontmatter, using straight double (`"`) or single (`'`) quotes is required.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `title_html` {#title_html}
+
+{::nomarkdown}
+{% include box.html type="start" title="Notice" icon="warning" %}
+{:/}
+
+Do not use this variable unless absolutely needed.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+(`string`) If you _need_ to use HTML in the title (for example to highlight a word, use code markup or force a line break), you can use this line to provide that HTML variant.
+
+The `title` value will still be used in the HTML title, or when referring to the page using [WAI Markdown links](/writing/wai-markdown/#links).
+
+{::nomarkdown}
+{% include box.html type="start" title="Examples" class="example" %}
+{:/}
+
+```yaml
+title: The br Element
+title_html: "The <code>&lt;br></code> element"
+```
+
+or:
+
+```yaml
+title: "Web Accessibility Perspectives: Keyboard Navigation"
+title_html: "Web Accessibility Perspectives:<br>Keyboard Navigation"
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `title_icon` {#title_icon}
+
+(`string`) A path to an icon image. If set, an icon is displayed on the left of the `h1` heading.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+In [Developing for Web Accessibility](https://www.w3.org/WAI/tips/developing/):
+
+```yaml
+title_icon: /content-images/tips/icons.svg#developing
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `title_image` {#title_image}
+
+(`string`) A path to an image. If set, an image is displayed on the right of the `h1` heading.\
+If the image contains text, it needs to be adjusted to the language of the document.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+In [Planning Audio and Video Media](https://www.w3.org/WAI/media/av/planning/):
+
+```yaml
+title_image: /content-images/media-guide/planning.svg
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `tlang` {#tlang}
+
+{::nomarkdown}
+{% include box.html type="start" title="Note" class="simple" %}
+{:/}
+
+This variable is only used in translation sitemaps.
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+(`string`) The language tag of the current translation sitemap.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example: French translation sitemap" class="example" %}
+{:/}
+
+```yaml
+tlang: fr
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+
+## `translation` {#translation}
+
+(`map`) Key information about a translation.
+
+All translations must have a `translation` variable.
+
+Following keys are available:
+
+`last_updated` *
+: (`string`) The date the translation was last updated. Format is based on [ISO 8601 {% include_cached external.html %}](https://www.iso.org/iso-8601-date-and-time-format.html): `YYYY-MM-DD`.
+
+`outdated`
+: (`boolean`) When set to `true`, marks the translation as outdated.
+
+`draft`
+: (`boolean`) When set to `true`, marks the translation as draft.
+
+{::nomarkdown}
+{% include box.html type="start" title="Example: Up-to-date translation" class="example" %}
+{:/}
+
+```yaml
+translation:
+  last_updated: 2024-10-14
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+{::nomarkdown}
+{% include box.html type="start" title="Example: Outdated translation" class="example" %}
+{:/}
+
+```yaml
+translation:
+  outdated: true
+  last_updated: 2022-02-22
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+
+{::nomarkdown}
+{% include box.html type="start" title="Example: Draft and outdated translation" class="example" %}
+{:/}
+
+```yaml
+translation:
+  draft: true
+  outdated: true
+  last_updated: 2022-02-22
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+## `translators` {#translators}
+
+(`map array`) A list of the people who created the translation.
+
+All translation pages should have a translators list.
+
+Every translator is specified by their name in a separate line, like:
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+translators:
+- name: "Jane Doe"
+- name: "John Doe"
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+In addition, links can be added (note: there are strict [rules of which
+pages to link to](https://www.w3.org/WAI/about/translating/#links)):
+
+{::nomarkdown}
+{% include box.html type="start" title="Example" class="example" %}
+{:/}
+
+```yaml
+translators:
+- name: "Jane Doe"
+  link: "https://doespersonalhomepage.example.com"
+- name: "John Doe"
+```
+
+{::nomarkdown}
+{% include box.html type="end" %}
+{:/}
+
+Following keys are available:
+
+`name` * (`string`)
+: Translator name.
+
+`link` (`string`)
+: Link to the translator personal page.
+
+`org` (`string`)
+: Name of the translator organization.
+
+`orglink` (`string`)
+: Link to the organization website.

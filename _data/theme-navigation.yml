@@ -145,3 +145,21 @@
       url: "/templates/standalone-resource/"
     - name: Translation Sitemap
       url: "/templates/translation-sitemap/"
+- name:
+    en: 'Style Guide'
+  pages:
+    - name: Style Guide
+      url: "/style-guide/"
+    - name: Single Page Version
+      url: "/style-guide/one-page/"
+      hide: true
+    - name: Structure and Presentation
+      url: "/style-guide/structure-presentation/"
+    - name: Tone, Language, and Words
+      url: "/style-guide/tone-language-words/"
+    - name: Style for Different Content Types (A-Z)
+      url: "/style-guide/style-different-content-types/"
+    - name: Grammar
+      url: "/style-guide/grammar/"
+    - name: Changelog
+      url: "/style-guide/changelog/"
