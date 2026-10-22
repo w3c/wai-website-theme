@@ -601,7 +601,7 @@
           fr: 'Arbre décisionnel pour l’attribut <code style="color: inherit;">alt</code>'
           id: 'Pohon Keputusan Penggunaan <code style="color: inherit;">alt</code>'
           ja: '<code style="color: inherit;">alt</code>ディシジョンツリー'
-          ko: 'Ein <code style="color: inherit;">alt</code> 의사결정나무'
+          ko: '<code style="color: inherit;">alt</code> 의사결정나무'
           pl: "Drzewo decyzyjne <code>alt</code>"
           pt-BR: 'Uma árvore de decisão do atributo <code style="color: inherit;">alt</code>'
         url: "/tutorials/images/decision-tree/"
