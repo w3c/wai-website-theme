@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll", "~>4.4.1"
   spec.add_runtime_dependency "jekyll-include-cache", "~>0.2.1"
   spec.add_runtime_dependency "jekyll-paginate", "~>1.1.0"
-  spec.add_runtime_dependency "jekyll-redirect-from", "~>0.16.0"
+  spec.add_runtime_dependency "jekyll-redirect-from", ">=0.16", "<0.18"
   spec.add_runtime_dependency "jekyll-seo-tag", "~>2.8.0"
   spec.add_runtime_dependency "jekyll-sitemap", "~>1.4.0"
   spec.add_runtime_dependency "logger", "~>1.7.0"
