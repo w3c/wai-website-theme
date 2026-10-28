@@ -18,6 +18,7 @@ exclude:
   - "node_modules"
 repository: w3c/wai-website-theme
 branch: main
+warning_message: This is an unpublished draft that might include content that is not finalized. <a href="https://wai-website-theme.netlify.app">View the published version</a>
 
 # Override the default navigation
 custom_navigation: theme-navigation

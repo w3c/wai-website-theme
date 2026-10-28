@@ -3,8 +3,8 @@ The first section creates an array of page urls that are page urls of this colle
 {%- endcomment -%}
 {%- assign col = site.collections | where: "label", page.collection | first -%}
 {%- unless site.published == true -%}
-{%- include_cached draft-banner.html lang=pagelang message=page.warning_message icon=page.warning_icon -%}
-{%- endunless -%}
+  {%- include_cached draft-banner.html lang=pagelang message=page.draft-banner-message -%}
+{%- endunless %}
 <header id="site-header" class="default-grid with-gap header-minimal">
   <div class="logos">
     <a lang="en" class="home w3c" href="{{ "https://www.w3.org/" | relative_url }}">

@@ -6,8 +6,8 @@ The first section creates an array of page urls that are page urls of this colle
   {% include_cached access-control-banner.html acl=page.acl.type message=page.acl.message %}
 {% endif -%}
 {%- unless site.published == true -%}
-{%- include_cached draft-banner.html lang=pagelang message=page.warning_message icon=page.warning_icon -%}
-{%- endunless -%}
+  {%- include_cached draft-banner.html lang=pagelang message=page.draft-banner-message -%}
+{%- endunless %}
 <nav aria-label="{% include t.html t='Skip Link and Language Selector' %}" id="controls" class="default-grid">
   {% if include.translations[0].ref %}
   {%- comment -%} Translations on this page {%- endcomment-%}
