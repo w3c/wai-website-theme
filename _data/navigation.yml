@@ -410,6 +410,9 @@
       - name: Acknowledgements
         url: "/planning/arrm/acknowledgements/"
         hide: true
+      - name: Changelog
+        url: "/planning/arrm/changelog/"
+        hide: true
   - name: Developing an Organizational Policy
     url: "/planning/org-policies/"
     pages:
