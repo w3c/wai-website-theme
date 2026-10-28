@@ -233,8 +233,8 @@
   </div>
 </footer>
 {%- unless site.published == true -%}
-{%- include_cached draft-banner.html lang=pagelang message=page.warning_message icon=page.warning_icon -%}
-{%- endunless -%}
+  {%- include_cached draft-banner.html lang=pagelang message=page.draft-banner-message -%}
+{%- endunless %}
 <!-- Details4Everybody -->
 <script src="{{ '/assets/scripts/details4everybody.js' | append: timestamp | relative_url }}"></script>
 <!-- SVG4Everybody -->
