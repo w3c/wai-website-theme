@@ -293,6 +293,20 @@ Example:
 </ul>
 </div>
 
+#### Mobile
+
+"Mobile" as a term is ambiguous, it is an umbrella term for devices, operating systems and interface features. In normative text, use more specific terms such as:
+
+<ul>
+<li>touch input</li>
+<li>small screen</li>
+<li>native application</li>
+<li>motion triggers</li>
+<li>haptic output</li>
+</ul>
+
+These features are not exclusive to mobile, for example, mobile devices have touch screens, but so do some laptops and other devices. Therefore the text needs to be specific about the features available.
+
 #### Click (versus select)
 
 Do not say “select” instead of “click” just to make the wording work for people who do not use a mouse.
