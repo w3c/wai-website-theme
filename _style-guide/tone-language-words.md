@@ -305,7 +305,7 @@ Example:
 <li>haptic output</li>
 </ul>
 
-These features are not exclusive to mobile, for example, mobile devices have touch screens, but so do some laptops and other devices. Therefore the text needs to be specific about the features available.
+These features are not exclusive to mobile; for example, mobile devices have touch screens, but so do some laptops and other devices. Therefore the text needs to be specific about the features available.
 
 #### Click (versus select)
 
