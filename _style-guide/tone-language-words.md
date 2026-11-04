@@ -295,7 +295,7 @@ Example:
 
 #### Mobile
 
-"Mobile" as a term is ambiguous, it is an umbrella term for devices, operating systems and interface features. In normative text, use more specific terms such as:
+"Mobile" as a term is ambiguous; it is an umbrella term for devices, operating systems, and interface features. In normative text, use more specific terms such as:
 
 <ul>
 <li>touch input</li>
