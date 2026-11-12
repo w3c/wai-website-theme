@@ -20,7 +20,7 @@ class: teaser
 ## Pre-requisites
 
 Before you begin, make sure you have the following installed:
-- [Ruby](https://www.ruby-lang.org/en/documentation/installation/) (>= 3.3)
+- [Ruby](https://www.ruby-lang.org/en/documentation/installation/) (>= 3.4.12)
 - [Bundler](https://bundler.io/)
 
 ## Local build
